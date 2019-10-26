@@ -1,0 +1,148 @@
+/*! * Name: post-list.css */
+
+.wp-list-table th>span:nth-child(2){
+    display:none
+}
+.wp-list-table th.bulk-editing span:nth-child(1){
+    display:none
+}
+.wp-list-table th.bulk-editing span:nth-child(2){
+    display:inline-block
+}
+.wp-list-table th.sorted a{
+    display:inline-block
+}
+.wp-list-table th#cpseo_seo_details span:first-child a{
+    display:inline-block;
+    padding-right:0
+}
+.wp-list-table th#cpseo_seo_details span:first-child a.dashicons{
+    padding-left:0
+}
+.wp-list-table td.cpseo_seo_details label{
+    display:none
+}
+.wp-list-table td .cpseo-column-display{
+    display:block;
+    margin-bottom:5px
+}
+.wp-list-table td .cpseo-column-display.cpseo-link-count span{
+    opacity:0.7
+}
+.wp-list-table td .cpseo-column-display.cpseo-link-count .dashicons{
+    margin:0 0 0 -2px;
+    font-size:17px
+}
+.wp-list-table td .cpseo-column-display.cpseo-link-count .divider{
+    height:10px;
+    width:1px;
+    background:rgba(0,0,0,0.35);
+    position:relative;
+    display:inline-block;
+    margin-left:5px;
+    margin-right:5px
+}
+.wp-list-table td .cpseo-column-display.seo-score{
+    margin-bottom:8px
+}
+.wp-list-table td .cpseo-column-display.seo-score strong{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:2px
+}
+.wp-list-table td .cpseo-column-display.seo-score strong:before{
+	font-family: dashicons;
+	font-size:18px;
+	margin-right:7px;
+	line-height: 1;
+	white-space: nowrap;
+	font-style: normal;
+	vertical-align:middle;
+	height: 18px;
+	width: 18px;
+}
+.wp-list-table td .cpseo-column-display.seo-score.no-score strong:before{
+    color:#616161;
+    content: "\f534";
+}
+.wp-list-table td .cpseo-column-display.seo-score.no-score strong{
+    color:#616161;
+    background:#dedede
+}
+.wp-list-table td .cpseo-column-display.seo-score.bad strong:before{
+    color:#e12925;
+    content: "\f153";
+}
+.wp-list-table td .cpseo-column-display.seo-score.bad strong{
+    color:#e12925;
+    background:#fce5e2
+}
+.wp-list-table td .cpseo-column-display.seo-score.ok strong:before{
+    color:#f39444;
+    content: "\f159";
+}
+.wp-list-table td .cpseo-column-display.seo-score.ok strong{
+    color:#f39444;
+    background:#f9d7ba
+}
+.wp-list-table td .cpseo-column-display.seo-score.good strong:before{
+    color:#58bb58;
+	border-radius: 50em;
+	background: #fff;
+    content: "\f147";
+}
+.wp-list-table td .cpseo-column-display.seo-score.good strong{
+    color:#e3f4e3;
+    background:#4ab147
+}
+.wp-list-table td .cpseo-column-display.seo-score.disabled strong{
+    width:20px;
+    height:20px;
+    padding:0;
+    border-radius:50%
+}
+.wp-list-table td .cpseo-column-display .is-cornerstone{
+    vertical-align:top;
+    margin-left:3px;
+    margin-top:2px
+}
+.wp-list-table td .cpseo-column-value{
+    display:none;
+    padding:3px;
+    border:1px solid #e5e5e5;
+    background-color:#fff;
+    box-shadow:inset 0 1px 2px rgba(0,0,0,0.07)
+}
+.wp-list-table td .cpseo-column-edit{
+    display:none
+}
+.wp-list-table td.bulk-editing .cpseo-column-value,.wp-list-table td.bulk-editing label{
+    display:block
+}
+.wp-list-table td.bulk-editing .cpseo-column-display{
+    display:none
+}
+.wp-list-table td.dirty .cpseo-column-edit{
+    display:block
+}
+ 
+ 
+.cpseo-score-icon {
+	display: inline-block !important;
+	width: 13px !important;
+	height: 13px !important;
+	border-radius: 50% !important;
+	margin: 3px 10px 0 5px;
+	background: #888;
+	vertical-align: top;
+	line-height: 17px;
+}
+.cpseo-score-icon.good {
+	background-color: #58bb58;
+}
+.cpseo-score-icon.ok {
+	background-color: #f39444;
+}
+.cpseo-score-icon.bad {
+	background-color: #dc3232;
+}

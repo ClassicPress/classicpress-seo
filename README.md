@@ -9,4 +9,9 @@ May contain features based on related petitions, for example:
 
 May also contain bugs and other surprises :)
 
+**Minimum Requirements:**
+
+- ClassicPress 1.0.0
+- PHP 7.0
+
 **Do not use on a production site.**
