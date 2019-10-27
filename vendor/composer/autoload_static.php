@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitc2822413d75ee1db8fcd50de895c43fa
 {
     public static $files = array (
+        '5f60553e65ecb4fbd01e9dafb8b8fd38' => __DIR__ . '/../..' . '/includes/template-tags.php',
         'ada238102f383087981f03105e93fea8' => __DIR__ . '/..' . '/cmb2/init.php',
     );
 
