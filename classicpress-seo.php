@@ -6,7 +6,7 @@
  * Plugin Name: ClassicPress SEO
  * Plugin URI:  https://www.classicpress.net
  * Description: SEO solution for ClassicPress (experimental).
- * Version:     0.2.1
+ * Version:     0.2.2
  * Author:      ClassicPress Community
  * Author URI:  https://www.classicpress.net
  * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
@@ -37,7 +37,7 @@ class ClassicPress_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '0.2.1';
+	public $version = '0.2.2';
 
 	/**
 	 * ClassicPress SEO database version.
@@ -393,18 +393,18 @@ class ClassicPress_SEO {
 	 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 	 *
 	 * Locales found in:
-	 *     - WP_LANG_DIR/classicpress-seo/classicpress-seo-LOCALE.mo
-	 *     - WP_LANG_DIR/plugins/classicpress-seo-LOCALE.mo
+	 *     - WP_LANG_DIR/plugins/cpseo-LOCALE.mo
+	 *     - WP_LANG_DIR/classicpress-seo/cpseo-LOCALE.mo
 	 */
 	public function localization_setup() {
 		$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
 		$locale = apply_filters( 'plugin_locale', $locale, 'cpseo' );
 
 		unload_textdomain( 'cpseo' );
-		if ( false === load_textdomain( 'cpseo', WP_LANG_DIR . '/plugins/classicpress-seo-' . $locale . '.mo' ) ) {
-			load_textdomain( 'cpseo', WP_LANG_DIR . '/classicpress-seo/classicpress-seo-' . $locale . '.mo' );
+		if ( false === load_textdomain( 'cpseo', WP_LANG_DIR . '/plugins/cpseo-' . $locale . '.mo' ) ) {
+			load_textdomain( 'cpseo', WP_LANG_DIR . '/classicpress-seo/cpseo-' . $locale . '.mo' );
 		}
-		load_plugin_textdomain( 'cpseo', false, cpseo()->plugin_dir() . '/languages/' );
+		load_plugin_textdomain( 'cpseo', false, cpseo()->plugin_dir() . 'languages/' );
 
 		if ( is_user_logged_in() ) {
 			$this->container['json']->add( 'version', $this->version, 'classicPress' );

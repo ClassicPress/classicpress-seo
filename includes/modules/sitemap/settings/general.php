@@ -29,7 +29,7 @@ $cmb->add_field( array(
 	'name'    => esc_html__( 'Include Featured Images', 'cpseo' ),
 	'desc'    => esc_html__( 'Include the Featured Image too, even if it does not appear directly in the post content.', 'cpseo' ),
 	'default' => 'on',
-	'dep'     => array( array( 'include_images', 'on' ) ),
+	'dep'     => array( array( 'cpseo_include_images', 'on' ) ),
 ) );
 
 $cmb->add_field( array(
