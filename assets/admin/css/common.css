@@ -1,26 +1,26 @@
 /*!
- * Name:	common.css
+ * Name: common.css
  */
 
 .cpseo-page{
     background:#e1e1e1
 }
 .cpseo-page h2.nav-tab-wrapper{
-    margin-bottom:40px !important;
-    background-color:transparent !important;
-    border-top:none !important;
-    border-bottom:1px solid #ccc !important
+    margin-bottom:40px!important;
+    background-color:transparent!important;
+    border-top:none!important;
+    border-bottom:1px solid #ccc!important
 }
 .cpseo-page .nav-tab{
     background:#ccc;
     padding:5px 15px;
     color:#000;
     font-weight:600;
-    margin-left:.5em !important;
+    margin-left:.5em!important;
     border:1px solid #ccc;
     border-bottom:none
 }
-.cpseo-page .nav-tab-active,.cpseo-page .nav-tab-active:hover,.cpseo-page .nav-tab-active:focus,.cpseo-page .nav-tab-active:focus:active{
+.cpseo-page .nav-tab-active,.cpseo-page .nav-tab-active:focus,.cpseo-page .nav-tab-active:focus:active,.cpseo-page .nav-tab-active:hover{
     border-bottom-color:#e1e1e1;
     background:#e1e1e1
 }
@@ -36,7 +36,7 @@
     font-size:14px;
     line-height:1.5
 }
-.cpseo-wrap h1,.cpseo-wrap .page-title{
+.cpseo-wrap .page-title,.cpseo-wrap h1{
     font-size:2.8em;
     font-weight:400;
     line-height:1.2em;
@@ -61,7 +61,7 @@
     font-size:1.2em;
     line-height:1.5;
     margin:1.2em 0 .6em;
-	color:#057f99
+    color:#057f99
 }
 .cpseo-wrap h4{
     color:#23282d
@@ -84,30 +84,35 @@
     padding-right:15px;
     padding-left:15px
 }
-@media only screen and (max-width: 500px){
+@media only screen and (max-width:500px){
     .cpseo-wrap{
         margin-right:20px;
         margin-left:10px
     }
-    .cpseo-wrap h1,.cpseo-wrap .cpseo-text{
+    .cpseo-wrap .cpseo-text,.cpseo-wrap h1{
         margin-right:0
     }
     .cpseo-wrap .cpseo-text{
         margin-bottom:.25em
     }
 }
-.two-col,.three-col{
+.three-col,.two-col{
     display:-webkit-flex;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
     -webkit-box-pack:justify;
     -ms-flex-pack:justify;
     -webkit-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
     flex-wrap:wrap;
     -webkit-justify-content:space-between;
     justify-content:space-between
 }
-.two-col .col,.three-col .col{
+.three-col .col,.two-col .col{
     -webkit-flex:1;
+    -webkit-box-flex:1;
+    -ms-flex:1;
     flex:1
 }
 .two-col .col{
@@ -121,9 +126,9 @@
     align-self:flex-start;
     -ms-flex-item-align:start
 }
-@media only screen and (max-width: 500px){
-    .two-col .col,.three-col .col{
-        min-width:100% !important
+@media only screen and (max-width:500px){
+    .three-col .col,.two-col .col{
+        min-width:100%!important
     }
 }
 .cpseo-box{
@@ -167,6 +172,7 @@
     line-height:17px;
     position:relative;
     overflow:hidden;
+    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     width:100%;
     min-height:262px;
@@ -186,18 +192,21 @@
 .cpseo-ui .button-primary{
     border-color:#361946;
     background:#89288f;
+    -webkit-box-sizing:0 1px 2px 0 rgba(35,40,45,0.2);
     box-shadow:0 1px 2px 0 rgba(35,40,45,0.2);
     text-shadow:none
 }
 .cpseo-ui .button-primary:focus,.cpseo-ui .button-primary:hover{
     border-color:#076fa2;
     background:#361946;
-    box-shadow:0 1px 4px 0 rgba(35,40,45,0.2)
+    -webkit-box-shadow:0 1px 4px 0 rgba(35,40,45,0.2);
+    box-shadow:0 1px 4px 0 rgba(35,40,45,0.2);
 }
 .cpseo-ui .button-link{
-    border:0 !important;
-    background:transparent !important;
-    box-shadow:none !important
+    border:0!important;
+    background:transparent!important;
+    -webkit-box-shadow:none!important;
+    box-shadow:none!important
 }
 .cpseo-ui .button-xlarge{
     font-size:16px;
@@ -213,9 +222,10 @@
     width:200px;
     margin-right:-1px
 }
-.cpseo-tabs-navigation:not(.custom) a{
+.cpseo-tabs-navigation:not(.cpseo-custom) a{
     font-size:16px;
     display:block;
+    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     padding:11px 15px;
     text-decoration:none;
@@ -224,28 +234,30 @@
     border-width:0 1px 1px;
     outline:none;
     background:#f6f6f6;
+    -webkit-box-shadow:none;
     box-shadow:none
 }
-.cpseo-tabs-navigation:not(.custom) a .dashicons,.cpseo-tabs-navigation:not(.custom) a .fa{
+.cpseo-tabs-navigation:not(.cpseo-custom) a .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a .fa{
     font-size:18px;
     min-width:20px;
     margin-right:10px;
     text-align:center;
-    color:#6c6c6c
+
 }
 .cpseo-tabs-navigation:not(.custom) a.active,.cpseo-tabs-navigation:not(.custom) a:focus,.cpseo-tabs-navigation:not(.custom) a:hover{
     color:#fff;
     border-right-color:#361946;
     background:#361946
 }
-.cpseo-tabs-navigation:not(.custom) a.active .dashicons,.cpseo-tabs-navigation:not(.custom) a.active .fa,.cpseo-tabs-navigation:not(.custom) a:focus .dashicons,.cpseo-tabs-navigation:not(.custom) a:focus .fa,.cpseo-tabs-navigation:not(.custom) a:hover .dashicons,.cpseo-tabs-navigation:not(.custom) a:hover .fa{
+.cpseo-tabs-navigation:not(.cpseo-custom) a.active .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a.active .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .fa{
     color:#fff
 }
-.cpseo-tabs-navigation:not(.custom) a:first-child{
+.cpseo-tabs-navigation:not(.cpseo-custom) a:first-child{
     border-top:1px solid #e5e5e5
 }
-.cpseo-tabs-content:not(.custom){
+.cpseo-tabs-content:not(.cpseo-custom){
     overflow:hidden;
+    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     min-height:400px;
     margin-bottom:20px;
@@ -265,6 +277,21 @@
     display:inline-block;
     width:49%
 }
+.cpseo-tab .cmb2-checkbox-list li{
+    display:inline-block;
+    width:49%
+}
+.cpseo-tab .cmb-advanced-robots-list li{
+    width:33%;
+    display:inline-block;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0 10px
+}
+.cpseo-tab .cmb-advanced-robots-list li label{
+    display:inline-block;
+    margin-bottom:5px
+}
 .cpseo-tooltip{
     position:relative;
     cursor:pointer;
@@ -276,6 +303,8 @@
     line-height:1.5;
     width:200px;
     padding:8px 10px;
+    -webkit-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
     transition:all .3s ease-in-out;
     -webkit-transform:translate3d(-50%, 0, 0);
     transform:translate3d(-50%, 0, 0);
@@ -310,12 +339,13 @@
     padding:15px 25px;
     border-radius:4px;
     background:#fff;
+    -webkit-box-shadow:6px 6px 10px rgba(32,33,36,0.1);
     box-shadow:6px 6px 10px rgba(32,33,36,0.1)
 }
 .cpseo-export-form+.cpseo-export-form{
     margin-top:30px
 }
-.cpseo-export-form th,.cpseo-export-form td{
+.cpseo-export-form td,.cpseo-export-form th{
     padding:0
 }
 .cpseo-export-form h3{
@@ -325,10 +355,10 @@
     padding-top:10px
 }
 .invalid,.widefat.invalid,.wp-admin .invalid,.wp-admin .widefat.invalid{
-    border-color:#dd2c00 !important;
+    border-color:#dd2c00!important;
     background:pink
 }
-.invalid ~ .validation-message,.widefat.invalid ~ .validation-message,.wp-admin .invalid ~ .validation-message,.wp-admin .widefat.invalid ~ .validation-message{
+.invalid~.validation-message,.widefat.invalid~.validation-message,.wp-admin .invalid~.validation-message,.wp-admin .widefat.invalid~.validation-message{
     display:inline-block
 }
 .validation-message{
@@ -339,6 +369,8 @@
     margin-top:5px;
     margin-left:2px;
     padding:4px 8px;
+    -webkit-transition:.28s;
+    -o-transition:.28s;
     transition:.28s;
     vertical-align:middle;
     color:#fff;
@@ -354,12 +386,12 @@ span.input-loading{
     height:16px;
     width:16px
 }
-body .cmb2-wrap .cmb2-id-console-profile .regular-text,body .cmb2-wrap .cmb2-id-console-profile select,body .cmb2-wrap .cmb2-id-console-authorization-code .regular-text,body .cmb2-wrap .cmb2-id-console-authorization-code select{
+body .cmb2-wrap .cmb2-id-console-authorization-code .regular-text,body .cmb2-wrap .cmb2-id-console-authorization-code select,body .cmb2-wrap .cmb2-id-console-profile .regular-text,body .cmb2-wrap .cmb2-id-console-profile select{
     display:inline-block;
     max-width:60%;
     margin-right:10px
 }
-body .cmb2-wrap .cmb2-id-console-profile .button,body .cmb2-wrap .cmb2-id-console-authorization-code .button{
+body .cmb2-wrap .cmb2-id-console-authorization-code .button,body .cmb2-wrap .cmb2-id-console-profile .button{
     line-height:41px;
     height:auto;
     margin-right:8px;
@@ -390,13 +422,13 @@ body .cmb2-wrap .cmb2-id-console-authorization-code .button-secondary{
 }
 .wizard-share .dashicons{
     font-size:16px;
-    margin:0 5px 0 0 !important;
+    margin:0 5px 0 0!important;
     vertical-align:middle
 }
 #gsc-dp-info{
     font-weight:bold
 }
-body.rtl .cpseo-wrap h1,body.rtl .cpseo-wrap .page-title{
+body.rtl .cpseo-wrap .page-title,body.rtl .cpseo-wrap h1{
     margin-right:0;
     margin-left:200px
 }
@@ -404,12 +436,12 @@ body.rtl .cpseo-wrap .cpseo-text{
     margin-right:0;
     margin-left:200px
 }
-body.rtl .cpseo-tabs-navigation:not(.custom){
+body.rtl .cpseo-tabs-navigation:not(.cpseo-custom){
     float:right;
     margin-right:0;
     margin-left:-1px
 }
-body.rtl .cpseo-tabs-navigation:not(.custom) a .fa,body.rtl .cpseo-tabs-navigation:not(.custom) a .dashicons{
+body.rtl .cpseo-tabs-navigation:not(.cpseo-custom) a .dashicons,body.rtl .cpseo-tabs-navigation:not(.cpseo-custom) a .fa{
     margin-right:0;
     margin-left:10px
 }
@@ -417,12 +449,12 @@ body.rtl .cpseo-wrap-settings .form-footer{
     margin-right:200px;
     margin-left:0
 }
-body.rtl.wp-core-ui .cpseo-variables-button,body.rtl .serp-preview:not(.expanded-preview):not(.mobile-preview) .group.active .cmb-row.cmb2-id-cpseo-title .cpseo-variables-button{
+body.rtl .serp-preview:not(.expanded-preview):not(.mobile-preview) .group.active .cmb-row.cmb2-id-cpseo-title .cpseo-variables-button,body.rtl.wp-core-ui .cpseo-variables-button{
     right:auto;
     left:1px;
     border-width:0 1px 0 0
 }
-body.rtl .cmb2-wrap .cmb-type-textarea .button,body.rtl .cmb2-wrap .cmb-type-textarea-small .button{
+body.rtl .cmb2-wrap .cmb-type-textarea-small .button,body.rtl .cmb2-wrap .cmb-type-textarea .button{
     border-width:1px 1px 0 0
 }
 body.rtl .cpseo-variables-dropdown li:after{
@@ -432,17 +464,17 @@ body.rtl .cpseo-variables-dropdown li:after{
 body.rtl .cpseo-ui .button .dashicons{
     margin:0 0 0 3px
 }
-.cpseo-variables-preview,.cpseo-preview-title{
+.cpseo-preview-title,.cpseo-variables-preview{
     font-family:arial, sans-serif;
     max-width:600px;
     margin-top:15px;
     color:#1a0dab;
     border-radius:4px
 }
-.cpseo-variables-preview:empty,.cpseo-preview-title:empty{
+.cpseo-preview-title:empty,.cpseo-variables-preview:empty{
     display:none
 }
-.cpseo-variables-preview:before,.cpseo-preview-title:before{
+.cpseo-preview-title:before,.cpseo-variables-preview:before{
     font-size:10px;
     font-weight:600;
     display:block;
@@ -456,19 +488,19 @@ body.rtl .cpseo-ui .button .dashicons{
     position:relative
 }
 .cpseo-variables-wrap input,.cpseo-variables-wrap textarea{
-    padding-right:50px !important
+    padding-right:50px!important
 }
-.cmb2-wrap .cmb-type-textarea .button,.cmb2-wrap .cmb-type-textarea-small .button{
+.cmb2-wrap .cmb-type-textarea-small .button,.cmb2-wrap .cmb-type-textarea .button{
     top:auto;
     bottom:1px;
     border-width:1px 0 0 1px;
     border-radius:3px 0 3px 0
 }
-.cmb2-wrap .cmb-type-textarea .button+.cpseo-variables-dropdown,.cmb2-wrap .cmb-type-textarea-small .button+.cpseo-variables-dropdown{
+.cmb2-wrap .cmb-type-textarea-small .button+.cpseo-variables-dropdown,.cmb2-wrap .cmb-type-textarea .button+.cpseo-variables-dropdown{
     top:98px;
     right:0
 }
-.cmb2-wrap .cmb-type-textarea textarea,.cmb2-wrap .cmb-type-textarea-small textarea{
+.cmb2-wrap .cmb-type-textarea-small textarea,.cmb2-wrap .cmb-type-textarea textarea{
     display:block;
     resize:none
 }
@@ -477,8 +509,9 @@ body.wp-core-ui .cpseo-variables-button{
     height:auto;
     padding:0 10px;
     border-width:0 0 0 1px;
-    border-color:#e5e5e5 !important;
+    border-color:#e5e5e5!important;
     border-radius:0 3px 3px 0;
+    -webkit-box-shadow:none;
     box-shadow:none;
     position:absolute;
     top:2px;
@@ -503,10 +536,11 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     height:220px;
     width:80%
 }
-.cpseo-variables-dropdown input[type='text']{
+.cpseo-variables-dropdown input[type=text]{
     margin:10px;
     background:#fffff8;
-    box-shadow:none !important;
+    -webkit-box-shadow:none!important;
+    box-shadow:none!important;
     height:34px;
     width:calc(100% - 20px)
 }
@@ -572,11 +606,11 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
 .list-table table{
     margin:0
 }
-.list-table th,.list-table td{
+.list-table td,.list-table th{
     padding:12px 15px;
     border-bottom:1px solid #e5e5e5
 }
-.list-table tr:last-child th,.list-table tr:last-child td{
+.list-table tr:last-child td,.list-table tr:last-child th{
     border:0
 }
 .list-table th strong{
@@ -608,11 +642,11 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     padding-top:0;
     text-align:left
 }
-.list-table.with-action .importer-header th,.list-table.with-action .importer-header td{
+.list-table.with-action .importer-header td,.list-table.with-action .importer-header th{
     border-bottom:none
 }
-@media screen and (max-width: 1020px){
-    body .cpseo-wrap h1,body .cpseo-wrap .page-title,body .cpseo-wrap .cpseo-text{
+@media screen and (max-width:1020px){
+    body .cpseo-wrap .page-title,body .cpseo-wrap .cpseo-text,body .cpseo-wrap h1{
         margin-right:0
     }
     body .cpseo-wrap .nav-tab{
@@ -620,14 +654,14 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
         border-bottom:1px solid #ccc
     }
 }
-@media screen and (max-width: 782px){
+@media screen and (max-width:782px){
     .form-table input.regular-text{
         height:36px
     }
     body .cmb2-wrap select{
         padding:0
     }
-    body .cpseo-wrap .cmb-row.cmb-type-file .regular-text:not([type='hidden'])+.cmb2-upload-button{
+    body .cpseo-wrap .cmb-row.cmb-type-file .regular-text:not([type=hidden])+.cmb2-upload-button{
         line-height:35px
     }
     body .cpseo-wrap .cpseo-search-options .search-field input{
@@ -640,10 +674,10 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     body .cpseo-wrap .cmb2-id-console-profile button{
         margin-top:5px
     }
-    body .cpseo-wrap .cpseo-rss-variables thead th,body .cpseo-wrap .cpseo-rss-variables tbody td{
+    body .cpseo-wrap .cpseo-rss-variables tbody td,body .cpseo-wrap .cpseo-rss-variables thead th{
         margin-bottom:0
     }
-    body .cpseo-wrap input[type=checkbox]:checked:before,body .cpseo-wrap .cmb2-wrap input[type=checkbox]:checked:before{
+    body .cpseo-wrap .cmb2-wrap input[type=checkbox]:checked:before,body .cpseo-wrap input[type=checkbox]:checked:before{
         font-size:30px
     }
     body #cpseo-redirection-popup .media-modal{
@@ -660,14 +694,14 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
         border-bottom:1px solid #ededed
     }
 }
-@media only screen and (max-width: 768px){
-    body .cpseo-wrap .cpseo-tabs-navigation:not(.custom),body .cpseo-wrap.cpseo-wrap-settings .form-footer{
+@media only screen and (max-width:768px){
+    body .cpseo-wrap .cpseo-tabs-navigation:not(.cpseo-custom),body .cpseo-wrap.cpseo-wrap-settings .form-footer{
         width:100%;
         margin:0
     }
 }
-@media only screen and (max-width: 640px){
-    body .cpseo-wrap .cpseo-tabs-content:not(.custom){
+@media only screen and (max-width:640px){
+    body .cpseo-wrap .cpseo-tabs-content:not(.cpseo-custom){
         padding:15px
     }
     body .cpseo-wrap .cpseo-search-options{
@@ -693,8 +727,8 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
         padding:10px
     }
 }
-@media only screen and (max-width: 595px){
-    body .cpseo-wrap h1,body .cpseo-wrap .page-title{
+@media only screen and (max-width:595px){
+    body .cpseo-wrap .page-title,body .cpseo-wrap h1{
         font-size:30px
     }
     body .cpseo-wrap .cpseo-text{
@@ -730,7 +764,7 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     body .cmb2-wrap .cmb-row.cmb-row-33,body .cmb2-wrap .cmb-row.cmb-row-50{
         width:100%
     }
-    body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-th,body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-td,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-th,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-td{
+    body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-td,body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-th,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-td,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-th{
         padding:0
     }
 }
@@ -758,7 +792,6 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     top:-6px;
     left:6px
 }
-
 
 
 /*!
@@ -2630,4 +2663,3 @@ span.input-loading {
 .media-upload-form .notice, .media-upload-form div.error, .wrap .notice, .wrap div.error, .wrap div.updated {
   margin: 10px 0 30px 0px;
 }
-
