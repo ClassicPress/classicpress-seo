@@ -3,15 +3,15 @@
  * The Shop paper.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Paper
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Paper
  */
 
-namespace ClassicPress_SEO\Paper;
+namespace Classic_SEO\Paper;
 
-use ClassicPress_SEO\Post;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Str;
+use Classic_SEO\Post;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 

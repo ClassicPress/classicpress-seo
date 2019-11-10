@@ -2,11 +2,11 @@
 /**
  * Redirection main view.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $redirections = Helper::get_module( 'redirections' )->admin;
 $redirections->table->prepare_items();

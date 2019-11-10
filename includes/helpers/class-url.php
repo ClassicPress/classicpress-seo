@@ -3,14 +3,14 @@
  * The URL helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
 
 /**
  * Url class.

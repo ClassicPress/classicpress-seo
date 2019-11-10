@@ -2,11 +2,11 @@
 /**
  * The local seo settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Local_Seo
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Local_Seo
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $company = [ [ 'cpseo_knowledgegraph_type', 'company' ] ];
 $person  = [ [ 'cpseo_knowledgegraph_type', 'person' ] ];

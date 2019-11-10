@@ -2,12 +2,12 @@
 /**
  * The public-facing template tags.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Frontend
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Frontend
  */
 
-use ClassicPress_SEO\Sitemap\Router;
-use ClassicPress_SEO\Frontend\Breadcrumbs;
+use Classic_SEO\Sitemap\Router;
+use Classic_SEO\Frontend\Breadcrumbs;
 
 /**
  * Get breadcrumbs.
@@ -50,5 +50,5 @@ function cpseo_get_sitemap_url() {
  * @return bool Replacement was registered successfully or not.
  */
 function cpseo_register_var_replacement( $var, $callback, $args = [] ) {
-	return ClassicPress_SEO\Replace_Vars::register_replacement( $var, $callback, $args );
+	return Classic_SEO\Replace_Vars::register_replacement( $var, $callback, $args );
 }

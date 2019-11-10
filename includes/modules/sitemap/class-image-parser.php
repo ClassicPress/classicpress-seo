@@ -3,20 +3,20 @@
  * Parses images from the given post.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap;
+namespace Classic_SEO\Sitemap;
 
 use WP_Query;
 use DOMDocument;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
-use ClassicPress_SEO\Helpers\Attachment;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
+use Classic_SEO\Helpers\Attachment;
 
 defined( 'ABSPATH' ) || exit;
 

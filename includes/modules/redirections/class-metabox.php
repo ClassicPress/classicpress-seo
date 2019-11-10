@@ -3,15 +3,15 @@
  * The Redirections Metabox
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
 
 /**
  * Metabox class.

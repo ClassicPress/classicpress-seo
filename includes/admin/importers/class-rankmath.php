@@ -3,18 +3,18 @@
  * The Rank Math Import Class
  *
  * @since      0.2.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin\Importers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin\Importers
  */
 
 
-namespace ClassicPress_SEO\Admin\Importers;
+namespace Classic_SEO\Admin\Importers;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\DB;
-use ClassicPress_SEO\Helpers\WordPress;
-use ClassicPress_SEO\Redirections\Redirection;
-use ClassicPress_SEO\Admin\Import_Export;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\DB;
+use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Redirections\Redirection;
+use Classic_SEO\Admin\Import_Export;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -221,7 +221,7 @@ class RankMath extends Plugin_Importer {
 	}
 	
 	/**
-	 * Copies data from RM tables to CPSEO tables
+	 * Copies data from RM tables to CLASSICSEO tables
 	 *
 	 * @return array
 	 */

@@ -3,22 +3,22 @@
  * The abstract class for plugins import to inherit from
  *
  * @since      0.2.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin\Importers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin\Importers
  */
 
 
-namespace ClassicPress_SEO\Admin\Importers;
+namespace Classic_SEO\Admin\Importers;
 
 use Exception;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Meta;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Admin_Helper;
-use ClassicPress_SEO\Helpers\DB;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Attachment;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Meta;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Admin_Helper;
+use Classic_SEO\Helpers\DB;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Attachment;
 
 defined( 'ABSPATH' ) || exit;
 

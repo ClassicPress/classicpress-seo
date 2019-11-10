@@ -3,11 +3,11 @@
  * The Tools Class.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Status
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Status
  */
 
-namespace ClassicPress_SEO\Status;
+namespace Classic_SEO\Status;
 
 /**
  * Tools class.
@@ -58,8 +58,8 @@ class Tools {
 	private function get_tools() {
 		return [
 			'clear_transients'    => [
-				'title'       => __( 'ClassicPress SEO transients', 'cpseo' ),
-				'description' => __( 'This tool will clear all the transients created by the ClassicPress SEO.', 'cpseo' ),
+				'title'       => __( 'Classic SEO transients', 'cpseo' ),
+				'description' => __( 'This tool will clear all the transients created by the Classic SEO.', 'cpseo' ),
 				'button_text' => __( 'Clear transients', 'cpseo' ),
 			],
 
@@ -113,7 +113,7 @@ class Tools {
 			delete_option( $transient );
 		}
 
-		return __( 'ClassicPress SEO transients cleared.', 'cpseo' );
+		return __( 'Classic SEO transients cleared.', 'cpseo' );
 	}
 
 	/**

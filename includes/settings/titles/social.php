@@ -2,8 +2,8 @@
 /**
  * The social settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
 $cmb->add_field([
@@ -11,7 +11,7 @@ $cmb->add_field([
 	'type' => 'text',
 	'name' => esc_html__( 'Facebook Page URL', 'cpseo' ),
 	'desc' => esc_html__( 'Enter your complete Facebook page URL here. eg:', 'cpseo' ) .
-		'<br><code>' . htmlspecialchars( 'https://www.facebook.com/ClassicPress_SEO/' ) . '</code>',
+		'<br><code>' . htmlspecialchars( 'https://www.facebook.com/Classic_SEO/' ) . '</code>',
 ]);
 
 $cmb->add_field([
@@ -27,7 +27,7 @@ $cmb->add_field([
 	'type' => 'text',
 	'name' => esc_html__( 'Facebook Admin', 'cpseo' ),
 	/* translators: numeric user ID link */
-	'desc' => sprintf( esc_html__( 'Enter %s. Use a comma to separate multiple IDs. Alternatively, you can enter an app ID below.', 'cpseo' ), '<a href="https://findmyfbid.com/?utm_campaign=ClassicPress+SEO" target="_blank">numeric user ID</a>' ),
+	'desc' => sprintf( esc_html__( 'Enter %s. Use a comma to separate multiple IDs. Alternatively, you can enter an app ID below.', 'cpseo' ), '<a href="https://findmyfbid.com/?utm_campaign=Classic+SEO" target="_blank">numeric user ID</a>' ),
 ]);
 
 $cmb->add_field([
@@ -35,7 +35,7 @@ $cmb->add_field([
 	'type' => 'text',
 	'name' => esc_html__( 'Facebook App', 'cpseo' ),
 	/* translators: numeric app ID link */
-	'desc' => sprintf( esc_html__( 'Enter %s. Alternatively, you can enter a user ID above.', 'cpseo' ), '<a href="https://developers.facebook.com/apps?utm_campaign=ClassicPress+SEO" target="_blank">numeric app ID</a>' ),
+	'desc' => sprintf( esc_html__( 'Enter %s. Alternatively, you can enter a user ID above.', 'cpseo' ), '<a href="https://developers.facebook.com/apps?utm_campaign=Classic+SEO" target="_blank">numeric app ID</a>' ),
 ]);
 
 $cmb->add_field([
@@ -50,14 +50,14 @@ $cmb->add_field([
 	'type' => 'text',
 	'name' => esc_html__( 'Twitter Profile URL', 'cpseo' ),
 	'desc' => esc_html__( 'Enter your complete Twitter Profile URL here. eg:', 'cpseo' ) .
-		'<br><code>' . htmlspecialchars( 'https://twitter.com/ClassicPress_SEO/' ) . '</code>',
+		'<br><code>' . htmlspecialchars( 'https://twitter.com/Classic_SEO/' ) . '</code>',
 ]);
 
 $cmb->add_field([
 	'id'   => 'cpseo_twitter_author_names',
 	'type' => 'text',
 	'name' => esc_html__( 'Twitter Username', 'cpseo' ),
-	'desc' => wp_kses_post( __( 'Enter the Twitter username of the author to add <code>twitter:creator</code> tag to posts. eg: <code>ClassicPress_SEO</code>', 'cpseo' ) ),
+	'desc' => wp_kses_post( __( 'Enter the Twitter username of the author to add <code>twitter:creator</code> tag to posts. eg: <code>Classic_SEO</code>', 'cpseo' ) ),
 ]);
 
 $cmb->add_field([
@@ -65,7 +65,7 @@ $cmb->add_field([
 	'type' => 'text',
 	'name' => esc_html__( 'Google Places', 'cpseo' ),
 	/* translators: How to find it? link */
-	'desc' => sprintf( esc_html__( 'Enter full URL of your Google Places listing here. %s', 'cpseo' ), '<a href="https://developers.google.com/maps/documentation/urls/guide?utm_campaign=ClassicPress+SEO" target="_blank">How to find it?</a>' ),
+	'desc' => sprintf( esc_html__( 'Enter full URL of your Google Places listing here. %s', 'cpseo' ), '<a href="https://developers.google.com/maps/documentation/urls/guide?utm_campaign=Classic+SEO" target="_blank">How to find it?</a>' ),
 ]);
 
 $cmb->add_field([

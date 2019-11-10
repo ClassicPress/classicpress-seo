@@ -2,11 +2,11 @@
 /**
  * The images settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $cmb->add_field([
 	'id'      => 'cpseo_strip_category_base',

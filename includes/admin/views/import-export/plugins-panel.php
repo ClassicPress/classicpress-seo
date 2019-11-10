@@ -2,11 +2,11 @@
 /**
  * Plugins panel template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-use ClassicPress_SEO\Admin\Importers\Detector;
+use Classic_SEO\Admin\Importers\Detector;
 
 $detector = new Detector;
 $plugins  = $detector->detect();

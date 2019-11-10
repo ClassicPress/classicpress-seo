@@ -2,11 +2,11 @@
 /**
  * Sitemap - Authors
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
  */
 
-use ClassicPress_SEO\Helpers\WordPress;
+use Classic_SEO\Helpers\WordPress;
 
 $roles   = WordPress::get_roles();
 $default = $roles;

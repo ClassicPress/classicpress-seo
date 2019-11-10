@@ -2,11 +2,11 @@
 /**
  * The post type settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $post_type     = $tab['post_type'];
 $post_type_obj = get_post_type_object( $post_type );
@@ -38,7 +38,7 @@ $cmb->add_field([
 	'desc'            => sprintf( esc_html__( 'Default title tag for single %s pages. This can be changed on a per-post basis on the post editor screen.', 'cpseo' ), $name ),
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%title% %page% %sep% %sitename%',
-	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_textfield' ],
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_textfield' ],
 ]);
 
 $cmb->add_field([

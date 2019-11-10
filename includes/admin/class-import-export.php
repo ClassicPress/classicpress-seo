@@ -3,21 +3,21 @@
  * The Import Export Class
  *
  * @since      0.2.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Runner;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Page;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\WordPress;
-use ClassicPress_SEO\Admin\Importers\Detector;
+use Classic_SEO\Helper;
+use Classic_SEO\Runner;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Page;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Admin\Importers\Detector;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -67,7 +67,7 @@ class Import_Export implements Runner {
 			]
 		);
 
-		Helper::add_json( 'importConfirm', esc_html__( 'Are you sure you want to import settings into ClassicPress SEO? Your current configuration will be saved as a backup.', 'cpseo' ) );
+		Helper::add_json( 'importConfirm', esc_html__( 'Are you sure you want to import settings into Classic SEO? Your current configuration will be saved as a backup.', 'cpseo' ) );
 		Helper::add_json( 'restoreConfirm', esc_html__( 'Are you sure you want to restore this backup? Your current configuration will be overwritten.', 'cpseo' ) );
 		Helper::add_json( 'deleteBackupConfirm', esc_html__( 'Are you sure you want to delete this backup?', 'cpseo' ) );
 		Helper::add_json( 'cleanPluginConfirm', esc_html__( 'Are you sure you want to remove all traces of this plugin?', 'cpseo' ) );
@@ -345,12 +345,12 @@ class Import_Export implements Runner {
 	 */
 	private function set_redirections( $redirections ) {
 		foreach ( $redirections as $key => $redirection ) {
-			$matched = \ClassicPress_SEO\Redirections\DB::match_redirections_source( $redirection['sources'] );
+			$matched = \Classic_SEO\Redirections\DB::match_redirections_source( $redirection['sources'] );
 			if ( ! empty( $matched ) ) {
 				continue;
 			}
 
-			\ClassicPress_SEO\Redirections\DB::add(
+			\Classic_SEO\Redirections\DB::add(
 				[
 					'url_to'      => $redirection['url_to'],
 					'sources'     => unserialize( $redirection['sources'] ),
@@ -423,7 +423,7 @@ class Import_Export implements Runner {
 		}
 
 		if ( 'redirections' === $panel ) {
-			$items = \ClassicPress_SEO\Redirections\DB::get_redirections( [ 'limit' => 1000 ] );
+			$items = \Classic_SEO\Redirections\DB::get_redirections( [ 'limit' => 1000 ] );
 
 			$data['redirections'] = $items['redirections'];
 		}

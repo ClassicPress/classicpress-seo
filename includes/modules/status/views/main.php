@@ -3,11 +3,11 @@
  * SEO Status admin page contents.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
+ * @package    Classic_SEO
  */
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Param;
 
 $module  = Helper::get_module( 'status' );
 $current = Param::get( 'view', 'status' );

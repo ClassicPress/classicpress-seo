@@ -3,13 +3,13 @@
  * This class handles the category and author rewrites.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Core
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Core
  */
 
-namespace ClassicPress_SEO;
+namespace Classic_SEO;
 
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -31,14 +31,14 @@ class Rewrite {
 			$this->filter( 'category_rewrite_rules', 'category_rewrite_rules' );
 			$this->filter( 'term_link', 'no_category_base', 10, 3 );
 
-			add_action( 'created_category', 'ClassicPress_SEO\\Helper::schedule_flush_rewrite' );
-			add_action( 'delete_category', 'ClassicPress_SEO\\Helper::schedule_flush_rewrite' );
-			add_action( 'edited_category', 'ClassicPress_SEO\\Helper::schedule_flush_rewrite' );
+			add_action( 'created_category', 'Classic_SEO\\Helper::schedule_flush_rewrite' );
+			add_action( 'delete_category', 'Classic_SEO\\Helper::schedule_flush_rewrite' );
+			add_action( 'edited_category', 'Classic_SEO\\Helper::schedule_flush_rewrite' );
 		}
 
 		if ( ! Helper::get_settings( 'titles.cpseo_disable_author_archives' ) ) {
 			if ( ! empty( Helper::get_settings( 'titles.cpseo_url_author_base' ) ) ) {
-				add_action( 'init', 'ClassicPress_SEO\\Rewrite::change_author_base', 4 );
+				add_action( 'init', 'Classic_SEO\\Rewrite::change_author_base', 4 );
 			}
 
 			$this->filter( 'author_link', 'author_link', 10, 3 );
@@ -95,7 +95,7 @@ class Rewrite {
 		$this->remove_filter( 'category_rewrite_rules', 'category_rewrite_rules' );
 		$this->remove_filter( 'term_link', 'no_category_base', 10 );
 
-		remove_action( 'init', 'ClassicPress_SEO\\Rewrite::change_author_base', 4 );
+		remove_action( 'init', 'Classic_SEO\\Rewrite::change_author_base', 4 );
 	}
 
 	/**

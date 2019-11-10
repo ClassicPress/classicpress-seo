@@ -3,14 +3,14 @@
  * The CMB2 fields for the plugin.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
-use ClassicPress_SEO\Runner;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Runner;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -3,14 +3,14 @@
  * The Breadcrumbs.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Frontend
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Frontend
  */
 
-namespace ClassicPress_SEO\Frontend;
+namespace Classic_SEO\Frontend;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

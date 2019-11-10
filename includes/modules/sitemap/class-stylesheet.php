@@ -3,15 +3,15 @@
  * The Sitemap Stylesheet
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap;
+namespace Classic_SEO\Sitemap;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

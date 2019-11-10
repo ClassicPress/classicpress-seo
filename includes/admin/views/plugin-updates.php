@@ -2,13 +2,13 @@
 /**
  * Plugin updates template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
-$current_version = CPSEO_VERSION;
+$current_version = CLASSICSEO_VERSION;
 $latest_version  = '0.0.5';
 $is_updateable   = version_compare( $current_version, $latest_version, '<' );
 $class           = $is_updateable ? 'status-red' : 'status-green';

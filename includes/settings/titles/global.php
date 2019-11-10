@@ -2,11 +2,11 @@
 /**
  * The general settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $cmb->add_field([
 	'id'                => 'cpseo_robots_global',
@@ -33,7 +33,7 @@ $cmb->add_field([
 	'options'         => Helper::choices_separator( Helper::get_settings( 'titles.cpseo_title_separator' ) ),
 	'default'         => '-',
 	'attributes'      => [ 'data-preview' => 'title' ],
-	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_htmlentities' ],
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_htmlentities' ],
 ]);
 
 if ( ! current_theme_supports( 'title-tag' ) ) {

@@ -3,20 +3,20 @@
  * The 404 Monitor Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Monitor
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Monitor
 
  */
 
-namespace ClassicPress_SEO\Monitor;
+namespace Classic_SEO\Monitor;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Module\Base;
-use ClassicPress_SEO\Admin\Page;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Arr;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\WordPress;
+use Classic_SEO\Helper;
+use Classic_SEO\Module\Base;
+use Classic_SEO\Admin\Page;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Arr;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -36,7 +36,7 @@ class Admin extends Base {
 			[
 				'id'             => '404-monitor',
 				'directory'      => $directory,
-				'table'          => 'ClassicPress_SEO\Monitor\Table',
+				'table'          => 'Classic_SEO\Monitor\Table',
 				'help'           => [
 					'title' => esc_html__( '404 Monitor', 'cpseo' ),
 					'view'  => $directory . '/views/help.php',

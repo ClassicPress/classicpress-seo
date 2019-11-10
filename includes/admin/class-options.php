@@ -3,20 +3,20 @@
  * The option page functionality of the plugin.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
 use WP_Http;
 use CMB2_hookup;
-use ClassicPress_SEO\CMB2;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Replace_Vars;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\CMB2;
+use Classic_SEO\Helper;
+use Classic_SEO\Replace_Vars;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 

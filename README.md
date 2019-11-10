@@ -1,6 +1,6 @@
-# ClassicPress SEO Plugin (Experimental)
+# Classic SEO Plugin (Experimental)
 
-ClassicPress SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help improve your search engine rankings.
+Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help improve your search engine rankings.
 
 This plugin was created largely as a result of the following ClassicPress petitions:
 
@@ -15,14 +15,17 @@ This plugin was created largely as a result of the following ClassicPress petiti
 
 **As this plugin is still in the development & testing stage, please do not use it on a production site.**
 
-## Versioning
+## Credits
+This is a fork of Rank Math.
 
-ClassicPress SEO will be maintained under the Semantic Versioning guidelines as much as possible. Releases will be numbered
+## Versioning
+Classic SEO will be maintained under the Semantic Versioning guidelines. Releases will be numbered
 with the following format:
 
 `<major>.<minor>.<patch>`
 
-For more information on SemVer, please visit http://semver.org.
+## Support
+If you find a but, please create an issue on the[issues page](https://github.com/ClassicPress-research/classicpress-seo/issues)
 
 ## Changelog
 

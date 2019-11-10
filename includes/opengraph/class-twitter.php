@@ -3,14 +3,14 @@
  * This class handles the Twitter card functionality.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\OpenGraph
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\OpenGraph
  */
 
-namespace ClassicPress_SEO\OpenGraph;
+namespace Classic_SEO\OpenGraph;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Str;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 

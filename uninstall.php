@@ -16,7 +16,7 @@
  * general skeleton and outline for how the file should work.
  *
  * @since   0.1.5
- * @package   ClassicPress_SEO
+ * @package   Classic_SEO
  */
 
 // If uninstall not called from ClassicPress, then exit.
@@ -51,7 +51,7 @@ if ( true === apply_filters( 'cpseo_clear_data_on_uninstall', false ) ) {
 	 */
 	include dirname( __FILE__ ) . '/vendor/autoload.php';
 
-	\ClassicPress_SEO\Role_Manager\Capability_Manager::get()->remove_capabilities();
+	\Classic_SEO\Role_Manager\Capability_Manager::get()->remove_capabilities();
 
 	// Clear any cached data that has been removed.
 	wp_cache_flush();

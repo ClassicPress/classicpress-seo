@@ -3,21 +3,21 @@
  * The metabox functionality of the plugin.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
 use CMB2_hookup;
-use ClassicPress_SEO\CMB2;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Runner;
-use ClassicPress_SEO\Replace_Vars;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
-use ClassicPress_SEO\Admin\Param;
+use Classic_SEO\CMB2;
+use Classic_SEO\Helper;
+use Classic_SEO\Runner;
+use Classic_SEO\Replace_Vars;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
+use Classic_SEO\Admin\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -52,7 +52,7 @@ class Metabox implements Runner {
 	public function enqueue() {
 		// Early bail if we're not on the valid screens or if it's WPBakery's Frontend editor.
 		$screen = get_current_screen();
-		if ( ! in_array( $screen->base, array( 'post', 'term', 'profile', 'user-edit' ), true ) || ( class_exists( 'Vc_Manager' ) && \ClassicPress_SEO\Helpers\Param::get( 'vc_action' ) ) ) {
+		if ( ! in_array( $screen->base, array( 'post', 'term', 'profile', 'user-edit' ), true ) || ( class_exists( 'Vc_Manager' ) && \Classic_SEO\Helpers\Param::get( 'vc_action' ) ) ) {
 			return;
 		}
 
@@ -74,16 +74,16 @@ class Metabox implements Runner {
 			]
 		);
 
-		$js = CPSEO_PLUGIN_URL . 'assets/admin/js/';
-		wp_enqueue_script( 'jquery-caret', CPSEO_PLUGIN_URL . 'assets/vendor/jquery.caret.min.js', [ 'jquery' ], '1.3.3', true );
+		$js = CLASSICSEO_PLUGIN_URL . 'assets/admin/js/';
+		wp_enqueue_script( 'jquery-caret', CLASSICSEO_PLUGIN_URL . 'assets/vendor/jquery.caret.min.js', [ 'jquery' ], '1.3.3', true );
 		wp_enqueue_script( 'jquery-tag-editor', $js . 'jquery.tag-editor.js', [ 'jquery-ui-autocomplete', 'jquery-caret' ], '1.0.21', true );
-		wp_enqueue_script( 'cpseo-assessor', $js . 'assessor.js', null, CPSEO_VERSION, true );
+		wp_enqueue_script( 'cpseo-assessor', $js . 'assessor.js', null, CLASSICSEO_VERSION, true );
 
 		if ( ! wp_script_is( 'wp-hooks', 'registered' ) ) {
-			wp_register_script( 'wp-hooks', CPSEO_PLUGIN_URL . 'assets/vendor/hooks.js', [], CPSEO_VERSION, true );
+			wp_register_script( 'wp-hooks', CLASSICSEO_PLUGIN_URL . 'assets/vendor/hooks.js', [], CLASSICSEO_VERSION, true );
 		}
 		if ( ! wp_script_is( 'lodash', 'registered' ) ) {
-			wp_register_script( 'lodash', CPSEO_PLUGIN_URL . 'assets/vendor/lodash.js', [], CPSEO_VERSION );
+			wp_register_script( 'lodash', CLASSICSEO_PLUGIN_URL . 'assets/vendor/lodash.js', [], CLASSICSEO_VERSION );
 		}
 
 		if ( Admin_Helper::is_post_edit() ) {
@@ -96,14 +96,14 @@ class Metabox implements Runner {
 			Helper::add_json( 'noFollowExternalLinks', Helper::get_settings( 'general.cpseo_nofollow_external_links' ) );
 			Helper::add_json( 'featuredImageNotice', esc_html__( 'The featured image should be at least 200 by 200 pixels to be picked up by Facebook and other social media sites.', 'cpseo' ) );
 
-			wp_enqueue_script( 'cpseo-post-metabox', $js . 'post-metabox.js', [ 'lodash', 'clipboard', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'cpseo-validate', 'wp-hooks' ], CPSEO_VERSION, true );
+			wp_enqueue_script( 'cpseo-post-metabox', $js . 'post-metabox.js', [ 'lodash', 'clipboard', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'cpseo-validate', 'wp-hooks' ], CLASSICSEO_VERSION, true );
 		}
 
 		if ( Admin_Helper::is_term_edit() ) {
 			Helper::add_json( 'objectID', Param::request( 'tag_ID', 0, FILTER_VALIDATE_INT ) );
 			Helper::add_json( 'objectType', 'term' );
 
-			wp_enqueue_script( 'cpseo-term-metabox', $js . 'term-metabox.js', [ 'lodash', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'wp-hooks' ], CPSEO_VERSION, true );
+			wp_enqueue_script( 'cpseo-term-metabox', $js . 'term-metabox.js', [ 'lodash', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'wp-hooks' ], CLASSICSEO_VERSION, true );
 		}
 
 		if ( $this->is_user_metabox() ) {
@@ -111,7 +111,7 @@ class Metabox implements Runner {
 			Helper::add_json( 'objectID', $user_id );
 			Helper::add_json( 'objectType', 'user' );
 
-			wp_enqueue_script( 'cpseo-user-metabox', $js . 'user-metabox.js', [ 'lodash', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'wp-hooks' ], CPSEO_VERSION, true );
+			wp_enqueue_script( 'cpseo-user-metabox', $js . 'user-metabox.js', [ 'lodash', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'wp-hooks' ], CLASSICSEO_VERSION, true );
 		}
 
 		$this->assessor();
@@ -128,7 +128,7 @@ class Metabox implements Runner {
 		$cmb = new_cmb2_box(
 			[
 				'id'               => $this->metabox_id,
-				'title'            => '<span class="score-icon">' . esc_html__( 'ClassicPress SEO', 'cpseo' ) . '</span>',
+				'title'            => '<span class="score-icon">' . esc_html__( 'Classic SEO', 'cpseo' ) . '</span>',
 				'object_types'     => $this->get_object_types(),
 				'taxonomies'       => Helper::get_allowed_taxonomies(),
 				'new_term_section' => false,
@@ -344,6 +344,14 @@ class Metabox implements Runner {
 
 	/**
 	 * Get metabox priority.
+	 *
+	 * Filter to change position of seo metabox on post edit page
+	 *
+	 * Example usage: 
+	 * function cpseo_change_metabox_priority() {
+     *     return 'low';
+	 * }
+	 * add_filter( 'cpseo/metabox/priority', 'cpseo_change_metabox_priority' );
 	 *
 	 * @return string
 	 */

@@ -3,14 +3,14 @@
  * The Conditional helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Admin\Admin_Helper;
+use Classic_SEO\Helper;
+use Classic_SEO\Admin\Admin_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -115,7 +115,7 @@ trait Conditional {
 	}
 	
 	/**
-	 * Check if the site is connected to the ClassicPress SEO API.
+	 * Check if the site is connected to the Classic SEO API.
 	 *
 	 * @return bool
 	 */

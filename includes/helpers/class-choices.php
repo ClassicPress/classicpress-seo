@@ -3,14 +3,14 @@
  * The Choices helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Admin\Admin_Helper;
+use Classic_SEO\Helper;
+use Classic_SEO\Admin\Admin_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -28,8 +28,8 @@ trait Choices {
 	 * @return array
 	 */
 	public static function choices_overlay_images( $output = 'object' ) {
-		$uri = CPSEO_PLUGIN_URL . 'assets/admin/img/';
-		$dir = CPSEO_PATH . 'assets/admin/img/';
+		$uri = CLASSICSEO_PLUGIN_URL . 'assets/admin/img/';
+		$dir = CLASSICSEO_PATH . 'assets/admin/img/';
 
 		/**
 		 * Allow developers to add/remove overlay images.

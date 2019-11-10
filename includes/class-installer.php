@@ -5,17 +5,17 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Core
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Core
 
  */
 
-namespace ClassicPress_SEO;
+namespace Classic_SEO;
 
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Watcher;
-use ClassicPress_SEO\Helpers\WordPress;
-use ClassicPress_SEO\Role_Manager\Capability_Manager;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Watcher;
+use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Role_Manager\Capability_Manager;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -30,8 +30,8 @@ class Installer {
 	 * Bind all events.
 	 */
 	public function __construct() {
-		register_activation_hook( CPSEO_FILE, [ $this, 'activation' ] );
-		register_deactivation_hook( CPSEO_FILE, [ $this, 'deactivation' ] );
+		register_activation_hook( CLASSICSEO_FILE, [ $this, 'activation' ] );
+		register_deactivation_hook( CLASSICSEO_FILE, [ $this, 'deactivation' ] );
 
 		$this->action( 'wp', 'create_cron_jobs' );
 		$this->action( 'wpmu_new_blog', 'activate_blog' );
@@ -40,7 +40,7 @@ class Installer {
 	}
 
 	/**
-	 * Do things when activating ClassicPress SEO.
+	 * Do stuff when activating Classic SEO.
 	 *
 	 * @param bool $network_wide Whether the plugin is being activated network-wide.
 	 */
@@ -54,7 +54,7 @@ class Installer {
 	}
 
 	/**
-	 * Do things when deactivating ClassicPress SEO.
+	 * Do stuff when deactivating Classic SEO.
 	 *
 	 * @param bool $network_wide Whether the plugin is being activated network-wide.
 	 */
@@ -85,7 +85,7 @@ class Installer {
 	/**
 	 * Uninstall tables when MU blog is deleted.
 	 *
-	 * @param  array $tables List of tables that will be deleted by WP.
+	 * @param  array $tables List of tables that will be deleted by CP.
 	 * @return array
 	 */
 	public function on_delete_blog( $tables ) {
@@ -129,8 +129,8 @@ class Installer {
 		$current_version    = get_option( 'cpseo_version', null );
 		$current_db_version = get_option( 'cpseo_db_version', null );
 
-		$this->create_tables();
-		$this->create_options();
+		//$this->create_tables();
+		//$this->create_options();
 		$this->set_capabilities();
 		$this->create_cron_jobs();
 
@@ -139,8 +139,8 @@ class Installer {
 		}
 
 		// Update to latest version.
-		update_option( 'cpseo_version', CPSEO_VERSION );
-		update_option( 'cpseo_db_version', CPSEO_DB_VERSION );
+		update_option( 'cpseo_version', CLASSICSEO_VERSION );
+		update_option( 'cpseo_db_version', CLASSICSEO_DB_VERSION );
 
 		// Save install date.
 		if ( false === boolval( get_option( 'cpseo_install_date' ) ) ) {
@@ -245,7 +245,7 @@ class Installer {
 	 */
 	private function create_options() {
 		$this->create_misc_options();
-		$this->create_general_options();
+		//$this->create_general_options();
 		$this->create_titles_sitemaps_options();
 	}
 

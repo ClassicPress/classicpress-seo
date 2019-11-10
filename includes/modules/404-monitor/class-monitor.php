@@ -3,20 +3,20 @@
  * The 404 Monitor Module.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Monitor
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Monitor
 
  */
 
-namespace ClassicPress_SEO\Monitor;
+namespace Classic_SEO\Monitor;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Arr;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Arr;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 

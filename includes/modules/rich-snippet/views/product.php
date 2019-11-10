@@ -2,8 +2,8 @@
 /**
  * Metabox - Product Rich Snippet
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
 $product = [ [ 'cpseo_rich_snippet', 'product' ] ];
