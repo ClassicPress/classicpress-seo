@@ -3,17 +3,17 @@
  * The Rich Snippet Shortcode
  *
  * @since      1.0.24
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
 
  */
 
-namespace ClassicPress_SEO\RichSnippet;
+namespace Classic_SEO\RichSnippet;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Traits\Shortcode;
-use ClassicPress_SEO\Helpers\Str;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Traits\Shortcode;
+use Classic_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 

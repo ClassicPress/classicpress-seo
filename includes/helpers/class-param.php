@@ -3,11 +3,11 @@
  * The Helper class that provides easy access to accessing params from $_GET, $_POST and $_REQUEST.
  *
  * @since      0.5.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
 /**
  * Param class.

@@ -5,16 +5,16 @@
  * This file contains functions needed on the admin screens.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\WordPress;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 

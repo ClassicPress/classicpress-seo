@@ -3,14 +3,14 @@
  * The WooCommerce register opengraph.
  *
  * @since      1.0.32
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WooCommerce
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WooCommerce
 
  */
 
-namespace ClassicPress_SEO\WooCommerce;
+namespace Classic_SEO\WooCommerce;
 
-use ClassicPress_SEO\OpenGraph\Image as OpenGraph_Image;
+use Classic_SEO\OpenGraph\Image as OpenGraph_Image;
 
 defined( 'ABSPATH' ) || exit;
 

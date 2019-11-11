@@ -3,12 +3,12 @@
  * The API helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -54,7 +54,7 @@ trait Api {
 	 * @param mixed  $value       The data itself can be either a single or an array.
 	 * @param string $object_name Name for the JavaScript object. Passed directly, so it should be qualified JS variable.
 	 */
-	public static function add_json( $key, $value, $object_name = 'classicPress' ) {
+	public static function add_json( $key, $value, $object_name = 'classicSEO' ) {
 		cpseo()->json->add( $key, $value, $object_name );
 	}
 
@@ -64,7 +64,7 @@ trait Api {
 	 * @param string $key         Unique identifier.
 	 * @param string $object_name Name for the JavaScript object. Passed directly, so it should be qualified JS variable.
 	 */
-	public static function remove_json( $key, $object_name = 'classicPress' ) {
+	public static function remove_json( $key, $object_name = 'classicSEO' ) {
 		cpseo()->json->remove( $key, $object_name );
 	}
 }

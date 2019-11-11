@@ -3,15 +3,15 @@
  * The Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Module
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Module
  */
 
-namespace ClassicPress_SEO\Module;
+namespace Classic_SEO\Module;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -51,7 +51,7 @@ class Manager {
 		$this->filter( 'cpseo/modules', 'setup_3rd_party', 1 );
 
 		$this->action( 'plugins_loaded', 'load_modules', 11 );
-		add_action( 'cpseo/module_changed', [ '\ClassicPress_SEO\Admin\Watcher', 'module_changed' ], 10, 2 );
+		add_action( 'cpseo/module_changed', [ '\Classic_SEO\Admin\Watcher', 'module_changed' ], 10, 2 );
 	}
 
 	/**
@@ -82,7 +82,7 @@ class Manager {
 		$modules['404-monitor'] = [
 			'title'    => esc_html__( '404 Monitor', 'cpseo' ),
 			'desc'     => esc_html__( 'Records the URLs that return 404 Errors.', 'cpseo' ),
-			'class'    => 'ClassicPress_SEO\Monitor\Monitor',
+			'class'    => 'Classic_SEO\Monitor\Monitor',
 			'icon'     => 'dashicons-editor-unlink',
 			'settings' => Helper::get_admin_url( 'options-general' ) . '#setting-panel-404-monitor',
 		];
@@ -90,7 +90,7 @@ class Manager {
 		$modules['local-seo'] = [
 			'title'    => esc_html__( 'Local SEO & Google Knowledge Graph', 'cpseo' ),
 			'desc'     => esc_html__( 'Optimize your website and posts for local searches.', 'cpseo' ),
-			'class'    => 'ClassicPress_SEO\Local_Seo\Local_Seo',
+			'class'    => 'Classic_SEO\Local_Seo\Local_Seo',
 			'icon'     => 'dashicons-location-alt',
 			'settings' => Helper::get_admin_url( 'options-titles' ) . '#setting-panel-local',
 		];
@@ -98,7 +98,7 @@ class Manager {
 		$modules['redirections'] = [
 			'title'    => esc_html__( 'Redirections', 'cpseo' ),
 			'desc'     => esc_html__( 'Redirect non-existent content with 301 and 302 status codes.', 'cpseo' ),
-			'class'    => 'ClassicPress_SEO\Redirections\Redirections',
+			'class'    => 'Classic_SEO\Redirections\Redirections',
 			'icon'     => 'dashicons-randomize',
 			'settings' => Helper::get_admin_url( 'options-general' ) . '#setting-panel-redirections',
 		];
@@ -106,7 +106,7 @@ class Manager {
 		$modules['rich-snippet'] = [
 			'title'    => esc_html__( 'Rich Snippets', 'cpseo' ),
 			'desc'     => esc_html__( 'Enable support for the Rich Snippets.', 'cpseo' ),
-			'class'    => 'ClassicPress_SEO\RichSnippet\RichSnippet',
+			'class'    => 'Classic_SEO\RichSnippet\RichSnippet',
 			'icon'     => 'dashicons-awards',
 			'settings' => Helper::get_admin_url( 'options-titles' ) . '#setting-panel-post-type-post',
 		];
@@ -114,7 +114,7 @@ class Manager {
 		$modules['sitemap'] = [
 			'title'    => esc_html__( 'Sitemap', 'cpseo' ),
 			'desc'     => esc_html__( 'Enable sitemap feature.', 'cpseo' ),
-			'class'    => 'ClassicPress_SEO\Sitemap\Sitemap',
+			'class'    => 'Classic_SEO\Sitemap\Sitemap',
 			'icon'     => 'dashicons-networking',
 			'settings' => Helper::get_admin_url( 'options-sitemap' ),
 		];
@@ -122,7 +122,7 @@ class Manager {
 		$modules['link-counter'] = [
 			'title' => esc_html__( 'Link Counter', 'cpseo' ),
 			'desc'  => esc_html__( 'The total number of links inside your posts.', 'cpseo' ),
-			'class' => 'ClassicPress_SEO\Links\Links',
+			'class' => 'Classic_SEO\Links\Links',
 			'icon'  => 'dashicons-admin-links',
 		];
 
@@ -140,8 +140,8 @@ class Manager {
 
 		$modules['role-manager'] = [
 			'title'    => esc_html__( 'Role Manager', 'cpseo' ),
-			'desc'     => esc_html__( 'Control who can change ClassicPress SEO settings', 'cpseo' ),
-			'class'    => 'ClassicPress_SEO\Role_Manager\Role_Manager',
+			'desc'     => esc_html__( 'Control who can change Classic SEO settings', 'cpseo' ),
+			'class'    => 'Classic_SEO\Role_Manager\Role_Manager',
 			'icon'     => 'dashicons-groups',
 			'only'     => 'admin',
 			'settings' => Helper::get_admin_url( 'role-manager' ),
@@ -162,13 +162,13 @@ class Manager {
 		$modules['robots-txt'] = [
 			'title' => esc_html__( 'Robots Txt', 'cpseo' ),
 			'only'  => 'internal',
-			'class' => 'ClassicPress_SEO\Robots_Txt',
+			'class' => 'Classic_SEO\Robots_Txt',
 		];
 
 		$modules['status'] = [
 			'title' => esc_html__( 'Status', 'cpseo' ),
 			'only'  => 'internal',
-			'class' => 'ClassicPress_SEO\Status\Status',
+			'class' => 'Classic_SEO\Status\Status',
 		];
 
 		return $modules;
@@ -186,7 +186,7 @@ class Manager {
 			$modules['woocommerce'] = [
 				'title'         => esc_html__( 'WooCommerce', 'cpseo' ),
 				'desc'          => esc_html__( 'Optimize WooCommerce Product Pages.', 'cpseo' ),
-				'class'         => 'ClassicPress_SEO\WooCommerce\WooCommerce',
+				'class'         => 'Classic_SEO\WooCommerce\WooCommerce',
 				'icon'          => 'dashicons-cart',
 				'disabled'      => ( ! Conditional::is_woocommerce_active() ),
 				'disabled_text' => esc_html__( 'Please activate WooCommerce plugin to use this module.', 'cpseo' ),
@@ -197,7 +197,7 @@ class Manager {
 			$modules['acf'] = [
 				'title'         => esc_html__( 'ACF', 'cpseo' ),
 				'desc'          => esc_html__( 'Read and analyze content written in the Advanced Custom Fields..', 'cpseo' ),
-				'class'         => 'ClassicPress_SEO\ACF\ACF',
+				'class'         => 'Classic_SEO\ACF\ACF',
 				'icon'          => 'dashicons-editor-table',
 				'disabled'      => ( ! function_exists( 'acf' ) ),
 				'disabled_text' => esc_html__( 'Please activate ACF plugin to use this module.', 'cpseo' ),

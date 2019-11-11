@@ -3,13 +3,13 @@
  * The database helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Database\Database;
+use Classic_SEO\Database\Database;
 
 /**
  * DB class.

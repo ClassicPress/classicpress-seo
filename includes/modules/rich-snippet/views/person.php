@@ -2,8 +2,8 @@
 /**
  * Metabox - Person Rich Snippet
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
 $person = [ [ 'cpseo_rich_snippet', 'person' ] ];

@@ -3,11 +3,11 @@
  * The 404 paper.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Paper
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Paper
  */
 
-namespace ClassicPress_SEO\Paper;
+namespace Classic_SEO\Paper;
 
 defined( 'ABSPATH' ) || exit;
 

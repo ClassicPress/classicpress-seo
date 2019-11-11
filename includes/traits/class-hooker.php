@@ -3,12 +3,12 @@
  * The Hooker.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Traits
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Traits
  */
 
 
-namespace ClassicPress_SEO\Traits;
+namespace Classic_SEO\Traits;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -76,7 +76,7 @@ trait Hooker {
 	}
 
 	/**
-	 * Do action with league as prefix
+	 * Do action with Text Domain as prefix
 	 */
 	protected function do_action() {
 		$args = func_get_args();
@@ -91,7 +91,7 @@ trait Hooker {
 	}
 
 	/**
-	 * Do filter with league as prefix
+	 * Do filter with Text Domain as prefix
 	 */
 	protected function do_filter() {
 		$args = \func_get_args();

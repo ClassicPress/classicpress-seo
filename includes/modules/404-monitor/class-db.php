@@ -3,15 +3,15 @@
  * The 404 module database operations.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Monitor
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Monitor
 
  */
 
-namespace ClassicPress_SEO\Monitor;
+namespace Classic_SEO\Monitor;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Database\Database;
+use Classic_SEO\Helper;
+use Classic_SEO\Database\Database;
 
 defined( 'ABSPATH' ) || exit;
 

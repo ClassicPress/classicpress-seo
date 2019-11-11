@@ -3,16 +3,16 @@
  * The 404 Monitor Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Monitor
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Monitor
 
  */
 
-namespace ClassicPress_SEO\Monitor;
+namespace Classic_SEO\Monitor;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Admin\List_Table;
-use ClassicPress_SEO\Redirections\Cache;
+use Classic_SEO\Helper;
+use Classic_SEO\Admin\List_Table;
+use Classic_SEO\Redirections\Cache;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -1,5 +1,5 @@
 {
-    "name": "classicpress/classicpress-seo",
+    "name": "classicpress/classic-seo",
     "description": "SEO plugin for ClassicPress",
 	"keywords": [
 		"classicpress",
@@ -7,14 +7,14 @@
 	],
     "type": "classicpress-plugin",
 	"support": {
-		"issues": "https://github.com/ClassicPress-research/classicpress-seo/issues",
+		"issues": "https://github.com/ClassicPress-research/classic-seo/issues",
 		"forum": "https://forums.classicpress.net",
-		"source": "https://github.com/ClassicPress-research/classicpress-seo"
+		"source": "https://github.com/ClassicPress-research/classic-seo"
 	},
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "ClassicPress Community",
+            "name": "Tim Hughes & ClassicPress Community",
 			"homepage": "https://www.classicpress.net/contributors/"
         }
     ],

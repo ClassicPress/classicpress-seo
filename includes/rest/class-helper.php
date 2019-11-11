@@ -3,11 +3,11 @@
  * REST api helper.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Rest
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Rest
  */
 
-namespace ClassicPress_SEO\Rest;
+namespace Classic_SEO\Rest;
 
 use WP_Error;
 

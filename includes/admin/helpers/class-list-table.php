@@ -3,15 +3,15 @@
  * The List Table Base CLass.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
 			
 use WP_List_Table;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Param;
 
 /**
  * List_Table class.

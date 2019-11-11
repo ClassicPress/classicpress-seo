@@ -3,11 +3,11 @@
  * An interface for registering hooks with WordPress.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Core
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Core
  */
 
-namespace ClassicPress_SEO;
+namespace Classic_SEO;
 
 defined( 'ABSPATH' ) || exit;
 

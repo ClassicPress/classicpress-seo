@@ -1,8 +1,8 @@
 /*!
-* ClassicPress SEO - Redirections
+* Classic SEO - Redirections
 *
 * @version 0.9.0
-* @author  ClassicPress SEO
+* @author  Classic SEO
 */
 'use strict'
 
@@ -11,7 +11,7 @@
 	// Document Ready
 	$( function() {
 
-		var classicPressRedirections = {
+		var classicSEORedirections = {
 			init: function() {
 
 				this.wrap = $( '.cpseo-redirections-wrap' )
@@ -80,7 +80,7 @@
 						var input = $( this )
 						if ( ! input.val() || ! input.val().trim() ) {
 							hasError = true
-							input.addClass( 'invalid' ).after( $( '<br><span class="validation-message">' + classicPress.emptyError + '</span>' ) )
+							input.addClass( 'invalid' ).after( $( '<br><span class="validation-message">' + classicSEO.emptyError + '</span>' ) )
 						}
 					})
 
@@ -99,7 +99,7 @@
 				}
 
 				var clonedRow = row.clone()
-				clonedRow.find( '.cmb-th label' ).text( classicPress.maintenanceMode )
+				clonedRow.find( '.cmb-th label' ).text( classicSEO.maintenanceMode )
 				clonedRow.find( '.cmb2-radio-list li:lt(3)' ).remove()
 				clonedRow.find( '.cmb2-radio-list li' ).css( 'min-width', '28%' )
 				clonedRow.find( '.cmb2-radio-list li:eq(0) label' ).width( '100%' ).css( 'textAlign', 'center' )
@@ -149,7 +149,7 @@
 						if ( index < items.length - 1 ) {
 
 							// Number of items to process.
-							if ( ( classicPress.redirectionPastedContent - 1 ) <= index ) {
+							if ( ( classicSEO.redirectionPastedContent - 1 ) <= index ) {
 								return false
 							}
 
@@ -250,7 +250,7 @@
 			}
 		}
 
-		classicPressRedirections.init()
+		classicSEORedirections.init()
 
 	})
 

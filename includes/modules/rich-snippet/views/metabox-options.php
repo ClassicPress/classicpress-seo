@@ -2,12 +2,12 @@
 /**
  * Metabox - Rich Snippet Tab
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\WordPress;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\WordPress;
 
 if ( ! Helper::has_cap( 'onpage_snippet' ) ) {
 	return;
@@ -21,7 +21,7 @@ if ( ( class_exists( 'WooCommerce' ) && 'product' === $post_type ) || ( class_ex
 		'id'      => 'cpseo_woocommerce_notice',
 		'type'    => 'notice',
 		'what'    => 'info',
-		'content' => esc_html__( 'ClassicPress SEO automatically inserts additional Rich Snippet meta data for WooCommerce products. You can set the Rich Snippet Type to "None" to disable this feature and just use the default data added by WooCommerce.', 'cpseo' ),
+		'content' => esc_html__( 'Classic SEO automatically inserts additional Rich Snippet meta data for WooCommerce products. You can set the Rich Snippet Type to "None" to disable this feature and just use the default data added by WooCommerce.', 'cpseo' ),
 	]);
 
 	$cmb->add_field([

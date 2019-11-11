@@ -5,18 +5,18 @@
  * Replace '%variables%' in strings based on context.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Core
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Core
  */
 
-namespace ClassicPress_SEO;
+namespace Classic_SEO;
 
-use ClassicPress_SEO\Admin\Admin_Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Traits\Replacement;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\WordPress;
+use Classic_SEO\Admin\Admin_Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Traits\Replacement;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -2,11 +2,11 @@
 /**
  * The authors settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $dep = [ [ 'cpseo_disable_author_archives', 'off' ] ];
 

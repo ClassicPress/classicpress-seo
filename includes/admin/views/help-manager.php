@@ -2,14 +2,14 @@
 /**
  * Help page template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
 
 
 $is_network_admin  = is_network_admin();
-$is_network_active = ClassicPress_SEO\Helper::is_plugin_active_for_network();
+$is_network_active = Classic_SEO\Helper::is_plugin_active_for_network();
 $current_tab       = 'tab_cpseo_help_variables';
 
 $plugin_settings_tabs = array(

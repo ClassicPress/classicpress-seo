@@ -2,11 +2,11 @@
 /**
  * The homepage/frontpage settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 if ( 'page' === get_option( 'show_on_front' ) ) {
 	return;

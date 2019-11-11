@@ -3,14 +3,14 @@
  * The Status.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin\Importers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin\Importers
  */
 
 
-namespace ClassicPress_SEO\Admin\Importers;
+namespace Classic_SEO\Admin\Importers;
 
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

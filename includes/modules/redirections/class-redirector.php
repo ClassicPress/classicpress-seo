@@ -3,18 +3,18 @@
  * The Redirector.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
 use WP_Query;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -416,7 +416,7 @@ class Redirector {
 	 */
 	private function get_redirect_header() {
 		if ( true === $this->do_filter( 'redirection/add_redirect_header', true ) ) {
-			return 'ClassicPress SEO';
+			return 'Classic SEO';
 		}
 
 		return 'WordPress';

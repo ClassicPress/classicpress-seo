@@ -3,18 +3,18 @@
  * The class handles adding of attributes to links and images to content.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Frontend
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Frontend
  */
 
-namespace ClassicPress_SEO\Frontend;
+namespace Classic_SEO\Frontend;
 
 use stdClass;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
-use ClassicPress_SEO\Helpers\HTML;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
+use Classic_SEO\Helpers\HTML;
 
 defined( 'ABSPATH' ) || exit;
 

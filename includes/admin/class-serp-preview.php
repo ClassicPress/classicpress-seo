@@ -3,18 +3,18 @@
  * The SERP preview functionality, in the metabox.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
-use ClassicPress_SEO\CMB2;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Rewrite;
-use ClassicPress_SEO\Admin\Param;
-use ClassicPress_SEO\Helpers\WordPress;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\CMB2;
+use Classic_SEO\Helper;
+use Classic_SEO\Rewrite;
+use Classic_SEO\Admin\Param;
+use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 

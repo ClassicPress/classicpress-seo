@@ -3,25 +3,25 @@
  * The Redirections Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
 use CMB2_hookup;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Module\Base;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Admin_Helper;
-use ClassicPress_SEO\Admin\Page;
-use ClassicPress_SEO\Helpers\Arr;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\WordPress;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Module\Base;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Admin_Helper;
+use Classic_SEO\Admin\Page;
+use Classic_SEO\Helpers\Arr;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Helpers\Conditional;
 
 /**
  * Admin class.
@@ -40,7 +40,7 @@ class Admin extends Base {
 		$this->config([
 			'id'             => 'redirect',
 			'directory'      => $directory,
-			'table'          => 'ClassicPress_SEO\Redirections\Table',
+			'table'          => 'Classic_SEO\Redirections\Table',
 			'help'           => [
 				'title' => esc_html__( 'Redirections', 'cpseo' ),
 				'view'  => $directory . '/views/help.php',
@@ -73,7 +73,7 @@ class Admin extends Base {
 			Helper::add_json( 'emptyError', __( 'This field must not be empty.', 'cpseo' ) );
 		}
 
-		add_action( 'cpseo/redirection/clean_trashed', 'ClassicPress_SEO\\Redirections\\DB::periodic_clean_trash' );
+		add_action( 'cpseo/redirection/clean_trashed', 'Classic_SEO\\Redirections\\DB::periodic_clean_trash' );
 	}
 
 	/**

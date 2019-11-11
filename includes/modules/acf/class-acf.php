@@ -3,16 +3,16 @@
  * The ACF Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\modules
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\modules
  */
 
 
-namespace ClassicPress_SEO\ACF;
+namespace Classic_SEO\ACF;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Admin\Admin_Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Admin\Admin_Helper;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

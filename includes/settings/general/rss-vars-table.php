@@ -2,8 +2,8 @@
 /**
  * The webmaster variable template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
 ?>

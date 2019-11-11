@@ -5,20 +5,20 @@
  * Defines the functionality loaded both on admin and frontend.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Core
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Core
  */
 
-namespace ClassicPress_SEO;
+namespace Classic_SEO;
 
-use ClassicPress_SEO\Paper\Paper;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Meta;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Arr;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Paper\Paper;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Meta;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Arr;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -37,7 +37,7 @@ class Common {
 		$this->action( 'loginout', 'nofollow_link' );
 		$this->filter( 'register', 'nofollow_link' );
 		$this->filter( 'cpseo/excluded_taxonomies', 'default_excluded_taxonomies' );
-		add_action( 'init', [ '\ClassicPress_SEO\Replace_Vars', 'setup' ], 99 );
+		add_action( 'init', [ '\Classic_SEO\Replace_Vars', 'setup' ], 99 );
 
 		// Change Permalink for primary term.
 		$this->filter( 'post_type_link', 'post_type_link', 9, 2 );
@@ -259,9 +259,9 @@ class Common {
 
 		$items['main'] = [
 			'id'        => 'cpseo',
-			'title'     => '<span class="cpseo-icon">' . $this->get_icon() . '</span><span class="cpseo-text">' . esc_html( 'ClassicPress SEO', 'cpseo' ) . '</span>',
+			'title'     => '<span class="cpseo-icon">' . $this->get_icon() . '</span><span class="cpseo-text">' . esc_html( 'Classic SEO', 'cpseo' ) . '</span>',
 			'href'      => Helper::get_admin_url( $first_menu ),
-			'meta'      => [ 'title' => esc_html__( 'ClassicPress SEO Dashboard', 'cpseo' ) ],
+			'meta'      => [ 'title' => esc_html__( 'Classic SEO Dashboard', 'cpseo' ) ],
 			'_priority' => 10,
 		];
 
@@ -393,7 +393,7 @@ class Common {
 		}
 
 		/**
-		 * Add item to ClassicPress SEO admin bar node.
+		 * Add item to Classic SEO admin bar node.
 		 *
 		 * @param array $items Array of nodes for menu.
 		 */
@@ -616,7 +616,7 @@ class Common {
 	}
 
 	/**
-	 * Get ClassicPress SEO icon.
+	 * Get Classic SEO icon.
 	 *
 	 * @param integer $width Width of the icon.
 	 *

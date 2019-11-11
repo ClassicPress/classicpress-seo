@@ -90,8 +90,8 @@ Collect.prototype.getData = function() {
 
 Collect.prototype.filterFields = function( field_data ) {
 	return _.filter( field_data, function( field ) {
-		return ! _.contains( classicPress.acf.blacklistFields.type, field.type ) &&
-					! _.contains( classicPress.acf.blacklistFields.name, field.name ) &&
+		return ! _.contains( classicSEO.acf.blacklistFields.type, field.type ) &&
+					! _.contains( classicSEO.acf.blacklistFields.name, field.name ) &&
 					( 'key' in field )
 	})
 

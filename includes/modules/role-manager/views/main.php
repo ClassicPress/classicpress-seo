@@ -2,8 +2,8 @@
 /**
  * Help Role page template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Role_Manager
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Role_Manager
  */
 
 ?>
@@ -18,7 +18,7 @@
 			<p>
 				<?php
 					/* translators: %s is a Learn More link to the documentation */
-					printf( __( 'Control access to ClassicPress SEO settings.', 'cpseo' ) );
+					printf( __( 'Control access to Classic SEO settings.', 'cpseo' ) );
 				?>
 			</p>
 		</header>

@@ -3,20 +3,20 @@
  * The WordPress helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Post;
-use ClassicPress_SEO\Term;
-use ClassicPress_SEO\User;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\WordPress as WP_Helper;
+use Classic_SEO\Post;
+use Classic_SEO\Term;
+use Classic_SEO\User;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\WordPress as WP_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -184,7 +184,7 @@ trait WordPress {
 	 * @param int    $status   Status code to use.
 	 */
 	public static function redirect( $location, $status = 302 ) {
-		header( 'X-Redirect-By: ClassicPress SEO' );
+		header( 'X-Redirect-By: Classic SEO' );
 		wp_safe_redirect( $location, $status );
 		exit;
 	}
@@ -257,7 +257,7 @@ trait WordPress {
 	}
 
 	/**
-	 * Get ClassicPress SEO Dashboard url.
+	 * Get Classic SEO Dashboard url.
 	 *
 	 * @codeCoverageIgnore
 	 *

@@ -1,6 +1,6 @@
-# ClassicPress SEO Plugin (Experimental)
+# Classic SEO Plugin (Experimental)
 
-ClassicPress SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help improve your search engine rankings.
+Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help improve your search engine rankings.
 
 This plugin was created largely as a result of the following ClassicPress petitions:
 
@@ -15,16 +15,34 @@ This plugin was created largely as a result of the following ClassicPress petiti
 
 **As this plugin is still in the development & testing stage, please do not use it on a production site.**
 
-## Versioning
+## Credits
+This is a fork of Rank Math.
 
-ClassicPress SEO will be maintained under the Semantic Versioning guidelines as much as possible. Releases will be numbered
-with the following format:
+## Key functional differences between Classic SEO (v0.3.0-dev) and Rank Math
 
-`<major>.<minor>.<patch>`
+**Included** | **Not included**
+-------------|-----------------
+404 Monitor|Setup Wizard
+Support for ACF|Support for AMP
+Link Counter|Support for bbPress
+Local SEO / Knowledge Graph|Support for BuddyPress
+Redirections|Search Console
+Rich Snippets|Webmaster tools
+XML Sitemap|SEO Analysis
+WooCommerce|Ability to edit .htaccess
+Role Manager|Ability to edit robots.txt
+Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Removed support for Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
+Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
 
-For more information on SemVer, please visit http://semver.org.
+## Support
+If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues)
 
 ## Changelog
+
+### v 0.3.0
+- NEW: Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
+- NEW: Added ability to set metabox position on post/page/product edit pages
+- NEW: Added support for Pinterest meta tag
 
 ### v 0.2.2
 - Fixed CSS bug which prevented tab icons from displaying correctly on post edit page in admin
