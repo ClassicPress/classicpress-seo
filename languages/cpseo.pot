@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Classic SEO\n"
-"POT-Creation-Date: 2019-10-25 14:50+0100\n"
+"Project-Id-Version: Classic SEO 0.3.0\n"
+"POT-Creation-Date: 2019-11-11 17:43+0000\n"
 "PO-Revision-Date: 2019-10-19 09:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1399,8 +1399,8 @@ msgstr ""
 
 #: includes/admin/views/import-export/main.php:20
 msgid ""
-"Import your previous backed up setting. Or, Export your Classic SEO "
-"settings and meta data for backup or for reuse on a different site."
+"Import your previous backed up setting. Or, Export your Classic SEO settings "
+"and meta data for backup or for reuse on a different site."
 msgstr ""
 
 #: includes/admin/views/import-export/plugins-panel.php:17
@@ -2067,8 +2067,7 @@ msgstr ""
 #: includes/frontend/class-head.php:127
 msgid ""
 "Admin only notice: this page has no meta description set. Please edit the "
-"page to add one, or setup a template in Classic SEO -> Titles &amp; "
-"Metas."
+"page to add one, or setup a template in Classic SEO -> Titles &amp; Metas."
 msgstr ""
 
 #: includes/frontend/class-shortcodes.php:156
@@ -3428,8 +3427,8 @@ msgstr ""
 
 #: includes/modules/redirections/views/help.php:19
 msgid ""
-"Classic SEO makes it easy to set up HTTP redirects – in this article, "
-"we show you how."
+"Classic SEO makes it easy to set up HTTP redirects – in this article, we "
+"show you how."
 msgstr ""
 
 #: includes/modules/redirections/views/main.php:21
@@ -4171,8 +4170,8 @@ msgstr ""
 
 #: includes/modules/rich-snippet/views/help.php:31
 msgid ""
-"Classic SEO can format the Schema.org markup for you - that's what the "
-"Rich Snippet tab does for you."
+"Classic SEO can format the Schema.org markup for you - that's what the Rich "
+"Snippet tab does for you."
 msgstr ""
 
 #: includes/modules/rich-snippet/views/job-posting.php:16
@@ -5044,8 +5043,7 @@ msgid "Classic SEO transients"
 msgstr ""
 
 #: includes/modules/status/class-tools.php:62
-msgid ""
-"This tool will clear all the transients created by the Classic SEO."
+msgid "This tool will clear all the transients created by the Classic SEO."
 msgstr ""
 
 #: includes/modules/status/class-tools.php:63
@@ -5187,8 +5185,8 @@ msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:18
 msgid ""
-"With the Classic SEO plugin, you can easily optimize your WooCommerce "
-"store in general and product pages in particular."
+"With the Classic SEO plugin, you can easily optimize your WooCommerce store "
+"in general and product pages in particular."
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:20
@@ -5221,15 +5219,14 @@ msgstr ""
 #, php-format
 msgid ""
 "You can customize and automate the SEO Title/Description generation easily "
-"as well. Just head over to <a href=\"%1$s\">WordPress Dashboard > "
-"Classic SEO > Titles & Meta > Products</a>"
+"as well. Just head over to <a href=\"%1$s\">WordPress Dashboard > Classic "
+"SEO > Titles & Meta > Products</a>"
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:54
 msgid ""
-"You can also add rich snippets to your product pages easily with "
-"Classic SEO, apart from doing the regular SEO like you would do on "
-"posts."
+"You can also add rich snippets to your product pages easily with Classic "
+"SEO, apart from doing the regular SEO like you would do on posts."
 msgstr ""
 
 #. translators: link to local seo settings
@@ -5250,9 +5247,8 @@ msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:72
 msgid ""
-"Classic SEO offers you to remove category base from your product "
-"archive URLs so the URLs are cleaner, more SEO friendly and easier to "
-"remember."
+"Classic SEO offers you to remove category base from your product archive "
+"URLs so the URLs are cleaner, more SEO friendly and easier to remember."
 msgstr ""
 
 #. translators: link to local seo settings

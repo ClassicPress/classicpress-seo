@@ -1,11 +1,11 @@
 === Classic SEO Plugin (Experimental) ===
-Contributors: ClassicPress Community
+Contributors: Tim Hughes & ClassicPress Community
 Plugin link:  https://www.classicpress.net
 Tags: seo, classicpress, sitemap, google search console, schema, redirection
 Tested up to: 1.1.1
 Requires at least: 1.0.2
 Requires PHP: 7.0
-Stable tag: 0.2.2
+Stable tag: 0.3.0
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 

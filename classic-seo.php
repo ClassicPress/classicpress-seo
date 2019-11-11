@@ -9,7 +9,7 @@
  * Version:     0.3.0
  * Author:      Tim Hughes & ClassicPress Community
  * Author URI:  https://www.classicpress.net
- * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
+ * GitHub Plugin URI: https://github.com/ClassicPress-research/classic-seo
  * Text Domain: cpseo
  * Domain Path: /languages/
  * License:     GPLv2 or later
