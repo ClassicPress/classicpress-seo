@@ -28,8 +28,8 @@ trait Choices {
 	 * @return array
 	 */
 	public static function choices_overlay_images( $output = 'object' ) {
-		$uri = CLASSICSEO_PLUGIN_URL . 'assets/admin/img/';
-		$dir = CLASSICSEO_PATH . 'assets/admin/img/';
+		$uri = CPSEO_PLUGIN_URL . 'assets/admin/img/';
+		$dir = CPSEO_PATH . 'assets/admin/img/';
 
 		/**
 		 * Allow developers to add/remove overlay images.

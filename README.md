@@ -18,16 +18,29 @@ This plugin was created largely as a result of the following ClassicPress petiti
 ## Credits
 This is a fork of Rank Math.
 
-## Versioning
-Classic SEO will be maintained under the Semantic Versioning guidelines. Releases will be numbered
-with the following format:
+## Key functional differences between Classic SEO (v0.3.0-dev) and Rank Math
 
-`<major>.<minor>.<patch>`
+**Included** | **Not included**
+-------------|-----------------
+404 Monitor|Setup Wizard
+Support for ACF|Support for AMP
+Link Counter|Support for bbPress
+Local SEO / Knowledge Graph|Support for BuddyPress
+Redirections|Search Console
+Rich Snippets|Webmaster tools
+XML Sitemap|SEO Analysis
+WooCommerce|Ability to edit .htaccess
+Role Manager|Ability to edit robots.txt
+Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube|Social meta: Removed support for Yelp, FourSquare, Flickr, Reddit, Pinterest, SoundCloud, Tumblr and Myspace
+Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
 
 ## Support
-If you find a but, please create an issue on the[issues page](https://github.com/ClassicPress-research/classicpress-seo/issues)
+If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues)
 
 ## Changelog
+
+### v 0.3.0
+- Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
 
 ### v 0.2.2
 - Fixed CSS bug which prevented tab icons from displaying correctly on post edit page in admin

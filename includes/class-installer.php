@@ -30,8 +30,8 @@ class Installer {
 	 * Bind all events.
 	 */
 	public function __construct() {
-		register_activation_hook( CLASSICSEO_FILE, [ $this, 'activation' ] );
-		register_deactivation_hook( CLASSICSEO_FILE, [ $this, 'deactivation' ] );
+		register_activation_hook( CPSEO_FILE, [ $this, 'activation' ] );
+		register_deactivation_hook( CPSEO_FILE, [ $this, 'deactivation' ] );
 
 		$this->action( 'wp', 'create_cron_jobs' );
 		$this->action( 'wpmu_new_blog', 'activate_blog' );
@@ -129,8 +129,8 @@ class Installer {
 		$current_version    = get_option( 'cpseo_version', null );
 		$current_db_version = get_option( 'cpseo_db_version', null );
 
-		//$this->create_tables();
-		//$this->create_options();
+		$this->create_tables();
+		$this->create_options();
 		$this->set_capabilities();
 		$this->create_cron_jobs();
 
@@ -139,8 +139,8 @@ class Installer {
 		}
 
 		// Update to latest version.
-		update_option( 'cpseo_version', CLASSICSEO_VERSION );
-		update_option( 'cpseo_db_version', CLASSICSEO_DB_VERSION );
+		update_option( 'cpseo_version', CPSEO_VERSION );
+		update_option( 'cpseo_db_version', CPSEO_DB_VERSION );
 
 		// Save install date.
 		if ( false === boolval( get_option( 'cpseo_install_date' ) ) ) {
@@ -245,7 +245,7 @@ class Installer {
 	 */
 	private function create_options() {
 		$this->create_misc_options();
-		//$this->create_general_options();
+		$this->create_general_options();
 		$this->create_titles_sitemaps_options();
 	}
 
@@ -341,6 +341,7 @@ class Installer {
 			'cpseo_exclude_roles'          => $this->get_excluded_roles(),
 		];
 		$titles  = [
+			'cpseo_metabox_priority'           => 'default',
 			'cpseo_noindex_empty_taxonomies'   => 'on',
 			'cpseo_title_separator'            => '-',
 			'cpseo_capitalize_titles'          => 'off',

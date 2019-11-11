@@ -15,7 +15,7 @@
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
- * Fork of Rank Math v1.0.3x
+ * Fork of Rank Math v1.0.3
  *
  * @package   Classic_SEO
  */
@@ -44,7 +44,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $db_version = '2';
+	public $db_version = '1';
 
 	/**
 	 * Minimum version of ClassicPress required to run Classic SEO.
@@ -133,11 +133,11 @@ class Classic_SEO {
 	 */
 	public function __call( $name, $arguments ) {
 		$hash = [
-			'plugin_dir'   => CLASSICSEO_PATH,
-			'plugin_url'   => CLASSICSEO_PLUGIN_URL,
-			'includes_dir' => CLASSICSEO_PATH . 'includes/',
-			'assets'       => CLASSICSEO_PLUGIN_URL . 'assets/front/',
-			'admin_dir'    => CLASSICSEO_PATH . 'includes/admin/',
+			'plugin_dir'   => CPSEO_PATH,
+			'plugin_url'   => CPSEO_PLUGIN_URL,
+			'includes_dir' => CPSEO_PATH . 'includes/',
+			'assets'       => CPSEO_PLUGIN_URL . 'assets/front/',
+			'admin_dir'    => CPSEO_PATH . 'includes/admin/',
 		];
 
 		if ( isset( $hash[ $name ] ) ) {
@@ -227,7 +227,7 @@ class Classic_SEO {
 	 * Auto-deactivate plugin if requirements are not met, and display a notice.
 	 */
 	public function auto_deactivate() {
-		deactivate_plugins( plugin_basename( CLASSICSEO_FILE ) );
+		deactivate_plugins( plugin_basename( CPSEO_FILE ) );
 		if ( isset( $_GET['activate'] ) ) {
 			unset( $_GET['activate'] );
 		}
@@ -248,13 +248,13 @@ class Classic_SEO {
 	 * Define the plugin constants.
 	 */
 	private function define_constants() {
-		define( 'CLASSICSEO_VERSION', $this->version );
-		define( 'CLASSICSEO_DB_VERSION', $this->db_version );
-		define( 'CLASSICSEO_MINIMUM_PHP_VERSION', $this->php_version );
-		define( 'CLASSICSEO_FILE', __FILE__ );
-		define( 'CLASSICSEO_PATH', plugin_dir_path( CLASSICSEO_FILE ) );
-		define( 'CLASSICSEO_BASENAME', plugin_basename( CLASSICSEO_FILE ) );
-		define( 'CLASSICSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+		define( 'CPSEO_VERSION', $this->version );
+		define( 'CPSEO_DB_VERSION', $this->db_version );
+		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
+		define( 'CPSEO_FILE', __FILE__ );
+		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );
+		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
+		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	}
 
 	/**
@@ -295,7 +295,7 @@ class Classic_SEO {
 
 		// Add plugin action links.
 		add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 2 );
-		add_filter( 'plugin_action_links_' . plugin_basename( CLASSICSEO_FILE ), [ $this, 'plugin_action_links' ] );
+		add_filter( 'plugin_action_links_' . plugin_basename( CPSEO_FILE ), [ $this, 'plugin_action_links' ] );
 
 		// Booting.
 		add_action( 'plugins_loaded', [ $this, 'init' ], 14 );
@@ -379,7 +379,7 @@ class Classic_SEO {
 	 * @return array
 	 */
 	public function plugin_row_meta( $links, $file ) {
-		if ( plugin_basename( CLASSICSEO_FILE ) !== $file ) {
+		if ( plugin_basename( CPSEO_FILE ) !== $file ) {
 			return $links;
 		}
 

@@ -9,6 +9,20 @@
 use Classic_SEO\Helper;
 
 $cmb->add_field([
+	'id'              => 'cpseo_metabox_priority',
+	'type'            => 'radio_inline',
+	'name'            => esc_html__( 'Position of metabox', 'cpseo' ),
+	'desc'            => esc_html__( 'The position of the Classic SEO metabox on the admin post edit page', 'cpseo' ),
+	'options' => [
+		'high'		=> esc_html__( 'High', 'cpseo' ),
+		'core'		=> esc_html__( 'Core', 'cpseo' ),
+		'default'	=> esc_html__( 'Default', 'cpseo' ),
+		'low'		=> esc_html__( 'Low', 'cpseo' ),
+	],
+	'default'         => 'default',
+]);
+
+$cmb->add_field([
 	'id'                => 'cpseo_robots_global',
 	'type'              => 'multicheck',
 	'name'              => esc_html__( 'Robots Meta', 'cpseo' ),

@@ -221,7 +221,7 @@ class RankMath extends Plugin_Importer {
 	}
 	
 	/**
-	 * Copies data from RM tables to CLASSICSEO tables
+	 * Copies data from RM tables to Classic SEO tables
 	 *
 	 * @return array
 	 */

@@ -59,9 +59,9 @@ class Assets implements Runner {
 		// Scripts.
 		wp_register_script( 'clipboard', $vendor . 'clipboard.min.js', null, '2.0.0', true );
 		wp_register_script( 'validate', $vendor . 'jquery.validate.min.js', [ 'jquery' ], '1.19.0', true );
-		wp_register_script( self::PREFIX . 'validate', $js . 'validate.js', [ 'jquery' ], CLASSICSEO_VERSION, true );
-		wp_register_script( self::PREFIX . 'common', $js . 'common.js', [ 'jquery', 'validate' ], CLASSICSEO_VERSION, true );	
-		wp_register_script( self::PREFIX . 'dashboard', $js . 'dashboard.js', [ 'jquery', 'clipboard', 'validate' ], CLASSICSEO_VERSION, true );
+		wp_register_script( self::PREFIX . 'validate', $js . 'validate.js', [ 'jquery' ], CPSEO_VERSION, true );
+		wp_register_script( self::PREFIX . 'common', $js . 'common.js', [ 'jquery', 'validate' ], CPSEO_VERSION, true );	
+		wp_register_script( self::PREFIX . 'dashboard', $js . 'dashboard.js', [ 'jquery', 'clipboard', 'validate' ], CPSEO_VERSION, true );
 		wp_register_script( 'select2-rm', $vendor . 'select2/select2.min.js', null, '4.0.6-rc.1', true );
 
 		Helper::add_json( 'api', array( 'root'  => esc_url_raw( get_rest_url() ), 'nonce' => ( wp_installing() && ! is_multisite() ) ? '' : wp_create_nonce( 'wp_rest' ) ) );
@@ -83,7 +83,7 @@ class Assets implements Runner {
 	
 	
 	public function load_main_styles() {
-		wp_register_style( self::PREFIX . 'css-admin', CLASSICSEO_PLUGIN_URL . 'assets/admin/css/cpseo.css', null, CLASSICSEO_VERSION );
+		wp_register_style( self::PREFIX . 'css-admin', CPSEO_PLUGIN_URL . 'assets/admin/css/cpseo.css', null, CPSEO_VERSION );
 		wp_enqueue_style( self::PREFIX . 'css-admin' );
 	}
 	
@@ -114,7 +114,7 @@ class Assets implements Runner {
 	public function overwrite_wplink() {
 
 		wp_deregister_script( 'wplink' );
-		wp_register_script( 'wplink', CLASSICSEO_PLUGIN_URL . 'assets/admin/js/wplink.js', array ( 'jquery', 'wpdialogs' ), null, true );
+		wp_register_script( 'wplink', CPSEO_PLUGIN_URL . 'assets/admin/js/wplink.js', array ( 'jquery', 'wpdialogs' ), null, true );
 
 		wp_localize_script(
 			'wplink',

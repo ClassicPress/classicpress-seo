@@ -435,7 +435,7 @@ trait WordPress {
 			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 		}
 
-		if ( ! is_plugin_active_for_network( plugin_basename( CLASSICSEO_FILE ) ) ) {
+		if ( ! is_plugin_active_for_network( plugin_basename( CPSEO_FILE ) ) ) {
 			return false;
 		}
 
