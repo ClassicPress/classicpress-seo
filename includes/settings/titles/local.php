@@ -2,11 +2,11 @@
 /**
  * The local seo settings.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Local_Seo
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Local_Seo
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 $cmb->add_field([
 	'id'      => 'cpseo_knowledgegraph_type',

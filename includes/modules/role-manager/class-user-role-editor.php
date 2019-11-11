@@ -3,15 +3,15 @@
  * User Role Editor plugin integration.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Role_Manager
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Role_Manager
 
  */
 
-namespace Classic_SEO\Role_Manager;
+namespace ClassicPress_SEO\Role_Manager;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -47,7 +47,7 @@ class User_Role_Editor {
 	}
 
 	/**
-	 * Adds Classic SEO capability group in the User Role Editor plugin.
+	 * Adds ClassicPress SEO capability group in the User Role Editor plugin.
 	 *
 	 * @param  array $groups Current groups.
 	 * @return array Filtered list of capabilty groups.
@@ -56,7 +56,7 @@ class User_Role_Editor {
 		$groups = (array) $groups;
 
 		$groups[ self::GROUP ] = [
-			'caption' => esc_html__( 'Classic SEO', 'cpseo' ),
+			'caption' => esc_html__( 'ClassicPress SEO', 'cpseo' ),
 			'parent'  => 'custom',
 			'level'   => 3,
 		];
@@ -65,7 +65,7 @@ class User_Role_Editor {
 	}
 
 	/**
-	 * Adds capabilities to the Classic SEO group in the User Role Editor plugin.
+	 * Adds capabilities to the ClassicPress SEO group in the User Role Editor plugin.
 	 *
 	 * @param  array  $groups Current capability groups.
 	 * @param  string $cap_id Capability identifier.

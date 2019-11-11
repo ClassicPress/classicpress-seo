@@ -2,13 +2,13 @@
 /**
  * Metabox - General Tab
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Metaboxes
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Metaboxes
  */
 
-use Classic_SEO\Helper;
-use Classic_SEO\Helpers\WordPress;
-use Classic_SEO\Admin\Admin_Helper;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Helpers\WordPress;
+use ClassicPress_SEO\Admin\Admin_Helper;
 
 $cmb->add_field( array(
 	'id'   => 'cpseo_serp_preview',
@@ -21,7 +21,7 @@ $cmb->add_field( array(
 	'type'            => 'text',
 	'desc'            => esc_html__( 'This is what will appear in the first line when this post shows up in the search results.', 'cpseo' ),
 	'classes'         => 'cpseo-supports-variables',
-	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_textfield' ],
+	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_textfield' ],
 	'attributes'      => array(
 		'class'             => 'regular-text wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
@@ -56,7 +56,7 @@ $cmb->add_field( array(
 	'desc'        => sprintf( wp_kses_post( __( 'Insert keywords you want to rank for. Aim for 100/100.', 'cpseo' ) ) ),
 	'classes'     => 'nob',
 	'attributes'  => array(
-		'placeholder' => esc_html__( 'Example: Classic SEO', 'cpseo' ),
+		'placeholder' => esc_html__( 'Example: ClassicPress SEO', 'cpseo' ),
 	),
 ) );
 

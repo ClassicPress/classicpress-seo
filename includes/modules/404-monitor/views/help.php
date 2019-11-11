@@ -2,8 +2,8 @@
 /**
  * Help 404 Monitor tab.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Monitor
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Monitor
  */
 
 ?>

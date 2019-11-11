@@ -3,11 +3,11 @@
  * The JSON manager handles json output to admin and frontend.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO
  */
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
 /**
  * Json_Manager class.

@@ -3,16 +3,16 @@
  * Menbers plugin integration.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Role_Manager
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Role_Manager
 
  */
 
-namespace Classic_SEO\Role_Manager;
+namespace ClassicPress_SEO\Role_Manager;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -43,7 +43,7 @@ class Members {
 	 */
 	public function register_cap_groups() {
 		members_register_cap_group( self::GROUP, [
-			'label'    => esc_html__( 'Classic SEO', 'cpseo' ),
+			'label'    => esc_html__( 'ClassicPress SEO', 'cpseo' ),
 			'caps'     => [],
 			'icon'     => 'dashicons-chart-area',
 			'priority' => 30,

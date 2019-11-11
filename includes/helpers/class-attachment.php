@@ -3,14 +3,14 @@
  * The Attachment helpers.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Helpers
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Helpers
 
  */
 
-namespace Classic_SEO\Helpers;
+namespace ClassicPress_SEO\Helpers;
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 

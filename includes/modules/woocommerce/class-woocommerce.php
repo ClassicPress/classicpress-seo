@@ -3,17 +3,17 @@
  * The WooCommerce Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\WooCommerce
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\WooCommerce
 
  */
 
-namespace Classic_SEO\WooCommerce;
+namespace ClassicPress_SEO\WooCommerce;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -58,9 +58,9 @@ class WooCommerce extends WC_Vars {
 
 		if ( $this->remove_category_base || $this->remove_parent_slugs ) {
 			$this->filter( 'term_link', 'product_term_link', 1, 3 );
-			add_action( 'created_product_cat', 'Classic_SEO\\Helper::schedule_flush_rewrite' );
-			add_action( 'delete_product_cat', 'Classic_SEO\\Helper::schedule_flush_rewrite' );
-			add_action( 'edited_product_cat', 'Classic_SEO\\Helper::schedule_flush_rewrite' );
+			add_action( 'created_product_cat', 'ClassicPress_SEO\\Helper::schedule_flush_rewrite' );
+			add_action( 'delete_product_cat', 'ClassicPress_SEO\\Helper::schedule_flush_rewrite' );
+			add_action( 'edited_product_cat', 'ClassicPress_SEO\\Helper::schedule_flush_rewrite' );
 		}
 
 		if ( $this->remove_product_base || $this->remove_category_base ) {

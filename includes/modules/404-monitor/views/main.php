@@ -2,11 +2,11 @@
 /**
  * Main template for 404 monitor
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Monitor
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Monitor
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 
 $monitor = Helper::get_module( '404-monitor' )->admin;

@@ -3,11 +3,11 @@
  * The settings functionality of the plugin.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Core
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Core
  */
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
 defined( 'ABSPATH' ) || exit;
 

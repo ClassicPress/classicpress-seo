@@ -3,17 +3,17 @@
  * The admin post filters functionality.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Runner;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -49,7 +49,7 @@ class Post_Filters implements Runner {
 	}
 
 	/**
-	 * Filter posts in admin by Classic SEO's Filter value.
+	 * Filter posts in admin by ClassicPress SEO's Filter value.
 	 *
 	 * @param \WP_Query $query The wp_query instance.
 	 */

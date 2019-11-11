@@ -3,11 +3,11 @@
  * The Misc paper.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Paper
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Paper
  */
 
-namespace Classic_SEO\Paper;
+namespace ClassicPress_SEO\Paper;
 
 defined( 'ABSPATH' ) || exit;
 

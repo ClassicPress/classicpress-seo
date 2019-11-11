@@ -3,17 +3,17 @@
  * This code adds the Facebook metadata.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\OpenGraph
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\OpenGraph
  */
 
-namespace Classic_SEO\OpenGraph;
+namespace ClassicPress_SEO\OpenGraph;
 
 use DateInterval;
-use Classic_SEO\Helper;
-use Classic_SEO\Paper\Paper;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Conditional;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Paper\Paper;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 

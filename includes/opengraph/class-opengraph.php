@@ -3,19 +3,19 @@
  * This code adds the OpenGraph output.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\OpenGraph
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\OpenGraph
  */
 
 
-namespace Classic_SEO\OpenGraph;
+namespace ClassicPress_SEO\OpenGraph;
 
-use Classic_SEO\Post;
-use Classic_SEO\Term;
-use Classic_SEO\User;
-use Classic_SEO\Helper;
-use Classic_SEO\Paper\Paper;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Post;
+use ClassicPress_SEO\Term;
+use ClassicPress_SEO\User;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Paper\Paper;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -3,17 +3,17 @@
  * The Rich Snippet Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
 
  */
 
-namespace Classic_SEO\RichSnippet;
+namespace ClassicPress_SEO\RichSnippet;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Module\Base;
-use Classic_SEO\Admin\Admin_Helper;
-use Classic_SEO\Helpers\Arr;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Module\Base;
+use ClassicPress_SEO\Admin\Admin_Helper;
+use ClassicPress_SEO\Helpers\Arr;
 
 defined( 'ABSPATH' ) || exit;
 

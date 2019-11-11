@@ -3,16 +3,16 @@
  * The Singular Class.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
 
  */
 
-namespace Classic_SEO\RichSnippet;
+namespace ClassicPress_SEO\RichSnippet;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Conditional;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -99,20 +99,20 @@ class Singular implements Snippet {
 	 */
 	private function get_schema_class( $schema ) {
 		$data = [
-			'article'    => '\\Classic_SEO\\RichSnippet\\Article',
-			'book'       => '\\Classic_SEO\\RichSnippet\\Book',
-			'course'     => '\\Classic_SEO\\RichSnippet\\Course',
-			'event'      => '\\Classic_SEO\\RichSnippet\\Event',
-			'jobposting' => '\\Classic_SEO\\RichSnippet\\JobPosting',
-			'music'      => '\\Classic_SEO\\RichSnippet\\Music',
-			'recipe'     => '\\Classic_SEO\\RichSnippet\\Recipe',
-			'restaurant' => '\\Classic_SEO\\RichSnippet\\Restaurant',
-			'video'      => '\\Classic_SEO\\RichSnippet\\Video',
-			'person'     => '\\Classic_SEO\\RichSnippet\\Person',
-			'review'     => '\\Classic_SEO\\RichSnippet\\Review',
-			'service'    => '\\Classic_SEO\\RichSnippet\\Service',
-			'software'   => '\\Classic_SEO\\RichSnippet\\Software',
-			'product'    => '\\Classic_SEO\\RichSnippet\\Product',
+			'article'    => '\\ClassicPress_SEO\\RichSnippet\\Article',
+			'book'       => '\\ClassicPress_SEO\\RichSnippet\\Book',
+			'course'     => '\\ClassicPress_SEO\\RichSnippet\\Course',
+			'event'      => '\\ClassicPress_SEO\\RichSnippet\\Event',
+			'jobposting' => '\\ClassicPress_SEO\\RichSnippet\\JobPosting',
+			'music'      => '\\ClassicPress_SEO\\RichSnippet\\Music',
+			'recipe'     => '\\ClassicPress_SEO\\RichSnippet\\Recipe',
+			'restaurant' => '\\ClassicPress_SEO\\RichSnippet\\Restaurant',
+			'video'      => '\\ClassicPress_SEO\\RichSnippet\\Video',
+			'person'     => '\\ClassicPress_SEO\\RichSnippet\\Person',
+			'review'     => '\\ClassicPress_SEO\\RichSnippet\\Review',
+			'service'    => '\\ClassicPress_SEO\\RichSnippet\\Service',
+			'software'   => '\\ClassicPress_SEO\\RichSnippet\\Software',
+			'product'    => '\\ClassicPress_SEO\\RichSnippet\\Product',
 		];
 
 		if ( isset( $data[ $schema ] ) && class_exists( $data[ $schema ] ) ) {

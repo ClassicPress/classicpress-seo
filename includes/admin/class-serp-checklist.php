@@ -3,15 +3,15 @@
  * The SERP checklist functionality.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\CMB2;
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\CMB2;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

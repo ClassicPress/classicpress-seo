@@ -1,8 +1,8 @@
 /*!
-* Classic SEO - Status & Tools
+* ClassicPress SEO - Status & Tools
 *
 * @version 1.0.33
-* @author  Classic SEO
+* @author  ClassicPress SEO
 */
 ;( function( $ ) {
 
@@ -37,10 +37,10 @@
 
 			$this.attr( 'disabled', 'disabled' )
 			$.ajax({
-				url: classicSEO.api.root + 'cpseo/v1/toolsAction',
+				url: classicPress.api.root + 'cpseo/v1/toolsAction',
 				method: 'POST',
 				beforeSend: function( xhr ) {
-					xhr.setRequestHeader( 'X-WP-Nonce', classicSEO.api.nonce )
+					xhr.setRequestHeader( 'X-WP-Nonce', classicPress.api.nonce )
 				},
 				data: {
 					action: $this.data( 'action' )

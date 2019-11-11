@@ -3,14 +3,14 @@
  * The Notification
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO
  */
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\HTML;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\HTML;
 
 /**
  * Notification class.

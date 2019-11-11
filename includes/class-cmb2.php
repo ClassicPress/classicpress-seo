@@ -5,17 +5,17 @@
  * This class defines all code necessary to have setting pages and manager.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Core
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Core
  */
 
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
-use Classic_SEO\Admin\Admin_Helper;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Param;
-use Classic_SEO\Helpers\Conditional;
+use ClassicPress_SEO\Admin\Admin_Helper;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Param;
+use ClassicPress_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -36,7 +36,7 @@ class CMB2 {
 
 			if ( in_array( $type, [ 'meta_tab_container_open', 'tab_container_open', 'tab_container_close', 'tab_open', 'tab_close', 'raw' ], true ) ) {
 				$field->args['save_field']    = false;
-				$field->args['render_row_cb'] = [ '\Classic_SEO\CMB2', "render_{$type}" ];
+				$field->args['render_row_cb'] = [ '\ClassicPress_SEO\CMB2', "render_{$type}" ];
 			}
 			if ( 'notice' === $type ) {
 				$field->args['save_field'] = false;
@@ -171,7 +171,7 @@ class CMB2 {
 		echo '<div id="' . $field->prop( 'id' ) . '" class="cpseo-tabs">';
 		if ( Admin_Helper::is_term_profile_page() ) :
 			?>
-			<h2 class="cpseo-metabox-frame-title"><?php esc_html_e( 'Classic SEO', 'cpseo' ); ?></h2>
+			<h2 class="cpseo-metabox-frame-title"><?php esc_html_e( 'ClassicPress SEO', 'cpseo' ); ?></h2>
 		<?php endif; ?>
 		<div class="cpseo-tabs-navigation cpseo-custom wp-clearfix">
 

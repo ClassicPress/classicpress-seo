@@ -3,17 +3,17 @@
  * The admin notices.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Runner;
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Ajax;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Ajax;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -54,7 +54,7 @@ class Notices implements Runner {
 		update_option( 'cpseo_known_post_types', $current );
 
 		if ( Helper::is_module_active( 'sitemap' ) ) {
-			\Classic_SEO\Sitemap\Cache::invalidate_storage();
+			\ClassicPress_SEO\Sitemap\Cache::invalidate_storage();
 		}
 	}
 
@@ -67,7 +67,7 @@ class Notices implements Runner {
 		}
 
 		if ( cpseo()->notification->get_notification_by_id( 'plugin_not_setup' ) && ! Helper::is_configured() ) {
-			$message = printf('<b>Warning!</b> You haven\'t finished setting up your Classic SEO plugin.');
+			$message = printf('<b>Warning!</b> You haven\'t finished setting up your ClassicPress SEO plugin.');
 			Helper::add_notification(
 				$message,
 				[

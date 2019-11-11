@@ -2,11 +2,11 @@
 /**
  * Serp Preview
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Metaboxes
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Metaboxes
  */
 
-use Classic_SEO\Admin\Serp_Preview;
+use ClassicPress_SEO\Admin\Serp_Preview;
 
 $checklist = new Serp_Preview;
 $checklist->display();

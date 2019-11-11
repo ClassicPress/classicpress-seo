@@ -2,8 +2,8 @@
 /**
  * Backup panel template.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
 $backups = get_option( 'cpseo_backups', [] );

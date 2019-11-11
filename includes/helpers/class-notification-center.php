@@ -3,11 +3,11 @@
  * The Notification center handles notifications storage and display.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO
  */
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
 /**
  * Notification_Center class.

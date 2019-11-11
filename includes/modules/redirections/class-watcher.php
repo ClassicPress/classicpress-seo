@@ -3,16 +3,16 @@
  * The Redirections Watcher
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Redirections
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Redirections
 
  */
 
-namespace Classic_SEO\Redirections;
+namespace ClassicPress_SEO\Redirections;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -89,7 +89,7 @@ class Watcher {
 			Helper::add_notification(
 				sprintf(
 					// translators: %1$s: post type label, %2$s: edit redirection URL.
-					__( 'SEO Notice: you just changed the slug of a %1$s and Classic SEO has automatically created a redirection. You can edit the redirection by <a href="%2$s">clicking here</a>.', 'cpseo' ),
+					__( 'SEO Notice: you just changed the slug of a %1$s and ClassicPress SEO has automatically created a redirection. You can edit the redirection by <a href="%2$s">clicking here</a>.', 'cpseo' ),
 					Helper::get_post_type_label( $post->post_type, true ), $this->get_edit_redirection_url( $redirection_id )
 				),
 				[

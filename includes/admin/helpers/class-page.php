@@ -3,13 +3,13 @@
  * The admin-page functionality.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helpers\Param;
 
 /**
  * Page class.
@@ -331,8 +331,8 @@ class Page {
 			<div id="cpseo-admin">
 				<h1>
 					<a href="<?php echo admin_url( 'admin.php?page=cpseo-option' ); ?>">
-						<span class="screen-reader-text"><?php _e( 'Classic SEO', 'cpseo' ); ?></span>
-						<span class="cpseo-info-version"><?php _e('Classic SEO', 'cpseo'); ?></span>
+						<span class="screen-reader-text"><?php _e( 'ClassicPress SEO', 'cpseo' ); ?></span>
+						<span class="cpseo-info-version"><?php _e('ClassicPress SEO', 'cpseo'); ?></span>
 					</a>
 				</h1>
 			</div>

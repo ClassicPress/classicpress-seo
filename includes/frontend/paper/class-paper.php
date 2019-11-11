@@ -3,18 +3,18 @@
  * The Paper Class
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Paper
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Paper
  */
 
-namespace Classic_SEO\Paper;
+namespace ClassicPress_SEO\Paper;
 
-use Classic_SEO\Post;
-use Classic_SEO\Helper;
-use Classic_SEO\Sitemap\Router;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Url;
+use ClassicPress_SEO\Post;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Sitemap\Router;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Url;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -95,7 +95,7 @@ class Paper {
 	private function setup() {
 		foreach ( $this->get_papers() as $class_name => $is_valid ) {
 			if ( $this->do_filter( 'paper/is_valid/' . strtolower( $class_name ), $is_valid ) ) {
-				$class_name  = '\\Classic_SEO\\Paper\\' . $class_name;
+				$class_name  = '\\ClassicPress_SEO\\Paper\\' . $class_name;
 				$this->paper = new $class_name;
 				break;
 			}

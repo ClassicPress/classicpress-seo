@@ -3,12 +3,12 @@
  * The Shortcode trait.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Traits
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Traits
 
  */
 
-namespace Classic_SEO\Traits;
+namespace ClassicPress_SEO\Traits;
 
 defined( 'ABSPATH' ) || exit;
 

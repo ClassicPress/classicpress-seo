@@ -5,17 +5,17 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Core
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Core
 
  */
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Admin\Watcher;
-use Classic_SEO\Helpers\WordPress;
-use Classic_SEO\Role_Manager\Capability_Manager;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Admin\Watcher;
+use ClassicPress_SEO\Helpers\WordPress;
+use ClassicPress_SEO\Role_Manager\Capability_Manager;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -40,7 +40,7 @@ class Installer {
 	}
 
 	/**
-	 * Do stuff when activating Classic SEO.
+	 * Do things when activating ClassicPress SEO.
 	 *
 	 * @param bool $network_wide Whether the plugin is being activated network-wide.
 	 */
@@ -54,7 +54,7 @@ class Installer {
 	}
 
 	/**
-	 * Do stuff when deactivating Classic SEO.
+	 * Do things when deactivating ClassicPress SEO.
 	 *
 	 * @param bool $network_wide Whether the plugin is being activated network-wide.
 	 */
@@ -85,7 +85,7 @@ class Installer {
 	/**
 	 * Uninstall tables when MU blog is deleted.
 	 *
-	 * @param  array $tables List of tables that will be deleted by CP.
+	 * @param  array $tables List of tables that will be deleted by WP.
 	 * @return array
 	 */
 	public function on_delete_blog( $tables ) {
@@ -341,7 +341,6 @@ class Installer {
 			'cpseo_exclude_roles'          => $this->get_excluded_roles(),
 		];
 		$titles  = [
-			'cpseo_metabox_priority'           => 'default',
 			'cpseo_noindex_empty_taxonomies'   => 'on',
 			'cpseo_title_separator'            => '-',
 			'cpseo_capitalize_titles'          => 'off',

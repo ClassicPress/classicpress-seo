@@ -2,11 +2,11 @@
 /**
  * The taxonomies settings.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Settings
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Settings
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 $taxonomy     = $tab['taxonomy'];
 $taxonomy_obj = get_taxonomy( $taxonomy );
@@ -34,7 +34,7 @@ $cmb->add_field([
 	'desc'            => sprintf( esc_html__( 'Title tag for %s archives', 'cpseo' ), $name ),
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%term% Archives %page% %sep% %sitename%',
-	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_textfield' ],
+	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_textfield' ],
 ]);
 
 $cmb->add_field([

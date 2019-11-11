@@ -5,19 +5,19 @@
  * Defines the functionality loaded on admin.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Rest
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Rest
  */
 
 
-namespace Classic_SEO\Rest;
+namespace ClassicPress_SEO\Rest;
 
 use WP_Error;
 use WP_REST_Server;
 use WP_REST_Request;
 use WP_REST_Controller;
-use Classic_SEO\Helper;
-use Classic_SEO\Rest\Helper as RestHelper;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Rest\Helper as RestHelper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -44,7 +44,7 @@ class Admin extends WP_REST_Controller {
 			[
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => [ $this, 'save_module' ],
-				'permission_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'can_manage_options' ],
+				'permission_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'can_manage_options' ],
 				'args'                => $this->get_save_module_args(),
 			]
 		);
@@ -55,7 +55,7 @@ class Admin extends WP_REST_Controller {
 			[
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => [ $this, 'enable_score' ],
-				'permission_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'can_manage_options' ],
+				'permission_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'can_manage_options' ],
 			]
 		);
 
@@ -65,7 +65,7 @@ class Admin extends WP_REST_Controller {
 			[
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => [ $this, 'auto_update' ],
-				'permission_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'can_manage_options' ],
+				'permission_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'can_manage_options' ],
 			]
 		);
 		
@@ -75,7 +75,7 @@ class Admin extends WP_REST_Controller {
 			[
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => [ $this, 'tools_actions' ],
-				'permission_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'can_manage_options' ],
+				'permission_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'can_manage_options' ],
 			]
 		);
 
@@ -142,13 +142,13 @@ class Admin extends WP_REST_Controller {
 				'type'              => 'string',
 				'required'          => true,
 				'description'       => esc_html__( 'Module slug', 'cpseo' ),
-				'validate_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'is_param_empty' ],
+				'validate_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'is_param_empty' ],
 			],
 			'state'  => [
 				'type'              => 'string',
 				'required'          => true,
 				'description'       => esc_html__( 'Module state either on or off', 'cpseo' ),
-				'validate_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'is_param_empty' ],
+				'validate_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'is_param_empty' ],
 			],
 		];
 	}

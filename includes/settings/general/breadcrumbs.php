@@ -2,11 +2,11 @@
 /**
  * The breadcrumb settings.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Settings
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Settings
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 $cmb->add_field([
 	'id'      => 'cpseo_breadcrumbs',
@@ -25,7 +25,7 @@ $cmb->add_field([
 	'options'         => Helper::choices_separator( Helper::get_settings( 'general.cpseo_breadcrumbs_separator' ) ),
 	'default'         => '-',
 	'dep'             => $dependency,
-	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_htmlentities' ],
+	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_htmlentities' ],
 ]);
 
 $cmb->add_field([

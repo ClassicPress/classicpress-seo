@@ -5,14 +5,14 @@
  * Determines of a link is an outbound or internal one.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
 
  */
 
-namespace Classic_SEO\Sitemap;
+namespace ClassicPress_SEO\Sitemap;
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 

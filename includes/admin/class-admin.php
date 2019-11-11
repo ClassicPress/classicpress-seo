@@ -3,20 +3,20 @@
  * The admin-specific functionality of the plugin.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Runner;
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Ajax;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Admin\Param;
-use Classic_SEO\Helpers\Conditional;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Ajax;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Admin\Param;
+use ClassicPress_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -72,7 +72,7 @@ class Admin implements Runner {
 	 * Register dashboard widget.
 	 */
 	public function add_dashboard_widgets() {
-		wp_add_dashboard_widget( 'cpseo_dashboard_widget', esc_html__( 'Classic SEO', 'cpseo' ), [ $this, 'render_dashboard_widget' ] );
+		wp_add_dashboard_widget( 'cpseo_dashboard_widget', esc_html__( 'ClassicPress SEO', 'cpseo' ), [ $this, 'render_dashboard_widget' ] );
 	}
 
 	/**

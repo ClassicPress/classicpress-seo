@@ -3,16 +3,16 @@
  * Register all the necessary CSS and JS.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Runner;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -109,7 +109,7 @@ class Assets implements Runner {
 
 	/**
 	 * Overwrite wplink script file.
-	 * Classic SEO adds new options in the link popup when editing a post.
+	 * ClassicPress SEO adds new options in the link popup when editing a post.
 	 */
 	public function overwrite_wplink() {
 

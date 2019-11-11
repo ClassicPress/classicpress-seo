@@ -3,12 +3,12 @@
  * The DB interface.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Links
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Links
 
  */
 
-namespace Classic_SEO\Links;
+namespace ClassicPress_SEO\Links;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -20,10 +20,10 @@ class Storage {
 	/**
 	 * Get query builder.
 	 *
-	 * @return \Classic_SEO\Database\Query_Builder
+	 * @return \ClassicPress_SEO\Database\Query_Builder
 	 */
 	private function table() {
-		return \Classic_SEO\Helpers\DB::query_builder( 'cpseo_internal_links' );
+		return \ClassicPress_SEO\Helpers\DB::query_builder( 'cpseo_internal_links' );
 	}
 
 	/**

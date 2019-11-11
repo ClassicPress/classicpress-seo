@@ -2,11 +2,11 @@
 /**
  * Sitemap - Post Types
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 $attributes = [];
 $post_type  = $tab['post_type'];

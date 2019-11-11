@@ -2,8 +2,8 @@
 /**
  * Help Redirection tab.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Redirections
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Redirections
  */
 
 ?>
@@ -16,5 +16,5 @@
 
 <p><?php esc_html_e( 'HTTP redirections are powerful tools in SEO, and they have lots of other uses, too. You can read about why that’s a good idea in this article.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'Classic SEO makes it easy to set up HTTP redirects – in this article, we show you how.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'ClassicPress SEO makes it easy to set up HTTP redirects – in this article, we show you how.', 'cpseo' ); ?></p>
 

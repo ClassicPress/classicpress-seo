@@ -2,8 +2,8 @@
 /**
  * Help Rich Snippets tab.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
  */
 
 ?>
@@ -28,5 +28,5 @@
 
 <p><?php esc_html_e( 'Google needs you to include special meta-data in your markup to describe what your content is. You need to use a special format called Schema.org, and it has to be perfectly valid.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'Classic SEO can format the Schema.org markup for you - that\'s what the Rich Snippet tab does for you.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'ClassicPress SEO can format the Schema.org markup for you - that\'s what the Rich Snippet tab does for you.', 'cpseo' ); ?></p>
 

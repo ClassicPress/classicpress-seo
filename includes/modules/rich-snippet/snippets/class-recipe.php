@@ -3,15 +3,15 @@
  * The Recipe Class.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
 
  */
 
-namespace Classic_SEO\RichSnippet;
+namespace ClassicPress_SEO\RichSnippet;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Helpers\Str;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -2,8 +2,8 @@
 /**
  * Import/Export page template.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
 ?>
@@ -17,7 +17,7 @@
 
 		<p style="font-size: 1rem;">
 			<?php
-			printf( esc_html__( 'Import your previous backed up setting. Or, Export your Classic SEO settings and meta data for backup or for reuse on a different site.', 'cpseo' ) );
+			printf( esc_html__( 'Import your previous backed up setting. Or, Export your ClassicPress SEO settings and meta data for backup or for reuse on a different site.', 'cpseo' ) );
 			?>
 		</p>
 

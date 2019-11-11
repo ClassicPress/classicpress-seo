@@ -3,14 +3,14 @@
  * The WooCommerce Product Class.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
 
  */
 
-namespace Classic_SEO\RichSnippet;
+namespace ClassicPress_SEO\RichSnippet;
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -37,7 +37,7 @@ class Product_WooCommerce {
 		$this->attributes = new WC_Attributes( $product );
 
 		if ( Helper::is_module_active( 'woocommerce' ) ) {
-			$brands = \Classic_SEO\WooCommerce\Woocommerce::get_brands( $product->get_id() );
+			$brands = \ClassicPress_SEO\WooCommerce\Woocommerce::get_brands( $product->get_id() );
 
 			// Brand.
 			if ( ! empty( $brands ) ) {

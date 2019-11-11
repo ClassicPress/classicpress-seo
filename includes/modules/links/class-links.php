@@ -3,15 +3,15 @@
  * The Link Counter Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Links
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Links
  */
 
-namespace Classic_SEO\Links;
+namespace ClassicPress_SEO\Links;
 
 use WP_Post;
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

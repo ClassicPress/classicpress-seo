@@ -2,12 +2,12 @@
 /**
  * Metabox - Social Tab
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Metaboxes
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Metaboxes
  */
 
-use Classic_SEO\Helper;
-use Classic_SEO\Admin\Admin_Helper;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Admin\Admin_Helper;
 
 $cmb->add_field( array(
 	'id'   => 'cpseo_social_tabs',
@@ -45,7 +45,7 @@ $cmb->add_field( array(
 	'id'         => 'cpseo_facebook_title',
 	'type'       => 'text',
 	'name'       => esc_html__( 'Title', 'cpseo' ),
-	'attributes' => array( 'placeholder' => esc_html__( 'Classic_SEO -- Test Drive', 'cpseo' ) ),
+	'attributes' => array( 'placeholder' => esc_html__( 'ClassicPress_SEO -- Test Drive', 'cpseo' ) ),
 ) );
 
 $cmb->add_field( array(
@@ -55,7 +55,7 @@ $cmb->add_field( array(
 	'attributes' => array(
 		'rows'            => 3,
 		'data-autoresize' => true,
-		'placeholder'     => esc_html__( 'Classic_SEO -- Description', 'cpseo' ),
+		'placeholder'     => esc_html__( 'ClassicPress_SEO -- Description', 'cpseo' ),
 	),
 ) );
 
@@ -124,7 +124,7 @@ $cmb->add_field( array(
 	'id'         => 'cpseo_twitter_title',
 	'type'       => 'text',
 	'name'       => esc_html__( 'Title', 'cpseo' ),
-	'attributes' => array( 'placeholder' => esc_html__( 'Classic_SEO -- Test Drive', 'cpseo' ) ),
+	'attributes' => array( 'placeholder' => esc_html__( 'ClassicPress_SEO -- Test Drive', 'cpseo' ) ),
 	'dep'        => $basic,
 ) );
 

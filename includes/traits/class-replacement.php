@@ -3,14 +3,14 @@
  * The Replacement Helpers.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Traits
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Traits
  */
 
-namespace Classic_SEO\Traits;
+namespace ClassicPress_SEO\Traits;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Helpers\Str;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 

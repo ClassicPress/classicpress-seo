@@ -3,14 +3,14 @@
  * The Author Class
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Paper
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Paper
  */
 
-namespace Classic_SEO\Paper;
+namespace ClassicPress_SEO\Paper;
 
-use Classic_SEO\User;
-use Classic_SEO\Helper;
+use ClassicPress_SEO\User;
+use ClassicPress_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 

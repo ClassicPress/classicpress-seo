@@ -3,20 +3,20 @@
  * The public-facing functionality of the plugin.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Frontend
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Frontend
  */
 
 
-namespace Classic_SEO\Frontend;
+namespace ClassicPress_SEO\Frontend;
 
-use Classic_SEO\Post;
-use Classic_SEO\Helper;
-use Classic_SEO\Paper\Paper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\OpenGraph\Twitter;
-use Classic_SEO\OpenGraph\Facebook;
-use Classic_SEO\Frontend\Shortcodes;
+use ClassicPress_SEO\Post;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Paper\Paper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\OpenGraph\Twitter;
+use ClassicPress_SEO\OpenGraph\Facebook;
+use ClassicPress_SEO\Frontend\Shortcodes;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -3,19 +3,18 @@
  * The <head> tag.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Frontend
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Frontend
  */
 
+namespace ClassicPress_SEO\Frontend;
 
-namespace Classic_SEO\Frontend;
-
-use Classic_SEO\Post;
-use Classic_SEO\Helper;
-use Classic_SEO\Paper\Paper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Sitemap\Router;
-use Classic_SEO\Helpers\Str;
+use ClassicPress_SEO\Post;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Paper\Paper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Sitemap\Router;
+use ClassicPress_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -46,7 +45,7 @@ class Head {
 		$this->filter( 'thematic_doctitle', 'title', 15 );
 		$this->filter( 'pre_get_document_title', 'title', 15 );
 
-		// Code to move title inside the Classic SEO's meta.
+		// Code to move title inside the ClassicPress SEO's meta.
 		remove_action( 'wp_head', '_wp_render_title_tag', 1 );
 		add_action( 'cpseo/head', '_wp_render_title_tag', 1 );
 
@@ -83,7 +82,7 @@ class Head {
 			wp_reset_query();
 		}
 
-		// Remove core actions, now handled by Classic SEO.
+		// Remove core actions, now handled by ClassicPress SEO.
 		remove_action( 'wp_head', 'rel_canonical' );
 		remove_action( 'wp_head', 'index_rel_link' );
 		remove_action( 'wp_head', 'start_post_rel_link' );
@@ -125,7 +124,7 @@ class Head {
 		if ( Str::is_non_empty( $generated ) ) {
 			echo '<meta name="description" content="', $generated, '"/>', "\n";
 		} elseif ( Helper::has_cap( 'general' ) && is_singular() ) {
-			echo '<!-- ', \html_entity_decode( esc_html__( 'Admin only notice: this page has no meta description set. Please edit the page to add one, or setup a template in Classic SEO -> Titles &amp; Metas.', 'cpseo' ) ), ' -->', "\n";
+			echo '<!-- ', \html_entity_decode( esc_html__( 'Admin only notice: this page has no meta description set. Please edit the page to add one, or setup a template in ClassicPress SEO -> Titles &amp; Metas.', 'cpseo' ) ), ' -->', "\n";
 		}
 	}
 

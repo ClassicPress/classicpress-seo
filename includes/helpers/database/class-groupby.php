@@ -3,11 +3,11 @@
  * The groupby functions.
  *
  * @since      0.5.0
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Database
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Database
  */
 
-namespace Classic_SEO\Database;
+namespace ClassicPress_SEO\Database;
 
 /**
  * GroupBy class.

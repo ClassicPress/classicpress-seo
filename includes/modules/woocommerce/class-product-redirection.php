@@ -3,15 +3,15 @@
  * The WooCommerce Module
  *
  * @since      1.0.32
- * @package    Classic_SEO
- * @subpackage Classic_SEO\WooCommerce
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\WooCommerce
 
  */
 
-namespace Classic_SEO\WooCommerce;
+namespace ClassicPress_SEO\WooCommerce;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -3,12 +3,12 @@
  * The Sitemap Provider Interface
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
 
  */
 
-namespace Classic_SEO\Sitemap\Providers;
+namespace ClassicPress_SEO\Sitemap\Providers;
 
 defined( 'ABSPATH' ) || exit;
 

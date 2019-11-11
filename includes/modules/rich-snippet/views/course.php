@@ -2,8 +2,8 @@
 /**
  * Metabox - Course Rich Snippet
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
  */
 
 $course_dep = [ [ 'cpseo_rich_snippet', 'course' ] ];

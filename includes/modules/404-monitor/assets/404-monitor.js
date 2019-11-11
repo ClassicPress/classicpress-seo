@@ -1,8 +1,8 @@
 /*!
-* Classic SEO - 404 Monitor
+* ClassicPress SEO - 404 Monitor
 *
 * @version 0.9.0
-* @author  Classic SEO
+* @author  ClassicPress SEO
 */
 ;(function( $ ) {
 
@@ -11,7 +11,7 @@
 	// Document Ready
 	$(function() {
 
-		var classicSEO404Monitor = {
+		var classicPress404Monitor = {
 			init: function() {
 
 				this.wrap = $( '.cpseo-404-monitor-wrap' );
@@ -44,7 +44,7 @@
 				this.wrap.on( 'click', '.cpseo-clear-logs', function( event ) {
 					event.preventDefault();
 
-					if ( ! confirm( classicSEO.logConfirmClear )) {
+					if ( ! confirm( classicPress.logConfirmClear )) {
 						return false;
 					}
 
@@ -53,13 +53,13 @@
 
 				$( '#doaction, #doaction2' ).on( 'click', function() {
 					if ( 'redirect' === $( '#bulk-action-selector-top' ).val() ) {
-						$( this ).closest( 'form' ).attr( 'action', classicSEO.redirectionsUri );
+						$( this ).closest( 'form' ).attr( 'action', classicPress.redirectionsUri );
 					}
 				});
 			}
 		};
 
-		classicSEO404Monitor.init();
+		classicPress404Monitor.init();
 
 	});
 

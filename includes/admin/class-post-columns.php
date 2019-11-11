@@ -3,18 +3,18 @@
  * The admin post columns functionality.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Runner;
-use Classic_SEO\Traits\Ajax;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Traits\Ajax;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -177,7 +177,7 @@ class Post_Columns implements Runner {
 		}
 
 		wp_enqueue_script( 'cpseo-post-bulk-edit', cpseo()->plugin_url() . 'assets/admin/js/post-list.js', null, cpseo()->version, true );
-		wp_localize_script( 'cpseo-post-bulk-edit', 'classicSEO', [
+		wp_localize_script( 'cpseo-post-bulk-edit', 'classicPress', [
 			'security'      => wp_create_nonce( 'cpseo-ajax-nonce' ),
 			'bulkEditTitle' => esc_attr__( 'Bulk Edit This Field', 'cpseo' ),
 			'buttonSaveAll' => esc_attr__( 'Save All Edits', 'cpseo' ),

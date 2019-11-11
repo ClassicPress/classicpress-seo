@@ -29,7 +29,7 @@ Text.prototype.wrapInHeadline = function( field ) {
 
 Text.prototype.isHeadline = function( field ) {
 
-	var level = _.find( classicSEO.acf.headlines, function( value, key ) {
+	var level = _.find( classicPress.acf.headlines, function( value, key ) {
 		return field.key === key
 	})
 

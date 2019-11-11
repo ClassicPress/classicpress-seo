@@ -2,11 +2,11 @@
 /**
  * Plugin updates template.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 $current_version = CPSEO_VERSION;
 $latest_version  = '0.0.5';

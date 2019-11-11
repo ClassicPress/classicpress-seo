@@ -3,14 +3,14 @@
  * The functionality to detect whether we should import from another SEO plugin.
  *
  * @since      0.2.0
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin\Importers
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin\Importers
  */
 
 
-namespace Classic_SEO\Admin\Importers;
+namespace ClassicPress_SEO\Admin\Importers;
 
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -111,11 +111,11 @@ class Detector {
 	public function get() {
 		return $this->do_filter( 'importers/detect_plugins', [
 			'rankmath'         => [
-				'class' => '\\Classic_SEO\\Admin\\Importers\\RankMath',
+				'class' => '\\ClassicPress_SEO\\Admin\\Importers\\RankMath',
 				'file'  => 'seo-by-rank-math/rank-math.php',
 			],
 			'yoast'            => [
-				'class'   => '\\Classic_SEO\\Admin\\Importers\\Yoast',
+				'class'   => '\\ClassicPress_SEO\\Admin\\Importers\\Yoast',
 				'file'    => 'wordpress-seo/wp-seo.php',
 				'premium' => 'yoast-premium',
 			],

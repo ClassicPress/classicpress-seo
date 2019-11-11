@@ -3,19 +3,19 @@
  * The Local SEO Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Local_Seo
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Local_Seo
 
  */
 
-namespace Classic_SEO\Local_Seo;
+namespace ClassicPress_SEO\Local_Seo;
 
-use Classic_SEO\Post;
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Ajax;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Post;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Ajax;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 

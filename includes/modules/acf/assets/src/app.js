@@ -3,10 +3,10 @@ var collect = require( './collect.js' )
 var analysisTimeout = 0
 
 var App = function() {
-	cpseoApp.registerPlugin( classicSEO.acf.pluginName )
-	wp.hooks.addFilter( 'cpseo_content', classicSEO.acf.pluginName, collect.append.bind( collect ) )
+	cpseoApp.registerPlugin( classicPress.acf.pluginName )
+	wp.hooks.addFilter( 'cpseo_content', classicPress.acf.pluginName, collect.append.bind( collect ) )
 
-	if( classicSEO.acf.enableReload ) {
+	if( classicPress.acf.enableReload ) {
 		this.events()
 	}
 }
@@ -24,8 +24,8 @@ App.prototype.maybeRefresh = function() {
 	}
 
 	analysisTimeout = window.setTimeout( function() {
-		cpseoApp.reloadPlugin( classicSEO.acf.pluginName )
-	}, classicSEO.acf.refreshRate )
+		cpseoApp.reloadPlugin( classicPress.acf.pluginName )
+	}, classicPress.acf.refreshRate )
 }
 
 module.exports = App

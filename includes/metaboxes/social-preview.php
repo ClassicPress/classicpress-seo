@@ -2,13 +2,13 @@
 /**
  * Social preview tab template.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Metaboxes
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Metaboxes
  */
 
-use Classic_SEO\Helper;
-use Classic_SEO\Admin\Admin_Helper;
-use Classic_SEO\Helpers\Param;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Admin\Admin_Helper;
+use ClassicPress_SEO\Helpers\Param;
 
 global $post;
 

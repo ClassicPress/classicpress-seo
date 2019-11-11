@@ -3,16 +3,16 @@
  * The Sitemap rewrite setup and handling functionality.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
 
  */
 
-namespace Classic_SEO\Sitemap;
+namespace ClassicPress_SEO\Sitemap;
 
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Url;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Url;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -106,7 +106,7 @@ class Router {
 			return;
 		}
 
-		header( 'X-Redirect-By: Classic SEO' );
+		header( 'X-Redirect-By: ClassicPress SEO' );
 		wp_redirect( home_url( '/sitemap_index.xml' ), 301 );
 		exit;
 	}

@@ -3,16 +3,16 @@
  * The Redirections Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Redirections
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Redirections
 
  */
 
-namespace Classic_SEO\Redirections;
+namespace ClassicPress_SEO\Redirections;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Helpers\Param;
-use Classic_SEO\Admin\List_Table;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Helpers\Param;
+use ClassicPress_SEO\Admin\List_Table;
 
 /**
  * Table class.

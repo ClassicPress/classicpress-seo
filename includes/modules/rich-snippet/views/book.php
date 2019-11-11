@@ -2,8 +2,8 @@
 /**
  * Metabox - Book Rich Snippet
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
  */
 
 $book_dep = [ [ 'cpseo_rich_snippet', 'book' ] ];

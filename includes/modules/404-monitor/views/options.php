@@ -3,12 +3,12 @@
  * 404 Monitor general settings.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Monitor
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Monitor
 
  */
 
-use Classic_SEO\Helper;
+use ClassicPress_SEO\Helper;
 
 $cmb->add_field( array(
 	'id'      => '404_advanced_monitor',

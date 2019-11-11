@@ -3,15 +3,15 @@
  * The Sitemap Generator
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
 
  */
 
-namespace Classic_SEO\Sitemap;
+namespace ClassicPress_SEO\Sitemap;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -93,13 +93,13 @@ class Generator extends XML {
 	private function instantiate() {
 		// Initialize sitemap providers classes.
 		$this->providers = array(
-			new \Classic_SEO\Sitemap\Providers\Post_Type,
-			new \Classic_SEO\Sitemap\Providers\Taxonomy,
+			new \ClassicPress_SEO\Sitemap\Providers\Post_Type,
+			new \ClassicPress_SEO\Sitemap\Providers\Taxonomy,
 		);
 
 		// Author Provider.
 		if ( true === Helper::is_author_archive_indexable() ) {
-			$this->providers[] = new \Classic_SEO\Sitemap\Providers\Author;
+			$this->providers[] = new \ClassicPress_SEO\Sitemap\Providers\Author;
 		}
 
 		$external_providers = $this->do_filter( 'sitemap/providers', [] );

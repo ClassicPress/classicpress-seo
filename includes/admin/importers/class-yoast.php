@@ -3,17 +3,17 @@
  * The Yoast SEO Import Class
  *
  * @since      0.2.0
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin\Importers
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin\Importers
  */
 
 
-namespace Classic_SEO\Admin\Importers;
+namespace ClassicPress_SEO\Admin\Importers;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Helpers\DB;
-use Classic_SEO\Helpers\WordPress;
-use Classic_SEO\Redirections\Redirection;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Helpers\DB;
+use ClassicPress_SEO\Helpers\WordPress;
+use ClassicPress_SEO\Redirections\Redirection;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -258,7 +258,7 @@ class Yoast extends Plugin_Importer {
 	 * @param int $post_id Post id.
 	 */
 	private function set_post_robots( $post_id ) {
-		// Early bail if robots data is set in Classic SEO plugin.
+		// Early bail if robots data is set in ClassicPress SEO plugin.
 		if ( ! empty( $this->get_meta( 'post', $post_id, 'cpseo_robots' ) ) ) {
 			return;
 		}
@@ -410,7 +410,7 @@ class Yoast extends Plugin_Importer {
 	 * @param array $data    Term data.
 	 */
 	private function set_term_robots( $term_id, $data ) {
-		// Early bail if robots data is set in Classic SEO plugin.
+		// Early bail if robots data is set in ClassicPress SEO plugin.
 		if ( ! empty( $this->get_meta( 'term', $term_id, 'cpseo_robots' ) ) ) {
 			return;
 		}
@@ -456,7 +456,7 @@ class Yoast extends Plugin_Importer {
 			$userid = $user->ID;
 			$this->replace_meta( $hash, null, $userid, 'user', 'convert_variables' );
 
-			// Early bail if robots data is set in Classic SEO plugin.
+			// Early bail if robots data is set in ClassicPress SEO plugin.
 			if ( empty( $this->get_meta( 'user', $userid, 'cpseo_robots' ) ) ) {
 				$noindex_user = get_user_meta( $userid, 'wpseo_noindex_author', true );
 				$noindex_user = $noindex_user ? 'noindex' : 'index';

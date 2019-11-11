@@ -2,8 +2,8 @@
 /**
  * Metabox - Music Rich Snippet
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\RichSnippet
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\RichSnippet
  */
 
 $music = [ [ 'cpseo_rich_snippet', 'music' ] ];

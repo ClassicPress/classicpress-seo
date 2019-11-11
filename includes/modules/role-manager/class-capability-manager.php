@@ -3,18 +3,18 @@
  * The Capability Manager.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Role_Manager
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Role_Manager
 
  */
 
-namespace Classic_SEO\Role_Manager;
+namespace ClassicPress_SEO\Role_Manager;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Module;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Admin\Page;
-use Classic_SEO\Helpers\WordPress;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Module;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Admin\Page;
+use ClassicPress_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 

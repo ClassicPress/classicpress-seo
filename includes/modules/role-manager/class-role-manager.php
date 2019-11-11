@@ -3,17 +3,17 @@
  * The Role Manager Module.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Role_Manager
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Role_Manager
 
  */
 
-namespace Classic_SEO\Role_Manager;
+namespace ClassicPress_SEO\Role_Manager;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Module\Base;
-use Classic_SEO\Admin\Page;
-use Classic_SEO\Helpers\WordPress;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Module\Base;
+use ClassicPress_SEO\Admin\Page;
+use ClassicPress_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -39,7 +39,7 @@ class Role_Manager extends Base {
 		parent::__construct();
 
 		$this->action( 'cmb2_admin_init', 'register_form' );
-		add_filter( 'cmb2_override_option_get_cpseo-role-manager', [ '\Classic_SEO\Helper', 'get_roles_capabilities' ] );
+		add_filter( 'cmb2_override_option_get_cpseo-role-manager', [ '\ClassicPress_SEO\Helper', 'get_roles_capabilities' ] );
 		$this->action( 'admin_post_cpseo_save_capabilities', 'save_capabilities' );
 
 		if ( $this->page->is_current_page() ) {

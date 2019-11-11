@@ -3,21 +3,21 @@
  * The metabox functionality of the plugin.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
 use CMB2_hookup;
-use Classic_SEO\CMB2;
-use Classic_SEO\Helper;
-use Classic_SEO\Runner;
-use Classic_SEO\Replace_Vars;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\Url;
-use Classic_SEO\Admin\Param;
+use ClassicPress_SEO\CMB2;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Replace_Vars;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helpers\Str;
+use ClassicPress_SEO\Helpers\Url;
+use ClassicPress_SEO\Admin\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -52,7 +52,7 @@ class Metabox implements Runner {
 	public function enqueue() {
 		// Early bail if we're not on the valid screens or if it's WPBakery's Frontend editor.
 		$screen = get_current_screen();
-		if ( ! in_array( $screen->base, array( 'post', 'term', 'profile', 'user-edit' ), true ) || ( class_exists( 'Vc_Manager' ) && \Classic_SEO\Helpers\Param::get( 'vc_action' ) ) ) {
+		if ( ! in_array( $screen->base, array( 'post', 'term', 'profile', 'user-edit' ), true ) || ( class_exists( 'Vc_Manager' ) && \ClassicPress_SEO\Helpers\Param::get( 'vc_action' ) ) ) {
 			return;
 		}
 
@@ -66,7 +66,13 @@ class Metabox implements Runner {
 		Helper::add_json( 'overlayImages', Helper::choices_overlay_images() );
 		Helper::add_json( 'customPermalinks', (bool) get_option( 'permalink_structure', false ) );
 		Helper::add_json( 'defautOgImage', Helper::get_settings( 'titles.cpseo_open_graph_image', '' ) );
-		Helper::add_json( 'postSettings', [ 'linkSuggestions' => Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_link_suggestions' ), 'useFocusKeyword' => 'focus_keywords' === Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_ls_use_fk' ), ] );
+		Helper::add_json(
+			'postSettings',
+			[
+				'linkSuggestions' => Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_link_suggestions' ),
+				'useFocusKeyword' => 'focus_keywords' === Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_ls_use_fk' ),
+			]
+		);
 
 		$js = CPSEO_PLUGIN_URL . 'assets/admin/js/';
 		wp_enqueue_script( 'jquery-caret', CPSEO_PLUGIN_URL . 'assets/vendor/jquery.caret.min.js', [ 'jquery' ], '1.3.3', true );
@@ -113,7 +119,6 @@ class Metabox implements Runner {
 
 	/**
 	 * Add main metabox.
-	 * See https://github.com/CMB2/CMB2/wiki/Box-Properties
 	 */
 	public function add_main_metabox() {
 		if ( $this->can_add_metabox() ) {
@@ -123,13 +128,13 @@ class Metabox implements Runner {
 		$cmb = new_cmb2_box(
 			[
 				'id'               => $this->metabox_id,
-				'title'            => '<span class="score-icon">' . esc_html__( 'Classic SEO', 'cpseo' ) . '</span>',
+				'title'            => '<span class="score-icon">' . esc_html__( 'ClassicPress SEO', 'cpseo' ) . '</span>',
 				'object_types'     => $this->get_object_types(),
 				'taxonomies'       => Helper::get_allowed_taxonomies(),
 				'new_term_section' => false,
 				'new_user_section' => 'add-existing-user',
-				'context'          => 'normal',						// 'side', 'normal' or 'advanced'
-				'priority'         => $this->get_priority(),		// 'high', 'core', 'default' or 'low'
+				'context'          => 'normal',
+				'priority'         => $this->get_priority(),
 				'cmb_styles'       => false,
 				'classes'          => 'cpseo-metabox-wrap' . ( Admin_Helper::is_term_profile_page() ? ' cpseo-metabox-frame' : '' ),
 			]
@@ -340,27 +345,14 @@ class Metabox implements Runner {
 	/**
 	 * Get metabox priority.
 	 *
-	 * Filter to change position of seo metabox on post edit page
-	 *
-	 * Example usage: 
-	 * function cpseo_change_metabox_priority() {
-     *     return 'low';
-	 * }
-	 * add_filter( 'cpseo/metabox/priority', 'cpseo_change_metabox_priority' );
-	 *
 	 * @return string
 	 */
 	private function get_priority() {
-		// When a metabox is dragged and repositioned manually, this is stored per user 
-		// in the meta-box-order_[*] field in the usermeta table. This takes precedence
-		// so here we remove that setting to allow Classic SEO to control the setting.
-		$current_user = wp_get_current_user();
-		delete_user_meta( $current_user->ID, 'meta-box-order_page' );
-		delete_user_meta( $current_user->ID, 'meta-box-order_post' );
-		delete_user_meta( $current_user->ID, 'meta-box-order_product' );
-		
-		// Set the new priority
-		$priority = Helper::get_settings( 'titles.cpseo_metabox_priority' );
+		$post_type = Param::get(
+			'post_type',
+			get_post_type( Param::get( 'post', 0, FILTER_VALIDATE_INT ) )
+		);
+		$priority  = 'product' === $post_type ? 'default' : 'high';
 
 		/**
 		 * Filter: Change metabox priority.

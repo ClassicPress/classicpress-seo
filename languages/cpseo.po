@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Classic SEO\n"
-"POT-Creation-Date: 2019-11-11 17:49+0000\n"
-"PO-Revision-Date: 2019-11-11 17:49+0000\n"
+"Project-Id-Version: ClassicPress SEO\n"
+"POT-Creation-Date: 2019-10-25 14:51+0100\n"
+"PO-Revision-Date: 2019-10-25 14:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: classic-seo.php\n"
+"X-Poedit-WPHeader: classicpress-seo.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -26,19 +26,19 @@ msgstr ""
 msgid ": "
 msgstr ""
 
-#: classic-seo.php:207
+#: classicpress-seo.php:207
 #, php-format
 msgid ""
-"Classic SEO requires ClassicPress version %s or above. Please update "
+"ClassicPress SEO requires ClassicPress version %s or above. Please update "
 "ClassicPress."
 msgstr ""
 
-#: classic-seo.php:212
+#: classicpress-seo.php:212
 #, php-format
-msgid "Classic SEO requires PHP version %s or above. Please update PHP."
+msgid "ClassicPress SEO requires PHP version %s or above. Please update PHP."
 msgstr ""
 
-#: classic-seo.php:368 includes/module/class-module.php:93
+#: classicpress-seo.php:368 includes/module/class-module.php:93
 #: includes/modules/redirections/views/main.php:24
 msgid "Settings"
 msgstr ""
@@ -56,12 +56,12 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 #: includes/admin/class-admin-menu.php:46 includes/admin/class-admin.php:75
-#: includes/admin/class-metabox.php:126
+#: includes/admin/class-metabox.php:131
 #: includes/admin/helpers/class-page.php:334
 #: includes/admin/helpers/class-page.php:335 includes/class-cmb2.php:174
 #: includes/modules/role-manager/class-members.php:46
 #: includes/modules/role-manager/class-user-role-editor.php:59
-msgid "Classic SEO"
+msgid "ClassicPress SEO"
 msgstr ""
 
 #: includes/admin/class-admin-menu.php:64 includes/admin/class-admin.php:357
@@ -168,7 +168,7 @@ msgstr ""
 
 #: includes/admin/class-import-export.php:70
 msgid ""
-"Are you sure you want to import settings into Classic SEO? Your current "
+"Are you sure you want to import settings into ClassicPress SEO? Your current "
 "configuration will be saved as a backup."
 msgstr ""
 
@@ -256,31 +256,31 @@ msgstr ""
 msgid "Settings could not be imported: Upload failed."
 msgstr ""
 
-#: includes/admin/class-metabox.php:91
+#: includes/admin/class-metabox.php:97
 msgid ""
 "The featured image should be at least 200 by 200 pixels to be picked up by "
 "Facebook and other social media sites."
 msgstr ""
 
-#: includes/admin/class-metabox.php:211
+#: includes/admin/class-metabox.php:216
 #: includes/settings/titles/post-types.php:180
 msgid "Link Suggestions"
 msgstr ""
 
-#: includes/admin/class-metabox.php:222
+#: includes/admin/class-metabox.php:227
 msgid ""
 "Click on the button to copy URL or insert link in content. You can also drag "
 "and drop links in the post content."
 msgstr ""
 
-#: includes/admin/class-metabox.php:231
+#: includes/admin/class-metabox.php:236
 msgid ""
 "We can't show any link suggestions for this post. Try selecting categories "
 "and tags for this post, and mark other posts as Cornerstone Content to make "
 "them show up here."
 msgstr ""
 
-#: includes/admin/class-metabox.php:246 includes/metaboxes/social.php:54
+#: includes/admin/class-metabox.php:251 includes/metaboxes/social.php:54
 #: includes/metaboxes/social.php:134
 #: includes/modules/rich-snippet/views/metabox-options.php:78
 #: includes/settings/general/rss-vars-table.php:18
@@ -288,29 +288,29 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: includes/admin/class-metabox.php:422
+#: includes/admin/class-metabox.php:414
 #: includes/modules/sitemap/class-admin.php:63
 msgid "General"
 msgstr ""
 
-#: includes/admin/class-metabox.php:423
+#: includes/admin/class-metabox.php:415
 msgid "This tab contains general options."
 msgstr ""
 
-#: includes/admin/class-metabox.php:429
+#: includes/admin/class-metabox.php:421
 #: includes/modules/404-monitor/views/options.php:28
 msgid "Advanced"
 msgstr ""
 
-#: includes/admin/class-metabox.php:430
+#: includes/admin/class-metabox.php:422
 msgid "This tab contains advance options."
 msgstr ""
 
-#: includes/admin/class-metabox.php:436
+#: includes/admin/class-metabox.php:428
 msgid "Social"
 msgstr ""
 
-#: includes/admin/class-metabox.php:437
+#: includes/admin/class-metabox.php:429
 msgid "This tab contains social options."
 msgstr ""
 
@@ -1399,8 +1399,8 @@ msgstr ""
 
 #: includes/admin/views/import-export/main.php:20
 msgid ""
-"Import your previous backed up setting. Or, Export your Classic SEO settings "
-"and meta data for backup or for reuse on a different site."
+"Import your previous backed up setting. Or, Export your ClassicPress SEO "
+"settings and meta data for backup or for reuse on a different site."
 msgstr ""
 
 #: includes/admin/views/import-export/plugins-panel.php:17
@@ -1470,7 +1470,7 @@ msgid ""
 msgstr ""
 
 #: includes/class-common.php:264
-msgid "Classic SEO Dashboard"
+msgid "ClassicPress SEO Dashboard"
 msgstr ""
 
 #: includes/class-common.php:287
@@ -1656,7 +1656,7 @@ msgstr ""
 
 #: includes/class-replace-vars.php:318
 #: includes/settings/general/breadcrumbs.php:23
-#: includes/settings/titles/global.php:45
+#: includes/settings/titles/global.php:31
 msgid "Separator Character"
 msgstr ""
 
@@ -2064,10 +2064,11 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: includes/frontend/class-head.php:128
+#: includes/frontend/class-head.php:127
 msgid ""
 "Admin only notice: this page has no meta description set. Please edit the "
-"page to add one, or setup a template in Classic SEO -> Titles &amp; Metas."
+"page to add one, or setup a template in ClassicPress SEO -> Titles &amp; "
+"Metas."
 msgstr ""
 
 #: includes/frontend/class-shortcodes.php:156
@@ -2312,7 +2313,7 @@ msgid ""
 "Instructs search engines to index and show these pages in the search results."
 msgstr ""
 
-#: includes/metaboxes/advanced.php:19 includes/settings/titles/global.php:28
+#: includes/metaboxes/advanced.php:19 includes/settings/titles/global.php:14
 msgid "Robots Meta"
 msgstr ""
 
@@ -2362,7 +2363,7 @@ msgid "Insert keywords you want to rank for. Aim for 100/100."
 msgstr ""
 
 #: includes/metaboxes/general.php:59
-msgid "Example: Classic SEO"
+msgid "Example: ClassicPress SEO"
 msgstr ""
 
 #: includes/metaboxes/general.php:69
@@ -2432,11 +2433,11 @@ msgid ""
 msgstr ""
 
 #: includes/metaboxes/social.php:48 includes/metaboxes/social.php:127
-msgid "Classic_SEO -- Test Drive"
+msgid "ClassicPress_SEO -- Test Drive"
 msgstr ""
 
 #: includes/metaboxes/social.php:58
-msgid "Classic_SEO -- Description"
+msgid "ClassicPress_SEO -- Description"
 msgstr ""
 
 #: includes/metaboxes/social.php:66 includes/metaboxes/social.php:149
@@ -2458,11 +2459,11 @@ msgstr ""
 msgid "Use Data from Facebook Tab"
 msgstr ""
 
-#: includes/metaboxes/social.php:98 includes/settings/titles/global.php:86
+#: includes/metaboxes/social.php:98 includes/settings/titles/global.php:72
 msgid "Summary Card with Large Image"
 msgstr ""
 
-#: includes/metaboxes/social.php:99 includes/settings/titles/global.php:87
+#: includes/metaboxes/social.php:99 includes/settings/titles/global.php:73
 msgid "Summary Card"
 msgstr ""
 
@@ -2543,7 +2544,7 @@ msgid "The total number of links inside your posts."
 msgstr ""
 
 #: includes/module/class-manager.php:143
-msgid "Control who can change Classic SEO settings"
+msgid "Control who can change ClassicPress SEO settings"
 msgstr ""
 
 #: includes/module/class-manager.php:163
@@ -3353,7 +3354,7 @@ msgstr ""
 #: includes/modules/redirections/class-watcher.php:92
 #, php-format
 msgid ""
-"SEO Notice: you just changed the slug of a %1$s and Classic SEO has "
+"SEO Notice: you just changed the slug of a %1$s and ClassicPress SEO has "
 "automatically created a redirection. You can edit the redirection by <a href="
 "\"%2$s\">clicking here</a>."
 msgstr ""
@@ -3427,8 +3428,8 @@ msgstr ""
 
 #: includes/modules/redirections/views/help.php:19
 msgid ""
-"Classic SEO makes it easy to set up HTTP redirects – in this article, we "
-"show you how."
+"ClassicPress SEO makes it easy to set up HTTP redirects – in this article, "
+"we show you how."
 msgstr ""
 
 #: includes/modules/redirections/views/main.php:21
@@ -4170,8 +4171,8 @@ msgstr ""
 
 #: includes/modules/rich-snippet/views/help.php:31
 msgid ""
-"Classic SEO can format the Schema.org markup for you - that's what the Rich "
-"Snippet tab does for you."
+"ClassicPress SEO can format the Schema.org markup for you - that's what the "
+"Rich Snippet tab does for you."
 msgstr ""
 
 #: includes/modules/rich-snippet/views/job-posting.php:16
@@ -4317,7 +4318,7 @@ msgstr ""
 
 #: includes/modules/rich-snippet/views/metabox-options.php:24
 msgid ""
-"Classic SEO automatically inserts additional Rich Snippet meta data for "
+"ClassicPress SEO automatically inserts additional Rich Snippet meta data for "
 "WooCommerce products. You can set the Rich Snippet Type to \"None\" to "
 "disable this feature and just use the default data added by WooCommerce."
 msgstr ""
@@ -4594,7 +4595,7 @@ msgstr ""
 #: includes/modules/role-manager/views/help.php:13
 msgid ""
 "In this knowledge base article, we are going to discuss one of the most "
-"amazing features of Classic SEO, the Role Manager."
+"amazing features of ClassicPress SEO, the Role Manager."
 msgstr ""
 
 #: includes/modules/role-manager/views/help.php:15
@@ -4609,16 +4610,16 @@ msgstr ""
 
 #: includes/modules/role-manager/views/help.php:17
 msgid ""
-"To prevent that from happening, we created the Role Manager in Classic SEO. "
-"It’s an innovative feature that lets you restrict Classic SEO’s individual "
-"features for each user, depending on what roles you give them on your "
-"website. If you didn’t understand that, do not worry. You will understand "
-"once we get into the details."
+"To prevent that from happening, we created the Role Manager in ClassicPress "
+"SEO. It’s an innovative feature that lets you restrict ClassicPress SEO’s "
+"individual features for each user, depending on what roles you give them on "
+"your website. If you didn’t understand that, do not worry. You will "
+"understand once we get into the details."
 msgstr ""
 
 #. translators: %s is a Learn More link to the documentation
 #: includes/modules/role-manager/views/main.php:21
-msgid "Control access to Classic SEO settings."
+msgid "Control access to ClassicPress SEO settings."
 msgstr ""
 
 #: includes/modules/role-manager/views/main.php:34
@@ -4876,8 +4877,8 @@ msgstr ""
 #: includes/modules/sitemap/sitemap-xsl.php:124
 #, php-format
 msgid ""
-"This KML Fiile is generated by <a href=\"%s\" target=\"_blank\">Classic SEO "
-"WordPress SEO Plugin</a>. It is used to provide location information to "
+"This KML Fiile is generated by <a href=\"%s\" target=\"_blank\">ClassicPress "
+"SEO WordPress SEO Plugin</a>. It is used to provide location information to "
 "Google."
 msgstr ""
 
@@ -4911,7 +4912,7 @@ msgid "XML Sitemap"
 msgstr ""
 
 #: includes/modules/sitemap/sitemap-xsl.php:211
-msgid "This XML Sitemap is generated by the Classic SEO Plugin."
+msgid "This XML Sitemap is generated by the ClassicPress SEO Plugin."
 msgstr ""
 
 #. translators: xsl value count
@@ -5003,11 +5004,11 @@ msgid "Tools"
 msgstr ""
 
 #: includes/modules/status/class-system-status.php:31
-msgid "Classic SEO version"
+msgid "ClassicPress SEO version"
 msgstr ""
 
 #: includes/modules/status/class-system-status.php:32
-msgid "Classic SEO database version"
+msgid "ClassicPress SEO database version"
 msgstr ""
 
 #: includes/modules/status/class-system-status.php:33
@@ -5039,11 +5040,12 @@ msgid "Missing"
 msgstr ""
 
 #: includes/modules/status/class-tools.php:61
-msgid "Classic SEO transients"
+msgid "ClassicPress SEO transients"
 msgstr ""
 
 #: includes/modules/status/class-tools.php:62
-msgid "This tool will clear all the transients created by the Classic SEO."
+msgid ""
+"This tool will clear all the transients created by the ClassicPress SEO."
 msgstr ""
 
 #: includes/modules/status/class-tools.php:63
@@ -5113,7 +5115,7 @@ msgid ""
 msgstr ""
 
 #: includes/modules/status/class-tools.php:116
-msgid "Classic SEO transients cleared."
+msgid "ClassicPress SEO transients cleared."
 msgstr ""
 
 #: includes/modules/status/class-tools.php:125
@@ -5134,7 +5136,7 @@ msgstr ""
 
 #: includes/modules/woocommerce/class-admin.php:61
 msgid ""
-"Choose how you want Classic SEO to handle your WooCommerce SEO. These "
+"Choose how you want ClassicPress SEO to handle your WooCommerce SEO. These "
 "options help you create cleaner, SEO friendly URLs, and optimize your "
 "WooCommerce product pages."
 msgstr ""
@@ -5185,8 +5187,8 @@ msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:18
 msgid ""
-"With the Classic SEO plugin, you can easily optimize your WooCommerce store "
-"in general and product pages in particular."
+"With the ClassicPress SEO plugin, you can easily optimize your WooCommerce "
+"store in general and product pages in particular."
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:20
@@ -5197,9 +5199,9 @@ msgstr ""
 #: includes/modules/woocommerce/views/help.php:26
 #, php-format
 msgid ""
-"Classic SEO can help you make your product category or tag archives "
+"ClassicPress SEO can help you make your product category or tag archives "
 "`noindex`. You can do that from <a href=\"%1$s\">WordPress Dashboard > "
-"Classic SEO > Titles & Meta > Product Categories</a>"
+"ClassicPress SEO > Titles & Meta > Product Categories</a>"
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:32
@@ -5207,7 +5209,7 @@ msgid "or"
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:35
-msgid "WordPress Dashboard > Classic SEO > Titles & Meta > Product Tags."
+msgid "WordPress Dashboard > ClassicPress SEO > Titles & Meta > Product Tags."
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:40
@@ -5219,14 +5221,15 @@ msgstr ""
 #, php-format
 msgid ""
 "You can customize and automate the SEO Title/Description generation easily "
-"as well. Just head over to <a href=\"%1$s\">WordPress Dashboard > Classic "
-"SEO > Titles & Meta > Products</a>"
+"as well. Just head over to <a href=\"%1$s\">WordPress Dashboard > "
+"ClassicPress SEO > Titles & Meta > Products</a>"
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:54
 msgid ""
-"You can also add rich snippets to your product pages easily with Classic "
-"SEO, apart from doing the regular SEO like you would do on posts."
+"You can also add rich snippets to your product pages easily with "
+"ClassicPress SEO, apart from doing the regular SEO like you would do on "
+"posts."
 msgstr ""
 
 #. translators: link to local seo settings
@@ -5247,8 +5250,9 @@ msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:72
 msgid ""
-"Classic SEO offers you to remove category base from your product archive "
-"URLs so the URLs are cleaner, more SEO friendly and easier to remember."
+"ClassicPress SEO offers you to remove category base from your product "
+"archive URLs so the URLs are cleaner, more SEO friendly and easier to "
+"remember."
 msgstr ""
 
 #. translators: link to local seo settings
@@ -5256,7 +5260,7 @@ msgstr ""
 #, php-format
 msgid ""
 "To access those options, head over to <a href=\"%1$s\">WordPress Dashboard > "
-"Classic SEO > General Settings > WooCommerce</a>."
+"ClassicPress SEO > General Settings > WooCommerce</a>."
 msgstr ""
 
 #: includes/modules/woocommerce/views/options-general.php:14
@@ -5703,7 +5707,6 @@ msgid ""
 msgstr ""
 
 #: includes/settings/titles/author.php:40
-#: includes/settings/titles/global.php:19
 #: includes/settings/titles/homepage.php:44
 #: includes/settings/titles/post-types.php:160
 #: includes/settings/titles/taxonomies.php:63
@@ -5751,83 +5754,63 @@ msgid ""
 "tuned with code, using a special filter hook."
 msgstr ""
 
-#: includes/settings/titles/global.php:14
-msgid "Position of metabox"
-msgstr ""
-
 #: includes/settings/titles/global.php:15
-msgid "The position of the Classic SEO metabox on the admin post edit page"
-msgstr ""
-
-#: includes/settings/titles/global.php:17
-msgid "High"
-msgstr ""
-
-#: includes/settings/titles/global.php:18
-msgid "Core"
-msgstr ""
-
-#: includes/settings/titles/global.php:20
-msgid "Low"
-msgstr ""
-
-#: includes/settings/titles/global.php:29
 msgid ""
 "Default values for robots meta tag. These can be changed for individual "
 "posts, taxonomies, etc."
 msgstr ""
 
-#: includes/settings/titles/global.php:37
+#: includes/settings/titles/global.php:23
 msgid "Noindex Empty Category and Tag Archives"
 msgstr ""
 
-#: includes/settings/titles/global.php:38
+#: includes/settings/titles/global.php:24
 msgid ""
 "Setting empty archives to <code>noindex</code> is useful for avoiding "
 "indexation of thin content pages and dilution of page rank. As soon as a "
 "post is added, the page is updated to <code>index</code>."
 msgstr ""
 
-#: includes/settings/titles/global.php:46
+#: includes/settings/titles/global.php:32
 msgid ""
 "You can use the separator character in titles by inserting <code>%separator"
 "%</code> or <code>%sep%</code> in the title fields."
 msgstr ""
 
-#: includes/settings/titles/global.php:57
+#: includes/settings/titles/global.php:43
 msgid "Rewrite Titles"
 msgstr ""
 
-#: includes/settings/titles/global.php:58
+#: includes/settings/titles/global.php:44
 msgid ""
 "Your current theme doesn't support title-tag. Enable this option to rewrite "
 "page, post, category, search and archive page titles."
 msgstr ""
 
-#: includes/settings/titles/global.php:66
+#: includes/settings/titles/global.php:52
 msgid "Capitalize Titles"
 msgstr ""
 
-#: includes/settings/titles/global.php:67
+#: includes/settings/titles/global.php:53
 msgid "Automatically capitalize the first character of all title tags."
 msgstr ""
 
-#: includes/settings/titles/global.php:74
+#: includes/settings/titles/global.php:60
 msgid "OpenGraph Thumbnail"
 msgstr ""
 
-#: includes/settings/titles/global.php:75
+#: includes/settings/titles/global.php:61
 msgid ""
 "When a featured image is not set, this image will be used as a thumbnail "
 "when your post is shared on Facebook. Recommended image size 1200 x 630 "
 "pixels."
 msgstr ""
 
-#: includes/settings/titles/global.php:83
+#: includes/settings/titles/global.php:69
 msgid "Twitter Card Type"
 msgstr ""
 
-#: includes/settings/titles/global.php:84
+#: includes/settings/titles/global.php:70
 msgid ""
 "Card type selected when creating a new post. This will also be applied for "
 "posts without a card type selected."
@@ -6166,9 +6149,10 @@ msgstr ""
 
 #. translators: numeric user ID link
 #: includes/settings/titles/social.php:30
+#, php-format
 msgid ""
-"Enter numeric user ID. Use a comma to separate multiple IDs. Alternatively, "
-"you can enter an app ID below."
+"Enter %s. Use a comma to separate multiple IDs. Alternatively, you can enter "
+"an app ID below."
 msgstr ""
 
 #: includes/settings/titles/social.php:36
@@ -6177,7 +6161,8 @@ msgstr ""
 
 #. translators: numeric app ID link
 #: includes/settings/titles/social.php:38
-msgid "Enter numeric app ID. Alternatively, you can enter a user ID above."
+#, php-format
+msgid "Enter %s. Alternatively, you can enter a user ID above."
 msgstr ""
 
 #: includes/settings/titles/social.php:44
@@ -6199,7 +6184,7 @@ msgstr ""
 #: includes/settings/titles/social.php:60
 msgid ""
 "Enter the Twitter username of the author to add <code>twitter:creator</code> "
-"tag to posts. eg: <code>yourtwittername</code>"
+"tag to posts. eg: <code>ClassicPress_SEO</code>"
 msgstr ""
 
 #: includes/settings/titles/social.php:66
@@ -6236,14 +6221,6 @@ msgstr ""
 
 #: includes/settings/titles/social.php:91
 msgid "Enter your YouTube Channel's URL here. e.g"
-msgstr ""
-
-#: includes/settings/titles/social.php:98
-msgid "Pinterest Page URL"
-msgstr ""
-
-#: includes/settings/titles/social.php:99
-msgid "Enter your Pinterest Profile URL here. eg:"
 msgstr ""
 
 #. translators: taxonomy name
@@ -6308,9 +6285,9 @@ msgid "https://www.classicpress.net"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "SEO solution for ClassicPress (experimental)."
+msgid "SEO solution for ClassicPress."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Tim Hughes & ClassicPress Community"
+msgid "ClassicPress"
 msgstr ""

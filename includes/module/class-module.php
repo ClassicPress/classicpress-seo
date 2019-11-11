@@ -3,11 +3,11 @@
  * The Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Module
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Module
  */
 
-namespace Classic_SEO\Module;
+namespace ClassicPress_SEO\Module;
 
 defined( 'ABSPATH' ) || exit;
 

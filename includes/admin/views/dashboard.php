@@ -2,15 +2,15 @@
 /**
  * Dashboard page template.
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-use Classic_SEO\Admin\Admin_Helper;
-use Classic_SEO\Admin\System_Info;
+use ClassicPress_SEO\Admin\Admin_Helper;
+use ClassicPress_SEO\Admin\System_Info;
 
 $is_network_admin  = is_network_admin();
-$is_network_active = Classic_SEO\Helper::is_plugin_active_for_network();
+$is_network_active = ClassicPress_SEO\Helper::is_plugin_active_for_network();
 $current_tab       = $is_network_active && $is_network_admin ? 'help' : ( isset( $_GET['view'] ) ? filter_input( INPUT_GET, 'view' ) : 'modules' );
 ?>
 

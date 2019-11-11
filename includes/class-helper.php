@@ -3,21 +3,21 @@
  * Helper Functions.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Core
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Core
  */
 
 
-namespace Classic_SEO;
+namespace ClassicPress_SEO;
 
-use Classic_SEO\Helpers\Api;
-use Classic_SEO\Helpers\Attachment;
-use Classic_SEO\Helpers\Conditional;
-use Classic_SEO\Helpers\Choices;
-use Classic_SEO\Helpers\Post_Type;
-use Classic_SEO\Helpers\Options;
-use Classic_SEO\Helpers\Taxonomy;
-use Classic_SEO\Helpers\WordPress;
+use ClassicPress_SEO\Helpers\Api;
+use ClassicPress_SEO\Helpers\Attachment;
+use ClassicPress_SEO\Helpers\Conditional;
+use ClassicPress_SEO\Helpers\Choices;
+use ClassicPress_SEO\Helpers\Post_Type;
+use ClassicPress_SEO\Helpers\Options;
+use ClassicPress_SEO\Helpers\Taxonomy;
+use ClassicPress_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 

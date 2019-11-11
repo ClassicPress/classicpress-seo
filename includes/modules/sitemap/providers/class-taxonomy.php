@@ -3,19 +3,19 @@
  * The Sitemap Module
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
 
  */
 
-namespace Classic_SEO\Sitemap\Providers;
+namespace ClassicPress_SEO\Sitemap\Providers;
 
-use Classic_SEO\Helper;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Sitemap\Router;
-use Classic_SEO\Sitemap\Sitemap;
-use Classic_SEO\Sitemap\Image_Parser;
-use Classic_SEO\Helpers\Str;
+use ClassicPress_SEO\Helper;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Sitemap\Router;
+use ClassicPress_SEO\Sitemap\Sitemap;
+use ClassicPress_SEO\Sitemap\Image_Parser;
+use ClassicPress_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -204,7 +204,7 @@ class Taxonomy implements Provider {
 	 * @return Image_Parser
 	 */
 	protected function get_image_parser() {
-		if ( class_exists( 'Classic_SEO\Sitemap\Image_Parser' ) && ! isset( self::$image_parser ) ) {
+		if ( class_exists( 'ClassicPress_SEO\Sitemap\Image_Parser' ) && ! isset( self::$image_parser ) ) {
 			self::$image_parser = new Image_Parser;
 		}
 

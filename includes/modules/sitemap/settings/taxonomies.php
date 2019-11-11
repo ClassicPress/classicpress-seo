@@ -2,8 +2,8 @@
 /**
  * Sitemap - Taxonomies
  *
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Sitemap
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Sitemap
  */
 
 $taxonomy   = $tab['taxonomy'];

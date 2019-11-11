@@ -3,15 +3,15 @@
  * The conflicting plugin watcher.
  *
  * @since      0.1.8
- * @package    Classic_SEO
- * @subpackage Classic_SEO\Admin
+ * @package    ClassicPress_SEO
+ * @subpackage ClassicPress_SEO\Admin
  */
 
-namespace Classic_SEO\Admin;
+namespace ClassicPress_SEO\Admin;
 
-use Classic_SEO\Runner;
-use Classic_SEO\Traits\Hooker;
-use Classic_SEO\Helper as GlobalHelper;
+use ClassicPress_SEO\Runner;
+use ClassicPress_SEO\Traits\Hooker;
+use ClassicPress_SEO\Helper as GlobalHelper;
 
 defined( 'ABSPATH' ) || exit;
 
