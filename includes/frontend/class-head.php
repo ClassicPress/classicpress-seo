@@ -7,6 +7,7 @@
  * @subpackage Classic_SEO\Frontend
  */
 
+
 namespace Classic_SEO\Frontend;
 
 use Classic_SEO\Post;

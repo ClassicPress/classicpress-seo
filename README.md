@@ -31,7 +31,7 @@ Rich Snippets|Webmaster tools
 XML Sitemap|SEO Analysis
 WooCommerce|Ability to edit .htaccess
 Role Manager|Ability to edit robots.txt
-Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube|Social meta: Removed support for Yelp, FourSquare, Flickr, Reddit, Pinterest, SoundCloud, Tumblr and Myspace
+Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Removed support for Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
 Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
 
 ## Support
@@ -40,7 +40,9 @@ If you find a bug, please create an issue on the [issues page](https://github.co
 ## Changelog
 
 ### v 0.3.0
-- Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
+- NEW: Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
+- NEW: Added ability to set metabox position on post/page/product edit pages
+- NEW: Added support for Pinterest meta tag
 
 ### v 0.2.2
 - Fixed CSS bug which prevented tab icons from displaying correctly on post edit page in admin
