@@ -336,8 +336,8 @@ class Google_Api {
 	private function get_config() {
 		return [
 			'application_name' => 'Classic SEO',
-			'client_id'        => '521003500769-n68nimh2rrahq6b4cdcjm03ojgsukr1f.apps.googleusercontent.com',
-			'client_secret'    => 'nPNvFDg-1MHrT1cAFQouaVtK',
+			'client_id'        => '190591425197-fk91r99iprdm8aki497u0lfa3pmrampb.apps.googleusercontent.com',
+			'client_secret'    => 'owbd-JcspHU98i0RjD1VGuPa',
 			'redirect_uri'     => 'urn:ietf:wg:oauth:2.0:oob',
 			'scopes'           => [ 'https://www.googleapis.com/auth/webmasters', 'https://www.googleapis.com/auth/analytics', 'https://www.googleapis.com/auth/analytics.readonly', 'https://www.googleapis.com/auth/adsense.readonly' ],
 		];
