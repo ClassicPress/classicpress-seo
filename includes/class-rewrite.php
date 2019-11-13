@@ -7,6 +7,7 @@
  * @subpackage Classic_SEO\Core
  */
 
+
 namespace Classic_SEO;
 
 use Classic_SEO\Traits\Hooker;
@@ -155,31 +156,7 @@ class Rewrite {
 	public function category_rewrite_rules() {
 		global $wp_rewrite;
 
-		$category_rewrite = [];
-		$categories       = $this->get_categories();
-		$blog_prefix      = $this->get_blog_prefix();
-
-		if ( ! empty( $categories ) ) {
-			foreach ( $categories as $category ) {
-				$category_nicename = $category->slug;
-
-				if ( $category->parent === $category->cat_ID ) {
-					// Recursive recursion.
-					$category->parent = 0;
-				} elseif ( 0 !== $category->parent ) {
-					$parents = get_category_parents( $category->parent, false, '/', true );
-					if ( ! is_wp_error( $parents ) ) {
-						$category_nicename = $parents . $category_nicename;
-					}
-					unset( $parents );
-				}
-
-				$category_rewrite[ $blog_prefix . '(' . $category_nicename . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$' ]                = 'index.php?category_name=$matches[1]&feed=$matches[2]';
-				$category_rewrite[ $blog_prefix . '(' . $category_nicename . ')/' . $wp_rewrite->pagination_base . '/?([0-9]{1,})/?$' ] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
-				$category_rewrite[ $blog_prefix . '(' . $category_nicename . ')/?$' ] = 'index.php?category_name=$matches[1]';
-			}
-			unset( $categories, $category, $category_nicename );
-		}
+		$category_rewrite = $this->get_category_rules();
 
 		// Redirect support from Old Category Base.
 		$old_base                            = str_replace( '%category%', '(.+)', $wp_rewrite->get_category_permastruct() );
@@ -216,6 +193,49 @@ class Rewrite {
 		$category_base .= '/';
 
 		return preg_replace( '`' . preg_quote( $category_base, '`' ) . '`u', '', $link, 1 );
+	}
+
+	/**
+	 * Get category re-write rules.
+	 *
+	 * @return array
+	 */
+	private function get_category_rules() {
+		global $wp_rewrite;
+
+		$category_rewrite = [];
+		$categories       = $this->get_categories();
+		$blog_prefix      = $this->get_blog_prefix();
+
+		if ( empty( $categories ) ) {
+			return $category_rewrite;
+		}
+
+		foreach ( $categories as $category ) {
+			$category_nicename = $this->get_category_parents( $category ) . $category->slug;
+
+			$category_rewrite[ $blog_prefix . '(' . $category_nicename . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$' ]                = 'index.php?category_name=$matches[1]&feed=$matches[2]';
+			$category_rewrite[ $blog_prefix . '(' . $category_nicename . ')/' . $wp_rewrite->pagination_base . '/?([0-9]{1,})/?$' ] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
+			$category_rewrite[ $blog_prefix . '(' . $category_nicename . ')/?$' ] = 'index.php?category_name=$matches[1]';
+		}
+
+		return $category_rewrite;
+	}
+
+	/**
+	 * Retrieve category parents with separator.
+	 *
+	 * @param WP_Term $category Category instance.
+	 *
+	 * @return string
+	 */
+	private function get_category_parents( $category ) {
+		if ( $category->parent === $category->cat_ID || absint( $category->parent ) < 1 ) {
+			return '';
+		}
+
+		$parents = get_category_parents( $category->parent, false, '/', true );
+		return is_wp_error( $parents ) ? '' : $parents;
 	}
 
 	/**

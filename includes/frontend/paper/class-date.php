@@ -50,6 +50,15 @@ class Date implements IPaper {
 
 		return $robots;
 	}
+	
+	/**
+	 * Retrieves the advanced robots for a date archive.
+	 *
+	 * @return array The advanced robots to use on a date archive.
+	 */
+	public function advanced_robots() {
+		return Paper::advanced_robots_combine( Helper::get_settings( 'titles.cpseo_date_advanced_robots' ) );
+	}
 
 	/**
 	 * This function normally outputs the canonical but is also used in other places to retrieve

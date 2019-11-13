@@ -72,6 +72,22 @@ class Taxonomy implements IPaper {
 
 		return $robots;
 	}
+	
+	/**
+	 * Retrieves the advanced robots for a taxonomy.
+	 *
+	 * @return array The advanced robots for the taxonomy
+	 */
+	public function advanced_robots() {
+		$object = get_queried_object();
+		$robots = Paper::advanced_robots_combine( Term::get_meta( 'advanced_robots', $object ) );
+
+		if ( is_object( $object ) && empty( $robots ) && Helper::get_settings( "titles.cpseo_tax_{$object->taxonomy}_custom_robots" ) ) {
+			$robots = Paper::advanced_robots_combine( Helper::get_settings( "titles.cpseo_tax_{$object->taxonomy}_advanced_robots" ), true );
+		}
+
+		return $robots;
+	}
 
 	/**
 	 * Retrieves the canonical URL.

@@ -53,6 +53,15 @@ class Singular implements IPaper {
 	public function robots() {
 		return $this->get_post_robots( $this->object );
 	}
+	
+	/**
+	 * Retrieves the advanced robots.
+	 *
+	 * @return array
+	 */
+	public function advanced_robots() {
+		return $this->get_post_advanced_robots( $this->object );
+	}
 
 	/**
 	 * Retrieves the canonical URL.
@@ -187,11 +196,7 @@ class Singular implements IPaper {
 
 		// 5. The First paragraph of the content.
 		\preg_match_all( '/<p>(.*)<\/p>/iu', $post_content, $matches );
-		if ( isset( $matches[1], $matches[1][0] ) ) {
-			return $matches[1][0];
-		}
-
-		return '';
+		return isset( $matches[1], $matches[1][0] ) ? $matches[1][0] : '';
 	}
 
 	/**
@@ -219,6 +224,27 @@ class Singular implements IPaper {
 
 		if ( $noindex_private || $noindex_password_protected || $no_index_subpages ) {
 			$robots['index'] = 'noindex';
+		}
+
+		return $robots;
+	}
+	
+	/**
+	 * Retrieves the advanced robots set in the post metabox.
+	 *
+	 * @param object|null $object Object to retrieve the robots data from.
+	 *
+	 * @return string The robots for the specified object, or queried object if not supplied.
+	 */
+	protected function get_post_advanced_robots( $object = null ) {
+		if ( ! is_object( $this->object ) ) {
+			return [];
+		}
+
+		$post_type = $this->object->post_type;
+		$robots    = Paper::advanced_robots_combine( Post::get_meta( 'advanced_robots', $this->object->ID ) );
+		if ( empty( $robots ) && Helper::get_settings( "titles.cpseo_pt_{$post_type}_custom_robots" ) ) {
+			$robots = Paper::advanced_robots_combine( Helper::get_settings( "titles.cpseo_pt_{$post_type}_advanced_robots" ), true );
 		}
 
 		return $robots;

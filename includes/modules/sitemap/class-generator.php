@@ -164,11 +164,7 @@ class Generator extends XML {
 			}
 
 			$links = $provider->get_sitemap_links( $type, $this->max_entries, $page );
-			if ( empty( $links ) ) {
-				return '';
-			}
-
-			return $this->get_sitemap( $links, $type, $page );
+			return empty( $links ) ? '' : $this->get_sitemap( $links, $type, $page );
 		}
 
 		return $this->do_filter( "sitemap/{$type}/content", '' );
@@ -343,24 +339,20 @@ class Generator extends XML {
 	}
 
 	/**
-	 * Convret encoding if needed
+	 * Convert encoding if needed
 	 *
 	 * @param string  $data   Data to be added.
 	 * @param string  $tag    Tag to create CDATA for.
 	 * @param integer $indent Tab indent count.
 	 */
 	public function add_cdata( $data, $tag, $indent = 0 ) {
-		if ( ! empty( $data ) ) {
-
-			if ( $this->needs_conversion ) {
-				$data = mb_convert_encoding( $data, $this->output_charset, $this->charset );
-			}
-
-			$data = _wp_specialchars( html_entity_decode( $data, ENT_QUOTES, $this->output_charset ) );
-			$data = $this->newline( "<{$tag}><![CDATA[{$data}]]></{$tag}>", $indent );
+		if ( $this->needs_conversion ) {
+			$data = mb_convert_encoding( $data, $this->output_charset, $this->charset );
 		}
 
-		return $data;
+		$data = _wp_specialchars( html_entity_decode( $data, ENT_QUOTES, $this->output_charset ) );
+
+		return $this->newline( "<{$tag}><![CDATA[{$data}]]></{$tag}>", $indent );
 	}
 
 	/**

@@ -42,6 +42,15 @@ class Error_404 implements IPaper {
 	public function robots() {
 		return [ 'index' => 'noindex' ];
 	}
+	
+	/**
+	 * Retrieves the advanced robots.
+	 *
+	 * @return array
+	 */
+	public function advanced_robots() {
+		return [];
+	}
 
 	/**
 	 * Retrieves the canonical URL.

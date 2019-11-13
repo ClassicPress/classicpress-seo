@@ -395,10 +395,11 @@ class WooCommerce extends WC_Vars {
 
 		$product_id    = Param::get( 'post', get_queried_object_id(), FILTER_VALIDATE_INT );
 		$this->product = (
-			! $product_id &&
+			! function_exists( 'wc_get_product' ) ||
+			! $product_id ||
 			(
-				! is_singular( 'product' ) ||
-				! function_exists( 'wc_get_product' )
+				! is_admin() &&
+				! is_singular( 'product' )
 			)
 		) ? null : wc_get_product( $product_id );
 

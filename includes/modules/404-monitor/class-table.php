@@ -28,8 +28,8 @@ class Table extends List_Table {
 
 		parent::__construct(
 			[
-				'singular' => esc_html__( 'event', 'cpseo' ),
-				'plural'   => esc_html__( 'events', 'cpseo' ),
+				'singular' => 'event',
+				'plural'   => 'events',
 				'no_items' => esc_html__( 'The 404 error log is empty.', 'cpseo' ),
 			]
 		);

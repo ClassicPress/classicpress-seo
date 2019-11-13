@@ -53,7 +53,7 @@
     transform:translateX(100%)
 }
 .module-listing .cpseo-box{
-    min-height:127px;
+    min-height:140px;
     padding:12px;
     border:1px solid #d8d8d8
 }
@@ -66,7 +66,7 @@
 }
 .module-listing .cpseo-box header{
     overflow:hidden;
-    padding:2px 0 0 10px;
+    padding:2px 10px 0 10px;
     border:0
 }
 .module-listing .cpseo-box .module-settings{

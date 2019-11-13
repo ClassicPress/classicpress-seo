@@ -13,7 +13,6 @@ use WP_Http;
 use CMB2_hookup;
 use Classic_SEO\CMB2;
 use Classic_SEO\Helper;
-use Classic_SEO\Replace_Vars;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Helpers\Str;
 use Classic_SEO\Helpers\Param;
@@ -99,7 +98,6 @@ class Options {
 
 		$this->action( 'admin_enqueue_scripts', 'enqueue' );
 		$this->action( 'admin_body_class', 'body_class' );
-		add_action( 'admin_enqueue_scripts', [ 'CMB2_hookup', 'enqueue_cmb_css' ], 25 );
 	}
 
 	/**
@@ -234,7 +232,7 @@ class Options {
 		}
 
 		CMB2_hookup::enqueue_cmb_css();
-		Replace_Vars::setup_json();
+		cpseo()->variables->setup_json();
 		wp_enqueue_style( 'font-awesome', cpseo()->plugin_url() . 'assets/vendor/font-awesome/css/font-awesome.min.css', null, '4.7.0' );
 		wp_enqueue_style( 'cpseo-options', cpseo()->plugin_url() . 'assets/admin/css/option-panel.css', [ 'select2-rm', 'cpseo-common', 'cpseo-cmb2' ], cpseo()->version );
 		wp_enqueue_script( 'cpseo-options', cpseo()->plugin_url() . 'assets/admin/js/option-panel.js', [ 'underscore', 'select2-rm', 'cpseo-common' ], cpseo()->version, true );

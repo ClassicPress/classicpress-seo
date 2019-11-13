@@ -91,6 +91,12 @@ class Post_Filters implements Runner {
 		if ( ! $this->can_fk_filter() ) {
 			return;
 		}
+		
+		if ( $ids = $this->posts_had_reviews() ) { // phpcs:ignore
+			$query->set( 'post_type', 'any' );
+			$query->set( 'post__in', $ids );
+			return;
+		}
 
 		$query->set( 'post_status', 'publish' );
 		if ( $ids = $this->fk_in_title() ) { // phpcs:ignore
@@ -274,7 +280,7 @@ class Post_Filters implements Runner {
 	 */
 	private function can_fk_filter() {
 		$screen = get_current_screen();
-		if ( is_null( $screen ) || 'edit' !== $screen->base || ( ! isset( $_GET['focus_keyword'] ) && ! isset( $_GET['fk_in_title'] ) ) ) {
+		if ( is_null( $screen ) || 'edit' !== $screen->base || ( ! isset( $_GET['focus_keyword'] ) && ! isset( $_GET['fk_in_title'] ) && ! isset( $_GET['review_posts'] ) ) ) {
 			return false;
 		}
 
@@ -316,5 +322,21 @@ class Post_Filters implements Runner {
 
 		$meta_query = $meta_query->get_sql( 'post', $wpdb->posts, 'ID' );
 		return $wpdb->get_col( "SELECT {$wpdb->posts}.ID FROM $wpdb->posts {$meta_query['join']} WHERE 1=1 {$meta_query['where']} AND {$wpdb->posts}.post_type = '$screen->post_type' AND ({$wpdb->posts}.post_status = 'publish') AND {$wpdb->posts}.post_title NOT REGEXP REPLACE({$wpdb->postmeta}.meta_value, ',', '|')" ); // phpcs:ignore
+	}
+	
+	/**
+	 * Check if any posts had Review schema.
+	 *
+	 * @return bool|array
+	 */
+	private function posts_had_reviews() {
+		global $wpdb;
+
+		$review_posts = Param::get( 'review_posts' );
+		if ( ! $review_posts ) {
+			return false;
+		}
+
+		return get_option( 'cpseo_review_posts', false );
 	}
 }

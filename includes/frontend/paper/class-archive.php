@@ -55,6 +55,22 @@ class Archive implements IPaper {
 
 		return $robots;
 	}
+	
+	/**
+	 * Retrieves the advanced robots for a post type archive.
+	 *
+	 * @return array The advanced robots to use on a post type archive.
+	 */
+	public function advanced_robots() {
+		$robots    = [];
+		$post_type = $this->get_queried_post_type();
+
+		if ( Helper::get_settings( "titles.cpseo_pt_{$post_type}_custom_robots" ) ) {
+			$robots = Paper::advanced_robots_combine( Helper::get_settings( "titles.cpseo_pt_{$post_type}_advanced_robots" ) );
+		}
+
+		return $robots;
+	}
 
 	/**
 	 * Retrieves the canonical URL.

@@ -1,13 +1,11 @@
-var attachmentCache = require( './cache.attachments.js' )
+import attachmentCache from './attachmentCache'
 
-var getAttachmentContent = function( attachment_id ) {
-	var content = '';
-	if ( attachmentCache.get( attachment_id, 'attachment' ) ) {
-		var attachment = attachmentCache.get( attachment_id, 'attachment' )
+export default function( attachmentID ) {
+	let content = ''
+	if ( attachmentCache.get( attachmentID, 'attachment' ) ) {
+		const attachment = attachmentCache.get( attachmentID, 'attachment' )
 		content += '<img src="' + attachment.url + '" alt="' + attachment.alt + '" title="' + attachment.title + '">'
 	}
 
 	return content
 }
-
-module.exports = getAttachmentContent

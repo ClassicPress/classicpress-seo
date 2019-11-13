@@ -66,6 +66,7 @@ class Product implements Snippet {
 				'name'  => $brand,
 			];
 		}
+		$jsonld->add_ratings( 'product', $entity );
 
 		if ( Conditional::is_woocommerce_active() && is_product() ) {
 			remove_action( 'wp_footer', [ WC()->structured_data, 'output_structured_data' ], 10 );

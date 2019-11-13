@@ -175,6 +175,15 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'              => 'cpseo_pt_' . $post_type . '_advanced_robots',
+	'type'            => 'advanced_robots',
+	/* translators: post type name */
+	'name'            => sprintf( esc_html__( '%s Advanced Robots Meta', 'cpseo' ), $name ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => [ [ 'cpseo_pt_' . $post_type . '_custom_robots', 'on' ] ],
+]);
+
+$cmb->add_field([
 	'id'      => 'cpseo_pt_' . $post_type . '_link_suggestions',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Link Suggestions', 'cpseo' ),
@@ -250,6 +259,14 @@ if ( 'attachment' === $post_type ) {
 		],
 		'default' => 'editing',
 		'dep'     => [ [ 'cpseo_pt_' . $post_type . '_add_meta_box', 'on' ] ],
+	]);
+	
+	$cmb->add_field([
+		'id'      => 'cpseo_pt_' . $post_type . '_analyze_fields',
+		'type'    => 'textarea_small',
+		'name'    => esc_html__( 'Custom Fields', 'cpseo' ),
+		'desc'    => esc_html__( 'List of custom fields name to include in the Page analysis. Add one per line.', 'cpseo' ),
+		'default' => '',
 	]);
 }
 

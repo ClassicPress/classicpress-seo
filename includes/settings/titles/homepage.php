@@ -58,6 +58,14 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'              => 'cpseo_homepage_advanced_robots',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Homepage Advanced Robots', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => [ [ 'homepage_custom_robots', 'on' ] ],
+]);
+
+$cmb->add_field([
 	'id'   => 'cpseo_homepage_facebook_title',
 	'type' => 'text',
 	'name' => esc_html__( 'Homepage Title for Facebook', 'cpseo' ),

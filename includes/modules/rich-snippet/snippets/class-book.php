@@ -40,6 +40,7 @@ class Book implements Snippet {
 			'hasPart'  => [],
 		];
 
+		$jsonld->add_ratings( 'book', $entity );
 		foreach ( $this->get_editions() as $edition ) {
 			$entity['hasPart'][] = $this->get_work_entity( $edition );
 		}

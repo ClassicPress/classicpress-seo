@@ -244,7 +244,7 @@
     text-align:center;
 
 }
-.cpseo-tabs-navigation:not(.custom) a.active,.cpseo-tabs-navigation:not(.custom) a:focus,.cpseo-tabs-navigation:not(.custom) a:hover{
+.cpseo-tabs-navigation:not(.cpseo-custom) a.active,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover{
     color:#fff;
     border-right-color:#361946;
     background:#361946

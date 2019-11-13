@@ -54,6 +54,7 @@ class Event implements Snippet {
 			$entity['endDate'] = str_replace( ' ', 'T', date_i18n( 'Y-m-d H:i', $end_date ) );
 		}
 
+		$jsonld->add_ratings( 'event', $entity );
 		$jsonld->set_address( 'event', $entity['location'] );
 
 		$jsonld->set_data([

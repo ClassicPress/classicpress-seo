@@ -24,8 +24,8 @@ class Table extends List_Table {
 	 */
 	public function __construct() {
 		parent::__construct([
-			'singular' => esc_html__( 'redirection', 'cpseo' ),
-			'plural'   => esc_html__( 'redirections', 'cpseo' ),
+			'singular' => 'redirection',
+			'plural'   => 'redirections',
 			'no_items' => $this->is_trashed_page() ? esc_html__( 'No redirections found in Trash.', 'cpseo' ) : wp_kses_post( __( 'No redirections added yet. <a href="#" class="cpseo-add-new-redirection">Add New Redirection</a>', 'cpseo' ) ),
 		]);
 	}

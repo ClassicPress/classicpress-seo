@@ -30,6 +30,29 @@ wp_clear_scheduled_hook( 'cpseo_search_console_get_analytics' );
 // Set cpseo_clear_data_on_uninstall to TRUE to delete all data on uninstall.
 if ( true === apply_filters( 'cpseo_clear_data_on_uninstall', false ) ) {
 
+	if ( ! is_multisite() ) {
+		cpseo_remove_data();
+		return;
+	}
+
+	global $wpdb;
+
+	$blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs WHERE archived = '0' AND spam = '0' AND deleted = '0'" );
+	if ( ! empty( $blog_ids ) ) {
+		foreach ( $blog_ids as $blog_id ) {
+			switch_to_blog( $blog_id );
+			cpseo_remove_data();
+			restore_current_blog();
+		}
+	}
+}
+
+/**
+ * Removes ALL plugin data
+ *
+ * @since 0.3.0
+ */
+function cpseo_remove_data() {
 	// Delete all options.
 	cpseo_delete_options();
 
@@ -44,6 +67,7 @@ if ( true === apply_filters( 'cpseo_clear_data_on_uninstall', false ) ) {
 	cpseo_drop_table( 'cpseo_redirections_cache' );
 	cpseo_drop_table( 'cpseo_internal_links' );
 	cpseo_drop_table( 'cpseo_internal_meta' );
+	cpseo_drop_table( 'cpseo_sc_analytics' );
 
 	// Remove Capabilities.
 	/**

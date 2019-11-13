@@ -14,6 +14,7 @@ use Classic_SEO\Helper;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Traits\Shortcode;
 use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -63,6 +64,10 @@ class Snippet_Shortcode {
 			$atts,
 			'cpseo_rich_snippet'
 		);
+		
+		if ( 'edit' === Param::get( 'context' ) ) {
+			cpseo()->variables->setup();
+		}
 
 		$post = get_post( $atts['id'] );
 		if ( empty( $post ) ) {
@@ -263,6 +268,9 @@ class Snippet_Shortcode {
 				'course_provider_type' => esc_html__( 'Course Provider', 'cpseo' ),
 				'course_provider'      => esc_html__( 'Course Provider Name', 'cpseo' ),
 				'course_provider_url'  => esc_html__( 'Course Provider URL', 'cpseo' ),
+				'is_rating'            => [
+					'value' => 'course_rating',
+				],
 			],
 			'event'      => [
 				'url'                            => esc_html__( 'URL', 'cpseo' ),
@@ -282,6 +290,9 @@ class Snippet_Shortcode {
 				'event_availability'             => esc_html__( 'Availability', 'cpseo' ),
 				'event_availability_starts_date' => esc_html__( 'Availability Starts', 'cpseo' ),
 				'event_inventory'                => esc_html__( 'Stock Inventory', 'cpseo' ),
+				'is_rating'                      => [
+					'value' => 'event_rating',
+				],
 			],
 			'jobposting' => [
 				'jobposting_salary'          => esc_html__( 'Salary', 'cpseo' ),
@@ -308,6 +319,9 @@ class Snippet_Shortcode {
 				'product_price'       => esc_html__( 'Product Price', 'cpseo' ),
 				'product_price_valid' => esc_html__( 'Price Valid Until', 'cpseo' ),
 				'product_instock'     => esc_html__( 'Product In-Stock', 'cpseo' ),
+				'is_rating'           => [
+					'value' => 'product_rating',
+				],
 			],
 			'recipe'     => [
 				'recipe_type'                => esc_html__( 'Type', 'cpseo' ),
@@ -318,9 +332,6 @@ class Snippet_Shortcode {
 				'recipe_preptime'            => esc_html__( 'Preparation Time', 'cpseo' ),
 				'recipe_cooktime'            => esc_html__( 'Cooking Time', 'cpseo' ),
 				'recipe_totaltime'           => esc_html__( 'Total Time', 'cpseo' ),
-				'recipe_rating'              => esc_html__( 'Rating', 'cpseo' ),
-				'recipe_rating_min'          => esc_html__( 'Rating Minimum', 'cpseo' ),
-				'recipe_rating_max'          => esc_html__( 'Rating Maximum', 'cpseo' ),
 				'recipe_video'               => esc_html__( 'Recipe Video', 'cpseo' ),
 				'recipe_video_thumbnail'     => esc_html__( 'Recipe Video Thumbnail', 'cpseo' ),
 				'recipe_video_name'          => esc_html__( 'Recipe Video Name', 'cpseo' ),
@@ -330,6 +341,9 @@ class Snippet_Shortcode {
 				'recipe_instruction_name'    => esc_html__( 'Recipe Instruction Name', 'cpseo' ),
 				'recipe_single_instructions' => esc_html__( 'Recipe Instructions', 'cpseo' ),
 				'recipe_instructions'        => esc_html__( 'Recipe Instructions', 'cpseo' ),
+				'is_rating'                  => [
+					'value' => 'recipe_rating',
+				],
 			],
 			'restaurant' => [
 				'local_address'             => esc_html__( 'Address', 'cpseo' ),
@@ -363,10 +377,6 @@ class Snippet_Shortcode {
 				'service_type'           => esc_html__( 'Service Type', 'cpseo' ),
 				'service_price'          => esc_html__( 'Price', 'cpseo' ),
 				'service_price_currency' => esc_html__( 'Currency', 'cpseo' ),
-				'is_rating'              => [
-					'value' => 'service_rating_value',
-					'count' => 'service_rating_count',
-				],
 			],
 			'software'   => [
 				'software_price'                => esc_html__( 'Price', 'cpseo' ),
@@ -374,14 +384,16 @@ class Snippet_Shortcode {
 				'software_operating_system'     => esc_html__( 'Operating System', 'cpseo' ),
 				'software_application_category' => esc_html__( 'Application Category', 'cpseo' ),
 				'is_rating'                     => [
-					'value' => 'software_rating_value',
-					'count' => 'software_rating_count',
+					'value' => 'software_rating',
 				],
 			],
 			'book'       => [
 				'url'           => esc_html__( 'URL', 'cpseo' ),
 				'author'        => esc_html__( 'Author', 'cpseo' ),
 				'book_editions' => esc_html__( 'Book Editions', 'cpseo' ),
+				'is_rating'     => [
+					'value' => 'book_rating',
+				],
 			],
 		];
 

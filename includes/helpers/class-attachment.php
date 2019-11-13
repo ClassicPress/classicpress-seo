@@ -26,6 +26,10 @@ trait Attachment {
 	 * @return bool
 	 */
 	public static function attachment_in_sitemap( $attachment_id ) {
+		if ( empty( $attachment_id ) ) {
+			return false;
+		}
+
 		$exclude_sitemap = get_post_meta( $attachment_id, 'cpseo_exclude_sitemap', true );
 
 		return empty( $exclude_sitemap );

@@ -1,6 +1,6 @@
 # Classic SEO Plugin (Experimental)
 
-Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help improve your search engine rankings.
+Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
 
 This plugin was created largely as a result of the following ClassicPress petitions:
 

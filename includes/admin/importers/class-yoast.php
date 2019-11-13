@@ -473,12 +473,13 @@ class Yoast extends Plugin_Importer {
 	 * @return array
 	 */
 	protected function redirections() {
+		$count        = 0;
 		$redirections = get_option( 'wpseo-premium-redirects-base' );
+
 		if ( ! $redirections ) {
-			return false;
+			return compact( 'count' );
 		}
 
-		$count = 0;
 		Helper::update_modules( [ 'redirections' => 'on' ] );
 		foreach ( $redirections as $redirection ) {
 			if ( false !== $this->save_redirection( $redirection ) ) {

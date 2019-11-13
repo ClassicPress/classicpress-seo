@@ -26,21 +26,35 @@ trait Taxonomy {
 	 * @return boolean
 	 */
 	public static function is_term_indexable( $term ) {
-		$robots = Helper::get_term_meta( 'robots', $term, $term->taxonomy );
-		if ( ! empty( $robots ) && is_array( $robots ) ) {
-			if ( in_array( 'index', $robots, true ) ) {
-				return true;
-			}
-
-			if ( in_array( 'noindex', $robots, true ) ) {
-				return false;
-			}
+		$robots = self::is_term_meta_indexable( $term );
+		if ( is_bool( $robots ) ) {
+			return $robots;
 		}
 
 		$robots = Helper::get_settings( 'titles.cpseo_tax_' . $term->taxonomy . '_custom_robots' );
 		$robots = false === $robots ? Helper::get_settings( 'titles.cpseo_robots_global' ) : Helper::get_settings( 'titles.cpseo_tax_' . $term->taxonomy . '_robots' );
 
 		return in_array( 'noindex', (array) $robots, true ) ? false : true;
+	}
+	
+	/**
+	 * Is term indexable by meta.
+	 *
+	 * @param WP_Term $term Term to check.
+	 *
+	 * @return boolean
+	 */
+	private static function is_term_meta_indexable( $term ) {
+		$robots = Helper::get_term_meta( 'robots', $term, $term->taxonomy );
+		if ( empty( $robots ) || ! is_array( $robots ) ) {
+			return '';
+		}
+
+		if ( in_array( 'index', $robots, true ) ) {
+			return true;
+		}
+
+		return in_array( 'noindex', $robots, true ) ? false : '';
 	}
 
 	/**

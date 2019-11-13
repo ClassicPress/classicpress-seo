@@ -81,24 +81,35 @@ class OpenGraph {
 	 * @return bool|string
 	 */
 	public function get_title() {
-		$title = false;
-		$key   = $this->prefix . '_title';
-
-		if ( Post::is_simple_page() ) {
-			$title = Post::get_meta( $key, Post::get_simple_page_id() );
-		} elseif ( is_front_page() ) {
-			$title = Helper::get_settings( 'titles.cpseo_homepage_facebook_title' );
-		} elseif ( is_category() || is_tax() || is_tag() ) {
-			$title = Term::get_meta( $key );
-		} elseif ( is_author() ) {
-			$title = User::get_meta( $key );
-		}
-
+		$title = $this->_title();
 		if ( $title && Helper::get_settings( 'titles.cpseo_capitalize_titles' ) ) {
 			$title = ucwords( $title );
 		}
 
 		return $title ? $title : Paper::get()->get_title();
+	}
+	
+	/**
+	 * Get title.
+	 *
+	 * @return string
+	 */
+	private function _title() {
+		$key = $this->prefix . '_title';
+
+		if ( Post::is_simple_page() ) {
+			return Post::get_meta( $key, Post::get_simple_page_id() );
+		}
+
+		if ( is_front_page() ) {
+			return Helper::get_settings( 'titles.cpseo_homepage_facebook_title' );
+		}
+
+		if ( is_category() || is_tax() || is_tag() ) {
+			return Term::get_meta( $key );
+		}
+
+		return is_author() ? User::get_meta( $key ) : false;
 	}
 
 	/**
@@ -130,6 +141,7 @@ class OpenGraph {
 	 * Get a fallback description.
 	 *
 	 * @param  string $callback Function name to call.
+	 *
 	 * @return string
 	 */
 	protected function fallback_description( $callback = false ) {
@@ -137,6 +149,7 @@ class OpenGraph {
 		if ( '' === $desc && $callback ) {
 			$desc = $callback();
 		}
+
 		return $desc;
 	}
 
@@ -145,6 +158,7 @@ class OpenGraph {
 	 *
 	 * @param  string $property Property attribute value.
 	 * @param  string $content  Content attribute value.
+	 *
 	 * @return bool
 	 */
 	public function tag( $property, $content ) {
@@ -172,16 +186,18 @@ class OpenGraph {
 	 * Get Overlay Image URL
 	 *
 	 * @param string $network The social network.
-	 * @return url
+	 *
+	 * @return string
 	 */
 	public function get_overlay_image( $network = 'facebook' ) {
-		$img_overlay = '';
 		if ( is_singular() ) {
-			$img_overlay = Helper::get_post_meta( "{$network}_enable_image_overlay" ) ? Helper::get_post_meta( "{$network}_image_overlay" ) : '';
-		} elseif ( is_category() || is_tag() || is_tax() ) {
-			$img_overlay = Helper::get_term_meta( "{$network}_enable_image_overlay" ) ? Helper::get_term_meta( "{$network}_image_overlay" ) : '';
+			return Helper::get_post_meta( "{$network}_enable_image_overlay" ) ? Helper::get_post_meta( "{$network}_image_overlay" ) : '';
 		}
 
-		return $img_overlay;
+		if ( is_category() || is_tag() || is_tax() ) {
+			return Helper::get_term_meta( "{$network}_enable_image_overlay" ) ? Helper::get_term_meta( "{$network}_image_overlay" ) : '';
+		}
+
+		return '';
 	}
 }

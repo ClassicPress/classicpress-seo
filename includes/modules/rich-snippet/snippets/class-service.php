@@ -40,11 +40,6 @@ class Service implements Snippet {
 				'price'         => $price ? $price : '0',
 				'priceCurrency' => Helper::get_post_meta( 'snippet_service_price_currency' ),
 			],
-			'aggregateRating' => [
-				'@type'       => 'AggregateRating',
-				'ratingValue' => Helper::get_post_meta( 'snippet_service_rating_value' ),
-				'ratingCount' => Helper::get_post_meta( 'snippet_service_rating_count' ),
-			],
 		];
 
 		return $entity;

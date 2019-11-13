@@ -120,15 +120,16 @@ class Assets implements Runner {
 			'wplink',
 			'wpLinkL10n',
 			[
-				'title'          => esc_html__( 'Insert/edit link', 'cpseo' ),
-				'update'         => esc_html__( 'Update', 'cpseo' ),
-				'save'           => esc_html__( 'Add Link', 'cpseo' ),
-				'noTitle'        => esc_html__( '(no title)', 'cpseo' ),
-				'noMatchesFound' => esc_html__( 'No matches found.', 'cpseo' ),
-				'linkSelected'   => esc_html__( 'Link selected.', 'cpseo' ),
-				'linkInserted'   => esc_html__( 'Link inserted.', 'cpseo' ),
-				'relCheckbox'    => __( 'Add <code>rel="nofollow"</code>', 'cpseo' ),
-				'linkTitle'      => esc_html__( 'Link Title', 'cpseo' ),
+				'title'             => esc_html__( 'Insert/edit link', 'cpseo' ),
+				'update'            => esc_html__( 'Update', 'cpseo' ),
+				'save'              => esc_html__( 'Add Link', 'cpseo' ),
+				'noTitle'           => esc_html__( '(no title)', 'cpseo' ),
+				'noMatchesFound'    => esc_html__( 'No matches found.', 'cpseo' ),
+				'linkSelected'      => esc_html__( 'Link selected.', 'cpseo' ),
+				'linkInserted'      => esc_html__( 'Link inserted.', 'cpseo' ),
+				'relCheckbox'       => __( 'Add <code>rel="nofollow"</code>', 'cpseo' ),
+				'sponsoredCheckbox' => __( 'Add <code>rel="sponsored"</code>', 'cpseo' ),
+				'linkTitle'         => esc_html__( 'Link Title', 'cpseo' ),
 			]
 		);
 	}

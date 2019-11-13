@@ -1,8 +1,8 @@
-var attachmentCache = require( './cache.attachments.js' )
-var getAttachmentContent = require( './getAttachmentContent' )
+import attachmentCache from './attachmentCache'
+import getAttachmentContent from './getAttachmentContent'
 
-var Image = function( fields ) {
-	var attachment_ids = []
+export default function( fields ) {
+	const attachments = []
 
 	fields = _.map( fields, function( field ) {
 		if ( 'image' !== field.type ) {
@@ -11,19 +11,16 @@ var Image = function( fields ) {
 
 		field.content = ''
 
-		var attachment_id = field.$el.find( 'input[type=hidden]' ).val()
-
-		attachment_ids.push( attachment_id )
-		if ( attachmentCache.get( attachment_id, 'attachment' ) ) {
-			field.content += getAttachmentContent( attachment_id )
+		const attachmentID = field.$el.find( 'input[type=hidden]' ).val()
+		attachments.push( attachmentID )
+		if ( attachmentCache.get( attachmentID, 'attachment' ) ) {
+			field.content += getAttachmentContent( attachmentID )
 		}
 
 		return field
-	})
+	} )
 
-	attachmentCache.refresh( attachment_ids )
+	attachmentCache.refresh( attachments )
 
 	return fields
 }
-
-module.exports = Image

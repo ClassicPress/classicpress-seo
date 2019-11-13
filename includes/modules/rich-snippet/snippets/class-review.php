@@ -38,6 +38,7 @@ class Review implements Snippet {
 				'@type' => 'Person',
 				'name'  => $jsonld->parts['author'],
 			],
+			'name'          => $jsonld->parts['title'],
 			'datePublished' => $jsonld->parts['published'],
 			'description'   => $jsonld->parts['desc'],
 			'itemReviewed'  => [

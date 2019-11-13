@@ -120,3 +120,14 @@ $cmb->add_field([
 	'default' => 'off',
 	'dep'     => $dependency,
 ]);
+
+if ( 'page' === get_option( 'show_on_front' ) && 0 < get_option( 'page_for_posts' ) ) {
+	$cmb->add_field([
+		'id'      => 'cpseo_breadcrumbs_blog_page',
+		'type'    => 'switch',
+		'name'    => esc_html__( 'Show Blog Page', 'cpseo' ),
+		'desc'    => esc_html__( 'Show Blog Page in Breadcrumb.', 'cpseo' ),
+		'default' => 'off',
+		'dep'     => $dependency,
+	]);
+}

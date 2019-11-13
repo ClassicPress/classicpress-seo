@@ -65,8 +65,8 @@ class Recipe implements Snippet {
 				break;
 		}
 
+		$jsonld->add_ratings( 'recipe', $entity );
 		$this->set_calories( $entity );
-		$this->set_rating( $entity );
 		$this->set_video( $entity );
 
 		return $entity;
@@ -159,23 +159,6 @@ class Recipe implements Snippet {
 			$entity['nutrition'] = [
 				'@type'    => 'NutritionInformation',
 				'calories' => $calories,
-			];
-		}
-	}
-
-	/**
-	 * Set recipe rating.
-	 *
-	 * @param array $entity Array of JSON-LD entity.
-	 */
-	private function set_rating( &$entity ) {
-		if ( $rating = Helper::get_post_meta( 'snippet_recipe_rating' ) ) { // phpcs:ignore
-			$entity['aggregateRating'] = [
-				'@type'       => 'AggregateRating',
-				'ratingValue' => $rating,
-				'bestRating'  => Helper::get_post_meta( 'snippet_recipe_rating_max' ),
-				'worstRating' => Helper::get_post_meta( 'snippet_recipe_rating_min' ),
-				'ratingCount' => '1',
 			];
 		}
 	}

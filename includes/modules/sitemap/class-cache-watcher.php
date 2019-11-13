@@ -111,12 +111,7 @@ class Cache_Watcher {
 			return;
 		}
 
-		$post_type = get_post_type( $post );
-		wp_cache_delete( 'lastpostmodified:gmt:' . $post_type, 'timeinfo' );
-
-		// None of our interest..
-		// If the post type is excluded in options, we can stop.
-		if ( 'nav_menu_item' === $post_type || ! Helper::is_post_indexable( $post->ID ) ) {
+		if ( $this->can_exclude( $post ) ) {
 			return;
 		}
 
@@ -131,6 +126,22 @@ class Cache_Watcher {
 		if ( ! Helper::is_post_excluded( $post->ID ) && ! wp_next_scheduled( 'cpseo/sitemap/ping_search_engines' ) ) {
 			wp_schedule_single_event( ( time() + 300 ), 'cpseo/sitemap/ping_search_engines' );
 		}
+	}
+	
+	/**
+	 * Can exclude post type.
+	 *
+	 * @param \WP_Post $post Post object.
+	 *
+	 * @return bool
+	 */
+	private function can_exclude( $post ) {
+		$post_type = get_post_type( $post );
+		wp_cache_delete( 'lastpostmodified:gmt:' . $post_type, 'timeinfo' );
+
+		// None of our interest..
+		// If the post type is excluded in options, we can stop.
+		return 'nav_menu_item' === $post_type || ! Helper::is_post_indexable( $post->ID );
 	}
 
 	/**

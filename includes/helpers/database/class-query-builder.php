@@ -253,9 +253,10 @@ class Query_Builder {
 
 		if ( is_array( $name ) ) {
 			$this->statements['values'] = $this->statements['values'] + $name;
-		} else {
-			$this->statements['values'][ $name ] = $value;
+			return $this;
 		}
+
+		$this->statements['values'][ $name ] = $value;
 
 		return $this;
 	}

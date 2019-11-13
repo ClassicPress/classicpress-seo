@@ -1,50 +1,53 @@
-var Cache = function() {
-	this.clear( 'all' )
-}
+class Cache {
+	/**
+	 * Cache Holder
+	 *
+	 * @type {Object}
+	 */
+	cache = {}
 
-var _cache
-
-Cache.prototype.set = function( id, value, store ) {
-	store = 'undefined' === typeof store ? 'default' : store
-
-	if ( ! ( store in _cache ) ) {
-		_cache[ store ] = {}
+	constructor() {
+		this.clear( 'all' )
 	}
 
-	_cache[ store ][ id ] = value
-}
+	set( id, value, store ) {
+		store = 'undefined' === typeof store ? 'default' : store
 
-Cache.prototype.get =  function( id, store ) {
-	store = 'undefined' === typeof store ? 'default' : store
+		if ( ! ( store in this.cache ) ) {
+			this.cache[ store ] = {}
+		}
 
-	if ( store in _cache && id in _cache[ store ] ) {
-		return _cache[ store ][ id ]
+		this.cache[ store ][ id ] = value
 	}
 
-	return false
-}
+	get( id, store ) {
+		store = 'undefined' === typeof store ? 'default' : store
 
-Cache.prototype.getUncached =  function( ids, store ) {
-	store = 'undefined' === typeof store ? 'default' : store
+		if ( store in this.cache && id in this.cache[ store ] ) {
+			return this.cache[ store ][ id ]
+		}
 
-	var that = this
+		return false
+	}
 
-	ids = _.uniq( ids )
+	getUncached( ids, store ) {
+		ids = _.uniq( ids )
+		store = 'undefined' === typeof store ? 'default' : store
 
-	return ids.filter( function( id ) {
-		var value = that.get( id, store )
-		return value === false
-	})
-}
+		return ids.filter( ( id ) => {
+			return false === this.get( id, store )
+		} )
+	}
 
-Cache.prototype.clear =  function( store ) {
-	store = 'undefined' === typeof store ? 'default' : store
+	clear( store ) {
+		store = 'undefined' === typeof store ? 'default' : store
 
-	if ( 'all' === store ) {
-		_cache = {}
-	} else {
-		_cache[ store ] = {}
+		if ( 'all' === store ) {
+			this.cache = {}
+		} else {
+			this.cache[ store ] = {}
+		}
 	}
 }
 
-module.exports = new Cache()
+export default new Cache()

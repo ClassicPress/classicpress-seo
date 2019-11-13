@@ -302,4 +302,20 @@ class CMB2 {
 
 		return $value;
 	}
+	
+	/**
+	 * Handles sanitization of advanced robots data.
+	 *
+	 * @param array $robots The unsanitized value from the form.
+	 *
+	 * @return array Sanitized value to be stored.
+	 */
+	public static function sanitize_advanced_robots( $robots ) {
+		$advanced_robots = [];
+		foreach ( $robots as $key => $robot ) {
+			$advanced_robots[ $key ] = ! empty( $robot['enable'] ) ? $robot['length'] : false;
+		}
+
+		return $advanced_robots;
+	}
 }

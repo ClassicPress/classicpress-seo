@@ -32,6 +32,13 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'              => 'cpseo_advanced_robots_global',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Advanced Robots Meta', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+]);
+
+$cmb->add_field([
 	'id'      => 'cpseo_noindex_empty_taxonomies',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Noindex Empty Category and Tag Archives', 'cpseo' ),

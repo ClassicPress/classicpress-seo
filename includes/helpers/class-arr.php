@@ -7,6 +7,7 @@
  * @subpackage Classic_SEO\Helpers
  */
 
+
 namespace Classic_SEO\Helpers;
 
 use ArrayAccess;
@@ -46,21 +47,6 @@ class Arr {
 	}
 
 	/**
-	 * Get an item from an array.
-	 * Supports dot notation:
-	 * e.g `Arr::get($array, 'section.subsection.item')`
-	 *
-	 * @param array      $array   Source array.
-	 * @param string     $key     Key to get value for.
-	 * @param mixed|null $default Default value if key not exists.
-	 *
-	 * @return mixed|null
-	 */
-	public static function get( array $array, $key, $default = null ) {
-		return isset( $array[ $key ] ) ? $array[ $key ] : $default;
-	}
-
-	/**
 	 * Check whether an array or [[\Traversable]] contains an element.
 	 *
 	 * This method does the same as the PHP function [in_array()](https://secure.php.net/manual/en/function.in-array.php)
@@ -76,15 +62,31 @@ class Arr {
 	 */
 	public static function includes( $array, $search, $strict = true ) {
 		if ( $array instanceof \Traversable ) {
-			foreach ( $array as $value ) {
-				if ( ( $strict && $search === $value ) || $search == $value ) {
-					return true;
-				}
-			}
-		} elseif ( is_array( $array ) ) {
-			return in_array( $search, $array, $strict );
-		} else {
+			return self::includes_traversable( $array, $search, $strict );
+		}
+
+		$is_array = is_array( $array );
+		if ( ! $is_array ) {
 			throw new \InvalidArgumentException( 'Argument $array must be an array or implement Traversable' );
+		}
+
+		return $is_array ? in_array( $search, $array, $strict ) : false; // phpcs:ignore
+	}
+
+	/**
+	 * Check Traversable contains an element.
+	 *
+	 * @param \Traversable $array  The set of values to search.
+	 * @param mixed        $search The value to look for.
+	 * @param bool         $strict Whether to enable strict (`===`) comparison.
+	 *
+	 * @return bool `true` if `$search` was found in `$array`, `false` otherwise.
+	 */
+	private static function includes_traversable( $array, $search, $strict = true ) {
+		foreach ( $array as $value ) {
+			if ( ( $strict && $search === $value ) || $search == $value ) { // phpcs:ignore
+				return true;
+			}
 		}
 
 		return false;

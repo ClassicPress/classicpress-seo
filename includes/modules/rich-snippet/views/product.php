@@ -64,3 +64,30 @@ $cmb->add_field([
 	'classes' => 'nob',
 	'default' => 'on',
 ]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_product_rating',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating score of the product. Optional.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $product,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_product_rating_min',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Minimum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating minimum score of the product.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $product,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_product_rating_max',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Maximum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating maximum score of the product.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $product,
+]);

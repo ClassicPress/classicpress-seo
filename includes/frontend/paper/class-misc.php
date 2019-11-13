@@ -42,6 +42,15 @@ class Misc implements IPaper {
 	public function robots() {
 		return [];
 	}
+	
+	/**
+	 * Retrieves the advanced robots.
+	 *
+	 * @return array
+	 */
+	public function advanced_robots() {
+		return [];
+	}
 
 	/**
 	 * Retrieves the canonical URL.

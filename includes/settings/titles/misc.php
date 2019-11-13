@@ -75,6 +75,15 @@ $cmb->add_field([
 	'desc'              => esc_html__( 'Custom values for robots meta tag on date page.', 'cpseo' ),
 	'options'           => Helper::choices_robots(),
 	'select_all_button' => false,
+	'dep'               => $dep,
+]);
+
+$cmb->add_field([
+	'id'              => 'cpseo_date_advanced_robots',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Date Advanced Robots', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => $dep,
 ]);
 
 $cmb->add_field([

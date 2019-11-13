@@ -24,6 +24,13 @@ $cmb->add_field( array(
 ) );
 
 $cmb->add_field( array(
+	'id'              => 'cpseo_advanced_robots',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Advanced Robots Meta', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+) );
+
+$cmb->add_field( array(
 	'id'   => 'cpseo_canonical_url',
 	'type' => 'text',
 	'name' => esc_html__( 'Canonical URL', 'cpseo' ),

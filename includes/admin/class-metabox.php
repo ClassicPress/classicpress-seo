@@ -13,7 +13,6 @@ use CMB2_hookup;
 use Classic_SEO\CMB2;
 use Classic_SEO\Helper;
 use Classic_SEO\Runner;
-use Classic_SEO\Replace_Vars;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Helpers\Str;
 use Classic_SEO\Helpers\Url;
@@ -58,7 +57,7 @@ class Metabox implements Runner {
 
 		// Styles.
 		CMB2_hookup::enqueue_cmb_css();
-		Replace_Vars::setup_json();
+		cpseo()->variables->setup_json();
 		wp_enqueue_style( 'cpseo-metabox', cpseo()->plugin_url() . '/assets/admin/css/metabox.css', [ 'cpseo-common', 'cpseo-cmb2' ], cpseo()->version );
 
 		// JSON data.
@@ -91,6 +90,8 @@ class Metabox implements Runner {
 			Helper::add_json( 'featuredImageNotice', esc_html__( 'The featured image should be at least 200 by 200 pixels to be picked up by Facebook and other social media sites.', 'cpseo' ) );
 
 			wp_enqueue_script( 'cpseo-post-metabox', $js . 'post-metabox.js', [ 'lodash', 'clipboard', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'cpseo-validate', 'wp-hooks' ], CPSEO_VERSION, true );
+			
+			$this->analyze_custom_fields();
 		}
 
 		if ( Admin_Helper::is_term_edit() ) {
@@ -508,5 +509,20 @@ class Metabox implements Runner {
 		}
 
 		return empty( $plugins_found ) ? false : $plugins_found;
+	}
+	
+	/**
+	 * Enqueue script to analyze custom fields data.
+	 */
+	private function analyze_custom_fields() {
+		global $post;
+
+		$custom_fields = Str::to_arr_no_empty( Helper::get_settings( 'titles.pt_' . $post->post_type . '_analyze_fields' ) );
+		if ( empty( $custom_fields ) ) {
+			return;
+		}
+
+		wp_enqueue_script( 'cpseo-custom-fields', cpseo()->plugin_url() . 'assets/admin/js/custom-fields.js', [ 'cpseo-post-metabox', 'wp-hooks' ], cpseo()->version, true );
+		Helper::add_json( 'analyzeFields', $custom_fields );
 	}
 }

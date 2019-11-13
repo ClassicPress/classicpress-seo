@@ -36,6 +36,13 @@ interface IPaper {
 	 * @return string
 	 */
 	public function robots();
+	
+	/**
+	 * Retrieves the advanced robots.
+	 *
+	 * @return array
+	 */
+	public function advanced_robots();
 
 	/**
 	 * Retrieves the canonical URL.

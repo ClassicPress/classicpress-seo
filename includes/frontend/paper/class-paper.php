@@ -192,7 +192,7 @@ class Paper {
 		}
 
 		$this->description = wp_strip_all_tags( stripslashes( $this->description ), true );
-		$this->description = esc_html( $this->description );
+		$this->description = esc_attr( $this->description );
 
 		return $this->description;
 	}
@@ -213,6 +213,7 @@ class Paper {
 		}
 		$this->validate_robots();
 		$this->respect_settings_for_robots();
+		$this->advanced_robots();
 
 		/**
 		 * Allows filtering of the meta robots.
@@ -242,6 +243,23 @@ class Paper {
 		if ( ! isset( $this->robots['follow'] ) ) {
 			$this->robots = [ 'follow' => 'follow' ] + $this->robots;
 		}
+	}
+	
+	/**
+	 * Add Advanced robots.
+	 */
+	private function advanced_robots() 
+		// Early Bail if robots is set to noindex or nosnippet!
+		if ( ( isset( $this->robots['index'] ) && 'noindex' === $this->robots['index'] ) || ( isset( $this->robots['nosnippet'] ) && 'nosnippet' === $this->robots['nosnippet'] ) ) {
+			return;
+		}
+
+		$advanced_robots = $this->paper->advanced_robots();
+		if ( empty( $advanced_robots ) ) {
+			$advanced_robots = self::advanced_robots_combine( Helper::get_settings( 'titles.cpseo_advanced_robots_global' ) );
+		}
+
+		$this->robots = ! empty( $advanced_robots ) ? $this->robots + $advanced_robots : $this->robots;
 	}
 
 	/**
@@ -327,7 +345,7 @@ class Paper {
 		extract( $this->canonical ); // phpcs:ignore
 
 		if ( is_front_page() || ( function_exists( 'ampforwp_is_front_page' ) && ampforwp_is_front_page() ) ) {
-			$canonical = home_url();
+			$canonical = user_trailingslashit( home_url() );
 		}
 
 		// If not singular than we can have pagination.
@@ -443,6 +461,27 @@ class Paper {
 			unset( $robots['nofollow'] );
 		}
 
+		return $robots;
+	}
+	
+	/**
+	 * Make robots values as keyed array.
+	 *
+	 * @param array $advanced_robots  Main instance.
+	 *
+	 * @return array
+	 */
+	public static function advanced_robots_combine( $advanced_robots ) {
+		if ( empty( $advanced_robots ) ) {
+			return;
+		}
+
+		$robots = [];
+		foreach ( $advanced_robots as $key => $data ) {
+			if ( $data ) {
+				$robots[ $key ] = $key . ':' . $data;
+			}
+		}
 		return $robots;
 	}
 }

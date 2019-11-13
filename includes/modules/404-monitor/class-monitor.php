@@ -43,7 +43,7 @@ class Monitor {
 
 		$this->action( 'get_header', 'capture_404' );
 		if ( Helper::has_cap( '404_monitor' ) ) {
-			$this->filter( 'cpseo/admin_bar/items', 'admin_bar_items', 11 );
+			$this->action( 'cpseo/admin_bar/items', 'admin_bar_items', 11 );
 		}
 	}
 
@@ -52,21 +52,18 @@ class Monitor {
 	 *
 	 * @codeCoverageIgnore
 	 *
-	 * @param array $items Array of admin bar nodes.
-	 *
-	 * @return array
+	 * @param Admin_Bar_Menu $menu Menu class instance.
 	 */
-	public function admin_bar_items( $items ) {
-		$items['404-monitor'] = [
-			'id'        => 'cpseo-404-monitor',
-			'title'     => esc_html__( '404 Monitor', 'cpseo' ),
-			'href'      => Helper::get_admin_url( '404-monitor' ),
-			'parent'    => 'cpseo',
-			'meta'      => [ 'title' => esc_html__( 'Review 404 errors on your site', 'cpseo' ) ],
-			'_priority' => 50,
-		];
-
-		return $items;
+	public function admin_bar_items( $menu ) {
+		$menu->add_sub_menu(
+			'404-monitor',
+			[
+				'title'    => esc_html__( '404 Monitor', 'cpseo' ),
+				'href'     => Helper::get_admin_url( '404-monitor' ),
+				'meta'     => [ 'title' => esc_html__( 'Review 404 errors on your site', 'cpseo' ) ],
+				'priority' => 50,
+			]
+		);
 	}
 
 	/**

@@ -44,6 +44,15 @@ class Search implements IPaper {
 	public function robots() {
 		return Helper::get_settings( 'titles.cpseo_noindex_search' ) ? [ 'index' => 'noindex' ] : [];
 	}
+	
+	/**
+	 * Retrieves the advanced robots.
+	 *
+	 * @return array
+	 */
+	public function advanced_robots() {
+		return [];
+	}
 
 	/**
 	 * Retrieves the canonical URL.

@@ -22,6 +22,7 @@ trait Post_Type {
 	 * Check if post is indexable.
 	 *
 	 * @param  int $post_id Post ID to check.
+	 *
 	 * @return boolean
 	 */
 	public static function is_post_indexable( $post_id ) {
@@ -29,15 +30,9 @@ trait Post_Type {
 			return false;
 		}
 
-		$robots = Helper::get_post_meta( 'robots', $post_id );
-		if ( ! empty( $robots ) && is_array( $robots ) ) {
-			if ( in_array( 'index', $robots, true ) ) {
-				return true;
-			}
-
-			if ( in_array( 'noindex', $robots, true ) ) {
-				return false;
-			}
+		$robots = self::is_post_meta_indexable( $post_id );
+		if ( is_bool( $robots ) ) {
+			return $robots;
 		}
 
 		$post_type = get_post_type( $post_id );
@@ -45,6 +40,26 @@ trait Post_Type {
 		$robots    = false === $robots ? Helper::get_settings( 'titles.cpseo_robots_global' ) : Helper::get_settings( 'titles.cpseo_pt_' . $post_type . '_robots' );
 
 		return in_array( 'noindex', (array) $robots, true ) ? false : true;
+	}
+	
+	/**
+	 * Check if post is indexable by meta.
+	 *
+	 * @param int $post_id Post ID to check.
+	 *
+	 * @return boolean
+	 */
+	private static function is_post_meta_indexable( $post_id ) {
+		$robots = Helper::get_post_meta( 'robots', $post_id );
+		if ( empty( $robots ) || ! is_array( $robots ) ) {
+			return '';
+		}
+
+		if ( in_array( 'index', $robots, true ) ) {
+			return true;
+		}
+
+		return in_array( 'noindex', $robots, true ) ? false : '';
 	}
 
 	/**

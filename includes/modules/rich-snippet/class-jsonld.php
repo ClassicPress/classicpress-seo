@@ -197,6 +197,29 @@ class JsonLD {
 			];
 		}
 	}
+	
+	/**
+	 * Add aggregateratings to entity.
+	 *
+	 * @param string $schema Schema to get data for.
+	 * @param array  $entity Array of json-ld entity to attach data to.
+	 */
+	public function add_ratings( $schema, &$entity ) {
+		$rating = Helper::get_post_meta( "snippet_{$schema}_rating" );
+
+		// Early Bail!
+		if ( ! $rating ) {
+			return;
+		}
+
+		$entity['aggregateRating'] = [
+			'@type'       => 'AggregateRating',
+			'ratingValue' => $rating,
+			'bestRating'  => Helper::get_post_meta( "snippet_{$schema}_rating_max" ),
+			'worstRating' => Helper::get_post_meta( "snippet_{$schema}_rating_min" ),
+			'ratingCount' => 1,
+		];
+	}
 
 	/**
 	 * Get website name with a fallback to bloginfo( 'name' ).

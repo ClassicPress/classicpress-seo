@@ -7,15 +7,15 @@
  * Plugin URI:  https://www.classicpress.net
  * Description: SEO solution for ClassicPress (experimental).
  * Version:     0.3.0
- * Author:      Tim Hughes & ClassicPress Community
+ * Author:      ClassicPress Community
  * Author URI:  https://www.classicpress.net
- * GitHub Plugin URI: https://github.com/ClassicPress-research/classic-seo
+ * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
  * Text Domain: cpseo
  * Domain Path: /languages/
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
- * Fork of Rank Math v1.0.3
+ * Fork of Rank Math v1.0.33
  *
  * @package   Classic_SEO
  */
@@ -277,8 +277,10 @@ class Classic_SEO {
 		$this->container['json'] = new \Classic_SEO\Json_Manager;
 
 		// Notification Manager.
-		$this->container['notification'] = new \Classic_SEO\Notification_Center( 'cpseo_notifications' );
-		$this->container['manager'] = new \Classic_SEO\Module\Manager;
+		$this->container['notification']	= new \Classic_SEO\Notification_Center( 'cpseo_notifications' );
+
+		$this->container['manager']			= new \Classic_SEO\Module\Manager;
+		$this->container['variables']		= new \Classic_SEO\Replace_Variables\Manager;
 
 		// Just init without storing it in the container.
 		new \Classic_SEO\Common;
@@ -300,6 +302,7 @@ class Classic_SEO {
 		// Booting.
 		add_action( 'plugins_loaded', [ $this, 'init' ], 14 );
 		add_action( 'rest_api_init', [ $this, 'init_rest_api' ] );
+		add_action( 'wp_login', [ $this, 'on_login' ] );
 
 		// Load admin-related functionality.
 		if ( is_admin() ) {

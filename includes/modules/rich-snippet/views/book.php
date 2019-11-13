@@ -9,6 +9,33 @@
 $book_dep = [ [ 'cpseo_rich_snippet', 'book' ] ];
 
 $cmb->add_field([
+	'id'      => 'cpseo_snippet_book_rating',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating score of the book. Optional.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $book_dep,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_book_rating_min',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Minimum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating minimum score of the book.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $book_dep,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_book_rating_max',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Maximum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating maximum score of the book.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $book_dep,
+]);
+
+$cmb->add_field([
 	'id'      => 'cpseo_snippet_book_editions',
 	'type'    => 'group',
 	'name'    => esc_html__( 'Book Editions', 'cpseo' ),

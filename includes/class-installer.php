@@ -311,6 +311,7 @@ class Installer {
 			'cpseo_breadcrumbs_search_format'           => esc_html__( 'Results for %s', 'cpseo' ),
 			'cpseo_breadcrumbs_404_label'               => esc_html__( '404 Error: page not found', 'cpseo' ),
 			'cpseo_breadcrumbs_ancestor_categories'     => 'off',
+			'cpseo_breadcrumbs_blog_page'               => 'off',
 			'cpseo_404_monitor_mode'                    => 'simple',
 			'cpseo_404_monitor_limit'                   => 100,
 			'cpseo_404_monitor_ignore_query_parameters' => 'on',

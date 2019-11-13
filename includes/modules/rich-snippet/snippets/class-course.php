@@ -40,6 +40,7 @@ class Course implements Snippet {
 			],
 		];
 
+		$jsonld->add_ratings( 'course', $entity );
 		if ( isset( $data['Organization'] ) ) {
 			unset( $data['Organization'] );
 		}

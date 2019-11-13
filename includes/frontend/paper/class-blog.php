@@ -55,6 +55,19 @@ class Blog implements IPaper {
 
 		return $robots;
 	}
+	
+	/**
+	 * Retrieves the advanced robots for Homepage.
+	 *
+	 * @return array The advanced robots specified for the homepage.
+	 */
+	public function advanced_robots() {
+		if ( ! Helper::get_settings( 'titles.cpseo_homepage_custom_robots' ) ) {
+			return [];
+		}
+
+		return Paper::advanced_robots_combine( Helper::get_settings( 'titles.cpseo_homepage_advanced_robots' ) );
+	}
 
 	/**
 	 * Retrieves the canonical URL.

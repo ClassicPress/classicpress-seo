@@ -454,10 +454,13 @@ trait Choices {
 			'restaurant' => esc_html__( 'Restaurant', 'cpseo' ),
 			'video'      => esc_html__( 'Video', 'cpseo' ),
 			'person'     => esc_html__( 'Person', 'cpseo' ),
-			'review'     => esc_html__( 'Review', 'cpseo' ),
 			'service'    => esc_html__( 'Service', 'cpseo' ),
 			'software'   => esc_html__( 'Software Application', 'cpseo' ),
 		];
+		
+		if ( ! empty( self::get_review_posts() ) ) {
+			$types['review'] = esc_html__( 'Review', 'cpseo' );
+		}
 
 		if ( is_string( $none ) ) {
 			$types = [ 'off' => $none ] + $types;
@@ -554,5 +557,28 @@ trait Choices {
 				'post_format' => 'dashicons dashicons-format-image',
 			]
 		);
+	}
+	
+	/**
+	 * Function to get posts having review schema type selected.
+	 */
+	public static function get_review_posts() {
+		static $posts = null;
+		if ( null === $posts ) {
+			global $wpdb;
+
+			$meta_query = new \WP_Meta_Query([
+				'relation' => 'AND',
+				[
+					'key'   => 'cpseo_rich_snippet',
+					'value' => 'review',
+				],
+			]);
+
+			$meta_query = $meta_query->get_sql( 'post', $wpdb->posts, 'ID' );
+			$posts = $wpdb->get_col( "SELECT {$wpdb->posts}.ID FROM $wpdb->posts {$meta_query['join']} WHERE 1=1 {$meta_query['where']} AND ({$wpdb->posts}.post_status = 'publish')" ); // phpcs:ignore
+		}
+
+		return $posts;
 	}
 }

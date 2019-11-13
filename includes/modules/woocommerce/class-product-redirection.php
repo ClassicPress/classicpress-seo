@@ -83,6 +83,11 @@ class Product_Redirection {
 
 		$base     = explode( '/', ltrim( $base, '/' ) );
 		$new_link = $uri;
+		
+		// Early Bail if new_link length is less then the base.
+		if ( count( explode( '/', $new_link ) ) <= count( $base ) ) {
+			return false;
+		}
 
 		foreach ( $base as $remove ) {
 			if ( '%product_cat%' === $remove ) {

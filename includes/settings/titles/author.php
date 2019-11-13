@@ -60,6 +60,18 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'              => 'cpseo_author_advanced_robots',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Author Advanced Robots', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => [
+		'relation' => 'and',
+		[ 'author_custom_robots', 'on' ],
+		[ 'disable_author_archives', 'off' ],
+	],
+]);
+
+$cmb->add_field([
 	'id'              => 'cpseo_author_archive_title',
 	'type'            => 'text',
 	'name'            => esc_html__( 'Author Archive Title', 'cpseo' ),

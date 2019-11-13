@@ -56,6 +56,17 @@ class Shop extends Singular {
 		$post = Post::get( Post::get_shop_page_id() );
 		return $this->get_post_robots( $post->get_object() );
 	}
+	
+	/**
+	 * Retrieves the WooCommerce Shop advanced robots.
+	 *
+	 * @return array
+	 */
+	public function advanced_robots() {
+		$post   = Post::get( Post::get_shop_page_id() );
+		$object = $post->get_object();
+		return $this->get_post_advanced_robots( $object );
+	}
 
 	/**
 	 * Retrieves meta keywords.

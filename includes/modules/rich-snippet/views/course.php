@@ -38,3 +38,30 @@ $cmb->add_field([
 	],
 	'classes'    => 'nob cpseo-validate-field',
 ]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_course_rating',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating score of the course. Optional.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $course_dep,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_course_rating_min',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Minimum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating minimum score of the course.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $course_dep,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_course_rating_max',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Maximum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating maximum score of the course.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $course_dep,
+]);

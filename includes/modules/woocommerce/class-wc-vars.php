@@ -10,8 +10,6 @@
 
 namespace Classic_SEO\WooCommerce;
 
-use Classic_SEO\Helper;
-
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -30,44 +28,48 @@ class WC_Vars extends Opengraph {
 	 * Registers variable replacements for WooCommerce products.
 	 */
 	public function register() {
-		Helper::register_var_replacement(
+		cpseo_register_var_replacement(
 			'wc_price',
-			[ $this, 'get_product_price' ],
 			[
 				'name'    => esc_html__( 'Product\'s price.', 'cpseo' ),
-				'desc'    => esc_html__( 'Product\'s price of the current product', 'cpseo' ),
+				'description'    => esc_html__( 'Product\'s price of the current product', 'cpseo' ),
+				'variable'    => 'wc_price',
 				'example' => $this->get_product_price(),
-			]
+			],
+			[ $this, 'get_product_price' ]
 		);
 
-		Helper::register_var_replacement(
+		cpseo_register_var_replacement(
 			'wc_sku',
-			[ $this, 'get_product_sku' ],
 			[
 				'name'    => esc_html__( 'Product\'s SKU.', 'cpseo' ),
-				'desc'    => esc_html__( 'Product\'s SKU of the current product', 'cpseo' ),
+				'description'    => esc_html__( 'Product\'s SKU of the current product', 'cpseo' ),
+				'variable'    => 'wc_sku',
 				'example' => $this->get_product_sku(),
-			]
+			],
+			[ $this, 'get_product_sku' ]
 		);
 
-		Helper::register_var_replacement(
+		cpseo_register_var_replacement(
 			'wc_shortdesc',
-			[ $this, 'get_short_description' ],
 			[
 				'name'    => esc_html__( 'Product\'s short description.', 'cpseo' ),
-				'desc'    => esc_html__( 'Product\'s short description of the current product', 'cpseo' ),
+				'description'    => esc_html__( 'Product\'s short description of the current product', 'cpseo' ),
+				'variable'    => 'wc_shortdesc',
 				'example' => $this->get_short_description(),
-			]
+			],
+			[ $this, 'get_short_description' ]
 		);
 
-		Helper::register_var_replacement(
+		cpseo_register_var_replacement(
 			'wc_brand',
-			[ $this, 'get_product_brand' ],
 			[
 				'name'    => esc_html__( 'Product\'s brand.', 'cpseo' ),
-				'desc'    => esc_html__( 'Product\'s brand of the current product', 'cpseo' ),
+				'description'    => esc_html__( 'Product\'s brand of the current product', 'cpseo' ),
+				'variable'    => 'wc_brand',
 				'example' => $this->get_product_brand(),
-			]
+			],
+			[ $this, 'get_product_brand' ]
 		);
 	}
 
