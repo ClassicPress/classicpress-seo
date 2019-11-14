@@ -146,7 +146,7 @@ class Manager {
 			'only'     => 'admin',
 			'settings' => Helper::get_admin_url( 'role-manager' ),
 		];
-		
+/*
 		$modules['search-console'] = [
 			'title'    => esc_html__( 'Search Console', 'cpseo' ),
 			'desc'     => esc_html__( 'Connect with Google Search Console to see helpful information from Google in your ClassicPress dashboard.', 'cpseo' ),
@@ -155,7 +155,7 @@ class Manager {
 			'only'     => 'admin',
 			'settings' => Helper::get_admin_url( 'options-general' ) . '#setting-panel-search-console',
 		];
-
+*/
 		return $modules;
 	}
 

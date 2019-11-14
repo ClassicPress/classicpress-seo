@@ -65,7 +65,13 @@ class Metabox implements Runner {
 		Helper::add_json( 'overlayImages', Helper::choices_overlay_images() );
 		Helper::add_json( 'customPermalinks', (bool) get_option( 'permalink_structure', false ) );
 		Helper::add_json( 'defautOgImage', Helper::get_settings( 'titles.cpseo_open_graph_image', '' ) );
-		Helper::add_json( 'postSettings', [ 'linkSuggestions' => Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_link_suggestions' ), 'useFocusKeyword' => 'focus_keywords' === Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_ls_use_fk' ), ] );
+		Helper::add_json(
+			'postSettings',
+			[
+				'linkSuggestions' => Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_link_suggestions' ),
+				'useFocusKeyword' => 'focus_keywords' === Helper::get_settings( 'titles.cpseo_pt_' . $screen->post_type . '_ls_use_fk' ),
+			]
+		);
 
 		$js = CPSEO_PLUGIN_URL . 'assets/admin/js/';
 		wp_enqueue_script( 'jquery-caret', CPSEO_PLUGIN_URL . 'assets/vendor/jquery.caret.min.js', [ 'jquery' ], '1.3.3', true );
@@ -194,7 +200,7 @@ class Metabox implements Runner {
 		$allowed_post_types = [];
 		foreach ( Helper::get_accessible_post_types() as $post_type ) {
 
-			if ( false === Helper::get_settings( 'titles.pt_' . $post_type . '_link_suggestions' ) ) {
+			if ( false === Helper::get_settings( 'titles.cpseo_pt_' . $post_type . '_link_suggestions' ) ) {
 				continue;
 			}
 
@@ -517,7 +523,7 @@ class Metabox implements Runner {
 	private function analyze_custom_fields() {
 		global $post;
 
-		$custom_fields = Str::to_arr_no_empty( Helper::get_settings( 'titles.pt_' . $post->post_type . '_analyze_fields' ) );
+		$custom_fields = Str::to_arr_no_empty( Helper::get_settings( 'titles.cpseo_pt_' . $post->post_type . '_analyze_fields' ) );
 		if ( empty( $custom_fields ) ) {
 			return;
 		}

@@ -47,7 +47,7 @@ class Admin_Menu implements Runner {
 			[
 				'position'   => 80,
 				'capability' => 'manage_options',
-				'icon'       => CPSEO_PLUGIN_URL . 'assets/admin/img/feather-white.svg',
+				'icon'       => CPSEO_PLUGIN_URL . 'assets/admin/img/classic-seo.svg',
 				'render'     => Admin_Helper::get_view( 'dashboard' ),
 				'classes'    => [ 'cpseo-page' ],
 				'assets'     => [

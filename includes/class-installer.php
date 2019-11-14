@@ -96,6 +96,7 @@ class Installer {
 		$tables[] = $wpdb->prefix . 'cpseo_redirections_cache';
 		$tables[] = $wpdb->prefix . 'cpseo_internal_links';
 		$tables[] = $wpdb->prefix . 'cpseo_internal_meta';
+		$tables[] = $wpdb->prefix . 'cpseo_sc_analytics';
 
 		return $tables;
 	}
@@ -230,6 +231,20 @@ class Installer {
 				external_link_count int(10) UNSIGNED NULL DEFAULT 0,
 				incoming_link_count int(10) UNSIGNED NULL DEFAULT 0,
 				UNIQUE KEY object_id (object_id)
+			) $collate;",
+			
+			// Google Search Console
+			"CREATE TABLE IF NOT EXISTS {$wpdb->prefix}cpseo_sc_analytics (
+				id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+				date DATETIME NOT NULL,
+				property TEXT NOT NULL,
+				clicks mediumint(6) NOT NULL,
+				impressions mediumint(6) NOT NULL,
+				position double NOT NULL,
+				ctr double NOT NULL,
+				dimension VARCHAR(25) NOT NULL,
+				PRIMARY KEY (id),
+				KEY property (property(191))
 			) $collate;",
 
 		];
@@ -546,7 +561,7 @@ class Installer {
 	 */
 	private function get_cron_jobs() {
 		return [
-			'search_console/get_analytics' => 'daily',  // Add cron job for Get Search Console Analytics Data.
+			//'search_console/get_analytics' => 'daily',  // Add cron job for Get Search Console Analytics Data.
 			'redirection/clean_trashed'    => 'daily',  // Add cron for cleaning trashed redirects.
 			'links/internal_links'         => 'daily',  // Add cron for counting links.
 		];
