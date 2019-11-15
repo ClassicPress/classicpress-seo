@@ -45,7 +45,7 @@ class Sitemaps_List extends List_Table {
 
 		$this->set_pagination_args(
 			[
-				'total_items' => count( $this->items ),
+				'total_items' => is_array( $this->items ) ? count( $this->items ) : 0,
 				'per_page'    => 100,
 			]
 		);

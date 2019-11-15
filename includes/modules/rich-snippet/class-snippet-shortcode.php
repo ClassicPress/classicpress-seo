@@ -31,6 +31,7 @@ class Snippet_Shortcode {
 	public function __construct() {
 		$this->add_shortcode( 'cpseo_rich_snippet', 'rich_snippet' );
 		$this->add_shortcode( 'cpseo_review_snippet', 'rich_snippet' );
+		$this->filter( 'the_content', 'add_review_to_content', 11 );
 
 		if ( ! function_exists( 'register_block_type' ) ) {
 			return;
@@ -398,5 +399,71 @@ class Snippet_Shortcode {
 		];
 
 		return isset( $fields[ $type ] ) ? apply_filters( 'cpseo/snippet/fields', $fields[ $type ] ) : false;
+	}
+	
+
+	/**
+	 * Injects reviews to content.
+	 *
+	 * @param  string $content Post content.
+	 * @return string
+	 *
+	 * @since 1.0.12
+	 */
+	public function add_review_to_content( $content ) {
+		$location = $this->get_content_location();
+		if ( false === $location ) {
+			return $content;
+		}
+
+		$review = do_shortcode( '[cpseo_review_snippet]' );
+
+		if ( in_array( $location, [ 'top', 'both' ], true ) ) {
+			$content = $review . $content;
+		}
+
+		if ( in_array( $location, [ 'bottom', 'both' ], true ) && $this->can_add_multi_page() ) {
+			$content .= $review;
+		}
+
+		return $content;
+	}
+
+	/**
+	 * Check if we can inject the review in the content.
+	 *
+	 * @return boolean|string
+	 */
+	private function get_content_location() {
+		/**
+		 * Filter: Allow disabling the review display.
+		 *
+		 * @param bool $return True to disable.
+		 */
+		if ( ! is_main_query() || ! in_the_loop() || $this->do_filter( 'snippet/review/hide_data', false ) ) {
+			return false;
+		}
+
+		$schema = Helper::get_post_meta( 'rich_snippet' );
+		if ( ! in_array( $schema, [ 'book', 'review', 'course', 'event', 'product', 'recipe', 'software' ], true ) ) {
+			return false;
+		}
+
+		$key      = 'review' === $schema ? 'snippet_review_location' : 'snippet_location';
+		$location = $this->do_filter( 'snippet/review/location', Helper::get_post_meta( $key ) );
+		$location = $location ? $location : 'custom';
+
+		return 'custom' === $location ? false : $location;
+	}
+
+	/**
+	 * Check if we can add content if multipage.
+	 *
+	 * @return bool
+	 */
+	private function can_add_multi_page() {
+		global $multipage, $numpages, $page;
+
+		return ( ! $multipage || $page === $numpages );
 	}
 }

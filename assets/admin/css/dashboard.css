@@ -218,7 +218,8 @@
 .cpseo-box .frm-gather-data input{
     float:left;
     margin-top:6px;
-    margin-right:8px
+    margin-right:8px;
+	margin-left:1px
 }
 .cpseo-box .frm-gather-data label{
     line-height:1.6;

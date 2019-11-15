@@ -20,7 +20,7 @@
     border:1px solid #ccc;
     border-bottom:none
 }
-.cpseo-page .nav-tab-active,.cpseo-page .nav-tab-active:focus,.cpseo-page .nav-tab-active:focus:active,.cpseo-page .nav-tab-active:hover{
+.cpseo-page .nav-tab-active,.cpseo-page .nav-tab-active:hover,.cpseo-page .nav-tab-active:focus,.cpseo-page .nav-tab-active:focus:active{
     border-bottom-color:#e1e1e1;
     background:#e1e1e1
 }
@@ -36,7 +36,7 @@
     font-size:14px;
     line-height:1.5
 }
-.cpseo-wrap .page-title,.cpseo-wrap h1{
+.cpseo-wrap h1,.cpseo-wrap .page-title{
     font-size:2.8em;
     font-weight:400;
     line-height:1.2em;
@@ -89,30 +89,25 @@
         margin-right:20px;
         margin-left:10px
     }
-    .cpseo-wrap .cpseo-text,.cpseo-wrap h1{
+    .cpseo-wrap h1,.cpseo-wrap .cpseo-text{
         margin-right:0
     }
     .cpseo-wrap .cpseo-text{
         margin-bottom:.25em
     }
 }
-.three-col,.two-col{
+.two-col,.three-col{
     display:-webkit-flex;
-    display:-webkit-box;
-    display:-ms-flexbox;
     display:flex;
     -webkit-box-pack:justify;
     -ms-flex-pack:justify;
     -webkit-flex-wrap:wrap;
-    -ms-flex-wrap:wrap;
     flex-wrap:wrap;
     -webkit-justify-content:space-between;
     justify-content:space-between
 }
-.three-col .col,.two-col .col{
+.two-col .col,.three-col .col{
     -webkit-flex:1;
-    -webkit-box-flex:1;
-    -ms-flex:1;
     flex:1
 }
 .two-col .col{
@@ -127,7 +122,7 @@
     -ms-flex-item-align:start
 }
 @media only screen and (max-width:500px){
-    .three-col .col,.two-col .col{
+    .two-col .col,.three-col .col{
         min-width:100%!important
     }
 }
@@ -172,7 +167,6 @@
     line-height:17px;
     position:relative;
     overflow:hidden;
-    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     width:100%;
     min-height:262px;
@@ -192,20 +186,17 @@
 .cpseo-ui .button-primary{
     border-color:#361946;
     background:#89288f;
-    -webkit-box-sizing:0 1px 2px 0 rgba(35,40,45,0.2);
     box-shadow:0 1px 2px 0 rgba(35,40,45,0.2);
     text-shadow:none
 }
 .cpseo-ui .button-primary:focus,.cpseo-ui .button-primary:hover{
     border-color:#076fa2;
     background:#361946;
-    -webkit-box-shadow:0 1px 4px 0 rgba(35,40,45,0.2);
     box-shadow:0 1px 4px 0 rgba(35,40,45,0.2);
 }
 .cpseo-ui .button-link{
     border:0!important;
     background:transparent!important;
-    -webkit-box-shadow:none!important;
     box-shadow:none!important
 }
 .cpseo-ui .button-xlarge{
@@ -225,7 +216,6 @@
 .cpseo-tabs-navigation:not(.cpseo-custom) a{
     font-size:16px;
     display:block;
-    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     padding:11px 15px;
     text-decoration:none;
@@ -234,7 +224,6 @@
     border-width:0 1px 1px;
     outline:none;
     background:#f6f6f6;
-    -webkit-box-shadow:none;
     box-shadow:none
 }
 .cpseo-tabs-navigation:not(.cpseo-custom) a .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a .fa{
@@ -242,7 +231,7 @@
     min-width:20px;
     margin-right:10px;
     text-align:center;
-
+    color:#6c6c6c
 }
 .cpseo-tabs-navigation:not(.cpseo-custom) a.active,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover{
     color:#fff;
@@ -257,7 +246,6 @@
 }
 .cpseo-tabs-content:not(.cpseo-custom){
     overflow:hidden;
-    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     min-height:400px;
     margin-bottom:20px;
@@ -284,13 +272,18 @@
 .cpseo-tab .cmb-advanced-robots-list li{
     width:33%;
     display:inline-block;
-    -webkit-box-sizing:border-box;
     box-sizing:border-box;
     padding:0 10px
 }
 .cpseo-tab .cmb-advanced-robots-list li label{
     display:inline-block;
     margin-bottom:5px
+}
+.cpseo-tab .cmb-advanced-robots-list li label input[type="checkbox"]{
+    margin-right:2px
+}
+.cpseo-tab .cmb-advanced-robots-list li .cpseo-tooltip{
+    margin-left:3px
 }
 .cpseo-tooltip{
     position:relative;
@@ -303,8 +296,6 @@
     line-height:1.5;
     width:200px;
     padding:8px 10px;
-    -webkit-transition:all .3s ease-in-out;
-    -o-transition:all .3s ease-in-out;
     transition:all .3s ease-in-out;
     -webkit-transform:translate3d(-50%, 0, 0);
     transform:translate3d(-50%, 0, 0);
@@ -339,13 +330,12 @@
     padding:15px 25px;
     border-radius:4px;
     background:#fff;
-    -webkit-box-shadow:6px 6px 10px rgba(32,33,36,0.1);
     box-shadow:6px 6px 10px rgba(32,33,36,0.1)
 }
 .cpseo-export-form+.cpseo-export-form{
     margin-top:30px
 }
-.cpseo-export-form td,.cpseo-export-form th{
+.cpseo-export-form th,.cpseo-export-form td{
     padding:0
 }
 .cpseo-export-form h3{
@@ -358,7 +348,7 @@
     border-color:#dd2c00!important;
     background:pink
 }
-.invalid~.validation-message,.widefat.invalid~.validation-message,.wp-admin .invalid~.validation-message,.wp-admin .widefat.invalid~.validation-message{
+.invalid ~ .validation-message,.widefat.invalid ~ .validation-message,.wp-admin .invalid ~ .validation-message,.wp-admin .widefat.invalid ~ .validation-message{
     display:inline-block
 }
 .validation-message{
@@ -369,8 +359,6 @@
     margin-top:5px;
     margin-left:2px;
     padding:4px 8px;
-    -webkit-transition:.28s;
-    -o-transition:.28s;
     transition:.28s;
     vertical-align:middle;
     color:#fff;
@@ -386,12 +374,12 @@ span.input-loading{
     height:16px;
     width:16px
 }
-body .cmb2-wrap .cmb2-id-console-authorization-code .regular-text,body .cmb2-wrap .cmb2-id-console-authorization-code select,body .cmb2-wrap .cmb2-id-console-profile .regular-text,body .cmb2-wrap .cmb2-id-console-profile select{
+body .cmb2-wrap .cmb2-id-console-profile .regular-text,body .cmb2-wrap .cmb2-id-console-profile select,body .cmb2-wrap .cmb2-id-console-authorization-code .regular-text,body .cmb2-wrap .cmb2-id-console-authorization-code select{
     display:inline-block;
     max-width:60%;
     margin-right:10px
 }
-body .cmb2-wrap .cmb2-id-console-authorization-code .button,body .cmb2-wrap .cmb2-id-console-profile .button{
+body .cmb2-wrap .cmb2-id-console-profile .button,body .cmb2-wrap .cmb2-id-console-authorization-code .button{
     line-height:41px;
     height:auto;
     margin-right:8px;
@@ -428,7 +416,7 @@ body .cmb2-wrap .cmb2-id-console-authorization-code .button-secondary{
 #gsc-dp-info{
     font-weight:bold
 }
-body.rtl .cpseo-wrap .page-title,body.rtl .cpseo-wrap h1{
+body.rtl .cpseo-wrap h1,body.rtl .cpseo-wrap .page-title{
     margin-right:0;
     margin-left:200px
 }
@@ -441,7 +429,7 @@ body.rtl .cpseo-tabs-navigation:not(.cpseo-custom){
     margin-right:0;
     margin-left:-1px
 }
-body.rtl .cpseo-tabs-navigation:not(.cpseo-custom) a .dashicons,body.rtl .cpseo-tabs-navigation:not(.cpseo-custom) a .fa{
+body.rtl .cpseo-tabs-navigation:not(.cpseo-custom) a .fa,body.rtl .cpseo-tabs-navigation:not(.cpseo-custom) a .dashicons{
     margin-right:0;
     margin-left:10px
 }
@@ -449,12 +437,12 @@ body.rtl .cpseo-wrap-settings .form-footer{
     margin-right:200px;
     margin-left:0
 }
-body.rtl .serp-preview:not(.expanded-preview):not(.mobile-preview) .group.active .cmb-row.cmb2-id-cpseo-title .cpseo-variables-button,body.rtl.wp-core-ui .cpseo-variables-button{
+body.rtl.wp-core-ui .cpseo-variables-button,body.rtl .serp-preview:not(.expanded-preview):not(.mobile-preview) .group.active .cmb-row.cmb2-id-cpseo-title .cpseo-variables-button{
     right:auto;
     left:1px;
     border-width:0 1px 0 0
 }
-body.rtl .cmb2-wrap .cmb-type-textarea-small .button,body.rtl .cmb2-wrap .cmb-type-textarea .button{
+body.rtl .cmb2-wrap .cmb-type-textarea .button,body.rtl .cmb2-wrap .cmb-type-textarea-small .button{
     border-width:1px 1px 0 0
 }
 body.rtl .cpseo-variables-dropdown li:after{
@@ -464,17 +452,17 @@ body.rtl .cpseo-variables-dropdown li:after{
 body.rtl .cpseo-ui .button .dashicons{
     margin:0 0 0 3px
 }
-.cpseo-preview-title,.cpseo-variables-preview{
+.cpseo-variables-preview,.cpseo-preview-title{
     font-family:arial, sans-serif;
     max-width:600px;
     margin-top:15px;
     color:#1a0dab;
     border-radius:4px
 }
-.cpseo-preview-title:empty,.cpseo-variables-preview:empty{
+.cpseo-variables-preview:empty,.cpseo-preview-title:empty{
     display:none
 }
-.cpseo-preview-title:before,.cpseo-variables-preview:before{
+.cpseo-variables-preview:before,.cpseo-preview-title:before{
     font-size:10px;
     font-weight:600;
     display:block;
@@ -490,17 +478,17 @@ body.rtl .cpseo-ui .button .dashicons{
 .cpseo-variables-wrap input,.cpseo-variables-wrap textarea{
     padding-right:50px!important
 }
-.cmb2-wrap .cmb-type-textarea-small .button,.cmb2-wrap .cmb-type-textarea .button{
+.cmb2-wrap .cmb-type-textarea .button,.cmb2-wrap .cmb-type-textarea-small .button{
     top:auto;
     bottom:1px;
     border-width:1px 0 0 1px;
     border-radius:3px 0 3px 0
 }
-.cmb2-wrap .cmb-type-textarea-small .button+.cpseo-variables-dropdown,.cmb2-wrap .cmb-type-textarea .button+.cpseo-variables-dropdown{
+.cmb2-wrap .cmb-type-textarea .button+.cpseo-variables-dropdown,.cmb2-wrap .cmb-type-textarea-small .button+.cpseo-variables-dropdown{
     top:98px;
     right:0
 }
-.cmb2-wrap .cmb-type-textarea-small textarea,.cmb2-wrap .cmb-type-textarea textarea{
+.cmb2-wrap .cmb-type-textarea textarea,.cmb2-wrap .cmb-type-textarea-small textarea{
     display:block;
     resize:none
 }
@@ -511,7 +499,6 @@ body.wp-core-ui .cpseo-variables-button{
     border-width:0 0 0 1px;
     border-color:#e5e5e5!important;
     border-radius:0 3px 3px 0;
-    -webkit-box-shadow:none;
     box-shadow:none;
     position:absolute;
     top:2px;
@@ -536,10 +523,9 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     height:220px;
     width:80%
 }
-.cpseo-variables-dropdown input[type=text]{
+.cpseo-variables-dropdown input[type='text']{
     margin:10px;
     background:#fffff8;
-    -webkit-box-shadow:none!important;
     box-shadow:none!important;
     height:34px;
     width:calc(100% - 20px)
@@ -606,11 +592,11 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
 .list-table table{
     margin:0
 }
-.list-table td,.list-table th{
+.list-table th,.list-table td{
     padding:12px 15px;
     border-bottom:1px solid #e5e5e5
 }
-.list-table tr:last-child td,.list-table tr:last-child th{
+.list-table tr:last-child th,.list-table tr:last-child td{
     border:0
 }
 .list-table th strong{
@@ -642,11 +628,11 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     padding-top:0;
     text-align:left
 }
-.list-table.with-action .importer-header td,.list-table.with-action .importer-header th{
+.list-table.with-action .importer-header th,.list-table.with-action .importer-header td{
     border-bottom:none
 }
 @media screen and (max-width:1020px){
-    body .cpseo-wrap .page-title,body .cpseo-wrap .cpseo-text,body .cpseo-wrap h1{
+    body .cpseo-wrap h1,body .cpseo-wrap .page-title,body .cpseo-wrap .cpseo-text{
         margin-right:0
     }
     body .cpseo-wrap .nav-tab{
@@ -661,7 +647,7 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     body .cmb2-wrap select{
         padding:0
     }
-    body .cpseo-wrap .cmb-row.cmb-type-file .regular-text:not([type=hidden])+.cmb2-upload-button{
+    body .cpseo-wrap .cmb-row.cmb-type-file .regular-text:not([type='hidden'])+.cmb2-upload-button{
         line-height:35px
     }
     body .cpseo-wrap .cpseo-search-options .search-field input{
@@ -674,10 +660,10 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     body .cpseo-wrap .cmb2-id-console-profile button{
         margin-top:5px
     }
-    body .cpseo-wrap .cpseo-rss-variables tbody td,body .cpseo-wrap .cpseo-rss-variables thead th{
+    body .cpseo-wrap .cpseo-rss-variables thead th,body .cpseo-wrap .cpseo-rss-variables tbody td{
         margin-bottom:0
     }
-    body .cpseo-wrap .cmb2-wrap input[type=checkbox]:checked:before,body .cpseo-wrap input[type=checkbox]:checked:before{
+    body .cpseo-wrap input[type=checkbox]:checked:before,body .cpseo-wrap .cmb2-wrap input[type=checkbox]:checked:before{
         font-size:30px
     }
     body #cpseo-redirection-popup .media-modal{
@@ -728,7 +714,7 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     }
 }
 @media only screen and (max-width:595px){
-    body .cpseo-wrap .page-title,body .cpseo-wrap h1{
+    body .cpseo-wrap h1,body .cpseo-wrap .page-title{
         font-size:30px
     }
     body .cpseo-wrap .cpseo-text{
@@ -764,7 +750,7 @@ body.wp-core-ui .cpseo-variables-button .dashicons{
     body .cmb2-wrap .cmb-row.cmb-row-33,body .cmb2-wrap .cmb-row.cmb-row-50{
         width:100%
     }
-    body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-td,body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-th,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-td,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-th{
+    body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-th,body .cmb2-wrap .cmb-row.cmb-row-33 .cmb-td,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-th,body .cmb2-wrap .cmb-row.cmb-row-50 .cmb-td{
         padding:0
     }
 }

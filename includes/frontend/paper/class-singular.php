@@ -243,7 +243,7 @@ class Singular implements IPaper {
 
 		$post_type = $this->object->post_type;
 		$robots    = Paper::advanced_robots_combine( Post::get_meta( 'advanced_robots', $this->object->ID ) );
-		if ( empty( $robots ) && Helper::get_settings( "titles.cpseo_pt_{$post_type}_custom_robots" ) ) {
+		if ( ! is_array( $robots ) && Helper::get_settings( "titles.cpseo_pt_{$post_type}_custom_robots" ) ) {
 			$robots = Paper::advanced_robots_combine( Helper::get_settings( "titles.cpseo_pt_{$post_type}_advanced_robots" ), true );
 		}
 

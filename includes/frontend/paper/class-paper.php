@@ -248,15 +248,25 @@ class Paper {
 	/**
 	 * Add Advanced robots.
 	 */
-	private function advanced_robots() 
+	private function advanced_robots() {
+
 		// Early Bail if robots is set to noindex or nosnippet!
 		if ( ( isset( $this->robots['index'] ) && 'noindex' === $this->robots['index'] ) || ( isset( $this->robots['nosnippet'] ) && 'nosnippet' === $this->robots['nosnippet'] ) ) {
 			return;
 		}
 
 		$advanced_robots = $this->paper->advanced_robots();
-		if ( empty( $advanced_robots ) ) {
-			$advanced_robots = self::advanced_robots_combine( Helper::get_settings( 'titles.cpseo_advanced_robots_global' ) );
+		if ( ! is_array( $advanced_robots ) ) {
+			$advanced_robots = wp_parse_args(
+				Helper::get_settings( 'titles.cpseo_advanced_robots_global' ),
+				[
+					'max-snippet'       => -1,
+					'max-video-preview' => -1,
+					'max-image-preview' => 'large',
+				]
+			);
+
+			$advanced_robots = self::advanced_robots_combine( $advanced_robots );
 		}
 
 		$this->robots = ! empty( $advanced_robots ) ? $this->robots + $advanced_robots : $this->robots;

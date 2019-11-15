@@ -443,7 +443,7 @@ class Post_Type implements Provider {
 		unset( $canonical );
 
 		if ( 'post' !== $post->post_type ) {
-			$url['loc'] = trailingslashit( $url['loc'] );
+			$url['loc'] = user_trailingslashit( $url['loc'] );
 		}
 		$url['images'] = ! is_null( $this->get_image_parser() ) ? $this->get_image_parser()->get_images( $post ) : [];
 
@@ -512,7 +512,7 @@ class Post_Type implements Provider {
 	 */
 	protected function get_home_url() {
 		if ( is_null( $this->home_url ) ) {
-			$this->home_url = get_home_url();
+			$this->home_url = user_trailingslashit( get_home_url() );
 		}
 
 		return $this->home_url;

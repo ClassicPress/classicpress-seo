@@ -337,6 +337,7 @@ class Search_Console extends Base {
 		}
 
 		DB::delete( $days );
+		Data_Fetcher::get()->kill_process();
 		$db_info            = DB::info();
 		$db_info['message'] = sprintf( '<div class="cpseo-console-db-info"><span class="dashicons dashicons-calendar-alt"></span> Cached Days: <strong>%s</strong></div>', $db_info['days'] ) .
 		sprintf( '<div class="cpseo-console-db-info"><span class="dashicons dashicons-editor-ul"></span> Data Rows: <strong>%s</strong></div>', Str::human_number( $db_info['rows'] ) ) .

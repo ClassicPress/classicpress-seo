@@ -165,16 +165,21 @@ class Variable {
 	/**
 	 * Run callback.
 	 *
-	 * @param array $args Array of arguments.
+	 * @param array $var_args Array of arguments passed with variable.
+	 * @param array $args     The object some of the replacement values might come from,
+	 *                        could be a post, taxonomy or term.
 	 *
 	 * @return mixed
 	 */
-	public function run_callback( $args ) {
-		if ( ! empty( $this->callback ) ) {
-			return call_user_func( $this->callback, $args );
-		}
+	public function run_callback( $var_args, $args = [] ) {
+		cpseo()->variables->set_arguments( $args );
 
-		return do_action( 'cpseo/vars/' . $this->get_id(), $args, $this );
+		$value = ! empty( $this->callback ) ? call_user_func( $this->callback, $var_args ) :
+			apply_filters( 'cpseo/vars/' . $this->get_id(), $var_args, $this );
+
+		cpseo()->variables->reset_arguments();
+
+		return $value;
 	}
 
 	/**

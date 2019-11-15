@@ -150,14 +150,14 @@ class Replacer {
 
 		$has_args = ! empty( $matches[2][ $index ] ) && ! empty( $matches[3][ $index ] );
 		$id       = $has_args ? $matches[2][ $index ] : $id;
-		$args     = $has_args ? $this->normalize_args( $matches[3][ $index ] ) : [];
-		$variable = $this->get_variable_by_id( $id, $args );
+		$var_args     = $has_args ? $this->normalize_args( $matches[3][ $index ] ) : [];
+		$variable = $this->get_variable_by_id( $id, $var_args );
 
 		if ( is_null( $variable ) ) {
 			return cpseo()->variables->remove_non_replaced ? '' : false;
 		}
 
-		return $variable->run_callback( $args );
+		return $variable->run_callback( $var_args, $this->args );
 	}
 
 	/**

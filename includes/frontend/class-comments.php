@@ -12,6 +12,7 @@ namespace Classic_SEO\Frontend;
 use Classic_SEO\Helper;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Helpers\HTML;
+use Classic_SEO\Helpers\Str;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -100,7 +101,7 @@ class Comments {
 
 		foreach ( $matches[0] as $link ) {
 			$attrs        = HTML::extract_attributes( $link );
-			$attrs['rel'] = empty( $attrs['rel'] ) ? 'ugc' : $attrs['rel'] . ' ugc';
+			$attrs['rel'] = empty( $attrs['rel'] ) ? 'ugc' : ( Str::contains( 'ugc', $attrs['rel'] ) ? $attrs['rel'] : $attrs['rel'] . ' ugc' );
 
 			$new  = '<a' . HTML::attributes_to_string( $attrs ) . '>';
 			$text = str_replace( $link, $new, $text );

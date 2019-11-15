@@ -78,8 +78,7 @@ trait Hooker {
 	/**
 	 * Do action with Text Domain as prefix
 	 */
-	protected function do_action() {
-		$args = func_get_args();
+	protected function do_action( ...$args ) {
 		if ( ! isset( $args[0] ) || empty( $args[0] ) ) {
 			return;
 		}
@@ -93,8 +92,7 @@ trait Hooker {
 	/**
 	 * Do filter with Text Domain as prefix
 	 */
-	protected function do_filter() {
-		$args = \func_get_args();
+	protected function do_filter( ...$args ) {
 		if ( ! isset( $args[0] ) || empty( $args[0] ) ) {
 			return;
 		}

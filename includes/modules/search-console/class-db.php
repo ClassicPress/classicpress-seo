@@ -351,7 +351,7 @@ class DB {
 	 * @return array
 	 */
 	public static function data_info( $data ) {
-		$option_key = 'cpseo_sc_' . md5( json_encode( $data ) );
+		$option_key = 'cpseo_sc_' . md5( wp_json_encode( $data ) );
 		$data_info  = get_transient( $option_key );
 		if ( false !== $data_info ) {
 			return $data_info;
