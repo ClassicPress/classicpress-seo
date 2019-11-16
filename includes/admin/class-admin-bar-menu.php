@@ -447,7 +447,7 @@ class Admin_Bar_Menu {
 	 *
 	 * @return string
 	 */
-	private function get_icon( $width = 20 ) {
-		return '<svg viewBox="0 0 462.03 462.03" xmlns="http://www.w3.org/2000/svg" width="' . $width . '"><g fill="#fff"><path d="m462 234.84-76.17 3.43 13.43 21-127 81.18-126-52.93-146.26 60.97 10.14 24.34 136.1-56.71 128.57 54 138.69-88.61 13.43 21z"/><path d="m54.1 312.78 92.18-38.41 4.49 1.89v-54.58h-96.67zm210.9-223.57v235.05l7.26 3 89.43-57.05v-181zm-105.44 190.79 96.67 40.62v-165.19h-96.67z"/></g></svg>';
+	private function get_icon( $width = 18 ) {
+		return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 394.47 392.43" width="' . $width . '" fill="#fff" stroke="#777" stroke-miterlimit="10" stroke-width=".25"><path d="M103.5 217.52c32-30 67.72-66.65 91.56-141.08L164.6 57.7 267.6.2 273.24 123l-30.1-18C138.27 267.15 21.82 284.44.42 256.62l.92.44c35.3 16.64 82.26-20.85 102.15-39.54z" stroke-opacity=".7" fill-rule="evenodd"/><path d="M27.35 321.77h63.12v70.54H27.35zm102-44.23h66.24V392.3h-66.24zm101.7-66.92h65.12v181.7h-65.12zM331.6 76.3h62.74v316H331.6z" stroke-opacity=".7"/></svg>';
 	}
 }

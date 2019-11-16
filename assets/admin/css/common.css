@@ -1478,13 +1478,14 @@ body.cpseo-styles {
 }
 
 #cpseo-header #cpseo-admin h1 {
-  line-height: 40px;
-  margin: 0;
+  line-height: 46px;
+  margin:0;
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 46px;
+  width: 46px;
   background-size: 100%;
   background-repeat: no-repeat;
+  padding:3px;
 }
 
 #wpadminbar #wp-toolbar #wp-admin-bar-cpseo_custom_top_level .ab-icon.icon-cpseo-cpseo img {
@@ -1510,11 +1511,12 @@ body.cpseo-styles {
   position: absolute;
   border-radius: 6px;
   font-weight: 400;
-  color: #fff;
+  color: #057f99;
   width: 40px;
   height: 40px;
   text-align: center;
-  background: url(../img/icon-cpseo.svg) no-repeat;
+  background: #057f99 url(../img/icon-cpseo.svg) no-repeat;
+  background-size: 96%;
 }
 
 #cpseo-header #cpseo-admin h1:hover {
