@@ -41,6 +41,7 @@ If you find a bug, please create an issue on the [issues page](https://github.co
 
 ### v 0.3.0
 - NEW: Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
+(Note: plugin directory is still called "classicpress-seo" and the main PHP file is called "classicpress-seo.php". These will be changed in a future version.)
 - NEW: Added ability to set metabox position on post/page/product edit pages
 - NEW: Added support for Pinterest meta tag
 - NEW: Added "nosnippet", "max-snippet:\[number\]", "max-video-preview:\[number\]" and "max-image-preview:\[setting\]" Advanced Robots Meta settings. See https://webmasters.googleblog.com/2019/09/more-controls-on-search.html
