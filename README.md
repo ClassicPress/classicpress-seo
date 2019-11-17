@@ -18,7 +18,7 @@ This plugin was created largely as a result of the following ClassicPress petiti
 ## Credits
 This is a fork of Rank Math.
 
-## Key functional differences between Classic SEO (v0.3.0-dev) and Rank Math
+## Key functional differences between Classic SEO (v0.3.0) and Rank Math
 
 **Included** | **Not included**
 -------------|-----------------
@@ -43,6 +43,10 @@ If you find a bug, please create an issue on the [issues page](https://github.co
 - NEW: Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
 - NEW: Added ability to set metabox position on post/page/product edit pages
 - NEW: Added support for Pinterest meta tag
+- NEW: Added "nosnippet", "max-snippet:\[number\]", "max-video-preview:\[number\]" and "max-image-preview:\[setting\]" Advanced Robots Meta settings. See https://webmasters.googleblog.com/2019/09/more-controls-on-search.html
+- UPDATED: Schema Types updated including removal of "self-serving" review snippets
+- Updated the Help page
+- Plugin icon updated
 
 ### v 0.2.2
 - Fixed CSS bug which prevented tab icons from displaying correctly on post edit page in admin

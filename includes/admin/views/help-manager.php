@@ -31,7 +31,7 @@ $tabs = apply_filters( 'cpseo/help/tabs', array(
 ));
 ?>
 
-<div class="wrap cpseo-wrap">
+<div class="wrap cpseo-wrap limit-wrap">
 
 	<span class="wp-header-end"></span>
 
