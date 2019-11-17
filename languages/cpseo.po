@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Classic SEO\n"
-"POT-Creation-Date: 2019-11-11 17:49+0000\n"
-"PO-Revision-Date: 2019-11-11 17:49+0000\n"
+"POT-Creation-Date: 2019-11-17 19:29+0000\n"
+"PO-Revision-Date: 2019-11-17 19:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -38,25 +38,149 @@ msgstr ""
 msgid "Classic SEO requires PHP version %s or above. Please update PHP."
 msgstr ""
 
-#: classic-seo.php:368 includes/module/class-module.php:93
+#: classic-seo.php:371 includes/module/class-module.php:93
 #: includes/modules/redirections/views/main.php:24
 msgid "Settings"
 msgstr ""
 
+#: includes/admin/class-admin-bar-menu.php:145
+msgid "Classic SEO Dashboard"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:153
+#: includes/admin/class-admin-bar-menu.php:155
+#: includes/admin/class-admin-menu.php:89
+msgid "Dashboard"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:190
+msgid "Homepage SEO"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:192
+msgid "Edit Homepage SEO Settings"
+msgstr ""
+
+#. translators: Post Type Singular Name
+#. translators: Taxonomy Singular Name
+#: includes/admin/class-admin-bar-menu.php:208
+#: includes/admin/class-admin-bar-menu.php:226
+#, php-format
+msgid "SEO Settings for %s"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:210
+msgid "Edit default SEO settings for this post type"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:228
+#: includes/admin/class-admin-bar-menu.php:243
+msgid "Edit SEO settings for this archive page"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:241
+msgid "SEO Settings for Date Archives"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:256
+msgid "SEO Settings for Search Page"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:258
+msgid "Edit SEO settings for the search results page"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:271
+msgid "Mark this page"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:288
+msgid "As Pillar Content"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:302
+msgid "As NoIndex"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:313
+msgid "As NoFollow"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:329
+msgid "External Tools"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:338
+msgid "Google Structured Data"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:340
+msgid "Google Structured Data Testing Tool"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:344
+msgid "Google PageSpeed"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:346
+msgid "Google PageSpeed Insights"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:350
+msgid "Google Mobile-Friendly"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:352
+msgid "Google Mobile-Friendly Test"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:356
+msgid "Google Rich Results (Mobile)"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:358
+msgid "Google Rich Results Test - Googlebot Smartphone"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:362
+msgid "Google Rich Results (Desktop)"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:364
+msgid "Google Rich Results Test - Googlebot Desktop"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:368
+msgid "Google Cache"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:370
+msgid "See Google's cached version of your site"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:374
+msgid "Facebook Debugger"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:376
+msgid "Facebook Sharing Debugger"
+msgstr ""
+
 #: includes/admin/class-admin-helper.php:58
-#: includes/helpers/class-taxonomy.php:137
+#: includes/admin/class-cmb2-fields.php:212
+#: includes/helpers/class-taxonomy.php:151
 #: includes/modules/rich-snippet/views/event.php:107
 #: includes/modules/rich-snippet/views/event.php:182
 #: includes/modules/rich-snippet/views/job-posting.php:47
-#: includes/modules/rich-snippet/views/metabox-options.php:34
-#: includes/modules/rich-snippet/views/metabox-options.php:49
+#: includes/modules/rich-snippet/views/metabox-options.php:35
+#: includes/modules/rich-snippet/views/metabox-options.php:50
 #: includes/settings/titles/post-types.php:91
 msgid "None"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
 #: includes/admin/class-admin-menu.php:46 includes/admin/class-admin.php:75
-#: includes/admin/class-metabox.php:126
+#: includes/admin/class-metabox.php:133
 #: includes/admin/helpers/class-page.php:334
 #: includes/admin/helpers/class-page.php:335 includes/class-cmb2.php:174
 #: includes/modules/role-manager/class-members.php:46
@@ -65,13 +189,7 @@ msgid "Classic SEO"
 msgstr ""
 
 #: includes/admin/class-admin-menu.php:64 includes/admin/class-admin.php:357
-#: includes/admin/views/help-manager.php:22
 msgid "Help"
-msgstr ""
-
-#: includes/admin/class-admin-menu.php:89 includes/class-common.php:271
-#: includes/class-common.php:274
-msgid "Dashboard"
 msgstr ""
 
 #: includes/admin/class-admin.php:65
@@ -155,15 +273,53 @@ msgid "Add <code>rel=\"nofollow\"</code>"
 msgstr ""
 
 #: includes/admin/class-assets.php:131
+msgid "Add <code>rel=\"sponsored\"</code>"
+msgstr ""
+
+#: includes/admin/class-assets.php:132
 msgid "Link Title"
 msgstr ""
 
-#: includes/admin/class-cmb2-fields.php:60
+#: includes/admin/class-cmb2-fields.php:64
 msgid "Off"
 msgstr ""
 
-#: includes/admin/class-cmb2-fields.php:61
+#: includes/admin/class-cmb2-fields.php:65
 msgid "On"
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:160
+msgid "Max Snippet"
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:160
+msgid ""
+"Specify a maximum text-length, in characters, of a snippet for your page."
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:161
+msgid "Max Video Preview"
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:161
+msgid "Specify a maximum duration in seconds of an animated video preview."
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:162
+msgid "Max Image Preview"
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:162
+msgid ""
+"Specify a maximum size of image preview to be shown for images on this page."
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:210
+msgid "Large"
+msgstr ""
+
+#: includes/admin/class-cmb2-fields.php:211
+msgid "Standard"
 msgstr ""
 
 #: includes/admin/class-import-export.php:70
@@ -256,61 +412,61 @@ msgstr ""
 msgid "Settings could not be imported: Upload failed."
 msgstr ""
 
-#: includes/admin/class-metabox.php:91
+#: includes/admin/class-metabox.php:96
 msgid ""
 "The featured image should be at least 200 by 200 pixels to be picked up by "
 "Facebook and other social media sites."
 msgstr ""
 
-#: includes/admin/class-metabox.php:211
-#: includes/settings/titles/post-types.php:180
+#: includes/admin/class-metabox.php:218
+#: includes/settings/titles/post-types.php:189
 msgid "Link Suggestions"
 msgstr ""
 
-#: includes/admin/class-metabox.php:222
+#: includes/admin/class-metabox.php:229
 msgid ""
 "Click on the button to copy URL or insert link in content. You can also drag "
 "and drop links in the post content."
 msgstr ""
 
-#: includes/admin/class-metabox.php:231
+#: includes/admin/class-metabox.php:238
 msgid ""
 "We can't show any link suggestions for this post. Try selecting categories "
 "and tags for this post, and mark other posts as Cornerstone Content to make "
 "them show up here."
 msgstr ""
 
-#: includes/admin/class-metabox.php:246 includes/metaboxes/social.php:54
+#: includes/admin/class-metabox.php:253 includes/metaboxes/social.php:54
 #: includes/metaboxes/social.php:134
-#: includes/modules/rich-snippet/views/metabox-options.php:78
+#: includes/modules/rich-snippet/views/metabox-options.php:99
 #: includes/settings/general/rss-vars-table.php:18
 #: includes/settings/titles/post-types.php:121
 msgid "Description"
 msgstr ""
 
-#: includes/admin/class-metabox.php:422
+#: includes/admin/class-metabox.php:429
 #: includes/modules/sitemap/class-admin.php:63
 msgid "General"
 msgstr ""
 
-#: includes/admin/class-metabox.php:423
+#: includes/admin/class-metabox.php:430
 msgid "This tab contains general options."
 msgstr ""
 
-#: includes/admin/class-metabox.php:429
+#: includes/admin/class-metabox.php:436
 #: includes/modules/404-monitor/views/options.php:28
 msgid "Advanced"
 msgstr ""
 
-#: includes/admin/class-metabox.php:430
+#: includes/admin/class-metabox.php:437
 msgid "This tab contains advance options."
 msgstr ""
 
-#: includes/admin/class-metabox.php:436
+#: includes/admin/class-metabox.php:443
 msgid "Social"
 msgstr ""
 
-#: includes/admin/class-metabox.php:437
+#: includes/admin/class-metabox.php:444
 msgid "This tab contains social options."
 msgstr ""
 
@@ -327,6 +483,7 @@ msgid "Links"
 msgstr ""
 
 #: includes/admin/class-option-center.php:56
+#: includes/modules/search-console/class-sitemaps-list.php:99
 #: includes/modules/sitemap/sitemap-xsl.php:288
 msgid "Images"
 msgstr ""
@@ -368,6 +525,8 @@ msgid "SEO titles and meta options for all pages of your site."
 msgstr ""
 
 #: includes/admin/class-option-center.php:113
+#: includes/admin/views/help-manager.php:20
+#: includes/admin/views/help/local-seo.php:11
 msgid "Local SEO"
 msgstr ""
 
@@ -460,17 +619,17 @@ msgstr ""
 msgid "Post Formats Archive"
 msgstr ""
 
-#: includes/admin/class-options.php:149 includes/metaboxes/social.php:22
+#: includes/admin/class-options.php:147 includes/metaboxes/social.php:22
 #: includes/metaboxes/social.php:29 includes/metaboxes/social.php:85
 #: includes/metaboxes/social.php:161
 msgid "Panel"
 msgstr ""
 
-#: includes/admin/class-options.php:278
+#: includes/admin/class-options.php:276
 msgid "Save Changes"
 msgstr ""
 
-#: includes/admin/class-options.php:279
+#: includes/admin/class-options.php:277
 msgid "Reset Options"
 msgstr ""
 
@@ -518,7 +677,7 @@ msgstr ""
 
 #: includes/admin/class-post-columns.php:229 includes/metaboxes/social.php:47
 #: includes/metaboxes/social.php:126
-#: includes/modules/rich-snippet/views/book.php:29
+#: includes/modules/rich-snippet/views/book.php:56
 msgid "Title"
 msgstr ""
 
@@ -539,9 +698,9 @@ msgstr ""
 msgid "Cornerstone"
 msgstr ""
 
-#: includes/admin/class-post-columns.php:313
-#: includes/class-replace-vars.php:433 includes/class-replace-vars.php:435
-#: includes/metaboxes/general.php:54
+#: includes/admin/class-post-columns.php:313 includes/metaboxes/general.php:54
+#: includes/replace-variables/class-advanced-variables.php:42
+#: includes/replace-variables/class-advanced-variables.php:45
 msgid "Focus Keyword"
 msgstr ""
 
@@ -557,31 +716,31 @@ msgstr ""
 msgid "Schema"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:160
+#: includes/admin/class-post-filters.php:166
 msgid "All Posts"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:161
+#: includes/admin/class-post-filters.php:167
 msgid "SEO Score: Great"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:162
+#: includes/admin/class-post-filters.php:168
 msgid "SEO Score: Good"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:163
+#: includes/admin/class-post-filters.php:169
 msgid "SEO Score: Bad"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:164
+#: includes/admin/class-post-filters.php:170
 msgid "Focus Keyword Not Set"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:165
+#: includes/admin/class-post-filters.php:171
 msgid "Articles noindexed"
 msgstr ""
 
-#: includes/admin/class-post-filters.php:201
+#: includes/admin/class-post-filters.php:207
 msgid "Cornerstone Content"
 msgstr ""
 
@@ -1145,8 +1304,8 @@ msgid "%s reviews"
 msgstr ""
 
 #: includes/admin/class-serp-preview.php:327
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:364
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:372
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:379
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:383
 #: includes/modules/rich-snippet/views/service.php:22
 #: includes/modules/rich-snippet/views/software.php:14
 msgid "Price"
@@ -1161,7 +1320,7 @@ msgid "Cooking time"
 msgstr ""
 
 #: includes/admin/class-serp-preview.php:330
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:317
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:332
 #: includes/modules/rich-snippet/views/recipe.php:50
 msgid "Calories"
 msgstr ""
@@ -1176,17 +1335,19 @@ msgid "Date"
 msgstr ""
 
 #: includes/admin/class-serp-preview.php:333
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:298
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:310
 #: includes/modules/rich-snippet/views/job-posting.php:152
 msgid "Location"
 msgstr ""
 
 #: includes/admin/class-serp-preview.php:340
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:321
+#: includes/modules/rich-snippet/views/book.php:14
+#: includes/modules/rich-snippet/views/course.php:45
+#: includes/modules/rich-snippet/views/event.php:214
+#: includes/modules/rich-snippet/views/product.php:71
 #: includes/modules/rich-snippet/views/recipe.php:101
 #: includes/modules/rich-snippet/views/review.php:35
-#: includes/modules/rich-snippet/views/service.php:49
-#: includes/modules/rich-snippet/views/software.php:57
+#: includes/modules/rich-snippet/views/software.php:58
 msgid "Rating"
 msgstr ""
 
@@ -1309,7 +1470,119 @@ msgid "No redirection data to import."
 msgstr ""
 
 #: includes/admin/views/help-manager.php:16
+msgid "Getting started"
+msgstr ""
+
+#: includes/admin/views/help-manager.php:24
 msgid "Variables"
+msgstr ""
+
+#: includes/admin/views/help-manager.php:28
+msgid "Developers"
+msgstr ""
+
+#: includes/admin/views/help-manager.php:38
+msgid "Help &amp; Support"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:12
+#: includes/modules/search-console/views/search-console-tracker.php:12
+msgid "Coming Soon"
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:11
+msgid "Getting started with Classic SEO"
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:13
+msgid ""
+"Classic SEO is a Search Engine Optimization plugin built specifically for "
+"ClassicPress. It is based on Rank Math but there some differences both in "
+"the way it works and \"behind the scenes\"."
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:16
+msgid ""
+"While Rank Math provides support for bbPress, BuddyPress and AMP, Classic "
+"SEO does not and probably never will. Likewise, it is unlikely that Classic "
+"SEO will ever feature the ability to edit .htaccess and robots.txt."
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:19
+msgid ""
+"Another difference is that Classic SEO does not have the SEO Analysis tool."
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:21
+msgid "Found a bug?"
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:23
+msgid ""
+"It should be noted that Classic SEO is still in the  early stages of "
+"development and bugs are likely."
+msgstr ""
+
+#. translators:
+#: includes/admin/views/help/getting-started.php:29
+#, php-format
+msgid ""
+"If you do find what looks like a bug, please either report it on the <a rel="
+"\"nofollow noopener noreferrer\" href=\"%1$s\" target=\"_blank"
+"\">ClassicPress forums</a> or <a rel=\"nofollow noopener noreferrer\" href="
+"\"%2$s\" target=\"_blank\">open an issue on GitHub</a>."
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:32
+msgid "Plans for future releases"
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:34
+msgid ""
+"In the next release of Classic SEO, it is planned to add the Google Search "
+"Console feature where data such as average ranking position, click through "
+"rate, and keywords will be available from within Classic SEO."
+msgstr ""
+
+#. translators:
+#: includes/admin/views/help/getting-started.php:40
+#, php-format
+msgid ""
+"Classic SEO will also provide support for <a rel=\"nofollow noopener "
+"noreferrer\" href=\"%1$s\" target=\"_blank\">Classic Commerce</a>."
+msgstr ""
+
+#: includes/admin/views/help/local-seo.php:13
+msgid ""
+"Local SEO is a way for you to rank better for searches made by your people "
+"in the area where you operate. It is the best way for you to get your "
+"products and services in front of the local customers."
+msgstr ""
+
+#: includes/admin/views/help/local-seo.php:16
+msgid ""
+"There are various methods for optimizing your website for local SEO but the "
+"easiest method is built right inside the Classic SEO plugin."
+msgstr ""
+
+#. translators: link to local-seo
+#: includes/admin/views/help/local-seo.php:22
+msgid ""
+"Simply <a rel=\"nofollow noopener noreferrer\" href=\"\" target=\"_blank"
+"\">setup your business as Local Business</a> during the setup wizard."
+msgstr ""
+
+#: includes/admin/views/help/local-seo.php:27
+msgid "Make sure the Local SEO & Google Knowledge Graph module is enabled."
+msgstr ""
+
+#. translators: link to local seo settings
+#: includes/admin/views/help/local-seo.php:33
+#, php-format
+msgid ""
+"Then, head over to <a href=\"%1$s\">Classic SEO > Titles and Meta > Local "
+"SEO</a> and add more information about your Local Business like your Company "
+"Name, Logo, Email ID, Phone number, Address, And Contact/About pages."
 msgstr ""
 
 #: includes/admin/views/import-export/backup-panel.php:13
@@ -1365,7 +1638,7 @@ msgstr ""
 #: includes/modules/redirections/class-admin.php:45
 #: includes/modules/redirections/class-admin.php:111
 #: includes/modules/redirections/class-admin.php:149
-#: includes/modules/redirections/class-redirections.php:80
+#: includes/modules/redirections/class-redirections.php:79
 #: includes/modules/redirections/views/help.php:11
 #: includes/modules/role-manager/class-capability-manager.php:64
 msgid "Redirections"
@@ -1454,7 +1727,7 @@ msgid ""
 msgstr ""
 
 #. translators: this should be an array of stop words for your language, separated by comma's.
-#: includes/class-common.php:97 includes/modules/redirections/class-db.php:413
+#: includes/class-common.php:197 includes/modules/redirections/class-db.php:413
 msgid ""
 "a,about,above,after,again,against,all,am,an,and,any,are,as,at,be,because,"
 "been,before,being,below,between,both,but,by,could,did,do,does,doing,down,"
@@ -1469,133 +1742,14 @@ msgid ""
 "you,you'd,you'll,you're,you've,your,yours,yourself,yourselves"
 msgstr ""
 
-#: includes/class-common.php:264
-msgid "Classic SEO Dashboard"
-msgstr ""
-
-#: includes/class-common.php:287
-msgid "Homepage SEO"
-msgstr ""
-
-#: includes/class-common.php:290
-msgid "Edit Homepage SEO Settings"
-msgstr ""
-
-#. translators: Post Type Singular Name
-#. translators: Taxonomy Singular Name
-#: includes/class-common.php:300 includes/class-common.php:314
-#, php-format
-msgid "SEO Settings for %s"
-msgstr ""
-
-#: includes/class-common.php:303
-msgid "Edit default SEO settings for this post type"
-msgstr ""
-
-#: includes/class-common.php:317 includes/class-common.php:326
-msgid "Edit SEO settings for this archive page"
-msgstr ""
-
-#: includes/class-common.php:323
-msgid "SEO Settings for Date Archives"
-msgstr ""
-
-#: includes/class-common.php:332
-msgid "SEO Settings for Search Page"
-msgstr ""
-
-#: includes/class-common.php:335
-msgid "Edit SEO settings for the search results page"
-msgstr ""
-
-#: includes/class-common.php:349
-msgid "Mark this page"
-msgstr ""
-
-#: includes/class-common.php:363
-msgid "As Cornerstone Content"
-msgstr ""
-
-#: includes/class-common.php:376
-msgid "As NoIndex"
-msgstr ""
-
-#: includes/class-common.php:386
-msgid "As NoFollow"
-msgstr ""
-
-#: includes/class-common.php:424
-msgid "External Tools"
-msgstr ""
-
-#: includes/class-common.php:427
-msgid "Third Party SEO Tools"
-msgstr ""
-
-#: includes/class-common.php:433
-msgid "Google Structured Data"
-msgstr ""
-
-#: includes/class-common.php:437
-msgid "Google Structured Data Testing Tool"
-msgstr ""
-
-#: includes/class-common.php:445
-msgid "Google PageSpeed"
-msgstr ""
-
-#: includes/class-common.php:449
-msgid "Google PageSpeed Insights"
-msgstr ""
-
-#: includes/class-common.php:457
-msgid "Google Mobile-Friendly"
-msgstr ""
-
-#: includes/class-common.php:461
-msgid "Google Mobile-Friendly Test"
-msgstr ""
-
-#: includes/class-common.php:469
-msgid "Google Rich Results (Mobile)"
-msgstr ""
-
-#: includes/class-common.php:473
-msgid "Google Rich Results Test - Googlebot Smartphone"
-msgstr ""
-
-#: includes/class-common.php:481
-msgid "Google Rich Results (Desktop)"
-msgstr ""
-
-#: includes/class-common.php:485
-msgid "Google Rich Results Test - Googlebot Desktop"
-msgstr ""
-
-#: includes/class-common.php:494
-msgid "Google Cache"
-msgstr ""
-
-#: includes/class-common.php:498
-msgid "See Google's cached version of your site"
-msgstr ""
-
-#: includes/class-common.php:507
-msgid "Facebook Debugger"
-msgstr ""
-
-#: includes/class-common.php:511
-msgid "Facebook Sharing Debugger"
-msgstr ""
-
-#: includes/class-installer.php:307
+#: includes/class-installer.php:322
 #: includes/settings/general/breadcrumbs.php:47
 msgid "Home"
 msgstr ""
 
 #. translators: Archive title
 #. translators: placeholder
-#: includes/class-installer.php:309
+#: includes/class-installer.php:324
 #: includes/settings/general/breadcrumbs.php:74
 #, php-format
 msgid "Archives for %s"
@@ -1603,463 +1757,25 @@ msgstr ""
 
 #. translators: Search query term
 #. translators: placeholder
-#: includes/class-installer.php:311
+#: includes/class-installer.php:326
 #: includes/settings/general/breadcrumbs.php:84
 #, php-format
 msgid "Results for %s"
 msgstr ""
 
-#: includes/class-installer.php:312
+#: includes/class-installer.php:327
 #: includes/settings/general/breadcrumbs.php:93
 msgid "404 Error: page not found"
 msgstr ""
 
-#: includes/class-replace-vars.php:166
-msgid "The variable has already been registered."
-msgstr ""
-
-#: includes/class-replace-vars.php:170
-msgid ""
-"Standard variables cannot be overridden by registering them again. Use the "
-"\"cpseo/replacements\" filter for this."
-msgstr ""
-
-#: includes/class-replace-vars.php:188
-msgid ""
-"Variable names can only contain alphanumeric characters, underscores and "
-"dashes."
-msgstr ""
-
-#: includes/class-replace-vars.php:296
-msgid "Hello World"
-msgstr ""
-
-#: includes/class-replace-vars.php:306
-msgid "Post Title"
-msgstr ""
-
-#: includes/class-replace-vars.php:307
-msgid "Title of the current post/page"
-msgstr ""
-
-#: includes/class-replace-vars.php:312
-msgid "Post Title of parent page"
-msgstr ""
-
-#: includes/class-replace-vars.php:313
-msgid "Title of the parent page of the current post/page"
-msgstr ""
-
-#: includes/class-replace-vars.php:314
-msgid "Example Title"
-msgstr ""
-
-#: includes/class-replace-vars.php:318
-#: includes/settings/general/breadcrumbs.php:23
-#: includes/settings/titles/global.php:45
-msgid "Separator Character"
-msgstr ""
-
-#: includes/class-replace-vars.php:319
-msgid "Separator character, as set in the Title Settings"
-msgstr ""
-
-#: includes/class-replace-vars.php:324
-msgid "Site Title"
-msgstr ""
-
-#: includes/class-replace-vars.php:325
-msgid "Title of the site"
-msgstr ""
-
-#: includes/class-replace-vars.php:330
-msgid "Site Description"
-msgstr ""
-
-#: includes/class-replace-vars.php:331
-msgid "Description of the site"
-msgstr ""
-
-#: includes/class-replace-vars.php:336
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:205
-#: includes/modules/rich-snippet/views/book.php:68
-msgid "Date Published"
-msgstr ""
-
-#: includes/class-replace-vars.php:337
-msgid ""
-"Publication date of the current post/page <strong>OR</strong> specified date "
-"on date archives"
-msgstr ""
-
-#: includes/class-replace-vars.php:342
-msgid "Date Modified"
-msgstr ""
-
-#: includes/class-replace-vars.php:343
-msgid "Last modification date of the current post/page"
-msgstr ""
-
-#: includes/class-replace-vars.php:348 includes/class-replace-vars.php:350
-#: includes/class-replace-vars.php:354 includes/class-replace-vars.php:356
-msgid "Post Excerpt"
-msgstr ""
-
-#: includes/class-replace-vars.php:349
-msgid "Excerpt of the current post (or auto-generated if it does not exist)"
-msgstr ""
-
-#: includes/class-replace-vars.php:355
-msgid "Excerpt of the current post (without auto-generation)"
-msgstr ""
-
-#: includes/class-replace-vars.php:360
-msgid "Post Tag"
-msgstr ""
-
-#: includes/class-replace-vars.php:361
-msgid ""
-"First tag (alphabetically) associated to the current post <strong>OR</"
-"strong> current tag on tag archives"
-msgstr ""
-
-#: includes/class-replace-vars.php:362
-msgid "Example Tag"
-msgstr ""
-
-#: includes/class-replace-vars.php:366
-msgid "Post Tags"
-msgstr ""
-
-#: includes/class-replace-vars.php:367
-msgid "Comma-separated list of tags associated to the current post"
-msgstr ""
-
-#: includes/class-replace-vars.php:368
-msgid "Example Tag 1, Example Tag 2"
-msgstr ""
-
-#: includes/class-replace-vars.php:372
-msgid "Post Category"
-msgstr ""
-
-#: includes/class-replace-vars.php:373
-msgid ""
-"First category (alphabetically) associated to the current post <strong>OR</"
-"strong> current category on category archives"
-msgstr ""
-
-#: includes/class-replace-vars.php:374
-msgid "Example Category"
-msgstr ""
-
-#: includes/class-replace-vars.php:378
-msgid "Post Categories"
-msgstr ""
-
-#: includes/class-replace-vars.php:379
-msgid "Comma-separated list of categories associated to the current post"
-msgstr ""
-
-#: includes/class-replace-vars.php:380
-msgid "Example Category 1, Example Category 2"
-msgstr ""
-
-#: includes/class-replace-vars.php:384
-msgid "Current Term"
-msgstr ""
-
-#: includes/class-replace-vars.php:385
-msgid "Current term name"
-msgstr ""
-
-#: includes/class-replace-vars.php:386
-msgid "Example Term"
-msgstr ""
-
-#: includes/class-replace-vars.php:390
-msgid "Term Description"
-msgstr ""
-
-#: includes/class-replace-vars.php:391
-msgid "Current term description"
-msgstr ""
-
-#: includes/class-replace-vars.php:392
-msgid "Example Term Description"
-msgstr ""
-
-#: includes/class-replace-vars.php:396
-msgid "Search Query"
-msgstr ""
-
-#: includes/class-replace-vars.php:397
-msgid "Search query (only available on search results page)"
-msgstr ""
-
-#: includes/class-replace-vars.php:398
-msgid "example search"
-msgstr ""
-
-#: includes/class-replace-vars.php:402
-msgid "Post Author"
-msgstr ""
-
-#: includes/class-replace-vars.php:403
-msgid "Display author's nicename of the current post, page or author archive."
-msgstr ""
-
-#: includes/class-replace-vars.php:408
-msgid "Author Description"
-msgstr ""
-
-#: includes/class-replace-vars.php:409
-msgid "Author's biographical info of the current post, page or author archive."
-msgstr ""
-
-#: includes/class-replace-vars.php:414
-msgid "File Name"
-msgstr ""
-
-#: includes/class-replace-vars.php:415
-msgid "File Name of the attachment"
-msgstr ""
-
-#: includes/class-replace-vars.php:421
-msgid "Author ID"
-msgstr ""
-
-#: includes/class-replace-vars.php:422
-msgid "Author's user id of the current post, page or author archive."
-msgstr ""
-
-#: includes/class-replace-vars.php:427
-msgid "Post ID"
-msgstr ""
-
-#: includes/class-replace-vars.php:428
-msgid "ID of the current post/page"
-msgstr ""
-
-#: includes/class-replace-vars.php:434
-msgid "Focus Keyword of the current post"
-msgstr ""
-
-#: includes/class-replace-vars.php:439
-msgid "Page"
-msgstr ""
-
-#: includes/class-replace-vars.php:440
-msgid ""
-"Page number with context (i.e. page 2 of 4). Only displayed on page 2 and "
-"above."
-msgstr ""
-
-#: includes/class-replace-vars.php:445
-msgid "Max Pages"
-msgstr ""
-
-#: includes/class-replace-vars.php:446
-msgid "Max pages number"
-msgstr ""
-
-#: includes/class-replace-vars.php:451
-msgid "Page Number"
-msgstr ""
-
-#: includes/class-replace-vars.php:452
-msgid "Current page number"
-msgstr ""
-
-#: includes/class-replace-vars.php:457
-msgid "Current Time"
-msgstr ""
-
-#: includes/class-replace-vars.php:458
-msgid "Current server time"
-msgstr ""
-
-#: includes/class-replace-vars.php:463
-msgid "Current Date"
-msgstr ""
-
-#: includes/class-replace-vars.php:464
-msgid "Current server date"
-msgstr ""
-
-#: includes/class-replace-vars.php:469
-msgid "Current Day"
-msgstr ""
-
-#: includes/class-replace-vars.php:470
-msgid "Current server day"
-msgstr ""
-
-#: includes/class-replace-vars.php:475
-msgid "Current Month"
-msgstr ""
-
-#: includes/class-replace-vars.php:476
-msgid "Current server month"
-msgstr ""
-
-#: includes/class-replace-vars.php:481
-msgid "Current Year"
-msgstr ""
-
-#: includes/class-replace-vars.php:482
-msgid "Current server year"
-msgstr ""
-
-#: includes/class-replace-vars.php:487
-msgid "Post Type Name Singular"
-msgstr ""
-
-#: includes/class-replace-vars.php:488
-msgid "Name of current post type (singular)"
-msgstr ""
-
-#: includes/class-replace-vars.php:489 includes/helpers/class-choices.php:452
-#: includes/modules/rich-snippet/views/metabox-options.php:35
-#: includes/settings/titles/post-types.php:92
-msgid "Product"
-msgstr ""
-
-#: includes/class-replace-vars.php:493
-msgid "Post Type Name Plural"
-msgstr ""
-
-#: includes/class-replace-vars.php:494
-msgid "Name of current post type (plural)"
-msgstr ""
-
-#: includes/class-replace-vars.php:495
-msgid "Products"
-msgstr ""
-
-#: includes/class-replace-vars.php:499
-msgid "Custom Field (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:500
-msgid "Custom field value."
-msgstr ""
-
-#: includes/class-replace-vars.php:501
-msgid "Custom field value"
-msgstr ""
-
-#: includes/class-replace-vars.php:505
-msgid "Date Published (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:506
-msgid "Publish date with custom formatting pattern."
-msgstr ""
-
-#: includes/class-replace-vars.php:511
-msgid "Date Modified (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:512
-msgid "Modified date with custom formatting pattern."
-msgstr ""
-
-#: includes/class-replace-vars.php:517
-msgid "Current Time (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:518
-msgid "Current server time with custom formatting pattern."
-msgstr ""
-
-#: includes/class-replace-vars.php:523
-msgid "Categories (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:524
-msgid ""
-"Output list of categories associated to the current post, with customization "
-"options."
-msgstr ""
-
-#: includes/class-replace-vars.php:525
-msgid "Example Category 1 | Example Category 2"
-msgstr ""
-
-#: includes/class-replace-vars.php:529
-msgid "Tags (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:530
-msgid ""
-"Output list of tags associated to the current post, with customization "
-"options."
-msgstr ""
-
-#: includes/class-replace-vars.php:531
-msgid "Example Tag 1 | Example Tag 2"
-msgstr ""
-
-#: includes/class-replace-vars.php:535
-msgid "Counter"
-msgstr ""
-
-#: includes/class-replace-vars.php:536
-msgid "Starts at 1 and increments by 1."
-msgstr ""
-
-#: includes/class-replace-vars.php:541
-msgid "Custom Term (advanced)"
-msgstr ""
-
-#: includes/class-replace-vars.php:542
-msgid "Custom term value."
-msgstr ""
-
-#: includes/class-replace-vars.php:543
-msgid "Custom term value"
-msgstr ""
-
-#: includes/class-replace-vars.php:547
-msgid "Custom Term description"
-msgstr ""
-
-#: includes/class-replace-vars.php:548 includes/class-replace-vars.php:549
-#: includes/class-replace-vars.php:586
-msgid "Custom Term description."
-msgstr ""
-
-#. translators: Taxonomy name.
-#: includes/class-replace-vars.php:574
-#, php-format
-msgid "%s Title"
-msgstr ""
-
-#. translators: Taxonomy name.
-#: includes/class-replace-vars.php:576
-#, php-format
-msgid "%s Description"
-msgstr ""
-
-#: includes/class-replace-vars.php:580
-msgid "Custom Term title."
-msgstr ""
-
-#. translators: 1: current page number, 2: total number of pages.
-#: includes/class-replace-vars.php:1012
-#, php-format
-msgid "Page %1$d of %2$d"
-msgstr ""
-
 #. translators: %s: product tag
-#: includes/frontend/class-breadcrumbs.php:343
+#: includes/frontend/class-breadcrumbs.php:345
 #, php-format
 msgid "Products tagged &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: %s expands to the current page number
-#: includes/frontend/class-breadcrumbs.php:552
+#: includes/frontend/class-breadcrumbs.php:556
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -2070,16 +1786,16 @@ msgid ""
 "page to add one, or setup a template in Classic SEO -> Titles &amp; Metas."
 msgstr ""
 
-#: includes/frontend/class-shortcodes.php:156
+#: includes/frontend/class-shortcodes.php:172
 msgid "Address:"
 msgstr ""
 
-#: includes/frontend/class-shortcodes.php:186
+#: includes/frontend/class-shortcodes.php:202
 msgid "Hours:"
 msgstr ""
 
 #: includes/frontend/paper/class-error-404.php:25
-#: includes/frontend/paper/class-singular.php:112
+#: includes/frontend/paper/class-singular.php:121
 #: includes/frontend/paper/class-taxonomy.php:30
 msgid "Page not found"
 msgstr ""
@@ -2166,6 +1882,13 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
+#: includes/helpers/class-choices.php:452
+#: includes/modules/rich-snippet/views/metabox-options.php:36
+#: includes/replace-variables/class-advanced-variables.php:113
+#: includes/settings/titles/post-types.php:92
+msgid "Product"
+msgstr ""
+
 #: includes/helpers/class-choices.php:453
 msgid "Recipe"
 msgstr ""
@@ -2187,54 +1910,54 @@ msgid "Person"
 msgstr ""
 
 #: includes/helpers/class-choices.php:457
-msgid "Review"
-msgstr ""
-
-#: includes/helpers/class-choices.php:458
 msgid "Service"
 msgstr ""
 
-#: includes/helpers/class-choices.php:459
+#: includes/helpers/class-choices.php:458
 msgid "Software Application"
 msgstr ""
 
-#: includes/helpers/class-choices.php:483
-msgid "301 Permanent Move"
-msgstr ""
-
-#: includes/helpers/class-choices.php:484
-msgid "302 Temporary Move"
-msgstr ""
-
-#: includes/helpers/class-choices.php:485
-msgid "307 Temporary Redirect"
+#: includes/helpers/class-choices.php:462
+msgid "Review"
 msgstr ""
 
 #: includes/helpers/class-choices.php:486
-msgid "410 Content Deleted"
+msgid "301 Permanent Move"
 msgstr ""
 
 #: includes/helpers/class-choices.php:487
+msgid "302 Temporary Move"
+msgstr ""
+
+#: includes/helpers/class-choices.php:488
+msgid "307 Temporary Redirect"
+msgstr ""
+
+#: includes/helpers/class-choices.php:489
+msgid "410 Content Deleted"
+msgstr ""
+
+#: includes/helpers/class-choices.php:490
 msgid "451 Content Unavailable for Legal Reasons"
 msgstr ""
 
-#: includes/helpers/class-choices.php:500
+#: includes/helpers/class-choices.php:503
 msgid "Exact"
 msgstr ""
 
-#: includes/helpers/class-choices.php:501
+#: includes/helpers/class-choices.php:504
 msgid "Contains"
 msgstr ""
 
-#: includes/helpers/class-choices.php:502
+#: includes/helpers/class-choices.php:505
 msgid "Starts With"
 msgstr ""
 
-#: includes/helpers/class-choices.php:503
+#: includes/helpers/class-choices.php:506
 msgid "End With"
 msgstr ""
 
-#: includes/helpers/class-choices.php:504
+#: includes/helpers/class-choices.php:507
 msgid "Regex"
 msgstr ""
 
@@ -2320,21 +2043,25 @@ msgstr ""
 msgid "Custom values for robots meta tag."
 msgstr ""
 
-#: includes/metaboxes/advanced.php:29
+#: includes/metaboxes/advanced.php:29 includes/settings/titles/global.php:37
+msgid "Advanced Robots Meta"
+msgstr ""
+
+#: includes/metaboxes/advanced.php:36
 msgid "Canonical URL"
 msgstr ""
 
-#: includes/metaboxes/advanced.php:30
+#: includes/metaboxes/advanced.php:37
 msgid ""
 "The canonical URL informs search crawlers which page is the main page if you "
 "have double content."
 msgstr ""
 
-#: includes/metaboxes/advanced.php:37
+#: includes/metaboxes/advanced.php:44
 msgid "Breadcrumb Title"
 msgstr ""
 
-#: includes/metaboxes/advanced.php:38
+#: includes/metaboxes/advanced.php:45
 msgid "Breadcrumb Title to use for this post"
 msgstr ""
 
@@ -2458,11 +2185,11 @@ msgstr ""
 msgid "Use Data from Facebook Tab"
 msgstr ""
 
-#: includes/metaboxes/social.php:98 includes/settings/titles/global.php:86
+#: includes/metaboxes/social.php:98 includes/settings/titles/global.php:93
 msgid "Summary Card with Large Image"
 msgstr ""
 
-#: includes/metaboxes/social.php:99 includes/settings/titles/global.php:87
+#: includes/metaboxes/social.php:99 includes/settings/titles/global.php:94
 msgid "Summary Card"
 msgstr ""
 
@@ -2487,6 +2214,7 @@ msgid ""
 msgstr ""
 
 #: includes/module/class-base.php:87
+#: includes/modules/search-console/class-analytics.php:57
 msgid "Items per page"
 msgstr ""
 
@@ -2494,7 +2222,7 @@ msgstr ""
 #: includes/modules/404-monitor/class-admin.php:41
 #: includes/modules/404-monitor/class-admin.php:124
 #: includes/modules/404-monitor/class-admin.php:156
-#: includes/modules/404-monitor/class-monitor.php:62
+#: includes/modules/404-monitor/class-monitor.php:61
 #: includes/modules/404-monitor/views/help.php:11
 msgid "404 Monitor"
 msgstr ""
@@ -2546,56 +2274,56 @@ msgstr ""
 msgid "Control who can change Classic SEO settings"
 msgstr ""
 
-#: includes/module/class-manager.php:163
+#: includes/module/class-manager.php:172
 msgid "Robots Txt"
 msgstr ""
 
-#: includes/module/class-manager.php:169
+#: includes/module/class-manager.php:178
 #: includes/modules/redirections/class-form.php:127
 msgid "Status"
 msgstr ""
 
-#: includes/module/class-manager.php:187
+#: includes/module/class-manager.php:196
 #: includes/modules/woocommerce/class-admin.php:35
 #: includes/modules/woocommerce/class-admin.php:60
 #: includes/modules/woocommerce/views/help.php:12
 msgid "WooCommerce"
 msgstr ""
 
-#: includes/module/class-manager.php:188
+#: includes/module/class-manager.php:197
 msgid "Optimize WooCommerce Product Pages."
 msgstr ""
 
-#: includes/module/class-manager.php:192
+#: includes/module/class-manager.php:201
 msgid "Please activate WooCommerce plugin to use this module."
 msgstr ""
 
-#: includes/module/class-manager.php:198
+#: includes/module/class-manager.php:207
 msgid "ACF"
 msgstr ""
 
-#: includes/module/class-manager.php:199
+#: includes/module/class-manager.php:208
 msgid "Read and analyze content written in the Advanced Custom Fields.."
 msgstr ""
 
-#: includes/module/class-manager.php:203
+#: includes/module/class-manager.php:212
 msgid "Please activate ACF plugin to use this module."
 msgstr ""
 
-#: includes/module/class-manager.php:260
+#: includes/module/class-manager.php:269
 msgid "Toggle"
 msgstr ""
 
-#: includes/module/class-manager.php:267
+#: includes/module/class-manager.php:276
 msgid "Status:"
 msgstr ""
 
-#: includes/module/class-manager.php:268
+#: includes/module/class-manager.php:277
 #: includes/modules/redirections/class-table.php:258
 msgid "Active"
 msgstr ""
 
-#: includes/module/class-manager.php:269
+#: includes/module/class-manager.php:278
 #: includes/modules/redirections/class-table.php:259
 msgid "Inactive"
 msgstr ""
@@ -2636,25 +2364,17 @@ msgstr ""
 msgid "404 URI Hits"
 msgstr ""
 
-#: includes/modules/404-monitor/class-monitor.php:65
+#: includes/modules/404-monitor/class-monitor.php:63
 msgid "Review 404 errors on your site"
 msgstr ""
 
-#: includes/modules/404-monitor/class-monitor.php:85
+#: includes/modules/404-monitor/class-monitor.php:82
 #: includes/modules/redirections/class-admin.php:228
 msgid "No valid id found."
 msgstr ""
 
-#: includes/modules/404-monitor/class-monitor.php:89
+#: includes/modules/404-monitor/class-monitor.php:86
 msgid "Log successfully deleted."
-msgstr ""
-
-#: includes/modules/404-monitor/class-table.php:31
-msgid "event"
-msgstr ""
-
-#: includes/modules/404-monitor/class-table.php:32
-msgid "events"
 msgstr ""
 
 #: includes/modules/404-monitor/class-table.php:33
@@ -2817,7 +2537,7 @@ msgstr ""
 #: includes/modules/local-seo/views/titles-options.php:101
 #: includes/modules/local-seo/views/titles-options.php:148
 #: includes/modules/redirections/class-form.php:92
-#: includes/modules/rich-snippet/views/book.php:21
+#: includes/modules/rich-snippet/views/book.php:48
 #: includes/modules/rich-snippet/views/recipe.php:245
 msgid "Remove"
 msgstr ""
@@ -2866,7 +2586,7 @@ msgid "Choose whether the site represents a person or an organization."
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:29
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:202
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:208
 #: includes/modules/rich-snippet/views/recipe.php:257
 #: includes/modules/sitemap/sitemap-xsl.php:162
 #: includes/settings/titles/local.php:26
@@ -2891,11 +2611,11 @@ msgid ""
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:45
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:268
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:301
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:382
-#: includes/modules/rich-snippet/views/book.php:50
-#: includes/modules/rich-snippet/views/metabox-options.php:91
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:277
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:313
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:392
+#: includes/modules/rich-snippet/views/book.php:77
+#: includes/modules/rich-snippet/views/metabox-options.php:112
 #: includes/modules/sitemap/sitemap-xsl.php:287
 #: includes/settings/titles/local.php:42
 msgid "URL"
@@ -2907,7 +2627,7 @@ msgid "URL of the item."
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:53
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:352
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:367
 #: includes/modules/rich-snippet/views/person.php:15
 msgid "Email"
 msgstr ""
@@ -2928,9 +2648,9 @@ msgid ""
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:68
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:272
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:335
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:353
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:281
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:350
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:368
 #: includes/modules/rich-snippet/views/event.php:64
 #: includes/modules/rich-snippet/views/local.php:14
 #: includes/modules/rich-snippet/views/person.php:26
@@ -3016,7 +2736,7 @@ msgid "Time format used in the contact shortcode."
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:144
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:337
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:352
 #: includes/modules/rich-snippet/views/local.php:29
 msgid "Phone Number"
 msgstr ""
@@ -3074,7 +2794,7 @@ msgid "Format: +1-401-555-1212"
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:181
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:338
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:353
 #: includes/modules/rich-snippet/views/local.php:37
 msgid "Price Range"
 msgstr ""
@@ -3120,7 +2840,7 @@ msgid "Google Maps Embed API"
 msgstr ""
 
 #: includes/modules/local-seo/views/titles-options.php:226
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:336
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:351
 #: includes/modules/rich-snippet/views/local.php:21
 msgid "Geo Coordinates"
 msgstr ""
@@ -3251,8 +2971,8 @@ msgstr ""
 msgid "Invalid regex pattern: %s"
 msgstr ""
 
-#: includes/modules/redirections/class-redirections.php:83
-#: includes/modules/redirections/class-redirections.php:92
+#: includes/modules/redirections/class-redirections.php:81
+#: includes/modules/redirections/class-redirections.php:91
 msgid "Create and edit redirections"
 msgstr ""
 
@@ -3260,25 +2980,17 @@ msgstr ""
 msgid "Manage Redirections"
 msgstr ""
 
-#: includes/modules/redirections/class-redirections.php:98
+#: includes/modules/redirections/class-redirections.php:99
 #: includes/modules/redirections/class-redirections.php:101
 msgid "Redirection Settings"
 msgstr ""
 
-#: includes/modules/redirections/class-redirections.php:108
+#: includes/modules/redirections/class-redirections.php:110
 msgid "&raquo; Redirect this page"
 msgstr ""
 
-#: includes/modules/redirections/class-redirections.php:111
+#: includes/modules/redirections/class-redirections.php:112
 msgid "Redirect the current URL"
-msgstr ""
-
-#: includes/modules/redirections/class-table.php:27
-msgid "redirection"
-msgstr ""
-
-#: includes/modules/redirections/class-table.php:28
-msgid "redirections"
 msgstr ""
 
 #: includes/modules/redirections/class-table.php:29
@@ -3326,8 +3038,8 @@ msgid "To"
 msgstr ""
 
 #: includes/modules/redirections/class-table.php:203
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:302
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:313
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:314
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:328
 #: includes/modules/rich-snippet/views/music.php:14
 #: includes/modules/rich-snippet/views/recipe.php:14
 msgid "Type"
@@ -3350,7 +3062,9 @@ msgid "Empty Trash"
 msgstr ""
 
 #. translators: %1$s: post type label, %2$s: edit redirection URL.
-#: includes/modules/redirections/class-watcher.php:92
+#. translators: %1$s: term name, %2$s: edit redirection URL.
+#: includes/modules/redirections/class-watcher.php:100
+#: includes/modules/redirections/class-watcher.php:154
 #, php-format
 msgid ""
 "SEO Notice: you just changed the slug of a %1$s and Classic SEO has "
@@ -3359,11 +3073,11 @@ msgid ""
 msgstr ""
 
 #. translators: 1. url to new screen, 2. old trashed post permalink
-#: includes/modules/redirections/class-watcher.php:236
+#: includes/modules/redirections/class-watcher.php:357
 #, php-format
 msgid ""
-"<strong>SEO Notice:</strong> A previously published post has been moved to "
-"trash. You may redirect it <code>%2$s</code> to <a href=\"%1$s\">new url</a>."
+"<strong>SEO Notice:</strong> A previously published %1$s has been moved to "
+"trash. You may redirect it <code>%2$s</code> to <a href=\"%3$s\">new url</a>."
 msgstr ""
 
 #: includes/modules/redirections/views/debugging.php:73
@@ -3432,7 +3146,7 @@ msgid ""
 msgstr ""
 
 #: includes/modules/redirections/views/main.php:21
-#: includes/modules/rich-snippet/views/book.php:19
+#: includes/modules/rich-snippet/views/book.php:46
 msgid "Add New"
 msgstr ""
 
@@ -3497,366 +3211,363 @@ msgstr ""
 msgid "This tab contains snippet options."
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:69
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:75
 msgid "Post ID does not exists or was deleted."
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:85
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:91
 msgid "Snippet not selected."
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:201
-#: includes/modules/rich-snippet/views/book.php:36
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:207
+#: includes/modules/rich-snippet/views/book.php:63
 msgid "Edition"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:203
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:383
-#: includes/modules/rich-snippet/views/metabox-options.php:104
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:209
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:393
+#: includes/modules/rich-snippet/views/metabox-options.php:125
 msgid "Author"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:204
-#: includes/modules/rich-snippet/views/book.php:43
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:210
+#: includes/modules/rich-snippet/views/book.php:70
 msgid "ISBN"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:206
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:211
+#: includes/modules/rich-snippet/views/book.php:95
+#: includes/replace-variables/class-post-variables.php:85
+msgid "Date Published"
+msgstr ""
+
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:212
 msgid "Format"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:231
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:237
 msgid "Editor's Rating:"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:263
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:269
 #: includes/modules/rich-snippet/views/course.php:14
 msgid "Course Provider"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:264
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:270
 #: includes/modules/rich-snippet/views/course.php:27
 msgid "Course Provider Name"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:265
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:271
 #: includes/modules/rich-snippet/views/course.php:34
 msgid "Course Provider URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:269
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:278
 #: includes/modules/rich-snippet/views/event.php:14
 msgid "Event Type"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:270
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:279
 #: includes/modules/rich-snippet/views/event.php:45
 msgid "Venue Name"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:271
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:280
 #: includes/modules/rich-snippet/views/event.php:54
 msgid "Venue URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:273
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:282
 #: includes/modules/rich-snippet/views/event.php:71
 msgid "Performer"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:274
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:283
 #: includes/modules/rich-snippet/views/event.php:84
 msgid "Performer Name"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:275
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:284
 #: includes/modules/rich-snippet/views/event.php:93
 msgid "Performer URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:276
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:285
 #: includes/modules/rich-snippet/views/event.php:104
 msgid "Event Status"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:277
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:286
 #: includes/modules/rich-snippet/views/event.php:121
 msgid "Start Date"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:278
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:287
 #: includes/modules/rich-snippet/views/event.php:131
 msgid "End Date"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:279
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:288
 #: includes/modules/rich-snippet/views/event.php:140
 msgid "Ticket URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:280
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:289
 #: includes/modules/rich-snippet/views/event.php:152
 msgid "Entry Price"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:281
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:365
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:290
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:380
 #: includes/modules/rich-snippet/views/event.php:165
 msgid "Currency"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:282
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:291
 #: includes/modules/rich-snippet/views/event.php:179
 msgid "Availability"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:283
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:292
 #: includes/modules/rich-snippet/views/event.php:195
 msgid "Availability Starts"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:284
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:293
 #: includes/modules/rich-snippet/views/event.php:204
 msgid "Stock Inventory"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:287
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:299
 msgid "Salary"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:288
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:300
 #: includes/modules/rich-snippet/views/job-posting.php:30
 msgid "Salary Currency"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:289
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:301
 msgid "Payroll"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:290
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:302
 #: includes/modules/rich-snippet/views/job-posting.php:62
 msgid "Date Posted"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:291
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:303
 #: includes/modules/rich-snippet/views/job-posting.php:72
 msgid "Expiry Posted"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:292
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:304
 #: includes/modules/rich-snippet/views/job-posting.php:81
 msgid "Unpublish when expired"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:293
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:305
 msgid "Employment Type "
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:294
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:306
 msgid "Hiring Organization "
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:295
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:307
 msgid "Posting ID"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:296
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:308
 msgid "Organization URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:297
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:309
 msgid "Organization Logo"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:305
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:317
 #: includes/modules/rich-snippet/views/product.php:14
 msgid "Product SKU"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:306
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:318
 #: includes/modules/rich-snippet/views/product.php:21
 msgid "Product Brand"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:307
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:319
 #: includes/modules/rich-snippet/views/product.php:28
 msgid "Product Currency"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:308
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:320
 #: includes/modules/rich-snippet/views/product.php:42
 msgid "Product Price"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:309
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:321
 #: includes/modules/rich-snippet/views/product.php:54
 msgid "Price Valid Until"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:310
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:322
 #: includes/modules/rich-snippet/views/product.php:62
 msgid "Product In-Stock"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:314
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:329
 #: includes/modules/rich-snippet/views/recipe.php:23
 msgid "Cuisine"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:315
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:330
 #: includes/modules/rich-snippet/views/recipe.php:32
+#: includes/modules/search-console/class-analytics-list.php:122
 msgid "Keywords"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:316
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:331
 #: includes/modules/rich-snippet/views/recipe.php:41
 msgid "Recipe Yield"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:318
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:333
 #: includes/modules/rich-snippet/views/recipe.php:59
 msgid "Preparation Time"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:319
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:334
 #: includes/modules/rich-snippet/views/recipe.php:73
 msgid "Cooking Time"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:320
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:335
 #: includes/modules/rich-snippet/views/recipe.php:87
 msgid "Total Time"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:322
-#: includes/modules/rich-snippet/views/recipe.php:110
-msgid "Rating Minimum"
-msgstr ""
-
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:323
-#: includes/modules/rich-snippet/views/recipe.php:119
-msgid "Rating Maximum"
-msgstr ""
-
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:324
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:336
 #: includes/modules/rich-snippet/views/recipe.php:128
 msgid "Recipe Video"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:325
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:337
 #: includes/modules/rich-snippet/views/recipe.php:140
 msgid "Recipe Video Thumbnail"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:326
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:338
 #: includes/modules/rich-snippet/views/recipe.php:152
 msgid "Recipe Video Name"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:327
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:339
 #: includes/modules/rich-snippet/views/recipe.php:161
 msgid "Video Upload Date"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:328
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:340
 #: includes/modules/rich-snippet/views/recipe.php:169
 msgid "Recipe Video Description"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:329
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:341
 #: includes/modules/rich-snippet/views/recipe.php:182
 msgid "Recipe Ingredients"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:330
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:342
 #: includes/modules/rich-snippet/views/recipe.php:209
 msgid "Recipe Instruction Name"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:331
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:332
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:343
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:344
 #: includes/modules/rich-snippet/views/recipe.php:222
 #: includes/modules/rich-snippet/views/recipe.php:238
 msgid "Recipe Instructions"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:339
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:354
 #: includes/modules/rich-snippet/views/local.php:50
 msgid "Opening Time"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:340
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:355
 #: includes/modules/rich-snippet/views/local.php:58
 msgid "Closing Time"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:341
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:356
 #: includes/modules/rich-snippet/views/local.php:66
 msgid "Open Days"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:342
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:357
 #: includes/modules/rich-snippet/views/restaurant.php:14
 msgid "Serves Cuisine"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:343
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:358
 #: includes/modules/rich-snippet/views/restaurant.php:23
 msgid "Menu URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:346
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:361
 #: includes/modules/rich-snippet/views/video.php:14
 msgid "Content URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:347
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:362
 #: includes/modules/rich-snippet/views/video.php:26
 msgid "Embed URL"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:348
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:363
 #: includes/modules/rich-snippet/views/video.php:38
 msgid "Duration"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:349
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:364
 #: includes/modules/rich-snippet/views/video.php:52
 msgid "Views"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:354
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:369
 #: includes/modules/rich-snippet/views/person.php:33
 msgid "Gender"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:355
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:370
 msgid "Job Title"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:363
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:378
 #: includes/modules/rich-snippet/views/service.php:13
 msgid "Service Type"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:373
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:384
 #: includes/modules/rich-snippet/views/service.php:36
 #: includes/modules/rich-snippet/views/software.php:26
 msgid "Price Currency"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:374
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:385
 #: includes/modules/rich-snippet/views/software.php:39
 msgid "Operating System"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:375
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:386
 #: includes/modules/rich-snippet/views/software.php:48
 msgid "Application Category"
 msgstr ""
 
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:384
-#: includes/modules/rich-snippet/views/book.php:14
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:394
+#: includes/modules/rich-snippet/views/book.php:41
 msgid "Book Editions"
 msgstr ""
 
@@ -3884,69 +3595,111 @@ msgid "News Article"
 msgstr ""
 
 #: includes/modules/rich-snippet/views/book.php:15
+msgid "Rating score of the book. Optional."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/book.php:23
+#: includes/modules/rich-snippet/views/course.php:54
+#: includes/modules/rich-snippet/views/event.php:223
+#: includes/modules/rich-snippet/views/product.php:80
+#: includes/modules/rich-snippet/views/recipe.php:110
+#: includes/modules/rich-snippet/views/software.php:67
+msgid "Rating Minimum"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/book.php:24
+msgid "Rating minimum score of the book."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/book.php:32
+#: includes/modules/rich-snippet/views/course.php:63
+#: includes/modules/rich-snippet/views/event.php:232
+#: includes/modules/rich-snippet/views/product.php:89
+#: includes/modules/rich-snippet/views/recipe.php:119
+#: includes/modules/rich-snippet/views/software.php:76
+msgid "Rating Maximum"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/book.php:33
+msgid "Rating maximum score of the book."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/book.php:42
 msgid ""
 "Either a specific edition of the written work, or the volume of the work."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:20
+#: includes/modules/rich-snippet/views/book.php:47
 msgid "Book Edition {#}"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:30
+#: includes/modules/rich-snippet/views/book.php:57
 msgid ""
 "The title of the tome. Use for the title of the tome if it differs from the "
 "book.<br>*Optional when tome has the same title as the book."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:37
+#: includes/modules/rich-snippet/views/book.php:64
 msgid "The edition of the book."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:44
+#: includes/modules/rich-snippet/views/book.php:71
 msgid "The ISBN of the print book."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:51
+#: includes/modules/rich-snippet/views/book.php:78
 msgid "URL specific to this edition if one exists."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:61
+#: includes/modules/rich-snippet/views/book.php:88
 msgid "Author(s)"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:62
+#: includes/modules/rich-snippet/views/book.php:89
 msgid ""
 "The author(s) of the tome. Use if the author(s) of the tome differ from the "
 "related book. Provide one Person entity per author.<br>*Optional when the "
 "tome has the same set of authors as the book."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:69
+#: includes/modules/rich-snippet/views/book.php:96
 msgid "Date of first publication of this tome."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:75
+#: includes/modules/rich-snippet/views/book.php:102
 msgid "Book Format"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:76
+#: includes/modules/rich-snippet/views/book.php:103
 msgid "The format of the book."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:78
+#: includes/modules/rich-snippet/views/book.php:105
 msgid "EBook"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:79
+#: includes/modules/rich-snippet/views/book.php:106
 msgid "Hardcover"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:80
+#: includes/modules/rich-snippet/views/book.php:107
 msgid "Paperback"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/book.php:81
+#: includes/modules/rich-snippet/views/book.php:108
 msgid "Audio Book"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/course.php:46
+msgid "Rating score of the course. Optional."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/course.php:55
+msgid "Rating minimum score of the course."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/course.php:64
+msgid "Rating maximum score of the course."
 msgstr ""
 
 #: includes/modules/rich-snippet/views/event.php:15
@@ -4106,6 +3859,18 @@ msgstr ""
 
 #: includes/modules/rich-snippet/views/event.php:205
 msgid "Number of tickets (optional)"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/event.php:215
+msgid "Rating score of the event. Optional."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/event.php:224
+msgid "Rating minimum score of the event."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/event.php:233
+msgid "Rating maximum score of the event."
 msgstr ""
 
 #: includes/modules/rich-snippet/views/help.php:13
@@ -4315,36 +4080,68 @@ msgstr ""
 msgid "Insert $ / $$ / $$$ / $$$$."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/metabox-options.php:24
+#: includes/modules/rich-snippet/views/metabox-options.php:25
 msgid ""
 "Classic SEO automatically inserts additional Rich Snippet meta data for "
 "WooCommerce products. You can set the Rich Snippet Type to \"None\" to "
 "disable this feature and just use the default data added by WooCommerce."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/metabox-options.php:30
-#: includes/modules/rich-snippet/views/metabox-options.php:46
+#: includes/modules/rich-snippet/views/metabox-options.php:31
+#: includes/modules/rich-snippet/views/metabox-options.php:47
 #: includes/settings/titles/post-types.php:87
 #: includes/settings/titles/post-types.php:101
 msgid "Rich Snippet Type"
 msgstr ""
 
 #. translators: link to title setting screen
-#: includes/modules/rich-snippet/views/metabox-options.php:32
-#: includes/modules/rich-snippet/views/metabox-options.php:48
+#: includes/modules/rich-snippet/views/metabox-options.php:33
+#: includes/modules/rich-snippet/views/metabox-options.php:49
 msgid "Rich Snippets help you stand out in SERPs."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/metabox-options.php:56
-msgid "Shortcode"
+#: includes/modules/rich-snippet/views/metabox-options.php:57
+#: includes/modules/rich-snippet/views/review.php:48
+msgid "Review Location"
 msgstr ""
 
 #: includes/modules/rich-snippet/views/metabox-options.php:58
+#: includes/modules/rich-snippet/views/review.php:49
+msgid ""
+"The review or rating must be displayed on the page to comply with Google's "
+"Rich Snippet guidelines."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/metabox-options.php:64
+#: includes/modules/rich-snippet/views/review.php:55
+msgid "Below Content"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/metabox-options.php:65
+#: includes/modules/rich-snippet/views/review.php:56
+msgid "Above Content"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/metabox-options.php:66
+#: includes/modules/rich-snippet/views/review.php:57
+msgid "Above & Below Content"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/metabox-options.php:67
+#: includes/modules/rich-snippet/views/review.php:58
+msgid "Custom (use shortcode)"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/metabox-options.php:73
+msgid "Shortcode"
+msgstr ""
+
+#: includes/modules/rich-snippet/views/metabox-options.php:75
 #: includes/modules/rich-snippet/views/review.php:67
 msgid "Copy & paste this shortcode in the content."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/metabox-options.php:69
+#: includes/modules/rich-snippet/views/metabox-options.php:90
 #: includes/settings/titles/post-types.php:111
 msgid "Headline"
 msgstr ""
@@ -4371,6 +4168,18 @@ msgstr ""
 
 #: includes/modules/rich-snippet/views/product.php:55
 msgid "The date after which the price will no longer be available."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/product.php:72
+msgid "Rating score of the product. Optional."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/product.php:81
+msgid "Rating minimum score of the product."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/product.php:90
+msgid "Rating maximum score of the product."
 msgstr ""
 
 #: includes/modules/rich-snippet/views/recipe.php:15
@@ -4507,32 +4316,6 @@ msgstr ""
 msgid "Final rating of the item."
 msgstr ""
 
-#: includes/modules/rich-snippet/views/review.php:48
-msgid "Review Location"
-msgstr ""
-
-#: includes/modules/rich-snippet/views/review.php:49
-msgid ""
-"The review or rating must be displayed on the page to comply with Google's "
-"Rich Snippet guidelines."
-msgstr ""
-
-#: includes/modules/rich-snippet/views/review.php:55
-msgid "Below Content"
-msgstr ""
-
-#: includes/modules/rich-snippet/views/review.php:56
-msgid "Above Content"
-msgstr ""
-
-#: includes/modules/rich-snippet/views/review.php:57
-msgid "Above & Below Content"
-msgstr ""
-
-#: includes/modules/rich-snippet/views/review.php:58
-msgid "Custom (use shortcode)"
-msgstr ""
-
 #: includes/modules/rich-snippet/views/service.php:15
 msgid ""
 "The type of service being offered, e.g. veterans' benefits, emergency "
@@ -4547,27 +4330,24 @@ msgstr ""
 msgid "Please use the correct format. Example: 25"
 msgstr ""
 
-#: includes/modules/rich-snippet/views/service.php:50
-#: includes/modules/rich-snippet/views/software.php:58
-msgid "Average of all ratings (1-5). Example: 4.7"
-msgstr ""
-
-#: includes/modules/rich-snippet/views/service.php:64
-#: includes/modules/rich-snippet/views/software.php:72
-msgid "Rating Count"
-msgstr ""
-
-#: includes/modules/rich-snippet/views/service.php:65
-#: includes/modules/rich-snippet/views/software.php:73
-msgid "Number of ratings"
-msgstr ""
-
 #: includes/modules/rich-snippet/views/software.php:41
 msgid "For example, \"Windows 7\", \"OSX 10.6\", \"Android 1.6\""
 msgstr ""
 
 #: includes/modules/rich-snippet/views/software.php:50
 msgid "For example, \"Game\", \"Multimedia\""
+msgstr ""
+
+#: includes/modules/rich-snippet/views/software.php:59
+msgid "Rating score of the software. Optional."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/software.php:68
+msgid "Rating minimum score of the software."
+msgstr ""
+
+#: includes/modules/rich-snippet/views/software.php:77
+msgid "Rating maximum score of the software."
 msgstr ""
 
 #: includes/modules/rich-snippet/views/video.php:15
@@ -4623,6 +4403,380 @@ msgstr ""
 
 #: includes/modules/role-manager/views/main.php:34
 msgid "Update Capabilities"
+msgstr ""
+
+#: includes/modules/search-console/class-analytics-list.php:46
+msgid "No data."
+msgstr ""
+
+#: includes/modules/search-console/class-analytics-list.php:122
+#: includes/modules/search-console/class-sitemaps-list.php:95
+msgid "Pages"
+msgstr ""
+
+#: includes/modules/search-console/class-analytics-list.php:123
+msgid "Clicks"
+msgstr ""
+
+#: includes/modules/search-console/class-analytics-list.php:124
+msgid "Impressions"
+msgstr ""
+
+#: includes/modules/search-console/class-analytics-list.php:125
+msgid "CTR"
+msgstr ""
+
+#: includes/modules/search-console/class-analytics-list.php:126
+msgid "Position"
+msgstr ""
+
+#. translators: previous value
+#: includes/modules/search-console/class-analytics-list.php:169
+#: includes/modules/search-console/class-overview.php:154
+#, php-format
+msgid "Previously: %s"
+msgstr ""
+
+#: includes/modules/search-console/class-google-api.php:324
+msgid "Bad request. Please check the code."
+msgstr ""
+
+#: includes/modules/search-console/class-overview.php:58
+msgid "Total clicks"
+msgstr ""
+
+#: includes/modules/search-console/class-overview.php:70
+msgid "Total impressions"
+msgstr ""
+
+#: includes/modules/search-console/class-overview.php:82
+msgid "Avg. CTR"
+msgstr ""
+
+#: includes/modules/search-console/class-overview.php:94
+msgid "Avg. Position"
+msgstr ""
+
+#: includes/modules/search-console/class-overview.php:106
+msgid "Total keywords"
+msgstr ""
+
+#: includes/modules/search-console/class-overview.php:118
+msgid "Total pages"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console-common.php:49
+#: includes/modules/search-console/class-search-console.php:61
+#: includes/modules/search-console/class-search-console.php:151
+#: includes/modules/search-console/class-search-console.php:203
+#: includes/modules/search-console/views/help.php:10
+#: includes/modules/search-console/views/options.php:23
+msgid "Search Console"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console-common.php:51
+msgid "Review analytics and sitemaps"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:132
+msgid "Search Console Stats"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:134
+msgid "Total Keywords"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:135
+msgid "Total Pages"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:136
+msgid "Total Clicks"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:137
+msgid "Total Impressions"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:138
+msgid "Average Position"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:139
+msgid "Average CTR"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:160
+#: includes/modules/search-console/class-search-console.php:219
+msgid "Overview"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:161
+msgid ""
+"Connect Classic SEO with Google Search Console to see the most important "
+"information from Google directly in your ClassicPress dashboard."
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:164
+msgid "Screen Content"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:165
+msgid ""
+"The Search Analytics tab will give you insights about how your site performs "
+"in search engines: you can see the top search queries to find your site and "
+"your most popular landing pages."
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:168
+msgid "Available Actions"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:169
+msgid ""
+"The Sitemaps tab gives you an overview of the sitemaps submitted to the "
+"Search Console."
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:204
+#, php-format
+msgid ""
+"Connect to Google Search Console profile to see the most important "
+"information from Google. %s."
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:220
+msgid "Search Analytics"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:221
+#: includes/modules/sitemap/views/help.php:10
+msgid "Sitemaps"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:222
+msgid "Keyword Tracker"
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:265
+msgid "No authentication code found."
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:295
+#: includes/modules/search-console/views/options.php:30
+#: includes/modules/search-console/views/options.php:32
+msgid "Domain Property: "
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:336
+msgid "Not a valid settings founds to delete cache."
+msgstr ""
+
+#: includes/modules/search-console/class-search-console.php:357
+msgid "Google oAuth is not authorized."
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:32
+msgid "No sitemaps submitted."
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:103
+msgid "News"
+msgstr ""
+
+#. translators: content: submitted and indexed
+#: includes/modules/search-console/class-sitemaps-list.php:117
+#, php-format
+msgid "%1$d <span class=\"indexed\">(%2$d indexed)</span><br>"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:134
+#: includes/modules/search-console/class-sitemaps-list.php:154
+msgid "Warnings"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:138
+#: includes/modules/search-console/class-sitemaps-list.php:155
+msgid "Errors"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:151
+msgid "Path"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:152
+msgid "Last Downloaded"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:153
+msgid "Items"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps-list.php:200
+msgid "Refresh Sitemaps"
+msgstr ""
+
+#: includes/modules/search-console/class-sitemaps.php:41
+msgid "Sitemaps list refreshed."
+msgstr ""
+
+#: includes/modules/search-console/views/help.php:12
+msgid ""
+"Google Search Console is a website management tool by Google. Specifically, "
+"it was created so that website owners can see important information about "
+"their websites and resolve issues related to search engines. Your Google "
+"Search Console account will contain important information such as your "
+"website’s index status, crawl or other issues, your search engines rankings "
+"and most importantly, the keywords that your website ranks for. This "
+"information comes directly from Google and is very accurate compared to any "
+"3rd party tool."
+msgstr ""
+
+#: includes/modules/search-console/views/help.php:14
+msgid ""
+"Once you setup Classic SEO to work with Google Search Console, then Classic "
+"SEO can fetch important information like keyword ranking, craw errors etc "
+"from Search Console and display it right inside your WordPress admin. This "
+"saves you a lot of time and gives you actionable information to work with "
+"when creating new content."
+msgstr ""
+
+#: includes/modules/search-console/views/help.php:16
+msgid "Click here to read full Search Console tutorial"
+msgstr ""
+
+#: includes/modules/search-console/views/main.php:34
+msgid "Review sitemaps submitted to your Search Console account."
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:18
+msgid "De-authorize Account"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:18
+msgid "Authorize"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:19
+msgid "Get Authorization Code"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:24
+msgid "Authorize the plugin to access data from Google Search Console."
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:41
+msgid "Search Console Profile"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:42
+msgid ""
+"After authenticating with Google Search Console, select the site from the "
+"dropdown list."
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:43
+msgid ""
+"Please note that the Sitemaps overview in the Search Console module will not "
+"be available when using a Domain Property."
+msgstr ""
+
+#. translators: setting url
+#: includes/modules/search-console/views/options.php:45
+#, php-format
+msgid ""
+"Is your site not listed? <a href=\"%1$s\" target=\"_blank\">Click here</a> "
+"to get your website verified."
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:48
+msgid "Refresh Sites"
+msgstr ""
+
+#. translators: date
+#: includes/modules/search-console/views/options.php:61
+#, php-format
+msgid ""
+"The data sets are empty in your cache. You can wait for the next cronjob "
+"(%s) or <strong>Update Manually</strong>."
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:62
+msgid ""
+"<strong>Note:</strong> Please update your data by clicking on 'Update "
+"Manually'. Google only stores data from the last 90 days - a dataset older "
+"than that can't be updated anymore."
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:71
+msgid "Cache Limit <br><small>Days to keep data rows in cache</small>"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:74
+msgid "Delete Recent Cache (last 90 days)"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:75
+msgid "Delete Cache"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:76
+msgid "Update Cache manually"
+msgstr ""
+
+#: includes/modules/search-console/views/options.php:76
+msgid "Fetching in Progress"
+msgstr ""
+
+#. translators: number of days
+#: includes/modules/search-console/views/options.php:78
+#, php-format
+msgid "Cached Days: %s"
+msgstr ""
+
+#. translators: number of rows
+#: includes/modules/search-console/views/options.php:80
+#, php-format
+msgid "Data Rows: %s"
+msgstr ""
+
+#. translators: database size
+#: includes/modules/search-console/views/options.php:82
+#, php-format
+msgid "Size: %s"
+msgstr ""
+
+#. translators: admin screen link
+#: includes/modules/search-console/views/search-console-noauth.php:14
+#, php-format
+msgid ""
+"Please navigate to <a href=\"%s\">SEO > Settings > Search Console</a> to "
+"authorize access to Google Search Console."
+msgstr ""
+
+#. translators: admin screen link
+#: includes/modules/search-console/views/search-console-overview.php:16
+#, php-format
+msgid ""
+"The data sets are empty in your cache. You can wait for the next cronjob or "
+"<strong>Update Manually</strong>. Please navigate to <a href=\"%s\">SEO > "
+"Settings > Search Console</a>."
+msgstr ""
+
+#: includes/modules/search-console/views/search-console-overview.php:41
+msgid "Click History"
+msgstr ""
+
+#: includes/modules/search-console/views/search-console-overview.php:45
+msgid "Impressions History"
+msgstr ""
+
+#: includes/modules/search-console/views/search-console-overview.php:50
+msgid "CTR History"
+msgstr ""
+
+#: includes/modules/search-console/views/search-console-overview.php:54
+msgid "Position History"
 msgstr ""
 
 #: includes/modules/sitemap/class-admin.php:65
@@ -4934,10 +5088,6 @@ msgstr ""
 msgid "Last Mod."
 msgstr ""
 
-#: includes/modules/sitemap/views/help.php:10
-msgid "Sitemaps"
-msgstr ""
-
 #: includes/modules/sitemap/views/help.php:12
 msgid ""
 "XML sitemaps are files that serve a single purpose - to help search engines "
@@ -5034,102 +5184,134 @@ msgstr ""
 msgid "Tables"
 msgstr ""
 
-#: includes/modules/status/class-system-status.php:110
+#: includes/modules/status/class-system-status.php:111
 msgid "Missing"
 msgstr ""
 
-#: includes/modules/status/class-tools.php:61
-msgid "Classic SEO transients"
-msgstr ""
-
-#: includes/modules/status/class-tools.php:62
-msgid "This tool will clear all the transients created by the Classic SEO."
-msgstr ""
-
-#: includes/modules/status/class-tools.php:63
-msgid "Clear transients"
+#: includes/modules/status/class-tools.php:66
+msgid "Remove Classic SEO transients"
 msgstr ""
 
 #: includes/modules/status/class-tools.php:67
-msgid "Clear seo analysis data"
+msgid ""
+"If you see any issue while using Classic SEO or one of its options - "
+"clearing the Classic SEO transients fixes the problem in most cases. "
+"Deleting transients does not delete ANY Classic SEO."
 msgstr ""
 
 #: includes/modules/status/class-tools.php:68
-msgid "This tool will clear the SEO Analysis data."
+msgid "Remove transients"
 msgstr ""
 
-#: includes/modules/status/class-tools.php:69
-msgid "Clear SEO Analysis"
-msgstr ""
-
-#: includes/modules/status/class-tools.php:73
+#: includes/modules/status/class-tools.php:72
 msgid "Delete Internal Links data"
 msgstr ""
 
-#: includes/modules/status/class-tools.php:74
-msgid "This option will delete ALL the Internal Links data."
+#: includes/modules/status/class-tools.php:73
+msgid ""
+"In some instances, the internal links data might show an inflated number or "
+"no number at all. Deleting the internal links data might fix the issue."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:75
+#: includes/modules/status/class-tools.php:74
 msgid ""
 "Are you sure you want to delete Internal Links Data? This action is "
 "irreversible."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:76
+#: includes/modules/status/class-tools.php:75
 msgid "Delete Internal Links"
 msgstr ""
 
-#: includes/modules/status/class-tools.php:80
+#: includes/modules/status/class-tools.php:79
 msgid "Delete Redirections rule"
 msgstr ""
 
-#: includes/modules/status/class-tools.php:81
-msgid "This option will delete ALL Redirection rules."
+#: includes/modules/status/class-tools.php:80
+msgid ""
+"Getting a redirection loop or need a fresh start? Delete all the "
+"redirections using this tool. Note: This process is irreversible and will "
+"delete ALL your redirection rules."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:82
+#: includes/modules/status/class-tools.php:81
 msgid ""
 "Are you sure you want to delete all the Redirection Rules? This action is "
 "irreversible."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:83
+#: includes/modules/status/class-tools.php:82
 msgid "Delete Redirections"
 msgstr ""
 
+#: includes/modules/status/class-tools.php:86
+#: includes/modules/status/class-tools.php:89
+msgid "Clear 404 Log"
+msgstr ""
+
 #: includes/modules/status/class-tools.php:87
-#: includes/modules/status/class-tools.php:90
-msgid "Delete 404 Log"
+msgid ""
+"Is the 404 error log getting out of hand? Use this option to clear ALL 404 "
+"logs generated by your website in the Classic SEO 404 Monitor."
 msgstr ""
 
 #: includes/modules/status/class-tools.php:88
-msgid "This option will delete ALL 404 monitor log."
-msgstr ""
-
-#: includes/modules/status/class-tools.php:89
 msgid ""
 "Are you sure you want to delete the 404 log? This action is irreversible."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:116
+#: includes/modules/status/class-tools.php:95
+msgid "Convert Review Schema into Article"
+msgstr ""
+
+#. translators: 1. Google documentation link 2. Filter code
+#: includes/modules/status/class-tools.php:97
+#, php-format
+msgid ""
+"Before using this converter, please read the Knowledge Base Article from %s."
+msgstr ""
+
+#: includes/modules/status/class-tools.php:97
+msgid "here"
+msgstr ""
+
+#. translators: Number of posts to update
+#: includes/modules/status/class-tools.php:99
+#, php-format
+msgid ""
+"Are you sure you want to covert %s posts with review schema into new schema "
+"type? This action is irreversible."
+msgstr ""
+
+#: includes/modules/status/class-tools.php:100
+msgid "Convert"
+msgstr ""
+
+#: includes/modules/status/class-tools.php:128
 msgid "Classic SEO transients cleared."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:125
-msgid "SEO Analysis data successfully deleted."
-msgstr ""
-
-#: includes/modules/status/class-tools.php:136
+#: includes/modules/status/class-tools.php:139
 msgid "Internal Links successfully deleted."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:146
+#: includes/modules/status/class-tools.php:149
 msgid "404 Log successfully deleted."
 msgstr ""
 
-#: includes/modules/status/class-tools.php:157
+#: includes/modules/status/class-tools.php:160
 msgid "Redirection rules successfully deleted."
+msgstr ""
+
+#: includes/modules/status/class-tools.php:169
+msgid "No review posts found."
+msgstr ""
+
+#. translators: Number of posts updated
+#: includes/modules/status/class-tools.php:180
+#, php-format
+msgid ""
+"%1$s review Posts updated. You can find the list of all converted posts %2$s."
 msgstr ""
 
 #: includes/modules/woocommerce/class-admin.php:61
@@ -5139,27 +5321,27 @@ msgid ""
 "WooCommerce product pages."
 msgstr ""
 
-#: includes/modules/woocommerce/class-wc-vars.php:37
+#: includes/modules/woocommerce/class-wc-vars.php:34
 msgid "Product's price."
 msgstr ""
 
-#: includes/modules/woocommerce/class-wc-vars.php:38
+#: includes/modules/woocommerce/class-wc-vars.php:35
 msgid "Product's price of the current product"
 msgstr ""
 
-#: includes/modules/woocommerce/class-wc-vars.php:47
+#: includes/modules/woocommerce/class-wc-vars.php:45
 msgid "Product's SKU."
 msgstr ""
 
-#: includes/modules/woocommerce/class-wc-vars.php:48
+#: includes/modules/woocommerce/class-wc-vars.php:46
 msgid "Product's SKU of the current product"
 msgstr ""
 
-#: includes/modules/woocommerce/class-wc-vars.php:57
+#: includes/modules/woocommerce/class-wc-vars.php:56
 msgid "Product's short description."
 msgstr ""
 
-#: includes/modules/woocommerce/class-wc-vars.php:58
+#: includes/modules/woocommerce/class-wc-vars.php:57
 msgid "Product's short description of the current product"
 msgstr ""
 
@@ -5310,7 +5492,7 @@ msgid "Remove WooCommerce generator tag from the source code."
 msgstr ""
 
 #: includes/modules/woocommerce/views/options-general.php:49
-#: includes/settings/titles/taxonomies.php:91
+#: includes/settings/titles/taxonomies.php:100
 msgid "Remove Snippet Data"
 msgstr ""
 
@@ -5324,6 +5506,443 @@ msgstr ""
 
 #: includes/modules/woocommerce/views/options-general.php:58
 msgid "Select Product Brand Taxonomy to use in Schema.org & OpenGraph markup."
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:31
+#: includes/replace-variables/class-advanced-variables.php:34
+msgid "Post ID"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:32
+msgid "ID of the current post/page"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:43
+msgid "Focus Keyword of the current post"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:53
+msgid "Custom Field (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:54
+msgid "Custom field value."
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:56
+msgid "Custom field value"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:72
+msgid "Page"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:73
+msgid ""
+"Page number with context (i.e. page 2 of 4). Only displayed on page 2 and "
+"above."
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:83
+msgid "Page Number"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:84
+msgid "Current page number"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:94
+msgid "Max Pages"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:95
+msgid "Max pages number"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:110
+msgid "Post Type Name Singular"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:111
+msgid "Name of current post type (singular)"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:121
+msgid "Post Type Name Plural"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:122
+msgid "Name of current post type (plural)"
+msgstr ""
+
+#: includes/replace-variables/class-advanced-variables.php:124
+msgid "Products"
+msgstr ""
+
+#. translators: 1: current page number, 2: total number of pages.
+#: includes/replace-variables/class-advanced-variables.php:174
+#, php-format
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: includes/replace-variables/class-author-variables.php:40
+msgid "Author ID"
+msgstr ""
+
+#: includes/replace-variables/class-author-variables.php:41
+msgid "Author's user id of the current post, page or author archive."
+msgstr ""
+
+#: includes/replace-variables/class-author-variables.php:51
+msgid "Post Author"
+msgstr ""
+
+#: includes/replace-variables/class-author-variables.php:52
+msgid "Display author's nicename of the current post, page or author archive."
+msgstr ""
+
+#: includes/replace-variables/class-author-variables.php:62
+msgid "Author Description"
+msgstr ""
+
+#: includes/replace-variables/class-author-variables.php:63
+msgid "Author's biographical info of the current post, page or author archive."
+msgstr ""
+
+#: includes/replace-variables/class-base.php:162
+msgid "Example Post title"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:37
+#: includes/settings/general/breadcrumbs.php:23
+#: includes/settings/titles/global.php:52
+msgid "Separator Character"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:38
+msgid "Separator character, as set in the Title Settings"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:48
+msgid "Search Query"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:49
+msgid "Search query (only available on search results page)"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:51
+msgid "example search"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:59
+msgid "Counter"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:60
+msgid "Starts at 1 and increments by 1."
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:70
+msgid "File Name"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:71
+msgid "File Name of the attachment"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:90
+msgid "Site Title"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:91
+msgid "Title of the site"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:101
+msgid "Site Description"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:102
+msgid "Description of the site"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:117
+msgid "Current Date"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:118
+msgid "Current server date"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:128
+msgid "Current Day"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:129
+msgid "Current server day"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:139
+msgid "Current Month"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:140
+msgid "Current server month"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:150
+msgid "Current Year"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:151
+msgid "Current server year"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:166
+msgid "Current Time"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:167
+msgid "Current server time"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:177
+msgid "Current Time (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-basic-variables.php:178
+msgid "Current server time with custom formatting pattern."
+msgstr ""
+
+#: includes/replace-variables/class-manager.php:109
+msgid ""
+"Variable names can only contain alphanumeric characters, underscores and "
+"dashes."
+msgstr ""
+
+#: includes/replace-variables/class-manager.php:114
+msgid "The variable has already been registered."
+msgstr ""
+
+#. translators: Taxonomy name.
+#: includes/replace-variables/class-manager.php:251
+#, php-format
+msgid "%s Title"
+msgstr ""
+
+#. translators: Taxonomy name.
+#: includes/replace-variables/class-manager.php:253
+#, php-format
+msgid "%s Description"
+msgstr ""
+
+#: includes/replace-variables/class-manager.php:259
+msgid "Custom Term title."
+msgstr ""
+
+#: includes/replace-variables/class-manager.php:270
+#: includes/replace-variables/class-term-variables.php:69
+#: includes/replace-variables/class-term-variables.php:71
+msgid "Custom Term description."
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:32
+msgid "Post Title"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:33
+msgid "Title of the current post/page"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:43
+msgid "Post Title of parent page"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:44
+msgid "Title of the parent page of the current post/page"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:46
+msgid "Example Parent Title"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:54
+#: includes/replace-variables/class-post-variables.php:65
+msgid "Post Excerpt"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:55
+msgid "Excerpt of the current post (or auto-generated if it does not exist)"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:66
+msgid "Excerpt of the current post (without auto-generation)"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:68
+msgid "Post Excerpt Only"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:86
+msgid ""
+"Publication date of the current post/page <strong>OR</strong> specified date "
+"on date archives"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:96
+msgid "Date Modified"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:97
+msgid "Last modification date of the current post/page"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:107
+msgid "Date Published (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:108
+msgid "Publish date with custom formatting pattern."
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:118
+msgid "Date Modified (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:119
+msgid "Modified date with custom formatting pattern."
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:136
+msgid "Post Category"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:137
+msgid ""
+"First category (alphabetically) associated to the current post <strong>OR</"
+"strong> current category on category archives"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:139
+msgid "Example Category"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:147
+msgid "Post Categories"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:148
+msgid "Comma-separated list of categories associated to the current post"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:150
+#: includes/replace-variables/class-post-variables.php:161
+msgid "Example Category 1, Example Category 2"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:158
+msgid "Categories (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:159
+msgid ""
+"Output list of categories associated to the current post, with customization "
+"options."
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:176
+msgid "Post Tag"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:177
+msgid ""
+"First tag (alphabetically) associated to the current post <strong>OR</"
+"strong> current tag on tag archives"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:179
+msgid "Example Tag"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:187
+msgid "Post Tags"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:188
+msgid "Comma-separated list of tags associated to the current post"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:190
+msgid "Example Tag 1, Example Tag 2"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:198
+msgid "Tags (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:199
+msgid ""
+"Output list of tags associated to the current post, with customization "
+"options."
+msgstr ""
+
+#: includes/replace-variables/class-post-variables.php:201
+msgid "Example Tag 1 | Example Tag 2"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:35
+msgid "Current Term"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:36
+msgid "Current term name"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:38
+msgid "Example Term"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:46
+msgid "Term Description"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:47
+msgid "Current term description"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:49
+msgid "Example Term Description"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:57
+msgid "Custom Term (advanced)"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:58
+msgid "Custom term value."
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:60
+msgid "Custom term value"
+msgstr ""
+
+#: includes/replace-variables/class-term-variables.php:68
+msgid "Custom Term description"
+msgstr ""
+
+#: includes/replace-variables/class-variable.php:83
+msgid "The $id variable is required."
+msgstr ""
+
+#: includes/replace-variables/class-variable.php:88
+msgid "Example"
+msgstr ""
+
+#. translators: variable name
+#: includes/replace-variables/class-variable.php:93
+#, php-format
+msgid "The $%1$s is required for variable %2$s."
 msgstr ""
 
 #: includes/rest/class-admin.php:144
@@ -5441,6 +6060,14 @@ msgstr ""
 
 #: includes/settings/general/breadcrumbs.php:119
 msgid "Hide Taxonomy Name from Breadcrumb."
+msgstr ""
+
+#: includes/settings/general/breadcrumbs.php:128
+msgid "Show Blog Page"
+msgstr ""
+
+#: includes/settings/general/breadcrumbs.php:129
+msgid "Show Blog Page in Breadcrumb."
 msgstr ""
 
 #: includes/settings/general/images.php:14
@@ -5670,14 +6297,14 @@ msgid ""
 msgstr ""
 
 #: includes/settings/titles/author.php:19 includes/settings/titles/misc.php:20
-#: includes/settings/titles/post-types.php:226
-#: includes/settings/titles/post-types.php:247
+#: includes/settings/titles/post-types.php:235
+#: includes/settings/titles/post-types.php:256
 msgid "Disabled"
 msgstr ""
 
 #: includes/settings/titles/author.php:20 includes/settings/titles/misc.php:19
-#: includes/settings/titles/post-types.php:227
-#: includes/settings/titles/post-types.php:248
+#: includes/settings/titles/post-types.php:236
+#: includes/settings/titles/post-types.php:257
 msgid "Enabled"
 msgstr ""
 
@@ -5722,30 +6349,34 @@ msgid "Custom values for robots meta tag on author page."
 msgstr ""
 
 #: includes/settings/titles/author.php:65
+msgid "Author Advanced Robots"
+msgstr ""
+
+#: includes/settings/titles/author.php:77
 msgid "Author Archive Title"
 msgstr ""
 
-#: includes/settings/titles/author.php:66
+#: includes/settings/titles/author.php:78
 msgid ""
 "Title tag on author archives. SEO options for specific authors can be set "
 "with the meta box available in the user profiles."
 msgstr ""
 
-#: includes/settings/titles/author.php:76
+#: includes/settings/titles/author.php:88
 msgid "Author Archive Description"
 msgstr ""
 
-#: includes/settings/titles/author.php:77
+#: includes/settings/titles/author.php:89
 msgid ""
 "Author archive meta description. SEO options for specific author archives "
 "can be set with the meta box in the user profiles."
 msgstr ""
 
-#: includes/settings/titles/author.php:90
+#: includes/settings/titles/author.php:102
 msgid "Add SEO Meta Box for Users"
 msgstr ""
 
-#: includes/settings/titles/author.php:91
+#: includes/settings/titles/author.php:103
 msgid ""
 "Add SEO Meta Box for user profile pages. Access to the Meta Box can be fine "
 "tuned with code, using a special filter hook."
@@ -5777,57 +6408,57 @@ msgid ""
 "posts, taxonomies, etc."
 msgstr ""
 
-#: includes/settings/titles/global.php:37
+#: includes/settings/titles/global.php:44
 msgid "Noindex Empty Category and Tag Archives"
 msgstr ""
 
-#: includes/settings/titles/global.php:38
+#: includes/settings/titles/global.php:45
 msgid ""
 "Setting empty archives to <code>noindex</code> is useful for avoiding "
 "indexation of thin content pages and dilution of page rank. As soon as a "
 "post is added, the page is updated to <code>index</code>."
 msgstr ""
 
-#: includes/settings/titles/global.php:46
+#: includes/settings/titles/global.php:53
 msgid ""
 "You can use the separator character in titles by inserting <code>%separator"
 "%</code> or <code>%sep%</code> in the title fields."
 msgstr ""
 
-#: includes/settings/titles/global.php:57
+#: includes/settings/titles/global.php:64
 msgid "Rewrite Titles"
 msgstr ""
 
-#: includes/settings/titles/global.php:58
+#: includes/settings/titles/global.php:65
 msgid ""
 "Your current theme doesn't support title-tag. Enable this option to rewrite "
 "page, post, category, search and archive page titles."
 msgstr ""
 
-#: includes/settings/titles/global.php:66
+#: includes/settings/titles/global.php:73
 msgid "Capitalize Titles"
 msgstr ""
 
-#: includes/settings/titles/global.php:67
+#: includes/settings/titles/global.php:74
 msgid "Automatically capitalize the first character of all title tags."
 msgstr ""
 
-#: includes/settings/titles/global.php:74
+#: includes/settings/titles/global.php:81
 msgid "OpenGraph Thumbnail"
 msgstr ""
 
-#: includes/settings/titles/global.php:75
+#: includes/settings/titles/global.php:82
 msgid ""
 "When a featured image is not set, this image will be used as a thumbnail "
 "when your post is shared on Facebook. Recommended image size 1200 x 630 "
 "pixels."
 msgstr ""
 
-#: includes/settings/titles/global.php:83
+#: includes/settings/titles/global.php:90
 msgid "Twitter Card Type"
 msgstr ""
 
-#: includes/settings/titles/global.php:84
+#: includes/settings/titles/global.php:91
 msgid ""
 "Card type selected when creating a new post. This will also be applied for "
 "posts without a card type selected."
@@ -5868,30 +6499,34 @@ msgid "Custom values for robots meta tag on homepage."
 msgstr ""
 
 #: includes/settings/titles/homepage.php:63
+msgid "Homepage Advanced Robots"
+msgstr ""
+
+#: includes/settings/titles/homepage.php:71
 msgid "Homepage Title for Facebook"
 msgstr ""
 
-#: includes/settings/titles/homepage.php:64
+#: includes/settings/titles/homepage.php:72
 msgid ""
 "Title of your site when shared on Facebook, Twitter and other social "
 "networks."
 msgstr ""
 
-#: includes/settings/titles/homepage.php:70
+#: includes/settings/titles/homepage.php:78
 msgid "Homepage Description for Facebook"
 msgstr ""
 
-#: includes/settings/titles/homepage.php:71
+#: includes/settings/titles/homepage.php:79
 msgid ""
 "Description of your site when shared on Facebook, Twitter and other social "
 "networks."
 msgstr ""
 
-#: includes/settings/titles/homepage.php:77
+#: includes/settings/titles/homepage.php:85
 msgid "Homepage Thumbnail for Facebook"
 msgstr ""
 
-#: includes/settings/titles/homepage.php:78
+#: includes/settings/titles/homepage.php:86
 msgid ""
 "Image displayed when your homepage is shared on Facebook and other social "
 "networks. Use images that are at least 1200 x 630 pixels for the best "
@@ -5949,40 +6584,44 @@ msgstr ""
 msgid "Custom values for robots meta tag on date page."
 msgstr ""
 
-#: includes/settings/titles/misc.php:83
+#: includes/settings/titles/misc.php:84
+msgid "Date Advanced Robots"
+msgstr ""
+
+#: includes/settings/titles/misc.php:92
 msgid "Noindex Search Results"
 msgstr ""
 
-#: includes/settings/titles/misc.php:84
+#: includes/settings/titles/misc.php:93
 msgid ""
 "Prevent search results pages from getting indexed by search engines. Search "
 "results could be considered to be thin content and prone to duplicate "
 "content issues."
 msgstr ""
 
-#: includes/settings/titles/misc.php:91
+#: includes/settings/titles/misc.php:100
 msgid "Noindex Paginated Pages"
 msgstr ""
 
-#: includes/settings/titles/misc.php:92
+#: includes/settings/titles/misc.php:101
 msgid ""
 "Set this to on to prevent /page/2 and further of any archive to show up in "
 "the search results."
 msgstr ""
 
-#: includes/settings/titles/misc.php:99
+#: includes/settings/titles/misc.php:108
 msgid "Noindex Archive Subpages"
 msgstr ""
 
-#: includes/settings/titles/misc.php:100
+#: includes/settings/titles/misc.php:109
 msgid "Prevent paginated archive pages from getting indexed by search engines."
 msgstr ""
 
-#: includes/settings/titles/misc.php:107
+#: includes/settings/titles/misc.php:116
 msgid "Noindex Password Protected Pages"
 msgstr ""
 
-#: includes/settings/titles/misc.php:108
+#: includes/settings/titles/misc.php:117
 msgid ""
 "Prevent password protected pages & posts from getting indexed by search "
 "engines."
@@ -6069,77 +6708,92 @@ msgid ""
 "set in the Global Meta tab."
 msgstr ""
 
+#. translators: post type name
 #: includes/settings/titles/post-types.php:181
+#, php-format
+msgid "%s Advanced Robots Meta"
+msgstr ""
+
+#: includes/settings/titles/post-types.php:190
 msgid ""
 "Enable Link Suggestions meta box for this post type, along with the "
 "Cornerstone Content feature."
 msgstr ""
 
-#: includes/settings/titles/post-types.php:188
+#: includes/settings/titles/post-types.php:197
 msgid "Link Suggestion Titles"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:189
+#: includes/settings/titles/post-types.php:198
 msgid ""
 "Use the Focus Keyword as the default text for the links instead of the post "
 "titles."
 msgstr ""
 
-#: includes/settings/titles/post-types.php:191
+#: includes/settings/titles/post-types.php:200
 msgid "Titles"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:192
+#: includes/settings/titles/post-types.php:201
 msgid "Focus Keywords"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:203
+#: includes/settings/titles/post-types.php:212
 msgid "Primary Taxonomy"
 msgstr ""
 
 #. translators: post type name
-#: includes/settings/titles/post-types.php:205
+#: includes/settings/titles/post-types.php:214
 #, php-format
 msgid ""
 "Select taxonomy to show in the Breadcrumbs when a single %1$s is being "
 "viewed."
 msgstr ""
 
-#: includes/settings/titles/post-types.php:214
+#: includes/settings/titles/post-types.php:223
 msgid "Thumbnail for Facebook"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:215
+#: includes/settings/titles/post-types.php:224
 msgid ""
 "Image displayed when your page is shared on Facebook and other social "
 "networks. Use images that are at least 1200 x 630 pixels for the best "
 "display on high resolution devices."
 msgstr ""
 
-#: includes/settings/titles/post-types.php:223
-#: includes/settings/titles/post-types.php:244
+#: includes/settings/titles/post-types.php:232
+#: includes/settings/titles/post-types.php:253
 msgid "Bulk Editing"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:224
-#: includes/settings/titles/post-types.php:245
+#: includes/settings/titles/post-types.php:233
+#: includes/settings/titles/post-types.php:254
 msgid "Add bulk editing columns to the post listing screen."
 msgstr ""
 
-#: includes/settings/titles/post-types.php:228
-#: includes/settings/titles/post-types.php:249
+#: includes/settings/titles/post-types.php:237
+#: includes/settings/titles/post-types.php:258
 msgid "Read Only"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:236
-#: includes/settings/titles/taxonomies.php:83
+#: includes/settings/titles/post-types.php:245
+#: includes/settings/titles/taxonomies.php:92
 msgid "Add SEO Meta Box"
 msgstr ""
 
-#: includes/settings/titles/post-types.php:237
+#: includes/settings/titles/post-types.php:246
 msgid ""
 "Add the SEO Meta Box for the editor screen to customize SEO options for "
 "posts in this post type."
+msgstr ""
+
+#: includes/settings/titles/post-types.php:267
+msgid "Custom Fields"
+msgstr ""
+
+#: includes/settings/titles/post-types.php:268
+msgid ""
+"List of custom fields name to include in the Page analysis. Add one per line."
 msgstr ""
 
 #: includes/settings/titles/social.php:12
@@ -6286,14 +6940,20 @@ msgid ""
 "as set in the Global Meta tab."
 msgstr ""
 
+#. translators: taxonomy name
 #: includes/settings/titles/taxonomies.php:84
+#, php-format
+msgid "%s Archives Advanced Robots Meta"
+msgstr ""
+
+#: includes/settings/titles/taxonomies.php:93
 msgid ""
 "Add the SEO Meta Box for the term editor screen to customize SEO options for "
 "individual terms in this taxonomy."
 msgstr ""
 
 #. translators: taxonomy name
-#: includes/settings/titles/taxonomies.php:93
+#: includes/settings/titles/taxonomies.php:102
 #, php-format
 msgid "Remove schema data from %s."
 msgstr ""
@@ -6312,5 +6972,5 @@ msgid "SEO solution for ClassicPress (experimental)."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Tim Hughes & ClassicPress Community"
+msgid "ClassicPress Community"
 msgstr ""
