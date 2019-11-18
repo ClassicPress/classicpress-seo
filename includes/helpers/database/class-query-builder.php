@@ -3,11 +3,11 @@
  * The Query Builder.
  *
  * @since      0.5.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Database
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Database
  */
 
-namespace ClassicPress_SEO\Database;
+namespace Classic_SEO\Database;
 
 /**
  * Query_Builder class.
@@ -253,9 +253,10 @@ class Query_Builder {
 
 		if ( is_array( $name ) ) {
 			$this->statements['values'] = $this->statements['values'] + $name;
-		} else {
-			$this->statements['values'][ $name ] = $value;
+			return $this;
 		}
+
+		$this->statements['values'][ $name ] = $value;
 
 		return $this;
 	}

@@ -2,11 +2,11 @@
 /**
  * The breadcrumb settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $cmb->add_field([
 	'id'      => 'cpseo_breadcrumbs',
@@ -25,7 +25,7 @@ $cmb->add_field([
 	'options'         => Helper::choices_separator( Helper::get_settings( 'general.cpseo_breadcrumbs_separator' ) ),
 	'default'         => '-',
 	'dep'             => $dependency,
-	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_htmlentities' ],
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_htmlentities' ],
 ]);
 
 $cmb->add_field([
@@ -120,3 +120,14 @@ $cmb->add_field([
 	'default' => 'off',
 	'dep'     => $dependency,
 ]);
+
+if ( 'page' === get_option( 'show_on_front' ) && 0 < get_option( 'page_for_posts' ) ) {
+	$cmb->add_field([
+		'id'      => 'cpseo_breadcrumbs_blog_page',
+		'type'    => 'switch',
+		'name'    => esc_html__( 'Show Blog Page', 'cpseo' ),
+		'desc'    => esc_html__( 'Show Blog Page in Breadcrumb.', 'cpseo' ),
+		'default' => 'off',
+		'dep'     => $dependency,
+	]);
+}

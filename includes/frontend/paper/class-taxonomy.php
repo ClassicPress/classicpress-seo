@@ -3,14 +3,14 @@
  * The Term Class
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Paper
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Paper
  */
 
-namespace ClassicPress_SEO\Paper;
+namespace Classic_SEO\Paper;
 
-use ClassicPress_SEO\Term;
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Term;
+use Classic_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -68,6 +68,22 @@ class Taxonomy implements IPaper {
 
 		if ( $this->noindex_term( $object ) ) {
 			$robots['index'] = 'noindex';
+		}
+
+		return $robots;
+	}
+	
+	/**
+	 * Retrieves the advanced robots for a taxonomy.
+	 *
+	 * @return array The advanced robots for the taxonomy
+	 */
+	public function advanced_robots() {
+		$object = get_queried_object();
+		$robots = Paper::advanced_robots_combine( Term::get_meta( 'advanced_robots', $object ) );
+
+		if ( is_object( $object ) && empty( $robots ) && Helper::get_settings( "titles.cpseo_tax_{$object->taxonomy}_custom_robots" ) ) {
+			$robots = Paper::advanced_robots_combine( Helper::get_settings( "titles.cpseo_tax_{$object->taxonomy}_advanced_robots" ), true );
 		}
 
 		return $robots;

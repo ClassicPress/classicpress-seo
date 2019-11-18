@@ -2,8 +2,8 @@
 /**
  * Help Sitemaps tab.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
  */
 
 ?>

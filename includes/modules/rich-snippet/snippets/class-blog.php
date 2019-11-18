@@ -3,12 +3,12 @@
  * The Blog Class.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
 
  */
 
-namespace ClassicPress_SEO\RichSnippet;
+namespace Classic_SEO\RichSnippet;
 
 defined( 'ABSPATH' ) || exit;
 

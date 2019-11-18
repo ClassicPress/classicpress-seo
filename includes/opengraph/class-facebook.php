@@ -3,17 +3,18 @@
  * This code adds the Facebook metadata.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\OpenGraph
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\OpenGraph
  */
 
-namespace ClassicPress_SEO\OpenGraph;
+
+namespace Classic_SEO\OpenGraph;
 
 use DateInterval;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Paper\Paper;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Paper\Paper;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -109,180 +110,8 @@ class Facebook extends OpenGraph {
 	 */
 	public function locale( $echo = true ) {
 		$locale = get_locale();
-
-		// Catch some weird locales served out by WP that are not easily doubled up.
-		$fix_locales = [
-			'ca' => 'ca_ES',
-			'en' => 'en_US',
-			'el' => 'el_GR',
-			'et' => 'et_EE',
-			'ja' => 'ja_JP',
-			'sq' => 'sq_AL',
-			'uk' => 'uk_UA',
-			'vi' => 'vi_VN',
-			'zh' => 'zh_CN',
-		];
-
-		if ( isset( $fix_locales[ $locale ] ) ) {
-			$locale = $fix_locales[ $locale ];
-		}
-
-		// Convert locales like "es" to "es_ES", in case that works for the given locale (sometimes it does).
-		if ( 2 === strlen( $locale ) ) {
-			$locale = strtolower( $locale ) . '_' . strtoupper( $locale );
-		}
-
-		// These are the locales FB supports.
-		$fb_valid_fb_locales = [
-			'af_ZA', // Afrikaans.
-			'ak_GH', // Akan.
-			'am_ET', // Amharic.
-			'ar_AR', // Arabic.
-			'as_IN', // Assamese.
-			'ay_BO', // Aymara.
-			'az_AZ', // Azerbaijani.
-			'be_BY', // Belarusian.
-			'bg_BG', // Bulgarian.
-			'bn_IN', // Bengali.
-			'br_FR', // Breton.
-			'bs_BA', // Bosnian.
-			'ca_ES', // Catalan.
-			'cb_IQ', // Sorani Kurdish.
-			'ck_US', // Cherokee.
-			'co_FR', // Corsican.
-			'cs_CZ', // Czech.
-			'cx_PH', // Cebuano.
-			'cy_GB', // Welsh.
-			'da_DK', // Danish.
-			'de_DE', // German.
-			'el_GR', // Greek.
-			'en_GB', // English (UK).
-			'en_IN', // English (India).
-			'en_PI', // English (Pirate).
-			'en_UD', // English (Upside Down).
-			'en_US', // English (US).
-			'eo_EO', // Esperanto.
-			'es_CL', // Spanish (Chile).
-			'es_CO', // Spanish (Colombia).
-			'es_ES', // Spanish (Spain).
-			'es_LA', // Spanish.
-			'es_MX', // Spanish (Mexico).
-			'es_VE', // Spanish (Venezuela).
-			'et_EE', // Estonian.
-			'eu_ES', // Basque.
-			'fa_IR', // Persian.
-			'fb_LT', // Leet Speak.
-			'ff_NG', // Fulah.
-			'fi_FI', // Finnish.
-			'fo_FO', // Faroese.
-			'fr_CA', // French (Canada).
-			'fr_FR', // French (France).
-			'fy_NL', // Frisian.
-			'ga_IE', // Irish.
-			'gl_ES', // Galician.
-			'gn_PY', // Guarani.
-			'gu_IN', // Gujarati.
-			'gx_GR', // Classical Greek.
-			'ha_NG', // Hausa.
-			'he_IL', // Hebrew.
-			'hi_IN', // Hindi.
-			'hr_HR', // Croatian.
-			'hu_HU', // Hungarian.
-			'hy_AM', // Armenian.
-			'id_ID', // Indonesian.
-			'ig_NG', // Igbo.
-			'is_IS', // Icelandic.
-			'it_IT', // Italian.
-			'ja_JP', // Japanese.
-			'ja_KS', // Japanese (Kansai).
-			'jv_ID', // Javanese.
-			'ka_GE', // Georgian.
-			'kk_KZ', // Kazakh.
-			'km_KH', // Khmer.
-			'kn_IN', // Kannada.
-			'ko_KR', // Korean.
-			'ku_TR', // Kurdish (Kurmanji).
-			'ky_KG', // Kyrgyz.
-			'la_VA', // Latin.
-			'lg_UG', // Ganda.
-			'li_NL', // Limburgish.
-			'ln_CD', // Lingala.
-			'lo_LA', // Lao.
-			'lt_LT', // Lithuanian.
-			'lv_LV', // Latvian.
-			'mg_MG', // Malagasy.
-			'mi_NZ', // Maori.
-			'mk_MK', // Macedonian.
-			'ml_IN', // Malayalam.
-			'mn_MN', // Mongolian.
-			'mr_IN', // Marathi.
-			'ms_MY', // Malay.
-			'mt_MT', // Maltese.
-			'my_MM', // Burmese.
-			'nb_NO', // Norwegian (bokmal).
-			'nd_ZW', // Ndebele.
-			'ne_NP', // Nepali.
-			'nl_BE', // Dutch (Belgie).
-			'nl_NL', // Dutch.
-			'nn_NO', // Norwegian (nynorsk).
-			'ny_MW', // Chewa.
-			'or_IN', // Oriya.
-			'pa_IN', // Punjabi.
-			'pl_PL', // Polish.
-			'ps_AF', // Pashto.
-			'pt_BR', // Portuguese (Brazil).
-			'pt_PT', // Portuguese (Portugal).
-			'qu_PE', // Quechua.
-			'rm_CH', // Romansh.
-			'ro_RO', // Romanian.
-			'ru_RU', // Russian.
-			'rw_RW', // Kinyarwanda.
-			'sa_IN', // Sanskrit.
-			'sc_IT', // Sardinian.
-			'se_NO', // Northern Sami.
-			'si_LK', // Sinhala.
-			'sk_SK', // Slovak.
-			'sl_SI', // Slovenian.
-			'sn_ZW', // Shona.
-			'so_SO', // Somali.
-			'sq_AL', // Albanian.
-			'sr_RS', // Serbian.
-			'sv_SE', // Swedish.
-			'sw_KE', // Swahili.
-			'sy_SY', // Syriac.
-			'sz_PL', // Silesian.
-			'ta_IN', // Tamil.
-			'te_IN', // Telugu.
-			'tg_TJ', // Tajik.
-			'th_TH', // Thai.
-			'tk_TM', // Turkmen.
-			'tl_PH', // Filipino.
-			'tl_ST', // Klingon.
-			'tr_TR', // Turkish.
-			'tt_RU', // Tatar.
-			'tz_MA', // Tamazight.
-			'uk_UA', // Ukrainian.
-			'ur_PK', // Urdu.
-			'uz_UZ', // Uzbek.
-			'vi_VN', // Vietnamese.
-			'wo_SN', // Wolof.
-			'xh_ZA', // Xhosa.
-			'yi_DE', // Yiddish.
-			'yo_NG', // Yoruba.
-			'zh_CN', // Simplified Chinese (China).
-			'zh_HK', // Traditional Chinese (Hong Kong).
-			'zh_TW', // Traditional Chinese (Taiwan).
-			'zu_ZA', // Zulu.
-			'zz_TR', // Zazaki.
-		];
-
-		// Check to see if the locale is a valid FB one, if not, use en_US as a fallback.
-		if ( ! in_array( $locale, $fb_valid_fb_locales, true ) ) {
-			$locale = strtolower( substr( $locale, 0, 2 ) ) . '_' . strtoupper( substr( $locale, 0, 2 ) );
-			if ( ! in_array( $locale, $fb_valid_fb_locales, true ) ) {
-				$locale = 'en_US';
-			}
-		}
+		$locale = Facebook_Locale::sanitize( $locale );
+		$locale = Facebook_Locale::validate( $locale );
 
 		if ( $echo ) {
 			$this->tag( 'og:locale', $locale );
@@ -300,21 +129,9 @@ class Facebook extends OpenGraph {
 	 * @return string
 	 */
 	public function type( $echo = true ) {
+		$type = $this->get_type();
 
-		// We use "object" for archives etc. as article doesn't apply there.
-		$type = 'object';
-
-		if ( is_front_page() || is_home() ) {
-			$type = 'website';
-		} elseif ( is_singular() ) {
-			$type = Conditional::is_woocommerce_active() && is_product() ? 'product' : 'article';
-			if ( in_array( $this->schema, [ 'video', 'product', 'local' ], true ) ) {
-				$type = $this->schema;
-				if ( ! is_front_page() ) {
-					$this->action( 'cpseo/opengraph/facebook', $this->schema, 30 );
-				}
-			}
-
+		if ( is_singular() ) {
 			if ( 'article' === $type && ! is_front_page() ) {
 				$this->action( 'cpseo/opengraph/facebook', 'article_author', 15 );
 				$this->action( 'cpseo/opengraph/facebook', 'tags', 16 );
@@ -335,6 +152,31 @@ class Facebook extends OpenGraph {
 		}
 
 		return $type;
+	}
+	
+	/**
+	 * Get type.
+	 *
+	 * @return string
+	 */
+	private function get_type() {
+		if ( is_front_page() || is_home() ) {
+			return 'website';
+		}
+
+		// We use "object" for archives etc. as article doesn't apply there.
+		if ( ! is_singular() ) {
+			return 'object';
+		}
+
+		if ( in_array( $this->schema, [ 'video', 'product', 'local' ], true ) ) {
+			if ( ! is_front_page() ) {
+				$this->action( 'cpseo/opengraph/facebook', $this->schema, 30 );
+			}
+			return $this->schema;
+		}
+
+		return $this->is_product() ? 'product' : 'article';
 	}
 
 	/**
@@ -435,11 +277,7 @@ class Facebook extends OpenGraph {
 	 * @link https://developers.facebook.com/docs/reference/opengraph/object-type/article/
 	 */
 	public function article_author() {
-		$author = Helper::get_user_meta( 'facebook_author', $GLOBALS['post']->post_author );
-		if ( ! $author && ! $author = get_user_meta( $GLOBALS['post']->post_author, 'facebook', true ) ) { // phpcs:ignore
-			$author = Helper::get_settings( 'titles.cpseo_facebook_author_urls' );
-		}
-		$this->tag( 'article:author', $author );
+		$this->tag( 'article:author', $this->get_author() );
 	}
 
 	/**
@@ -460,11 +298,6 @@ class Facebook extends OpenGraph {
 	 * Output the article category as an article:section tag.
 	 */
 	public function category() {
-		$post = get_post();
-		if ( ! $post ) {
-			return false;
-		}
-
 		$terms = get_the_category();
 		if ( is_wp_error( $terms ) || empty( $terms ) ) {
 			return;
@@ -497,13 +330,15 @@ class Facebook extends OpenGraph {
 	 * Output product tags
 	 */
 	public function product() {
-		if ( ! class_exists( 'WooCommerce' ) || 'product' !== get_post_type() ) {
-			$this->tag( 'product:brand', Helper::get_post_meta( 'snippet_product_brand' ) );
-			$this->tag( 'product:price:amount', Helper::get_post_meta( 'snippet_product_price' ) );
-			$this->tag( 'product:price:currency', Helper::get_post_meta( 'snippet_product_currency' ) );
-			if ( Helper::get_post_meta( 'snippet_product_instock', false ) ) {
-				$this->tag( 'product:availability', 'instock' );
-			}
+		if ( $this->is_product() ) {
+			return;
+		}
+
+		$this->tag( 'product:brand', Helper::get_post_meta( 'snippet_product_brand' ) );
+		$this->tag( 'product:price:amount', Helper::get_post_meta( 'snippet_product_price' ) );
+		$this->tag( 'product:price:currency', Helper::get_post_meta( 'snippet_product_currency' ) );
+		if ( Helper::get_post_meta( 'snippet_product_instock', false ) ) {
+			$this->tag( 'product:availability', 'instock' );
 		}
 	}
 
@@ -539,7 +374,7 @@ class Facebook extends OpenGraph {
 	 * @param string $iso8601 Duration which need to be converted to seconds.
 	 * @return int
 	 */
-	public function duration_to_seconds( $iso8601 ) {
+	private function duration_to_seconds( $iso8601 ) {
 		$interval = new DateInterval( $iso8601 );
 
 		return array_sum([
@@ -548,5 +383,33 @@ class Facebook extends OpenGraph {
 			$interval->i * MINUTE_IN_SECONDS,
 			$interval->s,
 		]);
+	}
+
+	/**
+	 * Get author.
+	 *
+	 * @return string
+	 */
+	private function get_author() {
+		$author = Helper::get_user_meta( 'cpseo_facebook_author', $GLOBALS['post']->post_author );
+		if ( $author ) {
+			return $author;
+		}
+
+		$author = get_user_meta( $GLOBALS['post']->post_author, 'facebook', true );
+		if ( $author ) {
+			return $author;
+		}
+
+		return Helper::get_settings( 'titles.cpseo_facebook_author_urls' );
+	}
+
+	/**
+	 * Is woocommerce product
+	 *
+	 * @return bool
+	 */
+	private function is_product() {
+		return function_exists( 'is_woocommerce' ) && is_product();
 	}
 }

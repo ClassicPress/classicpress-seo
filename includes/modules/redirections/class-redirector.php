@@ -3,18 +3,18 @@
  * The Redirector.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
 use WP_Query;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -307,15 +307,13 @@ class Redirector {
 	 * @codeCoverageIgnore
 	 */
 	private function do_debugging() {
-		if ( ! Helper::get_settings( 'general.cpseo_redirections_debug' ) | ! Helper::has_cap( 'redirections' ) ) {
+		if ( ! Helper::get_settings( 'general.cpseo_redirections_debug' ) || ! Helper::has_cap( 'redirections' ) ) {
 			return;
 		}
 
 		$this->filter( 'user_has_cap', 'filter_user_has_cap' );
 
-		if ( ! function_exists( 'get_current_screen' ) ) {
-			require_once ABSPATH . 'wp-admin/includes/screen.php';
-		}
+		require_once ABSPATH . 'wp-admin/includes/screen.php';
 
 		$assets_uri = untrailingslashit( plugin_dir_url( __FILE__ ) );
 		include_once \dirname( __FILE__ ) . '/views/debugging.php';
@@ -415,11 +413,7 @@ class Redirector {
 	 * @return string
 	 */
 	private function get_redirect_header() {
-		if ( true === $this->do_filter( 'redirection/add_redirect_header', true ) ) {
-			return 'ClassicPress SEO';
-		}
-
-		return 'WordPress';
+		return true === $this->do_filter( 'redirection/add_redirect_header', true ) ? 'Classic SEO' : 'ClassicPress';
 	}
 
 	/**

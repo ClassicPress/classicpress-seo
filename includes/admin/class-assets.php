@@ -3,16 +3,16 @@
  * Register all the necessary CSS and JS.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Runner;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Runner;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -109,7 +109,7 @@ class Assets implements Runner {
 
 	/**
 	 * Overwrite wplink script file.
-	 * ClassicPress SEO adds new options in the link popup when editing a post.
+	 * Classic SEO adds new options in the link popup when editing a post.
 	 */
 	public function overwrite_wplink() {
 
@@ -120,15 +120,16 @@ class Assets implements Runner {
 			'wplink',
 			'wpLinkL10n',
 			[
-				'title'          => esc_html__( 'Insert/edit link', 'cpseo' ),
-				'update'         => esc_html__( 'Update', 'cpseo' ),
-				'save'           => esc_html__( 'Add Link', 'cpseo' ),
-				'noTitle'        => esc_html__( '(no title)', 'cpseo' ),
-				'noMatchesFound' => esc_html__( 'No matches found.', 'cpseo' ),
-				'linkSelected'   => esc_html__( 'Link selected.', 'cpseo' ),
-				'linkInserted'   => esc_html__( 'Link inserted.', 'cpseo' ),
-				'relCheckbox'    => __( 'Add <code>rel="nofollow"</code>', 'cpseo' ),
-				'linkTitle'      => esc_html__( 'Link Title', 'cpseo' ),
+				'title'             => esc_html__( 'Insert/edit link', 'cpseo' ),
+				'update'            => esc_html__( 'Update', 'cpseo' ),
+				'save'              => esc_html__( 'Add Link', 'cpseo' ),
+				'noTitle'           => esc_html__( '(no title)', 'cpseo' ),
+				'noMatchesFound'    => esc_html__( 'No matches found.', 'cpseo' ),
+				'linkSelected'      => esc_html__( 'Link selected.', 'cpseo' ),
+				'linkInserted'      => esc_html__( 'Link inserted.', 'cpseo' ),
+				'relCheckbox'       => __( 'Add <code>rel="nofollow"</code>', 'cpseo' ),
+				'sponsoredCheckbox' => __( 'Add <code>rel="sponsored"</code>', 'cpseo' ),
+				'linkTitle'         => esc_html__( 'Link Title', 'cpseo' ),
 			]
 		);
 	}

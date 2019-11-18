@@ -3,11 +3,11 @@
  * The orderby functions.
  *
  * @since      0.5.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Database
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Database
  */
 
-namespace ClassicPress_SEO\Database;
+namespace Classic_SEO\Database;
 
 /**
  * OrderBy class.

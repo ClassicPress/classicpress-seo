@@ -2,11 +2,11 @@
 /**
  * The authors settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $dep = [ [ 'cpseo_disable_author_archives', 'off' ] ];
 
@@ -56,6 +56,18 @@ $cmb->add_field([
 		'relation' => 'and',
 		[ 'cpseo_author_custom_robots', 'on' ],
 		[ 'cpseo_disable_author_archives', 'off' ],
+	],
+]);
+
+$cmb->add_field([
+	'id'              => 'cpseo_author_advanced_robots',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Author Advanced Robots', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => [
+		'relation' => 'and',
+		[ 'author_custom_robots', 'on' ],
+		[ 'disable_author_archives', 'off' ],
 	],
 ]);
 

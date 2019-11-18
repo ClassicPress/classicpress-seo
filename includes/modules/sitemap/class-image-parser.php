@@ -3,20 +3,20 @@
  * Parses images from the given post.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap;
+namespace Classic_SEO\Sitemap;
 
 use WP_Query;
 use DOMDocument;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
-use ClassicPress_SEO\Helpers\Attachment;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
+use Classic_SEO\Helpers\Attachment;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -63,6 +63,20 @@ class Image_Parser {
 	protected $charset = 'UTF-8';
 
 	/**
+	 * Hold post.
+	 *
+	 * @var object
+	 */
+	private $post = null;
+
+	/**
+	 * Hold parsed images data.
+	 *
+	 * @var array
+	 */
+	private $images = [];
+
+	/**
 	 * Set up URL properties for reuse.
 	 */
 	public function __construct() {
@@ -88,64 +102,21 @@ class Image_Parser {
 	 * @return array
 	 */
 	public function get_images( $post ) {
-		$images = [];
-		if ( ! is_object( $post ) ) {
-			return $images;
+		$this->post = $post;
+		if ( ! is_object( $this->post ) ) {
+			return $this->images;
 		}
 
-		$thumbnail_id = get_post_thumbnail_id( $post->ID );
-		if ( Helper::get_settings( 'sitemap.cpseo_include_featured_image' ) && $thumbnail_id ) {
-			if ( Helper::attachment_in_sitemap( $thumbnail_id ) ) {
-				$src      = $this->get_absolute_url( $this->image_url( $thumbnail_id ) );
-				$alt      = Attachment::get_alt_tag( $thumbnail_id );
-				$title    = get_post_field( 'post_title', $thumbnail_id );
-				$images[] = $this->get_image_item( $post, $src, $title, $alt );
-			}
-		}
+		$this->get_post_thumbnail();
+		$this->get_post_images();
+		$this->get_post_galleries();
+		$this->get_is_attachment();
+		$this->get_custom_field_images();
 
-		/**
-		 * Filter: 'cpseo/sitemap/content_before_parse_html_images' - Filters the post content
-		 * before it is parsed for images.
-		 *
-		 * @param string $content The raw/unprocessed post content.
-		 */
-		$content = $this->do_filter( 'sitemap/content_before_parse_html_images', $post->post_content );
-
-		$unfiltered_images = $this->parse_html_images( $content );
-		foreach ( $unfiltered_images as $image ) {
-			$images[] = $this->get_image_item( $post, $image['src'], $image['title'], $image['alt'] );
-		}
-
-		foreach ( $this->parse_galleries( $post->post_content, $post->ID ) as $attachment ) {
-			$alt = Attachment::get_alt_tag( $attachment->ID );
-			$src = $this->get_absolute_url( $this->image_url( $attachment->ID ) );
-
-			$images[] = $this->get_image_item( $post, $src, $attachment->post_title, $alt );
-		}
-
-		if ( 'attachment' === $post->post_type && wp_attachment_is_image( $post ) ) {
-			$src = $this->get_absolute_url( $this->image_url( $post->ID ) );
-			$alt = Attachment::get_alt_tag( $post->ID );
-
-			$images[] = $this->get_image_item( $post, $src, $post->post_title, $alt );
-		}
-
-		$customs = Helper::get_settings( 'sitemap.cpseo_pt_' . $post->post_type . '_image_customfields' );
-		if ( ! empty( $customs ) ) {
-			$customs = array_filter( array_map( 'trim', explode( "\n", $customs ) ) );
-			foreach ( $customs as $key ) {
-				$src = get_post_meta( $post->ID, $key, true );
-				if ( Str::is_non_empty( $src ) && preg_match( '/\.(jpg|jpeg|png|gif)$/i', $src ) ) {
-					$images[] = $this->get_image_item( $post, $src, $post->post_title );
-				}
-			}
-		}
-
-		foreach ( $images as $key => $image ) {
-			if ( empty( $image['src'] ) ) {
-				unset( $images[ $key ] );
-			}
-		}
+		// Reset.
+		$images       = $this->images;
+		$this->images = [];
+		$this->post   = null;
 
 		/**
 		 * Filter images to be included for the post in XML sitemap.
@@ -178,6 +149,86 @@ class Image_Parser {
 	}
 
 	/**
+	 * Get post thumbnail.
+	 */
+	private function get_post_thumbnail() {
+		$thumbnail_id = get_post_thumbnail_id( $this->post->ID );
+		if (
+			! Helper::get_settings( 'sitemap.include_featured_image' ) ||
+			! Helper::attachment_in_sitemap( $thumbnail_id )
+		) {
+			return;
+		}
+
+		$this->get_image_item(
+			$this->get_absolute_url( $this->image_url( $thumbnail_id ) ),
+			get_post_field( 'post_title', $thumbnail_id ),
+			Attachment::get_alt_tag( $thumbnail_id )
+		);
+	}
+
+	/**
+	 * Get images from post content.
+	 */
+	private function get_post_images() {
+		/**
+		 * Filter: 'cpseo/sitemap/content_before_parse_html_images' - Filters the post content
+		 * before it is parsed for images.
+		 *
+		 * @param string $content The raw/unprocessed post content.
+		 */
+		$content = $this->do_filter( 'sitemap/content_before_parse_html_images', $this->post->post_content );
+
+		foreach ( $this->parse_html_images( $content ) as $image ) {
+			$this->get_image_item( $image['src'], $image['title'], $image['alt'] );
+		}
+	}
+
+	/**
+	 * Get post galleries.
+	 */
+	private function get_post_galleries() {
+		foreach ( $this->parse_galleries( $this->post->post_content, $this->post->ID ) as $attachment ) {
+			$this->get_image_item(
+				$this->get_absolute_url( $this->image_url( $attachment->ID ) ),
+				$attachment->post_title,
+				Attachment::get_alt_tag( $attachment->ID )
+			);
+		}
+	}
+
+	/**
+	 * Get image if post is attachment.
+	 */
+	private function get_is_attachment() {
+		if ( 'attachment' === $this->post->post_type && wp_attachment_is_image( $this->post ) ) {
+			$this->get_image_item(
+				$this->get_absolute_url( $this->image_url( $this->post->ID ) ),
+				$this->post->post_title,
+				Attachment::get_alt_tag( $this->post->ID )
+			);
+		}
+	}
+
+	/**
+	 * Get images from custom fields
+	 */
+	private function get_custom_field_images() {
+		$customs = Helper::get_settings( 'sitemap.pt_' . $this->post->post_type . '_image_customfields' );
+		if ( empty( $customs ) ) {
+			return;
+		}
+
+		$customs = array_filter( array_map( 'trim', explode( "\n", $customs ) ) );
+		foreach ( $customs as $key ) {
+			$src = get_post_meta( $this->post->ID, $key, true );
+			if ( Str::is_non_empty( $src ) && preg_match( '/\.(jpg|jpeg|png|gif)$/i', $src ) ) {
+				$this->get_image_item( $src, $this->post->post_title );
+			}
+		}
+	}
+
+	/**
 	 * Parse `<img />` tags in content.
 	 *
 	 * @param string $content Content string to parse.
@@ -185,43 +236,15 @@ class Image_Parser {
 	 * @return array
 	 */
 	private function parse_html_images( $content ) {
-		$images = [];
-		if ( ! class_exists( 'DOMDocument' ) || empty( $content ) ) {
+		$images   = [];
+		$document = $this->get_document( $content );
+		if ( false === $document ) {
 			return $images;
 		}
 
-		// Prevent DOMDocument from bubbling warnings about invalid HTML.
-		libxml_use_internal_errors( true );
-
-		$post_dom = new DOMDocument();
-		$post_dom->loadHTML( '<?xml encoding="' . $this->charset . '">' . $content );
-
-		// Clear the errors, so they don't get kept in memory.
-		libxml_clear_errors();
-
-		foreach ( $post_dom->getElementsByTagName( 'img' ) as $img ) {
-
-			$src = $img->getAttribute( 'src' );
-			if ( $img->hasAttribute( 'data-sitemapexclude' ) || empty( $src ) ) {
-				continue;
-			}
-
-			$class = $img->getAttribute( 'class' );
-			if ( // This detects WP-inserted images, which we need to upsize. R.
-				! empty( $class )
-				&& ! Str::contains( 'size-full', $class )
-				&& preg_match( '|wp-image-(?P<id>\d+)|', $class, $matches )
-				&& get_post_status( $matches['id'] )
-			) {
-				$src = $this->image_url( $matches['id'] );
-			}
-
-			$src = $this->get_absolute_url( $src );
-			if ( ! Str::contains( $this->host, $src ) ) {
-				continue;
-			}
-
-			if ( esc_url( $src ) !== $src ) {
+		foreach ( $document->getElementsByTagName( 'img' ) as $img ) {
+			$src = $this->get_image_src( $img );
+			if ( false === $src ) {
 				continue;
 			}
 
@@ -233,6 +256,59 @@ class Image_Parser {
 		}
 
 		return $images;
+	}
+
+	/**
+	 * Get dom document.
+	 *
+	 * @param string $content Content to parse.
+	 *
+	 * @return bool|DOMDocument
+	 */
+	private function get_document( $content ) {
+		if ( ! class_exists( 'DOMDocument' ) || empty( $content ) ) {
+			return false;
+		}
+
+		// Prevent DOMDocument from bubbling warnings about invalid HTML.
+		libxml_use_internal_errors( true );
+
+		$post_dom = new DOMDocument();
+		$post_dom->loadHTML( '<?xml encoding="' . $this->charset . '">' . $content );
+
+		// Clear the errors, so they don't get kept in memory.
+		libxml_clear_errors();
+
+		return $post_dom;
+	}
+
+	/**
+	 * Get image source from node.
+	 *
+	 * @param DOMNode $node Node instance.
+	 *
+	 * @return bool|string
+	 */
+	private function get_image_src( $node ) {
+		$src = $node->getAttribute( 'src' );
+		if ( $node->hasAttribute( 'data-sitemapexclude' ) || empty( $src ) ) {
+			return false;
+		}
+
+		$class = $node->getAttribute( 'class' );
+		if ( // This detects WP-inserted images, which we need to upsize. R.
+			! empty( $class )
+			&& ! Str::contains( 'size-full', $class )
+			&& preg_match( '|wp-image-(?P<id>\d+)|', $class, $matches )
+			&& get_post_status( $matches['id'] )
+		) {
+			$src = $this->image_url( $matches['id'] );
+		}
+
+		$src     = $this->get_absolute_url( $src );
+		$no_host = ! Str::contains( $this->host, $src ) || esc_url( $src ) !== $src;
+
+		return $no_host ? false : $src;
 	}
 
 	/**
@@ -261,11 +337,7 @@ class Image_Parser {
 			$attachments = array_merge( $attachments, $this->get_gallery_attachments( $id, $gallery ) );
 		}
 
-		if ( PHP_VERSION_ID >= 50209 ) {
-			return array_unique( $attachments, SORT_REGULAR );
-		}
-
-		return $attachments;
+		return array_unique( $attachments, SORT_REGULAR );
 	}
 
 	/**
@@ -277,15 +349,14 @@ class Image_Parser {
 	 * @return array A list of arrays, each containing gallery data.
 	 */
 	private function get_content_galleries( $content ) {
-		if ( ! has_shortcode( $content, 'gallery' ) ) {
+		if (
+			! has_shortcode( $content, 'gallery' ) ||
+			! preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER )
+		) {
 			return [];
 		}
 
 		$galleries = [];
-		if ( ! preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches, PREG_SET_ORDER ) ) {
-			return $galleries;
-		}
-
 		foreach ( $matches as $shortcode ) {
 			if ( 'gallery' !== $shortcode[2] ) {
 				continue;
@@ -299,16 +370,13 @@ class Image_Parser {
 	}
 
 	/**
-	 * Get image item array with filters applied.
+	 * Set image item array with filters applied.
 	 *
-	 * @param WP_Post $post  Post object for the context.
-	 * @param string  $src   Image URL.
-	 * @param string  $title Optional image title.
-	 * @param string  $alt   Optional image alt text.
-	 *
-	 * @return array
+	 * @param string $src   Image URL.
+	 * @param string $title Optional image title.
+	 * @param string $alt   Optional image alt text.
 	 */
-	private function get_image_item( $post, $src, $title = '', $alt = '' ) {
+	private function get_image_item( $src, $title = '', $alt = '' ) {
 		$image = [];
 
 		/**
@@ -317,7 +385,10 @@ class Image_Parser {
 		 * @param string $src  Image URL.
 		 * @param object $post Post object.
 		 */
-		$image['src'] = $this->do_filter( 'sitemap/xml_img_src', $src, $post );
+		$image['src'] = $this->do_filter( 'sitemap/xml_img_src', $src, $this->post );
+		if ( Str::is_empty( $image['src'] ) ) {
+			return;
+		}
 
 		if ( ! empty( $title ) ) {
 			$image['title'] = $title;
@@ -337,7 +408,7 @@ class Image_Parser {
 		 * }
 		 * @param object $post  Post object.
 		 */
-		return $this->do_filter( 'sitemap/xml_img', $image, $post );
+		$this->images[] = $this->do_filter( 'sitemap/xml_img', $image, $this->post );
 	}
 
 	/**
@@ -348,27 +419,37 @@ class Image_Parser {
 	 * @return string
 	 */
 	private function image_url( $post_id ) {
-		$uploads = $this->get_upload_dir();
-		if ( false !== $uploads['error'] ) {
-			return '';
-		}
+		$src = $this->normalize_image_url( $post_id );
 
-		$file = get_post_meta( $post_id, '_wp_attached_file', true );
-		if ( empty( $file ) ) {
-			return '';
+		return false === $src ? '' : apply_filters( 'wp_get_attachment_url', $src, $post_id );
+	}
+
+	/**
+	 * Get attached image URL.
+	 *
+	 * @param int $post_id ID of the post.
+	 *
+	 * @return bool|string
+	 */
+	private function normalize_image_url( $post_id ) {
+		$uploads    = $this->get_upload_dir();
+		$attachment = get_post_meta( $post_id, '_wp_attached_file', true );
+
+		if ( false !== $uploads['error'] || empty( $attachment ) ) {
+			return false;
 		}
 
 		// Check that the upload base exists in the file location.
-		if ( 0 === strpos( $file, $uploads['basedir'] ) ) {
-			$src = str_replace( $uploads['basedir'], $uploads['baseurl'], $file );
-		} elseif ( false !== strpos( $file, 'wp-content/uploads' ) ) {
-			$src = $uploads['baseurl'] . substr( $file, ( strpos( $file, 'wp-content/uploads' ) + 18 ) );
-		} else {
-			// It's a newly uploaded file, therefore $file is relative to the baseurl.
-			$src = $uploads['baseurl'] . '/' . $file;
+		if ( 0 === strpos( $attachment, $uploads['basedir'] ) ) {
+			return str_replace( $uploads['basedir'], $uploads['baseurl'], $attachment );
 		}
 
-		return apply_filters( 'wp_get_attachment_url', $src, $post_id );
+		if ( false !== strpos( $attachment, 'wp-content/uploads' ) ) {
+			return $uploads['baseurl'] . substr( $attachment, ( strpos( $attachment, 'wp-content/uploads' ) + 18 ) );
+		}
+
+		// It's a newly uploaded file, therefore $attachment is relative to the baseurl.
+		return $uploads['baseurl'] . '/' . $attachment;
 	}
 
 	/**

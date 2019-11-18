@@ -3,14 +3,14 @@
  * The Attachment helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
 
  */
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -26,6 +26,10 @@ trait Attachment {
 	 * @return bool
 	 */
 	public static function attachment_in_sitemap( $attachment_id ) {
+		if ( empty( $attachment_id ) ) {
+			return false;
+		}
+
 		$exclude_sitemap = get_post_meta( $attachment_id, 'cpseo_exclude_sitemap', true );
 
 		return empty( $exclude_sitemap );

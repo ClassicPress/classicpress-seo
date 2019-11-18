@@ -2,8 +2,8 @@
 /**
  * Import panel template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
 ?>

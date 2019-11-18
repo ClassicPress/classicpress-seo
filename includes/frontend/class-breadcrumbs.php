@@ -3,14 +3,14 @@
  * The Breadcrumbs.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Frontend
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Frontend
  */
 
-namespace ClassicPress_SEO\Frontend;
+namespace Classic_SEO\Frontend;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -81,6 +81,7 @@ class Breadcrumbs {
 				'remove_title'    => Helper::get_settings( 'general.cpseo_breadcrumbs_remove_post_title' ),
 				'hide_tax_name'   => Helper::get_settings( 'general.cpseo_breadcrumbs_hide_taxonomy_name' ),
 				'show_ancestors'  => Helper::get_settings( 'general.cpseo_breadcrumbs_ancestor_categories' ),
+				'show_blog'       => Helper::get_settings( 'general.breadcrumbs_blog_page' ),
 				'show_pagination' => true,
 			]
 		);
@@ -311,6 +312,7 @@ class Breadcrumbs {
 			return;
 		}
 
+		$this->maybe_add_blog();
 		$main_tax = Helper::get_settings( 'titles.cpseo_pt_' . $post_type . '_primary_taxonomy' );
 		if ( isset( $post->post_parent ) && 0 === $post->post_parent && $main_tax ) {
 			$this->maybe_add_primary_term( get_the_terms( $post, $main_tax ) );
@@ -384,6 +386,7 @@ class Breadcrumbs {
 	 * Category trail.
 	 */
 	private function add_crumbs_category() {
+		$this->maybe_add_blog();
 		$term = $GLOBALS['wp_query']->get_queried_object();
 		$this->maybe_add_term_ancestors( $term );
 		$this->add_crumb( $this->get_breadcrumb_title( 'term', $term, $term->name ), get_term_link( $term ) );
@@ -393,6 +396,7 @@ class Breadcrumbs {
 	 * Tag trail.
 	 */
 	private function add_crumbs_tag() {
+		$this->maybe_add_blog();
 		$term = $GLOBALS['wp_query']->get_queried_object();
 		$this->add_crumb( $this->get_breadcrumb_title( 'term', $term, $term->name ), get_term_link( $term ) );
 	}
@@ -559,6 +563,37 @@ class Breadcrumbs {
 		if ( ! empty( $this->settings['home'] ) ) {
 			$this->add_crumb( $this->strings['home'], $this->strings['home_link'] );
 		}
+	}
+	
+	/**
+	 * Get the Blog Page.
+	 *
+	 */
+	private function maybe_add_blog() {
+		// Early Bail!
+		$blog_id = get_option( 'page_for_posts' );
+		if ( ! $blog_id || ! $this->can_add_blog() ) {
+			return;
+		}
+
+		$this->add_crumb( $this->get_breadcrumb_title( 'post', $blog_id, get_the_title( $blog_id ) ), get_permalink( $blog_id ) );
+	}
+
+	/**
+	 * Can add Blog page crumb.
+	 *
+	 * @return bool
+	 */
+	private function can_add_blog() {
+		if ( empty( $this->settings['show_blog'] ) || 'page' !== get_option( 'show_on_front' ) ) {
+			return false;
+		}
+
+		if ( ! is_singular( 'post' ) && ! is_category() && ! is_tag() ) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**

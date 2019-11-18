@@ -3,13 +3,13 @@
  * The Date Class
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Paper
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Paper
  */
 
-namespace ClassicPress_SEO\Paper;
+namespace Classic_SEO\Paper;
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -49,6 +49,15 @@ class Date implements IPaper {
 		}
 
 		return $robots;
+	}
+	
+	/**
+	 * Retrieves the advanced robots for a date archive.
+	 *
+	 * @return array The advanced robots to use on a date archive.
+	 */
+	public function advanced_robots() {
+		return Paper::advanced_robots_combine( Helper::get_settings( 'titles.cpseo_date_advanced_robots' ) );
 	}
 
 	/**

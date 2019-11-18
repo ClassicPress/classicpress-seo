@@ -3,17 +3,18 @@
  * The Rich Snippet Shortcode
  *
  * @since      1.0.24
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
 
  */
 
-namespace ClassicPress_SEO\RichSnippet;
+namespace Classic_SEO\RichSnippet;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Traits\Shortcode;
-use ClassicPress_SEO\Helpers\Str;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Traits\Shortcode;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -30,6 +31,7 @@ class Snippet_Shortcode {
 	public function __construct() {
 		$this->add_shortcode( 'cpseo_rich_snippet', 'rich_snippet' );
 		$this->add_shortcode( 'cpseo_review_snippet', 'rich_snippet' );
+		$this->filter( 'the_content', 'add_review_to_content', 11 );
 
 		if ( ! function_exists( 'register_block_type' ) ) {
 			return;
@@ -63,6 +65,10 @@ class Snippet_Shortcode {
 			$atts,
 			'cpseo_rich_snippet'
 		);
+		
+		if ( 'edit' === Param::get( 'context' ) ) {
+			cpseo()->variables->setup();
+		}
 
 		$post = get_post( $atts['id'] );
 		if ( empty( $post ) ) {
@@ -263,6 +269,9 @@ class Snippet_Shortcode {
 				'course_provider_type' => esc_html__( 'Course Provider', 'cpseo' ),
 				'course_provider'      => esc_html__( 'Course Provider Name', 'cpseo' ),
 				'course_provider_url'  => esc_html__( 'Course Provider URL', 'cpseo' ),
+				'is_rating'            => [
+					'value' => 'course_rating',
+				],
 			],
 			'event'      => [
 				'url'                            => esc_html__( 'URL', 'cpseo' ),
@@ -282,6 +291,9 @@ class Snippet_Shortcode {
 				'event_availability'             => esc_html__( 'Availability', 'cpseo' ),
 				'event_availability_starts_date' => esc_html__( 'Availability Starts', 'cpseo' ),
 				'event_inventory'                => esc_html__( 'Stock Inventory', 'cpseo' ),
+				'is_rating'                      => [
+					'value' => 'event_rating',
+				],
 			],
 			'jobposting' => [
 				'jobposting_salary'          => esc_html__( 'Salary', 'cpseo' ),
@@ -308,6 +320,9 @@ class Snippet_Shortcode {
 				'product_price'       => esc_html__( 'Product Price', 'cpseo' ),
 				'product_price_valid' => esc_html__( 'Price Valid Until', 'cpseo' ),
 				'product_instock'     => esc_html__( 'Product In-Stock', 'cpseo' ),
+				'is_rating'           => [
+					'value' => 'product_rating',
+				],
 			],
 			'recipe'     => [
 				'recipe_type'                => esc_html__( 'Type', 'cpseo' ),
@@ -318,9 +333,6 @@ class Snippet_Shortcode {
 				'recipe_preptime'            => esc_html__( 'Preparation Time', 'cpseo' ),
 				'recipe_cooktime'            => esc_html__( 'Cooking Time', 'cpseo' ),
 				'recipe_totaltime'           => esc_html__( 'Total Time', 'cpseo' ),
-				'recipe_rating'              => esc_html__( 'Rating', 'cpseo' ),
-				'recipe_rating_min'          => esc_html__( 'Rating Minimum', 'cpseo' ),
-				'recipe_rating_max'          => esc_html__( 'Rating Maximum', 'cpseo' ),
 				'recipe_video'               => esc_html__( 'Recipe Video', 'cpseo' ),
 				'recipe_video_thumbnail'     => esc_html__( 'Recipe Video Thumbnail', 'cpseo' ),
 				'recipe_video_name'          => esc_html__( 'Recipe Video Name', 'cpseo' ),
@@ -330,6 +342,9 @@ class Snippet_Shortcode {
 				'recipe_instruction_name'    => esc_html__( 'Recipe Instruction Name', 'cpseo' ),
 				'recipe_single_instructions' => esc_html__( 'Recipe Instructions', 'cpseo' ),
 				'recipe_instructions'        => esc_html__( 'Recipe Instructions', 'cpseo' ),
+				'is_rating'                  => [
+					'value' => 'recipe_rating',
+				],
 			],
 			'restaurant' => [
 				'local_address'             => esc_html__( 'Address', 'cpseo' ),
@@ -363,10 +378,6 @@ class Snippet_Shortcode {
 				'service_type'           => esc_html__( 'Service Type', 'cpseo' ),
 				'service_price'          => esc_html__( 'Price', 'cpseo' ),
 				'service_price_currency' => esc_html__( 'Currency', 'cpseo' ),
-				'is_rating'              => [
-					'value' => 'service_rating_value',
-					'count' => 'service_rating_count',
-				],
 			],
 			'software'   => [
 				'software_price'                => esc_html__( 'Price', 'cpseo' ),
@@ -374,17 +385,85 @@ class Snippet_Shortcode {
 				'software_operating_system'     => esc_html__( 'Operating System', 'cpseo' ),
 				'software_application_category' => esc_html__( 'Application Category', 'cpseo' ),
 				'is_rating'                     => [
-					'value' => 'software_rating_value',
-					'count' => 'software_rating_count',
+					'value' => 'software_rating',
 				],
 			],
 			'book'       => [
 				'url'           => esc_html__( 'URL', 'cpseo' ),
 				'author'        => esc_html__( 'Author', 'cpseo' ),
 				'book_editions' => esc_html__( 'Book Editions', 'cpseo' ),
+				'is_rating'     => [
+					'value' => 'book_rating',
+				],
 			],
 		];
 
 		return isset( $fields[ $type ] ) ? apply_filters( 'cpseo/snippet/fields', $fields[ $type ] ) : false;
+	}
+	
+
+	/**
+	 * Injects reviews to content.
+	 *
+	 * @param  string $content Post content.
+	 * @return string
+	 *
+	 * @since 1.0.12
+	 */
+	public function add_review_to_content( $content ) {
+		$location = $this->get_content_location();
+		if ( false === $location ) {
+			return $content;
+		}
+
+		$review = do_shortcode( '[cpseo_review_snippet]' );
+
+		if ( in_array( $location, [ 'top', 'both' ], true ) ) {
+			$content = $review . $content;
+		}
+
+		if ( in_array( $location, [ 'bottom', 'both' ], true ) && $this->can_add_multi_page() ) {
+			$content .= $review;
+		}
+
+		return $content;
+	}
+
+	/**
+	 * Check if we can inject the review in the content.
+	 *
+	 * @return boolean|string
+	 */
+	private function get_content_location() {
+		/**
+		 * Filter: Allow disabling the review display.
+		 *
+		 * @param bool $return True to disable.
+		 */
+		if ( ! is_main_query() || ! in_the_loop() || $this->do_filter( 'snippet/review/hide_data', false ) ) {
+			return false;
+		}
+
+		$schema = Helper::get_post_meta( 'rich_snippet' );
+		if ( ! in_array( $schema, [ 'book', 'review', 'course', 'event', 'product', 'recipe', 'software' ], true ) ) {
+			return false;
+		}
+
+		$key      = 'review' === $schema ? 'snippet_review_location' : 'snippet_location';
+		$location = $this->do_filter( 'snippet/review/location', Helper::get_post_meta( $key ) );
+		$location = $location ? $location : 'custom';
+
+		return 'custom' === $location ? false : $location;
+	}
+
+	/**
+	 * Check if we can add content if multipage.
+	 *
+	 * @return bool
+	 */
+	private function can_add_multi_page() {
+		global $multipage, $numpages, $page;
+
+		return ( ! $multipage || $page === $numpages );
 	}
 }

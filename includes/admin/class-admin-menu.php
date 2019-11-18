@@ -3,17 +3,17 @@
  * The admin pages of the plugin.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
+namespace Classic_SEO\Admin;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Runner;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Page;
-use ClassicPress_SEO\Admin\Param;
+use Classic_SEO\Helper;
+use Classic_SEO\Runner;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Page;
+use Classic_SEO\Admin\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -43,11 +43,11 @@ class Admin_Menu implements Runner {
 		// Dashboard / Welcome / About.
 		new Page(
 			'cpseo',
-			esc_html__( 'ClassicPress SEO', 'cpseo' ),
+			esc_html__( 'Classic SEO', 'cpseo' ),
 			[
 				'position'   => 80,
 				'capability' => 'manage_options',
-				'icon'       => CPSEO_PLUGIN_URL . 'assets/admin/img/feather-white.svg',
+				'icon'       => CPSEO_PLUGIN_URL . 'assets/admin/img/classic-seo.svg',
 				'render'     => Admin_Helper::get_view( 'dashboard' ),
 				'classes'    => [ 'cpseo-page' ],
 				'assets'     => [
@@ -85,7 +85,7 @@ class Admin_Menu implements Runner {
 			return;
 		}
 
-		if ( current_user_can( 'manage_options' ) && 'ClassicPress SEO' === $submenu['cpseo'][0][0] ) {
+		if ( current_user_can( 'manage_options' ) && 'Classic SEO' === $submenu['cpseo'][0][0] ) {
 			$submenu['cpseo'][0][0] = esc_html__( 'Dashboard', 'cpseo' );
 		} else {
 			unset( $submenu['cpseo'][0] );

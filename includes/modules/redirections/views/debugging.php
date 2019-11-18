@@ -2,11 +2,11 @@
 /**
  * Redirection debugging template.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 ?>
 <!DOCTYPE html>

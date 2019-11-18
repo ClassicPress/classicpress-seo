@@ -3,15 +3,15 @@
  * The Sitemap Generator
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap;
+namespace Classic_SEO\Sitemap;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -93,13 +93,13 @@ class Generator extends XML {
 	private function instantiate() {
 		// Initialize sitemap providers classes.
 		$this->providers = array(
-			new \ClassicPress_SEO\Sitemap\Providers\Post_Type,
-			new \ClassicPress_SEO\Sitemap\Providers\Taxonomy,
+			new \Classic_SEO\Sitemap\Providers\Post_Type,
+			new \Classic_SEO\Sitemap\Providers\Taxonomy,
 		);
 
 		// Author Provider.
 		if ( true === Helper::is_author_archive_indexable() ) {
-			$this->providers[] = new \ClassicPress_SEO\Sitemap\Providers\Author;
+			$this->providers[] = new \Classic_SEO\Sitemap\Providers\Author;
 		}
 
 		$external_providers = $this->do_filter( 'sitemap/providers', [] );
@@ -164,11 +164,7 @@ class Generator extends XML {
 			}
 
 			$links = $provider->get_sitemap_links( $type, $this->max_entries, $page );
-			if ( empty( $links ) ) {
-				return '';
-			}
-
-			return $this->get_sitemap( $links, $type, $page );
+			return empty( $links ) ? '' : $this->get_sitemap( $links, $type, $page );
 		}
 
 		return $this->do_filter( "sitemap/{$type}/content", '' );
@@ -343,24 +339,20 @@ class Generator extends XML {
 	}
 
 	/**
-	 * Convret encoding if needed
+	 * Convert encoding if needed
 	 *
 	 * @param string  $data   Data to be added.
 	 * @param string  $tag    Tag to create CDATA for.
 	 * @param integer $indent Tab indent count.
 	 */
 	public function add_cdata( $data, $tag, $indent = 0 ) {
-		if ( ! empty( $data ) ) {
-
-			if ( $this->needs_conversion ) {
-				$data = mb_convert_encoding( $data, $this->output_charset, $this->charset );
-			}
-
-			$data = _wp_specialchars( html_entity_decode( $data, ENT_QUOTES, $this->output_charset ) );
-			$data = $this->newline( "<{$tag}><![CDATA[{$data}]]></{$tag}>", $indent );
+		if ( $this->needs_conversion ) {
+			$data = mb_convert_encoding( $data, $this->output_charset, $this->charset );
 		}
 
-		return $data;
+		$data = _wp_specialchars( html_entity_decode( $data, ENT_QUOTES, $this->output_charset ) );
+
+		return $this->newline( "<{$tag}><![CDATA[{$data}]]></{$tag}>", $indent );
 	}
 
 	/**

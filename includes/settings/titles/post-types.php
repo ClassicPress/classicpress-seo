@@ -2,11 +2,11 @@
 /**
  * The post type settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $post_type     = $tab['post_type'];
 $post_type_obj = get_post_type_object( $post_type );
@@ -38,7 +38,7 @@ $cmb->add_field([
 	'desc'            => sprintf( esc_html__( 'Default title tag for single %s pages. This can be changed on a per-post basis on the post editor screen.', 'cpseo' ), $name ),
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%title% %page% %sep% %sitename%',
-	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_textfield' ],
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_textfield' ],
 ]);
 
 $cmb->add_field([
@@ -175,6 +175,15 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'              => 'cpseo_pt_' . $post_type . '_advanced_robots',
+	'type'            => 'advanced_robots',
+	/* translators: post type name */
+	'name'            => sprintf( esc_html__( '%s Advanced Robots Meta', 'cpseo' ), $name ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => [ [ 'cpseo_pt_' . $post_type . '_custom_robots', 'on' ] ],
+]);
+
+$cmb->add_field([
 	'id'      => 'cpseo_pt_' . $post_type . '_link_suggestions',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Link Suggestions', 'cpseo' ),
@@ -250,6 +259,14 @@ if ( 'attachment' === $post_type ) {
 		],
 		'default' => 'editing',
 		'dep'     => [ [ 'cpseo_pt_' . $post_type . '_add_meta_box', 'on' ] ],
+	]);
+	
+	$cmb->add_field([
+		'id'      => 'cpseo_pt_' . $post_type . '_analyze_fields',
+		'type'    => 'textarea_small',
+		'name'    => esc_html__( 'Custom Fields', 'cpseo' ),
+		'desc'    => esc_html__( 'List of custom fields name to include in the Page analysis. Add one per line.', 'cpseo' ),
+		'default' => '',
 	]);
 }
 

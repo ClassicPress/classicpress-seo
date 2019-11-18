@@ -3,16 +3,16 @@
  * The WooCommerce register sitemap.
  *
  * @since      1.0.32
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WooCommerce
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WooCommerce
 
  */
 
-namespace ClassicPress_SEO\WooCommerce;
+namespace Classic_SEO\WooCommerce;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Attachment;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Attachment;
 
 defined( 'ABSPATH' ) || exit;
 

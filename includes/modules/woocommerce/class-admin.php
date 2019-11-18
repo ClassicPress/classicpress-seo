@@ -3,16 +3,16 @@
  * The WooCommerce Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WooCommerce
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WooCommerce
 
  */
 
-namespace ClassicPress_SEO\WooCommerce;
+namespace Classic_SEO\WooCommerce;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Module\Base;
-use ClassicPress_SEO\Helpers\Arr;
+use Classic_SEO\Helper;
+use Classic_SEO\Module\Base;
+use Classic_SEO\Helpers\Arr;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -58,7 +58,7 @@ class Admin extends Base {
 				'woocommerce' => [
 					'icon'  => 'dashicons dashicons-cart',
 					'title' => esc_html__( 'WooCommerce', 'cpseo' ),
-					'desc'  => esc_html__( 'Choose how you want ClassicPress SEO to handle your WooCommerce SEO. These options help you create cleaner, SEO friendly URLs, and optimize your WooCommerce product pages.', 'cpseo' ),
+					'desc'  => esc_html__( 'Choose how you want Classic SEO to handle your WooCommerce SEO. These options help you create cleaner, SEO friendly URLs, and optimize your WooCommerce product pages.', 'cpseo' ),
 					'file'  => $this->directory . '/views/options-general.php',
 				],
 			],

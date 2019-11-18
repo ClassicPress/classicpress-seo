@@ -2,11 +2,11 @@
 /**
  * Redirections general settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $cmb->add_field( array(
 	'id'      => 'cpseo_redirections_debug',

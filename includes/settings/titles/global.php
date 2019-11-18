@@ -2,11 +2,25 @@
 /**
  * The general settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
+
+$cmb->add_field([
+	'id'              => 'cpseo_metabox_priority',
+	'type'            => 'radio_inline',
+	'name'            => esc_html__( 'Position of metabox', 'cpseo' ),
+	'desc'            => esc_html__( 'The position of the Classic SEO metabox on the admin post edit page', 'cpseo' ),
+	'options' => [
+		'high'		=> esc_html__( 'High', 'cpseo' ),
+		'core'		=> esc_html__( 'Core', 'cpseo' ),
+		'default'	=> esc_html__( 'Default', 'cpseo' ),
+		'low'		=> esc_html__( 'Low', 'cpseo' ),
+	],
+	'default'         => 'default',
+]);
 
 $cmb->add_field([
 	'id'                => 'cpseo_robots_global',
@@ -15,6 +29,13 @@ $cmb->add_field([
 	'desc'              => esc_html__( 'Default values for robots meta tag. These can be changed for individual posts, taxonomies, etc.', 'cpseo' ),
 	'options'           => Helper::choices_robots(),
 	'select_all_button' => false,
+]);
+
+$cmb->add_field([
+	'id'              => 'cpseo_advanced_robots_global',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Advanced Robots Meta', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
 ]);
 
 $cmb->add_field([
@@ -33,7 +54,7 @@ $cmb->add_field([
 	'options'         => Helper::choices_separator( Helper::get_settings( 'titles.cpseo_title_separator' ) ),
 	'default'         => '-',
 	'attributes'      => [ 'data-preview' => 'title' ],
-	'sanitization_cb' => [ '\ClassicPress_SEO\CMB2', 'sanitize_htmlentities' ],
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_htmlentities' ],
 ]);
 
 if ( ! current_theme_supports( 'title-tag' ) ) {

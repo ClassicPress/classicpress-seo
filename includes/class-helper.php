@@ -3,21 +3,22 @@
  * Helper Functions.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Core
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Core
  */
 
 
-namespace ClassicPress_SEO;
+namespace Classic_SEO;
 
-use ClassicPress_SEO\Helpers\Api;
-use ClassicPress_SEO\Helpers\Attachment;
-use ClassicPress_SEO\Helpers\Conditional;
-use ClassicPress_SEO\Helpers\Choices;
-use ClassicPress_SEO\Helpers\Post_Type;
-use ClassicPress_SEO\Helpers\Options;
-use ClassicPress_SEO\Helpers\Taxonomy;
-use ClassicPress_SEO\Helpers\WordPress;
+use Classic_SEO\Helpers\Api;
+use Classic_SEO\Helpers\Attachment;
+use Classic_SEO\Helpers\Conditional;
+use Classic_SEO\Helpers\Choices;
+use Classic_SEO\Helpers\Post_Type;
+use Classic_SEO\Helpers\Options;
+use Classic_SEO\Helpers\Taxonomy;
+use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Replace_Variables\Replacer;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -31,21 +32,24 @@ class Helper {
 	/**
 	 * Replace `%variables%` with context-dependent value.
 	 *
-	 * @param  string $content The string containing the %variables%.
-	 * @param  array  $args    Context object, can be post, taxonomy or term.
-	 * @param  array  $exclude Excluded variables won't be replaced.
+	 * @param string $content The string containing the %variables%.
+	 * @param array  $args    Context object, can be post, taxonomy or term.
+	 * @param array  $exclude Excluded variables won't be replaced.
+	 *
 	 * @return string
 	 */
 	public static function replace_vars( $content, $args = [], $exclude = [] ) {
-		$replacer = new Replace_Vars();
-
-		return $replacer->replace( $content, $args, $exclude );
+		$replace = new Replacer;
+		return $replace->replace( $content, $args, $exclude );
 	}
 
 	/**
 	 * Register extra %variables%. For developers.
 	 *
 	 * @codeCoverageIgnore
+	 *
+	 * @deprecated 0.3.0 Use cpseo_register_var_replacement()
+	 * @see cpseo_register_var_replacement()
 	 *
 	 * @param  string $var       Variable name, for example %custom%. '%' signs are optional.
 	 * @param  mixed  $callback  Replacement callback. Should return value, not output it.
@@ -54,7 +58,10 @@ class Helper {
 	 * @return bool Replacement was registered successfully or not.
 	 */
 	public static function register_var_replacement( $var, $callback, $args = [] ) {
-		return Replace_Vars::register_replacement( $var, $callback, $args );
+		_deprecated_function( 'Classic_SEO\Helper::register_var_replacement()', '0.3.0', 'cpseo_register_var_replacement()' );
+		$args['description'] = isset( $args['desc'] ) ? $args['desc'] : '';
+		$args['variable']    = $var;
+		return cpseo_register_var_replacement( $var, $args, $callback );
 	}
 
 	/**
@@ -108,6 +115,15 @@ class Helper {
 		return $link;
 	}
 
+
+	/**
+	 * Get Search Console auth url.
+	 *
+	 * @return string
+	 */
+	public static function get_console_auth_url() {
+		return \Classic_SEO\Search_Console\Client::get()->get_auth_url();
+	}
 
 	/**
 	 * Get or update Search Console data.

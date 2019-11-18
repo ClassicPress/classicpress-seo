@@ -3,19 +3,19 @@
  * The KML File
  *
  * @since      1.0.24
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Local_Seo
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Local_Seo
 
  */
 
-namespace ClassicPress_SEO\Local_Seo;
+namespace Classic_SEO\Local_Seo;
 
-use ClassicPress_SEO\Post;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Sitemap\Router;
+use Classic_SEO\Post;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Sitemap\Router;
 
 
 defined( 'ABSPATH' ) || exit;
@@ -146,7 +146,7 @@ class KML_File {
 
 		if ( count( array_intersect( $local_seo_fields, $updated ) ) ) {
 			update_option( 'cpseo_local_seo_update', date_i18n( 'c' ) );
-			\ClassicPress_SEO\Sitemap\Sitemap::ping_search_engines( Router::get_base_url( 'local-sitemap.xml' ) );
+			\Classic_SEO\Sitemap\Sitemap::ping_search_engines( Router::get_base_url( 'local-sitemap.xml' ) );
 		}
 	}
 

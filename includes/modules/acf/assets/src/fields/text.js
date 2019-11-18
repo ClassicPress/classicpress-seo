@@ -1,37 +1,5 @@
-var Text = function( fields ) {
-	var that = this
-
-	fields = _.map( fields, function( field ) {
-		if ( 'text' !== field.type ) {
-			return field
-		}
-
-		field.content = field.$el.find( 'input[type=text][id^=acf]' ).val()
-		field = that.wrapInHeadline( field )
-
-		return field
-	})
-
-	return fields
-}
-
-Text.prototype.wrapInHeadline = function( field ) {
-	var level = this.isHeadline( field )
-
-	if ( level ) {
-		field.content = '<h' + level + '>' + field.content + '</h' + level + '>'
-	} else {
-		field.content = '<p>' + field.content + '</p>'
-	}
-
-	return field
-}
-
-Text.prototype.isHeadline = function( field ) {
-
-	var level = _.find( classicPress.acf.headlines, function( value, key ) {
-		return field.key === key
-	})
+const isHeadline = function( field ) {
+	let level = _.find( classicSEO.acf.headlines, ( value, key ) => field.key === key )
 
 	// It has to be an integer
 	if ( level ) {
@@ -46,4 +14,29 @@ Text.prototype.isHeadline = function( field ) {
 	return level
 }
 
-module.exports = Text
+const wrapInHeadline = function( field ) {
+	const level = isHeadline( field )
+
+	if ( level ) {
+		field.content = '<h' + level + '>' + field.content + '</h' + level + '>'
+	} else {
+		field.content = '<p>' + field.content + '</p>'
+	}
+
+	return field
+}
+
+export default function( fields ) {
+	fields = _.map( fields, function( field ) {
+		if ( 'text' !== field.type ) {
+			return field
+		}
+
+		field.content = field.$el.find( 'input[type=text][id^=acf]' ).val()
+		field = wrapInHeadline( field )
+
+		return field
+	} )
+
+	return fields
+}

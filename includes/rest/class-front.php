@@ -5,17 +5,17 @@
  * Defines the functionality loaded both on frontend.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Rest
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Rest
  */
 
-namespace ClassicPress_SEO\Rest;
+namespace Classic_SEO\Rest;
 
 use WP_Error;
 use WP_REST_Server;
 use WP_REST_Request;
 use WP_REST_Controller;
-use ClassicPress_SEO\Admin\Admin_Helper;
+use Classic_SEO\Admin\Admin_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -28,7 +28,7 @@ class Front extends WP_REST_Controller {
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->namespace = \ClassicPress_SEO\Rest\Helper::BASE;
+		$this->namespace = \Classic_SEO\Rest\Helper::BASE;
 	}
 
 	/**
@@ -90,7 +90,7 @@ class Front extends WP_REST_Controller {
 				'type'              => 'string',
 				'required'          => true,
 				'description'       => esc_html__( 'Site token', 'cpseo' ),
-				'validate_callback' => [ '\\ClassicPress_SEO\\Rest\\Helper', 'is_param_empty' ],
+				'validate_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'is_param_empty' ],
 			],
 		];
 	}

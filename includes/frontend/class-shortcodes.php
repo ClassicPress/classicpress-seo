@@ -3,16 +3,16 @@
  * The Shortcodes of the plugin.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Frontend
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Frontend
  */
 
-namespace ClassicPress_SEO\Frontend;
+namespace Classic_SEO\Frontend;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Paper\Paper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Traits\Shortcode;
+use Classic_SEO\Helper;
+use Classic_SEO\Paper\Paper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Traits\Shortcode;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -60,6 +60,9 @@ class Shortcodes {
 	 * @return string
 	 */
 	public function breadcrumb( $args ) {
+		if ( ! Helper::get_settings( 'general.breadcrumbs' ) ) {
+			return;
+		}
 		return Breadcrumbs::get()->get_breadcrumb( $args );
 	}
 
@@ -80,14 +83,7 @@ class Shortcodes {
 			'contact-info'
 		);
 
-		$allowed = [ 'address', 'hours', 'phone', 'social', 'map' ];
-		if ( 'person' === Helper::get_settings( 'titles.cpseo_knowledgegraph_type' ) ) {
-			$allowed = [ 'address' ];
-		}
-
-		if ( ! empty( $args['show'] ) && 'all' !== $args['show'] ) {
-			$allowed = array_intersect( array_map( 'trim', explode( ',', $args['show'] ) ), $allowed );
-		}
+		$allowed = $this->get_allowed_info( $args );
 
 		wp_enqueue_style( 'cpseo-contact-info', cpseo()->assets() . 'css/cpseo-contact-info.css', null, cpseo()->version );
 
@@ -107,6 +103,26 @@ class Shortcodes {
 		echo '<div class="clear"></div>';
 
 		return ob_get_clean();
+	}
+	
+	/**
+	 * Get allowed info array.
+	 *
+	 * @param array $args Shortcode arguments - currently only 'show'.
+	 *
+	 * @return array
+	 */
+	private function get_allowed_info( $args ) {
+		if ( 'person' === Helper::get_settings( 'titles.cpseo_knowledgegraph_type' ) ) {
+			return [ 'address' ];
+		}
+
+		$allowed = [ 'address', 'hours', 'phone', 'social', 'map' ];
+		if ( ! empty( $args['show'] ) && 'all' !== $args['show'] ) {
+			$allowed = array_intersect( array_map( 'trim', explode( ',', $args['show'] ) ), $allowed );
+		}
+
+		return $allowed;
 	}
 
 	/**

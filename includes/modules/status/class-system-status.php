@@ -3,11 +3,11 @@
  * The System_Status Class.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Status
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Status
  */
 
-namespace ClassicPress_SEO\Status;
+namespace Classic_SEO\Status;
 
 /**
  * System_Status class.
@@ -28,8 +28,8 @@ class System_Status {
 	 */
 	private function display_database_data() {
 		$hash = [
-			'cpseo_version'    => __( 'ClassicPress SEO version', 'cpseo' ),
-			'database_version' => __( 'ClassicPress SEO database version', 'cpseo' ),
+			'cpseo_version'    => __( 'Classic SEO version', 'cpseo' ),
+			'database_version' => __( 'Classic SEO database version', 'cpseo' ),
 			'table_prefix'     => __( 'Table Prefix', 'cpseo' ),
 			'data_size'        => __( 'Database Data Size', 'cpseo' ),
 			'index_size'       => __( 'Database Index Size', 'cpseo' ),
@@ -93,6 +93,7 @@ class System_Status {
 			'cpseo_redirections_cache',
 			'cpseo_internal_links',
 			'cpseo_internal_meta',
+			'cpseo_sc_analytics',
 		];
 
 		$core_tables    = array_map( [ $this, 'add_db_table_prefix' ], $core_tables );

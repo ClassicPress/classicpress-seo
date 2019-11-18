@@ -3,14 +3,15 @@
  * The Conditional helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
-namespace ClassicPress_SEO\Helpers;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Admin\Admin_Helper;
+namespace Classic_SEO\Helpers;
+
+use Classic_SEO\Helper;
+use Classic_SEO\Admin\Admin_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -63,9 +64,20 @@ trait Conditional {
 	/**
 	 * Is REST request
 	 *
+	 * @link https://wordpress.stackexchange.com/questions/221202/does-something-like-is-rest-exist/221289
+	 *
+	 * Case #1: After WP_REST_Request initialisation
+	 * Case #2: Support "plain" permalink settings
+	 * Case #3: It can happen that WP_Rewrite is not yet initialized,
+	 *          so do this (wp-settings.php)
+	 * Case #4: URL Path begins with wp-json/ (your REST prefix)
+	 *          Also supports WP installations in subfolders
+	 *
 	 * @return bool
 	 */
 	public static function is_rest() {
+		global $wp_rewrite;
+
 		$prefix = rest_get_url_prefix();
 		if (
 			defined( 'REST_REQUEST' ) && REST_REQUEST || // (#1)
@@ -76,7 +88,12 @@ trait Conditional {
 		}
 
 		// (#3)
-		$rest_url    = wp_parse_url( site_url( $prefix ) );
+		if ( null === $wp_rewrite ) {
+			$wp_rewrite = new \WP_Rewrite;
+		}
+
+		// (#4)
+		$rest_url    = wp_parse_url( trailingslashit( rest_url() ) );
 		$current_url = wp_parse_url( add_query_arg( [] ) );
 
 		return 0 === strpos( $current_url['path'], $rest_url['path'], 0 );
@@ -115,7 +132,7 @@ trait Conditional {
 	}
 	
 	/**
-	 * Check if the site is connected to the ClassicPress SEO API.
+	 * Check if the site is connected to the Classic SEO API.
 	 *
 	 * @return bool
 	 */

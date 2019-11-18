@@ -875,6 +875,8 @@ body.rtl .cpseo-variables-dropdown {
   outline: none;
   background: none;
   box-shadow: none !important;
+  line-height:1;
+  min-height:0
 }
 
 .tag-editor .tag-editor-tag.active+.tag-editor-delete,.tag-editor .tag-editor-tag.active+.tag-editor-delete i {

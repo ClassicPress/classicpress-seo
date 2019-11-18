@@ -3,17 +3,17 @@
  * The Status module.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO
  */
 
-namespace ClassicPress_SEO\Status;
+namespace Classic_SEO\Status;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Module\Base;
-use ClassicPress_SEO\Admin\Page;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Module\Base;
+use Classic_SEO\Admin\Page;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -123,14 +123,14 @@ class Status extends Base {
 				'args'  => '',
 				'cap'   => 'manage_options',
 				'title' => __( 'System Status', 'cpseo' ),
-				'class' => '\\ClassicPress_SEO\\Status\\System_Status',
+				'class' => '\\Classic_SEO\\Status\\System_Status',
 			],
 			'tools'  => [
 				'url'   => 'status',
 				'args'  => 'view=tools',
 				'cap'   => 'manage_options',
 				'title' => __( 'Tools', 'cpseo' ),
-				'class' => '\\ClassicPress_SEO\\Status\\Tools',
+				'class' => '\\Classic_SEO\\Status\\Tools',
 			],
 		];
 	}

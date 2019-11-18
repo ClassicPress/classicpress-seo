@@ -2,8 +2,8 @@
 /**
  * Metabox - Event Rich Snippet
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
 $event = [ [ 'cpseo_rich_snippet', 'event' ] ];
@@ -206,4 +206,31 @@ $cmb->add_field([
 	'classes'    => 'cmb-row-33 nob',
 	'dep'        => $event,
 	'attributes' => [ 'type' => 'number' ],
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_event_rating',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating score of the event. Optional.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $event,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_event_rating_min',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Minimum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating minimum score of the event.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $event,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_event_rating_max',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Maximum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating maximum score of the event.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $event,
 ]);

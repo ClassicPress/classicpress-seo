@@ -5,15 +5,15 @@
  * Extract and save links from the content of a given post.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Links
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Links
 
  */
 
-namespace ClassicPress_SEO\Links;
+namespace Classic_SEO\Links;
 
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Sitemap\Classifier;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Sitemap\Classifier;
 
 defined( 'ABSPATH' ) || exit;
 

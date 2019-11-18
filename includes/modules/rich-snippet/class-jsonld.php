@@ -3,18 +3,18 @@
  * Outputs schema code specific for Google's JSON LD stuff
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
 
  */
 
-namespace ClassicPress_SEO\RichSnippet;
+namespace Classic_SEO\RichSnippet;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Paper\Paper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Url;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Paper\Paper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Url;
+use Classic_SEO\Helpers\Conditional;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -88,14 +88,14 @@ class JsonLD {
 	public function add_context_data( $data ) {
 		$is_product_page = $this->is_product_page();
 		$snippets        = [
-			'\\ClassicPress_SEO\\RichSnippet\\Website'         => is_front_page(),
-			'\\ClassicPress_SEO\\RichSnippet\\Search_Results'  => is_search(),
-			'\\ClassicPress_SEO\\RichSnippet\\Author'          => is_author(),
-			'\\ClassicPress_SEO\\RichSnippet\\Products_Page'   => $is_product_page,
-			'\\ClassicPress_SEO\\RichSnippet\\Collection_Page' => ! $is_product_page && ( is_category() || is_tag() || is_tax() ),
-			'\\ClassicPress_SEO\\RichSnippet\\Blog'            => is_home(),
-			'\\ClassicPress_SEO\\RichSnippet\\Singular'        => is_singular(),
-			'\\ClassicPress_SEO\\RichSnippet\\Breadcrumbs'     => $this->can_add_breadcrumb(),
+			'\\Classic_SEO\\RichSnippet\\Website'         => is_front_page(),
+			'\\Classic_SEO\\RichSnippet\\Search_Results'  => is_search(),
+			'\\Classic_SEO\\RichSnippet\\Author'          => is_author(),
+			'\\Classic_SEO\\RichSnippet\\Products_Page'   => $is_product_page,
+			'\\Classic_SEO\\RichSnippet\\Collection_Page' => ! $is_product_page && ( is_category() || is_tag() || is_tax() ),
+			'\\Classic_SEO\\RichSnippet\\Blog'            => is_home(),
+			'\\Classic_SEO\\RichSnippet\\Singular'        => is_singular(),
+			'\\Classic_SEO\\RichSnippet\\Breadcrumbs'     => $this->can_add_breadcrumb(),
 		];
 
 		foreach ( $snippets as $class => $can_run ) {
@@ -196,6 +196,29 @@ class JsonLD {
 				'height' => $image[2],
 			];
 		}
+	}
+	
+	/**
+	 * Add aggregateratings to entity.
+	 *
+	 * @param string $schema Schema to get data for.
+	 * @param array  $entity Array of json-ld entity to attach data to.
+	 */
+	public function add_ratings( $schema, &$entity ) {
+		$rating = Helper::get_post_meta( "snippet_{$schema}_rating" );
+
+		// Early Bail!
+		if ( ! $rating ) {
+			return;
+		}
+
+		$entity['aggregateRating'] = [
+			'@type'       => 'AggregateRating',
+			'ratingValue' => $rating,
+			'bestRating'  => Helper::get_post_meta( "snippet_{$schema}_rating_max" ),
+			'worstRating' => Helper::get_post_meta( "snippet_{$schema}_rating_min" ),
+			'ratingCount' => 1,
+		];
 	}
 
 	/**

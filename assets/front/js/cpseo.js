@@ -1,5 +1,5 @@
 /*!
-* ClassicPress SEO
+* Classic SEO
 *
 * @version 0.0.5
 */
@@ -10,7 +10,7 @@
 	// Document Ready
 	$(function() {
 
-		window.classicPressFront = {
+		window.classicSEOFront = {
 
 			init: function() {
 				this.adminMenu();
@@ -24,8 +24,8 @@
 				menu.on( 'click', '.mark-page-as a', function( event ) {
 					event.preventDefault();
 					self.ajax( 'mark_page_as', {
-						objectID: classicPress.objectID,
-						objectType: classicPress.objectType,
+						objectID: classicSEO.objectID,
+						objectType: classicSEO.objectType,
 						what: $( this ).attr( 'href' ).replace( '#', '' )
 					} );
 
@@ -39,18 +39,18 @@
 
 			ajax: function( action, data, method ) {
 				return $.ajax({
-					url: classicPress.ajaxurl,
+					url: classicSEO.ajaxurl,
 					type: method || 'POST',
 					dataType: 'json',
 					data: $.extend( true, {
 						action: 'cpseo_' + action,
-						security: classicPress.security
+						security: classicSEO.security
 					}, data )
 				});
 			}
 		};
 
-		window.classicPressFront.init();
+		window.classicSEOFront.init();
 	});
 
 })( jQuery );

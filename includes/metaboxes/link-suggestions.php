@@ -2,8 +2,8 @@
 /**
  * Link Suggestions
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Metaboxes
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Metaboxes
  */
 
 $suggestions = cpseo()->admin->get_link_suggestions( get_post() );

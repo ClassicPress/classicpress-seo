@@ -3,16 +3,16 @@
  * The Redirections Module
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Admin\List_Table;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Admin\List_Table;
 
 /**
  * Table class.
@@ -24,8 +24,8 @@ class Table extends List_Table {
 	 */
 	public function __construct() {
 		parent::__construct([
-			'singular' => esc_html__( 'redirection', 'cpseo' ),
-			'plural'   => esc_html__( 'redirections', 'cpseo' ),
+			'singular' => 'redirection',
+			'plural'   => 'redirections',
 			'no_items' => $this->is_trashed_page() ? esc_html__( 'No redirections found in Trash.', 'cpseo' ) : wp_kses_post( __( 'No redirections added yet. <a href="#" class="cpseo-add-new-redirection">Add New Redirection</a>', 'cpseo' ) ),
 		]);
 	}

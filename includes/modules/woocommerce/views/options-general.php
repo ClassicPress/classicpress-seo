@@ -2,11 +2,11 @@
 /**
  * WooCommerce general settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WooCommerce
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WooCommerce
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $cmb->add_field([
 	'id'      => 'cpseo_wc_remove_product_base',

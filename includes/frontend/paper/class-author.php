@@ -3,14 +3,14 @@
  * The Author Class
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Paper
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Paper
  */
 
-namespace ClassicPress_SEO\Paper;
+namespace Classic_SEO\Paper;
 
-use ClassicPress_SEO\User;
-use ClassicPress_SEO\Helper;
+use Classic_SEO\User;
+use Classic_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -57,6 +57,21 @@ class Author implements IPaper {
 
 		if ( empty( $robots ) && Helper::get_settings( 'titles.cpseo_author_custom_robots' ) ) {
 			$robots = Paper::robots_combine( Helper::get_settings( 'titles.cpseo_author_robots' ), true );
+		}
+
+		return $robots;
+	}
+	
+	/**
+	 * Retrieves the advanced robots set in the user metabox.
+	 *
+	 * @return array The advanced robots for the specified user.
+	 */
+	public function advanced_robots() {
+		$robots = Paper::advanced_robots_combine( User::get_meta( 'advanced_robots', get_query_var( 'author' ) ) );
+
+		if ( empty( $robots ) && Helper::get_settings( 'titles.cpseo_author_custom_robots' ) ) {
+			$robots = Paper::advanced_robots_combine( Helper::get_settings( 'titles.cpseo_author_advanced_robots' ), true );
 		}
 
 		return $robots;

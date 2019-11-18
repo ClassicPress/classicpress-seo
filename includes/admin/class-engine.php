@@ -3,17 +3,19 @@
  * The admin engine of the plugin.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin
  */
 
-namespace ClassicPress_SEO\Admin;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Param;
-use ClassicPress_SEO\Helpers\Conditional;
-use ClassicPress_SEO\Search_Console\Search_Console;
+namespace Classic_SEO\Admin;
+
+use Classic_SEO\Helper;
+use Classic_SEO\Updates;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Param;
+use Classic_SEO\Helpers\Conditional;
+//use Classic_SEO\Search_Console\Search_Console;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -34,19 +36,20 @@ class Engine {
 		cpseo()->admin        = new Admin;
 		cpseo()->admin_assets = new Assets;
 
-		$this->search_console_ajax();
+		//$this->search_console_ajax();
 
 		$runners = [
 			cpseo()->admin,
-			cpseo()->admin_assets,
+			cpseo()->admin_assets,		
 			new Admin_Menu,
 			new Option_Center,
+			new Notices,
+			new CMB2_Fields,
 			new Metabox,
 			new Post_Columns,
 			new Post_Filters,
 			new Import_Export,
-			new Notices,
-			new CMB2_Fields,
+			new Updates,
 			new Watcher,
 		];
 

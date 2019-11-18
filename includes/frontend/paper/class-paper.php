@@ -3,18 +3,18 @@
  * The Paper Class
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Paper
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Paper
  */
 
-namespace ClassicPress_SEO\Paper;
+namespace Classic_SEO\Paper;
 
-use ClassicPress_SEO\Post;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Sitemap\Router;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
+use Classic_SEO\Post;
+use Classic_SEO\Helper;
+use Classic_SEO\Sitemap\Router;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -95,7 +95,7 @@ class Paper {
 	private function setup() {
 		foreach ( $this->get_papers() as $class_name => $is_valid ) {
 			if ( $this->do_filter( 'paper/is_valid/' . strtolower( $class_name ), $is_valid ) ) {
-				$class_name  = '\\ClassicPress_SEO\\Paper\\' . $class_name;
+				$class_name  = '\\Classic_SEO\\Paper\\' . $class_name;
 				$this->paper = new $class_name;
 				break;
 			}
@@ -192,7 +192,7 @@ class Paper {
 		}
 
 		$this->description = wp_strip_all_tags( stripslashes( $this->description ), true );
-		$this->description = esc_html( $this->description );
+		$this->description = esc_attr( $this->description );
 
 		return $this->description;
 	}
@@ -213,6 +213,7 @@ class Paper {
 		}
 		$this->validate_robots();
 		$this->respect_settings_for_robots();
+		$this->advanced_robots();
 
 		/**
 		 * Allows filtering of the meta robots.
@@ -242,6 +243,33 @@ class Paper {
 		if ( ! isset( $this->robots['follow'] ) ) {
 			$this->robots = [ 'follow' => 'follow' ] + $this->robots;
 		}
+	}
+	
+	/**
+	 * Add Advanced robots.
+	 */
+	private function advanced_robots() {
+
+		// Early Bail if robots is set to noindex or nosnippet!
+		if ( ( isset( $this->robots['index'] ) && 'noindex' === $this->robots['index'] ) || ( isset( $this->robots['nosnippet'] ) && 'nosnippet' === $this->robots['nosnippet'] ) ) {
+			return;
+		}
+
+		$advanced_robots = $this->paper->advanced_robots();
+		if ( ! is_array( $advanced_robots ) ) {
+			$advanced_robots = wp_parse_args(
+				Helper::get_settings( 'titles.cpseo_advanced_robots_global' ),
+				[
+					'max-snippet'       => -1,
+					'max-video-preview' => -1,
+					'max-image-preview' => 'large',
+				]
+			);
+
+			$advanced_robots = self::advanced_robots_combine( $advanced_robots );
+		}
+
+		$this->robots = ! empty( $advanced_robots ) ? $this->robots + $advanced_robots : $this->robots;
 	}
 
 	/**
@@ -327,7 +355,7 @@ class Paper {
 		extract( $this->canonical ); // phpcs:ignore
 
 		if ( is_front_page() || ( function_exists( 'ampforwp_is_front_page' ) && ampforwp_is_front_page() ) ) {
-			$canonical = home_url();
+			$canonical = user_trailingslashit( home_url() );
 		}
 
 		// If not singular than we can have pagination.
@@ -443,6 +471,27 @@ class Paper {
 			unset( $robots['nofollow'] );
 		}
 
+		return $robots;
+	}
+	
+	/**
+	 * Make robots values as keyed array.
+	 *
+	 * @param array $advanced_robots  Main instance.
+	 *
+	 * @return array
+	 */
+	public static function advanced_robots_combine( $advanced_robots ) {
+		if ( empty( $advanced_robots ) ) {
+			return;
+		}
+
+		$robots = [];
+		foreach ( $advanced_robots as $key => $data ) {
+			if ( $data ) {
+				$robots[ $key ] = $key . ':' . $data;
+			}
+		}
 		return $robots;
 	}
 }

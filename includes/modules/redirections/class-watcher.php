@@ -3,16 +3,16 @@
  * The Redirections Watcher
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Param;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -29,6 +29,13 @@ class Watcher {
 	 * @var array
 	 */
 	private $updated_posts = [];
+	
+	/**
+	 * Hold updated terms permalinks.
+	 *
+	 * @var array
+	 */
+	private $updated_terms = [];
 
 	/**
 	 * Hook methods for invalidation on necessary events.
@@ -41,14 +48,15 @@ class Watcher {
 			if ( Helper::get_settings( 'general.cpseo_redirections_post_redirect' ) ) {
 				$this->action( 'pre_post_update', 'pre_post_update' );
 				$this->action( 'post_updated', 'handle_post_update', 10, 3 );
+				$this->action( 'edit_terms', 'pre_term_update', 10, 2 );
+				$this->action( 'edited_term', 'handle_term_update', 10, 3 );
 			}
 			$this->action( 'wp_trash_post', 'display_suggestion' );
 		}
 		$this->action( 'deleted_post', 'invalidate_post' );
 
 		// Term.
-		$this->action( 'edited_terms', 'invalidate_term', 10, 2 );
-		$this->action( 'delete_term', 'invalidate_term', 10, 2 );
+		$this->action( 'pre_delete_term', 'invalidate_term', 10, 2 );
 
 		// User.
 		$this->action( 'delete_user', 'invalidate_author' );
@@ -85,11 +93,11 @@ class Watcher {
 
 		// Check for permalink change.
 		if ( 'publish_to_publish' === $transition && $this->has_permalink_changed( $before_permalink, $after_permalink ) ) {
-			$redirection_id = $this->create_redirection( $before_permalink, $after_permalink, 301, $post );
+			$redirection_id = $this->create_redirection( $before_permalink, $after_permalink, 301, $post->ID, 'post' );
 			Helper::add_notification(
 				sprintf(
 					// translators: %1$s: post type label, %2$s: edit redirection URL.
-					__( 'SEO Notice: you just changed the slug of a %1$s and ClassicPress SEO has automatically created a redirection. You can edit the redirection by <a href="%2$s">clicking here</a>.', 'cpseo' ),
+					__( 'SEO Notice: you just changed the slug of a %1$s and Classic SEO has automatically created a redirection. You can edit the redirection by <a href="%2$s">clicking here</a>.', 'cpseo' ),
 					Helper::get_post_type_label( $post->post_type, true ), $this->get_edit_redirection_url( $redirection_id )
 				),
 				[
@@ -107,17 +115,69 @@ class Watcher {
 			return;
 		}
 	}
+	
+	/**
+	 * Remember the previous term permalink.
+	 *
+	 * @param integer $term_id  Term ID.
+	 * @param string  $taxonomy Taxonomy slug of the related term.
+	 */
+	public function pre_term_update( $term_id, $taxonomy ) {
+		$this->updated_terms[ $term_id ] = get_term_link( $term_id, $taxonomy );
+	}
+
+	/**
+	 * Detect if the slug changed, hooked into 'post_updated'.
+	 *
+	 * @param integer $term_id  ID of the term edited.
+	 * @param integer $tt_id    The term taxonomy id.
+	 * @param string  $taxonomy Taxonomy slug of the related term.
+	 *
+	 * @return bool
+	 */
+	public function handle_term_update( $term_id, $tt_id, $taxonomy ) {
+		if ( ! in_array( $taxonomy, array_keys( Helper::get_accessible_taxonomies() ), true ) ) {
+			return;
+		}
+
+		// Both state permalink.
+		$before_permalink = isset( $this->updated_terms[ $term_id ] ) ? $this->updated_terms[ $term_id ] : false;
+		$after_permalink  = get_term_link( $term_id );
+
+		if ( $before_permalink !== $after_permalink ) {
+			$term           = get_term_by( 'id', $term_id, $taxonomy );
+			$redirection_id = $this->create_redirection( $before_permalink, $after_permalink, 301, $term->term_id, 'term' );
+
+			Helper::add_notification(
+				sprintf(
+					// translators: %1$s: term name, %2$s: edit redirection URL.
+					__( 'SEO Notice: you just changed the slug of a %1$s and Classic SEO has automatically created a redirection. You can edit the redirection by <a href="%2$s">clicking here</a>.', 'cpseo' ),
+					$term->name, $this->get_edit_redirection_url( $redirection_id )
+				),
+				[
+					'type'    => 'warning',
+					'classes' => 'is-dismissible',
+				]
+			);
+
+			$this->do_action( 'redirection/term_updated', $redirection_id );
+		}
+
+		return;
+	}
 
 	/**
 	 * Create redirection.
 	 *
-	 * @param  string  $from_url    Redirecting from url for cache.
-	 * @param  string  $url_to      Destination url.
-	 * @param  int     $header_code Response header code.
-	 * @param  WP_Post $object      Post object.
+	 * @param string $from_url    Redirecting from url for cache.
+	 * @param string $url_to      Destination url.
+	 * @param int    $header_code Response header code.
+	 * @param int    $object_id   Object id.
+	 * @param string $type        Object type.
+	 *
 	 * @return int Redirection id.
 	 */
-	private function create_redirection( $from_url, $url_to, $header_code, $object ) {
+	private function create_redirection( $from_url, $url_to, $header_code, $object_id, $type ) {
 		// Early bail.
 		if ( empty( $from_url ) || empty( $url_to ) ) {
 			return;
@@ -125,7 +185,7 @@ class Watcher {
 
 		// Check for any existing redirection.
 		// If found update that record.
-		$redirection = $this->has_existing_redirection( $object->ID );
+		$redirection = $this->has_existing_redirection( $object_id, $type );
 		if ( false === $redirection ) {
 			$redirection = Redirection::from([
 				'url_to'      => $url_to,
@@ -135,17 +195,19 @@ class Watcher {
 
 		$redirection->set_nocache( true );
 		$redirection->add_source( $from_url, 'exact' );
+		$redirection->add_destination( $url_to );
 		$redirection->save();
 
 		// Perform Cache.
-		Cache::purge_by_object_id( $object->ID, 'post' );
+		Cache::purge_by_object_id( $object_id, $type );
 		if ( $from_url ) {
 			$from_url = parse_url( $from_url, PHP_URL_PATH );
 			$from_url = Redirection::strip_subdirectory( $from_url );
 			Cache::add([
 				'from_url'       => $from_url,
 				'redirection_id' => $redirection->get_id(),
-				'object_id'      => $object->ID,
+				'object_id'      => $object_id,
+				'object_type'    => $type,
 			]);
 		}
 
@@ -155,12 +217,13 @@ class Watcher {
 	/**
 	 * Check for any existing redirection.
 	 *
-	 * @param int $post_id Post ID.
+	 * @param int    $object_id Object id.
+	 * @param string $type      Object type.
 	 *
 	 * @return boolean|int
 	 */
-	private function has_existing_redirection( $post_id ) {
-		$cache = Cache::get_by_object_id( $post_id, 'post' );
+	private function has_existing_redirection( $object_id, $type ) {
+		$cache = Cache::get_by_object_id( $object_id, $type );
 		if ( ! $cache ) {
 			return false;
 		}
@@ -228,28 +291,9 @@ class Watcher {
 		$post = get_post( $post_id );
 
 		if ( $this->can_display_suggestion( $post ) ) {
-
-			$url       = get_permalink( $post_id );
-			$admin_url = Helper::get_admin_url( 'redirections', [ 'url' => trim( set_url_scheme( $url, 'relative' ), '/' ) ] );
-
-			/* translators: 1. url to new screen, 2. old trashed post permalink */
-			$message = sprintf( wp_kses_post( __( '<strong>SEO Notice:</strong> A previously published post has been moved to trash. You may redirect it <code>%2$s</code> to <a href="%1$s">new url</a>.', 'cpseo' ) ), $admin_url, $url );
-			Helper::add_notification( $message, [ 'type' => 'warning' ] );
+			$url = get_permalink( $post_id );
+			$this->add_notification( $url, 'post' );
 		}
-	}
-
-	/**
-	 * Check if notice can be displayed or not.
-	 *
-	 * @param  WP_Post $post Current post.
-	 * @return bool
-	 */
-	private function can_display_suggestion( $post ) {
-		if ( 'publish' !== $post->post_status ) {
-			return false;
-		}
-
-		return Helper::is_post_type_accessible( $post->post_type );
 	}
 
 	/**
@@ -269,12 +313,11 @@ class Watcher {
 	/**
 	 * Invalidate redirection cache for taxonomies.
 	 *
-	 * @param int|WP_Term $term Term ID or Term object.
+	 * @param int $term Term ID.
 	 */
 	public function invalidate_term( $term ) {
-		if ( is_a( $term, 'WP_Term' ) ) {
-			$term = $term->term_id;
-		}
+		$url = get_term_link( $term );
+		$this->add_notification( $url, 'term' );
 		Cache::purge_by_object_id( $term, 'term' );
 	}
 
@@ -285,5 +328,33 @@ class Watcher {
 	 */
 	public function invalidate_author( $user_id ) {
 		Cache::purge_by_object_id( $user_id, 'user' );
+	}
+	
+	/**
+	 * Check if notice can be displayed or not.
+	 *
+	 * @param  WP_Post $post Current post.
+	 * @return bool
+	 */
+	private function can_display_suggestion( $post ) {
+		if ( 'publish' !== $post->post_status ) {
+			return false;
+		}
+
+		return Helper::is_post_type_accessible( $post->post_type );
+	}
+
+	/**
+	 * Show Delete Post/Term notification
+	 *
+	 * @param url    $url  Deleted object url.
+	 * @param string $type Deleted object type.
+	 */
+	private function add_notification( $url, $type ) {
+		$admin_url = Helper::get_admin_url( 'redirections', [ 'url' => trim( set_url_scheme( $url, 'relative' ), '/' ) ] );
+
+		/* translators: 1. url to new screen, 2. old trashed post permalink */
+		$message = sprintf( wp_kses_post( __( '<strong>SEO Notice:</strong> A previously published %1$s has been moved to trash. You may redirect it <code>%2$s</code> to <a href="%3$s">new url</a>.', 'cpseo' ) ), $type, $url, $admin_url );
+		Helper::add_notification( $message, [ 'type' => 'warning' ] );
 	}
 }

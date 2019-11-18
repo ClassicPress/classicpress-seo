@@ -2,11 +2,11 @@
 /**
  * Metabox - Article Rich Snippet
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 $article_dep = [ [ 'cpseo_rich_snippet', 'article' ] ];
 /* translators: Google article snippet doc link */

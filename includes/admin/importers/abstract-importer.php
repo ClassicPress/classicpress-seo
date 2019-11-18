@@ -3,22 +3,22 @@
  * The abstract class for plugins import to inherit from
  *
  * @since      0.2.0
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Admin\Importers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Admin\Importers
  */
 
 
-namespace ClassicPress_SEO\Admin\Importers;
+namespace Classic_SEO\Admin\Importers;
 
 use Exception;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Ajax;
-use ClassicPress_SEO\Traits\Meta;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Admin\Admin_Helper;
-use ClassicPress_SEO\Helpers\DB;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Attachment;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Ajax;
+use Classic_SEO\Traits\Meta;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Admin\Admin_Helper;
+use Classic_SEO\Helpers\DB;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Attachment;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -212,9 +212,11 @@ abstract class Plugin_Importer {
 	 */
 	private function format_message( $result, $action, $message ) {
 		if ( 'postmeta' === $action || 'usermeta' === $action ) {
-			$message = sprintf( $message, $result['start'], $result['end'], $result['total_items'] );
-		} elseif ( 'termmeta' === $action || 'redirections' === $action ) {
-			$message = sprintf( $message, $result['count'] );
+			return sprintf( $message, $result['start'], $result['end'], $result['total_items'] );
+		}
+
+		if ( 'termmeta' === $action || 'redirections' === $action ) {
+			return sprintf( $message, $result['count'] );
 		}
 
 		return $message;
@@ -306,10 +308,11 @@ abstract class Plugin_Importer {
 	 * @return string
 	 */
 	protected function convert_bool( $value ) {
-		if ( true === $value || 'true' === $value || '1' === $value || 1 === $value ) {
+		if ( true === boolval( $value ) ) {
 			return 'on';
 		}
-		if ( false === $value || 'false' === $value || '0' === $value || 0 === $value ) {
+
+		if ( false === boolval( $value ) ) {
 			return 'off';
 		}
 
@@ -523,7 +526,6 @@ abstract class Plugin_Importer {
 			return false;
 		}
 
-		// SELECT COUNT(*) as count FROM `cp_postmeta` WHERE `meta_key` LIKE 'rank_math_%'
 		$result = DB::query_builder( 'postmeta' )->selectCount( '*', 'count' )->whereLike( 'meta_key', $this->meta_key )->getVar();
 
 		return absint( $result ) > 0 ? true : false;

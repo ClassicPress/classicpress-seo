@@ -3,12 +3,12 @@
  * Date format class
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap;
+namespace Classic_SEO\Sitemap;
 
 use DateTime;
 use Exception;
@@ -39,11 +39,7 @@ class Timezone {
 	public function format_date( $datetime_string, $format = 'c' ) {
 		$date_time = $this->get_datetime_with_timezone( $datetime_string );
 
-		if ( is_null( $date_time ) ) {
-			return '';
-		}
-
-		return $date_time->format( $format );
+		return is_null( $date_time ) ? '' : $date_time->format( $format );
 	}
 
 	/**
@@ -70,6 +66,19 @@ class Timezone {
 
 		return null;
 	}
+	
+	/**
+	 * Returns the correct timezone string.
+	 *
+	 * @return string
+	 */
+	private function get_timezone_string() {
+		if ( '' === $this->timezone_string ) {
+			$this->timezone_string = $this->determine_timezone_string();
+		}
+
+		return $this->timezone_string;
+	}
 
 	/**
 	 * Returns the timezone string for a site, even if it's set to a UTC offset.
@@ -79,7 +88,6 @@ class Timezone {
 	 * @return string valid PHP timezone string
 	 */
 	private function determine_timezone_string() {
-
 		// If site timezone string exists, return it.
 		$timezone = get_option( 'timezone_string' );
 		if ( ! empty( $timezone ) ) {
@@ -102,31 +110,28 @@ class Timezone {
 			return $timezone;
 		}
 
-		// Last try, guess timezone string manually.
-		$timezone_list = timezone_abbreviations_list();
-		foreach ( $timezone_list as $abbr ) {
+		$timezone = $this->determine_timezone_manually( $utc_offset );
+
+		return false !== $timezone ? $timezone : 'UTC';
+	}
+	
+	/**
+	 * Determine timezone manually
+	 *
+	 * @param int $offset UTC Offset.
+	 *
+	 * @return string|bool
+	 */
+	private function determine_timezone_manually( $offset ) {
+		foreach ( timezone_abbreviations_list() as $abbr ) {
 			foreach ( $abbr as $city ) {
-				if ( $city['offset'] === $utc_offset ) {
+				if ( $city['offset'] === $offset ) {
 					return $city['timezone_id'];
 				}
 			}
 		}
 
-		// Fallback to UTC.
-		return 'UTC';
-	}
-
-	/**
-	 * Returns the correct timezone string.
-	 *
-	 * @return string
-	 */
-	private function get_timezone_string() {
-		if ( '' === $this->timezone_string ) {
-			$this->timezone_string = $this->determine_timezone_string();
-		}
-
-		return $this->timezone_string;
+		return false;
 	}
 
 	/**

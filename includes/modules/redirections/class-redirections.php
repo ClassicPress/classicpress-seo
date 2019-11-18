@@ -3,17 +3,17 @@
  * The Redirections Module.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Conditional;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Conditional;
 
 /**
  * Redirections class.
@@ -35,7 +35,7 @@ class Redirections {
 		}
 
 		if ( Helper::has_cap( 'redirections' ) ) {
-			$this->filter( 'cpseo/admin_bar/items', 'admin_bar_items', 11 );
+			$this->action( 'cpseo/admin_bar/items', 'admin_bar_items', 11 );
 		}
 
 		if ( $this->disable_auto_redirect() ) {
@@ -70,50 +70,50 @@ class Redirections {
 	/**
 	 * Add admin bar item.
 	 *
-	 * @param array $items Array of admin bar nodes.
-	 * @return array
+	 * @param Admin_Bar_Menu $menu Menu class instance.
 	 */
-	public function admin_bar_items( $items ) {
+	public function admin_bar_items( $menu ) {
+		$menu->add_sub_menu(
+			'redirections',
+			[
+				'title'    => esc_html__( 'Redirections', 'cpseo' ),
+				'href'     => Helper::get_admin_url( 'redirections' ),
+				'meta'     => [ 'title' => esc_html__( 'Create and edit redirections', 'cpseo' ) ],
+				'priority' => 50,
+			]
+		);
 
-		$items['redirections'] = [
-			'id'        => 'cpseo-redirections',
-			'title'     => esc_html__( 'Redirections', 'cpseo' ),
-			'href'      => Helper::get_admin_url( 'redirections' ),
-			'parent'    => 'cpseo',
-			'meta'      => [ 'title' => esc_html__( 'Create and edit redirections', 'cpseo' ) ],
-			'_priority' => 50,
-		];
+		$menu->add_sub_menu(
+			'redirections-edit',
+			[
+				'title' => esc_html__( 'Manage Redirections', 'cpseo' ),
+				'href'  => Helper::get_admin_url( 'redirections' ),
+				'meta'  => [ 'title' => esc_html__( 'Create and edit redirections', 'cpseo' ) ],
+			],
+			'redirections'
+		);
 
-		$items['redirections-child'] = [
-			'id'        => 'cpseo-redirections-child',
-			'title'     => esc_html__( 'Manage Redirections', 'cpseo' ),
-			'href'      => Helper::get_admin_url( 'redirections' ),
-			'parent'    => 'cpseo-redirections',
-			'meta'      => [ 'title' => esc_html__( 'Create and edit redirections', 'cpseo' ) ],
-			'_priority' => 51,
-		];
-
-		$items['redirections-settings'] = [
-			'id'        => 'cpseo-redirections-settings',
-			'title'     => esc_html__( 'Redirection Settings', 'cpseo' ),
-			'href'      => Helper::get_admin_url( 'options-general' ) . '#setting-panel-redirections',
-			'parent'    => 'cpseo-redirections',
-			'meta'      => [ 'title' => esc_html__( 'Redirection Settings', 'cpseo' ) ],
-			'_priority' => 52,
-		];
+		$menu->add_sub_menu(
+			'redirections-settings',
+			[
+				'title' => esc_html__( 'Redirection Settings', 'cpseo' ),
+				'href'  => Helper::get_admin_url( 'options-general' ) . '#setting-panel-redirections',
+				'meta'  => [ 'title' => esc_html__( 'Redirection Settings', 'cpseo' ) ],
+			],
+			'redirections'
+		);
 
 		if ( ! is_admin() ) {
-			$items['redirections-redirect-me'] = [
-				'id'        => 'cpseo-redirections-redirect-me',
-				'title'     => esc_html__( '&raquo; Redirect this page', 'cpseo' ),
-				'href'      => add_query_arg( 'url', urlencode( ltrim( Param::server( 'REQUEST_URI' ), '/' ) ), Helper::get_admin_url( 'redirections' ) ),
-				'parent'    => 'cpseo-redirections',
-				'meta'      => [ 'title' => esc_html__( 'Redirect the current URL', 'cpseo' ) ],
-				'_priority' => 53,
-			];
+			$menu->add_sub_menu(
+				'redirections-redirect-me',
+				[
+					'title' => esc_html__( '&raquo; Redirect this page', 'cpseo' ),
+					'href'  => add_query_arg( 'url', urlencode( ltrim( Param::server( 'REQUEST_URI' ), '/' ) ), Helper::get_admin_url( 'redirections' ) ),
+					'meta'  => [ 'title' => esc_html__( 'Redirect the current URL', 'cpseo' ) ],
+				],
+				'redirections'
+			);
 		}
-
-		return $items;
 	}
 
 	/**

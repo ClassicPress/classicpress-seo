@@ -2,11 +2,11 @@
 /**
  * WooCommerce general settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WooCommerce
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WooCommerce
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 ?>
 
 <h3><?php esc_html_e( 'WooCommerce', 'cpseo' ); ?></h3>
@@ -15,7 +15,7 @@ use ClassicPress_SEO\Helper;
 
 <p><?php esc_html_e( 'When you sell something online, you want people to buy it. And, SEO is the best way to do so in the long run.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'With the ClassicPress SEO plugin, you can easily optimize your WooCommerce store in general and product pages in particular.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'With the Classic SEO plugin, you can easily optimize your WooCommerce store in general and product pages in particular.', 'cpseo' ); ?></p>
 
 <p><strong><?php esc_html_e( 'Optimizing Your WooCommerce Store', 'cpseo' ); ?></strong></p>
 
@@ -23,7 +23,7 @@ use ClassicPress_SEO\Helper;
 	<?php
 	printf(
 		/* translators: link to local seo settings */
-		__( 'ClassicPress SEO can help you make your product category or tag archives `noindex`. You can do that from <a href="%1$s">WordPress Dashboard > ClassicPress SEO > Titles & Meta > Product Categories</a>', 'cpseo' ),
+		__( 'Classic SEO can help you make your product category or tag archives `noindex`. You can do that from <a href="%1$s">WordPress Dashboard > Classic SEO > Titles & Meta > Product Categories</a>', 'cpseo' ),
 		Helper::get_admin_url( 'options-titles#setting-panel-taxonomy-product_cat' )
 	);
 	?>
@@ -32,7 +32,7 @@ use ClassicPress_SEO\Helper;
 <p><?php esc_html_e( 'or', 'cpseo' ); ?></p>
 
 <p>
-	<a href="<?php echo Helper::get_admin_url( 'options-titles#setting-panel-taxonomy-product_tag' ); ?>"><?php esc_html_e( 'WordPress Dashboard > ClassicPress SEO > Titles & Meta > Product Tags.', 'cpseo' ); ?></a>
+	<a href="<?php echo Helper::get_admin_url( 'options-titles#setting-panel-taxonomy-product_tag' ); ?>"><?php esc_html_e( 'WordPress Dashboard > Classic SEO > Titles & Meta > Product Tags.', 'cpseo' ); ?></a>
 </p>
 
 <p><img src="<?php echo cpseo()->plugin_url() . 'assets/admin/img/help/product-archive-settings.jpg'; ?>" alt="make categories noindex" /></p>
@@ -43,7 +43,7 @@ use ClassicPress_SEO\Helper;
 	<?php
 	printf(
 		/* translators: link to local seo settings */
-		__( 'You can customize and automate the SEO Title/Description generation easily as well. Just head over to <a href="%1$s">WordPress Dashboard > ClassicPress SEO > Titles & Meta > Products</a>', 'cpseo' ),
+		__( 'You can customize and automate the SEO Title/Description generation easily as well. Just head over to <a href="%1$s">WordPress Dashboard > Classic SEO > Titles & Meta > Products</a>', 'cpseo' ),
 		Helper::get_admin_url( 'options-titles#setting-panel-post-type-product' )
 	);
 	?>
@@ -51,7 +51,7 @@ use ClassicPress_SEO\Helper;
 
 <p><img src="<?php echo cpseo()->plugin_url() . 'assets/admin/img/help/individual-product-settings.jpg'; ?>" alt="product seo title" /></p>
 
-<p><?php esc_html_e( 'You can also add rich snippets to your product pages easily with ClassicPress SEO, apart from doing the regular SEO like you would do on posts.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'You can also add rich snippets to your product pages easily with Classic SEO, apart from doing the regular SEO like you would do on posts.', 'cpseo' ); ?></p>
 
 <p>
 	<?php
@@ -69,13 +69,13 @@ use ClassicPress_SEO\Helper;
 
 <p><strong><?php esc_html_e( 'Optimizing Your Product URLs', 'cpseo' ); ?></strong></p>
 
-<p><?php esc_html_e( 'ClassicPress SEO offers you to remove category base from your product archive URLs so the URLs are cleaner, more SEO friendly and easier to remember.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'Classic SEO offers you to remove category base from your product archive URLs so the URLs are cleaner, more SEO friendly and easier to remember.', 'cpseo' ); ?></p>
 
 <p>
 	<?php
 	printf(
 		/* translators: link to local seo settings */
-		__( 'To access those options, head over to <a href="%1$s">WordPress Dashboard > ClassicPress SEO > General Settings > WooCommerce</a>.', 'cpseo' ),
+		__( 'To access those options, head over to <a href="%1$s">WordPress Dashboard > Classic SEO > General Settings > WooCommerce</a>.', 'cpseo' ),
 		Helper::get_admin_url( 'options-general#setting-panel-woocommerce' )
 	);
 	?>

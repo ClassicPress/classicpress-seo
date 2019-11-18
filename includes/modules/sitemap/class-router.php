@@ -3,16 +3,16 @@
  * The Sitemap rewrite setup and handling functionality.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap;
+namespace Classic_SEO\Sitemap;
 
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\Url;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\Url;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -106,7 +106,7 @@ class Router {
 			return;
 		}
 
-		header( 'X-Redirect-By: ClassicPress SEO' );
+		header( 'X-Redirect-By: Classic SEO' );
 		wp_redirect( home_url( '/sitemap_index.xml' ), 301 );
 		exit;
 	}
@@ -126,11 +126,13 @@ class Router {
 	 * Create base URL for the sitemap.
 	 *
 	 * @param  string $page Page to append to the base URL.
+	 *
 	 * @return string base URL (incl page)
 	 */
 	public static function get_base_url( $page ) {
 		global $wp_rewrite;
 
+		$page = self::get_page_url( $page );
 		$base = $wp_rewrite->using_index_permalinks() ? $wp_rewrite->index . '/' : '/';
 
 		/**
@@ -139,16 +141,31 @@ class Router {
 		 * @param string $base The string that should be added to home_url() to make the full base URL.
 		 */
 		$base = apply_filters( 'cpseo/sitemap/base_url', $base );
+		
+		return home_url( $base . $page );
+	}
+	
+	/**
+	 * Get page URL for the sitemap.
+	 *
+	 * @param string $page Page to append to the base URL.
+	 *
+	 * @return string
+	 */
+	public static function get_page_url( $page ) {
+		global $wp_rewrite;
 
-		if ( ! $wp_rewrite->using_permalinks() ) {
-			if ( 'sitemap_index.xml' === $page ) {
-				$page = '?sitemap=1';
-			} else {
-				$page = \preg_replace( '/([^\/]+?)-sitemap([0-9]+)?\.xml$/', '?sitemap=$1&sitemap_n=$2', $page );
-				$page = \preg_replace( '/([a-z]+)?-?sitemap\.xsl$/', '?xsl=$1', $page );
-			}
+		if ( $wp_rewrite->using_permalinks() ) {
+			return $page;
 		}
 
-		return home_url( $base . $page );
+		if ( 'sitemap_index.xml' === $page ) {
+			return '?sitemap=1';
+		}
+
+		$page = \preg_replace( '/([^\/]+?)-sitemap([0-9]+)?\.xml$/', '?sitemap=$1&sitemap_n=$2', $page );
+		$page = \preg_replace( '/([a-z]+)?-?sitemap\.xsl$/', '?xsl=$1', $page );
+
+		return $page;
 	}
 }

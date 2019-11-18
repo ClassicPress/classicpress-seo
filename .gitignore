@@ -1,1 +1,5 @@
 *.bat
+*.sh
+*.bak
+assets/admin/js/src/*
+sitemap-cache/*

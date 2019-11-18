@@ -1,12 +1,12 @@
 <?php
 /**
- * ClassicPress SEO Plugin.
+ * Classic SEO Plugin.
  *
  *
- * Plugin Name: ClassicPress SEO
+ * Plugin Name: Classic SEO
  * Plugin URI:  https://www.classicpress.net
  * Description: SEO solution for ClassicPress (experimental).
- * Version:     0.2.2
+ * Version:     0.3.0
  * Author:      ClassicPress Community
  * Author URI:  https://www.classicpress.net
  * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
@@ -14,10 +14,10 @@
  * Domain Path: /languages/
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
- * WC requires at least: 3.0
- * WC tested up to: 3.7
  *
- * @package   ClassicPress_SEO
+ * Fork of Rank Math v1.0.33
+ *
+ * @package   Classic_SEO
  */
  
 
@@ -26,35 +26,35 @@ defined( 'ABSPATH' ) || exit;
 
 
 /**
- * ClassicPress_SEO class.
+ * Classic_SEO class.
  *
  * @class Main plugin class
  */
-class ClassicPress_SEO {
+class Classic_SEO {
 
 	/**
 	 * Plugin version.
 	 *
 	 * @var string
 	 */
-	public $version = '0.2.2';
+	public $version = '0.3.0';
 
 	/**
-	 * ClassicPress SEO database version.
+	 * Classic SEO database version.
 	 *
 	 * @var string
 	 */
 	public $db_version = '1';
 
 	/**
-	 * Minimum version of ClassicPress required to run ClassicPress SEO.
+	 * Minimum version of ClassicPress required to run Classic SEO.
 	 *
 	 * @var string
 	 */
-	private $classicpress_version = '1.0.2';
+	private $min_cp_version = '1.0.2';
 
 	/**
-	 * Minimum version of PHP required to run ClassicPress SEO.
+	 * Minimum version of PHP required to run Classic SEO.
 	 *
 	 * @var string
 	 */
@@ -77,7 +77,7 @@ class ClassicPress_SEO {
 	/**
 	 * The single instance of the class.
 	 *
-	 * @var ClassicPress_SEO
+	 * @var Classic_SEO
 	 */
 	protected static $instance = null;
 	
@@ -155,16 +155,16 @@ class ClassicPress_SEO {
 	}
 	
 	/**
-	 * Retrieve main ClassicPress_SEO instance.
+	 * Retrieve main Classic_SEO instance.
 	 *
 	 * Ensure only one instance is loaded or can be loaded.
 	 *
-	 * @see ClassicPress_SEO()
-	 * @return ClassicPress_SEO
+	 * @see Classic_SEO()
+	 * @return Classic_SEO
 	 */
 	public static function get() {
-		if ( is_null( self::$instance ) && ! ( self::$instance instanceof ClassicPress_SEO ) ) {
-			self::$instance = new ClassicPress_SEO();
+		if ( is_null( self::$instance ) && ! ( self::$instance instanceof Classic_SEO ) ) {
+			self::$instance = new Classic_SEO();
 			self::$instance->setup();
 		}
 
@@ -203,13 +203,13 @@ class ClassicPress_SEO {
 	private function requirements() {
 	
 		// Check ClassicPress version.
-		if ( version_compare( get_bloginfo( 'version' ), $this->classicpress_version, '<' ) ) {
-			$this->messages[] = sprintf( esc_html__( 'ClassicPress SEO requires ClassicPress version %s or above. Please update ClassicPress.', 'cpseo' ), $this->classicpress_version );
+		if ( version_compare( get_bloginfo( 'version' ), $this->min_cp_version, '<' ) ) {
+			$this->messages[] = sprintf( esc_html__( 'Classic SEO requires ClassicPress version %s or above. Please update ClassicPress.', 'cpseo' ), $this->min_cp_version );
 		}
 
 		// Check PHP version.
 		if ( version_compare( phpversion(), $this->php_version, '<' ) ) {
-			$this->messages[] = sprintf( esc_html__( 'ClassicPress SEO requires PHP version %s or above. Please update PHP.', 'cpseo' ), $this->php_version );
+			$this->messages[] = sprintf( esc_html__( 'Classic SEO requires PHP version %s or above. Please update PHP.', 'cpseo' ), $this->php_version );
 		}
 
 		if ( empty( $this->messages ) ) {
@@ -268,22 +268,24 @@ class ClassicPress_SEO {
 	 * Instantiate classes.
 	 */
 	private function instantiate() {
-		new \ClassicPress_SEO\Installer;
+		new \Classic_SEO\Installer;
 
 		// Setting Manager.
-		$this->container['settings'] = new \ClassicPress_SEO\Settings;
+		$this->container['settings'] = new \Classic_SEO\Settings;
 
 		// JSON Manager.
-		$this->container['json'] = new \ClassicPress_SEO\Json_Manager;
+		$this->container['json'] = new \Classic_SEO\Json_Manager;
 
 		// Notification Manager.
-		$this->container['notification'] = new \ClassicPress_SEO\Notification_Center( 'cpseo_notifications' );
-		$this->container['manager'] = new \ClassicPress_SEO\Module\Manager;
+		$this->container['notification']	= new \Classic_SEO\Notification_Center( 'cpseo_notifications' );
+
+		$this->container['manager']			= new \Classic_SEO\Module\Manager;
+		$this->container['variables']		= new \Classic_SEO\Replace_Variables\Manager;
 
 		// Just init without storing it in the container.
-		new \ClassicPress_SEO\Common;
+		new \Classic_SEO\Common;
 		
-		$this->container['rewrite'] = new \ClassicPress_SEO\Rewrite;
+		$this->container['rewrite'] = new \Classic_SEO\Rewrite;
 	}
 
 	/**
@@ -300,6 +302,7 @@ class ClassicPress_SEO {
 		// Booting.
 		add_action( 'plugins_loaded', [ $this, 'init' ], 14 );
 		add_action( 'rest_api_init', [ $this, 'init_rest_api' ] );
+		add_action( 'wp_login', [ $this, 'on_login' ] );
 
 		// Load admin-related functionality.
 		if ( is_admin() ) {
@@ -307,7 +310,7 @@ class ClassicPress_SEO {
 		}
 		
 		// Frontend-only functionality.
-		if ( ! is_admin() || in_array( \ClassicPress_SEO\Helpers\Param::request( 'action' ), [ 'elementor', 'elementor_ajax' ], true ) ) {
+		if ( ! is_admin() || in_array( \Classic_SEO\Helpers\Param::request( 'action' ), [ 'elementor', 'elementor_ajax' ], true ) ) {
 			add_action( 'plugins_loaded', [ $this, 'init_frontend' ], 15 );
 		}
 		
@@ -323,8 +326,8 @@ class ClassicPress_SEO {
 	 */
 	public function init_rest_api() {
 		$controllers = [
-			new \ClassicPress_SEO\Rest\Admin,
-			new \ClassicPress_SEO\Rest\Front,
+			new \Classic_SEO\Rest\Admin,
+			new \Classic_SEO\Rest\Front,
 		];
 
 		foreach ( $controllers as $controller ) {
@@ -337,7 +340,7 @@ class ClassicPress_SEO {
 	 * Runs on 'plugins_loaded'.
 	 */
 	public function init_admin() {
-		new \ClassicPress_SEO\Admin\Engine;
+		new \Classic_SEO\Admin\Engine;
 	}
 	
 	
@@ -346,14 +349,14 @@ class ClassicPress_SEO {
 	 * Runs on 'plugins_loaded'.
 	 */
 	public function init_frontend() {
-		$this->container['frontend'] = new \ClassicPress_SEO\Frontend\Frontend;
+		$this->container['frontend'] = new \Classic_SEO\Frontend\Frontend;
 	}
 
 	/**
 	 * Add our custom WP-CLI commands.
 	 */
 	public function init_wp_cli() {
-		WP_CLI::add_command( 'cpseo sitemap generate', [ '\ClassicPress_SEO\CLI\Commands', 'sitemap_generate' ] );
+		WP_CLI::add_command( 'cpseo sitemap generate', [ '\Classic_SEO\CLI\Commands', 'sitemap_generate' ] );
 	}
 
 
@@ -365,7 +368,7 @@ class ClassicPress_SEO {
 	 */
 	public function plugin_action_links( $links ) {
 		$plugin_links = [
-			'<a href="' . ClassicPress_SEO\Helper::get_admin_url( 'options-general' ) . '">' . esc_html__( 'Settings', 'cpseo' ) . '</a>',
+			'<a href="' . Classic_SEO\Helper::get_admin_url( 'options-general' ) . '">' . esc_html__( 'Settings', 'cpseo' ) . '</a>',
 		];
 
 		return array_merge( $links, $plugin_links );
@@ -407,10 +410,10 @@ class ClassicPress_SEO {
 		load_plugin_textdomain( 'cpseo', false, cpseo()->plugin_dir() . 'languages/' );
 
 		if ( is_user_logged_in() ) {
-			$this->container['json']->add( 'version', $this->version, 'classicPress' );
-			$this->container['json']->add( 'ajaxurl', admin_url( 'admin-ajax.php' ), 'classicPress' );
-			$this->container['json']->add( 'adminurl', admin_url( 'admin.php' ), 'classicPress' );
-			$this->container['json']->add( 'security', wp_create_nonce( 'cpseo-ajax-nonce' ), 'classicPress' );
+			$this->container['json']->add( 'version', $this->version, 'classicSEO' );
+			$this->container['json']->add( 'ajaxurl', admin_url( 'admin-ajax.php' ), 'classicSEO' );
+			$this->container['json']->add( 'adminurl', admin_url( 'admin.php' ), 'classicSEO' );
+			$this->container['json']->add( 'security', wp_create_nonce( 'cpseo-ajax-nonce' ), 'classicSEO' );
 		}
 	}
 
@@ -418,12 +421,12 @@ class ClassicPress_SEO {
 
 
 /**
- * Returns the main instance of ClassicPress_SEO to prevent the need to use globals.
+ * Returns the main instance of Classic_SEO to prevent the need to use globals.
  *
- * @return ClassicPress_SEO
+ * @return Classic_SEO
  */
 function cpseo() {
-	return ClassicPress_SEO::get();
+	return Classic_SEO::get();
 }
 
 // Let's go.

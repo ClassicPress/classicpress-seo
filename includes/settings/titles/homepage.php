@@ -2,11 +2,11 @@
 /**
  * The homepage/frontpage settings.
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Settings
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Settings
  */
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 if ( 'page' === get_option( 'show_on_front' ) ) {
 	return;
@@ -55,6 +55,14 @@ $cmb->add_field([
 	'options'           => Helper::choices_robots(),
 	'select_all_button' => false,
 	'dep'               => [ [ 'cpseo_homepage_custom_robots', 'on' ] ],
+]);
+
+$cmb->add_field([
+	'id'              => 'cpseo_homepage_advanced_robots',
+	'type'            => 'advanced_robots',
+	'name'            => esc_html__( 'Homepage Advanced Robots', 'cpseo' ),
+	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_advanced_robots' ],
+	'dep'             => [ [ 'homepage_custom_robots', 'on' ] ],
 ]);
 
 $cmb->add_field([

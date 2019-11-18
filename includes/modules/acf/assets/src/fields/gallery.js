@@ -1,8 +1,9 @@
-var attachmentCache = require( './cache.attachments.js' )
-var getAttachmentContent = require( './getAttachmentContent' )
+import $ from 'jquery'
+import attachmentCache from './attachmentCache'
+import getAttachmentContent from './getAttachmentContent'
 
-var Gallery = function( fields ) {
-	var attachment_ids = []
+export default function( fields ) {
+	const attachments = []
 
 	fields = _.map( fields, function( field ) {
 		if ( 'gallery' !== field.type ) {
@@ -12,17 +13,15 @@ var Gallery = function( fields ) {
 		field.content = ''
 
 		field.$el.find( '.acf-gallery-attachment input[type=hidden]' ).each( function() {
-			var attachment_id = jQuery( this ).val()
-			attachment_ids.push( attachment_id )
-			field.content += new getAttachmentContent( attachment_id )
-		})
+			const attachmentID = $( this ).val()
+			attachments.push( attachmentID )
+			field.content += new getAttachmentContent( attachmentID )
+		} )
 
 		return field
-	})
+	} )
 
-	attachmentCache.refresh( attachment_ids )
+	attachmentCache.refresh( attachments )
 
 	return fields
 }
-
-module.exports = Gallery

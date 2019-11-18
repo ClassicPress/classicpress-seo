@@ -3,11 +3,11 @@
  * The SEO Link class.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Links
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Links
  */
 
-namespace ClassicPress_SEO\Links;
+namespace Classic_SEO\Links;
 
 defined( 'ABSPATH' ) || exit;
 

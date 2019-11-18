@@ -1,20 +1,20 @@
 <?php
 /**
- * ClassicPress SEO core CLI commands.
+ * Classic SEO core CLI commands.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WP_CLI
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WP_CLI
  */
 
 
-namespace ClassicPress_SEO\CLI;
+namespace Classic_SEO\CLI;
 
 use WP_CLI;
 use WP_CLI_Command;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Sitemap\Cache;
-use ClassicPress_SEO\Sitemap\Sitemap_XML;
+use Classic_SEO\Helper;
+use Classic_SEO\Sitemap\Cache;
+use Classic_SEO\Sitemap\Sitemap_XML;
 
 defined( 'ABSPATH' ) || exit;
 

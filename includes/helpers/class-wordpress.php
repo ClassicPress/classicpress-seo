@@ -3,20 +3,20 @@
  * The WordPress helpers.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Helpers
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Helpers
  */
 
 
-namespace ClassicPress_SEO\Helpers;
+namespace Classic_SEO\Helpers;
 
-use ClassicPress_SEO\Post;
-use ClassicPress_SEO\Term;
-use ClassicPress_SEO\User;
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\Param;
-use ClassicPress_SEO\Helpers\Str;
-use ClassicPress_SEO\Helpers\WordPress as WP_Helper;
+use Classic_SEO\Post;
+use Classic_SEO\Term;
+use Classic_SEO\User;
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\Param;
+use Classic_SEO\Helpers\Str;
+use Classic_SEO\Helpers\WordPress as WP_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -184,7 +184,7 @@ trait WordPress {
 	 * @param int    $status   Status code to use.
 	 */
 	public static function redirect( $location, $status = 302 ) {
-		header( 'X-Redirect-By: ClassicPress SEO' );
+		header( 'X-Redirect-By: Classic SEO' );
 		wp_safe_redirect( $location, $status );
 		exit;
 	}
@@ -257,7 +257,7 @@ trait WordPress {
 	}
 
 	/**
-	 * Get ClassicPress SEO Dashboard url.
+	 * Get Classic SEO Dashboard url.
 	 *
 	 * @codeCoverageIgnore
 	 *
@@ -356,19 +356,29 @@ trait WordPress {
 	public static function set_capabilities( $roles ) {
 		$caps = array_keys( self::get_capabilities() );
 		foreach ( WP_Helper::get_roles() as $slug => $role ) {
-			$role = get_role( $slug );
-			if ( ! $role ) {
-				continue;
-			}
+			self::set_role_capabilities( $slug, $caps, $roles );
+		}
+	}
 
-			$roles[ $slug ] = isset( $roles[ $slug ] ) && is_array( $roles[ $slug ] ) ? array_flip( $roles[ $slug ] ) : [];
-			foreach ( $caps as $cap ) {
-				if ( isset( $roles[ $slug ], $roles[ $slug ][ $cap ] ) ) {
-					$role->add_cap( $cap );
-				} else {
-					$role->remove_cap( $cap );
-				}
-			}
+	/**
+	 * Set capabilities for role.
+	 *
+	 * @codeCoverageIgnore
+	 *
+	 * @param string $slug  Role slug.
+	 * @param array  $caps  Array of capabilities.
+	 * @param array  $roles Data.
+	 */
+	private static function set_role_capabilities( $slug, $caps, $roles ) {
+		$role = get_role( $slug );
+		if ( ! $role ) {
+			return;
+		}
+
+		$roles[ $slug ] = isset( $roles[ $slug ] ) && is_array( $roles[ $slug ] ) ? array_flip( $roles[ $slug ] ) : [];
+		foreach ( $caps as $cap ) {
+			$func = isset( $roles[ $slug ], $roles[ $slug ][ $cap ] ) ? 'add_cap' : 'remove_cap';
+			$role->$func( $cap );
 		}
 	}
 
@@ -477,7 +487,7 @@ trait WordPress {
 			$robots = Helper::get_settings( "titles.cpseo_tax_{$screen->taxonomy}_robots", [] );
 		}
 
-		if ( 'profile' === $screen->base && Helper::get_settings( 'titles.cpseo_author_custom_robots' ) ) {
+		if ( in_array( $screen->base, [ 'profile', 'user-edit' ], true ) && Helper::get_settings( 'titles.cpseo_author_custom_robots' ) ) {
 			$robots = Helper::get_settings( 'titles.cpseo_author_robots', [] );
 		}
 

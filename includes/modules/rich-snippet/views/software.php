@@ -2,8 +2,8 @@
 /**
  * Metabox - Software Application Rich Snippet
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
 $software = [ [ 'cpseo_rich_snippet', 'software' ] ];
@@ -53,26 +53,28 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
-	'id'         => 'cpseo_snippet_software_rating_value',
-	'name'       => esc_html__( 'Rating', 'cpseo' ),
-	'desc'       => esc_html__( 'Average of all ratings (1-5). Example: 4.7', 'cpseo' ),
-	'type'       => 'text',
-	'dep'        => $software,
-	'classes'    => 'cmb-row-50',
-	'attributes' => [
-		'type' => 'number',
-		'min'  => 1,
-		'max'  => 5,
-		'step' => 'any',
-	],
+	'id'      => 'cpseo_snippet_software_rating',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating score of the software. Optional.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $software,
 ]);
 
 $cmb->add_field([
-	'id'         => 'cpseo_snippet_software_rating_count',
-	'name'       => esc_html__( 'Rating Count', 'cpseo' ),
-	'desc'       => esc_html__( 'Number of ratings', 'cpseo' ),
-	'type'       => 'text',
-	'dep'        => $software,
-	'classes'    => 'cmb-row-50',
-	'attributes' => [ 'type' => 'number' ],
+	'id'      => 'cpseo_snippet_software_rating_min',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Minimum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating minimum score of the software.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $software,
+]);
+
+$cmb->add_field([
+	'id'      => 'cpseo_snippet_software_rating_max',
+	'type'    => 'text',
+	'name'    => esc_html__( 'Rating Maximum', 'cpseo' ),
+	'desc'    => esc_html__( 'Rating maximum score of the software.', 'cpseo' ),
+	'classes' => 'cmb-row-33',
+	'dep'     => $software,
 ]);

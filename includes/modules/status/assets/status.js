@@ -1,8 +1,7 @@
 /*!
-* ClassicPress SEO - Status & Tools
+* Classic SEO - Status & Tools
 *
-* @version 1.0.33
-* @author  ClassicPress SEO
+* @version 0.3.0
 */
 ;( function( $ ) {
 
@@ -12,13 +11,15 @@
 
 		var after = $( '.nav-tab-wrapper' )
 
-		function addNotice( msg, which, fadeout ) {
+		function addNotice( msg, which, fadeout = 3000 ) {
 			which   = which || 'error'
-			fadeout = fadeout || 3000
 			var notice = $( '<div class="notice notice-' + which + ' is-dismissible"><p>' + msg + '</p></div>' ).hide()
 			after.next( '.notice' ).remove()
 			after.after( notice )
 			notice.slideDown()
+			$('html,body').animate({
+				scrollTop: notice.offset().top - 50
+			}, 'slow');
 			$( document ).trigger( 'wp-updates-notice-added' )
 			if ( fadeout ) {
 				setTimeout( function() {
@@ -37,10 +38,10 @@
 
 			$this.attr( 'disabled', 'disabled' )
 			$.ajax({
-				url: classicPress.api.root + 'cpseo/v1/toolsAction',
+				url: classicSEO.api.root + 'cpseo/v1/toolsAction',
 				method: 'POST',
 				beforeSend: function( xhr ) {
-					xhr.setRequestHeader( 'X-WP-Nonce', classicPress.api.nonce )
+					xhr.setRequestHeader( 'X-WP-Nonce', classicSEO.api.nonce )
 				},
 				data: {
 					action: $this.data( 'action' )
@@ -51,7 +52,7 @@
 				addNotice( response.statusText )
 			}).done( function( response ) {
 				if ( response ) {
-					addNotice( response, 'success' )
+					addNotice( response, 'success', false )
 					return
 				}
 

@@ -3,19 +3,19 @@
  * The Sitemap provider for post type.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Sitemap
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Sitemap
 
  */
 
-namespace ClassicPress_SEO\Sitemap\Providers;
+namespace Classic_SEO\Sitemap\Providers;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Sitemap\Router;
-use ClassicPress_SEO\Sitemap\Sitemap;
-use ClassicPress_SEO\Sitemap\Classifier;
-use ClassicPress_SEO\Sitemap\Image_Parser;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Sitemap\Router;
+use Classic_SEO\Sitemap\Sitemap;
+use Classic_SEO\Sitemap\Classifier;
+use Classic_SEO\Sitemap\Image_Parser;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -31,40 +31,41 @@ class Post_Type implements Provider {
 	 *
 	 * @var string
 	 */
-	protected static $home_url;
+	protected $home_url = null;
 
 	/**
 	 * Holds image parser instance.
 	 *
 	 * @var Image_Parser
 	 */
-	protected static $image_parser;
+	protected $image_parser = null;
 
 	/**
 	 * Holds link classifier.
 	 *
 	 * @var Classifier
 	 */
-	protected static $classifier;
+	protected $classifier = null;
 
 	/**
 	 * Static front page ID.
 	 *
 	 * @var int
 	 */
-	protected static $page_on_front_id;
+	protected $page_on_front_id = null;
 
 	/**
 	 * Posts page ID.
 	 *
 	 * @var int
 	 */
-	protected static $page_for_posts_id;
+	protected $page_for_posts_id = null;
 
 	/**
 	 * Check if provider supports given item type.
 	 *
 	 * @param  string $type Type string to check for.
+	 *
 	 * @return boolean
 	 */
 	public function handles_type( $type ) {
@@ -89,6 +90,7 @@ class Post_Type implements Provider {
 	 * Get set of sitemaps index link data.
 	 *
 	 * @param  int $max_entries Entries per sitemap.
+	 *
 	 * @return array
 	 */
 	public function get_index_links( $max_entries ) {
@@ -152,6 +154,7 @@ class Post_Type implements Provider {
 	 * @param  string $type         Sitemap type.
 	 * @param  int    $max_entries  Entries per sitemap.
 	 * @param  int    $current_page Current page of the sitemap.
+	 *
 	 * @return array
 	 */
 	public function get_sitemap_links( $type, $max_entries, $current_page ) {
@@ -223,6 +226,7 @@ class Post_Type implements Provider {
 	 * Get count of posts for post type.
 	 *
 	 * @param  string $post_types Post types to retrieve count for.
+	 *
 	 * @return int
 	 */
 	protected function get_post_type_count( $post_types ) {
@@ -264,6 +268,7 @@ class Post_Type implements Provider {
 	 * Produces set of links to prepend at start of first sitemap page.
 	 *
 	 * @param  string $post_type Post type to produce links for.
+	 *
 	 * @return array
 	 */
 	protected function get_first_links( $post_type ) {
@@ -286,7 +291,7 @@ class Post_Type implements Provider {
 		$archive_url = $this->get_post_type_archive_link( $post_type );
 
 		/**
-		 * Filter the URL ClassicPress SEO uses in the XML sitemap for this post type archive.
+		 * Filter the URL Classic SEO uses in the XML sitemap for this post type archive.
 		 *
 		 * @param string $archive_url The URL of this archive
 		 * @param string $post_type   The post type this archive is for.
@@ -307,6 +312,7 @@ class Post_Type implements Provider {
 	 * Get URL for a post type archive.
 	 *
 	 * @param  string $post_type Post type.
+	 *
 	 * @return string|boolean URL or false if it should be excluded.
 	 */
 	protected function get_post_type_archive_link( $post_type ) {
@@ -324,6 +330,7 @@ class Post_Type implements Provider {
 	 * @param array $post_types Post type to retrieve.
 	 * @param int   $count      Count of posts to retrieve.
 	 * @param int   $offset     Starting offset.
+	 *
 	 * @return object[]
 	 */
 	protected function get_posts( $post_types, $count, $offset ) {
@@ -365,6 +372,7 @@ class Post_Type implements Provider {
 	 * Get where clause to query data.
 	 *
 	 * @param  array $post_types Post types slug.
+	 *
 	 * @return string
 	 */
 	protected function get_sql_where_clause( $post_types ) {
@@ -393,13 +401,14 @@ class Post_Type implements Provider {
 	 * Produce array of URL parts for given post object.
 	 *
 	 * @param  object $post Post object to get URL parts for.
+	 *
 	 * @return array|boolean
 	 */
 	protected function get_url( $post ) {
 		$url = [];
 
 		/**
-		 * Filter the URL ClassicPress SEO uses in the XML sitemap.
+		 * Filter the URL Classic SEO uses in the XML sitemap.
 		 *
 		 * Note that only absolute local URLs are allowed as the check after this removes external URLs.
 		 *
@@ -434,7 +443,7 @@ class Post_Type implements Provider {
 		unset( $canonical );
 
 		if ( 'post' !== $post->post_type ) {
-			$url['loc'] = trailingslashit( $url['loc'] );
+			$url['loc'] = user_trailingslashit( $url['loc'] );
 		}
 		$url['images'] = ! is_null( $this->get_image_parser() ) ? $this->get_image_parser()->get_images( $post ) : [];
 
@@ -447,10 +456,11 @@ class Post_Type implements Provider {
 	 * @return int
 	 */
 	protected function get_page_on_front_id() {
-		if ( ! isset( self::$page_on_front_id ) ) {
-			self::$page_on_front_id = intval( get_option( 'page_on_front' ) );
+		if ( is_null( $this->page_on_front_id ) ) {
+			$this->page_on_front_id = intval( get_option( 'page_on_front' ) );
 		}
-		return self::$page_on_front_id;
+
+		return $this->page_on_front_id;
 	}
 
 	/**
@@ -459,10 +469,11 @@ class Post_Type implements Provider {
 	 * @return int
 	 */
 	protected function get_page_for_posts_id() {
-		if ( ! isset( self::$page_for_posts_id ) ) {
-			self::$page_for_posts_id = intval( get_option( 'page_for_posts' ) );
+		if ( is_null( $this->page_for_posts_id ) ) {
+			$this->page_for_posts_id = intval( get_option( 'page_for_posts' ) );
 		}
-		return self::$page_for_posts_id;
+
+		return $this->page_for_posts_id;
 	}
 
 	/**
@@ -471,10 +482,11 @@ class Post_Type implements Provider {
 	 * @return Image_Parser
 	 */
 	protected function get_image_parser() {
-		if ( ! isset( self::$image_parser ) ) {
-			self::$image_parser = new Image_Parser;
+		if ( is_null( $this->image_parser ) ) {
+			$this->image_parser = new Image_Parser;
 		}
-		return self::$image_parser;
+
+		return $this->image_parser;
 	}
 
 	/**
@@ -483,10 +495,11 @@ class Post_Type implements Provider {
 	 * @return Classifier
 	 */
 	protected function get_classifier() {
-		if ( ! isset( self::$classifier ) ) {
-			self::$classifier = new Classifier( $this->get_home_url() );
+		if ( is_null( $this->classifier ) ) {
+			$this->classifier = new Classifier( $this->get_home_url() );
 		}
-		return self::$classifier;
+
+		return $this->classifier;
 	}
 
 	/**
@@ -498,9 +511,10 @@ class Post_Type implements Provider {
 	 * @return string
 	 */
 	protected function get_home_url() {
-		if ( ! isset( self::$home_url ) ) {
-			self::$home_url = get_home_url();
+		if ( is_null( $this->home_url ) ) {
+			$this->home_url = user_trailingslashit( get_home_url() );
 		}
-		return self::$home_url;
+
+		return $this->home_url;
 	}
 }

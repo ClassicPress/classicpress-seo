@@ -3,15 +3,15 @@
  * The Redirections Export.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\Redirections
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\Redirections
 
  */
 
-namespace ClassicPress_SEO\Redirections;
+namespace Classic_SEO\Redirections;
 
-use ClassicPress_SEO\Traits\Hooker;
-use ClassicPress_SEO\Helpers\Param;
+use Classic_SEO\Traits\Hooker;
+use Classic_SEO\Helpers\Param;
 
 /**
  * Export class.
@@ -55,15 +55,15 @@ class Export {
 			return;
 		}
 
-		$text[] = '# Created by ClassicPress SEO';
+		$text[] = '# Created by Classic SEO';
 		$text[] = '# ' . date_i18n( 'r' );
-		$text[] = '# ClassicPress SEO ' . trim( cpseo()->version ) . ' - https://blobby.com/';
+		$text[] = '# Classic SEO ' . trim( cpseo()->version ) . ' - https://blobby.com/';
 		$text[] = '';
 
 		$text = array_merge( $text, $this->$server( $items['redirections'] ) );
 
 		$text[] = '';
-		$text[] = '# ClassicPress SEO Redirections END';
+		$text[] = '# Classic SEO Redirections END';
 
 		echo implode( PHP_EOL, $text ) . PHP_EOL;
 		exit;

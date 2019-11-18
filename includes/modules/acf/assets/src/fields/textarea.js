@@ -1,4 +1,4 @@
-var TextArea = function( fields ) {
+export default function( fields ) {
 	fields = _.map( fields, function( field ) {
 		if ( 'textarea' !== field.type ) {
 			return field
@@ -6,9 +6,7 @@ var TextArea = function( fields ) {
 
 		field.content = '<p>' + field.$el.find( 'textarea[id^=acf]' ).val() + '</p>'
 		return field
-	})
+	} )
 
 	return fields
 }
-
-module.exports = TextArea

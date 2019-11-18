@@ -3,15 +3,15 @@
  * The WooCommerce Module
  *
  * @since      1.0.32
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\WooCommerce
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\WooCommerce
 
  */
 
-namespace ClassicPress_SEO\WooCommerce;
+namespace Classic_SEO\WooCommerce;
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Traits\Hooker;
+use Classic_SEO\Helper;
+use Classic_SEO\Traits\Hooker;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -83,6 +83,11 @@ class Product_Redirection {
 
 		$base     = explode( '/', ltrim( $base, '/' ) );
 		$new_link = $uri;
+		
+		// Early Bail if new_link length is less then the base.
+		if ( count( explode( '/', $new_link ) ) <= count( $base ) ) {
+			return false;
+		}
 
 		foreach ( $base as $remove ) {
 			if ( '%product_cat%' === $remove ) {

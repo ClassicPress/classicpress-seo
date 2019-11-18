@@ -3,14 +3,14 @@
  * The Event Class.
  *
  * @since      0.1.8
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
 
  */
 
-namespace ClassicPress_SEO\RichSnippet;
+namespace Classic_SEO\RichSnippet;
 
-use ClassicPress_SEO\Helper;
+use Classic_SEO\Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -54,6 +54,7 @@ class Event implements Snippet {
 			$entity['endDate'] = str_replace( ' ', 'T', date_i18n( 'Y-m-d H:i', $end_date ) );
 		}
 
+		$jsonld->add_ratings( 'event', $entity );
 		$jsonld->set_address( 'event', $entity['location'] );
 
 		$jsonld->set_data([

@@ -2,12 +2,13 @@
 /**
  * Metabox - Rich Snippet Tab
  *
- * @package    ClassicPress_SEO
- * @subpackage ClassicPress_SEO\RichSnippet
+ * @package    Classic_SEO
+ * @subpackage Classic_SEO\RichSnippet
  */
 
-use ClassicPress_SEO\Helper;
-use ClassicPress_SEO\Helpers\WordPress;
+
+use Classic_SEO\Helper;
+use Classic_SEO\Helpers\WordPress;
 
 if ( ! Helper::has_cap( 'onpage_snippet' ) ) {
 	return;
@@ -21,7 +22,7 @@ if ( ( class_exists( 'WooCommerce' ) && 'product' === $post_type ) || ( class_ex
 		'id'      => 'cpseo_woocommerce_notice',
 		'type'    => 'notice',
 		'what'    => 'info',
-		'content' => esc_html__( 'ClassicPress SEO automatically inserts additional Rich Snippet meta data for WooCommerce products. You can set the Rich Snippet Type to "None" to disable this feature and just use the default data added by WooCommerce.', 'cpseo' ),
+		'content' => esc_html__( 'Classic SEO automatically inserts additional Rich Snippet meta data for WooCommerce products. You can set the Rich Snippet Type to "None" to disable this feature and just use the default data added by WooCommerce.', 'cpseo' ),
 	]);
 
 	$cmb->add_field([
@@ -52,11 +53,31 @@ $cmb->add_field([
 
 // Common fields.
 $cmb->add_field([
+	'id'      => 'cpseo_snippet_location',
+	'name'    => esc_html__( 'Review Location', 'cpseo' ),
+	'desc'    => esc_html__( 'The review or rating must be displayed on the page to comply with Google\'s Rich Snippet guidelines.', 'cpseo' ),
+	'type'    => 'select',
+	'dep'     => [ [ 'cpseo_rich_snippet', 'book,course,event,product,recipe,software', '=' ] ],
+	'classes' => 'nob',
+	'default' => 'bottom',
+	'options' => [
+		'bottom' => esc_html__( 'Below Content', 'cpseo' ),
+		'top'    => esc_html__( 'Above Content', 'cpseo' ),
+		'both'   => esc_html__( 'Above & Below Content', 'cpseo' ),
+		'custom' => esc_html__( 'Custom (use shortcode)', 'cpseo' ),
+	],
+]);
+
+$cmb->add_field([
 	'id'         => 'cpseo_snippet_shortcode',
 	'name'       => esc_html__( 'Shortcode', 'cpseo' ),
 	'type'       => 'text',
 	'desc'       => esc_html__( 'Copy & paste this shortcode in the content.', 'cpseo' ),
-	'dep'        => [ [ 'cpseo_rich_snippet', 'off,article,review', '!=' ] ],
+	'dep'        => [
+		'relation' => 'or',
+		[ 'cpseo_rich_snippet', 'off,article,review,book,course,event,product,recipe,software', '!=' ],
+		[ 'cpseo_snippet_location', 'custom' ],
+	],
 	'attributes' => [
 		'readonly' => 'readonly',
 		'value'    => '[cpseo_rich_snippet]',
