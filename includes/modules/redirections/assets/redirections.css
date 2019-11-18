@@ -1,0 +1,4 @@
+/*!
+ * Plugin:	Classic SEO - Redirections
+ * Name:	redirections.css
+ */.column-url_from,.column-url_to{width:28%}.cpseo-redirections-form,.cpseo-more,tr.cpseo-redirection-activated .activate,tr.cpseo-redirection-deactivated .deactivate{display:none}.cpseo-redirections-form{-webkit-box-sizing:border-box;box-sizing:border-box;width:800px;max-width:100%;margin:20px 0;padding:20px;border:1px solid #e5e5e5;background:#fff}.cpseo-redirections-form.is-editing{display:block}.cpseo-redirections-form>h2{margin-top:0}.form-footer{width:calc(100% + 40px) !important;margin:50px -20px -20px;padding:20px}.form-footer:not(.custom){padding:20px}tr.cpseo-redirection-deactivated{opacity:.5}.cmb2-wrap .cmb-group-text-only .cmb-field-list .cmb-field-list>.cmb-row:not(.cmb-remove-field-row){width:41%}
