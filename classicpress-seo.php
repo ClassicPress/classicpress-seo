@@ -6,7 +6,7 @@
  * Plugin Name: Classic SEO
  * Plugin URI:  https://www.classicpress.net
  * Description: SEO solution for ClassicPress (experimental).
- * Version:     0.3.0
+ * Version:     0.3.1
  * Author:      ClassicPress Community
  * Author URI:  https://www.classicpress.net
  * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
@@ -37,7 +37,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '0.3.0';
+	public $version = '0.3.1';
 
 	/**
 	 * Classic SEO database version.

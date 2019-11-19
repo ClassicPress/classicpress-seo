@@ -1502,12 +1502,13 @@ body.cpseo-styles {
   height: 18px;
 }
 
-#adminmenu #toplevel_page_cpseo .wp-menu-image.dashicons-before img {
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-  width: 20px;
-  height: 20px;
+#adminmenu #toplevel_page_cpseo .wp-menu-image img {
+	max-width: 20px;
+	height: 20px;
+	-o-object-fit: fill;
+	object-fit: fill;
+	margin-top: -3px;
+	width: 20px;
 }
 
 #cpseo-header #cpseo-admin h1::before {

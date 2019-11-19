@@ -35,11 +35,14 @@ Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, 
 Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
 
 ## Support
-If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues)
+If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/) in the ClassicPress forums.
 
 ## Changelog
 
-### v 0.3.0
+### v 0.3.1 (Nov 18, 2019)
+- FIX: Classic SEO icon size in admin menu
+
+### v 0.3.0 (Nov 18, 2019)
 - NEW: Plugin has new name. Now called Classic SEO as per [discussions on forums](https://forums.classicpress.net/t/plugin-theme-naming-conventions-when-to-use-classicpress-and-or-cp/1653/8)
 (Note: plugin directory is still called "classicpress-seo" and the main PHP file is called "classicpress-seo.php". These will be changed in a future version.)
 - NEW: Added ability to set metabox position on post/page/product edit pages
@@ -49,15 +52,15 @@ If you find a bug, please create an issue on the [issues page](https://github.co
 - Updated the Help page
 - Plugin icon updated
 
-### v 0.2.2
+### v 0.2.2 (Oct 31, 2019)
 - Fixed CSS bug which prevented tab icons from displaying correctly on post edit page in admin
 - Fixed bug that disabled the sitemap "Include Featured Images" feature
 - Improved l8n checks
 - Removed a couple of debug messages from assessor.js (forgot they were still there!)
 - Removed a couple of unused files
 
-### v 0.2.1
+### v 0.2.1 (Oct 27, 2019)
 - Fixed issue with breadcrumbs not displaying
 
-### v 0.2.0
+### v 0.2.0 (Oct 26, 2019)
 - Initial public release
