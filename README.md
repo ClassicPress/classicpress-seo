@@ -39,6 +39,9 @@ If you find a bug, please create an issue on the [issues page](https://github.co
 
 ## Changelog
 
+### v 0.3.2 (Nov 20, 2019)
+- FIX: Fix for #17: PHP error "call_user_func_array() expects parameter 1 to be a valid callback, function on_login not found or invalid function name" 
+
 ### v 0.3.1 (Nov 18, 2019)
 - FIX: Classic SEO icon size in admin menu
 
