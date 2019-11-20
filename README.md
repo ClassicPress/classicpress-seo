@@ -39,6 +39,9 @@ If you find a bug, please create an issue on the [issues page](https://github.co
 
 ## Changelog
 
+### v 0.4.0 (tbc)
+- 
+
 ### v 0.3.1 (Nov 18, 2019)
 - FIX: Classic SEO icon size in admin menu
 

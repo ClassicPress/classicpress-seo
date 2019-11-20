@@ -561,7 +561,7 @@ class Installer {
 	 */
 	private function get_cron_jobs() {
 		return [
-			//'search_console/get_analytics' => 'daily',  // Add cron job for Get Search Console Analytics Data.
+			'search_console/get_analytics' => 'daily',  // Add cron job for Get Search Console Analytics Data.
 			'redirection/clean_trashed'    => 'daily',  // Add cron for cleaning trashed redirects.
 			'links/internal_links'         => 'daily',  // Add cron for counting links.
 		];

@@ -6,7 +6,7 @@
  * Plugin Name: Classic SEO
  * Plugin URI:  https://www.classicpress.net
  * Description: SEO solution for ClassicPress (experimental).
- * Version:     0.3.1
+ * Version:     0.4.0
  * Author:      ClassicPress Community
  * Author URI:  https://www.classicpress.net
  * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
@@ -37,7 +37,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '0.3.1';
+	public $version = '0.4.0';
 
 	/**
 	 * Classic SEO database version.
@@ -357,6 +357,13 @@ class Classic_SEO {
 	 */
 	public function init_wp_cli() {
 		WP_CLI::add_command( 'cpseo sitemap generate', [ '\Classic_SEO\CLI\Commands', 'sitemap_generate' ] );
+	}
+	
+	/**
+	 * Add functionality on succeessful login.
+	 */
+	public function on_login() {
+		\Classic_SEO\Search_Console\Client::get()->refresh_auth_token_on_login();
 	}
 
 
