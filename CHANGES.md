@@ -1,3 +1,6 @@
+#### v 0.3.3 / 2019-11-25
+* FIX: Fix for #20: Plugin is not automatically deactivated when using PHP < 7.0.
+
 #### v 0.3.2 / 2019-11-20
 * FIX: Fix for #17: PHP error "call_user_func_array() expects parameter 1 to be a valid callback, function on_login not found or invalid function name" 
 

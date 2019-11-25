@@ -4,11 +4,11 @@
  *
  *
  * Plugin Name: Classic SEO
- * Plugin URI:  https://www.classicpress.net
+ * Plugin URI:  https://github.com/ClassicPress-research/classicpress-seo
  * Description: SEO solution for ClassicPress (experimental).
- * Version:     0.3.2
+ * Version:     0.3.3
  * Author:      ClassicPress Community
- * Author URI:  https://www.classicpress.net
+ * Author URI:  https://github.com/ClassicPress-research/classicpress-seo
  * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
  * Text Domain: cpseo
  * Domain Path: /languages/
@@ -37,7 +37,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '0.3.2';
+	public $version = '0.3.3';
 
 	/**
 	 * Classic SEO database version.
@@ -175,12 +175,12 @@ class Classic_SEO {
 	 * Instantiate
 	 */
 	private function setup() {
+		// Define plugin constants.
+		$this->define_constants();
+		
 		if ( ! $this->requirements() ) {
 			return;
 		}
-
-		// Define plugin constants.
-		$this->define_constants();
 
 		// Include required files.
 		$this->includes();
@@ -193,6 +193,20 @@ class Classic_SEO {
 
 		// Loaded action.
 		do_action( 'cpseo/loaded' );
+	}
+	
+
+	/**
+	 * Define the plugin constants.
+	 */
+	private function define_constants() {
+		define( 'CPSEO_VERSION', $this->version );
+		define( 'CPSEO_DB_VERSION', $this->db_version );
+		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
+		define( 'CPSEO_FILE', __FILE__ );
+		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );
+		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
+		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	}
 	
 	/**
@@ -242,19 +256,6 @@ class Classic_SEO {
 			<p><?php echo join( '<br>', $this->messages ); ?></p>
 		</div>
 		<?php
-	}
-
-	/**
-	 * Define the plugin constants.
-	 */
-	private function define_constants() {
-		define( 'CPSEO_VERSION', $this->version );
-		define( 'CPSEO_DB_VERSION', $this->db_version );
-		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
-		define( 'CPSEO_FILE', __FILE__ );
-		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );
-		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
-		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	}
 
 	/**
