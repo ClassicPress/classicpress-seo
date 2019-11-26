@@ -3,3 +3,4 @@
 *.bak
 assets/admin/js/src/*
 sitemap-cache/*
+composer.*

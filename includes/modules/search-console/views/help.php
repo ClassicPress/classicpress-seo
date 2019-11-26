@@ -5,7 +5,6 @@
  * @package    Classic_SEO
  */
 
-use Classic_SEO\KB;
 ?>
 <h3><?php esc_html_e( 'Search Console', 'cpseo' ); ?></h3>
 
@@ -13,4 +12,4 @@ use Classic_SEO\KB;
 
 <p><?php esc_html_e( 'Once you setup Classic SEO to work with Google Search Console, then Classic SEO can fetch important information like keyword ranking, craw errors etc from Search Console and display it right inside your WordPress admin. This saves you a lot of time and gives you actionable information to work with when creating new content.', 'cpseo' ); ?></p>
 
-<p><a href="<?php KB::the( 'search-console-kb' ); ?>" target="_blank"><?php esc_html_e( 'Click here to read full Search Console tutorial', 'cpseo' ); ?></a></p>
+

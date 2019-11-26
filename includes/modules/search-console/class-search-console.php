@@ -148,7 +148,7 @@ class Search_Console extends Base {
 		$plugin_uri = untrailingslashit( plugin_dir_url( __FILE__ ) );
 		$this->page = new Page(
 			'cpseo-search-console',
-			esc_html__( 'Search Console', 'cpseo' ),
+			esc_html__( 'Search Console (Experimental)', 'cpseo' ),
 			[
 				'position'   => 12,
 				'parent'     => 'cpseo',
@@ -219,7 +219,6 @@ class Search_Console extends Base {
 			'overview'  => esc_html__( 'Overview', 'cpseo' ),
 			'analytics' => esc_html__( 'Search Analytics', 'cpseo' ),
 			'sitemaps'  => esc_html__( 'Sitemaps', 'cpseo' ),
-			'tracker'   => esc_html__( 'Keyword Tracker', 'cpseo' ),
 		];
 
 		$this->is_sitemap_available( $tabs );
