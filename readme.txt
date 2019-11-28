@@ -56,7 +56,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 
 * **Rank Math and Yoast Settings Importer**
 
-* **Google Search Console Integration (Coming soon)**
+* **Google Search Console Integration (experimental)**
 
 * **Support for Classic Commerce (Coming soon)**
 
