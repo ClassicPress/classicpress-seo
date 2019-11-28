@@ -3,21 +3,29 @@
  * Classic SEO Plugin.
  *
  *
- * Plugin Name: Classic SEO
- * Plugin URI:  https://github.com/ClassicPress-research/classicpress-seo
- * Description: SEO solution for ClassicPress (experimental).
- * Version:     0.3.3
- * Author:      ClassicPress Community
- * Author URI:  https://github.com/ClassicPress-research/classicpress-seo
+ * Plugin Name:       Classic SEO
+ * Plugin URI:        https://github.com/ClassicPress-research/classicpress-seo
+ * Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
+ * Version:           0.4.0
+ * Author:            ClassicPress Community
+ * Author URI:        https://github.com/ClassicPress-research/classicpress-seo
+ * License:           GNU General Public License (GPL) v2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+ * Domain Path:       /languages/
+ * Text Domain:       cpseo
  * GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
- * Text Domain: cpseo
- * Domain Path: /languages/
- * License:     GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
+ * Requires at least: 1.1.1
+ * Requires PHP:      7.0
+ *
+ * CC requires at least: 0.1
+ * CC tested up to:   0.1.0
+ *
+ * WC requires at least: 3.7
+ * WC tested up to: 3.7.1
+ *
+ * @package Classic_SEO
  *
  * Fork of Rank Math v1.0.33
- *
- * @package   Classic_SEO
  */
  
 
@@ -37,7 +45,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '0.3.3';
+	public $version = '0.4.0';
 
 	/**
 	 * Classic SEO database version.
@@ -210,6 +218,19 @@ class Classic_SEO {
 	}
 	
 	/**
+	 * Define the plugin constants.
+	 */
+	private function define_constants() {
+		define( 'CPSEO_VERSION', $this->version );
+		define( 'CPSEO_DB_VERSION', $this->db_version );
+		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
+		define( 'CPSEO_FILE', __FILE__ );
+		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );
+		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
+		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+	}
+	
+	/**
 	 * Check that the ClassicPress and PHP setup meets the plugin requirements.
 	 *
 	 * @return bool
@@ -236,7 +257,7 @@ class Classic_SEO {
 
 		return false;
 	}
-	
+
 	/**
 	 * Auto-deactivate plugin if requirements are not met, and display a notice.
 	 */
@@ -357,6 +378,13 @@ class Classic_SEO {
 	 */
 	public function init_wp_cli() {
 		WP_CLI::add_command( 'cpseo sitemap generate', [ '\Classic_SEO\CLI\Commands', 'sitemap_generate' ] );
+	}
+	
+	/**
+	 * Add functionality on succeessful login.
+	 */
+	public function on_login() {
+		\Classic_SEO\Search_Console\Client::get()->refresh_auth_token_on_login();
 	}
 
 

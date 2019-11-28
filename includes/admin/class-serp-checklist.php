@@ -402,21 +402,15 @@ class Serp_Checklist {
 			'keywordNotUsed',
 			'titleStartWithKeyword',
 		];
-//print_r($list);
+
 		foreach ( $list as $id => $item ) :
 			if ( $this->is_invalid( $id ) ) {
 				continue;
 			}
 
 			$this->add_locale( $id, $item );
-			
-			if ($id == 'calculateFleschReading') {
-//echo "ZIBADA = ".$item['fail'];
-				$fr = str_replace( array('{0}', '{1}'), '_', $item['fail'] );
-				//echo $fr;
-			}
-
 			?>
+
 			<li class="seo-check-<?php echo $id; ?> test-fail<?php echo in_array( $id, $primary, true ) ? ' is-primary' : ''; ?>">
 				<span class="seo-check-text"><?php echo str_replace( [ '{0}', '{1}' ], '_', $item['fail'] ); ?></span>
 				<?php echo isset( $item['tooltip'] ) ? Admin_Helper::get_tooltip( $item['tooltip'] ) : ''; ?>

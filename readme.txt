@@ -1,13 +1,13 @@
 # Classic SEO Plugin (Experimental)
 Plugin Name: Classic SEO
-Description: SEO solution for ClassicPress (experimental).
+Description: Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
 Contributors: ClassicPress Community
 Author: ClassicPress Community
 GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
 Plugin link:  https://github.com/ClassicPress-research/classicpress-seo
 Plugin URI:  https://github.com/ClassicPress-research/classicpress-seo
 Tags: seo, classicpress, sitemap, google search console, schema, redirection
-Version: 0.3.3
+Version: 0.4.0
 Tested up to: 1.1.1
 Requires at least: 1.0.2
 Requires PHP: 7.0
@@ -56,7 +56,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 
 * **Rank Math and Yoast Settings Importer**
 
-* **Google Search Console Integration (Coming soon)**
+* **Google Search Console Integration (experimental)**
 
 * **Support for Classic Commerce (Coming soon)**
 

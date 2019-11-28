@@ -18,7 +18,7 @@ This plugin was created largely as a result of the following ClassicPress petiti
 ## Credits
 This is a fork of Rank Math.
 
-## Key functional differences between Classic SEO (v0.3.x) and Rank Math
+## Key functional differences between Classic SEO (v0.4.x) and Rank Math
 
 **Included** | **Not included**
 -------------|-----------------
@@ -26,21 +26,23 @@ This is a fork of Rank Math.
 Support for ACF|Support for AMP
 Link Counter|Support for bbPress
 Local SEO / Knowledge Graph|Support for BuddyPress
-Redirections|Search Console
-Rich Snippets|Webmaster tools
-XML Sitemap|SEO Analysis
-WooCommerce|Ability to edit .htaccess
-Role Manager|Ability to edit robots.txt
+Redirections|Webmaster tools
+Rich Snippets|SEO Analysis
+XML Sitemap|Ability to edit .htaccess
+WooCommerce|Ability to edit robots.txt
 Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Removed support for Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
+Role Manager|
+Search Console|
 Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
 
 ## Support
-If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/) in the ClassicPress forums.
+If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
+
+## Reporting Security Issues
+To disclose a security issue to our team. (security@classicpress.net)
 
 ## Changelog
-
 [Change log for this project](CHANGES.md)
 
 ## License
-
 This project is licensed under the GNU General Public License (GPL) v2 or later - see the [LICENSE](LICENSE) file for details.

@@ -1,3 +1,6 @@
+#### v 0.4.0 / 2019-11-28
+* NEW: Added support for Google Search Console (experimental)
+
 #### v 0.3.3 / 2019-11-25
 * FIX: Fix for #20: Plugin is not automatically deactivated when using PHP < 7.0.
 

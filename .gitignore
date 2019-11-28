@@ -2,4 +2,6 @@
 *.sh
 *.bak
 assets/admin/js/src/*
+assets/admin/js/orig/*
 sitemap-cache/*
+composer.*

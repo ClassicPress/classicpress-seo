@@ -27,19 +27,25 @@
 	printf(
 		/* translators:  */
 		__('If you do find what looks like a bug, please either report it on the <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">ClassicPress forums</a> or <a rel="nofollow noopener noreferrer" href="%2$s" target="_blank">open an issue on GitHub</a>.', 'cpseo' ),
-		'https://forums.classicpress.net/', 'https://github.com/ClassicPress-research/classicpress-seo/issues'); ?>
+		'https://forums.classicpress.net/tags/classic-seo', 'https://github.com/ClassicPress-research/classicpress-seo/issues'); ?>
 </p>
 <h3><?php esc_html_e( 'Plans for future releases', 'cpseo' ); ?></h3>
 <p>
-	<?php esc_html_e( 'In the next release of Classic SEO, it is planned to add the Google Search Console feature where data such as average ranking position, click through rate, and keywords will be available from within Classic SEO.', 'cpseo' ); ?>
+	<?php 
+	printf(
+		/* translators:  */
+		__('A key future addition to Classic SEO will be support for <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">Classic Commerce</a>.', 'cpseo' ),
+		'https://github.com/ClassicPress-research/classic-commerce'); ?>
 </p>
 <p>
 	<?php 
 	printf(
 		/* translators:  */
-		__('Classic SEO will also provide support for <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">Classic Commerce</a>.', 'cpseo' ),
-		'https://github.com/ClassicPress-research/classic-commerce'); ?>
+		__('If there is any feature you\'d like to see added to Classic SEO, post a message on the <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">ClassicPress forums</a>.', 'cpseo' ),
+		'https://forums.classicpress.net/tags/classic-seo'); ?>
 </p>
-
+<p>
+	<?php esc_html_e( 'But remember, no one around here likes bloat or resource-hungry features. We aim to keep Classic SEO as lightweight as possible.', 'cpseo' ); ?>
+</p>
 
 
