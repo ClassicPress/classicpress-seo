@@ -203,6 +203,20 @@ class Classic_SEO {
 		do_action( 'cpseo/loaded' );
 	}
 	
+
+	/**
+	 * Define the plugin constants.
+	 */
+	private function define_constants() {
+		define( 'CPSEO_VERSION', $this->version );
+		define( 'CPSEO_DB_VERSION', $this->db_version );
+		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
+		define( 'CPSEO_FILE', __FILE__ );
+		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );
+		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
+		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+	}
+	
 	/**
 	 * Define the plugin constants.
 	 */
@@ -310,7 +324,6 @@ class Classic_SEO {
 		// Booting.
 		add_action( 'plugins_loaded', [ $this, 'init' ], 14 );
 		add_action( 'rest_api_init', [ $this, 'init_rest_api' ] );
-		add_action( 'wp_login', [ $this, 'on_login' ] );
 
 		// Load admin-related functionality.
 		if ( is_admin() ) {
