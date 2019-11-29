@@ -1,3 +1,7 @@
+#### v 0.4.2 / 2019-11-29
+* NEW: Added charts on Search Console overview page
+* FIX: minor bug fixes
+
 #### v 0.4.1 / 2019-11-28
 * FIX: Fix for PHP error: "Fatal error : Cannot redeclare Classic_SEO::define_constants() in /home/xxx/public_html/xxx/xxx/wp-content/plugins/classicpress-seo/classicpress-seo.php on line 223"
 

@@ -177,7 +177,7 @@ class Search_Console extends Base {
 					],
 					'scripts' => [
 						'cpseo-common' => '',
-						'moment'           => '',
+						'moment'           => cpseo()->plugin_url() . 'assets/vendor/moment.js',
 						'date-picker'      => cpseo()->plugin_url() . 'assets/vendor/date-range-picker/jquery.daterangepicker.min.js',
 						'google-charts'    => '//www.gstatic.com/charts/loader.js',
 						'cpseo-sc'     => $plugin_uri . '/assets/search-console.js',

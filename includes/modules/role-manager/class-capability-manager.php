@@ -63,6 +63,7 @@ class Capability_Manager {
 		$this->register( 'cpseo_link_builder', esc_html__( 'Link Builder', 'cpseo' ) );
 		$this->register( 'cpseo_redirections', esc_html__( 'Redirections', 'cpseo' ) );
 		$this->register( 'cpseo_role_manager', esc_html__( 'Role Manager', 'cpseo' ) );
+		$this->register( 'cpseo_search_console', esc_html__( 'Search Console', 'cpseo' ) );
 		$this->register( 'cpseo_site_analysis', esc_html__( 'Site-Wide Analysis', 'cpseo' ) );
 		$this->register( 'cpseo_onpage_analysis', esc_html__( 'On-Page Analysis', 'cpseo' ) );
 		$this->register( 'cpseo_onpage_general', esc_html__( 'On-Page General Settings', 'cpseo' ) );

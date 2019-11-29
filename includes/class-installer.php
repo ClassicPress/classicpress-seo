@@ -268,12 +268,17 @@ class Installer {
 	 * Create misc options.
 	 */
 	private function create_misc_options() {
+		add_option( 'cpseo_search_console_data', [
+			'authorized' => false,
+			'profiles'   => [],
+		]);
 
 		// Update "known CPTs" list, so we can send notice about new ones later.
 		add_option( 'cpseo_known_post_types', Helper::get_accessible_post_types() );
 
 		$modules = [
 			'link-counter',
+			'search-console',
 			'seo-analysis',
 			'sitemap',
 			'rich-snippet',
