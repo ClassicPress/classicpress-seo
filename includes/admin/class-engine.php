@@ -15,7 +15,7 @@ use Classic_SEO\Updates;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Admin\Param;
 use Classic_SEO\Helpers\Conditional;
-//use Classic_SEO\Search_Console\Search_Console;
+use Classic_SEO\Search_Console\Search_Console;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -36,7 +36,7 @@ class Engine {
 		cpseo()->admin        = new Admin;
 		cpseo()->admin_assets = new Assets;
 
-		//$this->search_console_ajax();
+		$this->search_console_ajax();
 
 		$runners = [
 			cpseo()->admin,
