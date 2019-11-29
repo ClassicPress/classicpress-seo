@@ -216,20 +216,7 @@ class Classic_SEO {
 		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
 		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	}
-	
-	/**
-	 * Define the plugin constants.
-	 */
-	private function define_constants() {
-		define( 'CPSEO_VERSION', $this->version );
-		define( 'CPSEO_DB_VERSION', $this->db_version );
-		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
-		define( 'CPSEO_FILE', __FILE__ );
-		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );
-		define( 'CPSEO_BASENAME', plugin_basename( CPSEO_FILE ) );
-		define( 'CPSEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-	}
-	
+
 	/**
 	 * Check that the ClassicPress and PHP setup meets the plugin requirements.
 	 *
