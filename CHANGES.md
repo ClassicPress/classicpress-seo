@@ -1,5 +1,5 @@
-#### v 0.4.3 / tbc
-
+#### v 0.4.3 / 2019-12-05
+* FIX: fix for issue #24 - import from Rank Math not working as expected
 
 #### v 0.4.2 / 2019-11-29
 * NEW: Added charts on Search Console overview page
