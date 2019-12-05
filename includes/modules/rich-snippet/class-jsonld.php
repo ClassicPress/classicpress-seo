@@ -273,8 +273,8 @@ class JsonLD {
 			'name'             => $title,
 			'url'              => $url,
 			'mainEntityOfPage' => $url,
-			'dateModified'     => get_post_modified_time( 'Y-m-d\TH:i:sP', true ),
-			'datePublished'    => get_post_time( 'Y-m-d\TH:i:sP', true ),
+			'dateModified'     => get_post_modified_time( 'Y-m-d\TH:i:sP', false ),
+			'datePublished'    => get_post_time( 'Y-m-d\TH:i:sP', false ),
 			'author'           => $this->get_author(),
 			'publisher'        => $this->get_publisher( $data ),
 			'image'            => $this->get_post_thumbnail( $post_id ),
@@ -502,8 +502,8 @@ class JsonLD {
 			'title'     => $this->get_post_title(),
 			'url'       => $this->get_post_url(),
 			'canonical' => Paper::get()->get_canonical(),
-			'modified'  => get_post_modified_time( 'Y-m-d\TH:i:sP', true ),
-			'published' => get_post_time( 'Y-m-d\TH:i:sP', true ),
+			'modified'  => mysql2date( DATE_W3C, $this->post->post_modified, false ),
+			'published' => mysql2date( DATE_W3C, $this->post->post_date, false ),
 			'excerpt'   => Helper::replace_vars( '%excerpt%', $this->post ),
 		];
 

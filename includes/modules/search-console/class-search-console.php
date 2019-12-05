@@ -120,6 +120,10 @@ class Search_Console extends Base {
 	 * Render dashboard widget.
 	 */
 	public function dashboard_widget() {
+		if ( ! Client::get()->is_authenticated() ) {
+			return;
+		}
+
 		$today     = Helper::get_midnight( time() );
 		$week      = $today - ( DAY_IN_SECONDS * 7 );
 		$data_info = DB::data_info(

@@ -213,7 +213,6 @@ class Paper {
 		}
 		$this->validate_robots();
 		$this->respect_settings_for_robots();
-		$this->advanced_robots();
 
 		/**
 		 * Allows filtering of the meta robots.
@@ -221,6 +220,7 @@ class Paper {
 		 * @param array $robots The meta robots directives to be echoed.
 		 */
 		$this->robots = $this->do_filter( 'frontend/robots', array_unique( $this->robots ) );
+		$this->advanced_robots();
 
 		return $this->robots;
 	}
@@ -268,6 +268,13 @@ class Paper {
 
 			$advanced_robots = self::advanced_robots_combine( $advanced_robots );
 		}
+
+		/**
+		 * Allows filtering of the advanced meta robots.
+		 *
+		 * @param array $robots The meta robots directives to be echoed.
+		 */
+		$advanced_robots = $this->do_filter( 'frontend/advanced_robots', array_unique( $advanced_robots ) );
 
 		$this->robots = ! empty( $advanced_robots ) ? $this->robots + $advanced_robots : $this->robots;
 	}

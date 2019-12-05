@@ -7,6 +7,7 @@
  * @subpackage Classic_SEO\Core
  */
 
+
 namespace Classic_SEO;
 
 use WP_Post;
@@ -38,7 +39,7 @@ class Post extends Metadata {
 			return null;
 		}
 
-		if ( isset( self::$objects[ $post ] ) ) {
+		if ( isset( self::$objects[ $post ] ) && 'post' === self::$objects[ $post ]->meta_type ) {
 			return self::$objects[ $post ];
 		}
 

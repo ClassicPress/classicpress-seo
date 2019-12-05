@@ -312,8 +312,8 @@ class Facebook extends OpenGraph {
 	 */
 	public function publish_date() {
 		$post = get_post();
-		$pub  = mysql2date( DATE_W3C, $post->post_date_gmt, false );
-		$mod  = mysql2date( DATE_W3C, $post->post_modified_gmt, false );
+		$pub  = mysql2date( DATE_W3C, $post->post_date, false );
+		$mod  = mysql2date( DATE_W3C, $post->post_modified, false );
 
 		if ( 'article' === $this->schema ) {
 			$this->tag( 'article:published_time', $pub );

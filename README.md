@@ -7,13 +7,14 @@ This plugin was created largely as a result of the following ClassicPress petiti
 - https://petitions.classicpress.net/posts/175/allow-editing-of-page-title-and-meta-description-seo
 - https://petitions.classicpress.net/posts/176/auto-xml-sitemap-generation-seo
 
+Latest release:  v0.4.2 (November 28, 2019)
 
-**Minimum Requirements:**
+* * *
+
+## Minimum Requirements
 
 - ClassicPress 1.0.2
 - PHP 7.0
-
-**As this plugin is still in the development & testing stage, please do not use it on a production site.**
 
 ## Credits
 This is a fork of Rank Math.
@@ -30,16 +31,20 @@ Redirections|Webmaster tools
 Rich Snippets|SEO Analysis
 XML Sitemap|Ability to edit .htaccess
 WooCommerce|Ability to edit robots.txt
-Social meta: Support for Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Removed support for Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
+Social meta: Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
+Imports for Rank Math and Yoast| Imports for AIl ln One SEO, AIO Rich Snippets, SEOPress, WP Schema Pro, Redirection
 Role Manager|
 Search Console|
 Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
+
+## Important note
+**As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
 
 ## Support
 If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
 
 ## Reporting Security Issues
-To disclose a security issue to our team. (security@classicpress.net)
+To disclose a security issue to our team (security@classicpress.net)
 
 ## Changelog
 [Change log for this project](CHANGES.md)

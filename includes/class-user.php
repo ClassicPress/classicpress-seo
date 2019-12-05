@@ -7,6 +7,7 @@
  * @subpackage Classic_SEO\Core
  */
 
+
 namespace Classic_SEO;
 
 use WP_User;
@@ -42,7 +43,7 @@ class User extends Metadata {
 			return null;
 		}
 
-		if ( isset( self::$objects[ $user ] ) ) {
+		if ( isset( self::$objects[ $user ] ) && 'user' === self::$objects[ $user ]->meta_type ) {
 			return self::$objects[ $user ];
 		}
 

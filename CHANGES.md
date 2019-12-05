@@ -1,3 +1,6 @@
+#### v 0.4.3 / tbc
+
+
 #### v 0.4.2 / 2019-11-29
 * NEW: Added charts on Search Console overview page
 * FIX: minor bug fixes

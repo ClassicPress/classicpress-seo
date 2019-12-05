@@ -118,7 +118,7 @@ class Snippet_Shortcode {
 				<?php } ?>
 
 				<div class="cpseo-review-data">
-					<p><?php echo $desc; ?></p>
+					<p><?php echo do_shortcode( $desc ); ?></p>
 					<?php
 					foreach ( $this->get_fields( $schema ) as $id => $field ) {
 						$this->get_field_content( $id, $field, $post );
@@ -145,8 +145,7 @@ class Snippet_Shortcode {
 			return;
 		}
 
-		$id = 'event_startdate_date' === $id ? 'event_startdate' : $id;
-		$id = 'event__enddate' === $id ? 'event_enddate' : $id;
+		$id = 'event_startdate_date' === $id ? 'event_startdate' : ( 'event__enddate' === $id ? 'event_enddate' : $id );
 		if ( ! $value = Helper::get_post_meta( "snippet_{$id}", $post->ID ) ) { // phpcs:ignore
 			return;
 		}
@@ -160,10 +159,13 @@ class Snippet_Shortcode {
 				return;
 			}
 
-			if ( in_array( $id, [ 'jobposting_startdate', 'jobposting_expirydate', 'event_startdate', 'event_enddate' ], true ) ) {
-				echo date_i18n( 'Y-m-d H:i', $value );
+			if ( 'jobposting_logo' === $id ) {
+				echo '<img src="' . esc_url( $value ) . '" />';
 				return;
 			}
+
+			$value = in_array( $id, [ 'jobposting_startdate', 'jobposting_expirydate', 'event_startdate', 'event_enddate' ], true ) ? date_i18n( 'Y-m-d H:i', $value ) : $value;
+
 			echo is_array( $value ) ? implode( ', ', $value ) : esc_html( $value );
 			?>
 		</p>
@@ -301,7 +303,6 @@ class Snippet_Shortcode {
 				'jobposting_payroll'         => esc_html__( 'Payroll', 'cpseo' ),
 				'jobposting_startdate'       => esc_html__( 'Date Posted', 'cpseo' ),
 				'jobposting_expirydate'      => esc_html__( 'Expiry Posted', 'cpseo' ),
-				'jobposting_unpublish'       => esc_html__( 'Unpublish when expired', 'cpseo' ),
 				'jobposting_employment_type' => esc_html__( 'Employment Type ', 'cpseo' ),
 				'jobposting_organization'    => esc_html__( 'Hiring Organization ', 'cpseo' ),
 				'jobposting_id'              => esc_html__( 'Posting ID', 'cpseo' ),

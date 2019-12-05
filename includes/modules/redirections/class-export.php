@@ -95,7 +95,7 @@ class Export {
 	 * @param array $output Output array.
 	 */
 	private function apache_item( $item, &$output ) {
-		$target  = sprintf( '%s [R=%d,L]', $this->encode2nd( $item['url_to'] ), $item['header_code'] );
+		$target = '410' === $item['header_code'] ? '- [G]' : sprintf( '%s [R=%d,L]', $this->encode2nd( $item['url_to'] ), $item['header_code'] );
 		$sources = maybe_unserialize( $item['sources'] );
 
 		foreach ( $sources as $from ) {
@@ -200,10 +200,10 @@ class Export {
 		}
 
 		$hash = [
-			'exact'    => '^{url}$',
+			'exact'    => '^{url}/?$',
 			'contains' => '^(.*){url}(.*)$',
 			'start'    => '^{url}',
-			'end'      => '{url}$',
+			'end'      => '{url}/?$',
 		];
 
 		$url = preg_quote( $url );

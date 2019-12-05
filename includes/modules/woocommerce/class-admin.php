@@ -11,7 +11,9 @@
 namespace Classic_SEO\WooCommerce;
 
 use Classic_SEO\Helper;
+use Classic_SEO\Admin\Admin_Helper;
 use Classic_SEO\Module\Base;
+use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Helpers\Arr;
 
 defined( 'ABSPATH' ) || exit;
@@ -20,6 +22,8 @@ defined( 'ABSPATH' ) || exit;
  * Admin class.
  */
 class Admin extends Base {
+	
+	use Hooker;
 
 	/**
 	 * The Constructor.
@@ -42,6 +46,20 @@ class Admin extends Base {
 		// Permalink Manager.
 		$this->filter( 'cpseo/settings/general', 'add_general_settings' );
 		$this->filter( 'cpseo/flush_fields', 'flush_fields' );
+		
+		$this->action( 'cpseo/admin/enqueue_scripts', 'enqueue' );
+	}
+	
+	/**
+	 * Enqueue script to analyze product's short description.
+	 */
+	public function enqueue() {
+		$screen = get_current_screen();
+		if ( ! Admin_Helper::is_post_edit() || 'product' !== $screen->post_type || ! $this->do_filter( 'woocommerce/analyze_short_description', true ) ) {
+			return;
+		}
+
+		wp_enqueue_script( 'cpseo-description-analysis', cpseo()->plugin_url() . 'assets/admin/js/product-description.js', [ 'cpseo-post-metabox' ], cpseo()->version, true );
 	}
 
 	/**

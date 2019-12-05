@@ -60,7 +60,6 @@ class Product implements Snippet {
 
 		$brand = Helper::get_post_meta( 'snippet_product_brand' );
 		if ( $brand ) {
-			$entity['mpn']   = $brand;
 			$entity['brand'] = [
 				'@type' => 'Thing',
 				'name'  => $brand,

@@ -7,9 +7,7 @@ class App {
 	analysisTimeout = 0
 
 	constructor() {
-		classicSEOApp.registerPlugin( classicSEO.acf.pluginName )
-		addFilter( 'cpseo_content', classicSEO.acf.pluginName, collect.append.bind( collect ) )
-
+		addFilter( 'cpseo_content', 'cpseo', collect.append.bind( collect ) )
 		if ( classicSEO.acf.enableReload ) {
 			this.events()
 		}
@@ -25,9 +23,9 @@ class App {
 		if ( this.analysisTimeout ) {
 			clearTimeout( this.analysisTimeout )
 		}
-
+		
 		this.analysisTimeout = setTimeout( function() {
-			classicSEOApp.reloadPlugin( classicSEO.acf.pluginName )
+			classicSEOApp.refresh( 'content' )
 		}, classicSEO.acf.refreshRate )
 	}
 }

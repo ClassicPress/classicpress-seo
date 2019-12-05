@@ -167,7 +167,7 @@ class Admin_Bar_Menu {
 			'add_home_menu'      => is_home(),
 			'add_post_type_menu' => is_singular( Helper::get_accessible_post_types() ),
 			'add_date_menu'      => is_date(),
-			'add_taxonomy_menu'  => is_archive() && ! is_post_type_archive(),
+			'add_taxonomy_menu'  => is_archive() && ! is_post_type_archive() && ! is_author(),
 			'add_search_menu'    => is_search(),
 		];
 

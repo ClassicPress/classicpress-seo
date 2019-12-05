@@ -42,7 +42,6 @@ class Product_WooCommerce {
 			// Brand.
 			if ( ! empty( $brands ) ) {
 				$brands          = $brands[0]->name;
-				$entity['mpn']   = $brands;
 				$entity['brand'] = [
 					'@type' => 'Thing',
 					'name'  => $brands,

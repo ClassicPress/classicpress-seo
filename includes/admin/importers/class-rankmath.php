@@ -66,26 +66,39 @@ class RankMath extends Plugin_Importer {
 	 * @return bool
 	 */
 	protected function settings() {
+		global $wpdb;
+
 		$cpseo_backup = new Import_Export();
 		$cpseo_backup->run_backup('add');
 		
-		$rank_math_general       = get_option( 'rank-math-options-general' );
-		$rank_math_titles        = get_option( 'rank-math-options-titles' );
-		$rank_math_sitemap       = get_option( 'rank-math-options-sitemap' );
+		// Delete any existing Classic SEO settings in the options table
+		$where = $wpdb->prepare( 'WHERE (option_name LIKE %s OR option_name LIKE %s) AND option_name <> %s', '%' . 'cpseo' . '%', '%' . 'cpseo' . '%', 'cpseo_backups' );
+		$wpdb->query( "DELETE FROM {$wpdb->prefix}options {$where}" ); // phpcs:ignore
 
-		$this->cpseo_update_options( $rank_math_general, 'rank-math-options-general', 'cpseo_' );
-		$this->cpseo_update_options( $rank_math_titles, 'rank-math-options-titles', 'cpseo_' );
-		$this->cpseo_update_options( $rank_math_sitemap, 'rank-math-options-sitemap', '' );
 		
-		if ( $this->cpseo_copy_tables() ) {
+		$options_general	= $this->fetch_serialized_options_value( 'rank-math-options-general' );
+		$options_titles		= $this->fetch_serialized_options_value( 'rank-math-options-titles' );
+		$options_sitemap	= $this->fetch_serialized_options_value( 'rank-math-options-sitemap' );
+
+		$this->cpseo_update_options( $options_general, 'cpseo-options-general', 'cpseo_' );
+		$this->cpseo_update_options( $options_titles,  'cpseo-options-titles',  'cpseo_' );
+		$this->cpseo_update_options( $options_sitemap, 'cpseo-options-sitemap', 'cpseo_' );
+		
+		if ( $this->cpseo_copy_rank_math_tables() ) {
 			return true;
 		}
-		
+
 		return false;
+	}
+	
+	
+	private function fetch_serialized_options_value( $option_name ) {
+		global $wpdb;
+		return $wpdb->get_row( "SELECT option_value FROM {$wpdb->prefix}options WHERE option_name = '{$option_name}' LIMIT 1" );
 	}
 
 	
-	private function cpseo_update_options($options, $option_name, $prefix) { 
+	private function cpseo_update_options($options, $option_name, $prefix) {	
 		$exclude_options = [
 			'alexa_verify',
 			'baidu_verify',
@@ -94,9 +107,6 @@ class RankMath extends Plugin_Importer {
 			'yandex_verify',
 			'norton_verify',
 			'pinterest_verify',
-			'console_authorization_code',
-			'console_caching_control',
-			'console_profile',
 			'frontend_seo_score',
 			'frontend_seo_score_position',
 			'frontend_seo_score_post_types',
@@ -109,22 +119,22 @@ class RankMath extends Plugin_Importer {
 			'social_url_flickr',
 			'social_url_foursquare',
 			'social_url_myspace',
-			'social_url_pinterest',
 			'social_url_reddit',
 			'social_url_soundcloud',
 			'social_url_tumblr',
 			'social_url_yelp',
-			'tax_post_format_robots',
 			'tax_post_tag_robots',
 		];
 		
-		foreach( $options as $key => $item) {
-			if ( ! in_array($key, $exclude_options ) ) {
-				$cpseo_opts[$prefix.$key] = $item;
+		if ( $options ) {	
+			foreach( $options as $key => $item) {
+				if ( ! in_array($key, $exclude_options ) ) {
+					$cpseo_opts[$prefix.$key] = $item;
+				}
 			}
 		}
-		
-		if ( $cpseo_opts ) {
+
+		if ( ! empty($cpseo_opts) ) {
 			return update_option($option_name, $cpseo_opts);
 		}
 		return false;
@@ -148,9 +158,8 @@ class RankMath extends Plugin_Importer {
 			$hash[$rm->meta_key] = str_replace('rank_math', 'cpseo', $rm->meta_key);
 			$post_ids[] = $rm->post_id;
 		}
-	
-		foreach ( $post_ids as $post ) {
-			$post_id = $post;
+
+		foreach ( $post_ids as $post_id ) {
 			$this->replace_meta( $hash, null, $post_id, 'post', false );
 
 			// Cornerstone Content.
@@ -209,15 +218,18 @@ class RankMath extends Plugin_Importer {
 		global $wpdb;
 		$ins = 0;
 		
-		$rm_redirections = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}rank_math_redirections" );
-		$this->table = "{$wpdb->prefix}cpseo_redirections";
-		$drop_cpseo = $wpdb->get_results( "TRUNCATE {$wpdb->prefix}cpseo_redirections" );
-	
-		if ($drop_cpseo) {
-			$ins = $this->insert($rm_redirections);
+		$rm_redirections	= $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}rank_math_redirections" );
+
+		// Early bail
+		if ( empty($rm_redirections) ) {
+			return true;	// We can return true if there's no data
 		}
 
-		return $ins;
+		$this->table = $wpdb->prefix . 'cpseo_redirections';
+		$wpdb->query( "TRUNCATE {$wpdb->prefix}cpseo_redirections" );
+
+		$wpdb->insert( $this->table, $rm_redirections );
+		return $wpdb->insert_id;
 	}
 	
 	/**
@@ -225,19 +237,24 @@ class RankMath extends Plugin_Importer {
 	 *
 	 * @return array
 	 */
-	protected function cpseo_copy_tables() {
+	protected function cpseo_copy_rank_math_tables() {
 		global $wpdb;
 		$ins = 0;
 		
 		foreach( $this->table_names as $rmtable) {
-			if ( $rmtable != 'rank_math_redirections_cache' ) {
-				$rmdata  = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}{$rmtable}" );
+			$rmdata = [];
+
+			if ( $rmtable != 'rank_math_redirections_cache' ) {		// Skip this table
+				$rmdata = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}{$rmtable}", ARRAY_A );
 				$cptable = str_replace('rank_math', 'cpseo', $rmtable);
-				$this->table = "{$wpdb->prefix}{$cptable}";
-				$drop_cpseo = $wpdb->get_results( "TRUNCATE {$wpdb->prefix}{$cptable}" );
-				
-				if ($drop_cpseo) {
-					$ins = $this->insert($rmdata);
+				$this->table = $wpdb->prefix . $cptable;
+				$wpdb->query( "TRUNCATE {$wpdb->prefix}{$cptable}" );
+
+				if ( ! empty($rmdata) ) {
+					foreach ($rmdata as $col) {
+						$wpdb->insert( $this->table, $col );
+						$ins = $ins == 0 ? $wpdb->insert_id : $ins;
+					}
 				}
 			}
 		}

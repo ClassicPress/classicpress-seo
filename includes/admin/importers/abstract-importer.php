@@ -127,7 +127,7 @@ abstract class Plugin_Importer {
 				'settings'     => esc_html__( 'Import Settings', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import plugin settings, global meta, sitemap settings, etc.', 'cpseo' ) ),
 				'postmeta'     => esc_html__( 'Import Post Meta', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import meta information of your posts/pages like the focus keyword, titles, descriptions, robots meta, OpenGraph info, etc.', 'cpseo' ) ),
 				'termmeta'     => esc_html__( 'Import Term Meta', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import data like category, tag, and CPT meta data from SEO.', 'cpseo' ) ),
-				'usermeta'     => esc_html__( 'Import Author Meta', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import meta information like titles, descriptions, focus keyword, robots meta, etc., of your author archive pages.', 'cpseo' ) ),
+				'usermeta'     => esc_html__( 'Import User Meta', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import meta information like titles, descriptions, focus keyword, robots meta, etc., of your author archive pages.', 'cpseo' ) ),
 				'redirections' => esc_html__( 'Import Redirections', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import all the redirections you have already set up in.', 'cpseo' ) ),
 			],
 			array_combine(
