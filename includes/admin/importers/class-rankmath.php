@@ -168,8 +168,18 @@ class RankMath extends Plugin_Importer {
 				update_post_meta( $post_id, 'cpseo_cornerstone_content', 'on' );
 			}
 		}
+		
+		$this->rename_postmeta_shortcode_values();
 
 		return $this->get_pagination_arg();
+	}
+	
+	protected function rename_postmeta_shortcode_values() {
+		global $wpdb;
+		$reviewsnip	= "UPDATE {$wpdb->prefix}postmeta SET meta_value = '[cpseo_review_snippet]' WHERE meta_key = 'cpseo_snippet_review_shortcode'";
+		$richsnip	= "UPDATE {$wpdb->prefix}postmeta SET meta_value = '[cpseo_rich_snippet]' WHERE meta_key = 'cpseo_snippet_shortcode'";
+		$wpdb->query($reviewsnip);
+		$wpdb->query($richsnip);
 	}
 	
 	
