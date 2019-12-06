@@ -7,7 +7,7 @@ This plugin was created largely as a result of the following ClassicPress petiti
 - https://petitions.classicpress.net/posts/175/allow-editing-of-page-title-and-meta-description-seo
 - https://petitions.classicpress.net/posts/176/auto-xml-sitemap-generation-seo
 
-Latest release:  v0.4.3 (December 05, 2019)
+Latest release:  v0.4.4 (December 06, 2019)
 
 * * *
 

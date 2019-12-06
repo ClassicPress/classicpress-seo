@@ -1,5 +1,8 @@
+#### v 0.4.4 / 2019-12-06
+* FIX: Second fix for issue #24 - keywords from Rank Math not being imported
+
 #### v 0.4.3 / 2019-12-05
-* FIX: fix for issue #24 - import from Rank Math not working as expected
+* FIX: Fix for issue #24 - import from Rank Math not working as expected
 
 #### v 0.4.2 / 2019-11-29
 * NEW: Added charts on Search Console overview page

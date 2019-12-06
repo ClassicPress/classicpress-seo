@@ -151,7 +151,7 @@ class RankMath extends Plugin_Importer {
 		
 		$this->set_pagination( $this->get_post_ids( true ) );
 		
-		$rm_metakeys = $wpdb->get_results( "SELECT meta_key, post_id FROM {$wpdb->prefix}postmeta WHERE meta_key LIKE 'rank_math_%' GROUP BY meta_key" );
+		$rm_metakeys = $wpdb->get_results( "SELECT post_id, meta_key FROM {$wpdb->prefix}postmeta WHERE meta_key LIKE 'rank_math_%'" );
 
 		$hash = [];
 		foreach($rm_metakeys as $rm) {
