@@ -7,6 +7,9 @@ This plugin was created largely as a result of the following ClassicPress petiti
 - https://petitions.classicpress.net/posts/175/allow-editing-of-page-title-and-meta-description-seo
 - https://petitions.classicpress.net/posts/176/auto-xml-sitemap-generation-seo
 
+
+Latest release:  v0.5.0 (December 18, 2019)
+
 * * *
 
 ## Minimum Requirements
@@ -30,7 +33,7 @@ Rich Snippets|SEO Analysis
 XML Sitemap|Ability to edit .htaccess
 WooCommerce|Ability to edit robots.txt
 Social meta: Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
-Imports for Rank Math and Yoast| Imports for AIl ln One SEO, AIO Rich Snippets, SEOPress, WP Schema Pro, Redirection
+Imports for Rank Math, Yoast and All In One SEO | Imports for AIO Rich Snippets, SEOPress, WP Schema Pro, Redirection
 Role Manager|
 Search Console|
 Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
