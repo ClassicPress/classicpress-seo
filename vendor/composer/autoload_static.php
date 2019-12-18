@@ -85,6 +85,7 @@ class ComposerStaticInitc2822413d75ee1db8fcd50de895c43fa
         'Classic_SEO\\Admin\\CMB2_Fields' => __DIR__ . '/../..' . '/includes/admin/class-cmb2-fields.php',
         'Classic_SEO\\Admin\\Engine' => __DIR__ . '/../..' . '/includes/admin/class-engine.php',
         'Classic_SEO\\Admin\\Import_Export' => __DIR__ . '/../..' . '/includes/admin/class-import-export.php',
+        'Classic_SEO\\Admin\\Importers\\AIOSEO' => __DIR__ . '/../..' . '/includes/admin/importers/class-aioseo.php',
         'Classic_SEO\\Admin\\Importers\\Detector' => __DIR__ . '/../..' . '/includes/admin/importers/class-detector.php',
         'Classic_SEO\\Admin\\Importers\\Plugin_Importer' => __DIR__ . '/../..' . '/includes/admin/importers/abstract-importer.php',
         'Classic_SEO\\Admin\\Importers\\RankMath' => __DIR__ . '/../..' . '/includes/admin/importers/class-rankmath.php',

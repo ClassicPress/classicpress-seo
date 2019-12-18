@@ -119,6 +119,10 @@ class Detector {
 				'file'    => 'wordpress-seo/wp-seo.php',
 				'premium' => 'yoast-premium',
 			],
+			'aioseo'           => [
+				'class' => '\\Classic_SEO\\Admin\\Importers\\AIOSEO',
+				'file'  => 'all-in-one-seo-pack/all_in_one_seo_pack.php',
+			],
 		]);
 	}
 

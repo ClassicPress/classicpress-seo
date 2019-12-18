@@ -140,23 +140,23 @@ class Yoast extends Plugin_Importer {
 	private function set_post_types( $yoast_titles ) {
 		$hash = [];
 		foreach ( Helper::get_accessible_post_types() as $post_type ) {
-			$this->set_robots( "pt_{$post_type}", $post_type, $yoast_titles );
+			$this->set_robots( "cpseo_pt_{$post_type}", $post_type, $yoast_titles );
 
-			$hash[ "title-{$post_type}" ]              = "pt_{$post_type}_title";
-			$hash[ "metadesc-{$post_type}" ]           = "pt_{$post_type}_description";
-			$hash[ "post_types-{$post_type}-maintax" ] = "pt_{$post_type}_primary_taxonomy";
+			$hash[ "title-{$post_type}" ]              = "cpseo_pt_{$post_type}_title";
+			$hash[ "metadesc-{$post_type}" ]           = "cpseo_pt_{$post_type}_description";
+			$hash[ "post_types-{$post_type}-maintax" ] = "cpseo_pt_{$post_type}_primary_taxonomy";
 
 			// Has Archive.
-			$hash[ "title-ptarchive-{$post_type}" ]    = "pt_{$post_type}_archive_title";
-			$hash[ "metadesc-ptarchive-{$post_type}" ] = "pt_{$post_type}_archive_description";
+			$hash[ "title-ptarchive-{$post_type}" ]    = "cpseo_pt_{$post_type}_archive_title";
+			$hash[ "metadesc-ptarchive-{$post_type}" ] = "cpseo_pt_{$post_type}_archive_description";
 
 			// NOINDEX and Sitemap.
-			$this->sitemap[ "pt_{$post_type}_sitemap" ] = isset( $yoast_titles[ "noindex-{$post_type}" ] ) && $yoast_titles[ "noindex-{$post_type}" ] ? 'off' : 'on';
+			$this->sitemap[ "cpseo_pt_{$post_type}_sitemap" ] = isset( $yoast_titles[ "noindex-{$post_type}" ] ) && $yoast_titles[ "noindex-{$post_type}" ] ? 'off' : 'on';
 
 			// Show/Hide Metabox.
 			if ( isset( $yoast_titles[ "display-metabox-pt-{$post_type}" ] ) ) {
 				$show = $yoast_titles[ "display-metabox-pt-{$post_type}" ]; // phpcs:ignore
-				$this->titles[ "pt_{$post_type}_add_meta_box" ] = ( ! $show || 'off' === $show ) ? 'off' : 'on';
+				$this->titles[ "cpseo_pt_{$post_type}_add_meta_box" ] = ( ! $show || 'off' === $show ) ? 'off' : 'on';
 			}
 		}
 
@@ -171,19 +171,19 @@ class Yoast extends Plugin_Importer {
 	private function set_taxonomies( $yoast_titles ) {
 		$hash = [];
 		foreach ( Helper::get_accessible_taxonomies() as $taxonomy => $object ) {
-			$this->set_robots( "tax_{$taxonomy}", "tax-{$taxonomy}", $yoast_titles );
+			$this->set_robots( "cpseo_tax_{$taxonomy}", "tax-{$taxonomy}", $yoast_titles );
 
-			$hash[ "title-tax-{$taxonomy}" ]    = "tax_{$taxonomy}_title";
-			$hash[ "metadesc-tax-{$taxonomy}" ] = "tax_{$taxonomy}_description";
+			$hash[ "title-tax-{$taxonomy}" ]    = "cpseo_tax_{$taxonomy}_title";
+			$hash[ "metadesc-tax-{$taxonomy}" ] = "cpseo_tax_{$taxonomy}_description";
 
 			// Show/Hide Metabox.
-			$this->titles[ "tax_{$taxonomy}_add_meta_box" ] = isset( $yoast_titles[ "display-metabox-tax-{$taxonomy}" ] ) && $yoast_titles[ "display-metabox-tax-{$taxonomy}" ] ? 'on' : 'off';
+			$this->titles[ "cpseo_tax_{$taxonomy}_add_meta_box" ] = isset( $yoast_titles[ "display-metabox-tax-{$taxonomy}" ] ) && $yoast_titles[ "display-metabox-tax-{$taxonomy}" ] ? 'on' : 'off';
 
 			// Sitemap.
 			$key   = "taxonomies-{$taxonomy}-not_in_sitemap";
 			$value = isset( $yoast_sitemap[ $key ] ) ? ! $yoast_sitemap[ $key ] : false;
 
-			$this->sitemap[ "tax_{$taxonomy}_sitemap" ] = $value ? 'on' : 'off';
+			$this->sitemap[ "cpseo_tax_{$taxonomy}_sitemap" ] = $value ? 'on' : 'off';
 		}
 		$this->replace( $hash, $yoast_titles, $this->titles, 'convert_variables' );
 	}
@@ -197,11 +197,11 @@ class Yoast extends Plugin_Importer {
 	 */
 	private function set_robots( $prefix, $yoast_prefix, $yoast_titles ) {
 		if ( isset( $yoast_titles[ "noindex-{$yoast_prefix}" ] ) ) {
-			$this->titles[ "{$prefix}_custom_robots" ] = 'on';
-			$this->titles[ "{$prefix}_robots" ]        = [];
+			$this->titles[ "cpseo_{$prefix}_custom_robots" ] = 'on';
+			$this->titles[ "cpseo_{$prefix}_robots" ]        = [];
 			if ( $yoast_titles[ "noindex-{$yoast_prefix}" ] ) {
-				$this->titles[ "{$prefix}_robots" ][] = 'noindex';
-				$this->titles[ "{$prefix}_robots" ]   = array_unique( $this->titles[ "{$prefix}_robots" ] );
+				$this->titles[ "cpseo_{$prefix}_robots" ][] = 'noindex';
+				$this->titles[ "cpseo_{$prefix}_robots" ]   = array_unique( $this->titles[ "cpseo_{$prefix}_robots" ] );
 			}
 		}
 
@@ -541,7 +541,7 @@ class Yoast extends Plugin_Importer {
 		];
 
 		if ( isset( $separator_options[ $yoast_titles['separator'] ] ) ) {
-			$this->titles['title_separator'] = $separator_options[ $yoast_titles['separator'] ];
+			$this->titles['cpseo_title_separator'] = $separator_options[ $yoast_titles['separator'] ];
 		}
 	}
 
@@ -554,30 +554,30 @@ class Yoast extends Plugin_Importer {
 	 */
 	private function misc_settings( $yoast_titles, $yoast_permalink, $yoast_social ) {
 		$hash = [
-			'company_name'      => 'knowledgegraph_name',
-			'company_or_person' => 'knowledgegraph_type',
+			'company_name'      => 'cpseo_knowledgegraph_name',
+			'company_or_person' => 'cpseo_knowledgegraph_type',
 		];
 		$this->replace( $hash, $yoast_titles, $this->titles );
 
 		// Links.
 		$hash = [
-			'redirectattachment' => 'attachment_redirect_urls',
-			'stripcategorybase'  => 'strip_category_base',
-			'cleanslugs'         => 'url_strip_stopwords',
+			'redirectattachment' => 'cpseo_attachment_redirect_urls',
+			'stripcategorybase'  => 'cpseo_strip_category_base',
+			'cleanslugs'         => 'cpseo_url_strip_stopwords',
 		];
 		$this->replace( $hash, $yoast_permalink, $this->settings, 'convert_bool' );
-		$this->replace( [ 'disable-author' => 'disable_author_archives' ], $yoast_titles, $this->titles, 'convert_bool' );
-		$this->replace( [ 'disable-date' => 'disable_date_archives' ], $yoast_titles, $this->titles, 'convert_bool' );// Links.
+		$this->replace( [ 'disable-author' => 'cpseo_disable_author_archives' ], $yoast_titles, $this->titles, 'convert_bool' );
+		$this->replace( [ 'disable-date' => 'cpseo_disable_date_archives' ], $yoast_titles, $this->titles, 'convert_bool' );// Links.
 
 		// Re-writing.
 		$hash = [
-			'redirectattachment' => 'attachment_redirect_urls',
-			'stripcategorybase'  => 'strip_category_base',
-			'cleanslugs'         => 'url_strip_stopwords',
+			'redirectattachment' => 'cpseo_attachment_redirect_urls',
+			'stripcategorybase'  => 'cpseo_strip_category_base',
+			'cleanslugs'         => 'cpseo_url_strip_stopwords',
 		];
 		$this->replace( $hash, $yoast_permalink, $this->settings, 'convert_bool' );
-		$this->replace( [ 'disable-author' => 'disable_author_archives' ], $yoast_titles, $this->titles, 'convert_bool' );
-		$this->replace( [ 'disable-date' => 'disable_date_archives' ], $yoast_titles, $this->titles, 'convert_bool' );
+		$this->replace( [ 'disable-author' => 'cpseo_disable_author_archives' ], $yoast_titles, $this->titles, 'convert_bool' );
+		$this->replace( [ 'disable-date' => 'cpseo_disable_date_archives' ], $yoast_titles, $this->titles, 'convert_bool' );
 
 		// NOINDEX.
 		$hash = [
@@ -587,22 +587,22 @@ class Yoast extends Plugin_Importer {
 
 		// OpenGraph.
 		if ( isset( $yoast_social['og_default_image'] ) ) {
-			$this->replace_image( $yoast_social['og_default_image'], $this->titles, 'open_graph_image', 'open_graph_image_id' );
+			$this->replace_image( $yoast_social['og_default_image'], $this->titles, 'cpseo_open_graph_image', 'cpseo_open_graph_image_id' );
 		}
 
 		if ( isset( $yoast_social['og_frontpage_image'] ) ) {
-			$this->replace_image( $yoast_social['og_frontpage_image'], $this->titles, 'homepage_facebook_image', 'homepage_facebook_image_id' );
+			$this->replace_image( $yoast_social['og_frontpage_image'], $this->titles, 'cpseo_homepage_facebook_image', 'cpseo_homepage_facebook_image_id' );
 		}
 
 		$hash = [
-			'og_frontpage_title' => 'homepage_facebook_title',
-			'og_frontpage_desc'  => 'homepage_facebook_description',
+			'og_frontpage_title' => 'cpseo_homepage_facebook_title',
+			'og_frontpage_desc'  => 'cpseo_homepage_facebook_description',
 		];
 		$this->replace( $hash, $yoast_social, $this->titles, 'convert_variables' );
 
 		if ( ! empty( $yoast_titles['noindex-author-wpseo'] ) ) {
-			$this->titles['author_custom_robots'] = 'on';
-			$this->titles['author_robots'][]      = 'noindex';
+			$this->titles['cpseo_author_custom_robots'] = 'on';
+			$this->titles['cpseo_author_robots'][]      = 'noindex';
 		}
 	}
 
@@ -618,13 +618,13 @@ class Yoast extends Plugin_Importer {
 		}
 
 		$hash = [
-			'entries-per-page' => 'items_per_page',
-			'excluded-posts'   => 'exclude_posts',
+			'entries-per-page' => 'cpseo_items_per_page',
+			'excluded-posts'   => 'cpseo_exclude_posts',
 		];
 		$this->replace( $hash, $yoast_sitemap, $this->sitemap );
 
 		if ( empty( $yoast_sitemap['excluded-posts'] ) ) {
-			$this->sitemap['exclude_posts'] = '';
+			$this->sitemap['cpseo_exclude_posts'] = '';
 		}
 
 		$this->sitemap_exclude_roles( $yoast_sitemap );
@@ -639,12 +639,12 @@ class Yoast extends Plugin_Importer {
 		foreach ( WordPress::get_roles() as $role => $label ) {
 			$key = "user_role-{$role}-not_in_sitemap";
 			if ( isset( $yoast_sitemap[ $key ] ) && $yoast_sitemap[ $key ] ) {
-				$this->sitemap['exclude_roles'][] = $role;
+				$this->sitemap['cpseo_exclude_roles'][] = $role;
 			}
 		}
 
 		if ( ! empty( $this->sitemap['exclude_roles'] ) ) {
-			$this->sitemap['exclude_roles'] = array_unique( $this->sitemap['exclude_roles'] );
+			$this->sitemap['cpseo_exclude_roles'] = array_unique( $this->sitemap['exclude_roles'] );
 		}
 	}
 
@@ -662,7 +662,7 @@ class Yoast extends Plugin_Importer {
 		$this->local_phones_settings( $yoast_local );
 
 		if ( ! empty( $yoast_local['location_address_2'] ) ) {
-			$this->titles['local_address']['streetAddress'] .= ' ' . $yoast_local['location_address_2'];
+			$this->titles['cpseo_local_address']['streetAddress'] .= ' ' . $yoast_local['location_address_2'];
 		}
 
 		// Coordinates.
@@ -672,7 +672,7 @@ class Yoast extends Plugin_Importer {
 
 		// Opening Hours.
 		if ( ! empty( $yoast_local['opening_hours_24h'] ) ) {
-			$this->titles['opening_hours_format'] = isset( $yoast_local['opening_hours_24h'] ) && 'on' === $yoast_local['opening_hours_24h'] ? 'off' : 'on';
+			$this->titles['cpseo_opening_hours_format'] = isset( $yoast_local['opening_hours_24h'] ) && 'on' === $yoast_local['opening_hours_24h'] ? 'off' : 'on';
 		}
 	}
 
@@ -739,25 +739,15 @@ class Yoast extends Plugin_Importer {
 	 * @param array $yoast_social Settings.
 	 */
 	private function social_webmaster_settings( $yoast_main, $yoast_social ) {
-		$hash = [
-			'baiduverify'     => 'baidu_verify',
-			'alexaverify'     => 'alexa_verify',
-			'googleverify'    => 'google_verify',
-			'msverify'        => 'bing_verify',
-			'pinterestverify' => 'pinterest_verify',
-			'yandexverify'    => 'yandex_verify',
-		];
-		$this->replace( $hash, $yoast_main, $this->settings );
 
 		$hash = [
-			'facebook_site' => 'social_url_facebook',
-			'twitter_site'  => 'twitter_author_names',
-			'instagram_url' => 'social_url_instagram',
-			'linkedin_url'  => 'social_url_linkedin',
-			'youtube_url'   => 'social_url_youtube',
-			'pinterest_url' => 'social_url_pinterest',
-			'myspace_url'   => 'social_url_myspace',
-			'fbadminapp'    => 'facebook_app_id',
+			'facebook_site' => 'cpseo_social_url_facebook',
+			'twitter_site'  => 'cpseo_twitter_author_names',
+			'instagram_url' => 'cpseo_social_url_instagram',
+			'linkedin_url'  => 'cpseo_social_url_linkedin',
+			'youtube_url'   => 'cpseo_social_url_youtube',
+			'pinterest_url' => 'cpseo_social_url_pinterest',
+			'fbadminapp'    => 'cpseo_facebook_app_id',
 		];
 		$this->replace( $hash, $yoast_social, $this->titles );
 	}
@@ -770,12 +760,12 @@ class Yoast extends Plugin_Importer {
 	 */
 	private function breadcrumb_settings( $yoast_titles, $yoast_internallinks ) {
 		$hash = [
-			'breadcrumbs-sep'           => 'breadcrumbs_separator',
-			'breadcrumbs-home'          => 'breadcrumbs_home_label',
-			'breadcrumbs-prefix'        => 'breadcrumbs_prefix',
-			'breadcrumbs-archiveprefix' => 'breadcrumbs_archive_format',
-			'breadcrumbs-searchprefix'  => 'breadcrumbs_search_format',
-			'breadcrumbs-404crumb'      => 'breadcrumbs_404_label',
+			'breadcrumbs-sep'           => 'cpseo_breadcrumbs_separator',
+			'breadcrumbs-home'          => 'cpseo_breadcrumbs_home_label',
+			'breadcrumbs-prefix'        => 'cpseo_breadcrumbs_prefix',
+			'breadcrumbs-archiveprefix' => 'cpseo_breadcrumbs_archive_format',
+			'breadcrumbs-searchprefix'  => 'cpseo_breadcrumbs_search_format',
+			'breadcrumbs-404crumb'      => 'cpseo_breadcrumbs_404_label',
 		];
 		$this->replace( $hash, $yoast_titles, $this->settings );
 		$this->replace( $hash, $yoast_internallinks, $this->settings );
@@ -787,8 +777,8 @@ class Yoast extends Plugin_Importer {
 		// RSS.
 		$yoast_rss = get_option( 'wpseo_rss' );
 		$hash      = [
-			'rssbefore' => 'rss_before_content',
-			'rssafter'  => 'rss_after_content',
+			'rssbefore' => 'cpseo_rss_before_content',
+			'rssafter'  => 'cpseo_rss_after_content',
 		];
 		$this->replace( $hash, $yoast_rss, $this->settings, 'convert_variables' );
 	}

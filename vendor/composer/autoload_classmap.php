@@ -79,6 +79,7 @@ return array(
     'Classic_SEO\\Admin\\CMB2_Fields' => $baseDir . '/includes/admin/class-cmb2-fields.php',
     'Classic_SEO\\Admin\\Engine' => $baseDir . '/includes/admin/class-engine.php',
     'Classic_SEO\\Admin\\Import_Export' => $baseDir . '/includes/admin/class-import-export.php',
+    'Classic_SEO\\Admin\\Importers\\AIOSEO' => $baseDir . '/includes/admin/importers/class-aioseo.php',
     'Classic_SEO\\Admin\\Importers\\Detector' => $baseDir . '/includes/admin/importers/class-detector.php',
     'Classic_SEO\\Admin\\Importers\\Plugin_Importer' => $baseDir . '/includes/admin/importers/abstract-importer.php',
     'Classic_SEO\\Admin\\Importers\\RankMath' => $baseDir . '/includes/admin/importers/class-rankmath.php',

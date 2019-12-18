@@ -1,3 +1,7 @@
+#### v 0.5.0 / 2019-12-18
+* NEW: Added All In One SEO import
+* IMPROVED: Yoast import
+
 #### v 0.4.4 / 2019-12-06
 * FIX: Second fix for issue #24 - keywords from Rank Math not being imported
 
