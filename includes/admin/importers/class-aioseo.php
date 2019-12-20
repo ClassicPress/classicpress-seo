@@ -12,7 +12,6 @@ namespace Classic_SEO\Admin\Importers;
 use Classic_SEO\Helper;
 use Classic_SEO\Helpers\Str;
 use Classic_SEO\Admin\Admin_Helper;
-use Classic_SEO\Admin\Import_Export;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -55,9 +54,6 @@ class AIOSEO extends Plugin_Importer {
 	 * @return bool
 	 */
 	protected function settings() {
-		$cpseo_backup = new Import_Export();
-		$cpseo_backup->run_backup('add');
-		
 		$this->get_settings();
 		$aioseo = get_option( 'aioseop_options' );
 
@@ -74,8 +70,6 @@ class AIOSEO extends Plugin_Importer {
 			'aiosp_404_title_format'       => 'cpseo_404_title',
 		];
 		$this->replace( $hash, $aioseo, $this->titles, 'convert_variables' );
-		
-		$this->titles['cpseo_title_separator'] = '|';	// Set default separator
 
 		$this->post_types_settings();
 		$this->taxonomies_settings();
@@ -90,11 +84,13 @@ class AIOSEO extends Plugin_Importer {
 	 * Post Types settings.
 	 */
 	private function post_types_settings() {
-
 		$hash         = [];
 		$aioseo       = get_option( 'aioseop_options' );
 		$postnoindex  = isset( $aioseo['aiosp_cpostnoindex'] ) && is_array( $aioseo['aiosp_cpostnoindex'] ) ? $aioseo['aiosp_cpostnoindex'] : [];
 		$postnofollow = isset( $aioseo['aiosp_cpostnofollow'] ) && is_array( $aioseo['aiosp_cpostnofollow'] ) ? $aioseo['aiosp_cpostnofollow'] : [];
+		if ( empty( $postnoindex ) && empty( $postnofollow ) ) {
+			return;
+		}
 
 		foreach ( Helper::get_accessible_post_types() as $post_type ) {
 			$hash[ "aiosp_{$post_type}_title_format" ] = "cpseo_pt_{$post_type}_title";
@@ -138,7 +134,12 @@ class AIOSEO extends Plugin_Importer {
 		$aioseo = get_option( 'aioseop_options' );
 		foreach ( Helper::get_accessible_taxonomies() as $taxonomy => $object ) {
 			$convert = 'post_tag' === $taxonomy ? 'tag' : $taxonomy;
+
 			$hash[ "aiosp_{$convert}_title_format" ] = "cpseo_tax_{$taxonomy}_title";
+
+			if ( empty( $aioseo[ "aiosp_{$taxonomy}_noindex" ] ) ) {
+				continue;
+			}
 
 			$this->titles[ "cpseo_tax_{$taxonomy}_custom_robots" ] = 'on';
 			$this->titles[ "cpseo_tax_{$taxonomy}_robots" ][]      = 'noindex';
@@ -170,18 +171,11 @@ class AIOSEO extends Plugin_Importer {
 		$this->titles['cpseo_facebook_admin_id'] = $opengraph_settings['aiosp_opengraph_key'];
 		$this->titles['cpseo_facebook_app_id']   = $opengraph_settings['aiosp_opengraph_appid'];
 
-		if ( isset( $opengraph_settings['aiosp_schema_site_represents'] ) && ! empty( $opengraph_settings['aiosp_schema_site_represents'] ) ) {
+		if ( isset( $opengraph_settings['aiosp_opengraph_person_or_org'] ) && ! empty( $opengraph_settings['aiosp_opengraph_person_or_org'] ) ) {
 			Helper::update_modules( [ 'local-seo' => 'on' ] );
-			
-			if ( $opengraph_settings['aiosp_schema_site_represents'] == 'organization' ) {
-				$this->titles['cpseo_knowledgegraph_name'] = $opengraph_settings['aiosp_schema_organization_name'];
-				$this->titles['cpseo_knowledgegraph_type'] = 'company';
-			}
-			else {
-				$this->titles['cpseo_knowledgegraph_name'] = $opengraph_settings['aiosp_schema_person_user'];
-				$this->titles['cpseo_knowledgegraph_type'] = 'person';
-			}
 
+			$this->titles['cpseo_knowledgegraph_name'] = $opengraph_settings['aiosp_opengraph_social_name'];
+			$this->titles['cpseo_knowledgegraph_type'] = 'org' === $opengraph_settings['aiosp_opengraph_person_or_org'] ? 'company' : 'person';
 		}
 
 		$this->social_links_settings( $opengraph_settings );
