@@ -1,4 +1,4 @@
-# Classic SEO Plugin (Experimental)
+# Classic SEO Plugin
 Plugin Name: Classic SEO
 Description: Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
 Contributors: ClassicPress Community
@@ -56,7 +56,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 
 * **Rank Math and Yoast Settings Importer**
 
-* **Google Search Console Integration (experimental)**
+* **Google Search Console Integration**
 
 * **Support for Classic Commerce (Coming soon)**
 

@@ -19,7 +19,7 @@
 * FIX: Fix for PHP error: "Fatal error : Cannot redeclare Classic_SEO::define_constants() in /home/xxx/public_html/xxx/xxx/wp-content/plugins/classicpress-seo/classicpress-seo.php on line 223"
 
 #### v 0.4.0 / 2019-11-28
-* NEW: Added support for Google Search Console (experimental)
+* NEW: Added support for Google Search Console
 
 #### v 0.3.3 / 2019-11-25
 * FIX: Fix for #20: Plugin is not automatically deactivated when using PHP < 7.0.

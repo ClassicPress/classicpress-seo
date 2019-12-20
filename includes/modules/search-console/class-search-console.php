@@ -152,7 +152,7 @@ class Search_Console extends Base {
 		$plugin_uri = untrailingslashit( plugin_dir_url( __FILE__ ) );
 		$this->page = new Page(
 			'cpseo-search-console',
-			esc_html__( 'Search Console (Experimental)', 'cpseo' ),
+			esc_html__( 'Search Console', 'cpseo' ),
 			[
 				'position'   => 12,
 				'parent'     => 'cpseo',
