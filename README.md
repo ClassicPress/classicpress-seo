@@ -8,7 +8,7 @@ This plugin was created largely as a result of the following ClassicPress petiti
 - https://petitions.classicpress.net/posts/176/auto-xml-sitemap-generation-seo
 
 
-Latest release:  v0.5.0 (December 18, 2019)
+Latest release:  v0.5.1 (December 20, 2019)
 
 * * *
 

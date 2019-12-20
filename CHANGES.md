@@ -1,3 +1,6 @@
+#### v 0.5.1 / 2019-12-20
+* IMPROVED: All In One SEO import
+
 #### v 0.5.0 / 2019-12-18
 * NEW: Added All In One SEO import
 * IMPROVED: Yoast import
