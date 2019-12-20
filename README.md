@@ -20,7 +20,7 @@ Latest release:  v0.5.1 (December 20, 2019)
 ## Credits
 This is a fork of Rank Math.
 
-## Key functional differences between Classic SEO (v0.4.x) and Rank Math
+## Key functional differences between Classic SEO and Rank Math
 
 **Included** | **Not included**
 -------------|-----------------
