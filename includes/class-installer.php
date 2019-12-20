@@ -364,7 +364,7 @@ class Installer {
 		$titles  = [
 			'cpseo_metabox_priority'           => 'default',
 			'cpseo_noindex_empty_taxonomies'   => 'on',
-			'cpseo_title_separator'            => '-',
+			'cpseo_title_separator'            => '|',
 			'cpseo_capitalize_titles'          => 'off',
 			'cpseo_twitter_card_type'          => 'summary_large_image',
 			'cpseo_knowledgegraph_type'        => class_exists( 'Easy_Digital_Downloads' ) || class_exists( 'WooCommerce' ) ? 'company' : 'person',

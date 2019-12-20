@@ -14,6 +14,7 @@ use Classic_SEO\Helper;
 use Classic_SEO\Helpers\DB;
 use Classic_SEO\Helpers\WordPress;
 use Classic_SEO\Redirections\Redirection;
+use Classic_SEO\Admin\Import_Export;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -80,6 +81,9 @@ class Yoast extends Plugin_Importer {
 	 * @return bool
 	 */
 	protected function settings() {
+		$cpseo_backup = new Import_Export();
+		$cpseo_backup->run_backup('add');
+		
 		$this->get_settings();
 
 		$yoast_main          = get_option( 'wpseo' );

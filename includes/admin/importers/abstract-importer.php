@@ -192,12 +192,13 @@ abstract class Plugin_Importer {
 		if ( is_scalar( $result ) ) {
 			$result = [];
 		}
-		$result['message'] = $message;
 
 		if ( $is_success ) {
+			$result['message'] = $message;
 			$this->success( $result );
 		}
 
+		$result['error'] = $message;
 		$this->error( $result );
 	}
 
@@ -286,6 +287,10 @@ abstract class Plugin_Importer {
 	 * @param int            $object_id   Object ID either post id, term id or user id.
 	 */
 	protected function replace_image( $source, $destination, $image, $image_id, $object_id = null ) {
+		if ( empty( $source ) ) {
+			return;
+		}
+
 		$attachment_id = Attachment::get_by_url( $source );
 		if ( 1 > $attachment_id ) {
 			return;
