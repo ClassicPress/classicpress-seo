@@ -53,7 +53,7 @@ $cmb->add_field( array(
 	'type'        => 'text',
 	'name'        => esc_html__( 'Focus Keyword', 'cpseo' ),
 	// translators: Link to kb article
-	'desc'        => sprintf( wp_kses_post( __( 'Insert keywords you want to rank for. Aim for 100/100.', 'cpseo' ) ) ),
+	'desc'        => sprintf( wp_kses_post( __( 'Insert keywords you want to rank for. Aim for at least 80/100.', 'cpseo' ) ) ),
 	'classes'     => 'nob',
 	'attributes'  => array(
 		'placeholder' => esc_html__( 'Example: Classic SEO', 'cpseo' ),
