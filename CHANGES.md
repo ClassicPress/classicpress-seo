@@ -1,3 +1,6 @@
+#### v 0.5.2 / 2019-12-20
+* FIX: Fix for "Undefined variable: sitemap_settings" in class-aioseo.php
+
 #### v 0.5.1 / 2019-12-20
 * IMPROVED: All In One SEO import
 

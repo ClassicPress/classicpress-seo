@@ -255,14 +255,14 @@ class AIOSEO extends Plugin_Importer {
 		// Sitemap - Author / User.
 		$this->titles['cpseo_disable_author_archives'] = isset( $sitemap_settings['aiosp_sitemap_archive'] ) ? 'on' : 'off';
 
-		$this->sitemap_post_types();
-		$this->sitemap_taxonomies();
+		$this->sitemap_post_types($sitemap_settings);
+		$this->sitemap_taxonomies($sitemap_settings);
 	}
 
 	/**
 	 * Sitemap - Post Types.
 	 */
-	private function sitemap_post_types() {
+	private function sitemap_post_types($sitemap_settings) {
 		$aioseo = get_option( 'aioseop_options' );
 		$all    = in_array( 'all', $sitemap_settings['aiosp_sitemap_posttypes'], true );
 
@@ -274,7 +274,7 @@ class AIOSEO extends Plugin_Importer {
 	/**
 	 * Sitemap - Taxonomies.
 	 */
-	private function sitemap_taxonomies() {
+	private function sitemap_taxonomies($sitemap_settings) {
 		$aioseo = get_option( 'aioseop_options' );
 		$all    = in_array( 'all', $sitemap_settings['aiosp_sitemap_taxonomies'], true );
 
