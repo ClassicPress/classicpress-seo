@@ -431,6 +431,7 @@ class AIOSEO extends Plugin_Importer {
 		$string = str_replace( '%blog_title%', '%sitename%', $string );
 		$string = str_replace( '%site_title%', '%sitename%', $string );
 		$string = str_replace( '%blog_description%', '%sitedesc%', $string );
+		$string = str_replace( '%site_description%', '%sitedesc%', $string );
 		$string = str_replace( '%post_title%', '%title%', $string );
 		$string = str_replace( '%page_title%', '%title%', $string );
 		$string = str_replace( '%category%', '%category%', $string );
