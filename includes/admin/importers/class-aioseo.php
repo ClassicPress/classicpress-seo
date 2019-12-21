@@ -71,7 +71,6 @@ class AIOSEO extends Plugin_Importer {
 			'aiosp_author_title_format'    => 'cpseo_author_archive_title',
 			'aiosp_date_title_format'      => 'cpseo_date_archive_title',
 			'aiosp_search_title_format'    => 'cpseo_search_title',
-			'aiosp_404_title_format'       => 'cpseo_404_title',
 		];
 		$this->replace( $hash, $aioseo, $this->titles, 'convert_variables' );
 		
@@ -430,17 +429,14 @@ class AIOSEO extends Plugin_Importer {
 	 */
 	public function convert_variables( $string ) {
 		$string = str_replace( '%blog_title%', '%sitename%', $string );
+		$string = str_replace( '%site_title%', '%sitename%', $string );
 		$string = str_replace( '%blog_description%', '%sitedesc%', $string );
 		$string = str_replace( '%post_title%', '%title%', $string );
 		$string = str_replace( '%page_title%', '%title%', $string );
+		$string = str_replace( '%category%', '%category%', $string );
 		$string = str_replace( '%category_title%', '%category%', $string );
 		$string = str_replace( '%category_description%', '%term_description%', $string );
 		$string = str_replace( '%archive_title%', '%term%', $string );
-		$string = str_replace( '%category%', '%category%', $string );
-		$string = str_replace( '%post_author_login%', '%name%', $string );
-		$string = str_replace( '%post_author_nicename%', '%name%', $string );
-		$string = str_replace( '%post_author_firstname%', '%name%', $string );
-		$string = str_replace( '%post_author_lastname%', '%name%', $string );
 		$string = str_replace( '%current_date%', '%currentdate%', $string );
 		$string = str_replace( '%post_date%', '%date%', $string );
 		$string = str_replace( '%post_year%', '%date(Y)%', $string );

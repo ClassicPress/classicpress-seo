@@ -1,3 +1,7 @@
+#### v 0.5.3 / 2019-12-21
+* FIX: Fix for wrong message shown on post edit page when content length was between 500 and 600 words
+* TWEAK: Minor tweaks to AIOSEO import
+
 #### v 0.5.2 / 2019-12-20
 * FIX: Fix for "Undefined variable: sitemap_settings" in class-aioseo.php
 
