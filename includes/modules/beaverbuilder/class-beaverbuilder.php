@@ -61,11 +61,8 @@ class BeaverBuilder {
 	 */
 	private function get_config() {
 		$config = array(
-			'pluginName'   => 'cpseo-beaverbuilder',
-			'refreshRate'  => 0,
-			'headlines'    => array(),
-			'enableReload' => false,
-			'pagedata'     => $this->content_data(),
+			'pluginName' => 'cpseo-beaverbuilder',
+			'pagedata'   => $this->content_data(),
 		);
 
 		return $this->do_filter( 'beaverbuilder/config', $config );
