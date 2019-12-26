@@ -128,7 +128,7 @@ class JsonLD {
 	 * @return bool
 	 */
 	private function is_product_page() {
-		return Conditional::is_woocommerce_active() && ( ( is_tax() && in_array( get_query_var( 'taxonomy' ), get_object_taxonomies( 'product' ), true ) ) || is_shop() );
+		return ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && ( ( is_tax() && in_array( get_query_var( 'taxonomy' ), get_object_taxonomies( 'product' ), true ) ) || is_shop() );
 	}
 
 	/**
