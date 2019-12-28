@@ -36,7 +36,7 @@ Social meta: Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pin
 Imports for Rank Math, Yoast and All In One SEO | Imports for AIO Rich Snippets, SEOPress, WP Schema Pro, Redirection
 Role Manager|
 Search Console|
-Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) to be added|
+Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce)|
 
 ## Important note
 **As this plugin is still in the development & testing stage, use it on a production site at your own risk.**

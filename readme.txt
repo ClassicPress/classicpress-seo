@@ -7,7 +7,7 @@ GitHub Plugin URI: https://github.com/ClassicPress-research/classicpress-seo
 Plugin link:  https://github.com/ClassicPress-research/classicpress-seo
 Plugin URI:  https://github.com/ClassicPress-research/classicpress-seo
 Tags: seo, classicpress, sitemap, google search console, schema, redirection
-Version: 0.5.3
+Version: 0.6.0
 Tested up to: 1.1.1
 Requires at least: 1.0.2
 Requires PHP: 7.0
@@ -58,7 +58,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 
 * **Google Search Console Integration**
 
-* **Support for Classic Commerce (Coming soon)**
+* **Support for Classic Commerce**
 
 
 ## Frequently Asked Questions
