@@ -67,7 +67,7 @@ class Product implements Snippet {
 		}
 		$jsonld->add_ratings( 'product', $entity );
 
-		if ( Conditional::is_woocommerce_active() && is_product() ) {
+		if ( ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && is_product() ) {
 			remove_action( 'wp_footer', [ WC()->structured_data, 'output_structured_data' ], 10 );
 			remove_action( 'woocommerce_email_order_details', [ WC()->structured_data, 'output_email_structured_data' ], 30 );
 			$product = new Product_WooCommerce;

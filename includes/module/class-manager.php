@@ -192,13 +192,14 @@ class Manager {
 	 */
 	public function setup_3rd_party( $modules ) {
 		if ( class_exists( 'WooCommerce' ) ) {
+			$ecom = Conditional::is_woocommerce_active() ? 'WooCommerce' : 'Classic Commerce';
 			$modules['woocommerce'] = [
-				'title'         => esc_html__( 'WooCommerce', 'cpseo' ),
-				'desc'          => esc_html__( 'Optimize WooCommerce Product Pages.', 'cpseo' ),
+				'title'         => esc_html__( $ecom, 'cpseo' ),
+				'desc'          => esc_html__( 'Optimize ' . $ecom . ' Product Pages.', 'cpseo' ),
 				'class'         => 'Classic_SEO\WooCommerce\WooCommerce',
 				'icon'          => 'dashicons-cart',
-				'disabled'      => ( ! Conditional::is_woocommerce_active() ),
-				'disabled_text' => esc_html__( 'Please activate WooCommerce plugin to use this module.', 'cpseo' ),
+				'disabled'      => ( ! Conditional::is_woocommerce_active() && ! Conditional::is_classic_commerce_active() ),
+				'disabled_text' => esc_html__( 'Please activate ' . $ecom . ' plugin to use this module.', 'cpseo' ),
 			];
 		}
 		

@@ -12,6 +12,7 @@ namespace Classic_SEO\Helpers;
 
 use Classic_SEO\Helper;
 use Classic_SEO\Admin\Admin_Helper;
+use Classic_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -210,11 +211,35 @@ trait Conditional {
 	 */
 	public static function is_woocommerce_active() {
 		// @codeCoverageIgnoreStart
+		$wp_filesystem = WordPress::get_filesystem();
+		
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		/**
+		 * Check for additional proof that the real WC is installed and not the Classic Commerce compatibility plugin 
+		 */
+		if( $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/class-woocommerce.php" ) && $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/admin/class-wc-admin.php" ) ) {
+			// @codeCoverageIgnoreEnd
+			return in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
+		}
+		return false;
+	}
+	
+	/**
+	 * Is Classic Commerce Installed
+	 *
+	 * @return bool
+	 * @since 0.5.3
+	 */
+	public static function is_classic_commerce_active() {
+		// @codeCoverageIgnoreStart
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		// @codeCoverageIgnoreEnd
-		return is_plugin_active( 'woocommerce/woocommerce.php' );
+		return in_array( 'classic-commerce/classic-commerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
 	}
 
 	/**
