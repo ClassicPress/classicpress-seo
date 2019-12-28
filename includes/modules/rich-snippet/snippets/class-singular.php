@@ -85,7 +85,7 @@ class Singular implements Snippet {
 			! metadata_exists( 'post', $jsonld->post_id, 'cpseo_rich_snippet' ) &&
 			$schema = Helper::get_settings( "titles.cpseo_pt_{$jsonld->post->post_type}_default_rich_snippet" ) // phpcs:ignore
 		) {
-			$schema = Conditional::is_woocommerce_active() && is_product() ? $schema : ( 'article' === $schema ? $schema : '' );
+			$schema = ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && is_product() ? $schema : ( 'article' === $schema ? $schema : '' );
 		}
 
 		return $schema;

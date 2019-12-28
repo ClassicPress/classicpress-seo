@@ -172,7 +172,7 @@ class Serp_Preview {
 			$termlink = str_replace( '/category/', '', $termlink );
 		}
 
-		if ( Conditional::is_woocommerce_active() && 'product_cat' === $taxonomy && Helper::get_settings( 'general.cpseo_wc_remove_category_base' ) ) {
+		if ( ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && 'product_cat' === $taxonomy && Helper::get_settings( 'general.cpseo_wc_remove_category_base' ) ) {
 			$termlink = str_replace( 'product-category', '', $termlink );
 		}
 
@@ -190,7 +190,7 @@ class Serp_Preview {
 	private function get_ancestors( $term_id, $taxonomy ) {
 		$slugs = [];
 
-		if ( Conditional::is_woocommerce_active() && 'product_cat' === $taxonomy && Helper::get_settings( 'general.cpseo_wc_remove_category_parent_slugs' ) ) {
+		if ( ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && 'product_cat' === $taxonomy && Helper::get_settings( 'general.cpseo_wc_remove_category_parent_slugs' ) ) {
 			return $slugs;
 		}
 
@@ -413,7 +413,7 @@ class Serp_Preview {
 
 		$snippet_data = [ 'type' => $snippet ];
 
-		if ( 'product' === $post->post_type && Conditional::is_woocommerce_active() ) {
+		if ( 'product' === $post->post_type && ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) ) {
 			$product              = wc_get_product( $post->ID );
 			$snippet_data['data'] = [
 				'price'    => $product->get_price(),
@@ -475,7 +475,7 @@ class Serp_Preview {
 			}
 		}
 
-		if ( ! isset( $snippet_data['rating'] ) && Conditional::is_woocommerce_active() && 'product' === $post->post_type ) {
+		if ( ! isset( $snippet_data['rating'] ) && ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && 'product' === $post->post_type ) {
 			$product = wc_get_product( $post->ID );
 			if ( $product->get_rating_count() > 0 ) {
 				$snippet_data['data']['rating']       = $product->get_average_rating();
