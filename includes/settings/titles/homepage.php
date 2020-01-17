@@ -68,20 +68,20 @@ $cmb->add_field([
 $cmb->add_field([
 	'id'   => 'cpseo_homepage_facebook_title',
 	'type' => 'text',
-	'name' => esc_html__( 'Homepage Title for Facebook', 'cpseo' ),
+	'name' => esc_html__( 'Homepage Title for Social Media', 'cpseo' ),
 	'desc' => esc_html__( 'Title of your site when shared on Facebook, Twitter and other social networks.', 'cpseo' ),
 ]);
 
 $cmb->add_field([
 	'id'   => 'cpseo_homepage_facebook_description',
 	'type' => 'textarea_small',
-	'name' => esc_html__( 'Homepage Description for Facebook', 'cpseo' ),
+	'name' => esc_html__( 'Homepage Description for Social Media', 'cpseo' ),
 	'desc' => esc_html__( 'Description of your site when shared on Facebook, Twitter and other social networks.', 'cpseo' ),
 ]);
 
 $cmb->add_field([
 	'id'   => 'cpseo_homepage_facebook_image',
 	'type' => 'file',
-	'name' => esc_html__( 'Homepage Thumbnail for Facebook', 'cpseo' ),
+	'name' => esc_html__( 'Homepage Thumbnail for Social Media', 'cpseo' ),
 	'desc' => esc_html__( 'Image displayed when your homepage is shared on Facebook and other social networks. Use images that are at least 1200 x 630 pixels for the best display on high resolution devices.', 'cpseo' ),
 ]);

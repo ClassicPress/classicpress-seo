@@ -32,14 +32,15 @@ class Yoast extends Plugin_Importer {
 	protected $plugin_name = 'Yoast SEO';
 
 	/**
-	 * Plugin options meta key.
+	 * Plugin options meta_key in postmeta table
 	 *
 	 * @var string
 	 */
 	protected $meta_key = '_yoast_wpseo_';
 
 	/**
-	 * Option keys to import and clean.
+	 * Option keys to import and clean. 
+	 * option_name in options table.
 	 *
 	 * @var array
 	 */

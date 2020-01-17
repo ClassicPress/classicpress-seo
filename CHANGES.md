@@ -1,3 +1,6 @@
+#### v 0.7.0 / 2020-01-17
+* NEW: Adds importer for The SEO Framework
+
 #### v 0.6.0 / 2019-12-28
 * UPDATED: Now fully supports [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce)
 

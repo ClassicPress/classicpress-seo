@@ -268,12 +268,7 @@ abstract class Plugin_Importer {
 				continue;
 			}
 
-			$this->update_meta(
-				$object_type,
-				$object_id,
-				$replace,
-				false !== $convert ? $this->$convert( $value ) : $value
-			);
+			$this->update_meta( $object_type, $object_id, $replace, false !== $convert ? $this->$convert( $value ) : $value );
 		}
 	}
 
