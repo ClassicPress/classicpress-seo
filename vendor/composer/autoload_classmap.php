@@ -83,6 +83,7 @@ return array(
     'Classic_SEO\\Admin\\Importers\\Detector' => $baseDir . '/includes/admin/importers/class-detector.php',
     'Classic_SEO\\Admin\\Importers\\Plugin_Importer' => $baseDir . '/includes/admin/importers/abstract-importer.php',
     'Classic_SEO\\Admin\\Importers\\RankMath' => $baseDir . '/includes/admin/importers/class-rankmath.php',
+    'Classic_SEO\\Admin\\Importers\\SEO_Framework' => $baseDir . '/includes/admin/importers/class-seo-framework.php',
     'Classic_SEO\\Admin\\Importers\\Status' => $baseDir . '/includes/admin/importers/class-status.php',
     'Classic_SEO\\Admin\\Importers\\Yoast' => $baseDir . '/includes/admin/importers/class-yoast.php',
     'Classic_SEO\\Admin\\List_Table' => $baseDir . '/includes/admin/helpers/class-list-table.php',

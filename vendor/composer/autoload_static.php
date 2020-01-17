@@ -89,6 +89,7 @@ class ComposerStaticInitc2822413d75ee1db8fcd50de895c43fa
         'Classic_SEO\\Admin\\Importers\\Detector' => __DIR__ . '/../..' . '/includes/admin/importers/class-detector.php',
         'Classic_SEO\\Admin\\Importers\\Plugin_Importer' => __DIR__ . '/../..' . '/includes/admin/importers/abstract-importer.php',
         'Classic_SEO\\Admin\\Importers\\RankMath' => __DIR__ . '/../..' . '/includes/admin/importers/class-rankmath.php',
+        'Classic_SEO\\Admin\\Importers\\SEO_Framework' => __DIR__ . '/../..' . '/includes/admin/importers/class-seo-framework.php',
         'Classic_SEO\\Admin\\Importers\\Status' => __DIR__ . '/../..' . '/includes/admin/importers/class-status.php',
         'Classic_SEO\\Admin\\Importers\\Yoast' => __DIR__ . '/../..' . '/includes/admin/importers/class-yoast.php',
         'Classic_SEO\\Admin\\List_Table' => __DIR__ . '/../..' . '/includes/admin/helpers/class-list-table.php',

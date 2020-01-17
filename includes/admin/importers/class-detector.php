@@ -123,6 +123,10 @@ class Detector {
 				'class' => '\\Classic_SEO\\Admin\\Importers\\AIOSEO',
 				'file'  => 'all-in-one-seo-pack/all_in_one_seo_pack.php',
 			],
+			'seo-framework'    => [
+				'class' => '\\Classic_SEO\\Admin\\Importers\\SEO_Framework',
+				'file'  => 'all-in-one-seo-pack/class-seo-framework.php',
+			],
 		]);
 	}
 

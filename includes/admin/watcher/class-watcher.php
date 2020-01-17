@@ -161,6 +161,7 @@ class Watcher implements Runner {
 			'all-in-one-seo-pack/all_in_one_seo_pack.php' => 'seo',
 			'wp-seopress/seopress.php'                    => 'seo',
 			'wp-seopress-pro/seopress-pro.php'            => 'seo',
+			'autodescription/autodescription.php'         => 'seo',
 		);
 
 		if ( GlobalHelper::is_module_active( 'redirections' ) ) {

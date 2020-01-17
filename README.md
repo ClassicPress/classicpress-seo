@@ -31,12 +31,11 @@ Local SEO / Knowledge Graph|Support for BuddyPress
 Redirections|Webmaster tools
 Rich Snippets|SEO Analysis
 XML Sitemap|Ability to edit .htaccess
-WooCommerce|Ability to edit robots.txt
+Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce) and WooCommerce|Ability to edit robots.txt
 Social meta: Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest|Social meta: Yelp, FourSquare, Flickr, Reddit, SoundCloud, Tumblr and Myspace
-Imports for Rank Math, Yoast and All In One SEO | Imports for AIO Rich Snippets, SEOPress, WP Schema Pro, Redirection
+Imports for Rank Math, Yoast, All In One SEO and The SEO Framework | Imports for AIO Rich Snippets, SEOPress, WP Schema Pro, Redirection
 Role Manager|
 Search Console|
-Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce)|
 
 ## Important note
 **As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
@@ -45,7 +44,7 @@ Support for [Classic Commerce](https://github.com/ClassicPress-research/classic-
 If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
 
 ## Reporting Security Issues
-To disclose a security issue to our team (security@classicpress.net)
+Disclose security issues to our team (security@classicpress.net)
 
 ## Changelog
 [Change log for this project](CHANGES.md)
