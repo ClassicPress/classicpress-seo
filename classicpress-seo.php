@@ -250,7 +250,7 @@ class Classic_SEO {
 		}
 		
 		if ( defined( 'WP_CLI' ) && WP_CLI && ! ( empty( $this->messages ) ) ) {
-			return \WP_CLI::error( implode( "\n", $this->messages ) );
+			return \WP_CLI::error( implode( "\n", $this->messages ), false );
 		}
 
 		// Auto-deactivate plugin.
