@@ -249,7 +249,7 @@ class Classic_SEO {
 			return true;
 		}
 		
-		if ( defined( 'WP_CLI' ) && WP_CLI && (! empty( $this->messages ) ) ) {
+		if ( defined( 'WP_CLI' ) && WP_CLI && ! ( empty( $this->messages ) ) ) {
 			return \WP_CLI::error( implode( "\n", $this->messages ) );
 		}
 
