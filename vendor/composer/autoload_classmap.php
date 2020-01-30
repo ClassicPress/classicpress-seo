@@ -265,6 +265,7 @@ return array(
     'Classic_SEO\\Traits\\Hooker' => $baseDir . '/includes/traits/class-hooker.php',
     'Classic_SEO\\Traits\\Meta' => $baseDir . '/includes/traits/class-meta.php',
     'Classic_SEO\\Traits\\Shortcode' => $baseDir . '/includes/traits/class-shortcode.php',
+    'Classic_SEO\\UpdateClient\\UpdateClient' => $baseDir . '/includes/class-update-client.php',
     'Classic_SEO\\Updates' => $baseDir . '/includes/class-updates.php',
     'Classic_SEO\\User' => $baseDir . '/includes/class-user.php',
     'Classic_SEO\\WooCommerce\\Admin' => $baseDir . '/includes/modules/woocommerce/class-admin.php',
