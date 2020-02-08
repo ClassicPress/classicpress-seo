@@ -43,3 +43,11 @@ $cmb->add_field([
 	],
 	'dep'        => $service,
 ]);
+
+$cmb->add_field([
+	'id'   => 'cpseo_snippet_service_area',
+	'name' => esc_html__( 'Area Served', 'cpseo' ),
+	'type' => 'text',
+	'desc' => esc_html__( 'The geographic area where the service is provided. Example: London, South East, UK', 'cpseo' ),
+	'dep'  => $service,
+]);
