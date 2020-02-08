@@ -7,9 +7,9 @@
 	],
     "type": "classicpress-plugin",
 	"support": {
-		"issues": "https://github.com/ClassicPress-research/classicpress-seo/issues",
+		"issues": "https://github.com/ClassicPress-plugins/classicpress-seo/issues",
 		"forum": "https://forums.classicpress.net",
-		"source": "https://github.com/ClassicPress-research/classicpress-seo"
+		"source": "https://github.com/ClassicPress-plugins/classicpress-seo"
 	},
     "license": "GPL-2.0-or-later",
     "authors": [

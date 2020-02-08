@@ -8,9 +8,8 @@ Requires PHP:      7.0
 Requires:          1.0.0
 Tested:            4.9.99
 Author:            ClassicPress Research
-Author URI:        https://github.com/timbocode/
-Plugin URI:        https://github.com/timbocode/classicpress-seo/
-Download link:     https://github.com/timbocode/classicpress-seo/archive/v1.0.0-beta1.zip
+Author URI:        https://github.com/ClassicPress-plugins/
+Plugin URI:        https://github.com/ClassicPress-plugins/classicpress-seo
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,9 +44,14 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 **As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
 
 == Changelog ==
-**v 1.0.0-beta1 / 2020-02-04**
-* NEW: Added update manager
-* IMPROVED - Service rich snippets updated 
+**v 1.0.0-beta1 / 2020-02-08**
+* NEW: Integrated CodePotent's Update Manager
+* NEW: Check for WP_CLI (props xxsimoxx)
+* IMPROVED: Services rich snippets (added missing properties)
+* Moved to new ClassicPress-plugins GitHub repository
+* Renamed dashicon image
+* Remove other superfluous images
+* Translation file updates
 
 **v 0.7.0 / 2020-01-17**
 * NEW: Adds importer for The SEO Framework
