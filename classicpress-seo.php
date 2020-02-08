@@ -1,40 +1,18 @@
 <?php
 /**
- * Classic SEO
- *
- * @package              Classic_SEO
- * @author               ClassicPress Community
- * @license              GPL-2.0-or-later
- *
- * @classicpress-plugin
  * Plugin Name:          Classic SEO
- * Plugin URI:           https://github.com/ClassicPress-research/classicpress-seo
+ * Plugin URI:           https://github.com/ClassicPress-plugins/classicpress-seo
  * Description:          Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
  * Version:              1.0.0-beta.1
- * Author:               ClassicPress Community
- * Author URI:           https://github.com/ClassicPress-research/classicpress-seo
+ * Author:               ClassicPress
+ * Author URI:           https://github.com/ClassicPress-plugins/classicpress-seo
  * License:              GPL v2 or later
  * License URI:          http://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path:          /languages/
  * Text Domain:          cpseo
- * GitHub Plugin URI:    https://github.com/ClassicPress-research/classicpress-seo
- * Requires at least:    1.1.1
+ * GitHub Plugin URI:    https://github.com/ClassicPress-plugins/classicpress-seo
+ * Requires at least:    1.0.0
  * Requires PHP:         7.0
- *
- * CC requires at least: 0.1
- * CC tested up to:      0.1.0
- *
- * WC requires at least: 3.7
- * WC tested up to:      3.7.1
- *
- * -----------------------------------------------------------------------------
- * This is free software released under the terms of the General Public License,
- * version 2, or later. It is distributed WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. Full
- * text of the license is available at https://www.gnu.org/licenses/gpl-2.0.txt.
- * -----------------------------------------------------------------------------
- * Copyright © 2019 - 
- * -----------------------------------------------------------------------------
  *
  * Fork of Rank Math v1.0.33
  */

@@ -35,7 +35,7 @@ Search Console|
 **As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
 
 ## Support
-If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-research/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
+If you find a bug, please create an issue on the [issues page](https://github.com/ClassicPress-plugins/classicpress-seo/issues) or [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
 
 ## Reporting Security Issues
 Disclose security issues to our team (security@classicpress.net)
