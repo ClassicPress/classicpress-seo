@@ -2,12 +2,6 @@
 
 Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
 
-This plugin was created largely as a result of the following ClassicPress petitions:
-
-- https://petitions.classicpress.net/posts/175/allow-editing-of-page-title-and-meta-description-seo
-- https://petitions.classicpress.net/posts/176/auto-xml-sitemap-generation-seo
-
-
 Latest release:  See [Change log](CHANGES.md)
 
 * * *

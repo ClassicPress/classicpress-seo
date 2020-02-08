@@ -271,6 +271,7 @@ class ComposerStaticInitc2822413d75ee1db8fcd50de895c43fa
         'Classic_SEO\\Traits\\Hooker' => __DIR__ . '/../..' . '/includes/traits/class-hooker.php',
         'Classic_SEO\\Traits\\Meta' => __DIR__ . '/../..' . '/includes/traits/class-meta.php',
         'Classic_SEO\\Traits\\Shortcode' => __DIR__ . '/../..' . '/includes/traits/class-shortcode.php',
+        'Classic_SEO\\UpdateClient\\UpdateClient' => __DIR__ . '/../..' . '/includes/class-update-client.php',
         'Classic_SEO\\Updates' => __DIR__ . '/../..' . '/includes/class-updates.php',
         'Classic_SEO\\User' => __DIR__ . '/../..' . '/includes/class-user.php',
         'Classic_SEO\\WooCommerce\\Admin' => __DIR__ . '/../..' . '/includes/modules/woocommerce/class-admin.php',

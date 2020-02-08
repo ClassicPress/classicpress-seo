@@ -1,3 +1,7 @@
+#### v 1.0.0-beta1 / 2020-02-04
+* NEW: Integrated CodePotent's Update Manager
+* IMPROVED: Services rich snippets (added missing properties)
+
 #### v 0.7.0 / 2020-01-17
 * NEW: Adds importer for The SEO Framework
 
