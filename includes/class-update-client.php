@@ -25,6 +25,8 @@ if (!defined('ABSPATH')) {
 	die();
 }
 
+use Classic_SEO\Helper;
+
 /**
  * Remote updater class for ClassicPress plugins.
  *
@@ -472,8 +474,8 @@ class UpdateClient {
 		$body['banner_urls'] = $this->get_plugin_images('banner', dirname($plugin));
 		$body['screenshot_urls'] = $this->get_plugin_images('screenshot', dirname($plugin));
 
-		// Add opt out data tracking - stats for Update manager
-		if( 'no' === get_option( 'cc_usage_tracking' ) ) {
+		// Add opt out data tracking - Stats for Update manager
+		if( ! Helper::get_settings( 'general.cpseo_usage_tracking' ) ) {
 			$body['sfum'] = 'no-log';
 		}
 
