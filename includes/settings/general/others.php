@@ -17,6 +17,14 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'      => 'cpseo_usage_tracking',
+	'type'    => 'switch',
+	'name'    => esc_html__( 'Anonymous data collection', 'cpseo' ),
+	'desc'    => esc_html__( 'Allow us to collect anonymized data (just a hash of your site url for statistical purposes).', 'cpseo' ),
+	'default' => 'on',
+]);
+
+$cmb->add_field([
 	'id'              => 'cpseo_rss_before_content',
 	'type'            => 'textarea_small',
 	'name'            => esc_html__( 'RSS Before Content', 'cpseo' ),
