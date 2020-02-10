@@ -20,7 +20,7 @@ $cmb->add_field([
 	'id'      => 'cpseo_usage_tracking',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Anonymous data collection', 'cpseo' ),
-	'desc'    => esc_html__( 'Allow us to collect anonymized data (just a hash of your site url for statistical purposes).', 'cpseo' ),
+	'desc'    => esc_html__( 'Allow us to collect anonymized data (just a hash of your site url for statistical purposes). We cannot identify you from this data.', 'cpseo' ),
 	'default' => 'on',
 ]);
 
