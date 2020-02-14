@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Classic SEO 0.3.0\n"
-"POT-Creation-Date: 2020-02-08 19:04+0000\n"
-"PO-Revision-Date: 2020-02-08 19:04+0000\n"
+"POT-Creation-Date: 2020-02-14 06:36+0000\n"
+"PO-Revision-Date: 2020-02-14 06:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -437,7 +437,8 @@ msgid ""
 "them show up here."
 msgstr ""
 
-#: includes/admin/class-metabox.php:253 includes/metaboxes/social.php:54
+#: includes/admin/class-metabox.php:253
+#: includes/admin/views/help/variables.php:17 includes/metaboxes/social.php:54
 #: includes/metaboxes/social.php:134
 #: includes/modules/rich-snippet/views/metabox-options.php:99
 #: includes/settings/general/rss-vars-table.php:18
@@ -699,7 +700,9 @@ msgstr ""
 msgid "Cornerstone"
 msgstr ""
 
-#: includes/admin/class-post-columns.php:313 includes/metaboxes/general.php:54
+#: includes/admin/class-post-columns.php:313
+#: includes/admin/views/help/variables.php:193
+#: includes/metaboxes/general.php:54
 #: includes/replace-variables/class-advanced-variables.php:42
 #: includes/replace-variables/class-advanced-variables.php:45
 msgid "Focus Keyword"
@@ -1543,7 +1546,7 @@ msgid ""
 "development and bugs are likely."
 msgstr ""
 
-#. translators:
+#. translators: 1: Link to ClassicPress Forums 2: Link to GitHub
 #: includes/admin/views/help/getting-started.php:29
 #, php-format
 msgid ""
@@ -1557,7 +1560,7 @@ msgstr ""
 msgid "Plans for future releases"
 msgstr ""
 
-#. translators:
+#. translators: 1: Link to Classic Commerce
 #: includes/admin/views/help/getting-started.php:37
 #, php-format
 msgid ""
@@ -1565,7 +1568,7 @@ msgid ""
 "noopener noreferrer\" href=\"%1$s\" target=\"_blank\">Classic Commerce</a>."
 msgstr ""
 
-#. translators:
+#. translators: 1: Link to ClassicPress Forums
 #: includes/admin/views/help/getting-started.php:44
 #, php-format
 msgid ""
@@ -1593,24 +1596,605 @@ msgid ""
 "easiest method is built right inside the Classic SEO plugin."
 msgstr ""
 
-#. translators: link to local-seo
-#: includes/admin/views/help/local-seo.php:22
-msgid ""
-"Simply <a rel=\"nofollow noopener noreferrer\" href=\"\" target=\"_blank"
-"\">setup your business as Local Business</a> during the setup wizard."
-msgstr ""
-
-#: includes/admin/views/help/local-seo.php:27
+#: includes/admin/views/help/local-seo.php:20
 msgid "Make sure the Local SEO & Google Knowledge Graph module is enabled."
 msgstr ""
 
 #. translators: link to local seo settings
-#: includes/admin/views/help/local-seo.php:33
+#: includes/admin/views/help/local-seo.php:26
 #, php-format
 msgid ""
 "Then, head over to <a href=\"%1$s\">Classic SEO > Titles and Meta > Local "
 "SEO</a> and add more information about your Local Business like your Company "
 "Name, Logo, Email ID, Phone number, Address, And Contact/About pages."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:16
+#: includes/settings/general/rss-vars-table.php:17
+msgid "Variable"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:22
+msgid "%sep%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:23
+#: includes/replace-variables/class-basic-variables.php:37
+#: includes/settings/general/breadcrumbs.php:23
+#: includes/settings/titles/global.php:52
+msgid "Separator Character"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:24
+#: includes/replace-variables/class-basic-variables.php:38
+msgid "Separator character, as set in the Title Settings"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:27
+msgid "%search_query%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:28
+#: includes/replace-variables/class-basic-variables.php:48
+msgid "Search Query"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:29
+#: includes/replace-variables/class-basic-variables.php:49
+msgid "Search query (only available on search results page)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:32
+msgid "%count(varname)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:33
+#: includes/replace-variables/class-basic-variables.php:59
+msgid "Counter"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:34
+#: includes/replace-variables/class-basic-variables.php:60
+msgid "Starts at 1 and increments by 1."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:37
+msgid "%filename%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:38
+#: includes/replace-variables/class-basic-variables.php:70
+msgid "File Name"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:39
+#: includes/replace-variables/class-basic-variables.php:71
+msgid "File Name of the attachment"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:42
+msgid "%sitename%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:43
+#: includes/replace-variables/class-basic-variables.php:90
+msgid "Site Title"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:44
+#: includes/replace-variables/class-basic-variables.php:91
+msgid "Title of the site"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:47
+msgid "%sitedesc%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:48
+#: includes/replace-variables/class-basic-variables.php:101
+msgid "Site Description"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:49
+#: includes/replace-variables/class-basic-variables.php:102
+msgid "Description of the site"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:52
+msgid "%currentdate%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:53
+#: includes/replace-variables/class-basic-variables.php:117
+msgid "Current Date"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:54
+#: includes/replace-variables/class-basic-variables.php:118
+msgid "Current server date"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:57
+msgid "%currentday%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:58
+#: includes/replace-variables/class-basic-variables.php:128
+msgid "Current Day"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:59
+#: includes/replace-variables/class-basic-variables.php:129
+msgid "Current server day"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:62
+msgid "%currentmonth%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:63
+#: includes/replace-variables/class-basic-variables.php:139
+msgid "Current Month"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:64
+#: includes/replace-variables/class-basic-variables.php:140
+msgid "Current server month"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:67
+msgid "%currentyear%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:68
+#: includes/replace-variables/class-basic-variables.php:150
+msgid "Current Year"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:69
+#: includes/replace-variables/class-basic-variables.php:151
+msgid "Current server year"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:72
+msgid "%currenttime%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:73
+#: includes/replace-variables/class-basic-variables.php:166
+msgid "Current Time"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:74
+#: includes/replace-variables/class-basic-variables.php:167
+msgid "Current server time"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:77
+msgid "%currenttime(F jS, Y)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:78
+#: includes/replace-variables/class-basic-variables.php:177
+msgid "Current Time (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:79
+#: includes/replace-variables/class-basic-variables.php:178
+msgid "Current server time with custom formatting pattern."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:82
+msgid "%title%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:83
+#: includes/replace-variables/class-post-variables.php:32
+msgid "Post Title"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:84
+#: includes/replace-variables/class-post-variables.php:33
+msgid "Title of the current post/page"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:87
+msgid "%parent_title%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:88
+#: includes/replace-variables/class-post-variables.php:43
+msgid "Post Title of parent page"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:89
+#: includes/replace-variables/class-post-variables.php:44
+msgid "Title of the parent page of the current post/page"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:92
+msgid "%excerpt%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:93
+#: includes/admin/views/help/variables.php:98
+#: includes/replace-variables/class-post-variables.php:54
+#: includes/replace-variables/class-post-variables.php:65
+msgid "Post Excerpt"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:94
+#: includes/replace-variables/class-post-variables.php:55
+msgid "Excerpt of the current post (or auto-generated if it does not exist)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:97
+msgid "%excerpt_only%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:99
+#: includes/replace-variables/class-post-variables.php:66
+msgid "Excerpt of the current post (without auto-generation)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:102
+msgid "%date%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:103
+#: includes/modules/rich-snippet/class-snippet-shortcode.php:213
+#: includes/modules/rich-snippet/views/book.php:95
+#: includes/replace-variables/class-post-variables.php:85
+msgid "Date Published"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:104
+#: includes/replace-variables/class-post-variables.php:86
+msgid ""
+"Publication date of the current post/page <strong>OR</strong> specified date "
+"on date archives"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:107
+msgid "%modified%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:108
+#: includes/replace-variables/class-post-variables.php:96
+msgid "Date Modified"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:109
+#: includes/replace-variables/class-post-variables.php:97
+msgid "Last modification date of the current post/page"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:112
+msgid "%date(F jS, Y)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:113
+#: includes/replace-variables/class-post-variables.php:107
+msgid "Date Published (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:114
+#: includes/replace-variables/class-post-variables.php:108
+msgid "Publish date with custom formatting pattern."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:117
+msgid "%modified(F jS, Y)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:118
+#: includes/replace-variables/class-post-variables.php:118
+msgid "Date Modified (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:119
+#: includes/replace-variables/class-post-variables.php:119
+msgid "Modified date with custom formatting pattern."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:122
+msgid "%category%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:123
+#: includes/replace-variables/class-post-variables.php:136
+msgid "Post Category"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:124
+#: includes/replace-variables/class-post-variables.php:137
+msgid ""
+"First category (alphabetically) associated to the current post <strong>OR</"
+"strong> current category on category archives"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:127
+msgid "%categories%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:128
+#: includes/replace-variables/class-post-variables.php:147
+msgid "Post Categories"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:129
+#: includes/replace-variables/class-post-variables.php:148
+msgid "Comma-separated list of categories associated to the current post"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:132
+msgid "%categories(limit=3&amp;separator= | &amp;exclude=12,23)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:133
+#: includes/replace-variables/class-post-variables.php:158
+msgid "Categories (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:134
+msgid ""
+"Output list of categories associated to the current post, with customisation "
+"options."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:137
+msgid "%tag%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:138
+#: includes/replace-variables/class-post-variables.php:176
+msgid "Post Tag"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:139
+#: includes/replace-variables/class-post-variables.php:177
+msgid ""
+"First tag (alphabetically) associated to the current post <strong>OR</"
+"strong> current tag on tag archives"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:142
+msgid "%tags%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:143
+#: includes/replace-variables/class-post-variables.php:187
+msgid "Post Tags"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:144
+#: includes/replace-variables/class-post-variables.php:188
+msgid "Comma-separated list of tags associated to the current post"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:147
+msgid "%tags(limit=3&amp;separator= | &amp;exclude=12,23)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:148
+#: includes/replace-variables/class-post-variables.php:198
+msgid "Tags (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:149
+msgid ""
+"Output list of tags associated to the current post, with customisation "
+"options."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:152
+msgid "%term%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:153
+#: includes/replace-variables/class-term-variables.php:35
+msgid "Current Term"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:154
+#: includes/replace-variables/class-term-variables.php:36
+msgid "Current term name"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:157
+msgid "%term_description%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:158
+#: includes/replace-variables/class-term-variables.php:46
+msgid "Term Description"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:159
+#: includes/replace-variables/class-term-variables.php:47
+msgid "Current term description"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:162
+msgid "%customterm(taxonomy-name)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:163
+#: includes/replace-variables/class-term-variables.php:57
+msgid "Custom Term (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:164
+#: includes/replace-variables/class-term-variables.php:58
+msgid "Custom term value."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:167
+msgid "%customterm_desc(taxonomy-name)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:168
+#: includes/replace-variables/class-term-variables.php:68
+msgid "Custom Term description"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:169
+#: includes/replace-variables/class-manager.php:270
+#: includes/replace-variables/class-term-variables.php:69
+#: includes/replace-variables/class-term-variables.php:71
+msgid "Custom Term description."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:172
+msgid "%userid%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:173
+#: includes/replace-variables/class-author-variables.php:40
+msgid "Author ID"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:174
+#: includes/replace-variables/class-author-variables.php:41
+msgid "Author's user id of the current post, page or author archive."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:177
+msgid "%name%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:178
+#: includes/replace-variables/class-author-variables.php:51
+msgid "Post Author"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:179
+#: includes/replace-variables/class-author-variables.php:52
+msgid "Display author's nicename of the current post, page or author archive."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:182
+msgid "%user_description%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:183
+#: includes/replace-variables/class-author-variables.php:62
+msgid "Author Description"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:184
+#: includes/replace-variables/class-author-variables.php:63
+msgid "Author's biographical info of the current post, page or author archive."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:187
+msgid "%id%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:188
+#: includes/replace-variables/class-advanced-variables.php:31
+#: includes/replace-variables/class-advanced-variables.php:34
+msgid "Post ID"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:189
+#: includes/replace-variables/class-advanced-variables.php:32
+msgid "ID of the current post/page"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:192
+msgid "%focuskw%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:194
+#: includes/replace-variables/class-advanced-variables.php:43
+msgid "Focus Keyword of the current post"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:197
+msgid "%customfield(field-name)%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:198
+#: includes/replace-variables/class-advanced-variables.php:53
+msgid "Custom Field (advanced)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:199
+#: includes/replace-variables/class-advanced-variables.php:54
+msgid "Custom field value."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:202
+msgid "%page%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:203
+#: includes/replace-variables/class-advanced-variables.php:72
+msgid "Page"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:204
+#: includes/replace-variables/class-advanced-variables.php:73
+msgid ""
+"Page number with context (i.e. page 2 of 4). Only displayed on page 2 and "
+"above."
+msgstr ""
+
+#: includes/admin/views/help/variables.php:207
+msgid "%pagenumber%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:208
+#: includes/replace-variables/class-advanced-variables.php:83
+msgid "Page Number"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:209
+#: includes/replace-variables/class-advanced-variables.php:84
+msgid "Current page number"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:212
+msgid "%pagetotal%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:213
+#: includes/replace-variables/class-advanced-variables.php:94
+msgid "Max Pages"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:214
+#: includes/replace-variables/class-advanced-variables.php:95
+msgid "Max pages number"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:217
+msgid "%pt_single%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:218
+#: includes/replace-variables/class-advanced-variables.php:110
+msgid "Post Type Name Singular"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:219
+#: includes/replace-variables/class-advanced-variables.php:111
+msgid "Name of current post type (singular)"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:222
+msgid "%pt_plural%"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:223
+#: includes/replace-variables/class-advanced-variables.php:121
+msgid "Post Type Name Plural"
+msgstr ""
+
+#: includes/admin/views/help/variables.php:224
+#: includes/replace-variables/class-advanced-variables.php:122
+msgid "Name of current post type (plural)"
 msgstr ""
 
 #: includes/admin/views/import-export/backup-panel.php:13
@@ -1796,15 +2380,15 @@ msgstr ""
 msgid "404 Error: page not found"
 msgstr ""
 
-#: includes/class-update-client.php:172
+#: includes/class-update-client.php:174
 msgid "Compatible up to:"
 msgstr ""
 
-#: includes/class-update-client.php:173
+#: includes/class-update-client.php:175
 msgid "Reviews"
 msgstr ""
 
-#: includes/class-update-client.php:174
+#: includes/class-update-client.php:176
 msgid "Read all reviews"
 msgstr ""
 
@@ -3284,12 +3868,6 @@ msgstr ""
 #: includes/modules/rich-snippet/class-snippet-shortcode.php:212
 #: includes/modules/rich-snippet/views/book.php:70
 msgid "ISBN"
-msgstr ""
-
-#: includes/modules/rich-snippet/class-snippet-shortcode.php:213
-#: includes/modules/rich-snippet/views/book.php:95
-#: includes/replace-variables/class-post-variables.php:85
-msgid "Date Published"
 msgstr ""
 
 #: includes/modules/rich-snippet/class-snippet-shortcode.php:214
@@ -5557,71 +6135,8 @@ msgstr ""
 msgid "Select Product Brand Taxonomy to use in Schema.org & OpenGraph markup."
 msgstr ""
 
-#: includes/replace-variables/class-advanced-variables.php:31
-#: includes/replace-variables/class-advanced-variables.php:34
-msgid "Post ID"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:32
-msgid "ID of the current post/page"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:43
-msgid "Focus Keyword of the current post"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:53
-msgid "Custom Field (advanced)"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:54
-msgid "Custom field value."
-msgstr ""
-
 #: includes/replace-variables/class-advanced-variables.php:56
 msgid "Custom field value"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:72
-msgid "Page"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:73
-msgid ""
-"Page number with context (i.e. page 2 of 4). Only displayed on page 2 and "
-"above."
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:83
-msgid "Page Number"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:84
-msgid "Current page number"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:94
-msgid "Max Pages"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:95
-msgid "Max pages number"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:110
-msgid "Post Type Name Singular"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:111
-msgid "Name of current post type (singular)"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:121
-msgid "Post Type Name Plural"
-msgstr ""
-
-#: includes/replace-variables/class-advanced-variables.php:122
-msgid "Name of current post type (plural)"
 msgstr ""
 
 #: includes/replace-variables/class-advanced-variables.php:124
@@ -5634,134 +6149,12 @@ msgstr ""
 msgid "Page %1$d of %2$d"
 msgstr ""
 
-#: includes/replace-variables/class-author-variables.php:40
-msgid "Author ID"
-msgstr ""
-
-#: includes/replace-variables/class-author-variables.php:41
-msgid "Author's user id of the current post, page or author archive."
-msgstr ""
-
-#: includes/replace-variables/class-author-variables.php:51
-msgid "Post Author"
-msgstr ""
-
-#: includes/replace-variables/class-author-variables.php:52
-msgid "Display author's nicename of the current post, page or author archive."
-msgstr ""
-
-#: includes/replace-variables/class-author-variables.php:62
-msgid "Author Description"
-msgstr ""
-
-#: includes/replace-variables/class-author-variables.php:63
-msgid "Author's biographical info of the current post, page or author archive."
-msgstr ""
-
 #: includes/replace-variables/class-base.php:162
 msgid "Example Post title"
 msgstr ""
 
-#: includes/replace-variables/class-basic-variables.php:37
-#: includes/settings/general/breadcrumbs.php:23
-#: includes/settings/titles/global.php:52
-msgid "Separator Character"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:38
-msgid "Separator character, as set in the Title Settings"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:48
-msgid "Search Query"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:49
-msgid "Search query (only available on search results page)"
-msgstr ""
-
 #: includes/replace-variables/class-basic-variables.php:51
 msgid "example search"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:59
-msgid "Counter"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:60
-msgid "Starts at 1 and increments by 1."
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:70
-msgid "File Name"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:71
-msgid "File Name of the attachment"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:90
-msgid "Site Title"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:91
-msgid "Title of the site"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:101
-msgid "Site Description"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:102
-msgid "Description of the site"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:117
-msgid "Current Date"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:118
-msgid "Current server date"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:128
-msgid "Current Day"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:129
-msgid "Current server day"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:139
-msgid "Current Month"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:140
-msgid "Current server month"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:150
-msgid "Current Year"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:151
-msgid "Current server year"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:166
-msgid "Current Time"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:167
-msgid "Current server time"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:177
-msgid "Current Time (advanced)"
-msgstr ""
-
-#: includes/replace-variables/class-basic-variables.php:178
-msgid "Current server time with custom formatting pattern."
 msgstr ""
 
 #: includes/replace-variables/class-manager.php:109
@@ -5790,108 +6183,21 @@ msgstr ""
 msgid "Custom Term title."
 msgstr ""
 
-#: includes/replace-variables/class-manager.php:270
-#: includes/replace-variables/class-term-variables.php:69
-#: includes/replace-variables/class-term-variables.php:71
-msgid "Custom Term description."
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:32
-msgid "Post Title"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:33
-msgid "Title of the current post/page"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:43
-msgid "Post Title of parent page"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:44
-msgid "Title of the parent page of the current post/page"
-msgstr ""
-
 #: includes/replace-variables/class-post-variables.php:46
 msgid "Example Parent Title"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:54
-#: includes/replace-variables/class-post-variables.php:65
-msgid "Post Excerpt"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:55
-msgid "Excerpt of the current post (or auto-generated if it does not exist)"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:66
-msgid "Excerpt of the current post (without auto-generation)"
 msgstr ""
 
 #: includes/replace-variables/class-post-variables.php:68
 msgid "Post Excerpt Only"
 msgstr ""
 
-#: includes/replace-variables/class-post-variables.php:86
-msgid ""
-"Publication date of the current post/page <strong>OR</strong> specified date "
-"on date archives"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:96
-msgid "Date Modified"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:97
-msgid "Last modification date of the current post/page"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:107
-msgid "Date Published (advanced)"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:108
-msgid "Publish date with custom formatting pattern."
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:118
-msgid "Date Modified (advanced)"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:119
-msgid "Modified date with custom formatting pattern."
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:136
-msgid "Post Category"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:137
-msgid ""
-"First category (alphabetically) associated to the current post <strong>OR</"
-"strong> current category on category archives"
-msgstr ""
-
 #: includes/replace-variables/class-post-variables.php:139
 msgid "Example Category"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:147
-msgid "Post Categories"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:148
-msgid "Comma-separated list of categories associated to the current post"
 msgstr ""
 
 #: includes/replace-variables/class-post-variables.php:150
 #: includes/replace-variables/class-post-variables.php:161
 msgid "Example Category 1, Example Category 2"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:158
-msgid "Categories (advanced)"
 msgstr ""
 
 #: includes/replace-variables/class-post-variables.php:159
@@ -5900,34 +6206,12 @@ msgid ""
 "options."
 msgstr ""
 
-#: includes/replace-variables/class-post-variables.php:176
-msgid "Post Tag"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:177
-msgid ""
-"First tag (alphabetically) associated to the current post <strong>OR</"
-"strong> current tag on tag archives"
-msgstr ""
-
 #: includes/replace-variables/class-post-variables.php:179
 msgid "Example Tag"
 msgstr ""
 
-#: includes/replace-variables/class-post-variables.php:187
-msgid "Post Tags"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:188
-msgid "Comma-separated list of tags associated to the current post"
-msgstr ""
-
 #: includes/replace-variables/class-post-variables.php:190
 msgid "Example Tag 1, Example Tag 2"
-msgstr ""
-
-#: includes/replace-variables/class-post-variables.php:198
-msgid "Tags (advanced)"
 msgstr ""
 
 #: includes/replace-variables/class-post-variables.php:199
@@ -5940,44 +6224,16 @@ msgstr ""
 msgid "Example Tag 1 | Example Tag 2"
 msgstr ""
 
-#: includes/replace-variables/class-term-variables.php:35
-msgid "Current Term"
-msgstr ""
-
-#: includes/replace-variables/class-term-variables.php:36
-msgid "Current term name"
-msgstr ""
-
 #: includes/replace-variables/class-term-variables.php:38
 msgid "Example Term"
-msgstr ""
-
-#: includes/replace-variables/class-term-variables.php:46
-msgid "Term Description"
-msgstr ""
-
-#: includes/replace-variables/class-term-variables.php:47
-msgid "Current term description"
 msgstr ""
 
 #: includes/replace-variables/class-term-variables.php:49
 msgid "Example Term Description"
 msgstr ""
 
-#: includes/replace-variables/class-term-variables.php:57
-msgid "Custom Term (advanced)"
-msgstr ""
-
-#: includes/replace-variables/class-term-variables.php:58
-msgid "Custom term value."
-msgstr ""
-
 #: includes/replace-variables/class-term-variables.php:60
 msgid "Custom term value"
-msgstr ""
-
-#: includes/replace-variables/class-term-variables.php:68
-msgid "Custom Term description"
 msgstr ""
 
 #: includes/replace-variables/class-variable.php:83
@@ -6286,29 +6542,35 @@ msgid "Enable auto update of the plugin"
 msgstr ""
 
 #: includes/settings/general/others.php:22
-msgid "RSS Before Content"
+msgid "Anonymous data collection"
 msgstr ""
 
 #: includes/settings/general/others.php:23
-msgid "Add content before each post in your site feeds."
+msgid ""
+"Allow us to collect anonymized data (just a hash of your site url for "
+"statistical purposes). We cannot identify you from this data."
 msgstr ""
 
 #: includes/settings/general/others.php:30
-#: includes/settings/general/others.php:38
-msgid "RSS After Content"
+msgid "RSS Before Content"
 msgstr ""
 
 #: includes/settings/general/others.php:31
+msgid "Add content before each post in your site feeds."
+msgstr ""
+
+#: includes/settings/general/others.php:38
+#: includes/settings/general/others.php:46
+msgid "RSS After Content"
+msgstr ""
+
 #: includes/settings/general/others.php:39
+#: includes/settings/general/others.php:47
 msgid "Add content after each post in your site feeds."
 msgstr ""
 
 #: includes/settings/general/rss-vars-table.php:12
 msgid "Available variables"
-msgstr ""
-
-#: includes/settings/general/rss-vars-table.php:17
-msgid "Variable"
 msgstr ""
 
 #: includes/settings/general/rss-vars-table.php:24

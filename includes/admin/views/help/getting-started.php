@@ -25,7 +25,7 @@
 <p>
 	<?php 
 	printf(
-		/* translators:  */
+		/* translators: 1: Link to ClassicPress Forums 2: Link to GitHub */
 		__('If you do find what looks like a bug, please either report it on the <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">ClassicPress forums</a> or <a rel="nofollow noopener noreferrer" href="%2$s" target="_blank">open an issue on GitHub</a>.', 'cpseo' ),
 		'https://forums.classicpress.net/tags/classic-seo', 'https://github.com/ClassicPress-research/classicpress-seo/issues'); ?>
 </p>
@@ -33,14 +33,14 @@
 <p>
 	<?php 
 	printf(
-		/* translators:  */
+		/* translators: 1: Link to Classic Commerce */
 		__('A key future addition to Classic SEO will be support for <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">Classic Commerce</a>.', 'cpseo' ),
 		'https://github.com/ClassicPress-research/classic-commerce'); ?>
 </p>
 <p>
 	<?php 
 	printf(
-		/* translators:  */
+		/* translators: 1: Link to ClassicPress Forums */
 		__('If there is any feature you\'d like to see added to Classic SEO, post a message on the <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">ClassicPress forums</a>.', 'cpseo' ),
 		'https://forums.classicpress.net/tags/classic-seo'); ?>
 </p>
