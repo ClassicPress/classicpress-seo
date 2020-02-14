@@ -1,3 +1,9 @@
+#### v 1.0.0-beta2 / 2020-02-14
+* NEW: Add usage tracking notice and opt out (props xxsimoxx)
+* FIX: Variables translations in help pages will now translate
+* FIX: Fix for duplicate "view details" when GitHub updater is active (props xxsimoxx)
+* FIX: Fix for PHP error when refreshing sitemap in Search Console
+
 #### v 1.0.0-beta1 / 2020-02-08
 * NEW: Integrated CodePotent's Update Manager
 * NEW: Check for WP_CLI (props xxsimoxx)

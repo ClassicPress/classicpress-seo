@@ -1,7 +1,7 @@
 == Classic SEO ==
 
 Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-Version:           1.0.0-beta.1
+Version:           1.0.0-beta.2
 Text Domain:       cpseo
 Domain Path:       /languages
 Requires PHP:      7.0
@@ -44,6 +44,12 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 **As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
 
 == Changelog ==
+**v 1.0.0-beta2 / 2020-02-14**
+* NEW: Add usage tracking notice and opt out (props xxsimoxx)
+* FIX: Variables translations in help pages will now translate
+* FIX: Fix for duplicate "view details" when GitHub updater is active (props xxsimoxx)
+* FIX: Fix for PHP error when refreshing sitemap in Search Console
+
 **v 1.0.0-beta1 / 2020-02-08**
 * NEW: Integrated CodePotent's Update Manager
 * NEW: Check for WP_CLI (props xxsimoxx)
