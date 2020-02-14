@@ -15,14 +15,7 @@ use Classic_SEO\Helper;
 <p>
 	<?php esc_html_e( 'There are various methods for optimizing your website for local SEO but the easiest method is built right inside the Classic SEO plugin.', 'cpseo' ); ?>
 </p>
-<p>
-	<?php
-	printf(
-		/* translators: link to local-seo */
-		__( 'Simply <a rel="nofollow noopener noreferrer" href="" target="_blank">setup your business as Local Business</a> during the setup wizard.', 'cpseo' )
-	);
-	?>
-</p>
+
 <p>
 	<?php esc_html_e( 'Make sure the Local SEO & Google Knowledge Graph module is enabled.', 'cpseo' ); ?>
 </p>
