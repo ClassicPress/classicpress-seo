@@ -51,7 +51,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 * FIX: Fix for PHP error when refreshing sitemap in Search Console
 
 **v 1.0.0-beta1 / 2020-02-08**
-* NEW: Integrated CodePotent's Update Manager
+* NEW: Integrated Code Potent's Update Manager
 * NEW: Check for WP_CLI (props xxsimoxx)
 * IMPROVED: Services rich snippets (added missing properties)
 * Moved to new ClassicPress-plugins GitHub repository
