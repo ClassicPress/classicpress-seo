@@ -26,8 +26,7 @@
 namespace Classic_SEO\UpdateClient;
 
 // EDIT: URL where Update Manager is installed; with trailing slash!
-// const UPDATE_SERVER = 'https://www.cpseo.net/';
-const UPDATE_SERVER = 'https://software.gieffeedizioni.it/';
+const UPDATE_SERVER = 'https://www.cpseo.net/';
 
 // EDIT: plugin or theme?
 const UPDATE_TYPE = 'plugin';
