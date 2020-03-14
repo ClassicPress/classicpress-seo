@@ -319,6 +319,10 @@ class Classic_SEO {
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
 			add_action( 'plugins_loaded', [ $this, 'init_wp_cli' ], 20 );
 		}
+		
+		// Fix images folder for Update Manager.
+		add_filter( 'codepotent_update_manager_image_path', [ $this, 'fix_update_manager_images' ] );
+		add_filter( 'codepotent_update_manager_image_url', [ $this, 'fix_update_manager_images' ] );
 
 	}
 
@@ -359,14 +363,20 @@ class Classic_SEO {
 	public function init_wp_cli() {
 		WP_CLI::add_command( 'cpseo sitemap generate', [ '\Classic_SEO\CLI\Commands', 'sitemap_generate' ] );
 	}
-	
+
+	/**
+	 * Fix images folder for Update Manager.
+	 */
+	public function fix_update_manager_images( $folder ) {
+		return preg_replace( '/' . basename( CPSEO_PATH ) . '\/images$/', basename( CPSEO_PATH ) . '/assets/images', $folder );
+	}
+
 	/**
 	 * Add functionality on succeessful login.
 	 */
 	public function on_login() {
 		\Classic_SEO\Search_Console\Client::get()->refresh_auth_token_on_login();
 	}
-
 
 	/**
 	 * Show action links on the plugin screen.
