@@ -1,3 +1,7 @@
+#### v 1.0.0-beta3 / 2020-04-03
+* NEW: Add new Events schema properties to help with events that have been cancelled or postponed as a result of Covid-19
+* UPDATED: Code Potent Update Manager updated to latest version
+
 #### v 1.0.0-beta2 / 2020-02-14
 * NEW: Add usage tracking notice and opt out (props xxsimoxx)
 * FIX: Variables translations in help pages will now translate
