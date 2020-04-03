@@ -28,19 +28,17 @@ class Event implements Snippet {
 	 * @return array
 	 */
 	public function process( $data, $jsonld ) {
+		$type             = Helper::get_post_meta( 'snippet_event_type' );
+		$this->event_mode = Helper::get_post_meta( 'snippet_event_attendance_mode' );
+
 		$entity = [
-			'@context'    => 'https://schema.org',
-			'@type'       => Helper::get_post_meta( 'snippet_event_type' ),
-			'name'        => $jsonld->parts['title'],
-			'description' => $jsonld->parts['desc'],
-			'url'         => $jsonld->parts['url'],
-			'eventStatus' => Helper::get_post_meta( 'snippet_event_status' ),
-			'location'    => [
-				'@type' => 'Place',
-				'name'  => Helper::get_post_meta( 'snippet_event_venue' ),
-				'url'   => Helper::get_post_meta( 'snippet_event_venue_url' ),
-			],
-			'offers'      => [
+			'@type'               => $type ? $type : 'Event',
+			'name'                => $jsonld->parts['title'],
+			'description'         => $jsonld->parts['desc'],
+			'eventStatus'         => $this->get_event_status(),
+			'eventAttendanceMode' => $this->get_attendance_mode(),
+			'location'            => $this->get_event_location( $jsonld ),
+			'offers'              => [
 				'@type'    => 'Offer',
 				'name'     => 'General Admission',
 				'category' => 'primary',
@@ -48,15 +46,14 @@ class Event implements Snippet {
 		];
 
 		if ( $start_date = Helper::get_post_meta( 'snippet_event_startdate' ) ) { // phpcs:ignore
-			$entity['startDate'] = str_replace( ' ', 'T', date_i18n( 'Y-m-d H:i', $start_date ) );
+			$entity['startDate'] = str_replace( ' ', 'T', Helper::convert_date( $start_date ) );
 		}
 		if ( $end_date = Helper::get_post_meta( 'snippet_event_enddate' ) ) { // phpcs:ignore
-			$entity['endDate'] = str_replace( ' ', 'T', date_i18n( 'Y-m-d H:i', $end_date ) );
+			$entity['endDate'] = str_replace( ' ', 'T', Helper::convert_date( $end_date ) );
 		}
 
 		$jsonld->add_ratings( 'event', $entity );
-		$jsonld->set_address( 'event', $entity['location'] );
-
+		
 		$jsonld->set_data([
 			'snippet_event_price'               => 'price',
 			'snippet_event_currency'            => 'priceCurrency',
@@ -67,15 +64,14 @@ class Event implements Snippet {
 		], $entity['offers'] );
 
 		if ( ! empty( $entity['offers']['validFrom'] ) ) {
-			$entity['offers']['validFrom'] = str_replace( ' ', 'T', date_i18n( 'Y-m-d H:i', $entity['offers']['validFrom'] ) );
+			$entity['offers']['validFrom'] = str_replace( ' ', 'T', Helper::convert_date( $entity['offers']['validFrom'] ) );
 		}
 
 		if ( empty( $entity['offers']['price'] ) ) {
 			$entity['offers']['price'] = 0;
 		}
-		
-		$entity = $this->add_performer( $entity );
 
+		$entity = $this->add_performer( $entity );
 		return $entity;
 	}
 
@@ -97,5 +93,68 @@ class Event implements Snippet {
 			}
 		}
 		return $entity;
+	}
+	
+	/**
+	 * Get Event Attendance Mode.
+	 *
+	 * @return string
+	 */
+	private function get_attendance_mode() {
+		if ( ! $this->event_mode || 'offline' === $this->event_mode ) {
+			return 'https://schema.org/OfflineEventAttendanceMode';
+		}
+
+		if ( 'both' === $this->event_mode ) {
+			return 'https://schema.org/MixedEventAttendanceMode';
+		}
+
+		if ( 'online' === $this->event_mode ) {
+			return 'https://schema.org/OnlineEventAttendanceMode';
+		}
+	}
+
+	/**
+	 * Get Event Status.
+	 *
+	 * @return array Array of statuses
+	 */
+	private function get_event_status() {
+		$event_status = Helper::get_post_meta( 'snippet_event_status' );
+		$status       = [];
+		$status[]     = $event_status ? $event_status : 'EventScheduled';
+
+		return $status;
+	}
+
+	/**
+	 * Get Event Location.
+	 *
+	 * @param JsonLD $jsonld JsonLD Instance.
+	 *
+	 * @return array Array of locations.
+	 */
+	private function get_event_location( $jsonld ) {
+		$location = [];
+
+		if ( ! $this->event_mode || in_array( $this->event_mode, [ 'both', 'offline' ], true ) ) {
+			$place = [
+				'@type' => 'Place',
+				'name'  => Helper::get_post_meta( 'snippet_event_venue' ),
+				'url'   => Helper::get_post_meta( 'snippet_event_venue_url' ),
+			];
+
+			$jsonld->set_address( 'event', $place );
+			$location[] = $place;
+		}
+
+		if ( in_array( $this->event_mode, [ 'both', 'online' ], true ) ) {
+			$location[] = [
+				'@type' => 'VirtualLocation',
+				'url'   => Helper::get_post_meta( 'snippet_online_event_url' ),
+			];
+		}
+
+		return $location;
 	}
 }
