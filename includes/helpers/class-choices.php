@@ -87,13 +87,19 @@ trait Choices {
 		}
 
 		return [
-			'-'       => '-',
-			'&ndash;' => '&ndash;',
-			'&mdash;' => '&mdash;',
-			'&raquo;' => '&raquo;',
-			'|'       => '|',
-			'&bull;'  => '&bull;',
-			$current  => '<span class="custom-sep" contenteditable>' . $current . '</span>',
+			'-'			=> '-',
+			'&ndash;'	=> '&ndash;',
+			'&mdash;'	=> '&mdash;',
+			'&laquo;'	=> '&laquo;',
+			'&raquo;'	=> '&raquo;',
+			'|'			=> '|',
+			'&bull;'	=> '&bull;',
+			'&middot;'	=> '&middot;',
+			'*'			=> '*',
+			'&#8902;'	=> '&#8902;',
+			'&lt;'		=> '&lt;',
+			'&gt;'		=> '&gt;',
+			$current	=> '<span class="custom-sep" contenteditable>' . $current . '</span>',
 		];
 	}
 
