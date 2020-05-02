@@ -270,7 +270,6 @@ body.cpseo-styles{background:#f6f6f6}
 #wpadminbar #wp-toolbar #wp-admin-bar-cpseo_custom_top_level .ab-icon.icon-cpseo-cpseo img{vertical-align:middle;display:inline-block;text-align:center;width:18px;height:18px}
 #adminmenu #toplevel_page_cpseo .wp-menu-image img{max-width:20px;height:20px;-o-object-fit:fill;object-fit:fill;margin-top:-3px;width:20px}
 #cpseo-header #cpseo-admin h1::before{content:"";font-size:14px;line-height:40px;position:absolute;border-radius:6px;font-weight:400;width:40px;height:40px;text-align:center;background:#057f99 url(../img/icon-cpseo.svg) no-repeat;background-size:96%}
-#cpseo-header #cpseo-admin h1:hover{cursor:pointer}
 #cpseo-header #cpseo-admin h1>a{text-decoration:none;color:inherit}
 #cpseo-header #cpseo-admin h1 .cpseo-info-version{position:relative;left:50px;top:0;font-size:24px;width:200px;display:block}
 #cpseo-header #cpseo-admin .wpc-info-version{font-size:14px;left:310px;position:absolute;text-indent:0;top:85px}

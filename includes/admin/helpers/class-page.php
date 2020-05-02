@@ -330,10 +330,8 @@ class Page {
 		<div id="cpseo-header" <?php echo $hdrclass; ?>>
 			<div id="cpseo-admin">
 				<h1>
-					<a href="<?php echo admin_url( 'admin.php?page=cpseo-option' ); ?>">
-						<span class="screen-reader-text"><?php _e( 'Classic SEO', 'cpseo' ); ?></span>
-						<span class="cpseo-info-version"><?php _e('Classic SEO', 'cpseo'); ?></span>
-					</a>
+					<span class="screen-reader-text"><?php _e( 'Classic SEO', 'cpseo' ); ?></span>
+					<span class="cpseo-info-version"><?php _e('Classic SEO', 'cpseo'); ?></span>
 				</h1>
 			</div>
 		</div>
