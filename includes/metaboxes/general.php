@@ -25,6 +25,7 @@ $cmb->add_field( array(
 	'attributes'      => array(
 		'class'             => 'regular-text wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables'	=> 'seo_title,seo_description',
 	),
 ) );
 
@@ -45,6 +46,7 @@ $cmb->add_field( array(
 		'rows'              => 2,
 		'data-autoresize'   => true,
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables'	=> 'seo_title,seo_description',
 	),
 ) );
 

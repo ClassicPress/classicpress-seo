@@ -57,7 +57,9 @@ class Base {
 	private function get_queried_term_object() {
 		if ( is_category() || is_tag() || is_tax() ) {
 			$term = $GLOBALS['wp_query']->get_queried_object();
+			if ( is_object( $term ) && isset( $term->name ) ) {
 			return $term->name;
+		}
 		}
 
 		return '';
@@ -152,7 +154,7 @@ class Base {
 					'post_type'      => [ 'post', 'page' ],
 				]
 			);
-			$this->post = $posts[0];
+			$this->post = isset( $posts[0] ) ? $posts[0] : null;
 		}
 
 		if ( is_null( $this->post ) ) {

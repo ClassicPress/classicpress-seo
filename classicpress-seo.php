@@ -34,6 +34,13 @@ class Classic_SEO {
 	 * @var string
 	 */
 	public $version = '1.0.0';
+	
+	/**
+	 * Plugin beta version (for testing/development only)
+	 *
+	 * @var string
+	 */
+	public $pre_release_version = '4';		// TODO: Remove after pre-release
 
 	/**
 	 * Classic SEO database version.
@@ -198,6 +205,7 @@ class Classic_SEO {
 	private function define_constants() {
 		define( 'CPSEO_VERSION', $this->version );
 		define( 'CPSEO_DB_VERSION', $this->db_version );
+		define( 'CPSEO_PRE_RELEASE_VERSION', $this->pre_release_version );		// TODO: Remove after pre-release
 		define( 'CPSEO_MINIMUM_PHP_VERSION', $this->php_version );
 		define( 'CPSEO_FILE', __FILE__ );
 		define( 'CPSEO_PATH', plugin_dir_path( CPSEO_FILE ) );

@@ -256,6 +256,10 @@ class Basic_Variables extends Cache {
 	 * @return string|null
 	 */
 	public function get_count( $name ) {
+		if ( ! is_string( $name ) ) {
+			return null;
+		}
+
 		if ( ! isset( $this->counters[ $name ] ) ) {
 			$this->counters[ $name ] = 0;
 		}

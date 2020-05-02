@@ -80,6 +80,7 @@ $cmb->add_field([
 	'default'         => '%name% %sep% %sitename% %page%',
 	'dep'             => $dep,
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([
@@ -92,6 +93,7 @@ $cmb->add_field([
 	'attributes'      => [
 		'class'             => 'cmb2-textarea-small wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables'	=> 'seo_title,seo_description',
 	],
 	'sanitization_cb' => false,
 ]);

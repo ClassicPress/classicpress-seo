@@ -172,7 +172,7 @@ trait WordPress {
 			return $content;
 		}
 
-		return preg_replace( '~(?:\[/?)[^/\]]+/?\]~s', '', $content );
+		return preg_replace( '~\[\/?.*?\]~s', '', $content );
 	}
 
 	/**
@@ -480,8 +480,8 @@ trait WordPress {
 		$screen = get_current_screen();
 		$robots = Helper::get_settings( 'titles.cpseo_robots_global', [] );
 
-		if ( 'post' === $screen->base && Helper::get_settings( "titles.pt_{$screen->post_type}_custom_robots" ) ) {
-			$robots = Helper::get_settings( "titles.pt_{$screen->post_type}_robots", [] );
+		if ( 'post' === $screen->base && Helper::get_settings( "titles.cpseo_pt_{$screen->post_type}_custom_robots" ) ) {
+			$robots = Helper::get_settings( "titles.cpseo_pt_{$screen->post_type}_robots", [] );
 		}
 
 		if ( 'term' === $screen->base && Helper::get_settings( "titles.cpseo_tax_{$screen->taxonomy}_custom_robots" ) ) {

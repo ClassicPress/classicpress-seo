@@ -35,6 +35,7 @@ $cmb->add_field([
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%term% Archives %page% %sep% %sitename%',
 	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_textfield' ],
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([
@@ -48,6 +49,7 @@ $cmb->add_field([
 	'attributes'      => [
 		'class'             => 'cmb2-textarea-small wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables' => 'seo_title,seo_description',
 	],
 	'sanitization_cb' => true,
 ]);
