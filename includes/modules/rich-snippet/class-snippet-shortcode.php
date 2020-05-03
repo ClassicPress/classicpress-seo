@@ -31,7 +31,10 @@ class Snippet_Shortcode {
 	public function __construct() {
 		$this->add_shortcode( 'cpseo_rich_snippet', 'rich_snippet' );
 		$this->add_shortcode( 'cpseo_review_snippet', 'rich_snippet' );
-		$this->filter( 'the_content', 'add_review_to_content', 11 );
+
+		if ( ! is_admin() ) {
+			$this->filter( 'the_content', 'add_review_to_content', 11 );
+		}
 
 		if ( ! function_exists( 'register_block_type' ) ) {
 			return;
@@ -86,7 +89,7 @@ class Snippet_Shortcode {
 	 * @return string Shortcode output.
 	 */
 	public function get_snippet_content( $post ) {
-		$schema = Helper::get_post_meta( 'rich_snippet', $post->ID );
+		$schema = Helper::get_post_meta( 'cpseo_rich_snippet', $post->ID );
 		if ( ! $this->get_fields( $schema ) ) {
 			return __( 'Snippet not selected.', 'cpseo' );
 		}
@@ -94,13 +97,13 @@ class Snippet_Shortcode {
 		wp_enqueue_style( 'cpseo-review-snippet', cpseo()->assets() . 'css/cpseo-snippet.css', null, cpseo()->version );
 
 		// Title.
-		$title = Helper::get_post_meta( 'snippet_name', $post->ID );
+		$title = Helper::get_post_meta( 'cpseo_snippet_name', $post->ID );
 		$title = $title ? $title : Helper::replace_vars( '%title%', $post );
 
 		// Description.
 		$excerpt = Helper::replace_vars( '%excerpt%', $post );
-		$desc    = Helper::get_post_meta( 'snippet_desc', $post->ID );
-		$desc    = $desc ? $desc : ( $excerpt ? $excerpt : Helper::get_post_meta( 'description', $post->ID ) );
+		$desc    = Helper::get_post_meta( 'cpseo_snippet_desc', $post->ID );
+		$desc    = $desc ? $desc : ( $excerpt ? $excerpt : Helper::get_post_meta( 'cpseo_description', $post->ID ) );
 
 		// Image.
 		$image = Helper::get_thumbnail_with_fallback( $post->ID, 'medium' );

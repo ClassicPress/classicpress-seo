@@ -7,6 +7,7 @@
  * @subpackage Classic_SEO\Paper
  */
 
+
 namespace Classic_SEO\Paper;
 
 use Classic_SEO\Post;
@@ -445,6 +446,12 @@ class Paper {
 	 */
 	public static function get_from_options( $id, $source = [], $default = '' ) {
 		$value = Helper::get_settings( "titles.$id" );
+
+		// Break loop.
+		if ( ! Str::ends_with( 'default_snippet_name', $value ) && ! Str::ends_with( 'default_snippet_desc', $value ) ) {
+			$value = \str_replace( [ '%seo_title%', '%seo_description%' ], [ '%title%', '%excerpt%' ], $value );
+		}
+
 		return '' !== $value ? Helper::replace_vars( $value, $source ) : $default;
 	}
 
@@ -500,5 +507,18 @@ class Paper {
 			}
 		}
 		return $robots;
+	}
+	
+	/**
+	 * Should apply shortcode on content.
+	 *
+	 * @return bool
+	 */
+	public static function should_apply_shortcode() {
+		if ( Post::is_woocommerce_page() || ( function_exists( 'is_wcfm_page' ) && is_wcfm_page() ) ) {
+			return false;
+		}
+
+		return apply_filters( 'cpseo/paper/auto_generated_description/apply_shortcode', false );
 	}
 }

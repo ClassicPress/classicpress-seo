@@ -28,7 +28,7 @@ class Service implements Snippet {
 	 * @return array
 	 */
 	public function process( $data, $jsonld ) {
-		$price  = Helper::get_post_meta( 'snippet_service_price' );
+		$price  = Helper::get_post_meta( 'cpseo_snippet_service_price' );
 		$phone_numbers = Helper::get_settings( 'titles.cpseo_phone_numbers' );
 		foreach ($phone_numbers as $phone) {
 			if ( isset ($phone['number']) && $phone['number'] != '' ) {
@@ -42,7 +42,7 @@ class Service implements Snippet {
 			'@type'           => 'Service',
 			'name'            => $jsonld->parts['title'],
 			'description'     => $jsonld->parts['desc'],
-			'serviceType'     => Helper::get_post_meta( 'snippet_service_type' ),
+			'serviceType'     => Helper::get_post_meta( 'cpseo_snippet_service_type' ),
 			'provider' 		  => [
 				'@type'		  => 'LocalBusiness',
 				'name'		  => $jsonld->get_website_name(),
@@ -51,7 +51,7 @@ class Service implements Snippet {
 				'telephone'   => $telephone,
 				'priceRange'  => Helper::get_settings( 'titles.cpseo_price_range' ),
 			 ],
-			'areaServed'	  => Helper::get_post_meta( 'snippet_service_area' ),
+			'areaServed'	  => Helper::get_post_meta( 'cpseo_snippet_service_area' ),
 			'url'			  => $jsonld->parts['url'],
 		];
 

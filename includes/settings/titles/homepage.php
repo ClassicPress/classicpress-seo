@@ -20,6 +20,7 @@ $cmb->add_field([
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%sitename% %page% %sep% %sitedesc%',
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([
@@ -32,6 +33,7 @@ $cmb->add_field([
 	'attributes'      => [
 		'class'             => 'cmb2_textarea wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables'  => 'seo_title,seo_description',
 	],
 ]);
 

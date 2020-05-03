@@ -142,6 +142,14 @@ class Settings {
 
 		return $options;
 	}
+	
+	/**
+	 * Reset options
+	 */
+	public function reset() {
+		$this->options = null;
+		$this->get_options();
+	}
 
 	/**
 	 * Get options once for use throughout the plugin cycle.

@@ -29,6 +29,15 @@ class Updates implements Runner {
 	private static $updates = [
 
 	];
+	
+	/**
+	 * Updates that need to be run
+	 *
+	 * @var array
+	 */
+	private static $pre_release_updates = [
+		'1.0.0'   => 'updates/update-1.0.0-beta.4.php',
+	];
 
 	/**
 	 * Register hooks.
@@ -42,6 +51,7 @@ class Updates implements Runner {
 	 */
 	public static function do_updates() {
 		$installed_version = get_option( 'cpseo_version' );
+		$pre_release_installed_version = get_option( 'cpseo_pre_release_version' );
 
 		// Maybe it's the first install.
 		if ( ! $installed_version ) {
@@ -50,6 +60,12 @@ class Updates implements Runner {
 
 		if ( version_compare( $installed_version, cpseo()->version, '<' ) ) {
 			self::perform_updates();
+		}
+		
+		// TODO: What if cpseo_pre_release_version does not exist????
+		
+		if ( version_compare( $pre_release_installed_version, cpseo()->pre_release_version, '<' ) ) {
+			self::perform_pre_release_updates();
 		}
 	}
 
@@ -75,6 +91,24 @@ class Updates implements Runner {
 
 		update_option( 'cpseo_version', cpseo()->version );
 		update_option( 'cpseo_db_version', cpseo()->db_version );
+	}
+	
+	/**
+	 * Perform pre-release updates.
+	 */
+	public static function perform_pre_release_updates() {
+		$pre_release_installed_version = get_option( 'cpseo_pre_release_version' );
+		
+		if ( ! empty(self::$pre_release_updates ) ) {
+			foreach ( self::$pre_release_updates as $pre_release_version => $path ) {
+				if ( version_compare( $pre_release_installed_version, $pre_release_version, '<' ) ) {
+					include $path;
+					update_option( 'cpseo_pre_release_version', $pre_release_version );
+				}
+			}
+		}
+
+		update_option( 'cpseo_pre_release_version', cpseo()->pre_release_version );
 	}
 
 }

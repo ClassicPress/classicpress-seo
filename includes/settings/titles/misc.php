@@ -31,6 +31,7 @@ $cmb->add_field([
 	'default'         => '%date% %page% %sep% %sitename%',
 	'dep'             => $dep,
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([
@@ -44,6 +45,7 @@ $cmb->add_field([
 	'attributes'      => [
 		'class'             => 'cmb2-textarea-small wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables'  => 'seo_title,seo_description',
 	],
 ]);
 
@@ -55,6 +57,7 @@ $cmb->add_field([
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%search_query% %page% %sep% %sitename%',
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([
@@ -65,6 +68,7 @@ $cmb->add_field([
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => 'Page Not Found %sep% %sitename%',
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([

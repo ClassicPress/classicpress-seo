@@ -161,42 +161,9 @@ class Singular implements IPaper {
 		}
 
 		// 3. Description template set in the Titles & Meta.
-		$post_type   = isset( $object->post_type ) ? $object->post_type : $object->query_var;
-		$description = Paper::get_from_options( "cpseo_pt_{$post_type}_description", $object );
+		$post_type = isset( $object->post_type ) ? $object->post_type : $object->query_var;
 
-		return '' !== $description ? $description : $this->get_post_description_auto_generated( $object );
-	}
-
-	/**
-	 * Auto-generate description for metadesc
-	 *
-	 * @param object|null $object Object to retrieve the description from.
-	 *
-	 * @return string
-	 */
-	protected function get_post_description_auto_generated( $object ) {
-		// Early Bail!
-		if ( empty( $object ) || empty( $object->post_content ) ) {
-			return '';
-		}
-
-		$keywords     = Post::get_meta( 'focus_keyword', $object->ID );
-		$post_content = $this->should_apply_shortcode() ? do_shortcode( $object->post_content ) : $object->post_content;
-		$post_content = wpautop( WordPress::strip_shortcodes( $post_content ) );
-		$post_content = wp_kses( $post_content, [ 'p' => [] ] );
-
-		// 4. Paragraph with the focus keyword.
-		if ( ! empty( $keywords ) ) {
-			$regex = '/<p>(.*' . str_replace( [ ',', ' ', '/' ], [ '|', '.', '\/' ], $keywords ) . '.*)<\/p>/iu';
-			\preg_match_all( $regex, $post_content, $matches );
-			if ( isset( $matches[1], $matches[1][0] ) ) {
-				return $matches[1][0];
-			}
-		}
-
-		// 5. The First paragraph of the content.
-		\preg_match_all( '/<p>(.*)<\/p>/iu', $post_content, $matches );
-		return isset( $matches[1], $matches[1][0] ) ? $matches[1][0] : '';
+		return wp_html_excerpt( Paper::get_from_options( "cpseo_pt_{$post_type}_description", $object ), 160 );
 	}
 
 	/**
@@ -248,20 +215,5 @@ class Singular implements IPaper {
 		}
 
 		return $robots;
-	}
-
-	/**
-	 * Should apply shortcode on content.
-	 *
-	 * @return bool
-	 */
-	private function should_apply_shortcode() {
-		$is_woocommerce_page = Post::is_woocommerce_page();
-		$is_wcfm_page        = function_exists( 'is_wcfm_page' ) && is_wcfm_page();
-		if ( $is_woocommerce_page || $is_wcfm_page ) {
-			return false;
-		}
-
-		return apply_filters( 'cpseo/paper/auto_generated_description/apply_shortcode', false );
 	}
 }

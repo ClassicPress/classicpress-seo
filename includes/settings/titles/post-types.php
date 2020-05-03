@@ -38,6 +38,7 @@ $cmb->add_field([
 	'desc'            => sprintf( esc_html__( 'Default title tag for single %s pages. This can be changed on a per-post basis on the post editor screen.', 'cpseo' ), $name ),
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%title% %page% %sep% %sitename%',
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 	'sanitization_cb' => [ '\Classic_SEO\CMB2', 'sanitize_textfield' ],
 ]);
 
@@ -53,6 +54,7 @@ $cmb->add_field([
 	'attributes'      => [
 		'class'             => 'cmb2-textarea-small wp-exclude-emoji',
 		'data-gramm_editor' => 'false',
+		'data-exclude-variables' => 'seo_title,seo_description',
 	],
 ]);
 
@@ -66,6 +68,7 @@ $cmb->add_field([
 	'classes'         => 'cpseo-supports-variables cpseo-title',
 	'default'         => '%title% %page% %sep% %sitename%',
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 $cmb->add_field([
@@ -77,6 +80,7 @@ $cmb->add_field([
 	'desc'            => sprintf( esc_html__( 'Description for %s archive pages.', 'cpseo' ), $name ),
 	'classes'         => 'cpseo-supports-variables cpseo-description',
 	'sanitization_cb' => false,
+	'attributes'      => [ 'data-exclude-variables' => 'seo_title,seo_description' ],
 ]);
 
 if ( 'product' === $post_type || 'download' === $post_type ) {
@@ -125,9 +129,9 @@ if ( 'product' === $post_type || 'download' === $post_type ) {
 			'data-autoresize' => true,
 		],
 		'classes'         => 'cpseo-supports-variables',
+		'default'         => '%seo_description%',
 		'dep'             => [ [ 'cpseo_pt_' . $post_type . '_default_rich_snippet', 'off,book,local', '!=' ] ],
 		'sanitization_cb' => false,
-		'default'         => '%excerpt%',
 	]);
 }
 

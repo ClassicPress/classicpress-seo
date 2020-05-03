@@ -127,8 +127,9 @@ class Installer {
 	 * Runs on activation of the plugin.
 	 */
 	private function activate() {
-		$current_version    = get_option( 'cpseo_version', null );
-		$current_db_version = get_option( 'cpseo_db_version', null );
+		$current_version		= get_option( 'cpseo_version', null );
+		$current_db_version		= get_option( 'cpseo_db_version', null );
+		$pre_release_version	= get_option( 'cpseo_pre_release_version', null );
 
 		$this->create_tables();
 		$this->create_options();
@@ -142,6 +143,7 @@ class Installer {
 		// Update to latest version.
 		update_option( 'cpseo_version', CPSEO_VERSION );
 		update_option( 'cpseo_db_version', CPSEO_DB_VERSION );
+		update_option( 'cpseo_pre_release_version', CPSEO_PRE_RELEASE_VERSION );
 
 		// Save install date.
 		if ( false === boolval( get_option( 'cpseo_install_date' ) ) ) {
@@ -419,8 +421,8 @@ class Installer {
 			$titles[ 'cpseo_pt_' . $post_type . '_custom_robots' ]        = $defaults['is_custom'];
 			$titles[ 'cpseo_pt_' . $post_type . '_default_rich_snippet' ] = $defaults['rich_snippet'];
 			$titles[ 'cpseo_pt_' . $post_type . '_default_article_type' ] = $defaults['article_type'];
-			$titles[ 'cpseo_pt_' . $post_type . '_default_snippet_name' ] = '%title%';
-			$titles[ 'cpseo_pt_' . $post_type . '_default_snippet_desc' ] = '%excerpt%';
+			$titles[ 'cpseo_pt_' . $post_type . '_default_snippet_name' ] = '%seo_title%';
+			$titles[ 'cpseo_pt_' . $post_type . '_default_snippet_desc' ] = '%seo_description%';
 
 			if ( $this->has_archive( $post_type ) ) {
 				$titles[ 'cpseo_pt_' . $post_type . '_archive_title' ] = '%title% %page% %sep% %sitename%';
