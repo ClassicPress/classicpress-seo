@@ -122,7 +122,7 @@ class Analytics_List extends List_Table {
 			'property'    => 'query' === $this->filters['dimension'] ? esc_html__( 'Keywords', 'cpseo' ) : esc_html__( 'Pages', 'cpseo' ),
 			'clicks'      => esc_html__( 'Clicks', 'cpseo' ),
 			'impressions' => esc_html__( 'Impressions', 'cpseo' ),
-			'ctr'         => esc_html__( 'CTR', 'cpseo' ),
+			'ctr'         => esc_html__( 'CTR %', 'cpseo' ),
 			'position'    => esc_html__( 'Position', 'cpseo' ),
 		];
 	}
