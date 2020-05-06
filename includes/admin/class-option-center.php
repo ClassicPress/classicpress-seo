@@ -15,6 +15,7 @@ use Classic_SEO\Helper;
 use Classic_SEO\Runner;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Helpers\Arr;
+use Classic_SEO\Helpers\Str;
 use Classic_SEO\Helpers\Param;
 use Classic_SEO\Helpers\WordPress;
 
@@ -186,10 +187,25 @@ class Option_Center implements Runner {
 		foreach ( Helper::get_accessible_post_types() as $post_type ) {
 			$obj      = get_post_type_object( $post_type );
 			$obj_name = isset( $names[ $obj->name ] ) ? sprintf( $names[ $obj->name ], $obj->name ) : $obj->name;
+			$icon     = isset( $icons[ $obj->name ] ) ? $icons[ $obj->name ] : $icons['default'];
+
+			// Set settings menu icon. Attempts to use the icon as defined by custom post type instead of default icon.
+			if ( isset( $obj->menu_icon ) && $obj->menu_icon != '' ) {
+				if ( Str::starts_with( 'dashicons', $obj->menu_icon ) ) {
+					$icon = 'dashicons ' . $obj->menu_icon;	// dashicons
+				}
+				else if ( Str::starts_with( 'fa', $obj->menu_icon ) ) {
+					$icon = 'fa ' . $obj->menu_icon;		//Font Awesome
+				}
+				else if ( Str::starts_with( 'http', $obj->menu_icon ) ) {
+					$icon = $obj->menu_icon;				// Images
+				}
+			}
+
 
 			$tabs[ 'post-type-' . $obj->name ] = [
 				'title'     => $obj->label,
-				'icon'      => isset( $icons[ $obj->name ] ) ? $icons[ $obj->name ] : $icons['default'],
+				'icon'      => $icon,
 				/* translators: post type name */
 				'desc'      => sprintf( esc_html__( 'SEO options for %s', 'cpseo' ), $obj_name),
 				'post_type' => $obj->name,
@@ -218,7 +234,7 @@ class Option_Center implements Runner {
 		foreach ( Helper::get_accessible_taxonomies() as $taxonomy ) {
 			$attached = implode( ' + ', $taxonomy->object_type );
 
-			// Seprator.
+			// Separator.
 			$tabs[ $attached ] = [
 				'title' => ucwords( $attached ) . ':',
 				'type'  => 'seprator',
