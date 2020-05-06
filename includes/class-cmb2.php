@@ -148,8 +148,18 @@ class CMB2 {
 					printf( '<span class="separator">%s</span>', $tab['title'] );
 					continue;
 				}
+
+				// Set the settings menu icon
 				?>
-				<a href="#setting-panel-<?php echo $id; ?>"<?php echo $id === $active ? 'class="active"' : ''; ?>><span class="<?php echo esc_attr( $tab['icon'] ); ?>"></span><?php echo $tab['title']; ?></a>
+				<a href="#setting-panel-<?php echo $id; ?>"<?php echo $id === $active ? 'class="active"' : ''; ?>>
+
+					<?php if ( Str::starts_with( 'http', $tab['icon'] ) && ( Str::ends_with( '.jpg', $tab['icon'] ) || Str::ends_with( '.png', $tab['icon'] ) || Str::ends_with( '.svg', $tab['icon'] ) ) ) { // Image icons ?>
+						<span class="image-icon"><img src="<?php echo esc_attr( $tab['icon'] ); ?>"></span><?php echo $tab['title']; ?>
+					<?php } else { // class icons (e.g. dashicons, fa) ?>
+						<span class="<?php echo esc_attr( $tab['icon'] ); ?>"></span><?php echo $tab['title']; ?>
+					<?php } ?>
+
+				</a>
 			<?php endforeach; ?>
 
 		</div>
@@ -183,6 +193,7 @@ class CMB2 {
 				?>
 				<a href="#setting-panel-<?php echo $id; ?>"><span class="<?php echo esc_attr( $tab['icon'] ); ?>"></span><span class="cpseo-tab-text"><?php echo $tab['title']; ?></span></a>
 			<?php endforeach; ?>
+
 		</div>
 
 		<div class="cpseo-tabs-content cpseo-custom">
