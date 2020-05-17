@@ -55,6 +55,8 @@ class Common {
 			$this->filter( 'auto_update_plugin', 'auto_update_plugin', 10, 2 );
 		}
 		
+		$this->filter( 'is_protected_meta', 'hide_cpseo_meta', 10, 2 );
+		
 		new Admin_Bar_Menu;
 	}
 	
@@ -200,6 +202,19 @@ class Common {
 		$custom = Str::to_arr_no_empty( $custom );
 
 		return array_unique( array_merge( $stopwords, $custom ) );
+	}
+	
+
+	/**
+	 * Hide cpseo meta keys
+	 *
+	 * @param bool   $protected Whether the key is considered protected.
+	 * @param string $meta_key  Meta key.
+	 *
+	 * @return bool
+	 */
+	public function hide_cpseo_meta( $protected, $meta_key ) {
+		return Str::starts_with( 'cpseo_', $meta_key ) ? true : $protected;
 	}
 
 	/**
