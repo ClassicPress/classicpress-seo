@@ -9,17 +9,23 @@
 ?>
 <h3><?php esc_html_e( 'Sitemaps', 'cpseo' ); ?></h3>
 
-<p><?php esc_html_e( 'XML sitemaps are files that serve a single purpose - to help search engines find and index all of your content.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'XML sitemaps are files that help search engines find and index all of your content.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'Once upon a time, search engine bots would have a hard time finding all the content on a site. Many sites had a weak internal link structure, and that meant that some pages or posts would go overlooked.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'In many cases, if you have good internal linking, search engines will be able to discover content on your site without the need for a sitemap. Nevertheless, a sitemap is still recommended.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'The early search engines gave us forms where we could enter our URLs one at a time. They\'d feed this information into their queue of pages to crawl, and the pages would get visited and indexed at some point.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'If your internal linking isn\'t perfect, you can easily end up with pages that don\'t have any links pointing to them, making them hard to find. ', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'Typing in dozens or even hundreds of URLs was a tedious job - in fact, many companies popped up offering to submit your site to the search engines, because who had the time to do that?', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'An XML sitemap lists your website\'s important pages, making sure search engines can find and crawl them all.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'When Google appeared on the scene, people soon noticed that submitting pages didn\'t lead to fast crawls. Linking to a page from another page (even on the same site) would get the bot to visit quickly.', 'cpseo' ); ?></p>
+<h3><?php esc_html_e( 'Where is my sitemap?', 'cpseo' ); ?></h3>
 
-<p><?php esc_html_e( 'To solve the problem of getting pages crawled and indexed, many webmasters created a "sitemap". It was an ugly HTML page with nothing but links to all the site\'s content. It was a bit of an eyesore, and human users had little use for it. But it helped the spiders to find pages and it got them into the index.', 'cpseo' ); ?></p>
-
-<p><?php esc_html_e( 'Search engines realized that people were building these pages that didn\'t do anything for human visitors, and they decided to cut us a break. They invented a new XML based file that we could use to communicate directly with the robots. We could announce our new pages without cluttering up our sites with pointless pages.', 'cpseo' ); ?></p>
-
+<p>
+	<?php
+	printf(
+		/* translators: link to sitemap */
+		__( 'Classic SEO creates a file called sitemap_index.xml which can be viewed here <a href="%1$s" target="_blank">%2$s</a>.', 'cpseo' ),
+		get_site_url() . '/sitemap_index.xml',
+		get_site_url() . '/sitemap_index.xml'
+	);
+	?>
+</p>
