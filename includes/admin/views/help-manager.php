@@ -20,10 +20,6 @@ $tabs = apply_filters( 'cpseo/help/tabs', array(
 		'title' => esc_html__( 'Local SEO', 'cpseo' ),
 		'view'  => 'help/local-seo.php',
 	),
-	'variables'       => array(
-		'title' => esc_html__( 'Variables', 'cpseo' ),
-		'view'  => 'help/variables.php',
-	),
 	'developers'       => array(
 		'title' => esc_html__( 'Developers', 'cpseo' ),
 		'view'  => 'help/developers.php',
