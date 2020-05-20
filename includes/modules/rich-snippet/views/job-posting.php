@@ -110,7 +110,7 @@ $cmb->add_field([
 	'name'       => esc_html__( 'Hiring Organization', 'cpseo' ),
 	'desc'       => esc_html__( 'The name of the company. Leave empty to use your own company information.', 'cpseo' ),
 	'attributes' => [
-		'placeholder' => 'company' === Helper::get_settings( 'titles.knowledgegraph_type' ) ? Helper::get_settings( 'titles.cpseo_knowledgegraph_name' ) : get_bloginfo( 'name' ),
+		'placeholder' => 'company' === Helper::get_settings( 'titles.cpseo_knowledgegraph_type' ) ? Helper::get_settings( 'titles.cpseo_knowledgegraph_name' ) : get_bloginfo( 'name' ),
 	],
 	'dep'        => $jobposting,
 	'classes'    => 'cmb-row-50',

@@ -171,7 +171,7 @@ class Sitemap {
 	 * @return bool
 	 */
 	public static function can_ping() {
-		if ( false === Helper::get_settings( 'sitemap.ping_search_engines' ) ) {
+		if ( false === Helper::get_settings( 'sitemap.cpseo_ping_search_engines' ) ) {
 			return false;
 		}
 
@@ -184,15 +184,15 @@ class Sitemap {
 	}
 
 	/**
-	 * Exclude object frmofrom sitemap.
+	 * Exclude object from sitemap.
 	 *
 	 * @param  int     $object_id   Object id.
-	 * @param  string  $object_type Object type. Accetps: post, term, user.
+	 * @param  string  $object_type Object type. Accepts: post, term, user.
 	 * @param  boolean $include     Add or Remove object.
 	 */
 	public static function exclude_object( $object_id, $object_type, $include ) {
 		$field_id = "exclude_{$object_type}s";
-		$ids      = Helper::get_settings( 'sitemap.' . $field_id );
+		$ids      = Helper::get_settings( 'sitemap.cpseo_' . $field_id );
 
 		if ( empty( $ids ) ) {
 			$ids = $object_id;

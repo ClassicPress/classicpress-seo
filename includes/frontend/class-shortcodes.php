@@ -60,7 +60,7 @@ class Shortcodes {
 	 * @return string
 	 */
 	public function breadcrumb( $args ) {
-		if ( ! Helper::get_settings( 'general.breadcrumbs' ) ) {
+		if ( ! Helper::get_settings( 'general.cpseo_breadcrumbs' ) ) {
 			return;
 		}
 		return Breadcrumbs::get()->get_breadcrumb( $args );

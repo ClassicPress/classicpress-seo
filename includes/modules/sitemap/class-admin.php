@@ -250,7 +250,7 @@ class Admin extends Base {
 	public function show_on( $field ) {
 
 		$news_sitemap_enabled = Helper::is_module_active( 'news-sitemap' );
-		$is_post_type_news    = in_array( get_post_type(), (array) Helper::get_settings( 'sitemap.news_sitemap_post_type' ), true );
+		$is_post_type_news    = in_array( get_post_type(), (array) Helper::get_settings( 'sitemap.cpseo_news_sitemap_post_type' ), true );
 
 		if ( $news_sitemap_enabled && $is_post_type_news ) {
 			return true;

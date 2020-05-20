@@ -230,7 +230,7 @@ class Taxonomy implements Provider {
 			'hide_empty' => $hide_empty,
 			'offset'     => $offset,
 			'number'     => $max_entries,
-			'exclude'    => wp_parse_id_list( Helper::get_settings( 'sitemap.exclude_terms' ) ),
+			'exclude'    => wp_parse_id_list( Helper::get_settings( 'sitemap.cpseo_exclude_terms' ) ),
 		]);
 		$this->remove_filter( 'get_terms_fields', 'filter_terms_query', 20 );
 

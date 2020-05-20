@@ -257,7 +257,7 @@ class Client {
 	 */
 	private function set_data() {
 		$this->data    = Helper::search_console_data();
-		$this->profile = Helper::get_settings( 'general.console_profile' );
+		$this->profile = Helper::get_settings( 'general.cpseo_console_profile' );
 
 		if ( ! $this->profile && ! empty( $this->data['profiles'] ) ) {
 			$this->profile = key( $this->data['profiles'] );
