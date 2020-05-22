@@ -154,7 +154,7 @@ class Image_Parser {
 	private function get_post_thumbnail() {
 		$thumbnail_id = get_post_thumbnail_id( $this->post->ID );
 		if (
-			! Helper::get_settings( 'sitemap.include_featured_image' ) ||
+			! Helper::get_settings( 'sitemap.cpseo_include_featured_image' ) ||
 			! Helper::attachment_in_sitemap( $thumbnail_id )
 		) {
 			return;
@@ -214,7 +214,7 @@ class Image_Parser {
 	 * Get images from custom fields
 	 */
 	private function get_custom_field_images() {
-		$customs = Helper::get_settings( 'sitemap.pt_' . $this->post->post_type . '_image_customfields' );
+		$customs = Helper::get_settings( 'sitemap.cpseo_pt_' . $this->post->post_type . '_image_customfields' );
 		if ( empty( $customs ) ) {
 			return;
 		}

@@ -232,7 +232,7 @@ class Frontend {
 	 * @return string
 	 */
 	private function get_rss_content( $which ) {
-		$content = $this->do_filter( 'frontend/rss/' . $which . '_content', Helper::get_settings( 'general.rss_' . $which . '_content' ) );
+		$content = $this->do_filter( 'frontend/rss/' . $which . '_content', Helper::get_settings( 'general.cpseo_rss_' . $which . '_content' ) );
 
 		return '' !== $content ? wpautop( $this->rss_replace_vars( $content ) ) : $content;
 	}

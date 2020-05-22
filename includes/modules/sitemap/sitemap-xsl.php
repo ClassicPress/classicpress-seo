@@ -285,7 +285,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 									<thead>
 										<tr>
 											<th width="80%"><?php esc_html_e( 'URL', 'cpseo' ); ?></th>
-											<?php if ( Helper::get_settings( 'sitemap.include_images' ) ) : // phpcs:ignore ?><th width="5%"><?php esc_html_e( 'Images', 'cpseo' ); ?></th><?php endif; ?>
+											<?php if ( Helper::get_settings( 'sitemap.cpseo_include_images' ) ) : // phpcs:ignore ?><th width="5%"><?php esc_html_e( 'Images', 'cpseo' ); ?></th><?php endif; ?>
 											<th title="Last Modification Time" width="15%"><?php esc_html_e( 'Last Mod.', 'cpseo' ); ?></th>
 										</tr>
 									</thead>
@@ -303,7 +303,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
 														<xsl:value-of select="sitemap:loc"/>
 													</a>
 												</td>
-												<?php if ( Helper::get_settings( 'sitemap.include_images' ) ) : ?>
+												<?php if ( Helper::get_settings( 'sitemap.cpseo_include_images' ) ) : ?>
 												<td>
 													<xsl:value-of select="count(image:image)"/>
 												</td>

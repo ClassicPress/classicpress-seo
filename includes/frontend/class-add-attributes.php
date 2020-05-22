@@ -187,7 +187,7 @@ class Add_Attributes {
 		}
 
 		$setting = 'include' === $type ? 'cpseo_nofollow_domains' : 'cpseo_nofollow_exclude_domains';
-		$domains = Helper::get_settings( "general.{$setting}" );
+		$domains = Helper::get_settings( "general.cpseo_{$setting}" );
 		$domains = Str::to_arr_no_empty( $domains );
 
 		$cpseo_cpseo_nofollow_domains[ $type ] = empty( $domains ) ? false : join( ';', $domains );

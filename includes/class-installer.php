@@ -129,7 +129,6 @@ class Installer {
 	private function activate() {
 		$current_version		= get_option( 'cpseo_version', null );
 		$current_db_version		= get_option( 'cpseo_db_version', null );
-		$pre_release_version	= get_option( 'cpseo_pre_release_version', null );
 
 		$this->create_tables();
 		$this->create_options();
@@ -143,7 +142,6 @@ class Installer {
 		// Update to latest version.
 		update_option( 'cpseo_version', CPSEO_VERSION );
 		update_option( 'cpseo_db_version', CPSEO_DB_VERSION );
-		update_option( 'cpseo_pre_release_version', CPSEO_PRE_RELEASE_VERSION );
 
 		// Save install date.
 		if ( false === boolval( get_option( 'cpseo_install_date' ) ) ) {

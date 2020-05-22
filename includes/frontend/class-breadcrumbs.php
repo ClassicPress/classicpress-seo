@@ -81,7 +81,7 @@ class Breadcrumbs {
 				'remove_title'    => Helper::get_settings( 'general.cpseo_breadcrumbs_remove_post_title' ),
 				'hide_tax_name'   => Helper::get_settings( 'general.cpseo_breadcrumbs_hide_taxonomy_name' ),
 				'show_ancestors'  => Helper::get_settings( 'general.cpseo_breadcrumbs_ancestor_categories' ),
-				'show_blog'       => Helper::get_settings( 'general.breadcrumbs_blog_page' ),
+				'show_blog'       => Helper::get_settings( 'general.cpseo_breadcrumbs_blog_page' ),
 				'show_pagination' => true,
 			]
 		);

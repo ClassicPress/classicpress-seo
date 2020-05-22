@@ -21,7 +21,7 @@ $cmb->add_field([
 		'BlogPosting' => esc_html__( 'Blog Post', 'cpseo' ),
 		'NewsArticle' => esc_html__( 'News Article', 'cpseo' ),
 	],
-	'default' => Helper::get_settings( "titles.pt_{$post_type}_default_article_type" ),
+	'default' => Helper::get_settings( "titles.cpseo_pt_{$post_type}_default_article_type" ),
 	'classes' => 'nob',
 	'desc'    => $article_desc,
 	'dep'     => $article_dep,

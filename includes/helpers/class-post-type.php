@@ -72,7 +72,7 @@ trait Post_Type {
 		static $posts_to_exclude;
 
 		if ( ! isset( $posts_to_exclude ) ) {
-			$posts_to_exclude = wp_parse_id_list( Helper::get_settings( 'sitemap.exclude_posts' ) );
+			$posts_to_exclude = wp_parse_id_list( Helper::get_settings( 'sitemap.cpseo_exclude_posts' ) );
 			$posts_to_exclude = apply_filters( 'cpseo/sitemap/posts_to_exclude', $posts_to_exclude );
 		}
 

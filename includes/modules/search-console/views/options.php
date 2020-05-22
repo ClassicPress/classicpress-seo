@@ -26,7 +26,7 @@ $cmb->add_field([
 	'after_field' => $primary . $secondary,
 ]);
 
-$profile       = Helper::get_settings( 'general.console_profile' );
+$profile       = Helper::get_settings( 'general.cpseo_console_profile' );
 $profile_label = str_replace( 'sc-domain:', __( 'Domain Property: ', 'cpseo' ), $profile );
 foreach ( $data['profiles'] as $key => $value ) {
 	$data['profiles'][ $key ] = str_replace( 'sc-domain:', __( 'Domain Property: ', 'cpseo' ), $value );
@@ -36,7 +36,7 @@ if ( ! $data['authorized'] ) {
 }
 
 $cmb->add_field([
-	'id'          => 'console_profile',
+	'id'          => 'cpseo_console_profile',
 	'type'        => 'select',
 	'name'        => esc_html__( 'Search Console Profile', 'cpseo' ),
 	'desc'        => esc_html__( 'After authenticating with Google Search Console, select the site from the dropdown list.', 'cpseo' ) .
