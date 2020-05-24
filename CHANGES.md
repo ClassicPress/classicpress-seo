@@ -1,3 +1,15 @@
+#### v 1.0.0-beta4 / 2020-05-24
+* NEW: Add new title separator characters (#71)
+* NEW: Add '%' to CTR heading in Search Analytics view within Search Console (#72)
+* NEW: Use native custom post types dashboard icon in Titles & Meta Setting (#75)
+* IMPROVED: Output of SEO meta for pages created with page builders (#74)
+* IMPROVED: Hide cpseo meta key data in custom fields on post edit page (#76)
+* UPDATED: Help page content updated (#78)
+* UPDATED: Translations (#79)
+* FIXED: Dash menu not updating when module activated (#77)
+* FIXED: Missing cpseo prefix in some settings (#81)
+* FIXED: Removed broken link from title on Dashboard page (#73)
+
 #### v 1.0.0-beta3 / 2020-04-03
 * NEW: Add new Events schema properties to help with events that have been cancelled or postponed as a result of Covid-19
 * UPDATED: Code Potent Update Manager updated to latest version
