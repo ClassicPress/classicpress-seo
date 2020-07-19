@@ -9,14 +9,6 @@
 use Classic_SEO\Helper;
 
 $cmb->add_field([
-	'id'      => 'cpseo_enable_auto_update',
-	'type'    => 'switch',
-	'name'    => esc_html__( 'Auto Update', 'cpseo' ),
-	'desc'    => esc_html__( 'Enable auto update of the plugin', 'cpseo' ),
-	'default' => 'off',
-]);
-
-$cmb->add_field([
 	'id'      => 'cpseo_usage_tracking',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Anonymous data collection', 'cpseo' ),
