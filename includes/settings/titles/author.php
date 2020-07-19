@@ -14,7 +14,7 @@ $cmb->add_field([
 	'id'      => 'cpseo_disable_author_archives',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Author Archives', 'cpseo' ),
-	'desc'    => esc_html__( 'Enables or disables Author Archives. If disabled, the Author Archives are redirected to your homepage. To avoid duplicate content issues, noindex author archives if you keep them enabled.', 'cpseo' ),
+	'desc'    => wp_kses_post( __( 'If this option is set to <strong>Enabled</strong>, you will be able to access an author\'s archive page by going to <code>mydomain.com/author/username/</code>. Note that the <code>/author/</code> part of the URL can be changed in the setting below. The author archive page shows all posts written by <code>username</code>. If this option is set to <strong>Disabled</strong>, the author archive is, instead, redirected to the homepage. To avoid duplicate content issues, noindex author archives if you keep them enabled.', 'cpseo' ) ),
 	'options' => [
 		'on'  => esc_html__( 'Disabled', 'cpseo' ),
 		'off' => esc_html__( 'Enabled', 'cpseo' ),

@@ -14,10 +14,10 @@ $cmb->add_field([
 	'id'      => 'cpseo_disable_date_archives',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Date Archives', 'cpseo' ),
-	'desc'    => esc_html__( 'Enable or disable the date archive (_e.g: domain.com/2019/06/_). If this option is disabled, the date archives will be redirected to the homepage.', 'cpseo' ),
+	'desc'    => wp_kses_post( __( 'If this option is set to <strong>Enabled</strong>, you will be able to access your posts\' date archive pages. For example, if you have written three posts, one on 2019/11/02, the second on 2019/11/17 and the third on 2019/11/28, you\'ll be able to view all three posts by going to <code>mydomain.com/2019/11/</code>. If this option is set to <strong>Disabled</strong>, the date archive is, instead, redirected to the homepage.', 'cpseo' ) ),
 	'options' => [
-		'off' => esc_html__( 'Enabled', 'cpseo' ),
 		'on'  => esc_html__( 'Disabled', 'cpseo' ),
+		'off' => esc_html__( 'Enabled', 'cpseo' ),
 	],
 	'default' => 'off',
 ]);
