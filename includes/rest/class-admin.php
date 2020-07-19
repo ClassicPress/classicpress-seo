@@ -58,16 +58,6 @@ class Admin extends WP_REST_Controller {
 				'permission_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'can_manage_options' ],
 			]
 		);
-
-		register_rest_route(
-			$this->namespace,
-			'/autoUpdate',
-			[
-				'methods'             => WP_REST_Server::EDITABLE,
-				'callback'            => [ $this, 'auto_update' ],
-				'permission_callback' => [ '\\Classic_SEO\\Rest\\Helper', 'can_manage_options' ],
-			]
-		);
 		
 		register_rest_route(
 			$this->namespace,
@@ -114,22 +104,6 @@ class Admin extends WP_REST_Controller {
 		return true;
 	}
 
-	/**
-	 * Enable Auto update.
-	 *
-	 * @param WP_REST_Request $request Full details about the request.
-	 *
-	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
-	 */
-	public function auto_update( WP_REST_Request $request ) {
-		$settings = wp_parse_args( cpseo()->settings->all_raw(), [
-			'general' => '',
-		]);
-
-		$settings['general']['cpseo_enable_auto_update'] = 'true' === $request->get_param( 'enable' ) ? 'on' : 'off';
-		Helper::update_all_settings( $settings['general'], null, null );
-		return true;
-	}
 
 	/**
 	 * Get save module endpoint arguments.

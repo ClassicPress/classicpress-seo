@@ -49,11 +49,6 @@ class Common {
 		}
 
 		add_action( 'wp_ajax_nopriv_cpseo_overlay_thumb', [ $this, 'generate_overlay_thumbnail' ] );
-
-		// Auto-update the plugin.
-		if ( Helper::get_settings( 'general.cpseo_enable_auto_update' ) ) {
-			$this->filter( 'auto_update_plugin', 'auto_update_plugin', 10, 2 );
-		}
 		
 		$this->filter( 'is_protected_meta', 'hide_cpseo_meta', 10, 2 );
 		
@@ -135,7 +130,6 @@ class Common {
 	 * @return array
 	 */
 	public function strip_stopwords_permalink( $permalink, $post_id, $title ) {
-
 		if ( empty( $title ) ) {
 			return $permalink;
 		}
@@ -167,26 +161,6 @@ class Common {
 		die();
 	}
 
-	/**
-	 * Auto update the plugin.
-	 *
-	 * @param bool  $update Whether to update the plugin or not.
-	 * @param array $item  The update plugin object.
-	 *
-	 * @return bool
-	 */
-	public function auto_update_plugin( $update, $item ) {
-		if (
-			isset( $item->slug ) &&
-			'classicpress-seo' === $item->slug &&
-			isset( $item->new_version ) &&
-			false === stripos( $item->new_version, 'beta' )
-		) {
-			return true;
-		}
-
-		return $update;
-	}
 
 	/**
 	 * Get stop words.
@@ -194,7 +168,6 @@ class Common {
 	 * @return array List of stop words.
 	 */
 	private function get_stopwords() {
-
 		/* translators: this should be an array of stop words for your language, separated by comma's. */
 		$stopwords = explode( ',', esc_html__( "a,about,above,after,again,against,all,am,an,and,any,are,as,at,be,because,been,before,being,below,between,both,but,by,could,did,do,does,doing,down,during,each,few,for,from,further,had,has,have,having,he,he'd,he'll,he's,her,here,here's,hers,herself,him,himself,his,how,how's,i,i'd,i'll,i'm,i've,if,in,into,is,it,it's,its,itself,let's,me,more,most,my,myself,nor,of,on,once,only,or,other,ought,our,ours,ourselves,out,over,own,same,she,she'd,she'll,she's,should,so,some,such,than,that,that's,the,their,theirs,them,themselves,then,there,there's,these,they,they'd,they'll,they're,they've,this,those,through,to,too,under,until,up,very,was,we,we'd,we'll,we're,we've,were,what,what's,when,when's,where,where's,which,while,who,who's,whom,why,why's,with,would,you,you'd,you'll,you're,you've,your,yours,yourself,yourselves", 'cpseo' ) );
 

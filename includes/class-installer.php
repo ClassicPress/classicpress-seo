@@ -346,7 +346,6 @@ class Installer {
 			'cpseo_rss_after_content'                   => '',
 			'cpseo_wc_remove_generator'                 => 'on',
 			'cpseo_remove_shop_snippet_data'            => 'on',
-			'cpseo_enable_auto_update'                  => 'off',
 			'cpseo_usage_tracking'                      => 'on',
 		]));
 	}
