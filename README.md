@@ -6,6 +6,12 @@ Latest release:  See [Change log](CHANGES.md)
 
 * * *
 
+## Installation
+
+1. Head over to the [Releases section](https://github.com/ClassicPress-plugins/classicpress-seo/releases) of this GitHub repository.
+2. Expand the "Assets" dropdown by the latest release and download the `classicpress-seo.zip` file.
+3. Go to the "Plugins > Add New" section of your site's dashboard and upload the zip file there using the "Upload Plugin" button.
+
 ## Minimum Requirements
 
 - ClassicPress 1.0.2
