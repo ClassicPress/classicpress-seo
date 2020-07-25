@@ -105,21 +105,10 @@ class Admin_Menu implements Runner {
 	public function icon_css() {
 		?>
 		<style>
-			#wp-admin-bar-cpseo .cpseo-icon {
-				display: inline-block;
-				top: 6px;
-				position: relative;
-				padding-right: 10px;
-				max-width: 20px;
-			}
-			#wp-admin-bar-cpseo .cpseo-icon svg {
-				fill-rule: evenodd;
-				fill: #dedede;
-			}
-			#wp-admin-bar-cpseo:hover .cpseo-icon svg {
-				fill-rule: evenodd;
-				fill: #00b9eb;
-			}
+			#wp-admin-bar-cpseo .cpseo-icon {display: inline-block;top:2px;position: relative;padding:4px 0;margin-right:8px;line-height:20px;}
+			#wp-admin-bar-cpseo .cpseo-icon svg {fill-rule: evenodd;fill: rgba(240,245,250,.7);max-height:16px;}
+			#wp-admin-bar-cpseo:hover .cpseo-icon svg {fill-rule: evenodd;fill: #00b9eb;}
+			#adminmenu #toplevel_page_cpseo .wp-menu-image img{max-width:20px;height:20px;-o-object-fit:fill;object-fit:fill;margin-top:-3px;width:20px}
 		</style>
 		<?php
 	}
