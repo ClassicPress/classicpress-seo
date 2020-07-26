@@ -32,6 +32,17 @@ class Admin_Helper {
 	public static function get_tooltip( $message ) {
 		return '<span class="cpseo-tooltip"><em class="dashicons-before dashicons-editor-help"></em><span>' . $message . '</span></span>';
 	}
+	
+	/**
+	 * Get Classic SEO icon.
+	 *
+	 * @param integer $width Width of the icon.
+	 *
+	 * @return string
+	 */
+	public static function get_icon( $width = 18 ) {
+		return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 394.47 392.43" width="' . $width . '" fill="#9ea3a8" stroke="#777" stroke-miterlimit="10" stroke-width=".25"><path d="M103.5 217.52c32-30 67.72-66.65 91.56-141.08L164.6 57.7 267.6.2 273.24 123l-30.1-18C138.27 267.15 21.82 284.44.42 256.62l.92.44c35.3 16.64 82.26-20.85 102.15-39.54z" stroke-opacity=".7" fill-rule="evenodd"/><path d="M27.35 321.77h63.12v70.54H27.35zm102-44.23h66.24V392.3h-66.24zm101.7-66.92h65.12v181.7h-65.12zM331.6 76.3h62.74v316H331.6z" stroke-opacity=".7"/></svg>';
+	}
 
 	/**
 	 * Get admin view file.
