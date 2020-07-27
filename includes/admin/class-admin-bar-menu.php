@@ -17,6 +17,7 @@ use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Helpers\Arr;
 use Classic_SEO\Helpers\Url;
 use Classic_SEO\Helpers\Param;
+use Classic_SEO\Admin\Admin_Helper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -140,7 +141,7 @@ class Admin_Bar_Menu {
 
 		$this->items['main'] = [
 			'id'       => self::MENU_IDENTIFIER,
-			'title'    => '<span class="cpseo-icon">' . $this->get_icon() . '</span><span class="cpseo-text">' . esc_html( 'Classic SEO', 'cpseo' ) . '</span>',
+			'title'    => '<span class="cpseo-icon">' . Admin_Helper::get_icon() . '</span><span class="cpseo-text">' . esc_html( 'Classic SEO', 'cpseo' ) . '</span>',
 			'href'     => Helper::get_admin_url( $first_menu ),
 			'meta'     => [ 'title' => esc_html__( 'Classic SEO Dashboard', 'cpseo' ) ],
 			'priority' => 10,
@@ -440,14 +441,4 @@ class Admin_Bar_Menu {
 		return $item1['priority'] < $item2['priority'] ? -1 : 1;
 	}
 
-	/**
-	 * Get Classic SEO icon.
-	 *
-	 * @param integer $width Width of the icon.
-	 *
-	 * @return string
-	 */
-	private function get_icon( $width = 18 ) {
-		return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 394.47 392.43" width="' . $width . '" fill="#fff" stroke="#777" stroke-miterlimit="10" stroke-width=".25"><path d="M103.5 217.52c32-30 67.72-66.65 91.56-141.08L164.6 57.7 267.6.2 273.24 123l-30.1-18C138.27 267.15 21.82 284.44.42 256.62l.92.44c35.3 16.64 82.26-20.85 102.15-39.54z" stroke-opacity=".7" fill-rule="evenodd"/><path d="M27.35 321.77h63.12v70.54H27.35zm102-44.23h66.24V392.3h-66.24zm101.7-66.92h65.12v181.7h-65.12zM331.6 76.3h62.74v316H331.6z" stroke-opacity=".7"/></svg>';
-	}
 }
