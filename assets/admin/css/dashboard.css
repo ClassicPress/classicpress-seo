@@ -1,287 +1,63 @@
 /*!
  * Name:	dashboard.css
  */
- 
-.cpseo-list-icon{
-    margin:0
-}
-.cpseo-list-icon li span:before{
-    font-size:30px;
-    height:35px;
-    width:40px
-}
-.cpseo-list-icon li>div{
-    overflow:hidden
-}
-.cpseo-list-icon li strong{
-    font-weight:600;
-    display:block;
-    margin-bottom:-.8em;
-    color:#000
-}
-.cpseo-switch input[type=checkbox]{
-    visibility:hidden;
-    height:0;
-    width:0
-}
-.cpseo-switch label{
-    position:relative;
-    display:block;
-    cursor:pointer;
-    text-indent:-9999px;
-    border-radius:100px;
-    background:#ddd;
-    height:24px;
-    width:44px
-}
-.cpseo-switch label:after{
-    position:absolute;
-    top:2px;
-    left:2px;
-    content:'';
-    transition:.4s;
-    border-radius:90px;
-    background:#fff;
-    height:20px;
-    width:20px
-}
-.cpseo-switch input:checked+label{
-    background:#528fcc
-}
-.cpseo-switch input:checked+label:after{
-    -webkit-transform:translateX(100%);
-    transform:translateX(100%)
-}
-.module-listing .cpseo-box{
-    min-height:140px;
-    padding:12px;
-    border:1px solid #d8d8d8
-}
-.module-listing .cpseo-box>.dashicons{
-    font-size:32px;
-    float:left;
-    color:#ccc;
-    height:32px;
-    width:32px
-}
-.module-listing .cpseo-box header{
-    overflow:hidden;
-    padding:2px 10px 0 10px;
-    border:0
-}
-.module-listing .cpseo-box .module-settings{
-    display:none;
-    font-size:17px;
-    line-height:1.2
-}
-.module-listing .cpseo-box .status{
-    clear:both;
-    box-sizing:border-box;
-    height:40px;
-    margin-top:15px;
-    padding:4px 15px;
-    border:1px solid #e5e5e5;
-    border-radius:3px;
-    background:#f9f9f9
-}
-.module-listing .cpseo-box .status label{
-    line-height:30px;
-    color:#77797c
-}
-.module-listing .cpseo-box .status label span{
-    color:#bebfc0
-}
-.module-listing .cpseo-box .status label span.active-text{
-    display:none
-}
-.module-listing .cpseo-box .status label.cpseo-tooltip span{
-    text-indent:0;
-    color:#fff
-}
-.module-listing .cpseo-box .status .cpseo-switch{
-    float:right;
-    padding:5px 0
-}
-.module-listing .cpseo-box .status .cpseo-switch input{
-    display:none
-}
-.module-listing .cpseo-box .status .cpseo-switch input:checked+label{
-    background:#58bb58
-}
-.module-listing .cpseo-box .status .cpseo-switch input:checked+label:after{
-    left:6px
-}
-.module-listing .cpseo-box .status .cpseo-switch label{
-    float:right;
-    height:18px;
-    width:36px
-}
-.module-listing .cpseo-box .status .cpseo-switch label:after{
-    height:14px;
-    width:14px
-}
-.module-listing .cpseo-box .status .cpseo-switch .cpseo-tooltip span{
-    top:50%;
-    right:45px;
-    bottom:auto;
-    left:auto;
-    width:110px;
-    -webkit-transform:translate3d(-70%, -50%, 0);
-    transform:translate3d(-70%, -50%, 0)
-}
-.module-listing .cpseo-box .status .cpseo-switch .cpseo-tooltip span:after{
-    top:50%;
-    right:-8px;
-    left:auto;
-    width:0;
-    height:0;
-    content:'';
-    -webkit-transform:translate3d(0, -50%, 0);
-    transform:translate3d(0, -50%, 0);
-    border-width:7px 0 7px 8px;
-    border-style:solid;
-    border-color:transparent transparent transparent #555d66
-}
-.module-listing .cpseo-box .status .cpseo-switch .cpseo-tooltip:hover span{
-    bottom:auto;
-    -webkit-transform:translate3d(0, -50%, 0);
-    transform:translate3d(0, -50%, 0);
-    opacity:1
-}
-.module-listing .cpseo-box .status .cpseo-switch .input-loading{
-    display:none
-}
-.module-listing .cpseo-box.active .module-settings{
-    display:block
-}
-.module-listing .cpseo-box.active label span.active-text{
-    display:inline-block;
-    color:#58bb58
-}
-.module-listing .cpseo-box.active label span.inactive-text{
-    display:none
-}
-.module-listing .cpseo-box.saving .cpseo-switch label{
-    display:none
-}
-.module-listing .cpseo-box.saving .cpseo-switch .input-loading{
-    display:block;
-    margin-top:0
-}
-.cpseo-welcome-text{
-    padding:10px 30px;
-    border:1px solid #d8d8d8;
-    border-radius:3px;
-    box-shadow:4px 4px 20px rgba(0,0,0,0.12)
-}
-.cpseo-welcome-text p.cpseo-text{
-    margin-right:0
-}
-.cpseo-box header .button{
-    font-weight:600;
-    position:absolute;
-    top:16px;
-    right:20px;
-    color:#fff;
-    border:0;
-    border-radius:4px;
-    box-shadow:none
-}
-.cpseo-box.status-green header h3{
-    color:#58bb58
-}
-.cpseo-box.status-green header .button{
-    background:#58bb58
-}
-.cpseo-box.status-red header h3{
-    color:#ee6a5e
-}
-.cpseo-box.status-red header .button{
-    background:#ee6a5e
-}
-.cpseo-box .regular-text.fullwidth{
-    width:100%;
-    margin-top:5px;
-    padding:12px;
-    vertical-align:top;
-    color:#777;
-    border-color:#ddd;
-    background:#e5e5e5;
-    box-shadow:none !important
-}
-.cpseo-box .regular-text.fullwidth:focus{
-    background:#f5f5f5
-}
-.cpseo-box .frm-gather-data{
-    overflow:hidden
-}
-.cpseo-box .frm-gather-data input{
-    float:left;
-    margin-top:6px;
-    margin-right:8px;
-	margin-left:1px
-}
-.cpseo-box .frm-gather-data label{
-    line-height:1.6;
-    float:left;
-    width:97%;
-    color:#8c8c8c
-}
-.cpseo-systm-status{
-    border-collapse:collapse
-}
-.cpseo-systm-status td,.cpseo-systm-status th{
-    border:1px solid #ededed
-}
-.cpseo-systm-status td:first-child{
-    width:33%
-}
-.cpseo-systm-status thead th{
-    font-weight:700
-}
-.cpseo-systm-status .cpseo-tooltip{
-    float:right
-}
-.cpseo-systm-status+.cpseo-systm-status{
-    margin-top:40px
-}
-#debug-report{
-    display:none
-}
-#debug-report textarea{
-    font-family:monospace;
-    font-size:12px;
-    line-height:20px;
-    margin:0;
-    padding:20px;
-    resize:none;
-    border-radius:0;
-    outline:0;
-    height:300px;
-    width:100%
-}
-body.rtl .module-listing .cpseo-box>.dashicons{
-    float:right
-}
-body.rtl .module-listing .cpseo-box header{
-    padding-right:20px;
-    padding-left:0
-}
-body.rtl .module-listing .status .cpseo-switch{
-    float:left
-}
-body.rtl .module-listing .status .cpseo-switch label{
-    float:left
-}
-body.rtl .module-listing .status .cpseo-switch strong{
-    float:right;
-    margin-left:12px
-}
-body.rtl .cpseo-box header .button{
-    right:auto;
-    left:20px
-}
-body.rtl .cpseo-systm-status .cpseo-tooltip{
-    float:left
-}
-
+.cpseo-list-icon{margin:0}
+.cpseo-list-icon li span:before{font-size:30px;height:35px;width:40px}
+.cpseo-list-icon li>div{overflow:hidden}
+.cpseo-list-icon li strong{font-weight:600;display:block;margin-bottom:-.8em;color:#000}
+.cpseo-switch input[type=checkbox]{visibility:hidden;height:0;width:0}
+.cpseo-switch label{position:relative;display:block;cursor:pointer;text-indent:-9999px;border-radius:100px;background:#ddd;height:24px;width:44px}
+.cpseo-switch label:after{position:absolute;top:2px;left:2px;content:'';transition:.4s;border-radius:90px;background:#fff;height:20px;width:20px}
+.cpseo-switch input:checked+label{background:#528fcc}
+.cpseo-switch input:checked+label:after{-webkit-transform:translateX(100%);transform:translateX(100%)}
+.module-listing .cpseo-box{min-height:140px;padding:12px;border:1px solid #d8d8d8}
+.module-listing .cpseo-box>.dashicons{font-size:32px;float:left;color:#ccc;height:32px;width:32px}
+.module-listing .cpseo-box header{overflow:hidden;padding:2px 10px 0;border:0}
+.module-listing .cpseo-box .module-settings{display:none;font-size:17px;line-height:1.2}
+.module-listing .cpseo-box .status{clear:both;box-sizing:border-box;height:40px;margin-top:15px;padding:4px 15px;border:1px solid #e5e5e5;border-radius:3px;background:#f9f9f9}
+.module-listing .cpseo-box .status label{line-height:30px;color:#77797c}
+.module-listing .cpseo-box .status label span{color:#bebfc0}
+.module-listing .cpseo-box .status label span.active-text{display:none}
+.module-listing .cpseo-box .status label.cpseo-tooltip span{text-indent:0;color:#fff}
+.module-listing .cpseo-box .status .cpseo-switch{float:right;padding:5px 0}
+.module-listing .cpseo-box .status .cpseo-switch input{display:none}
+.module-listing .cpseo-box .status .cpseo-switch input:checked+label{background:#58bb58}
+.module-listing .cpseo-box .status .cpseo-switch input:checked+label:after{left:6px}
+.module-listing .cpseo-box .status .cpseo-switch label{float:right;height:18px;width:36px}
+.module-listing .cpseo-box .status .cpseo-switch label:after{height:14px;width:14px}
+.module-listing .cpseo-box .status .cpseo-switch .cpseo-tooltip span{top:50%;right:45px;bottom:auto;left:auto;width:110px;-webkit-transform:translate3d(-70%,-50%,0);transform:translate3d(-70%,-50%,0)}
+.module-listing .cpseo-box .status .cpseo-switch .cpseo-tooltip span:after{top:50%;right:-8px;left:auto;width:0;height:0;content:'';-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);border-width:7px 0 7px 8px;border-style:solid;border-color:transparent transparent transparent #555d66}
+.module-listing .cpseo-box .status .cpseo-switch .cpseo-tooltip:hover span{bottom:auto;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);opacity:1}
+.module-listing .cpseo-box .status .cpseo-switch .input-loading{display:none}
+.module-listing .cpseo-box.active .module-settings{display:block}
+.module-listing .cpseo-box.active label span.active-text{display:inline-block;color:#58bb58}
+.module-listing .cpseo-box.active label span.inactive-text{display:none}
+.module-listing .cpseo-box.saving .cpseo-switch label{display:none}
+.module-listing .cpseo-box.saving .cpseo-switch .input-loading{display:block;margin-top:0}
+.cpseo-welcome-text{padding:10px 30px;border:1px solid #d8d8d8;border-radius:3px;box-shadow:4px 4px 20px rgba(0,0,0,0.12)}
+.cpseo-welcome-text p.cpseo-text{margin-right:0}
+.cpseo-box header .button{font-weight:600;position:absolute;top:16px;right:20px;color:#fff;border:0;border-radius:4px;box-shadow:none}
+.cpseo-box.status-green header h3{color:#58bb58}
+.cpseo-box.status-green header .button{background:#58bb58}
+.cpseo-box.status-red header h3{color:#ee6a5e}
+.cpseo-box.status-red header .button{background:#ee6a5e}
+.cpseo-box .regular-text.fullwidth{width:100%;margin-top:5px;padding:12px;vertical-align:top;color:#777;border-color:#ddd;background:#e5e5e5;box-shadow:none!important}
+.cpseo-box .regular-text.fullwidth:focus{background:#f5f5f5}
+.cpseo-box .frm-gather-data{overflow:hidden}
+.cpseo-box .frm-gather-data input{float:left;margin-top:6px;margin-right:8px;margin-left:1px}
+.cpseo-box .frm-gather-data label{line-height:1.6;float:left;width:97%;color:#8c8c8c}
+.cpseo-systm-status{border-collapse:collapse}
+.cpseo-systm-status td,.cpseo-systm-status th{border:1px solid #ededed}
+.cpseo-systm-status td:first-child{width:33%}
+.cpseo-systm-status thead th{font-weight:700}
+.cpseo-systm-status .cpseo-tooltip{float:right}
+.cpseo-systm-status+.cpseo-systm-status{margin-top:40px}
+#debug-report{display:none}
+#debug-report textarea{font-family:monospace;font-size:12px;line-height:20px;margin:0;padding:20px;resize:none;border-radius:0;outline:0;height:300px;width:100%}
+body.rtl .module-listing .cpseo-box>.dashicons{float:right}
+body.rtl .module-listing .cpseo-box header{padding-right:20px;padding-left:0}
+body.rtl .module-listing .status .cpseo-switch{float:left}
+body.rtl .module-listing .status .cpseo-switch label{float:left}
+body.rtl .module-listing .status .cpseo-switch strong{float:right;margin-left:12px}
+body.rtl .cpseo-box header .button{right:auto;left:20px}
+body.rtl .cpseo-systm-status .cpseo-tooltip{float:left}
