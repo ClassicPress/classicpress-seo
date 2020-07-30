@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Exclude the following when creating zip archive (git archive)
+.gitignore export-ignore
+.gitattributes export-ignore
+sitemap-cache/* export-ignore
