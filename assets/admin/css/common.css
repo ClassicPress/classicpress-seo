@@ -1,7 +1,6 @@
 /*!
  * Name: common.css
  */
-
 .cpseo-page{background:#e1e1e1}
 .cpseo-page h2.nav-tab-wrapper{margin-bottom:40px!important;background-color:transparent!important;border-top:none!important;border-bottom:1px solid #ccc!important}
 .limit-wrap{max-width:1080px}
@@ -55,7 +54,7 @@
 .cpseo-tabs-content:not(.cpseo-custom){overflow:hidden;box-sizing:border-box;min-height:400px;margin-bottom:20px;padding:30px;border:1px solid #e5e5e5;background:#fff}
 .cpseo-tab h3:first-of-type{margin-top:0}
 .cpseo-tab .cmb-type-title:first-of-type{padding-top:0;text-align:center;border-top:0}
-.cpseo-tab .cmb2-checkbox-list li{display:inline-block;width:49%;display:inline-block;width:49%}
+.cpseo-tab .cmb2-checkbox-list li{display:inline-block;width:49%}
 .cpseo-tab .cmb-advanced-robots-list li{width:32%;display:inline-block;box-sizing:border-box;padding:0 5px}
 .cpseo-tab .cmb-advanced-robots-list li:first-of-type{padding-left:0}
 .cpseo-tab .cmb-advanced-robots-list li:last-of-type{padding-right:0}
