@@ -333,9 +333,22 @@ class DB {
 			return $data;
 		}
 
-		$days = $wpdb->get_var( 'SELECT COUNT(DISTINCT DATE(date)) as days FROM ' . $wpdb->prefix . 'cpseo_sc_analytics' ); // phpcs:ignore
-		$rows = $wpdb->get_var( 'SELECT COUNT(*) FROM ' . $wpdb->prefix . 'cpseo_sc_analytics' ); // phpcs:ignore
-		$size = $wpdb->get_var( 'SELECT SUM((data_length + index_length)) AS size FROM information_schema.TABLES WHERE table_schema="' . $wpdb->dbname . '" AND (table_name="' . $wpdb->prefix . 'cpseo_sc_analytics")' ); // phpcs:ignore
+		$days = $wpdb->get_var(
+			"SELECT COUNT(DISTINCT DATE(date)) as days
+			FROM {$wpdb->prefix}cpseo_sc_analytics"
+		);
+		$rows = $wpdb->get_var(
+			"SELECT COUNT(*)
+			FROM {$wpdb->prefix}cpseo_sc_analytics"
+		);
+		$size = $wpdb->get_var( $wpdb->prepare(
+			"SELECT SUM(data_length + index_length) AS size
+			FROM information_schema.TABLES
+			WHERE table_schema = '%s'
+			AND table_name = '%s'",
+			$wpdb->dbname,
+			$wpdb->prefix . 'cpseo_sc_analytics'
+		) );
 
 		$data = compact( 'days', 'rows', 'size' );
 
