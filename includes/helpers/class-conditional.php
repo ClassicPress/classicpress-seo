@@ -97,7 +97,11 @@ trait Conditional {
 		$rest_url    = wp_parse_url( trailingslashit( rest_url() ) );
 		$current_url = wp_parse_url( add_query_arg( [] ) );
 
-		return 0 === strpos( $current_url['path'], $rest_url['path'], 0 );
+		return (
+			isset( $current_url['path'] ) &&
+			isset( $rest_url['path'] ) &&
+			0 === strpos( $current_url['path'], $rest_url['path'], 0 )
+		);
 	}
 	
 	
