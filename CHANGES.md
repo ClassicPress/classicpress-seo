@@ -1,3 +1,17 @@
+#### v 1.0.0-rc.1 / 2020-08-02
+* IMPROVED: Clarify wording on Author Archives and Date Archives option settings (#85)
+* IMPROVED: Add clear installation instructions to readme (#89) (props @nylen)
+* REMOVED: Auto Update setting removed. This was a legacy setting from RM and hasd no effect in CPSEO (#86)
+* FIXED: Corrected misaligned CPSEO icon in top admin bar and left-hand nav menu (#91)
+* FIXED: Fix Search Console stats database query syntax which caused “Unknown column” error in some installations (#97) (props @nylen)
+* FIXED: Fix a PHP notice (Undefined index: path) in Conditional::is_rest() (#98) (props @nylen)
+* FIXED: Fix for Search Console jQuery error which prevented SC cache from being cleared in General Settings (#94)
+* FIXED: Excludes .gitignore and .gitattributes release builds via git archive (#96) (props @nylen)
+* FIXED: Clean up .gitignore (#92) (props @nylen)
+* FIXED: Removes extraneous '%s' placeholder on Search Console settings page (#100)
+* UPDATED: Minor CSS tweaks (#95), (#99)
+
+
 #### v 1.0.0-beta4 / 2020-05-24
 * NEW: Add new title separator characters (#71)
 * NEW: Add '%' to CTR heading in Search Analytics view within Search Console (#72)
