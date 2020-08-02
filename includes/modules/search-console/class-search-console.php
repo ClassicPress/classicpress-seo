@@ -205,7 +205,7 @@ class Search_Console extends Base {
 				'search-console' => [
 					'icon'  => 'fa fa-search-plus',
 					'title' => esc_html__( 'Search Console', 'cpseo' ),
-					'desc'  => esc_html__( 'Connect to Google Search Console profile to see the most important information from Google. %s.', 'cpseo' ),
+					'desc'  => esc_html__( 'Connect to Google Search Console profile to see the most important information from Google.', 'cpseo' ),
 					'file'  => $this->directory . '/views/options.php',
 				],
 			],
