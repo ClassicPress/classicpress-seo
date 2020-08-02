@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: "
 "Classic SEO Pot v1.0.0\n"
 "POT-Creation-Date: "
-"2020-05-19 13:40+0100\n"
+"2020-08-02 14:52+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -41,8 +41,7 @@ msgstr ""
 "_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "Language: en_US\n"
-"X-Generator: Poedit "
-"2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
 "X-Poedit-"
@@ -76,160 +75,160 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:145
+#: includes/admin/class-admin-bar-menu.php:146
 msgid ""
 "Classic SEO Dashboard"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:153
-#: includes/admin/class-admin-bar-menu.php:155
-#: includes/admin/class-admin-menu.php:89
+#: includes/admin/class-admin-bar-menu.php:154
+#: includes/admin/class-admin-bar-menu.php:156
+#: includes/admin/class-admin-menu.php:92
 msgid "Dashboard"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:190
+#: includes/admin/class-admin-bar-menu.php:191
 msgid "Homepage SEO"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:192
+#: includes/admin/class-admin-bar-menu.php:193
 msgid ""
 "Edit Homepage SEO "
 "Settings"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:208
-#: includes/admin/class-admin-bar-menu.php:226
+#: includes/admin/class-admin-bar-menu.php:209
+#: includes/admin/class-admin-bar-menu.php:227
 #, php-format
 msgid "SEO Settings for %s"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:210
+#: includes/admin/class-admin-bar-menu.php:211
 msgid ""
 "Edit default SEO "
 "settings for this post "
 "type"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:228
-#: includes/admin/class-admin-bar-menu.php:243
+#: includes/admin/class-admin-bar-menu.php:229
+#: includes/admin/class-admin-bar-menu.php:244
 msgid ""
 "Edit SEO settings for "
 "this archive page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:241
+#: includes/admin/class-admin-bar-menu.php:242
 msgid ""
 "SEO Settings for Date "
 "Archives"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:256
+#: includes/admin/class-admin-bar-menu.php:257
 msgid ""
 "SEO Settings for Search "
 "Page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:258
+#: includes/admin/class-admin-bar-menu.php:259
 msgid ""
 "Edit SEO settings for "
 "the search results page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:271
+#: includes/admin/class-admin-bar-menu.php:272
 msgid "Mark this page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:288
+#: includes/admin/class-admin-bar-menu.php:289
 msgid "As Pillar Content"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:302
+#: includes/admin/class-admin-bar-menu.php:303
 msgid "As NoIndex"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:313
+#: includes/admin/class-admin-bar-menu.php:314
 msgid "As NoFollow"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:329
+#: includes/admin/class-admin-bar-menu.php:330
 msgid "External Tools"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:338
+#: includes/admin/class-admin-bar-menu.php:339
 msgid ""
 "Google Structured Data"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:340
+#: includes/admin/class-admin-bar-menu.php:341
 msgid ""
 "Google Structured Data "
 "Testing Tool"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:344
+#: includes/admin/class-admin-bar-menu.php:345
 msgid "Google PageSpeed"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:346
+#: includes/admin/class-admin-bar-menu.php:347
 msgid ""
 "Google PageSpeed Insights"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:350
+#: includes/admin/class-admin-bar-menu.php:351
 msgid ""
 "Google Mobile-Friendly"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:352
+#: includes/admin/class-admin-bar-menu.php:353
 msgid ""
 "Google Mobile-Friendly "
 "Test"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:356
+#: includes/admin/class-admin-bar-menu.php:357
 msgid ""
 "Google Rich Results "
 "(Mobile)"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:358
+#: includes/admin/class-admin-bar-menu.php:359
 msgid ""
 "Google Rich Results Test "
 "- Googlebot Smartphone"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:362
+#: includes/admin/class-admin-bar-menu.php:363
 msgid ""
 "Google Rich Results "
 "(Desktop)"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:364
+#: includes/admin/class-admin-bar-menu.php:365
 msgid ""
 "Google Rich Results Test "
 "- Googlebot Desktop"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:368
+#: includes/admin/class-admin-bar-menu.php:369
 msgid "Google Cache"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:370
+#: includes/admin/class-admin-bar-menu.php:371
 msgid ""
 "See Google's cached "
 "version of your site"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:374
+#: includes/admin/class-admin-bar-menu.php:375
 msgid "Facebook Debugger"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:376
+#: includes/admin/class-admin-bar-menu.php:377
 msgid ""
 "Facebook Sharing Debugger"
 msgstr ""
 
-#: includes/admin/class-admin-helper.php:58
+#: includes/admin/class-admin-helper.php:69
 #: includes/admin/class-cmb2-fields.php:212
 #: includes/helpers/class-taxonomy.php:151
 #: includes/modules/rich-snippet/views/event.php:48
@@ -243,7 +242,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: includes/admin/class-admin-menu.php:46
+#: includes/admin/class-admin-menu.php:49
 #: includes/admin/class-admin.php:75
 #: includes/admin/class-metabox.php:133
 #: includes/admin/helpers/class-page.php:333
@@ -254,7 +253,7 @@ msgstr ""
 msgid "Classic SEO"
 msgstr ""
 
-#: includes/admin/class-admin-menu.php:64
+#: includes/admin/class-admin-menu.php:67
 #: includes/admin/class-admin.php:357
 msgid "Help"
 msgstr ""
@@ -2002,7 +2001,70 @@ msgid "Help &amp; Support"
 msgstr ""
 
 #: includes/admin/views/help/developers.php:12
-msgid "Coming Soon"
+msgid "Filters and Hooks"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:15
+msgid ""
+"There are a number of "
+"hooks and filters in "
+"Classic SEO that "
+"developers can use to "
+"interact with data "
+"output by Classic SEO. "
+"Here's a few of them."
+msgstr ""
+
+#: includes/admin/views/help/developers.php:17
+msgid ""
+"Filter to show/hide SEO "
+"Metabox"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:18
+msgid ""
+"To hide the SEO metabox, "
+"return false."
+msgstr ""
+
+#: includes/admin/views/help/developers.php:28
+msgid ""
+"Filter to change the "
+"position of the SEO "
+"metabox"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:29
+msgid ""
+"Options for $priority "
+"are: 'low', 'default', "
+"'core', 'high'."
+msgstr ""
+
+#: includes/admin/views/help/developers.php:39
+#: includes/admin/views/help/developers.php:51
+msgid ""
+"Filter to change "
+"taxonomy icons in the "
+"options panel"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:40
+msgid ""
+"This example sets the "
+"icon for the custom "
+"'event_cat' taxonomy to "
+"'dashicons dashicons-"
+"category'."
+msgstr ""
+
+#: includes/admin/views/help/developers.php:52
+msgid ""
+"This example sets the "
+"icon for the custom "
+"'event' post type to "
+"'dashicons dashicons-"
+"calendar'."
 msgstr ""
 
 #: includes/admin/views/help/getting-started.php:11
@@ -2019,10 +2081,10 @@ msgid ""
 "specifically for "
 "ClassicPress. It is "
 "based on Rank Math but "
-"there some differences "
-"both in the way it works "
-"and \"behind the scenes"
-"\"."
+"there are some key "
+"differences both in the "
+"way it works and "
+"\"behind the scenes\"."
 msgstr ""
 
 #: includes/admin/views/help/getting-started.php:16
@@ -2041,10 +2103,13 @@ msgstr ""
 
 #: includes/admin/views/help/getting-started.php:19
 msgid ""
-"Another difference is "
-"that Classic SEO does "
-"not have the SEO "
-"Analysis tool."
+"A couple of other "
+"differences are that "
+"Classic SEO does not "
+"have the SEO Analysis "
+"tool and it does not "
+"support the Gutenberg "
+"block editor."
 msgstr ""
 
 #: includes/admin/views/help/getting-started.php:21
@@ -2055,7 +2120,7 @@ msgstr ""
 msgid ""
 "It should be noted that "
 "Classic SEO is still in "
-"the  early stages of "
+"the early stages of "
 "development and bugs are "
 "likely."
 msgstr ""
@@ -2095,7 +2160,17 @@ msgid ""
 "\">Classic Commerce</a>."
 msgstr ""
 
-#: includes/admin/views/help/getting-started.php:44
+#: includes/admin/views/help/getting-started.php:41
+msgid ""
+"It is also planned to "
+"improve support for the "
+"most popular page "
+"builders such as Beaver "
+"Builder, Divi and "
+"Elementor."
+msgstr ""
+
+#: includes/admin/views/help/getting-started.php:47
 #, php-format
 msgid ""
 "If there is any feature "
@@ -2109,7 +2184,7 @@ msgid ""
 "a>."
 msgstr ""
 
-#: includes/admin/views/help/getting-started.php:48
+#: includes/admin/views/help/getting-started.php:51
 msgid ""
 "But remember, no one "
 "around here likes bloat "
@@ -2123,11 +2198,11 @@ msgstr ""
 msgid ""
 "Local SEO is a way for "
 "you to rank better for "
-"searches made by your "
-"people in the area where "
-"you operate. It is the "
-"best way for you to get "
-"your products and "
+"searches made by people "
+"local to the area in "
+"which you operate. It is "
+"the best way for you to "
+"get your products and "
 "services in front of the "
 "local customers."
 msgstr ""
@@ -2137,10 +2212,8 @@ msgid ""
 "There are various "
 "methods for optimizing "
 "your website for local "
-"SEO but the easiest "
-"method is built right "
-"inside the Classic SEO "
-"plugin."
+"SEO but Classic SEO has "
+"many tools to help."
 msgstr ""
 
 #: includes/admin/views/help/local-seo.php:20
@@ -2161,7 +2234,7 @@ msgid ""
 "your Local Business like "
 "your Company Name, Logo, "
 "Email ID, Phone number, "
-"Address, And Contact/"
+"Address and Contact/"
 "About pages."
 msgstr ""
 
@@ -2323,7 +2396,7 @@ msgid ""
 "unexpected problems."
 msgstr ""
 
-#: includes/class-common.php:199
+#: includes/class-common.php:172
 #: includes/modules/redirections/class-db.php:413
 msgid ""
 "a,about,above,after,"
@@ -2364,24 +2437,24 @@ msgid ""
 "yourself,yourselves"
 msgstr ""
 
-#: includes/class-installer.php:329
+#: includes/class-installer.php:327
 #: includes/settings/general/breadcrumbs.php:47
 msgid "Home"
 msgstr ""
 
-#: includes/class-installer.php:331
+#: includes/class-installer.php:329
 #: includes/settings/general/breadcrumbs.php:74
 #, php-format
 msgid "Archives for %s"
 msgstr ""
 
-#: includes/class-installer.php:333
+#: includes/class-installer.php:331
 #: includes/settings/general/breadcrumbs.php:84
 #, php-format
 msgid "Results for %s"
 msgstr ""
 
-#: includes/class-installer.php:334
+#: includes/class-installer.php:332
 #: includes/settings/general/breadcrumbs.php:93
 msgid ""
 "404 Error: page not found"
@@ -3208,10 +3281,7 @@ msgid ""
 "404 errors happen when "
 "someone requests a page "
 "or file that doesn't "
-"exist - actually, it's "
-"more accurate to say the "
-"web server can't find "
-"the file."
+"exist."
 msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:14
@@ -3232,8 +3302,9 @@ msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:19
 msgid ""
-"The file or page moves "
-"to a different address"
+"The file or page has "
+"moved to a different "
+"address"
 msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:20
@@ -3250,10 +3321,16 @@ msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:24
 msgid ""
-"They're actually very "
-"common on the web. And "
-"they're never a good "
-"thing."
+"404 errors are the most "
+"common type of errors "
+"you'll see when browsing "
+"the web. In general, "
+"they won't hurt your "
+"ranking but too many 404 "
+"errors will provide a "
+"poor user experience, so "
+"they're generally best "
+"avoided."
 msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:26
@@ -3263,49 +3340,76 @@ msgid ""
 "view content on that "
 "site. You won't stay on "
 "the site if the content "
-"is missing. Serving 404 "
-"errors to your visitors "
-"is a good way to lose "
-"them."
+"is missing. Serving many "
+"404 errors to your "
+"visitors is a good way "
+"to lose them."
 msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:28
 msgid ""
-"It doesn't matter if "
-"it's your fault, their "
-"fault, or someone "
-"else's. Maybe they "
+"It doesn't matter either "
+"who's to \"blame\" for "
+"the error. Maybe someone "
 "clicked on a broken link "
-"caused by a typing "
-"mistake on another "
-"website. Maybe they cut-"
-"and-pasted a URL wrong. "
-"Or possibly they made a "
-"spelling mistake when "
-"they typed a URL "
-"manually."
+"on another website. Or "
+"maybe they made a typo "
+"when they entered a URL "
+"in their browser."
 msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:30
 msgid ""
-"Maybe you changed the "
-"URL of an article to "
-"make it more appealing "
-"to the search engines."
+"But it could equally be "
+"caused if, for example, "
+"you changed the URL of "
+"an article to make it "
+"more appealing to search "
+"engines. Or perhaps you "
+"just deleted a page "
+"because it was no longer "
+"needed."
 msgstr ""
 
 #: includes/modules/404-monitor/views/help.php:32
 msgid ""
-"Whatever the cause, the "
-"result is a disappointed "
-"reader. So fixing 404 "
-"errors is a usability "
-"issue. Patching them up "
-"will result in more "
-"useful traffic to your "
-"site, and for many "
-"sites, that means more "
+"What does the 404 "
+"Monitor do?"
+msgstr ""
+
+#: includes/modules/404-monitor/views/help.php:34
+msgid ""
+"Fixing 404 errors is a "
+"usability issue. "
+"Patching them up will "
+"result in a better user "
+"experience, more useful "
+"traffic to your site, "
+"and, potentially, more "
 "revenue."
+msgstr ""
+
+#: includes/modules/404-monitor/views/help.php:36
+msgid ""
+"The great thing about "
+"the 404 Monitor in "
+"Classic SEO is that it "
+"logs each 404 error and "
+"the URL that gave the "
+"error. It also logs how "
+"many times someone has "
+"attempted to visit a "
+"particular non-existent "
+"URL."
+msgstr ""
+
+#: includes/modules/404-monitor/views/help.php:38
+msgid ""
+"And then, in conjunction "
+"with the Redirections "
+"module, it allows you to "
+"set up a proper redirect "
+"to an alternative page."
 msgstr ""
 
 #: includes/modules/404-monitor/views/main.php:26
@@ -4068,46 +4172,93 @@ msgstr ""
 
 #: includes/modules/redirections/views/help.php:13
 msgid ""
-"An HTTP redirection is a "
-"magical thing. When you "
-"visit a URL with a "
-"redirection, your "
-"browser automatically "
-"jumps to a new address."
+"When you visit a URL "
+"with a redirect in "
+"place, your browser will "
+"automatically go to a "
+"different address."
 msgstr ""
 
 #: includes/modules/redirections/views/help.php:15
 msgid ""
-"You’ve seen this before "
-"with URL shortener "
-"services like bit.ly – "
-"instead of typing a long "
-"address, you type a "
-"short one. Your browser "
-"is automatically "
-"redirected to a "
-"different site, and it "
-"happens faster than you "
-"can blink."
+"For example, you could "
+"enter www.example.com/"
+"page-a in your browser "
+"but you could be "
+"redirected to www."
+"example.com/page-b or "
+"even www.anotherexample."
+"com/page-z."
 msgstr ""
 
 #: includes/modules/redirections/views/help.php:17
 msgid ""
-"HTTP redirections are "
-"powerful tools in SEO, "
-"and they have lots of "
-"other uses, too. You can "
-"read about why that’s a "
-"good idea in this "
-"article."
+"This is a very common "
+"occurrence when browsing "
+"the web."
 msgstr ""
 
 #: includes/modules/redirections/views/help.php:19
+msgid "Why redirect?"
+msgstr ""
+
+#: includes/modules/redirections/views/help.php:21
 msgid ""
-"Classic SEO makes it "
-"easy to set up HTTP "
-"redirects – in this "
-"article, we show you how."
+"Redirects are very "
+"common and are an "
+"essential part of the "
+"web."
+msgstr ""
+
+#: includes/modules/redirections/views/help.php:23
+msgid ""
+"Let's say we've just "
+"moved our website to a "
+"new address and we want "
+"to shut down the old one."
+msgstr ""
+
+#: includes/modules/redirections/views/help.php:25
+msgid ""
+"If we don't set up "
+"redirects, all those "
+"pages from the old site "
+"will give a 404 Not "
+"Found error and, more "
+"significantly, you stand "
+"to lose all those "
+"customers or visitors "
+"you worked so hard to "
+"gain. Not ideal is it?"
+msgstr ""
+
+#: includes/modules/redirections/views/help.php:27
+msgid ""
+"So, what we need is for "
+"those old links to "
+"redirect to the same "
+"content on our new site. "
+"And, we need a way to "
+"tell search engines that "
+"these redirects are "
+"either temporary or "
+"permanent."
+msgstr ""
+
+#: includes/modules/redirections/views/help.php:29
+msgid ""
+"HTTP redirections are "
+"powerful tools in SEO, "
+"and they have lots of "
+"other uses too."
+msgstr ""
+
+#: includes/modules/redirections/views/help.php:31
+msgid ""
+"The Redirections module "
+"in Classic SEO makes it "
+"all as simple as "
+"possible."
 msgstr ""
 
 #: includes/modules/redirections/views/main.php:21
@@ -6597,98 +6748,58 @@ msgstr ""
 #: includes/modules/sitemap/views/help.php:12
 msgid ""
 "XML sitemaps are files "
-"that serve a single "
-"purpose - to help search "
-"engines find and index "
-"all of your content."
+"that help search engines "
+"find and index all of "
+"your content."
 msgstr ""
 
 #: includes/modules/sitemap/views/help.php:14
 msgid ""
-"Once upon a time, search "
-"engine bots would have a "
-"hard time finding all "
-"the content on a site. "
-"Many sites had a weak "
-"internal link structure, "
-"and that meant that some "
-"pages or posts would go "
-"overlooked."
+"In many cases, if you "
+"have good internal "
+"linking, search engines "
+"will be able to discover "
+"content on your site "
+"without the need for a "
+"sitemap. Nevertheless, a "
+"sitemap is still "
+"recommended."
 msgstr ""
 
 #: includes/modules/sitemap/views/help.php:16
 msgid ""
-"The early search engines "
-"gave us forms where we "
-"could enter our URLs one "
-"at a time. They'd feed "
-"this information into "
-"their queue of pages to "
-"crawl, and the pages "
-"would get visited and "
-"indexed at some point."
+"If your internal linking "
+"isn't perfect, you can "
+"easily end up with pages "
+"that don't have any "
+"links pointing to them, "
+"making them hard to "
+"find. "
 msgstr ""
 
 #: includes/modules/sitemap/views/help.php:18
 msgid ""
-"Typing in dozens or even "
-"hundreds of URLs was a "
-"tedious job - in fact, "
-"many companies popped up "
-"offering to submit your "
-"site to the search "
-"engines, because who had "
-"the time to do that?"
+"An XML sitemap lists "
+"your website's important "
+"pages, making sure "
+"search engines can find "
+"and crawl them all."
 msgstr ""
 
 #: includes/modules/sitemap/views/help.php:20
 msgid ""
-"When Google appeared on "
-"the scene, people soon "
-"noticed that submitting "
-"pages didn't lead to "
-"fast crawls. Linking to "
-"a page from another page "
-"(even on the same site) "
-"would get the bot to "
-"visit quickly."
+"Where is my sitemap?"
 msgstr ""
 
-#: includes/modules/sitemap/views/help.php:22
+#: includes/modules/sitemap/views/help.php:26
+#, php-format
 msgid ""
-"To solve the problem of "
-"getting pages crawled "
-"and indexed, many "
-"webmasters created a "
-"\"sitemap\". It was an "
-"ugly HTML page with "
-"nothing but links to all "
-"the site's content. It "
-"was a bit of an eyesore, "
-"and human users had "
-"little use for it. But "
-"it helped the spiders to "
-"find pages and it got "
-"them into the index."
-msgstr ""
-
-#: includes/modules/sitemap/views/help.php:24
-msgid ""
-"Search engines realized "
-"that people were "
-"building these pages "
-"that didn't do anything "
-"for human visitors, and "
-"they decided to cut us a "
-"break. They invented a "
-"new XML based file that "
-"we could use to "
-"communicate directly "
-"with the robots. We "
-"could announce our new "
-"pages without cluttering "
-"up our sites with "
-"pointless pages."
+"Classic SEO creates a "
+"file called "
+"sitemap_index.xml which "
+"can be viewed here <a "
+"href=\"%1$s\" target="
+"\"_blank\">%2$s</a>."
 msgstr ""
 
 #: includes/modules/status/class-status.php:66
@@ -7758,11 +7869,11 @@ msgid ""
 "for variable %2$s."
 msgstr ""
 
-#: includes/rest/class-admin.php:144
+#: includes/rest/class-admin.php:118
 msgid "Module slug"
 msgstr ""
 
-#: includes/rest/class-admin.php:150
+#: includes/rest/class-admin.php:124
 msgid ""
 "Module state either on "
 "or off"
@@ -8175,21 +8286,11 @@ msgid ""
 msgstr ""
 
 #: includes/settings/general/others.php:14
-msgid "Auto Update"
-msgstr ""
-
-#: includes/settings/general/others.php:15
-msgid ""
-"Enable auto update of "
-"the plugin"
-msgstr ""
-
-#: includes/settings/general/others.php:22
 msgid ""
 "Anonymous data collection"
 msgstr ""
 
-#: includes/settings/general/others.php:23
+#: includes/settings/general/others.php:15
 msgid ""
 "Allow us to collect "
 "anonymized data (just a "
@@ -8200,23 +8301,23 @@ msgid ""
 "data."
 msgstr ""
 
-#: includes/settings/general/others.php:30
+#: includes/settings/general/others.php:22
 msgid "RSS Before Content"
 msgstr ""
 
-#: includes/settings/general/others.php:31
+#: includes/settings/general/others.php:23
 msgid ""
 "Add content before each "
 "post in your site feeds."
 msgstr ""
 
+#: includes/settings/general/others.php:30
 #: includes/settings/general/others.php:38
-#: includes/settings/general/others.php:46
 msgid "RSS After Content"
 msgstr ""
 
+#: includes/settings/general/others.php:31
 #: includes/settings/general/others.php:39
-#: includes/settings/general/others.php:47
 msgid ""
 "Add content after each "
 "post in your site feeds."
@@ -8271,26 +8372,42 @@ msgstr ""
 
 #: includes/settings/titles/author.php:17
 msgid ""
-"Enables or disables "
-"Author Archives. If "
-"disabled, the Author "
-"Archives are redirected "
-"to your homepage. To "
-"avoid duplicate content "
+"If this option is set to "
+"<strong>Enabled</"
+"strong>, you will be "
+"able to access an "
+"author's archive page by "
+"going to <code>mydomain."
+"com/author/username/</"
+"code>. Note that the "
+"<code>/author/</code> "
+"part of the URL can be "
+"changed in the setting "
+"below. The author "
+"archive page shows all "
+"posts written by "
+"<code>username</code>. "
+"If this option is set to "
+"<strong>Disabled</"
+"strong>, the author "
+"archive is, instead, "
+"redirected to the "
+"homepage. To avoid "
+"duplicate content "
 "issues, noindex author "
 "archives if you keep "
 "them enabled."
 msgstr ""
 
 #: includes/settings/titles/author.php:19
-#: includes/settings/titles/misc.php:20
+#: includes/settings/titles/misc.php:19
 #: includes/settings/titles/post-types.php:239
 #: includes/settings/titles/post-types.php:260
 msgid "Disabled"
 msgstr ""
 
 #: includes/settings/titles/author.php:20
-#: includes/settings/titles/misc.php:19
+#: includes/settings/titles/misc.php:20
 #: includes/settings/titles/post-types.php:240
 #: includes/settings/titles/post-types.php:261
 msgid "Enabled"
@@ -8616,12 +8733,25 @@ msgstr ""
 
 #: includes/settings/titles/misc.php:17
 msgid ""
-"Enable or disable the "
-"date archive (_e.g: "
-"domain.com/2019/06/_). "
-"If this option is "
-"disabled, the date "
-"archives will be "
+"If this option is set to "
+"<strong>Enabled</"
+"strong>, you will be "
+"able to access your "
+"posts' date archive "
+"pages. For example, if "
+"you have written three "
+"posts, one on "
+"2019/11/02, the second "
+"on 2019/11/17 and the "
+"third on 2019/11/28, "
+"you'll be able to view "
+"all three posts by going "
+"to <code>mydomain."
+"com/2019/11/</code>. If "
+"this option is set to "
+"<strong>Disabled</"
+"strong>, the date "
+"archive is, instead, "
 "redirected to the "
 "homepage."
 msgstr ""
