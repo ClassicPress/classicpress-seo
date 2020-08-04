@@ -1,4 +1,7 @@
 /*!
   * Plugin:	Classic SEO
   * Name:	cpseo.css
-  */#wp-admin-bar-cpseo .cpseo-icon{display:inline-block;top:6px;position:relative;padding-right:10px}#wp-admin-bar-cpseo .cpseo-icon svg{fill-rule:evenodd;fill:#dedede;height:21px;vertical-align:inherit}#wp-admin-bar-cpseo:hover .cpseo-icon svg{fill-rule:evenodd;fill:#00b9eb}
+  */
+#wp-admin-bar-cpseo .cpseo-icon {display: inline-block;top:2px;position: relative;padding:4px 0;margin-right:8px;line-height:20px;}
+#wp-admin-bar-cpseo .cpseo-icon svg {fill-rule: evenodd;fill: rgba(240,245,250,.6);max-height:16px;}
+#wp-admin-bar-cpseo:hover .cpseo-icon svg {fill-rule: evenodd;fill: #00b9eb;}
