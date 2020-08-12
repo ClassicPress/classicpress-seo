@@ -81,7 +81,7 @@ trait Choices {
 	 * @return array
 	 */
 	public static function choices_separator( $current = '' ) {
-		$defaults = [ '-', '&ndash;', '&mdash;', '&raquo;', '|', '&bull;' ];
+		$defaults = [ '-', '&ndash;', '&mdash;', '&laquo;', '&raquo;', '|', '&bull;', '&middot;', '*', '&#8902;', '&lt;', '&gt;' ];
 		if ( ! $current || in_array( $current, $defaults, true ) ) {
 			$current = '';
 		}
@@ -99,7 +99,6 @@ trait Choices {
 			'&#8902;'	=> '&#8902;',
 			'&lt;'		=> '&lt;',
 			'&gt;'		=> '&gt;',
-			$current	=> '<span class="custom-sep" contenteditable>' . $current . '</span>',
 		];
 	}
 
