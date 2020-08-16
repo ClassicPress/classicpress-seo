@@ -218,7 +218,11 @@ class Admin_Bar_Menu {
 	 * Add taxonomy menu
 	 */
 	private function add_taxonomy_menu() {
-		$term   = get_queried_object();
+		$term = get_queried_object();
+		if ( empty( $term ) ) {
+			return;
+		}
+
 		$labels = get_taxonomy_labels( get_taxonomy( $term->taxonomy ) );
 		$this->add_sub_menu(
 			'tax',
