@@ -90,19 +90,9 @@ class Updates implements Runner {
 	
 	/**
 	 * Perform pre-release updates.
+	 * Not required since 1.0.0
 	 */
 	public static function perform_pre_release_updates() {
-		$pre_release_installed_version = get_option( 'cpseo_pre_release_version' );
-		
-		if ( ! empty(self::$pre_release_updates ) ) {
-			foreach ( self::$pre_release_updates as $pre_release_version => $path ) {
-				if ( $pre_release_installed_version < $pre_release_version ) {
-					include $path;
-					update_option( 'cpseo_pre_release_version', $pre_release_version );
-				}
-			}
-		}
-
-		update_option( 'cpseo_pre_release_version', cpseo()->pre_release_version );
+		delete_option( 'cpseo_pre_release_version' );
 	}
 }

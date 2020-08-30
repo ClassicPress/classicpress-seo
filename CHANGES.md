@@ -1,3 +1,12 @@
+#### v 1.0.0 / 2020-08-30
+* FIXED: Fix for misaligned Classic SEO icon in top admin toolbar when viewing site #103
+* FIXED: Remove empty title separator #104
+* REMOVED: Remove legacy Rank Math help images #106
+* UPDATED: Update language pot file #107
+* UPDATED: Minor updates to help pages #108
+* FIXED: Replace "ClassicPress-research" with "ClassicPress-plugins" #109
+
+
 #### v 1.0.0-rc.1 / 2020-08-02
 * IMPROVED: Clarify wording on Author Archives and Date Archives option settings (#85)
 * IMPROVED: Add clear installation instructions to readme (#89) (props @nylen)
