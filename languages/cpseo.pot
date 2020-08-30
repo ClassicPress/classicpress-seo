@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: "
 "Classic SEO Pot v1.0.0\n"
 "POT-Creation-Date: "
-"2020-08-02 14:52+0100\n"
+"2020-08-30 14:46+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -41,16 +41,13 @@ msgstr ""
 "_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "Language: en_US\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit "
+"2.4.1\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
 "X-Poedit-"
 "SearchPathExcluded-0: ."
 "git\n"
-
-#: assets/vendor/moment.js:1
-msgid ": "
-msgstr ""
 
 #: classicpress-seo.php:225
 #, php-format
@@ -97,7 +94,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/class-admin-bar-menu.php:209
-#: includes/admin/class-admin-bar-menu.php:227
+#: includes/admin/class-admin-bar-menu.php:231
 #, php-format
 msgid "SEO Settings for %s"
 msgstr ""
@@ -109,121 +106,121 @@ msgid ""
 "type"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:229
-#: includes/admin/class-admin-bar-menu.php:244
+#: includes/admin/class-admin-bar-menu.php:233
+#: includes/admin/class-admin-bar-menu.php:248
 msgid ""
 "Edit SEO settings for "
 "this archive page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:242
+#: includes/admin/class-admin-bar-menu.php:246
 msgid ""
 "SEO Settings for Date "
 "Archives"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:257
+#: includes/admin/class-admin-bar-menu.php:261
 msgid ""
 "SEO Settings for Search "
 "Page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:259
+#: includes/admin/class-admin-bar-menu.php:263
 msgid ""
 "Edit SEO settings for "
 "the search results page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:272
+#: includes/admin/class-admin-bar-menu.php:276
 msgid "Mark this page"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:289
+#: includes/admin/class-admin-bar-menu.php:293
 msgid "As Pillar Content"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:303
+#: includes/admin/class-admin-bar-menu.php:307
 msgid "As NoIndex"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:314
+#: includes/admin/class-admin-bar-menu.php:318
 msgid "As NoFollow"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:330
+#: includes/admin/class-admin-bar-menu.php:334
 msgid "External Tools"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:339
+#: includes/admin/class-admin-bar-menu.php:343
 msgid ""
 "Google Structured Data"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:341
+#: includes/admin/class-admin-bar-menu.php:345
 msgid ""
 "Google Structured Data "
 "Testing Tool"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:345
+#: includes/admin/class-admin-bar-menu.php:349
 msgid "Google PageSpeed"
-msgstr ""
-
-#: includes/admin/class-admin-bar-menu.php:347
-msgid ""
-"Google PageSpeed Insights"
 msgstr ""
 
 #: includes/admin/class-admin-bar-menu.php:351
 msgid ""
+"Google PageSpeed Insights"
+msgstr ""
+
+#: includes/admin/class-admin-bar-menu.php:355
+msgid ""
 "Google Mobile-Friendly"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:353
+#: includes/admin/class-admin-bar-menu.php:357
 msgid ""
 "Google Mobile-Friendly "
 "Test"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:357
+#: includes/admin/class-admin-bar-menu.php:361
 msgid ""
 "Google Rich Results "
 "(Mobile)"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:359
+#: includes/admin/class-admin-bar-menu.php:363
 msgid ""
 "Google Rich Results Test "
 "- Googlebot Smartphone"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:363
+#: includes/admin/class-admin-bar-menu.php:367
 msgid ""
 "Google Rich Results "
 "(Desktop)"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:365
+#: includes/admin/class-admin-bar-menu.php:369
 msgid ""
 "Google Rich Results Test "
 "- Googlebot Desktop"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:369
+#: includes/admin/class-admin-bar-menu.php:373
 msgid "Google Cache"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:371
+#: includes/admin/class-admin-bar-menu.php:375
 msgid ""
 "See Google's cached "
 "version of your site"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:375
+#: includes/admin/class-admin-bar-menu.php:379
 msgid "Facebook Debugger"
 msgstr ""
 
-#: includes/admin/class-admin-bar-menu.php:377
+#: includes/admin/class-admin-bar-menu.php:381
 msgid ""
 "Facebook Sharing Debugger"
 msgstr ""
@@ -2067,6 +2064,31 @@ msgid ""
 "calendar'."
 msgstr ""
 
+#: includes/admin/views/help/developers.php:63
+msgid ""
+"Remove all Classic SEO "
+"data from the database "
+"on uninstall"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:64
+msgid ""
+"Filter to remove Classic "
+"SEO data from the "
+"database"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:73
+msgid ""
+"Add Custom Power Words"
+msgstr ""
+
+#: includes/admin/views/help/developers.php:74
+msgid ""
+"Filter to add custom "
+"Power Words"
+msgstr ""
+
 #: includes/admin/views/help/getting-started.php:11
 msgid ""
 "Getting started with "
@@ -2580,57 +2602,57 @@ msgid ""
 "search results"
 msgstr ""
 
-#: includes/helpers/class-choices.php:139
+#: includes/helpers/class-choices.php:138
 msgid "Any"
 msgstr ""
 
-#: includes/helpers/class-choices.php:452
+#: includes/helpers/class-choices.php:451
 #: includes/modules/rich-snippet/views/article.php:20
 #: includes/settings/titles/post-types.php:147
 msgid "Article"
 msgstr ""
 
-#: includes/helpers/class-choices.php:453
+#: includes/helpers/class-choices.php:452
 msgid "Book"
 msgstr ""
 
-#: includes/helpers/class-choices.php:454
+#: includes/helpers/class-choices.php:453
 msgid "Course"
 msgstr ""
 
-#: includes/helpers/class-choices.php:455
+#: includes/helpers/class-choices.php:454
 #: includes/modules/rich-snippet/views/event.php:17
 msgid "Event"
 msgstr ""
 
-#: includes/helpers/class-choices.php:456
+#: includes/helpers/class-choices.php:455
 msgid "Job Posting"
 msgstr ""
 
-#: includes/helpers/class-choices.php:457
+#: includes/helpers/class-choices.php:456
 msgid "Music"
 msgstr ""
 
-#: includes/helpers/class-choices.php:458
+#: includes/helpers/class-choices.php:457
 #: includes/modules/rich-snippet/views/metabox-options.php:36
 #: includes/replace-variables/class-advanced-variables.php:113
 #: includes/settings/titles/post-types.php:96
 msgid "Product"
 msgstr ""
 
-#: includes/helpers/class-choices.php:459
+#: includes/helpers/class-choices.php:458
 msgid "Recipe"
 msgstr ""
 
-#: includes/helpers/class-choices.php:460
+#: includes/helpers/class-choices.php:459
 msgid "Restaurant"
 msgstr ""
 
-#: includes/helpers/class-choices.php:461
+#: includes/helpers/class-choices.php:460
 msgid "Video"
 msgstr ""
 
-#: includes/helpers/class-choices.php:462
+#: includes/helpers/class-choices.php:461
 #: includes/modules/local-seo/views/titles-options.php:19
 #: includes/modules/rich-snippet/views/course.php:17
 #: includes/modules/rich-snippet/views/event.php:129
@@ -2638,59 +2660,59 @@ msgstr ""
 msgid "Person"
 msgstr ""
 
-#: includes/helpers/class-choices.php:463
+#: includes/helpers/class-choices.php:462
 msgid "Service"
 msgstr ""
 
-#: includes/helpers/class-choices.php:464
+#: includes/helpers/class-choices.php:463
 msgid ""
 "Software Application"
 msgstr ""
 
-#: includes/helpers/class-choices.php:468
+#: includes/helpers/class-choices.php:467
 msgid "Review"
 msgstr ""
 
-#: includes/helpers/class-choices.php:492
+#: includes/helpers/class-choices.php:491
 msgid "301 Permanent Move"
 msgstr ""
 
-#: includes/helpers/class-choices.php:493
+#: includes/helpers/class-choices.php:492
 msgid "302 Temporary Move"
 msgstr ""
 
-#: includes/helpers/class-choices.php:494
+#: includes/helpers/class-choices.php:493
 msgid ""
 "307 Temporary Redirect"
 msgstr ""
 
-#: includes/helpers/class-choices.php:495
+#: includes/helpers/class-choices.php:494
 msgid "410 Content Deleted"
 msgstr ""
 
-#: includes/helpers/class-choices.php:496
+#: includes/helpers/class-choices.php:495
 msgid ""
 "451 Content Unavailable "
 "for Legal Reasons"
 msgstr ""
 
-#: includes/helpers/class-choices.php:509
+#: includes/helpers/class-choices.php:508
 msgid "Exact"
 msgstr ""
 
-#: includes/helpers/class-choices.php:510
+#: includes/helpers/class-choices.php:509
 msgid "Contains"
 msgstr ""
 
-#: includes/helpers/class-choices.php:511
+#: includes/helpers/class-choices.php:510
 msgid "Starts With"
 msgstr ""
 
-#: includes/helpers/class-choices.php:512
+#: includes/helpers/class-choices.php:511
 msgid "End With"
 msgstr ""
 
-#: includes/helpers/class-choices.php:513
+#: includes/helpers/class-choices.php:512
 msgid "Regex"
 msgstr ""
 
@@ -6023,13 +6045,11 @@ msgid ""
 msgstr ""
 
 #: includes/modules/search-console/class-search-console.php:208
-#, php-format
 msgid ""
 "Connect to Google Search "
 "Console profile to see "
 "the most important "
-"information from Google. "
-"%s."
+"information from Google."
 msgstr ""
 
 #: includes/modules/search-console/class-search-console.php:224
@@ -7029,7 +7049,6 @@ msgstr ""
 
 #: includes/modules/woocommerce/class-admin.php:39
 #: includes/modules/woocommerce/class-admin.php:78
-#: includes/modules/woocommerce/views/help.php:12
 msgid "WooCommerce"
 msgstr ""
 
@@ -7089,40 +7108,40 @@ msgid ""
 "current product"
 msgstr ""
 
+#: includes/modules/woocommerce/views/help.php:12
+msgid ""
+"WooCommerce and Classic "
+"Commerce"
+msgstr ""
+
 #: includes/modules/woocommerce/views/help.php:14
 msgid ""
-"SEO is the backbone of "
-"any website and it "
-"couldn't be more true "
-"for a WooCommerce store."
+"SEO is an important part "
+"of any website and "
+"that's especially true "
+"for a WooCommerce or "
+"Classic Commerce store."
 msgstr ""
 
 #: includes/modules/woocommerce/views/help.php:16
 msgid ""
-"When you sell something "
-"online, you want people "
-"to buy it. And, SEO is "
-"the best way to do so in "
-"the long run."
-msgstr ""
-
-#: includes/modules/woocommerce/views/help.php:18
-msgid ""
 "With the Classic SEO "
 "plugin, you can easily "
 "optimize your "
-"WooCommerce store in "
+"WooCommerce or Classic "
+"Commerce store in "
 "general and product "
 "pages in particular."
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:20
+#: includes/modules/woocommerce/views/help.php:18
 msgid ""
 "Optimizing Your "
-"WooCommerce Store"
+"WooCommerce or Classic "
+"Commerce Store"
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:26
+#: includes/modules/woocommerce/views/help.php:24
 #, php-format
 msgid ""
 "Classic SEO can help you "
@@ -7130,94 +7149,84 @@ msgid ""
 "category or tag archives "
 "`noindex`. You can do "
 "that from <a href=\"%1$s"
-"\">WordPress Dashboard > "
-"Classic SEO > Titles & "
-"Meta > Product "
-"Categories</a>"
+"\">ClassicPress "
+"Dashboard > Classic SEO "
+"> Titles & Meta > "
+"Product Categories</a>"
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:32
+#: includes/modules/woocommerce/views/help.php:30
 msgid "or"
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:35
+#: includes/modules/woocommerce/views/help.php:33
 msgid ""
-"WordPress Dashboard > "
+"ClassicPress Dashboard > "
 "Classic SEO > Titles & "
 "Meta > Product Tags."
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:40
+#: includes/modules/woocommerce/views/help.php:36
 msgid ""
 "Optimizing Your Product "
 "Pages"
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:46
+#: includes/modules/woocommerce/views/help.php:42
 #, php-format
 msgid ""
 "You can customize and "
 "automate the SEO Title/"
 "Description generation "
-"easily as well. Just "
-"head over to <a href="
-"\"%1$s\">WordPress "
+"easily as well. Go to <a "
+"href=\"%1$s"
+"\">ClassicPress "
 "Dashboard > Classic SEO "
 "> Titles & Meta > "
 "Products</a>"
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:54
+#: includes/modules/woocommerce/views/help.php:48
 msgid ""
-"You can also add rich "
-"snippets to your product "
-"pages easily with "
-"Classic SEO, apart from "
-"doing the regular SEO "
-"like you would do on "
-"posts."
+"Classic SEO also lets "
+"you easily add rich "
+"snippets to your product."
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:60
-#, php-format
+#: includes/modules/woocommerce/views/help.php:50
 msgid ""
-"Do that from the product "
-"pages themeselve. Go to "
-"<a href=\"%1$s"
-"\">WordPress Dashboard > "
-"Products > Add New</a>"
+"Rich snippets can be "
+"added from within the "
+"product pages. Simply "
+"click on the Rich "
+"Snippet tab and choose "
+"the Product snippet type "
+"option."
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:66
-msgid ""
-"And, choose the product "
-"schema from the Rich "
-"Snippets tab."
-msgstr ""
-
-#: includes/modules/woocommerce/views/help.php:70
+#: includes/modules/woocommerce/views/help.php:52
 msgid ""
 "Optimizing Your Product "
 "URLs"
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:72
+#: includes/modules/woocommerce/views/help.php:54
 msgid ""
 "Classic SEO offers you "
-"to remove category base "
-"from your product "
-"archive URLs so the URLs "
-"are cleaner, more SEO "
-"friendly and easier to "
-"remember."
+"the option to remove the "
+"category base from your "
+"product archive URLs so "
+"the URLs are cleaner, "
+"more SEO friendly and "
+"easier to remember."
 msgstr ""
 
-#: includes/modules/woocommerce/views/help.php:78
+#: includes/modules/woocommerce/views/help.php:60
 #, php-format
 msgid ""
 "To access those options, "
 "head over to <a href="
-"\"%1$s\">WordPress "
+"\"%1$s\">ClassicPress "
 "Dashboard > Classic SEO "
 "> General Settings > "
 "WooCommerce</a>."
