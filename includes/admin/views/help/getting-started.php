@@ -35,7 +35,7 @@
 	printf(
 		/* translators: 1: Link to Classic Commerce */
 		__('A key future addition to Classic SEO will be support for <a rel="nofollow noopener noreferrer" href="%1$s" target="_blank">Classic Commerce</a>.', 'cpseo' ),
-		'https://github.com/ClassicPress-research/classic-commerce'); ?>
+		'https://github.com/ClassicPress-plugins/classic-commerce'); ?>
 </p>
 <p>
 	<?php esc_html_e( 'It is also planned to improve support for the most popular page builders such as Beaver Builder, Divi and Elementor.', 'cpseo' ); ?>

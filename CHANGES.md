@@ -47,7 +47,7 @@
 * NEW: Adds importer for The SEO Framework
 
 #### v 0.6.0 / 2019-12-28
-* UPDATED: Now fully supports [Classic Commerce](https://github.com/ClassicPress-research/classic-commerce)
+* UPDATED: Now fully supports [Classic Commerce](https://github.com/ClassicPress-plugins/classic-commerce)
 
 #### v 0.5.3 / 2019-12-21
 * FIX: Fix for wrong message shown on post edit page when content length was between 500 and 600 words
