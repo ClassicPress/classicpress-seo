@@ -52,6 +52,7 @@
 .cpseo-tabs-navigation:not(.cpseo-custom) a.active .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a.active .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .fa{color:#fff}
 .cpseo-tabs-navigation:not(.cpseo-custom) a:first-child{border-top:1px solid #e5e5e5}
 .cpseo-tabs-content:not(.cpseo-custom){overflow:hidden;box-sizing:border-box;min-height:400px;margin-bottom:20px;padding:30px;border:1px solid #e5e5e5;background:#fff}
+.cpseo-wrap .cpseo-tabs-content img {max-width:100%;}
 .cpseo-tab h3:first-of-type{margin-top:0}
 .cpseo-tab .cmb-type-title:first-of-type{padding-top:0;text-align:center;border-top:0}
 .cpseo-tab .cmb2-checkbox-list li{display:inline-block;width:49%}
