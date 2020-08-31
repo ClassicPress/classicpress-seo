@@ -39,7 +39,7 @@ $cmb->add_field([
 	'id'      => 'cpseo_wc_remove_generator',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Remove Generator Tag', 'cpseo' ),
-	'desc'    => esc_html__( 'Remove WooCommerce generator tag from the source code.', 'cpseo' ),
+	'desc'    => esc_html__( 'Remove Classic Commerce generator tag from the source code.', 'cpseo' ),
 	'default' => 'on',
 ]);
 
@@ -47,7 +47,7 @@ $cmb->add_field([
 	'id'      => 'cpseo_remove_shop_snippet_data',
 	'type'    => 'switch',
 	'name'    => esc_html__( 'Remove Snippet Data', 'cpseo' ),
-	'desc'    => esc_html__( 'Remove Snippet Data from WooCommerce Shop page.', 'cpseo' ),
+	'desc'    => esc_html__( 'Remove Snippet Data from Classic Commerce Shop page.', 'cpseo' ),
 	'default' => 'on',
 ]);
 

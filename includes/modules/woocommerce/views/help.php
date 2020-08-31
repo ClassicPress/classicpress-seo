@@ -57,7 +57,7 @@ use Classic_SEO\Helper;
 	<?php
 	printf(
 		/* translators: link to local seo settings */
-		__( 'To access those options, head over to <a href="%1$s">ClassicPress Dashboard > Classic SEO > General Settings > WooCommerce</a>.', 'cpseo' ),
+		__( 'To access those options, head over to <a href="%1$s">ClassicPress Dashboard > Classic SEO > General Settings > Classic Commerce</a>.', 'cpseo' ),
 		Helper::get_admin_url( 'options-general#setting-panel-woocommerce' )
 	);
 	?>
