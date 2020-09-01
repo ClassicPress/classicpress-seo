@@ -9,13 +9,13 @@
 use Classic_SEO\Helper;
 ?>
 
-<h3><?php esc_html_e( 'WooCommerce and Classic Commerce', 'cpseo' ); ?></h3>
+<h3><?php esc_html_e( 'Classic Commerce', 'cpseo' ); ?></h3>
 
-<p><?php esc_html_e( 'SEO is an important part of any website and that\'s especially true for a WooCommerce or Classic Commerce store.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'SEO is an important part of any website and that\'s especially true for a Classic Commerce store.', 'cpseo' ); ?></p>
 
-<p><?php esc_html_e( 'With the Classic SEO plugin, you can easily optimize your WooCommerce or Classic Commerce store in general and product pages in particular.', 'cpseo' ); ?></p>
+<p><?php esc_html_e( 'With the Classic SEO plugin, you can easily optimize your Classic Commerce store in general, and product pages in particular.', 'cpseo' ); ?></p>
 
-<p><strong><?php esc_html_e( 'Optimizing Your WooCommerce or Classic Commerce Store', 'cpseo' ); ?></strong></p>
+<p><strong><?php esc_html_e( 'Optimizing Your Classic Commerce Store', 'cpseo' ); ?></strong></p>
 
 <p>
 	<?php

@@ -43,7 +43,6 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 * **404 Monitor**
 * **Support for ACF**
 * **Support for Classic Commerce**
-* **Support for WooCommerce**
 * **Internal Linking Suggestions**
 * **Role Manager**
 * **Importers for Rank Math, Yoast, All In One SEO and The SEO Framework**
