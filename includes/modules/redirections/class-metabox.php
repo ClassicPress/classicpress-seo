@@ -127,9 +127,9 @@ class Metabox {
 		}
 
 		Cache::add([
-			'from_url'       		=> $cmb->data_to_save['cpseo_redirection_sources'],
-			'cpseo_redirection_id'	=> $redirection_id,
-			'object_id'				=> $cmb->object_id,
+			'from_url'       	=> $cmb->data_to_save['cpseo_redirection_sources'],
+			'redirection_id'	=> $redirection_id,
+			'object_id'			=> $cmb->object_id,
 		]);
 	}
 
