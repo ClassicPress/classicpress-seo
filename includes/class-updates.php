@@ -27,18 +27,9 @@ class Updates implements Runner {
 	 * @var array
 	 */
 	private static $updates = [
-
+		'1.1.0'        => 'updates/update-1.1.0.php',
 	];
 	
-	/**
-	 * Pre-release (e.g. beta) pdates that need to be run
-	 *
-	 * @var array
-	 */
-	private static $pre_release_updates = [
-		'4'   => 'updates/update-1.0.0-beta.4.php',
-	];
-
 	/**
 	 * Register hooks.
 	 */

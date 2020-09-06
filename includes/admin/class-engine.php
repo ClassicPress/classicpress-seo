@@ -15,7 +15,6 @@ use Classic_SEO\Updates;
 use Classic_SEO\Traits\Hooker;
 use Classic_SEO\Admin\Param;
 use Classic_SEO\Helpers\Conditional;
-use Classic_SEO\Search_Console\Search_Console;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -35,8 +34,6 @@ class Engine {
 
 		cpseo()->admin        = new Admin;
 		cpseo()->admin_assets = new Assets;
-
-		$this->search_console_ajax();
 
 		$runners = [
 			cpseo()->admin,
@@ -63,19 +60,4 @@ class Engine {
 		$this->do_action( 'admin/loaded' );
 	}
 
-
-	/**
-	 * Search console ajax handler.
-	 */
-	private function search_console_ajax() {
-		if ( ! Conditional::is_ajax() || class_exists( 'Search_Console' ) ) {
-			return;
-		}
-
-		$action = Param::post( 'action' );
-		if ( $action && in_array( $action, [ 'cpseo_search_console_authentication', 'cpseo_search_console_deauthentication', 'cpseo_search_console_get_profiles' ], true ) ) {
-			Helper::update_modules( [ 'search-console' => 'on' ] );
-			new Search_Console;
-		}
-	}
 }

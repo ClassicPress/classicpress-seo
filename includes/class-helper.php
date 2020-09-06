@@ -115,53 +115,6 @@ class Helper {
 		return $link;
 	}
 
-
-	/**
-	 * Get Search Console auth url.
-	 *
-	 * @return string
-	 */
-	public static function get_console_auth_url() {
-		return \Classic_SEO\Search_Console\Client::get()->get_auth_url();
-	}
-
-	/**
-	 * Get or update Search Console data.
-	 *
-	 * @param  bool|array $data Data to save.
-	 * @return bool|array
-	 */
-	public static function search_console_data( $data = null ) {
-		$key = 'cpseo_search_console_data';
-
-		if ( false === $data ) {
-			delete_option( $key );
-			return false;
-		}
-
-		$saved = get_option( $key, [] );
-		if ( is_null( $data ) ) {
-			return wp_parse_args( $saved, array(
-				'authorized' => false,
-				'profiles'   => [],
-			) );
-		}
-
-		$data = wp_parse_args( $data, $saved );
-		update_option( $key, $data );
-
-		return $data;
-	}
-
-	/**
-	 * Get search console module object.
-	 *
-	 * @return object
-	 */
-	public static function search_console() {
-		return self::get_module( 'search-console' );
-	}
-
 	/**
 	 * Get module by ID.
 	 *

@@ -165,7 +165,6 @@ class Assets implements Runner {
 			'cpseo_page_cpseo-404-monitor',
 			'cpseo_page_cpseo-redirections',
 			'cpseo_page_cpseo-link-builder',
-			'cpseo_page_cpseo-search-console',
 			'cpseo_page_cpseo-import-export',
 			'cpseo_page_cpseo-help',
 			'user-edit',
