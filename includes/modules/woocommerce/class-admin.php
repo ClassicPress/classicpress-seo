@@ -36,7 +36,7 @@ class Admin extends Base {
 				'id'        => 'woocommerce',
 				'directory' => $directory,
 				'help'      => [
-					'title' => esc_html__( 'WooCommerce', 'cpseo' ),
+					'title' => esc_html__( 'Classic Commerce', 'cpseo' ),
 					'view'  => $directory . '/views/help.php',
 				],
 			]
@@ -75,8 +75,8 @@ class Admin extends Base {
 			[
 				'woocommerce' => [
 					'icon'  => 'dashicons dashicons-cart',
-					'title' => esc_html__( 'WooCommerce', 'cpseo' ),
-					'desc'  => esc_html__( 'Choose how you want Classic SEO to handle your WooCommerce SEO. These options help you create cleaner, SEO friendly URLs, and optimize your WooCommerce product pages.', 'cpseo' ),
+					'title' => esc_html__( 'Classic Commerce', 'cpseo' ),
+					'desc'  => esc_html__( 'Choose how you want Classic SEO to handle your Classic Commerce SEO. These options help you create cleaner, SEO friendly URLs, and optimize your Classic Commerce product pages.', 'cpseo' ),
 					'file'  => $this->directory . '/views/options-general.php',
 				],
 			],
