@@ -232,20 +232,6 @@ class Installer {
 				incoming_link_count int(10) UNSIGNED NULL DEFAULT 0,
 				UNIQUE KEY object_id (object_id)
 			) $collate;",
-			
-			// Google Search Console
-			"CREATE TABLE IF NOT EXISTS {$wpdb->prefix}cpseo_sc_analytics (
-				id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-				date DATETIME NOT NULL,
-				property TEXT NOT NULL,
-				clicks mediumint(6) NOT NULL,
-				impressions mediumint(6) NOT NULL,
-				position double NOT NULL,
-				ctr double NOT NULL,
-				dimension VARCHAR(25) NOT NULL,
-				PRIMARY KEY (id),
-				KEY property (property(191))
-			) $collate;",
 
 		];
 
@@ -268,17 +254,11 @@ class Installer {
 	 * Create misc options.
 	 */
 	private function create_misc_options() {
-		add_option( 'cpseo_search_console_data', [
-			'authorized' => false,
-			'profiles'   => [],
-		]);
-
 		// Update "known CPTs" list, so we can send notice about new ones later.
 		add_option( 'cpseo_known_post_types', Helper::get_accessible_post_types() );
 
 		$modules = [
 			'link-counter',
-			'search-console',
 			'seo-analysis',
 			'sitemap',
 			'rich-snippet',
@@ -566,7 +546,6 @@ class Installer {
 	 */
 	private function get_cron_jobs() {
 		return [
-			'search_console/get_analytics' => 'daily',  // Add cron job for Get Search Console Analytics Data.
 			'redirection/clean_trashed'    => 'daily',  // Add cron for cleaning trashed redirects.
 			'links/internal_links'         => 'daily',  // Add cron for counting links.
 		];

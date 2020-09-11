@@ -372,13 +372,6 @@ class Classic_SEO {
 	}
 
 	/**
-	 * Add functionality on succeessful login.
-	 */
-	public function on_login() {
-		\Classic_SEO\Search_Console\Client::get()->refresh_auth_token_on_login();
-	}
-
-	/**
 	 * Show action links on the plugin screen.
 	 *
 	 * @param  mixed $links Plugin Action links.

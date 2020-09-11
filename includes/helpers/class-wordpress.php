@@ -289,7 +289,6 @@ trait WordPress {
 			'cpseo_link_builder'    => esc_html__( 'Link Builder', 'cpseo' ),
 			'cpseo_redirections'    => esc_html__( 'Redirections', 'cpseo' ),
 			'cpseo_role_manager'    => esc_html__( 'Role Manager', 'cpseo' ),
-			'cpseo_search_console'  => esc_html__( 'Search Console', 'cpseo' ),
 			'cpseo_site_analysis'   => esc_html__( 'Site-Wide Analysis', 'cpseo' ),
 			'cpseo_onpage_analysis' => esc_html__( 'On-Page Analysis', 'cpseo' ),
 			'cpseo_onpage_general'  => esc_html__( 'On-Page General Settings', 'cpseo' ),

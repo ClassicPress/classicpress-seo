@@ -24,8 +24,6 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-// Clear cron.
-wp_clear_scheduled_hook( 'cpseo_search_console_get_analytics' );
 
 // Set cpseo_clear_data_on_uninstall to TRUE to delete all data on uninstall.
 if ( true === apply_filters( 'cpseo_clear_data_on_uninstall', false ) ) {
