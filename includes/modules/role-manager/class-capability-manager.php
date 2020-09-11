@@ -63,7 +63,6 @@ class Capability_Manager {
 		$this->register( 'cpseo_link_builder', esc_html__( 'Link Builder', 'cpseo' ) );
 		$this->register( 'cpseo_redirections', esc_html__( 'Redirections', 'cpseo' ) );
 		$this->register( 'cpseo_role_manager', esc_html__( 'Role Manager', 'cpseo' ) );
-		$this->register( 'cpseo_site_analysis', esc_html__( 'Site-Wide Analysis', 'cpseo' ) );
 		$this->register( 'cpseo_onpage_analysis', esc_html__( 'On-Page Analysis', 'cpseo' ) );
 		$this->register( 'cpseo_onpage_general', esc_html__( 'On-Page General Settings', 'cpseo' ) );
 		$this->register( 'cpseo_onpage_advanced', esc_html__( 'On-Page Advanced Settings', 'cpseo' ) );
@@ -147,7 +146,6 @@ class Capability_Manager {
 
 		if ( 'editor' === $role ) {
 			return [
-				'cpseo_site_analysis',
 				'cpseo_onpage_analysis',
 				'cpseo_onpage_general',
 				'cpseo_onpage_snippet',
