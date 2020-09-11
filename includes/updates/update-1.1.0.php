@@ -26,5 +26,12 @@ function cpseo_1_1_0_remove_gsc_table() {
 
 	delete_option( 'cpseo_search_console_data' );
 }
-
 cpseo_1_1_0_remove_gsc_table();
+
+/*
+ * 	Clear cpseo_search_console_get_analytics cron job.
+ */
+function cpseo_1_1_0_remove_gsc_scheduled_hook() {	
+	wp_clear_scheduled_hook( 'cpseo_search_console_get_analytics' );
+}
+cpseo_1_1_0_remove_gsc_scheduled_hook()
