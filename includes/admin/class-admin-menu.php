@@ -111,7 +111,7 @@ class Admin_Menu implements Runner {
 			#wp-admin-bar-cpseo .cpseo-icon {display: inline-block;top:2px;position: relative;padding:4px 0;margin-right:8px;line-height:20px;}
 			#wp-admin-bar-cpseo .cpseo-icon svg {fill-rule: evenodd;fill: rgba(240,245,250,.65);max-height:16px;}
 			#wp-admin-bar-cpseo:hover .cpseo-icon svg {fill-rule: evenodd;fill: #00b9eb;}
-			#adminmenu #toplevel_page_cpseo div.wp-menu-image.svg {background-size: 18px 18px;}
+			#adminmenu #toplevel_page_cpseo div.wp-menu-image.svg {background-size: 17px 17px;}
 		</style>
 		<?php
 	}
