@@ -72,8 +72,7 @@ class Admin extends Base {
 			$tabs['authors'] = array(
 				'icon'  => 'fa fa-users',
 				'title' => esc_html__( 'Authors', 'cpseo' ),
-				/* translators: Learn more link. */
-				'desc'  => sprintf( esc_html__( 'Set the sitemap options for author archive pages. %s.', 'cpseo' ), '<a href="https://s.blobby.com/sitemaps" target="_blank">' . esc_html__( 'Learn more', 'cpseo' ) . '</a>' ),
+				'desc'  => esc_html__( 'Set the sitemap options for author archive pages.', 'cpseo' ),
 				'file'  => $this->directory . '/settings/authors.php',
 			);
 		}
