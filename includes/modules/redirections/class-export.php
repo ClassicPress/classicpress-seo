@@ -57,7 +57,7 @@ class Export {
 
 		$text[] = '# Created by Classic SEO';
 		$text[] = '# ' . date_i18n( 'r' );
-		$text[] = '# Classic SEO ' . trim( cpseo()->version ) . ' - https://blobby.com/';
+		$text[] = '# Classic SEO ' . trim( cpseo()->version ) . ' - https://github.com/ClassicPress-plugins/classicpress-seo';
 		$text[] = '';
 
 		$text = array_merge( $text, $this->$server( $items['redirections'] ) );
