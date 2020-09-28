@@ -1,13 +1,13 @@
 == Classic SEO ==
 
 Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-Version:           1.0.0-rc.1
+Version:           1.0.0
 Text Domain:       cpseo
 Domain Path:       /languages
 Requires PHP:      7.0
 Requires:          1.0.0
 Tested:            4.9.99
-Author:            ClassicPress Research
+Author:            ClassicPress
 Author URI:        https://github.com/ClassicPress-plugins/
 Plugin URI:        https://github.com/ClassicPress-plugins/classicpress-seo
 License:           GPLv2
@@ -18,9 +18,6 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 **SEO Plugin For ClassicPress**
 
 Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-
-**As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
-
 
 * * *
 
@@ -46,12 +43,25 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 * **Internal Linking Suggestions**
 * **Role Manager**
 * **Importers for Rank Math, Yoast, All In One SEO and The SEO Framework**
-* **Google Search Console Integration**
 
-== Important note ==
-**As this plugin is still in the development & testing stage, use it on a production site at your own risk.**
+== Support ==
+
+If you need support for Classic SEO or find a bug, you have threee choices:
+* create an issue on the [issues page](https://github.com/ClassicPress-plugins/classicpress-seo/issues)
+* [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
+* Look out for the [#classic-seo channel on Slack](https://www.classicpress.net/join-slack/)
+
 
 == Changelog ==
+
+**v 1.0.0 / 2020-08-30**
+* FIXED: Fix for misaligned Classic SEO icon in top admin toolbar when viewing site #103
+* FIXED: Remove empty title separator #104
+* REMOVED: Remove legacy Rank Math help images #106
+* UPDATED: Update language pot file #107
+* UPDATED: Minor updates to help pages #108
+* FIXED: Replace "ClassicPress-research" with "ClassicPress-plugins" #109
+
 **v 1.0.0-rc.1 / 2020-08-02**
 * IMPROVED: Clarify wording on Author Archives and Date Archives option settings #85
 * IMPROVED: Add clear installation instructions to readme #89 (props @nylen)
