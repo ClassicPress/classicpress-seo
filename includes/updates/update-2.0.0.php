@@ -1,8 +1,8 @@
 <?php
 /**
- * The Updates routine for version 2_0_0
+ * The Updates routine for version 2.0.0
  *
- * @since      2_0_0
+ * @since      2.0.0
  * @package    Classic_SEO
  * @subpackage Classic_SEO\Updates
  */
@@ -15,6 +15,7 @@ use Classic_SEO\Admin\Admin_Helper;
 
 /**
  * Remove table cpseo_sc_analytics as it is no longer used
+ * Google search console feature removed in 2.0.0
  */
 function cpseo_2_0_0_remove_gsc_table() {
 	global $wpdb;
@@ -27,6 +28,7 @@ function cpseo_2_0_0_remove_gsc_table() {
 	delete_option( 'cpseo_search_console_data' );
 }
 cpseo_2_0_0_remove_gsc_table();
+
 
 /*
  * 	Clear cpseo_search_console_get_analytics cron job.
