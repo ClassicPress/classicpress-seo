@@ -269,13 +269,13 @@ body.cpseo-styles{background:#f6f6f6}
 .cpseo-styles #wpcontent{padding-left:0;background:#f6f6f6}
 .cpseo-styles pre{color:#42b72a;background:#f5f6f7;font-family:Menlo,Monaco,'Andale Mono','Courier New',monospace;padding:7px;display:inline-block}
 .cpseo-styles #cpseo-navbar{padding:10px .5rem;height:56px;margin:0 auto;width:53rem;box-sizing:border-box;position:relative}
-#cpseo-header #cpseo-admin h1{line-height:46px;margin:0;display:inline-block;height:46px;width:46px;background-size:100%;background-repeat:no-repeat;padding:3px}
+#cpseo-header #cpseo-admin h1{line-height:40px;margin:0;display:inline-block;height:40px;width:46px;background-size:100%;background-repeat:no-repeat;padding:3px}
 #wpadminbar #wp-toolbar #wp-admin-bar-cpseo_custom_top_level .ab-icon.icon-cpseo-cpseo img{vertical-align:middle;display:inline-block;text-align:center;width:18px;height:18px}
 #adminmenu #toplevel_page_cpseo .wp-menu-image img{max-width:20px;height:20px;-o-object-fit:fill;object-fit:fill;margin-top:-3px;width:20px}
-#cpseo-header #cpseo-admin h1::before{content:"";font-size:14px;line-height:40px;position:absolute;border-radius:6px;font-weight:400;width:40px;height:40px;text-align:center;background:#057f99 url(../img/icon-cpseo.svg) no-repeat;background-size:96%}
+#cpseo-header #cpseo-admin h1::before{content:"";font-size:14px;line-height:40px;position:absolute;border-radius:6px;font-weight:600;width:40px;height:40px;text-align:center;background:#057f99 url(../img/icon-cpseo.svg) no-repeat;background-size:96%}
 #cpseo-header #cpseo-admin h1:hover{cursor:pointer}
 #cpseo-header #cpseo-admin h1>a{text-decoration:none;color:inherit}
-#cpseo-header #cpseo-admin h1 .cpseo-info-version{position:relative;left:50px;top:0;font-size:24px;width:200px;display:block}
+#cpseo-header #cpseo-admin h1 .cpseo-info-version{position:relative;left:60px;top:0;font-size:30px;min-width:280px;display:block;font-weight:600;}
 #cpseo-header #cpseo-admin .wpc-info-version{font-size:14px;left:310px;position:absolute;text-indent:0;top:85px}
 #cpseo-header .cpseo-option .cpseo-settings{float:left;max-width:750px;width:100%}
 .cpseo-option #cpseo-edd-license-btn,.cpseo-option #cpseo-refresh{float:left}
