@@ -96,7 +96,6 @@ class Installer {
 		$tables[] = $wpdb->prefix . 'cpseo_redirections_cache';
 		$tables[] = $wpdb->prefix . 'cpseo_internal_links';
 		$tables[] = $wpdb->prefix . 'cpseo_internal_meta';
-		$tables[] = $wpdb->prefix . 'cpseo_sc_analytics';
 
 		return $tables;
 	}

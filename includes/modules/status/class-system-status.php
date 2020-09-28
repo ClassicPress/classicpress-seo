@@ -93,7 +93,6 @@ class System_Status {
 			'cpseo_redirections_cache',
 			'cpseo_internal_links',
 			'cpseo_internal_meta',
-			'cpseo_sc_analytics',
 		];
 
 		$core_tables    = array_map( [ $this, 'add_db_table_prefix' ], $core_tables );
