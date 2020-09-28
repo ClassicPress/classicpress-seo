@@ -3,7 +3,8 @@
     "description": "SEO plugin for ClassicPress",
 	"keywords": [
 		"classicpress",
-		"seo"
+		"seo",
+		"plugin"
 	],
     "type": "classicpress-plugin",
 	"support": {
@@ -14,8 +15,8 @@
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "ClassicPress Community",
-			"homepage": "https://www.classicpress.net/contributors/"
+            "name": "ClassicPress",
+			"homepage": "https://www.classicpress.net/"
         }
     ],
 	"require": {
