@@ -37,7 +37,6 @@ This is a fork of Rank Math.
 - Role Manager
 - and more...
 
-
 ## Support
 If you need support for Classic SEO or find a bug, you have threee choices:
 - create an issue on the [issues page](https://github.com/ClassicPress-plugins/classicpress-seo/issues)
