@@ -1,7 +1,7 @@
 == Classic SEO ==
 
 Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-Version:           1.0.0
+Version:           2.0.0
 Text Domain:       cpseo
 Domain Path:       /languages
 Requires PHP:      7.0
@@ -12,6 +12,7 @@ Author URI:        https://github.com/ClassicPress-plugins/
 Plugin URI:        https://github.com/ClassicPress-plugins/classicpress-seo
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+
 
 == Description ==
 
@@ -26,6 +27,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 * 1. Head over to the [Releases section](https://github.com/ClassicPress-plugins/classicpress-seo/releases) of this GitHub repository.
 * 2. Expand the "Assets" dropdown by the latest release and download the `classicpress-seo.zip` file.
 * 3. Go to the "Plugins > Add New" section of your site's dashboard and upload the zip file there using the "Upload Plugin" button.
+
 
 == Key Features ==
 
@@ -44,6 +46,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 * **Role Manager**
 * **Importers for Rank Math, Yoast, All In One SEO and The SEO Framework**
 
+
 == Support ==
 
 If you need support for Classic SEO or find a bug, you have threee choices:
@@ -53,6 +56,16 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 
 
 == Changelog ==
+
+**v 2.0.0 / 2020-09-29**
+* REMOVED: Google Search Console feature has been removed completely. See #112 for discussion. (#118)
+* UPDATED: Replaced references to "WooCommerce" with "Classic Commerce" (#114) (props @simplycomputing)
+* UPDATED: Update readme (#126)
+* IMPROVED Minor CSS tweaks and accessibility improvements (#128)
+* FIXED: Fix wrong field name in redirections cache (#119)
+* FIXED: Fix display of CPSEO icon in admin menu (#123)
+* FIXED: Fix display of icon and heading in CPSEO dashboard (#124)
+* FIXED: Cleaned up some left over code (#122, #127)
 
 **v 1.0.0 / 2020-08-30**
 * FIXED: Fix for misaligned Classic SEO icon in top admin toolbar when viewing site #103
