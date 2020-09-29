@@ -1,7 +1,7 @@
 /*!
  * Name: common.css
  */
-.cpseo-page{background:#e1e1e1}
+.cpseo-page{background:#f0f0f0;}
 .cpseo-page h2.nav-tab-wrapper{margin-bottom:40px!important;background-color:transparent!important;border-top:none!important;border-bottom:1px solid #ccc!important}
 .limit-wrap{max-width:1080px}
 .cpseo-wrap{font-size:15px;position:relative;margin:25px 20px 0}
@@ -43,13 +43,13 @@
 .cpseo-ui .button-xlarge{font-size:16px;line-height:44px;height:46px;padding:0 36px}
 .cpseo-ui .button .dashicons{margin:0 3px 0 0}
 .cpseo-tabs-navigation:not(.cpseo-custom){float:left;width:200px;margin-right:-1px}
-.cpseo-tabs-navigation:not(.cpseo-custom) a{font-size:16px;display:block;box-sizing:border-box;padding:11px 15px;text-decoration:none;color:#6c6c6c;border:solid #e5e5e5;border-width:0 1px 1px;outline:none;background:#f6f6f6;box-shadow:none}
+.cpseo-tabs-navigation:not(.cpseo-custom) a{font-size:16px;display:block;box-sizing:border-box;padding:11px 15px;text-decoration:none;color:#6c6c6c;border:solid #b5bfc9;border-width:0 1px 1px;outline:none;background:#f8f9fa;box-shadow:none}
 .cpseo-tabs-navigation:not(.cpseo-custom) a .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a .image-icon{font-size:18px;min-width:20px;margin-right:10px;text-align:center;color:#6c6c6c}
 .cpseo-tabs-navigation:not(.cpseo-custom) a [class*=" dashicons-visual-"], .cpseo-tabs-navigation:not(.cpseo-custom) a [class*=" dashicons-visual-"] {opacity:1;filter: brightness(0.4);}
 .cpseo-tabs-navigation:not(.cpseo-custom) a:hover [class*=" dashicons-visual-"], .cpseo-tabs-navigation:not(.cpseo-custom) a:hover  [class*=" dashicons-visual-"] {opacity:1;filter: brightness(1);}
 .cpseo-tabs-navigation:not(.cpseo-custom) a .image-icon img {width:20px;height:20px;max-width:20px;max-height:20px;}
-.cpseo-tabs-navigation:not(.cpseo-custom) a.active,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover{color:#fff;background:#361946}
-.cpseo-tabs-navigation:not(.cpseo-custom) a.active .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a.active .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .fa{color:#fff}
+.cpseo-tabs-navigation:not(.cpseo-custom) a.active,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover{color:#057f99;background:#fff;font-weight:600;border-right:none;border-left:3px solid #057f99;}
+.cpseo-tabs-navigation:not(.cpseo-custom) a.active .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a.active .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:focus .fa,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .dashicons,.cpseo-tabs-navigation:not(.cpseo-custom) a:hover .fa{color:#057f99}
 .cpseo-tabs-navigation:not(.cpseo-custom) a:first-child{border-top:1px solid #e5e5e5}
 .cpseo-tabs-content:not(.cpseo-custom){overflow:hidden;box-sizing:border-box;min-height:400px;margin-bottom:20px;padding:30px;border:1px solid #e5e5e5;background:#fff}
 .cpseo-wrap .cpseo-tabs-content img {max-width:100%;}
@@ -63,7 +63,7 @@
 .cpseo-tab .cmb-advanced-robots-list li label input[type="checkbox"]{margin-right:2px}
 .cpseo-tab .cmb-advanced-robots-list li .cpseo-tooltip{margin-left:3px}
 .cpseo-tooltip{position:relative;cursor:pointer;color:#89288f}
-.cpseo-tooltip>span{font-size:11px;font-weight:400;line-height:1.5;width:165px;padding:6px;transition:all .3s ease-in-out;-webkit-transform:translate3d(-55%,0,0);transform:translate3d(-55%,0,0);text-align:center;pointer-events:none;opacity:0;color:#fff;border-radius:3px;background:#555d66;position:absolute;bottom:100%;left:45%}
+.cpseo-tooltip>span{font-size:11px;font-weight:400;line-height:1.5;width:165px;padding:6px;transition:all .3s ease-in-out;-webkit-transform:translate3d(-55%,0,0);transform:translate3d(-55%,0,0);text-align:center;pointer-events:none;opacity:0;color:#fff;border-radius:3px;background:#444;position:absolute;bottom:100%;left:45%}
 .cpseo-tooltip>span:after{content:'';-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0);position:absolute;top:100%;left:50%;border-style:solid;height:0;width:0;border-color:#555d66 transparent transparent;border-width:8px 7px 0}
 .cpseo-tooltip:hover span{bottom:130%;opacity:1}
 .cpseo-export-form{padding:15px 25px;border-radius:4px;background:#fff;box-shadow:6px 6px 10px rgba(32,33,36,0.1)}
@@ -403,17 +403,17 @@ table.form-table td p.description sup{font-size:11px;color:red}
 .cpseo-page-list .cpseo-feature-box header{overflow:hidden;padding:2px 0 0 20px;border:0}
 .cpseo-page-list .cpseo-feature-box .module-settings{display:none;font-size:17px;line-height:1.2}
 .cpseo-page-list .cpseo-feature-box .status{clear:both;box-sizing:border-box;height:40px;margin:0;padding:0 15px}
-.cpseo-page-list .cpseo-feature-box .status label{line-height:40px;color:#77797c;cursor:default}
+.cpseo-page-list .cpseo-feature-box .status label{line-height:40px;color:#727272;cursor:default}
 .cpseo-page-list .cpseo-feature-box .status label span{color:#bebfc0}
 .cpseo-page-list .cpseo-feature-box .status label span.active-text{display:none}
 .cpseo-page-list .cpseo-feature-box .status .cpseo-switch{float:right;padding:10px 0}
 .cpseo-page-list .cpseo-feature-box .status .cpseo-switch input{display:none}
-.cpseo-page-list .cpseo-feature-box .status .cpseo-switch input:checked + label{background:#58bb58}
+.cpseo-page-list .cpseo-feature-box .status .cpseo-switch input:checked + label{background:#2d822d}
 .cpseo-page-list .cpseo-feature-box .status .cpseo-switch input:checked + label:after{left:6px}
 .cpseo-page-list .cpseo-feature-box .status .cpseo-switch label{float:right;height:18px;width:36px}
 .cpseo-page-list .cpseo-feature-box .status .cpseo-switch label:after{height:14px;width:14px}
 .cpseo-page-list .cpseo-feature-box .status .cpseo-switch .input-loading{display:none}
-.cpseo-page-list .cpseo-feature-box.active label span.active-text{display:inline-block;color:#58bb58}
+.cpseo-page-list .cpseo-feature-box.active label span.active-text{display:inline-block;color:#2d822d}
 .cpseo-page-list .cpseo-feature-box.active label span.inactive-text{display:none;color:red}
 span.input-loading{display:inline-block;margin:10px 0 0 7px;height:16px;width:16px}
 .input-loading{background:url(../img/ajax-loader.gif) no-repeat 98% center}
