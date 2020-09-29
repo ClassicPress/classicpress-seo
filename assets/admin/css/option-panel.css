@@ -2,7 +2,7 @@
  * Name:	option-panel.css
  */
 .cpseo-wrap-settings{width:980px;max-width:98%}
-.cpseo-wrap-settings .cpseo-tabs-navigation .separator{font-weight:600;display:block;padding:14px 10px 8px;color:#7c7e82}
+.cpseo-wrap-settings .cpseo-tabs-navigation .separator{font-weight:600;display:block;padding:11px 15px;color:#2d2d2d;border-left:1px solid #b5bfc9;background: #e9ecef;color:#2d2d2d;}
 .cpseo-wrap-settings .cpseo-tabs-content{margin-bottom:0}
 .cpseo-wrap-settings .form-footer{width:calc(100% - 200px);margin-left:200px;padding:20px;border:0}
 .cpseo-wrap-settings .cpseo-address-format .cpseo-variables-dropdown{height:185px}
