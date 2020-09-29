@@ -36,4 +36,4 @@ cpseo_2_0_0_remove_gsc_table();
 function cpseo_2_0_0_remove_gsc_scheduled_hook() {	
 	wp_clear_scheduled_hook( 'cpseo_search_console_get_analytics' );
 }
-cpseo_2_0_0_remove_gsc_scheduled_hook()
+cpseo_2_0_0_remove_gsc_scheduled_hook();

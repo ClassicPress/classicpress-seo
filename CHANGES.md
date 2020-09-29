@@ -1,3 +1,6 @@
+#### v 2.0.1 / 2020-09-29
+* FIXED: Fix missing semicolon
+
 #### v 2.0.0 / 2020-09-29
 * REMOVED: Google Search Console feature has been removed completely. See #112 for discussion. (#118)
 * UPDATED: Replaced references to "WooCommerce" with "Classic Commerce" (#114) (props @simplycomputing)
