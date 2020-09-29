@@ -40,7 +40,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $db_version = '1';
+	public $db_version = '2';
 
 	/**
 	 * Minimum version of ClassicPress required to run Classic SEO.

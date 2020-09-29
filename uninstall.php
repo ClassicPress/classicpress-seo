@@ -65,7 +65,6 @@ function cpseo_remove_data() {
 	cpseo_drop_table( 'cpseo_redirections_cache' );
 	cpseo_drop_table( 'cpseo_internal_links' );
 	cpseo_drop_table( 'cpseo_internal_meta' );
-	cpseo_drop_table( 'cpseo_sc_analytics' );
 
 	// Remove Capabilities.
 	/**

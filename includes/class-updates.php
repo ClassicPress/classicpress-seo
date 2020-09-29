@@ -27,7 +27,7 @@ class Updates implements Runner {
 	 * @var array
 	 */
 	private static $updates = [
-		'1.1.0'        => 'updates/update-1.1.0.php',
+		'2.0.0'        => 'updates/update-2.0.0.php',
 	];
 	
 	/**
