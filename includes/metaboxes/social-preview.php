@@ -12,7 +12,7 @@ use Classic_SEO\Helpers\Param;
 
 global $post;
 
-$thumbnail = has_post_thumbnail() ? absint( get_post_thumbnail_id() ) : '//via.placeholder.com/526x292?text=Social+Preview+Image';
+$thumbnail = has_post_thumbnail() ? absint( get_post_thumbnail_id() ) : '';
 
 // Facebook Image.
 $fb_thumbnail = '';
