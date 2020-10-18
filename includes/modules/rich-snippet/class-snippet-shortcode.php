@@ -68,7 +68,7 @@ class Snippet_Shortcode {
 			$atts,
 			'cpseo_rich_snippet'
 		);
-		
+
 		if ( 'edit' === Param::get( 'context' ) ) {
 			cpseo()->variables->setup();
 		}
@@ -352,7 +352,6 @@ class Snippet_Shortcode {
 			],
 			'restaurant' => [
 				'local_address'             => esc_html__( 'Address', 'cpseo' ),
-				'local_geo'                 => esc_html__( 'Geo Coordinates', 'cpseo' ),
 				'local_phone'               => esc_html__( 'Phone Number', 'cpseo' ),
 				'local_price_range'         => esc_html__( 'Price Range', 'cpseo' ),
 				'local_opens'               => esc_html__( 'Opening Time', 'cpseo' ),
@@ -404,7 +403,7 @@ class Snippet_Shortcode {
 
 		return isset( $fields[ $type ] ) ? apply_filters( 'cpseo/snippet/fields', $fields[ $type ] ) : false;
 	}
-	
+
 
 	/**
 	 * Injects reviews to content.

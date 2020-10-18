@@ -37,12 +37,10 @@ class Shortcodes {
 
 		// Remove Yoast shortcodes.
 		$this->remove_shortcode( 'wpseo_address' );
-		$this->remove_shortcode( 'wpseo_map' );
 		$this->remove_shortcode( 'wpseo_opening_hours' );
 
 		// Add Yoast compatibility shortcodes.
 		$this->add_shortcode( 'wpseo_address', 'yoast_address' );
-		$this->add_shortcode( 'wpseo_map', 'yoast_map' );
 		$this->add_shortcode( 'wpseo_opening_hours', 'yoast_opening_hours' );
 
 		// Add the Contact shortcode.
@@ -115,7 +113,7 @@ class Shortcodes {
 	private function get_allowed_info( $args ) {
 		$type = Helper::get_settings( 'titles.cpseo_knowledgegraph_type' );
 
-		$allowed = 'person' === $type ? [ 'name', 'email', 'person_phone', 'address' ] : [ 'name', 'email', 'address', 'hours', 'phone', 'social', 'map' ];
+		$allowed = 'person' === $type ? [ 'name', 'email', 'person_phone', 'address' ] : [ 'name', 'email', 'address', 'hours', 'phone', 'social' ];
 
 		if ( ! empty( $args['show'] ) && 'all' !== $args['show'] ) {
 			$allowed = array_intersect( array_map( 'trim', explode( ',', $args['show'] ) ), $allowed );
@@ -308,27 +306,6 @@ class Shortcodes {
 	}
 
 	/**
-	 * Output google map.
-	 */
-	private function display_map() {
-		$address = Helper::get_settings( 'titles.cpseo_local_address' );
-		if ( false === $address ) {
-			return;
-		}
-
-		/**
-		 * Filter address for Google Map in contact shortcode.
-		 *
-		 * @param string $address
-		 */
-		$address = $this->do_filter( 'shortcode/contact/map_address', implode( ' ', $address ) );
-		$address = $this->do_filter( 'shortcode/contact/map_iframe_src', '//maps.google.com/maps?q=' . urlencode( $address ) . '&z=15&output=embed&key=' . urlencode( Helper::get_settings( 'titles.cpseo_maps_api_key' ) ) );
-		?>
-		<iframe src="<?php echo esc_url( $address ); ?>"></iframe>
-		<?php
-	}
-
-	/**
 	 * Output name.
 	 */
 	private function display_name() {
@@ -403,21 +380,6 @@ class Shortcodes {
 			[
 				'show'  => join( ',', $show ),
 				'class' => 'wpseo_address_compat',
-			]
-		);
-	}
-
-	/**
-	 * Yoast map compatibility functionality.
-	 *
-	 * @param  array $args Array of arguments.
-	 * @return string
-	 */
-	public function yoast_map( $args ) {
-		return $this->contact_info(
-			[
-				'show'  => 'map',
-				'class' => 'wpseo_map_compat',
 			]
 		);
 	}

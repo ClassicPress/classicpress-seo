@@ -670,11 +670,6 @@ class Yoast extends Plugin_Importer {
 			$this->titles['cpseo_local_address']['streetAddress'] .= ' ' . $yoast_local['location_address_2'];
 		}
 
-		// Coordinates.
-		if ( ! empty( $yoast_local['location_coords_lat'] ) && ! empty( $yoast_local['location_coords_long'] ) ) {
-			$this->titles['geo'] = $yoast_local['location_coords_lat'] . ' ' . $yoast_local['location_coords_long'];
-		}
-
 		// Opening Hours.
 		if ( ! empty( $yoast_local['opening_hours_24h'] ) ) {
 			$this->titles['cpseo_opening_hours_format'] = isset( $yoast_local['opening_hours_24h'] ) && 'on' === $yoast_local['opening_hours_24h'] ? 'off' : 'on';

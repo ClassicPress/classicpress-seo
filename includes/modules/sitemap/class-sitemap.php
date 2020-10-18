@@ -147,7 +147,6 @@ class Sitemap {
 	 * @param string|null $url Optional URL to make the ping for.
 	 */
 	public static function ping_search_engines( $url = null ) {
-
 		if ( ! self::can_ping() ) {
 			return;
 		}
@@ -158,11 +157,6 @@ class Sitemap {
 
 		// Ping Google and Bing.
 		wp_remote_get( 'http://www.google.com/webmasters/tools/ping?sitemap=' . $url, array( 'blocking' => false ) );
-
-		if ( Router::get_base_url( 'geo-sitemap.xml' ) !== $url ) {
-			wp_remote_get( 'http://www.google.com/ping?sitemap=' . $url, array( 'blocking' => false ) );
-			wp_remote_get( 'http://www.bing.com/ping?sitemap=' . $url, array( 'blocking' => false ) );
-		}
 	}
 
 	/**
