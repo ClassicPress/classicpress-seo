@@ -93,7 +93,7 @@ class Shortcodes {
 		foreach ( $allowed as $element ) {
 			$method = 'display_' . $element;
 			if ( method_exists( $this, $method ) ) {
-				echo '<div class="cpseo-contact-section cpseo-contact-' . $element . '">';
+				echo '<div class="cpseo-contact-section cpseo-contact-' . esc_attr( $element ) . '">';
 				$this->$method();
 				echo '</div>';
 			}
@@ -104,7 +104,7 @@ class Shortcodes {
 
 		return ob_get_clean();
 	}
-	
+
 	/**
 	 * Get allowed info array.
 	 *
@@ -113,11 +113,10 @@ class Shortcodes {
 	 * @return array
 	 */
 	private function get_allowed_info( $args ) {
-		if ( 'person' === Helper::get_settings( 'titles.cpseo_knowledgegraph_type' ) ) {
-			return [ 'address' ];
-		}
+		$type = Helper::get_settings( 'titles.cpseo_knowledgegraph_type' );
 
-		$allowed = [ 'address', 'hours', 'phone', 'social', 'map' ];
+		$allowed = 'person' === $type ? [ 'name', 'email', 'person_phone', 'address' ] : [ 'name', 'email', 'address', 'hours', 'phone', 'social', 'map' ];
+
 		if ( ! empty( $args['show'] ) && 'all' !== $args['show'] ) {
 			$allowed = array_intersect( array_map( 'trim', explode( ',', $args['show'] ) ), $allowed );
 		}
@@ -288,8 +287,6 @@ class Shortcodes {
 		$networks = [
 			'facebook'      => 'Facebook',
 			'twitter'       => 'Twitter',
-			'yelp'          => 'Yelp',
-			'reddit'        => 'Reddit',
 			'linkedin'      => 'LinkedIn',
 			'instagram'     => 'Instagram',
 			'youtube'       => 'YouTube',
@@ -328,6 +325,39 @@ class Shortcodes {
 		$address = $this->do_filter( 'shortcode/contact/map_iframe_src', '//maps.google.com/maps?q=' . urlencode( $address ) . '&z=15&output=embed&key=' . urlencode( Helper::get_settings( 'titles.cpseo_maps_api_key' ) ) );
 		?>
 		<iframe src="<?php echo esc_url( $address ); ?>"></iframe>
+		<?php
+	}
+
+	/**
+	 * Output name.
+	 */
+	private function display_name() {
+		$name = Helper::get_settings( 'titles.cpseo_knowledgegraph_name' );
+		if ( false === $name ) {
+			return;
+		}
+
+		$url = Helper::get_settings( 'titles.url' );
+		?>
+		<h4 class="cpseo-name">
+			<a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $name ); ?></a>
+		</h3>
+		<?php
+	}
+
+	/**
+	 * Output email.
+	 */
+	private function display_email() {
+		$email = Helper::get_settings( 'titles.cpseo_email' );
+		if ( false === $email ) {
+			return;
+		}
+		?>
+		<div class="cpseo-email">
+			<label><?php esc_html_e( 'Email:', 'cpseo' ); ?></label>
+			<a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+		</div>
 		<?php
 	}
 

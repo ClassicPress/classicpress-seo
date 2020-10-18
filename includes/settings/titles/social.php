@@ -93,7 +93,7 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
-	'id'   => 'social_url_pinterest',
+	'id'   => 'cpseo_social_url_pinterest',
 	'type' => 'text',
 	'name' => esc_html__( 'Pinterest Page URL', 'cpseo' ),
 	'desc' => wp_kses_post( __( 'Enter your Pinterest Profile URL here. eg:', 'cpseo' ) ) .

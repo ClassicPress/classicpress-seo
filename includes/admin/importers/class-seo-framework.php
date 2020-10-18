@@ -49,7 +49,7 @@ class SEO_Framework extends Plugin_Importer {
 	 * @var array
 	 */
 	protected $choices = [ 'settings', 'postmeta' ];
-	
+
 	/**
 	 * Array of robots.txt tags
 	 */
@@ -59,7 +59,7 @@ class SEO_Framework extends Plugin_Importer {
 	 * Array for all SEO Framework settings
 	 */
 	protected $seoframework = [];
-	
+
 	/**
 	 * Import settings of plugin.
 	 *
@@ -71,7 +71,7 @@ class SEO_Framework extends Plugin_Importer {
 
 		$this->get_settings();
 		$this->seoframework = get_option( 'autodescription-site-settings' );
-		
+
 		$hash = [
 			'homepage_title'			=> 'cpseo_homepage_title',
 			'homepage_description'		=> 'cpseo_homepage_description',
@@ -93,17 +93,17 @@ class SEO_Framework extends Plugin_Importer {
 			'knowledge_instagram'		=> 'cpseo_social_url_instagram',
 			'knowledge_youtube'			=> 'cpseo_social_url_youtube',
 			'knowledge_linkedin'		=> 'cpseo_social_url_linkedin',
-			'knowledge_pinterest'		=> 'social_url_pinterest',
+			'knowledge_pinterest'		=> 'cpseo_social_url_pinterest',
 			'paged_noindex'				=> 'cpseo_noindex_paginated_pages',
 			'search_noindex'			=> 'cpseo_noindex_search',
 			'site_noindex'				=> 'blog_public',
 			'author_noindex'			=> 'cpseo_disable_author_archives',
 			'date_noindex'				=> 'cpseo_disable_date_archives',
 		];
-		
+
 		$this->settings['cpseo_disable_author_archives']	= isset( $this->seoframework['author_noindex'] ) ? 'on' : 'off';
 		$this->settings['cpseo_disable_date_archives']		= isset( $this->seoframework['date_noindex'] ) ? 'on' : 'off';
-		
+
 		/*
 		 * $hash = array of hash for search and replace.
 		 * $this->seoframework = array for source where to search.
@@ -120,7 +120,7 @@ class SEO_Framework extends Plugin_Importer {
 
 		return true;
 	}
-	
+
 
 	/**
 	 * Set post type settings.
@@ -130,7 +130,7 @@ class SEO_Framework extends Plugin_Importer {
 	private function set_post_types() {
 		$hash = [];
 		$cp_post_types	= Helper::get_accessible_post_types();
-	
+
 		// Post types noindex etc.
 		foreach($cp_post_types as $post_type) {
 			$this->titles[ "cpseo_pt_{$post_type}_robots" ] = [];
@@ -139,7 +139,7 @@ class SEO_Framework extends Plugin_Importer {
 				$this->titles[ "cpseo_pt_{$post_type}_robots" ][] = $this->seoframework[ "{$robotag}_post_types" ][ $post_type ] == 1 ? $robotag : '';
 			}
 		}
-	
+
 		$this->replace( $hash, $this->seoframework, $this->titles );
 	}
 
@@ -153,7 +153,7 @@ class SEO_Framework extends Plugin_Importer {
 		$this->set_pagination( $this->get_post_ids( true ) );
 		$post_ids = $this->get_post_ids();
 		$hash = [];
-		
+
 		$hash = [
 			'_genesis_title'			=> 'cpseo_title',
 			'_genesis_description'		=> 'cpseo_description',
@@ -170,7 +170,7 @@ class SEO_Framework extends Plugin_Importer {
 
 		return $this->get_pagination_arg();
 	}
-	
+
 
 	/**
 	 * Set post robots meta.
@@ -196,7 +196,7 @@ class SEO_Framework extends Plugin_Importer {
 	 */
 	private function taxonomies_settings() {
 		$cp_tax_types	= Helper::get_accessible_taxonomies();
-		
+
 		foreach($cp_tax_types as $tax_type) {
 			foreach ($this->robotags as $robotag) {
 				$tsf_taxname = $tax_type->name == 'post_tag' ? 'tag' : $tax_type->name;
@@ -206,7 +206,7 @@ class SEO_Framework extends Plugin_Importer {
 				}
 			}
 		}
-		
+
 		$this->replace( $hash, $this->seoframework, $this->titles );
 	}
 
@@ -239,7 +239,7 @@ class SEO_Framework extends Plugin_Importer {
 	 */
 	private function opengraph_settings() {
 		$hash = [];
-		
+
 		if ( isset( $this->seoframework['knowledge_output'] ) && $this->seoframework['knowledge_output'] == '1' ) {
 			Helper::update_modules( [ 'local-seo' => 'on' ] );
 		}
@@ -247,7 +247,7 @@ class SEO_Framework extends Plugin_Importer {
 			Helper::update_modules( [ 'local-seo' => 'off' ] );
 			return;
 		}
-	
+
 		$hash = [
 			'homepage_og_title'			=> 'cpseo_homepage_facebook_title',
 			'homepage_og_description'	=> 'cpseo_homepage_facebook_description',
@@ -279,7 +279,7 @@ class SEO_Framework extends Plugin_Importer {
 		$hash = [];
 		$cp_tax_types	= Helper::get_accessible_taxonomies();
 		$cp_post_types	= Helper::get_accessible_post_types();
-		
+
 		if ( isset( $this->seoframework['sitemaps_output'] ) && $this->seoframework['sitemaps_output'] == '1' ) {
 			Helper::update_modules( [ 'sitemap' => 'on' ] );
 		}
@@ -287,7 +287,7 @@ class SEO_Framework extends Plugin_Importer {
 			Helper::update_modules( [ 'sitemap' => 'off' ] );
 			return;
 		}
-	
+
 		// Post types noindex etc.
 		foreach($cp_post_types as $post_type) {
 			$this->sitemap[ "cpseo_pt_{$post_type}_sitemap" ] = $this->seoframework[ "{$post_type}_sitemap" ][ $post_type ] == 1 ? "on" : "off";
@@ -299,7 +299,7 @@ class SEO_Framework extends Plugin_Importer {
 				$this->sitemap[ "cpseo_tax_{$tax_type->name}_sitemap" ] = $this->seoframework[ "{$tsf_taxname}_{$robotag}" ] == 1 ? "on" : "off";
 			}
 		}
-		
+
 		$hash = [ 'sitemap_query_limit' => 'cpseo_items_per_page' ];
 		$this->sitemap['cpseo_ping_search_engines']	= isset( $this->seoframework['ping_google'] ) ? 'on' : 'off';
 		$this->replace( $hash, $this->seoframework, $this->sitemap );
@@ -317,7 +317,7 @@ class SEO_Framework extends Plugin_Importer {
 			'postmeta' => esc_html__( 'Import Post Meta', 'cpseo' ) . Admin_Helper::get_tooltip( esc_html__( 'Import meta information of your posts/pages like the titles, descriptions, robots meta, OpenGraph info, etc.', 'cpseo' ) ),
 		];
 	}
-	
+
 
 	/**
 	 * Set OpenGraph.
