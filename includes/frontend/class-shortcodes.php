@@ -337,7 +337,7 @@ class Shortcodes {
 			return;
 		}
 
-		$url = Helper::get_settings( 'titles.url' );
+		$url = Helper::get_settings( 'titles.cpseo_url' );
 		?>
 		<h4 class="cpseo-name">
 			<a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $name ); ?></a>
