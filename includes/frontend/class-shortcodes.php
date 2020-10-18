@@ -37,12 +37,10 @@ class Shortcodes {
 
 		// Remove Yoast shortcodes.
 		$this->remove_shortcode( 'wpseo_address' );
-		$this->remove_shortcode( 'wpseo_map' );
 		$this->remove_shortcode( 'wpseo_opening_hours' );
 
 		// Add Yoast compatibility shortcodes.
 		$this->add_shortcode( 'wpseo_address', 'yoast_address' );
-		$this->add_shortcode( 'wpseo_map', 'yoast_map' );
 		$this->add_shortcode( 'wpseo_opening_hours', 'yoast_opening_hours' );
 
 		// Add the Contact shortcode.
@@ -93,7 +91,7 @@ class Shortcodes {
 		foreach ( $allowed as $element ) {
 			$method = 'display_' . $element;
 			if ( method_exists( $this, $method ) ) {
-				echo '<div class="cpseo-contact-section cpseo-contact-' . $element . '">';
+				echo '<div class="cpseo-contact-section cpseo-contact-' . esc_attr( $element ) . '">';
 				$this->$method();
 				echo '</div>';
 			}
@@ -104,7 +102,7 @@ class Shortcodes {
 
 		return ob_get_clean();
 	}
-	
+
 	/**
 	 * Get allowed info array.
 	 *
@@ -113,11 +111,10 @@ class Shortcodes {
 	 * @return array
 	 */
 	private function get_allowed_info( $args ) {
-		if ( 'person' === Helper::get_settings( 'titles.cpseo_knowledgegraph_type' ) ) {
-			return [ 'address' ];
-		}
+		$type = Helper::get_settings( 'titles.cpseo_knowledgegraph_type' );
 
-		$allowed = [ 'address', 'hours', 'phone', 'social', 'map' ];
+		$allowed = 'person' === $type ? [ 'name', 'email', 'person_phone', 'address' ] : [ 'name', 'email', 'address', 'hours', 'phone', 'social' ];
+
 		if ( ! empty( $args['show'] ) && 'all' !== $args['show'] ) {
 			$allowed = array_intersect( array_map( 'trim', explode( ',', $args['show'] ) ), $allowed );
 		}
@@ -288,8 +285,6 @@ class Shortcodes {
 		$networks = [
 			'facebook'      => 'Facebook',
 			'twitter'       => 'Twitter',
-			'yelp'          => 'Yelp',
-			'reddit'        => 'Reddit',
 			'linkedin'      => 'LinkedIn',
 			'instagram'     => 'Instagram',
 			'youtube'       => 'YouTube',
@@ -311,23 +306,35 @@ class Shortcodes {
 	}
 
 	/**
-	 * Output google map.
+	 * Output name.
 	 */
-	private function display_map() {
-		$address = Helper::get_settings( 'titles.cpseo_local_address' );
-		if ( false === $address ) {
+	private function display_name() {
+		$name = Helper::get_settings( 'titles.cpseo_knowledgegraph_name' );
+		if ( false === $name ) {
 			return;
 		}
 
-		/**
-		 * Filter address for Google Map in contact shortcode.
-		 *
-		 * @param string $address
-		 */
-		$address = $this->do_filter( 'shortcode/contact/map_address', implode( ' ', $address ) );
-		$address = $this->do_filter( 'shortcode/contact/map_iframe_src', '//maps.google.com/maps?q=' . urlencode( $address ) . '&z=15&output=embed&key=' . urlencode( Helper::get_settings( 'titles.cpseo_maps_api_key' ) ) );
+		$url = Helper::get_settings( 'titles.cpseo_url' );
 		?>
-		<iframe src="<?php echo esc_url( $address ); ?>"></iframe>
+		<h4 class="cpseo-name">
+			<a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $name ); ?></a>
+		</h3>
+		<?php
+	}
+
+	/**
+	 * Output email.
+	 */
+	private function display_email() {
+		$email = Helper::get_settings( 'titles.cpseo_email' );
+		if ( false === $email ) {
+			return;
+		}
+		?>
+		<div class="cpseo-email">
+			<label><?php esc_html_e( 'Email:', 'cpseo' ); ?></label>
+			<a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+		</div>
 		<?php
 	}
 
@@ -373,21 +380,6 @@ class Shortcodes {
 			[
 				'show'  => join( ',', $show ),
 				'class' => 'wpseo_address_compat',
-			]
-		);
-	}
-
-	/**
-	 * Yoast map compatibility functionality.
-	 *
-	 * @param  array $args Array of arguments.
-	 * @return string
-	 */
-	public function yoast_map( $args ) {
-		return $this->contact_info(
-			[
-				'show'  => 'map',
-				'class' => 'wpseo_map_compat',
 			]
 		);
 	}

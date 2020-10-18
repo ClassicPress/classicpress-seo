@@ -16,14 +16,6 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
-	'id'      => 'cpseo_snippet_local_geo',
-	'type'    => 'text',
-	'name'    => esc_html__( 'Geo Coordinates', 'cpseo' ),
-	'classes' => 'cmb-row-33',
-	'dep'     => $local,
-]);
-
-$cmb->add_field([
 	'id'      => 'cpseo_snippet_local_phone',
 	'type'    => 'text',
 	'name'    => esc_html__( 'Phone Number', 'cpseo' ),

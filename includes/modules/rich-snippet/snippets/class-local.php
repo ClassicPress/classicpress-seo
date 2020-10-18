@@ -34,7 +34,6 @@ class Local implements Snippet {
 			'name'                      => $jsonld->parts['title'],
 			'url'                       => $jsonld->parts['url'],
 			'telephone'                 => Helper::get_post_meta( 'snippet_local_phone' ),
-			'geo'                       => [ '@type' => 'GeoCoordinates' ],
 			'priceRange'                => Helper::get_post_meta( 'snippet_local_price_range' ),
 			'openingHoursSpecification' => [ '@type' => 'OpeningHoursSpecification' ],
 		];
@@ -46,15 +45,6 @@ class Local implements Snippet {
 			'snippet_local_opens'    => 'opens',
 			'snippet_local_closes'   => 'closes',
 		], $entity['openingHoursSpecification'] );
-
-		// GPS.
-		if ( $geo = Helper::get_post_meta( 'snippet_local_geo' ) ) { // phpcs:ignore
-			$parts = explode( ' ', $geo );
-			if ( count( $parts ) > 1 ) {
-				$entity['geo']['latitude']  = $parts[0];
-				$entity['geo']['longitude'] = $parts[1];
-			}
-		}
 
 		if ( isset( $data['Organization'] ) ) {
 			unset( $data['Organization'] );

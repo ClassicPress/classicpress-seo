@@ -31,22 +31,8 @@ class Local_Seo {
 	 */
 	public function __construct() {
 		$this->ajax( 'search_pages', 'search_pages' );
-		$this->action( 'after_setup_theme', 'location_sitemap' );
 		$this->filter( 'cpseo/settings/title', 'add_settings' );
 		$this->filter( 'cpseo/json_ld', 'organization_or_person', 15, 2 );
-	}
-
-	/**
-	 * Init Local SEO Sitemap if possible.
-	 */
-	public function location_sitemap() {
-		if (
-			Helper::is_module_active( 'sitemap' ) &&
-			'company' === Helper::get_settings( 'titles.cpseo_knowledgegraph_type' ) &&
-			$this->do_filter( 'sitemap/locations', false )
-		) {
-			new KML_File;
-		}
 	}
 
 	/**
@@ -155,7 +141,6 @@ class Local_Seo {
 		$entity['name']  = $name ? $name : get_bloginfo( 'name' );
 
 		$this->add_contact_points( $entity );
-		$this->add_geo_cordinates( $entity );
 		$this->add_business_hours( $entity );
 
 		// Price Range.
@@ -210,26 +195,6 @@ class Local_Seo {
 				'contactType' => $number['type'],
 			];
 		}
-	}
-
-	/**
-	 * Add geo coordinates.
-	 *
-	 * @param array $entity Array of JSON-LD entity.
-	 */
-	private function add_geo_cordinates( &$entity ) {
-		$geo = Str::to_arr( Helper::get_settings( 'titles.cpseo_geo' ) );
-		if ( ! isset( $geo[0], $geo[1] ) ) {
-			return;
-		}
-
-		$entity['geo'] = [
-			'@type'     => 'GeoCoordinates',
-			'latitude'  => $geo[0],
-			'longitude' => $geo[1],
-		];
-
-		$entity['hasMap'] = 'https://www.google.com/maps/search/?api=1&query=' . join( ',', $geo );
 	}
 
 	/**
@@ -371,8 +336,6 @@ class Local_Seo {
 			'facebook',
 			'twitter',
 			'google_places',
-			'yelp',
-			'reddit',
 			'linkedin',
 			'instagram',
 			'youtube',

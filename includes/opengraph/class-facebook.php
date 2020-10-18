@@ -347,14 +347,6 @@ class Facebook extends OpenGraph {
 	 */
 	public function local() {
 		$this->tag( 'og:url', Helper::get_post_meta( 'snippet_local_url' ) );
-
-		if ( $geo = Helper::get_post_meta( 'snippet_local_geo' ) ) { // phpcs:ignore
-			$parts = explode( ' ', $geo );
-			if ( count( $parts ) > 1 ) {
-				$this->tag( 'place:location:latitude', $parts[0] );
-				$this->tag( 'place:location:longitude', $parts[1] );
-			}
-		}
 	}
 
 	/**

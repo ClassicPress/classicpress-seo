@@ -72,8 +72,8 @@ $cmb->add_field([
 	'id'         => 'cpseo_local_address_format',
 	'type'       => 'textarea_small',
 	'name'       => esc_html__( 'Address Format', 'cpseo' ),
-	'desc'       => wp_kses_post( __( 'Format used when the address is displayed using the <code>[cpseo_contact_info]</code> shortcode.<br><strong>Available Tags: {address}, {locality}, {region}, {postalcode}, {country}, {gps}</strong>', 'cpseo' ) ),
-	'default'    => '{address} {locality}, {region} {postalcode}',
+	'desc'       => wp_kses_post( __( 'Format used when the address is displayed using the <code>[cpseo_contact_info]</code> shortcode.<br><strong>Available Tags: {address}, {locality}, {region}, {postalcode}, {country}</strong>', 'cpseo' ) ),
+	'default'    => '{address} {locality}, {region} {postalcode}, {country}',
 	'classes'    => 'cpseo-address-format',
 	'attributes' => [
 		'rows'        => 2,
@@ -209,21 +209,4 @@ $cmb->add_field([
 	'name'       => esc_html__( 'Contact Page', 'cpseo' ),
 	'desc'       => esc_html__( 'Select a page on your site where you want to show the LocalBusiness meta data.', 'cpseo' ),
 	'attributes' => ( 'data-s2-pages' ),
-]);
-
-$cmb->add_field([
-	'id'   => 'cpseo_maps_api_key',
-	'type' => 'text',
-	'name' => esc_html__( 'Google Maps API Key', 'cpseo' ),
-	/* translators: %s expands to "Google Maps Embed API" https://developers.google.com/maps/documentation/embed/ */
-	'desc' => sprintf( esc_html__( 'An API Key is required to display embedded Google Maps on your site. Get it here: %s', 'cpseo' ), '<a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">' . __( 'Google Maps Embed API', 'cpseo' ) . '</a>' ),
-	'dep'  => $company,
-]);
-
-$cmb->add_field([
-	'id'    => 'cpseo_geo',
-	'type'  => 'text',
-	'name'  => esc_html__( 'Geo Coordinates', 'cpseo' ),
-	'desc'  => esc_html__( 'Latitude and longitude values separated by comma.', 'cpseo' ),
-	'dep'   => $company,
 ]);
