@@ -1,2 +1,5 @@
-*.zip
+# Composer
+vendor/*
+
+# Cache folder created by Classic SEO
 sitemap-cache/*
