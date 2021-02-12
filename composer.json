@@ -1,24 +1,16 @@
 {
-    "name": "classicpress/classicpress-seo",
-    "description": "SEO plugin for ClassicPress",
-	"keywords": [
-		"classicpress",
-		"seo",
-		"plugin"
-	],
-    "type": "classicpress-plugin",
-	"support": {
-		"issues": "https://github.com/ClassicPress-plugins/classicpress-seo/issues",
-		"forum": "https://forums.classicpress.net",
-		"source": "https://github.com/ClassicPress-plugins/classicpress-seo"
-	},
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "ClassicPress",
+	"name": "classicpress-plugins/classicpress-seo",
+	"description": "Classic SEO is the first SEO plugin built specifically to work with ClassicPress. A fork of Rank Math, the plugin contains many essential SEO tools to help optimize your website.",
+	"homepage": "https://github.com/ClassicPress-plugins/classicpress-seo",
+	"keywords": ["classicpress", "seo", "plugin", "classicpress-plugin"],
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "ClassicPress",
 			"homepage": "https://www.classicpress.net/"
-        }
-    ],
+		}
+	],
 	"require": {
 		"php": "^7.0",
 		"cmb2/cmb2": "^2.6",
@@ -26,6 +18,11 @@
 		"a5hleyrich/wp-background-processing": "^1.0",
 		"psr/log": "^1.1"
 	},
+	"extra": {
+		"installer-paths": {
+			"vendor/cmb2": ["cmb2/cmb2"]
+		}
+    },
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"autoload": {
