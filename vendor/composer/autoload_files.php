@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '5f60553e65ecb4fbd01e9dafb8b8fd38' => $baseDir . '/includes/template-tags.php',
-    'ada238102f383087981f03105e93fea8' => $vendorDir . '/cmb2/init.php',
+    'ff50186a0e75cc27e6224d32ba6669d4' => $baseDir . '/includes/template-tags.php',
+    '3ca1ca87d20396103d2acc6440434535' => $vendorDir . '/cmb2/init.php',
 );
