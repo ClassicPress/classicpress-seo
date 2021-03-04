@@ -113,7 +113,7 @@ class Notification_Center {
 		?>
 		<script>
 			;(function($) {
-				$( '.is-dismissible' ).on( 'click', '.notice-dismiss', function() {
+				$( '.is-dismissible cpseo_notice' ).on( 'click', '.notice-dismiss', function() {
 					var notice = $( this ).parent()
 					$.ajax({
 						url: ajaxurl,
