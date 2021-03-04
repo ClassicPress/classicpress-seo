@@ -155,7 +155,7 @@ class Notification {
 	}
 
 	/**
-	 * Dismiss persisten notification.
+	 * Dismiss persistent notification.
 	 *
 	 * @codeCoverageIgnore
 	 */
@@ -191,6 +191,7 @@ class Notification {
 		// Default notification classes.
 		$classes = [
 			'notice',
+			'cpseo_notice',
 			'notice-' . $this->args( 'type' ),
 			$this->args( 'classes' ),
 		];
