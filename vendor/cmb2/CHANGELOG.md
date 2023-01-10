@@ -4,7 +4,37 @@ All notable changes to this project will be documented in this file.
 ## Unreleased
 * 
 
-## [2.8.0 - 2020-01-21](https://github.com/CMB2/CMB2/releases/tag/v2.7.0)
+## [2.10.1 - 2022-02-22](https://github.com/CMB2/CMB2/releases/tag/v2.9.0)
+
+### Bug Fixes
+* Fix issue with date picker formatting. Fixes [#1448](https://github.com/CMB2/CMB2/issues/1448).
+
+## [2.10.0 - 2022-02-15](https://github.com/CMB2/CMB2/releases/tag/v2.9.0)
+
+### Enhancements
+* Sanitize URLs, defaulting to `https`. Props [@paulschreiber](https://github.com/paulschreiber) ([#1413](https://github.com/CMB2/CMB2/pull/1413)).
+* Establish Cypress E2E Testing. Props [@markjaquith](https://github.com/markjaquith) ([#1437](https://github.com/CMB2/CMB2/pull/1437)).
+* Updated the JS `shiftRows` functionality to be simpler, and fix issues with JS initialization. Fixes [#1426](https://github.com/CMB2/CMB2/issues/1426) and [#1431](https://github.com/CMB2/CMB2/issues/1431).
+* Updated various NPM dependencies for security issues.
+
+### Bug Fixes
+* Update to prevent deprecation notice:`Required parameter $i follows optional parameter $args...`. Props [@carloswph](https://github.com/carloswph) ([#1417](https://github.com/CMB2/CMB2/pull/1417)).
+* Make each date field more resilient to various date/timestamp values passed in (from REST API).
+
+## [2.9.0 - 2021-03-21](https://github.com/CMB2/CMB2/releases/tag/v2.9.0)
+
+### Enhancements
+* Added `cmb2_tab_group_tabs` filter for adding arbitrary menu page urls to the cmb2 tabs, and move tab markup output to separate method, `CMB2_Options_Hookup::options_page_tab_nav_output()`. Fixes [#1407](https://github.com/CMB2/CMB2/issues/1407).
+* Limit use of italic, including removing from field descriptions. Fixes [#1404](https://github.com/CMB2/CMB2/issues/1404).
+* Add to list of valid image types from `get_allowed_mime_types()`, which makes SVGs more reliable when using the [Safe SVG](https://wordpress.org/plugins/safe-svg/) plugin. Fixes [#1223](https://github.com/CMB2/CMB2/issues/1223).
+
+### Bug Fixes
+* Fixes PHP warnings on repeatable ColorPicker with an array as default. Props [@rubengc](https://github.com/rubengc) ([#1340](https://github.com/CMB2/CMB2/pull/1340)).
+* Address PHP 7.4, compatibility issues with `func_get_args()`. Fixes [#1389](https://github.com/CMB2/CMB2/issues/1389).
+* Better generated array key for cached fields, fixes issue where wrong field is found. Fixes [#14053](https://github.com/CMB2/CMB2/issues/14053).
+* Fix issue with options-pages being changed to register on a hook priority of `5` instead of the default `10`, causing some back-compatibility issues. Fixes [#1410](https://github.com/CMB2/CMB2/issues/1410).
+
+## [2.8.0 - 2021-01-21](https://github.com/CMB2/CMB2/releases/tag/v2.8.0)
 
 ### Enhancements
 * Added [CODE_OF_CONDUCT.md](https://github.com/CMB2/CMB2/blob/develop/CODE_OF_CONDUCT.md) file to meet GitHub Community standards. Props [@RubenMartins](https://github.com/RubenMartins) ([#1331](https://github.com/CMB2/CMB2/pull/1331)).

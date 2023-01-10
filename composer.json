@@ -12,7 +12,7 @@
 		}
 	],
 	"require": {
-		"php": "^7.0",
+		"php": ">=7.0",
 		"cmb2/cmb2": "^2.6",
 		"composer/installers": "~1.0",
 		"a5hleyrich/wp-background-processing": "^1.0",
@@ -34,5 +34,10 @@
 			"includes/template-tags.php",
 			"vendor/cmb2/init.php"
 		]
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
