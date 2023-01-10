@@ -14,7 +14,7 @@ Latest release:  See [Change log](CHANGES.md)
 
 ## Minimum Requirements
 
-- ClassicPress 1.0.2
+- ClassicPress 1.1.0
 - PHP 7.0
 
 ## Credits
@@ -31,7 +31,7 @@ This is a fork of Rank Math.
 - Redirections
 - Rich Snippets
 - XML Sitemap
-- Support for [Classic Commerce](https://github.com/ClassicPress-plugins/classic-commerce)
+- Support for [Classic Commerce](https://classiccommerce.cc/)
 - Social meta: Facebook, Twitter, Google Places, LinkedIn, Instagram, YouTube, Pinterest
 - Imports for Rank Math, Yoast, All In One SEO and The SEO Framework
 - Role Manager
@@ -39,7 +39,7 @@ This is a fork of Rank Math.
 
 ## Support
 If you need support for Classic SEO or find a bug, you have threee choices:
-- create an issue on the [issues page](https://github.com/ClassicPress-plugins/classicpress-seo/issues)
+- create an issue on the [issues page](https://github.com/ClassicPress/classicpress-seo/issues)
 - [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
 - Look out for the [#classic-seo channel on Slack](https://www.classicpress.net/join-slack/)
 
