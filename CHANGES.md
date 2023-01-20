@@ -1,3 +1,6 @@
+#### v 2.1.0 / 2022-01-31
+* FIXED: Add support for PHP 8.0
+
 #### v 2.0.1 / 2020-09-29
 * FIXED: Fix missing semicolon
 
@@ -103,7 +106,7 @@
 * FIX: Fix for #20: Plugin is not automatically deactivated when using PHP < 7.0.
 
 #### v 0.3.2 / 2019-11-20
-* FIX: Fix for #17: PHP error "call_user_func_array() expects parameter 1 to be a valid callback, function on_login not found or invalid function name" 
+* FIX: Fix for #17: PHP error "call_user_func_array() expects parameter 1 to be a valid callback, function on_login not found or invalid function name"
 
 #### v 0.3.1 / 2019-11-18
 * FIX: Classic SEO icon size in admin menu

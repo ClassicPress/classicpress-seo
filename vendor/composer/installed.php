@@ -1,74 +1,71 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'classicpress-plugins/classicpress-seo',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '1a3f2806d6ffd1a990c5ff5364e30659f4b284dc',
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => '98515f1ab5da0f795678ae544d615a9b9ef82def',
-    'name' => 'classicpress-plugins/classicpress-seo',
-  ),
-  'versions' => 
-  array (
-    'a5hleyrich/wp-background-processing' => 
-    array (
-      'pretty_version' => '1.0.2',
-      'version' => '1.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2cbee1abd1b49e1133cd8f611df4d4fc5a8b9800',
+    'versions' => array(
+        'a5hleyrich/wp-background-processing' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => '2cbee1abd1b49e1133cd8f611df4d4fc5a8b9800',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../a5hleyrich/wp-background-processing',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'classicpress-plugins/classicpress-seo' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '1a3f2806d6ffd1a990c5ff5364e30659f4b284dc',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'cmb2/cmb2' => array(
+            'pretty_version' => 'v2.10.1',
+            'version' => '2.10.1.0',
+            'reference' => '4afc4bb7b92ab6d93aac2247c9a84af773e42532',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../cmb2',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'composer/installers' => array(
+            'pretty_version' => 'v1.12.0',
+            'version' => '1.12.0.0',
+            'reference' => 'd20a64ed3c94748397ff5973488761b22f6d3f19',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/./installers',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/log' => array(
+            'pretty_version' => '1.1.4',
+            'version' => '1.1.4.0',
+            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'roundcube/plugin-installer' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'shama/baton' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
     ),
-    'classicpress-plugins/classicpress-seo' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '98515f1ab5da0f795678ae544d615a9b9ef82def',
-    ),
-    'cmb2/cmb2' => 
-    array (
-      'pretty_version' => 'v2.8.0',
-      'version' => '2.8.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '8391c9ab88a564ca7c7b380e20152ca8554d5166',
-    ),
-    'composer/installers' => 
-    array (
-      'pretty_version' => 'v1.10.0',
-      'version' => '1.10.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
-    ),
-    'psr/log' => 
-    array (
-      'pretty_version' => '1.1.3',
-      'version' => '1.1.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
-    ),
-    'roundcube/plugin-installer' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-    'shama/baton' => 
-    array (
-      'replaced' => 
-      array (
-        0 => '*',
-      ),
-    ),
-  ),
 );

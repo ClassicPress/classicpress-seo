@@ -1,21 +1,22 @@
 <?php
 /**
  * Plugin Name:          Classic SEO
- * Plugin URI:           https://github.com/ClassicPress-plugins/classicpress-seo
+ * Plugin URI:           https://github.com/ClassicPress/classicpress-seo
  * Description:          Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
- * Version:              2.0.1
+ * Version:              2.1.0
  * Author:               ClassicPress
- * Author URI:           https://github.com/ClassicPress-plugins/classicpress-seo
+ * Author URI:           https://github.com/ClassicPress
  * License:              GPL v2 or later
  * License URI:          http://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path:          /languages/
  * Text Domain:          cpseo
- * Requires at least:    1.0.0
+ * Requires CP:          1.1
  * Requires PHP:         7.0
+ * Update URI:           https://directory.classicpress.net/wp-json/wp/v2/plugins?byslug=classicpress-seo
  *
  * Fork of Rank Math v1.0.33
  */
- 
+
 
 defined( 'ABSPATH' ) || exit;
 
@@ -33,8 +34,8 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '2.0.1';
-	
+	public $version = '2.1.0';
+
 	/**
 	 * Classic SEO database version.
 	 *
@@ -47,7 +48,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	private $min_cp_version = '1.0.2';
+	private $min_cp_version = '1.1.0';
 
 	/**
 	 * Minimum version of PHP required to run Classic SEO.
@@ -55,28 +56,28 @@ class Classic_SEO {
 	 * @var string
 	 */
 	private $php_version = '7.0';
-	
+
 	/**
 	 * Holds various class instances.
 	 *
 	 * @var array
 	 */
 	private $container = [];
-	
+
 	/**
 	 * Hold install error messages.
 	 *
 	 * @var bool
 	 */
 	private $messages = [];
-	
+
 	/**
 	 * The single instance of the class.
 	 *
 	 * @var Classic_SEO
 	 */
 	protected static $instance = null;
-	
+
 	/**
 	 * Magic isset to bypass referencing plugin.
 	 *
@@ -86,7 +87,7 @@ class Classic_SEO {
 	public function __isset( $prop ) {
 		return isset( $this->{$prop} ) || isset( $this->container[ $prop ] );
 	}
-	
+
 	/**
 	 * Magic getter method.
 	 *
@@ -104,7 +105,7 @@ class Classic_SEO {
 
 		return null;
 	}
-	
+
 	/**
 	 * Magic setter method.
 	 *
@@ -142,14 +143,14 @@ class Classic_SEO {
 
 		return call_user_func_array( $name, $arguments );
 	}
-	
+
 	/**
 	 * Initialize.
 	 */
 	public function init() {
-		
+
 	}
-	
+
 	/**
 	 * Retrieve main Classic_SEO instance.
 	 *
@@ -166,21 +167,21 @@ class Classic_SEO {
 
 		return self::$instance;
 	}
-	
+
 	/**
 	 * Instantiate
 	 */
 	private function setup() {
 		// Define plugin constants.
 		$this->define_constants();
-		
+
 		if ( ! $this->requirements() ) {
 			return;
 		}
 
 		// Include required files.
 		$this->includes();
-		
+
 		// Instantiate classes.
 		$this->instantiate();
 
@@ -190,7 +191,7 @@ class Classic_SEO {
 		// Loaded action.
 		do_action( 'cpseo/loaded' );
 	}
-	
+
 
 	/**
 	 * Define the plugin constants.
@@ -211,7 +212,7 @@ class Classic_SEO {
 	 * @return bool
 	 */
 	private function requirements() {
-	
+
 		// Check ClassicPress version.
 		if ( version_compare( get_bloginfo( 'version' ), $this->min_cp_version, '<' ) ) {
 			$this->messages[] = sprintf( esc_html__( 'Classic SEO requires ClassicPress version %s or above. Please update ClassicPress.', 'cpseo' ), $this->min_cp_version );
@@ -225,7 +226,7 @@ class Classic_SEO {
 		if ( empty( $this->messages ) ) {
 			return true;
 		}
-		
+
 		if ( defined( 'WP_CLI' ) && WP_CLI && ! ( empty( $this->messages ) ) ) {
 			return \WP_CLI::error( implode( "\n", $this->messages ), false );
 		}
@@ -263,7 +264,7 @@ class Classic_SEO {
 	 */
 	private function includes() {
 		include dirname( __FILE__ ) . '/vendor/autoload.php';
-		require_once( dirname( __FILE__ ) . '/includes/class-update-client.php' );	
+		require_once( dirname( __FILE__ ) . '/includes/class-update-client.php' );
 	}
 
 	/**
@@ -286,7 +287,7 @@ class Classic_SEO {
 
 		// Just init without storing it in the container.
 		new \Classic_SEO\Common;
-		
+
 		$this->container['rewrite'] = new \Classic_SEO\Rewrite;
 	}
 
@@ -309,17 +310,17 @@ class Classic_SEO {
 		if ( is_admin() ) {
 			add_action( 'plugins_loaded', [ $this, 'init_admin' ], 15 );
 		}
-		
+
 		// Frontend-only functionality.
 		if ( ! is_admin() || in_array( \Classic_SEO\Helpers\Param::request( 'action' ), [ 'elementor', 'elementor_ajax' ], true ) ) {
 			add_action( 'plugins_loaded', [ $this, 'init_frontend' ], 15 );
 		}
-		
+
 		// WP_CLI.
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
 			add_action( 'plugins_loaded', [ $this, 'init_wp_cli' ], 20 );
 		}
-		
+
 		// Fix images folder for Update Manager.
 		add_filter( 'codepotent_update_manager_image_path', [ $this, 'fix_update_manager_images' ] );
 		add_filter( 'codepotent_update_manager_image_url', [ $this, 'fix_update_manager_images' ] );
@@ -347,8 +348,8 @@ class Classic_SEO {
 	public function init_admin() {
 		new \Classic_SEO\Admin\Engine;
 	}
-	
-	
+
+
 	/**
 	 * Initialize the frontend functionality.
 	 * Runs on 'plugins_loaded'.

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite5e0d3bb0bac729826d3235af2565e37
+class ComposerStaticInit531772699595bd84a6a8fd835c733f0b
 {
     public static $files = array (
         'ff50186a0e75cc27e6224d32ba6669d4' => __DIR__ . '/../..' . '/includes/template-tags.php',
@@ -37,7 +37,7 @@ class ComposerStaticInite5e0d3bb0bac729826d3235af2565e37
         'CMB2' => __DIR__ . '/..' . '/cmb2/includes/CMB2.php',
         'CMB2_Ajax' => __DIR__ . '/..' . '/cmb2/includes/CMB2_Ajax.php',
         'CMB2_Base' => __DIR__ . '/..' . '/cmb2/includes/CMB2_Base.php',
-        'CMB2_Bootstrap_280' => __DIR__ . '/..' . '/cmb2/init.php',
+        'CMB2_Bootstrap_2101' => __DIR__ . '/..' . '/cmb2/init.php',
         'CMB2_Boxes' => __DIR__ . '/..' . '/cmb2/includes/CMB2_Boxes.php',
         'CMB2_Display_Checkbox' => __DIR__ . '/..' . '/cmb2/includes/CMB2_Field_Display.php',
         'CMB2_Display_Colorpicker' => __DIR__ . '/..' . '/cmb2/includes/CMB2_Field_Display.php',
@@ -345,6 +345,7 @@ class ComposerStaticInite5e0d3bb0bac729826d3235af2565e37
         'Composer\\Installers\\MauticInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MauticInstaller.php',
         'Composer\\Installers\\MayaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MayaInstaller.php',
         'Composer\\Installers\\MediaWikiInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MediaWikiInstaller.php',
+        'Composer\\Installers\\MiaoxingInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MiaoxingInstaller.php',
         'Composer\\Installers\\MicroweberInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MicroweberInstaller.php',
         'Composer\\Installers\\ModxInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ModxInstaller.php',
         'Composer\\Installers\\MoodleInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MoodleInstaller.php',
@@ -353,6 +354,7 @@ class ComposerStaticInite5e0d3bb0bac729826d3235af2565e37
         'Composer\\Installers\\OsclassInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/OsclassInstaller.php',
         'Composer\\Installers\\OxidInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/OxidInstaller.php',
         'Composer\\Installers\\PPIInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PPIInstaller.php',
+        'Composer\\Installers\\PantheonInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PantheonInstaller.php',
         'Composer\\Installers\\PhiftyInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PhiftyInstaller.php',
         'Composer\\Installers\\PhpBBInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PhpBBInstaller.php',
         'Composer\\Installers\\PimcoreInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PimcoreInstaller.php',
@@ -380,12 +382,14 @@ class ComposerStaticInite5e0d3bb0bac729826d3235af2565e37
         'Composer\\Installers\\TYPO3CmsInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TYPO3CmsInstaller.php',
         'Composer\\Installers\\TYPO3FlowInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TYPO3FlowInstaller.php',
         'Composer\\Installers\\TaoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TaoInstaller.php',
+        'Composer\\Installers\\TastyIgniterInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TastyIgniterInstaller.php',
         'Composer\\Installers\\TheliaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TheliaInstaller.php',
         'Composer\\Installers\\TuskInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TuskInstaller.php',
         'Composer\\Installers\\UserFrostingInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/UserFrostingInstaller.php',
         'Composer\\Installers\\VanillaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/VanillaInstaller.php',
         'Composer\\Installers\\VgmcpInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/VgmcpInstaller.php',
         'Composer\\Installers\\WHMCSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/WHMCSInstaller.php',
+        'Composer\\Installers\\WinterInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/WinterInstaller.php',
         'Composer\\Installers\\WolfCMSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/WolfCMSInstaller.php',
         'Composer\\Installers\\WordPressInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/WordPressInstaller.php',
         'Composer\\Installers\\YawikInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/YawikInstaller.php',
@@ -410,9 +414,9 @@ class ComposerStaticInite5e0d3bb0bac729826d3235af2565e37
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite5e0d3bb0bac729826d3235af2565e37::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite5e0d3bb0bac729826d3235af2565e37::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite5e0d3bb0bac729826d3235af2565e37::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit531772699595bd84a6a8fd835c733f0b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit531772699595bd84a6a8fd835c733f0b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit531772699595bd84a6a8fd835c733f0b::$classMap;
 
         }, null, ClassLoader::class);
     }

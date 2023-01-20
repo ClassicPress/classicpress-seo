@@ -3,15 +3,18 @@
 /**
  * -----------------------------------------------------------------------------
  * Purpose: Remote client to communicate with the Update Manager plugin.
- * Author: Code Potent
- * Author URI: https://codepotent.com
+ * Author: Simone Fioravanti
+ * Author URI: https://software.gieffeedizioni.it
+ * API Version: 2.0.0
+ * Last modified on Update Manager release: 2.4.3
  * -----------------------------------------------------------------------------
  * This is free software released under the terms of the General Public License,
  * version 2, or later. It is distributed WITHOUT ANY WARRANTY; without even the
  * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. Full
  * text of the license is available at https://www.gnu.org/licenses/gpl-2.0.txt.
  * -----------------------------------------------------------------------------
- * Copyright 2020, Code Potent
+ * Copyright 2021,		John Alarcon (Code Potent)
+ *           2021-2022,	Simone Fioravanti
  * -----------------------------------------------------------------------------
  */
 
@@ -19,7 +22,12 @@
 namespace Classic_SEO\UpdateClient;
 
 // EDIT: URL where Update Manager is installed; with trailing slash!
-const UPDATE_SERVER = 'https://officialplugins.classicpress.net/';
+const UPDATE_SERVER = 'https://www.cpseo.net/';
+
+// EDIT: Comment this out and fill with the first part of the url
+//       of your Download link to make sure that updates
+//       are served from your trusted source.
+// const SECURE_SOURCE = 'https://github.com/xxsimoxx/codepotent-update-manager/';
 
 // EDIT: plugin or theme?
 const UPDATE_TYPE = 'plugin';
@@ -51,16 +59,7 @@ class UpdateClient {
 	private $config;
 
 	/**
-	 * Default CP version.
-	 *
-	 * This value is used for comparison in the updates list table by core. This
-	 * property can be set to 4.9.x (whatever x might be at the time,) if you're
-	 * wanting to be exact. The issue with doing that is that you'd have to bump
-	 * that number with every new release of 4.9.x to ensure that core indicates
-	 * 100% compatibility in the table. If your plugin or theme is compatible to
-	 * WordPress 4.9.x, it is compatible with ClassicPress 1.x.x, so, there will
-	 * not be a need for this. Setting it to 4.9.99 ensures don't have to update
-	 * it again.
+	 * Latest CP version.
 	 */
 	private $cp_latest_version = '4.9.99';
 
@@ -82,7 +81,7 @@ class UpdateClient {
 	 * @since 1.0.0
 	 */
 	private function __construct() {
-	
+
 		// Configure the update object.
 		$this->config = [
 			// The URL where your Update Manager plugin is installed.
@@ -98,7 +97,7 @@ class UpdateClient {
 		];
 
 		// Find and store the latest CP version during update process.
-		$this->cp_latest_version = get_option('cp_latest_version', '');
+		$this->cp_latest_version = $this->get_latest_version_number();
 
 		// Hook the update client into the system.
 		$this->init();
@@ -183,11 +182,9 @@ class UpdateClient {
 		// Only need this JS/CSS on the plugin admin page and updates page.
 		if ($screen->base === 'plugins' || $screen->base === 'plugin-install') {
 			// This will make the jQuery below work with various languages.
-			$text1 = esc_html__('Compatible up to:');
-			$text2 = esc_html__('Reviews');
-			$text3 = esc_html__('Read all reviews');
 			// Swap "Compatible up to: 4.9.99" with "Compatible up to: 1.1.1".
-			echo '<script>jQuery(document).ready(function($){$("ul li:contains(4.9.99)").html("<strong>'.$text1.'</strong> '.$this->cp_latest_version.'");$(".fyi h3:contains('.$text2.')").hide();$(".fyi p:contains('.$text3.')").hide();});</script>'."\n";
+			// Text domains are missing because the strings are already in CP.
+			echo '<script>jQuery(document).ready(function($){$("ul li:contains(4.9.99)").html("<strong>'.esc_html__('Compatible up to:').'</strong> '.esc_html($this->cp_latest_version).'");$(".fyi h3:contains('.esc_html__('Reviews').')").hide();$(".fyi p:contains('.esc_html__('Read all reviews').')").hide();});</script>'."\n"; // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
 			// Styles for the modal window.
 			echo '<style>'."\n";
 			// Hide the ratings text and links to WP.org reviews.
@@ -229,14 +226,17 @@ class UpdateClient {
 		// Is there a response?
 		if (isset($value->response)) {
 
-			// Ensure the latest ClassicPress version number is available.
-			$this->get_latest_version_number();
-
 			// Get the installed components.
 			$components = $this->get_component_data('query_'.$this->config['type'].'s');
 
 			// Iterate over installed components.
 			foreach($components as $component=>$data) {
+
+				// If necessary check if the new package come from the right source.
+				if (defined(__NAMESPACE__.'\SECURE_SOURCE') && isset($data['package']) && strpos($data['package'], SECURE_SOURCE) !== 0) {
+					unset($value->response[$component]);
+					continue;
+				}
 
 				// Is there a new version?
 				if (isset($data['id'], $data['new_version'], $data['package'])) {
@@ -329,6 +329,11 @@ class UpdateClient {
 		// Get the component's information.
 		$info = $this->get_component_data($action, $list_components[$args->slug]);
 
+		// If the request failed, pass through an informative error message.
+		if (is_wp_error($info)) {
+			return $info;
+		}
+
 		// If the response has all the right properties, cast $info to object.
 		if (isset($info['name'], $info['slug'], $info['external'], $info['sections'])) {
 			$res = (object)$info;
@@ -375,9 +380,16 @@ class UpdateClient {
 		// Add the link to the plugin's or theme's row, if not already existing.
 		if ($this->identifier === $component_file) {
 			$anchors_string = implode('', $component_meta);
-			$anchor_text = esc_html__('View details');
+			// Text domains are missing because the strings are already in CP.
+			$anchor_text = esc_html__('View details'); // phpcs:ignore WordPress.WP.I18n.MissingArgDomain
 			if (!preg_match('|(\<a[ \s\S\d]*)('.$anchor_text.')(<\/a>)|', $anchors_string)) {
-				$component_meta[] = '<a class="thickbox" href="'.admin_url('/'.$this->config['type'].'-install.php?tab='.$this->config['type'].'-information&'.$this->config['type'].'='.$this->server_slug.'&TB_iframe=true&width=600&height=550').'">'.$anchor_text.'</a>';
+				if (is_multisite()) {
+					if(current_user_can('update_plugins')) {
+						$component_meta[] = '<a class="thickbox" href="'.network_admin_url('/'.$this->config['type'].'-install.php?tab='.$this->config['type'].'-information&'.$this->config['type'].'='.$this->server_slug.'&TB_iframe=true&width=600&height=550').'">'.$anchor_text.'</a>';
+					}
+				} else {
+					$component_meta[] = '<a class="thickbox" href="'.admin_url('/'.$this->config['type'].'-install.php?tab='.$this->config['type'].'-information&'.$this->config['type'].'='.$this->server_slug.'&TB_iframe=true&width=600&height=550').'">'.$anchor_text.'</a>';
+				}
 			}
 		}
 
@@ -442,11 +454,11 @@ class UpdateClient {
 		// Updating a plugin or theme?
 		if ($hook_suffix === 'update') {
 			// Got both of the needed arguments?
-			if (isset($_GET['action'], $_GET[$this->config['type']])) {
+			if (isset($_GET['action'], $_GET[$this->config['type']])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				// First argument is good?
-				if ($_GET['action'] === 'upgrade-'.$this->config['type']) {
+				if ($_GET['action'] === 'upgrade-'.$this->config['type']) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 					// Next argument is good?
-					if ($_GET[$this->config['type']] === $hook_extra[$this->config['type']]) {
+					if ($_GET[$this->config['type']] === $hook_extra[$this->config['type']]) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 						// Activate the component.
 						$function = ($this->config['type'] === 'plugin') ? 'activate_plugin' : 'activate_theme';
 						$function($hook_extra[$this->config['type']]);
@@ -568,7 +580,7 @@ class UpdateClient {
 		global $cp_version;
 
 		// Initialize the data to be posted.
-		$body = $this->config['post'];
+		$body = apply_filters('codepotent_update_manager_filter_'.$this->config['id'].'_client_request', $this->config['post']);
 
 		// Add opt out data tracking - Stats for Update manager
 		if( ! Helper::get_settings( 'general.cpseo_usage_tracking' ) ) {
@@ -658,12 +670,21 @@ class UpdateClient {
 		}
 
 		// Still an error? Hey, you tried. Bail.
-		if (is_wp_error($raw_response) || 200 != wp_remote_retrieve_response_code($raw_response)) {
-			return [];
+		if (is_wp_error($raw_response)) {
+			return new \WP_Error('update_manager_http_error', 'HTTP error. ' . $raw_response->get_error_message(), ['original_error' => $raw_response]);
+		}
+		$response_code = wp_remote_retrieve_response_code($raw_response);
+		if (200 != $response_code) {
+			return new \WP_Error('update_manager_http_error', 'HTTP error. ' . $response_code, compact('raw_response'));
 		}
 
 		// Get the response body; decode it as an array.
 		$data = json_decode(trim(wp_remote_retrieve_body($raw_response)), true);
+
+		// If decoding fails, bail.
+		if ($data === null) {
+			return new \WP_Error('update_manager_http_error', 'Invalid API response (invalid JSON)', $raw_response);
+		}
 
 		// Set retrieved data to the object for reuse elsewhere.
 		$this->component_data = is_array($data) ? $data : [];
@@ -723,9 +744,13 @@ class UpdateClient {
 		$image_path = untrailingslashit(WP_PLUGIN_DIR).'/'.$plugin.'/images';
 		$image_url  = untrailingslashit(WP_PLUGIN_URL).'/'.$plugin.'/images';
 
-		// Allow directory location to be filtered.
+		// Allow directory location to be filtered. DEPRECATED FILTERS.
 		$image_path = apply_filters('codepotent_update_manager_image_path', $image_path);
 		$image_url  = apply_filters('codepotent_update_manager_image_url', $image_url);
+
+		// Allow directory location to be filtered. NEW FILTERS.
+		$image_path = apply_filters('codepotent_update_manager_'.$this->config['id'].'_image_path', $image_path);
+		$image_url  = apply_filters('codepotent_update_manager_'.$this->config['id'].'_image_url', $image_url);
 
 		// Banner and icon images are keyed differently; it's a core thing.
 		$image_qualities = [
@@ -821,7 +846,7 @@ class UpdateClient {
 		$version = get_transient('codepotent_update_manager_cp_version');
 
 		// Return version number, if now known.
-		if (!empty($version)) {
+		if (false !== $version) {
 			return $version;
 		}
 
@@ -855,8 +880,9 @@ class UpdateClient {
 			$version = str_replace('.json', '', $version);
 		}
 
-		// A transient ensures the query is not run more than every 10 minutes.
-		set_transient('codepotent_update_manager_cp_version', $version, MINUTE_IN_SECONDS * 10);
+		// A transient ensures the query is not run more than every 6 hours.
+		set_transient('codepotent_update_manager_cp_version', $version, HOUR_IN_SECONDS * 6);
+		update_option('cp_latest_version', $version);
 
 		// Return the version string.
 		return $version;

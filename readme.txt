@@ -1,15 +1,15 @@
 == Classic SEO ==
 
 Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-Version:           2.0.1
+Version:           2.1.0
 Text Domain:       cpseo
 Domain Path:       /languages
 Requires PHP:      7.0
-Requires:          1.0.0
+Requires CP:       1.1
 Tested:            4.9.99
 Author:            ClassicPress
-Author URI:        https://github.com/ClassicPress-plugins/
-Plugin URI:        https://github.com/ClassicPress-plugins/classicpress-seo
+Author URI:        https://github.com/ClassicPress/
+Plugin URI:        https://github.com/ClassicPress/classicpress-seo
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 
 == Installation ==
 
-* 1. Head over to the [Releases section](https://github.com/ClassicPress-plugins/classicpress-seo/releases) of this GitHub repository.
+* 1. Head over to the [Releases section](https://github.com/ClassicPress/classicpress-seo/releases) of this GitHub repository.
 * 2. Expand the "Assets" dropdown by the latest release and download the `classicpress-seo.zip` file.
 * 3. Go to the "Plugins > Add New" section of your site's dashboard and upload the zip file there using the "Upload Plugin" button.
 
@@ -50,14 +50,16 @@ Classic SEO is the first SEO plugin built specifically to work with ClassicPress
 == Support ==
 
 If you need support for Classic SEO or find a bug, you have threee choices:
-* create an issue on the [issues page](https://github.com/ClassicPress-plugins/classicpress-seo/issues)
+* create an issue on the [issues page](https://github.com/ClassicPress/classicpress-seo/issues)
 * [create a topic](https://forums.classicpress.net/tags/classic-seo) in the ClassicPress forums.
 * Look out for the [#classic-seo channel on Slack](https://www.classicpress.net/join-slack/)
 
 
 == Changelog ==
+**v 2.1.0 / 2023-01-31**
+* FIXED: Add support for PHP 8.0
 
-**v 2.0.0 / 2020-09-29**
+**v 2.0.1 / 2020-09-29**
 * FIXED: Missing semicolon
 
 **v 2.0.0 / 2020-09-29**
@@ -162,7 +164,7 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 * FIX: Fix for #20: Plugin is not automatically deactivated when using PHP &lt; 7.0.
 
 **v 0.3.2 / 2019-11-20**
-* FIX: Fix for #17: PHP error &quot;call_user_func_array() expects parameter 1 to be a valid callback, function on_login not found or invalid function name&quot; 
+* FIX: Fix for #17: PHP error &quot;call_user_func_array() expects parameter 1 to be a valid callback, function on_login not found or invalid function name&quot;
 
 **v 0.3.1 / 2019-11-18**
 * FIX: Classic SEO icon size in admin menu

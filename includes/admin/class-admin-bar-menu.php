@@ -141,7 +141,7 @@ class Admin_Bar_Menu {
 
 		$this->items['main'] = [
 			'id'       => self::MENU_IDENTIFIER,
-			'title'    => '<span class="cpseo-icon">' . Admin_Helper::get_icon() . '</span><span class="cpseo-text">' . esc_html( 'Classic SEO', 'cpseo' ) . '</span>',
+			'title'    => '<span class="cpseo-icon">' . Admin_Helper::get_icon() . '</span><span class="cpseo-text">' . esc_html__( 'Classic SEO', 'cpseo' ) . '</span>',
 			'href'     => Helper::get_admin_url( $first_menu ),
 			'meta'     => [ 'title' => esc_html__( 'Classic SEO Dashboard', 'cpseo' ) ],
 			'priority' => 10,
