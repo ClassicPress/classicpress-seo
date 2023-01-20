@@ -22,7 +22,7 @@
 namespace Classic_SEO\UpdateClient;
 
 // EDIT: URL where Update Manager is installed; with trailing slash!
-const UPDATE_SERVER = 'https://officialplugins.classicpress.net/';
+const UPDATE_SERVER = 'https://www.cpseo.net/';
 
 // EDIT: Comment this out and fill with the first part of the url
 //       of your Download link to make sure that updates
