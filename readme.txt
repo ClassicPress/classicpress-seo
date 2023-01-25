@@ -56,7 +56,10 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 
 
 == Changelog ==
-**v 2.1.0 / 2023-01-31**
+**v 2.1.1 / 2023-01-25**
+* FIXED: Bad ZIP was attached to previous release
+
+**v 2.1.0 / 2023-01-24**
 * FIXED: Add support for PHP 8.0
 
 **v 2.0.1 / 2020-09-29**
