@@ -24,7 +24,7 @@ class Param {
 	 *
 	 * @return mixed
 	 */
-	public static function get( $id, $default = false, $filter = FILTER_DEFAULT, $flag = '' ) {
+	public static function get( $id, $default = false, $filter = FILTER_DEFAULT, $flag = 0 ) {
 		return filter_has_var( INPUT_GET, $id ) ? filter_input( INPUT_GET, $id, $filter, $flag ) : $default;
 	}
 
@@ -38,7 +38,7 @@ class Param {
 	 *
 	 * @return mixed
 	 */
-	public static function post( $id, $default = false, $filter = FILTER_DEFAULT, $flag = '' ) {
+	public static function post( $id, $default = false, $filter = FILTER_DEFAULT, $flag = 0 ) {
 		return filter_has_var( INPUT_POST, $id ) ? filter_input( INPUT_POST, $id, $filter, $flag ) : $default;
 	}
 
@@ -52,7 +52,7 @@ class Param {
 	 *
 	 * @return mixed
 	 */
-	public static function request( $id, $default = false, $filter = FILTER_DEFAULT, $flag = '' ) {
+	public static function request( $id, $default = false, $filter = FILTER_DEFAULT, $flag = 0 ) {
 		return isset( $_REQUEST[ $id ] ) ? filter_var( $_REQUEST[ $id ], $filter, $flag ) : $default;
 	}
 
@@ -66,7 +66,7 @@ class Param {
 	 *
 	 * @return mixed
 	 */
-	public static function server( $id, $default = false, $filter = FILTER_DEFAULT, $flag = '' ) {
+	public static function server( $id, $default = false, $filter = FILTER_DEFAULT, $flag = 0 ) {
 		return isset( $_SERVER[ $id ] ) ? filter_var( $_SERVER[ $id ], $filter, $flag ) : $default;
 	}
 }
