@@ -3,7 +3,7 @@
         'name' => 'classicpress-plugins/classicpress-seo',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '1a3f2806d6ffd1a990c5ff5364e30659f4b284dc',
+        'reference' => '834b5d626c5b2a0f480a3c8cf09cf5fd2be5407c',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'classicpress-plugins/classicpress-seo' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '1a3f2806d6ffd1a990c5ff5364e30659f4b284dc',
+            'reference' => '834b5d626c5b2a0f480a3c8cf09cf5fd2be5407c',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
