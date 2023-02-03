@@ -1,11 +1,12 @@
 == Classic SEO ==
 
 Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-Version:           2.1.0
+Version:           2.1.2
 Text Domain:       cpseo
 Domain Path:       /languages
 Requires PHP:      7.0
 Requires CP:       1.1
+Update URI:        https://directory.classicpress.net/wp-json/wp/v2/plugins?byslug=classicpress-seo
 Tested:            4.9.99
 Author:            ClassicPress
 Author URI:        https://github.com/ClassicPress/
@@ -56,6 +57,9 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 
 
 == Changelog ==
+**v 2.1.2 / 2023-02-03**
+* REMOVED: Remove REST API /disconnectSite endpoint (#150)
+
 **v 2.1.1 / 2023-01-25**
 * FIXED: Bad ZIP was attached to previous release
 

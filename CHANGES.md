@@ -1,3 +1,6 @@
+#### v 2.1.2 / 2023-02-03
+* REMOVED: Remove REST API /disconnectSite endpoint (#150)
+
 #### v 2.1.1 / 2023-01-25
 * FIXED: Bad ZIP was attached to previous release
 
