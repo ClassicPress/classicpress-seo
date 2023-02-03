@@ -333,7 +333,6 @@ class Classic_SEO {
 	public function init_rest_api() {
 		$controllers = [
 			new \Classic_SEO\Rest\Admin,
-			new \Classic_SEO\Rest\Front,
 		];
 
 		foreach ( $controllers as $controller ) {
