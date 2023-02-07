@@ -1,0 +1,29 @@
+name: Generate Installable Plugin, and Upload as Release Asset
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: Create artifact
+        run : |
+          git archive -o classicpress-seo.zip --prefix classicpress-seo/ HEAD 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+            name: classicpress-seo
+            path: classicpress-seo.zip
+      - name: Upload to release
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: classicpress-seo.zip application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
