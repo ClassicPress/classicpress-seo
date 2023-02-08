@@ -317,7 +317,6 @@ class Post_Variables extends Advanced_Variables {
 		return $has ? wp_strip_all_tags( $this->args->post_excerpt ) : null;
 	}
 
-
 	/**
 	 * Replace single_month_title deprecated function.
 	 *
