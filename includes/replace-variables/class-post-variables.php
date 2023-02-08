@@ -317,6 +317,34 @@ class Post_Variables extends Advanced_Variables {
 		return $has ? wp_strip_all_tags( $this->args->post_excerpt ) : null;
 	}
 
+
+	/**
+	 * Replace single_month_title deprecated function.
+	 *
+	 * @return string|false|void False if there's no valid title for the month. Title when retrieving.
+	 */
+	private function single_month_title( $prefix = '', $display = true ) {
+		global $wp_locale;
+
+		$m        = get_query_var( 'm' );
+		$year     = get_query_var( 'year' );
+		$monthnum = get_query_var( 'monthnum' );
+
+		if ( ! empty( $monthnum ) && ! empty( $year ) ) {
+			$my_year  = $year;
+			$my_month = $wp_locale->get_month( $monthnum );
+		} elseif ( ! empty( $m ) ) {
+			$my_year  = substr( $m, 0, 4 );
+			$my_month = $wp_locale->get_month( substr( $m, 4, 2 ) );
+		}
+
+		if ( empty( $my_month ) ) {
+			return false;
+		}
+
+		return  ' ' . $my_month . $prefix . $my_year;
+	}
+
 	/**
 	 * Get the date of the post to use as a replacement.
 	 *
@@ -337,7 +365,7 @@ class Post_Variables extends Advanced_Variables {
 			return get_the_date( $format );
 		}
 
-		$replacement = single_month_title( ' ', false );
+		$replacement = $this->single_month_title();
 		if ( Str::is_non_empty( $replacement ) ) {
 			return $replacement;
 		}
