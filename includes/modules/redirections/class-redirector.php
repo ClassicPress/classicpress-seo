@@ -139,7 +139,9 @@ class Redirector {
 		}
 
 		// Debug if on.
-		$this->do_debugging();
+		if ( array() !== $this->matched ) {
+			$this->do_debugging();
+		}
 
 		// @codeCoverageIgnoreStart
 		if ( true === $this->do_filter( 'redirection/add_query_string', true ) && Str::is_non_empty( $this->query_string ) ) {
@@ -224,7 +226,6 @@ class Redirector {
 		if ( null === $pre || ! is_array( $pre ) ) {
 			return;
 		}
-
 		$this->matched     = $pre;
 		$this->redirect_to = $pre['url_to'];
 	}
