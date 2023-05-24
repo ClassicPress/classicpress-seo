@@ -41,8 +41,7 @@ class Admin_Helper {
 	 * @return string
 	 */
 	public static function get_icon() {
-		$icon_svg = file_get_contents( CPSEO()->plugin_url() . '/assets/admin/img/classic-seo-dashicon-white-on-transparent.svg' );
-		return $icon_svg;
+		return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 138" fill-rule="evenodd" stroke-miterlimit="10" fill="#fff" stroke-width=".079" stroke-opacity=".5"><path d="M37.748 73.565c10.037-9.394 21.26-20.896 28.744-44.226l-9.56-5.87L89.264 5.44l1.774 38.487-9.453-5.637c-32.92 50.832-69.48 56.248-76.2 47.53l.292.14c11.087 5.217 25.82-6.538 32.064-12.395h-.003z"/><path d="M40.653 92.726h21.563v40.102H40.653z"/><path d="M112.836 5.86h20.423v126.966h-20.423z"/><path d="M5.393 109.893h20.55v22.93H5.393z"/><path d="M76.927 65.15h21.2v67.67h-21.2z"/></svg>';
 	}
 
 	/**

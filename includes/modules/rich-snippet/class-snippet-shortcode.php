@@ -35,23 +35,6 @@ class Snippet_Shortcode {
 		if ( ! is_admin() ) {
 			$this->filter( 'the_content', 'add_review_to_content', 11 );
 		}
-
-		if ( ! function_exists( 'register_block_type' ) ) {
-			return;
-		}
-
-		register_block_type(
-			'cpseo/rich-snippet',
-			[
-				'render_callback' => [ $this, 'rich_snippet' ],
-				'attributes'      => [
-					'id' => [
-						'default' => '',
-						'type'    => 'integer',
-					],
-				],
-			]
-		);
 	}
 
 	/**

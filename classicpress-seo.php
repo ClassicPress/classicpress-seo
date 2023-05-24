@@ -3,7 +3,7 @@
  * Plugin Name:          Classic SEO
  * Plugin URI:           https://github.com/ClassicPress/classicpress-seo
  * Description:          Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
- * Version:              2.1.2
+ * Version:              2.1.3
  * Author:               ClassicPress
  * Author URI:           https://github.com/ClassicPress
  * License:              GPL v2 or later
@@ -34,7 +34,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '2.1.2';
+	public $version = '2.1.3';
 
 	/**
 	 * Classic SEO database version.
@@ -265,6 +265,7 @@ class Classic_SEO {
 	private function includes() {
 		include dirname( __FILE__ ) . '/vendor/autoload.php';
 		require_once( dirname( __FILE__ ) . '/includes/class-update-client.php' );
+		require_once( dirname( __FILE__ ) . '/includes/class-update-client-tweaks.php' );
 	}
 
 	/**
@@ -321,10 +322,6 @@ class Classic_SEO {
 			add_action( 'plugins_loaded', [ $this, 'init_wp_cli' ], 20 );
 		}
 
-		// Fix images folder for Update Manager.
-		add_filter( 'codepotent_update_manager_image_path', [ $this, 'fix_update_manager_images' ] );
-		add_filter( 'codepotent_update_manager_image_url', [ $this, 'fix_update_manager_images' ] );
-
 	}
 
 	/**
@@ -362,13 +359,6 @@ class Classic_SEO {
 	 */
 	public function init_wp_cli() {
 		WP_CLI::add_command( 'cpseo sitemap generate', [ '\Classic_SEO\CLI\Commands', 'sitemap_generate' ] );
-	}
-
-	/**
-	 * Fix images folder for Update Manager.
-	 */
-	public function fix_update_manager_images( $folder ) {
-		return preg_replace( '/' . basename( CPSEO_PATH ) . '\/images$/', basename( CPSEO_PATH ) . '/assets/images', $folder );
 	}
 
 	/**

@@ -1,3 +1,6 @@
+####v 2.1.3 / 2023-05-25
+* FIXED: SSL issues, deprecations
+
 #### v 2.1.2 / 2023-02-03
 * REMOVED: Remove REST API /disconnectSite endpoint (#150)
 
