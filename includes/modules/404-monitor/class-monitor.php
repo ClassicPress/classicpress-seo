@@ -23,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Monitor class.
  */
+ #[\AllowDynamicProperties]
 class Monitor {
 
 	use Hooker, Ajax;

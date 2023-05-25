@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
  * Conditional class.
  */
 trait Conditional {
-	
+
 	/**
 	 * Check if whitelabel filter is active.
 	 *
@@ -43,7 +43,7 @@ trait Conditional {
 	public static function is_ajax() {
 		return function_exists( 'wp_doing_ajax' ) ? wp_doing_ajax() : defined( 'DOING_AJAX' ) && DOING_AJAX;
 	}
-	
+
 	/**
 	 * Is CRON request
 	 *
@@ -52,7 +52,7 @@ trait Conditional {
 	public static function is_cron() {
 		return function_exists( 'wp_doing_cron' ) ? wp_doing_cron() : defined( 'DOING_CRON' ) && DOING_CRON;
 	}
-	
+
 	/**
 	 * Is auto-saving
 	 *
@@ -61,7 +61,7 @@ trait Conditional {
 	public static function is_autosave() {
 		return defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE;
 	}
-	
+
 	/**
 	 * Is REST request
 	 *
@@ -103,8 +103,8 @@ trait Conditional {
 			0 === strpos( $current_url['path'], $rest_url['path'], 0 )
 		);
 	}
-	
-	
+
+
 	/**
 	 * Check if module is active.
 	 *
@@ -135,7 +135,7 @@ trait Conditional {
 		Helper::schedule_flush_rewrite();
 		update_option( $key, $value );
 	}
-	
+
 	/**
 	 * Check if the site is connected to the Classic SEO API.
 	 *
@@ -187,7 +187,7 @@ trait Conditional {
 		 */
 		return apply_filters( 'cpseo/show_score', true );
 	}
-	
+
 	/**
 	 * Check if the request is heartbeat.
 	 *
@@ -196,7 +196,7 @@ trait Conditional {
 	public static function is_heartbeat() {
 		return 'heartbeat' === Param::post( 'action' );
 	}
-	
+
 	/**
 	 * Check if the request is from frontend.
 	 *
@@ -216,13 +216,13 @@ trait Conditional {
 	public static function is_woocommerce_active() {
 		// @codeCoverageIgnoreStart
 		$wp_filesystem = WordPress::get_filesystem();
-		
+
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
 		/**
-		 * Check for additional proof that the real WC is installed and not the Classic Commerce compatibility plugin 
+		 * Check for additional proof that the real WC is installed and not the Classic Commerce compatibility plugin
 		 */
 		if( $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/class-woocommerce.php" ) && $wp_filesystem->exists( WP_PLUGIN_DIR . "/woocommerce/includes/admin/class-wc-admin.php" ) ) {
 			// @codeCoverageIgnoreEnd
@@ -230,7 +230,7 @@ trait Conditional {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Is Classic Commerce Installed
 	 *
