@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Base class.
  */
- #[\AllowDynamicProperties]
+#[\AllowDynamicProperties]
 class Base {
 
 	use Hooker;

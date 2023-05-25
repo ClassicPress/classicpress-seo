@@ -20,7 +20,7 @@ use Classic_SEO\Helpers\Conditional;
  *
  * @codeCoverageIgnore
  */
- #[\AllowDynamicProperties]
+#[\AllowDynamicProperties]
 class Redirections {
 
 	use Hooker;
