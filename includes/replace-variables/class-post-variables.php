@@ -13,7 +13,7 @@ namespace Classic_SEO\Replace_Variables;
 use Classic_SEO\Post;
 use Classic_SEO\Paper\Paper;
 use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\WordPress;
+use Classic_SEO\Helpers\WordPresss;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -71,7 +71,7 @@ class Post_Variables extends Advanced_Variables {
 			],
 			[ $this, 'get_excerpt_only' ]
 		);
-		
+
 		$this->register_replacement(
 			'seo_title',
 			[
@@ -242,7 +242,7 @@ class Post_Variables extends Advanced_Variables {
 
 		return Str::is_non_empty( $this->args->post_title ) ? stripslashes( $this->args->post_title ) : null;
 	}
-	
+
 	/**
 	 * Custom or Generated SEO Title
 	 *
@@ -289,7 +289,8 @@ class Post_Variables extends Advanced_Variables {
 		$keywords     = Post::get_meta( 'focus_keyword', $object->ID );
 		$post_content = Paper::should_apply_shortcode() ? do_shortcode( $object->post_content ) : $object->post_content;
 		$post_content = \preg_replace( '/<!--[\s\S]*?-->/iu', '', $post_content );
-		$post_content = wpautop( WordPress::strip_shortcodes( $post_content ) );
+		$post_content = strpos( $post_content, '[' ) === false ? $post_content : preg_replace( '~\[\/?.*?\]~s', '', $post_content );
+		$post_content = wpautop( $post_content );
 		$post_content = wp_kses( $post_content, [ 'p' => [] ] );
 
 		// 4. Paragraph with the focus keyword.

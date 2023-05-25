@@ -21,6 +21,8 @@ defined( 'ABSPATH' ) || exit;
  */
 trait Conditional {
 
+	use WordPress;
+
 	/**
 	 * Check if whitelabel filter is active.
 	 *
@@ -215,7 +217,7 @@ trait Conditional {
 	 */
 	public static function is_woocommerce_active() {
 		// @codeCoverageIgnoreStart
-		$wp_filesystem = WordPress::get_filesystem();
+		$wp_filesystem = self::get_filesystem();
 
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';

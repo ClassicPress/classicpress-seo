@@ -14,7 +14,7 @@ if ( ! Helper::has_cap( 'onpage_snippet' ) ) {
 	return;
 }
 
-$post_type = WordPress::get_post_type();
+$post_type = ( new class { use Wordpress; } )::get_post_type();
 
 if ( ( class_exists( 'WooCommerce' ) && 'product' === $post_type ) || ( class_exists( 'Easy_Digital_Downloads' ) && 'download' === $post_type ) ) {
 

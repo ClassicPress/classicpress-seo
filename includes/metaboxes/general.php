@@ -87,7 +87,7 @@ if ( Helper::has_cap( 'onpage_analysis' ) ) {
  * @param bool $return True to disable.
  */
 if ( false === $this->do_filter( 'primary_term', false ) ) {
-	$taxonomies = Helper::get_object_taxonomies( WordPress::get_post_type(), 'objects' );
+	$taxonomies = Helper::get_object_taxonomies( ( new class { use Wordpress; } )::get_post_type(), 'objects' );
 	$taxonomies = wp_filter_object_list( $taxonomies, array( 'hierarchical' => true ), 'and', 'name' );
 	foreach ( $taxonomies as $taxonomy ) {
 		$cmb->add_field( array(

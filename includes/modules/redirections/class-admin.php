@@ -28,7 +28,7 @@ use Classic_SEO\Helpers\Conditional;
  */
 class Admin extends Base {
 
-	use Ajax, Hooker;
+	use Ajax, Hooker, Conditional;
 
 	/**
 	 * The Constructor.
@@ -89,7 +89,7 @@ class Admin extends Base {
 	 * Hooks for ajax.
 	 */
 	private function ajax_hooks() {
-		if ( ! Conditional::is_ajax() ) {
+		if ( ! Admin::is_ajax() ) {
 			return;
 		}
 

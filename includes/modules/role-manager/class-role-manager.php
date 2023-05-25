@@ -22,6 +22,8 @@ defined( 'ABSPATH' ) || exit;
  */
 class Role_Manager extends Base {
 
+	use Wordpress;
+
 	/**
 	 * The Constructor.
 	 */
@@ -91,7 +93,7 @@ class Role_Manager extends Base {
 			'save_fields'  => false,
 		]);
 
-		foreach ( WordPress::get_roles() as $role => $label ) {
+		foreach ( Role_Manager::get_roles() as $role => $label ) {
 			$cmb->add_field([
 				'id'                => esc_attr( $role ),
 				'type'              => 'multicheck_inline',

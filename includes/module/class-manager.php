@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class Manager {
 
-	use Hooker;
+	use Hooker, Conditional;
 
 	/**
 	 * Holds modules.
@@ -40,7 +40,7 @@ class Manager {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		if ( Conditional::is_heartbeat() ) {
+		if ( Manager::is_heartbeat() ) {
 			return;
 		}
 
@@ -193,7 +193,7 @@ class Manager {
 				'disabled_text' => esc_html__( 'Please activate ' . $ecom . ' plugin to use this module.', 'cpseo' ),
 			];
 		}
-		
+
 		if ( class_exists( 'ACF' ) ) {
 			$modules['acf'] = [
 				'title'         => esc_html__( 'ACF', 'cpseo' ),
@@ -244,9 +244,9 @@ class Manager {
 				<div class="col">
 
 					<div class="cpseo-box <?php echo $is_active ? 'active' : ''; ?>">
-					
+
 						<p style="float:right"><?php $module->the_link(); ?></p>
-						
+
 						<span class="dashicons <?php echo $module->get_icon(); ?>"></span>
 
 						<header>

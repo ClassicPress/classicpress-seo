@@ -344,7 +344,7 @@ trait WordPress {
 			}
 		}
 	}
-	
+
 	/**
 	 * Set capabilities to role.
 	 *
