@@ -23,7 +23,7 @@ use Classic_SEO\Helpers\Conditional;
 #[\AllowDynamicProperties]
 class Redirections {
 
-	use Hooker;
+	use Hooker, Conditional;
 
 	/**
 	 * The Constructor.
@@ -52,7 +52,7 @@ class Redirections {
 			$this->admin = new Admin;
 		}
 
-		if ( is_admin() || Conditional::is_rest() ) {
+		if ( is_admin() || Redirections::is_rest() ) {
 			new Watcher;
 		}
 	}
@@ -61,7 +61,7 @@ class Redirections {
 	 * Do redirection on frontend.
 	 */
 	public function do_redirection() {
-		if ( is_customize_preview() || Conditional::is_ajax() || ! isset( $_SERVER['REQUEST_URI'] ) || empty( $_SERVER['REQUEST_URI'] ) || $this->is_script_uri_or_http_x() ) {
+		if ( is_customize_preview() || Redirections::is_ajax() || ! isset( $_SERVER['REQUEST_URI'] ) || empty( $_SERVER['REQUEST_URI'] ) || $this->is_script_uri_or_http_x() ) {
 			return;
 		}
 

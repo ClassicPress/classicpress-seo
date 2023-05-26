@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Replacer class.
  */
+#[\AllowDynamicProperties]
 class Replacer {
 
 	/**

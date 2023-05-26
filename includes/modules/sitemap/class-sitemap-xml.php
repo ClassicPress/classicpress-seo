@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Sitemap_XML class.
  */
+#[\AllowDynamicProperties]
 class Sitemap_XML extends XML {
 
 	use Hooker;
