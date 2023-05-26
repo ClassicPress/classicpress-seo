@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class Image {
 
-	use Hooker;
+	use Hooker, Attachment;
 
 	/**
 	 * Holds network slug.
@@ -179,7 +179,7 @@ class Image {
 			if ( Str::is_non_empty( $attachment ) ) {
 				$attachment = array( 'url' => $attachment );
 			}
-			$attachment['alt'] = Attachment::get_alt_tag( $attachment_id );
+			$attachment['alt'] = Image::get_alt_tag( $attachment_id );
 
 			$this->add_image( $attachment );
 		}
@@ -579,7 +579,7 @@ class Image {
 			'width'  => $width,
 			'height' => $height,
 			'type'   => get_post_mime_type( $attachment_id ),
-			'alt'    => Attachment::get_alt_tag( $attachment_id ),
+			'alt'    => Image::get_alt_tag( $attachment_id ),
 		);
 	}
 
