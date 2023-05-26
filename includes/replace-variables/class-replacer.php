@@ -21,6 +21,8 @@ defined( 'ABSPATH' ) || exit;
 #[\AllowDynamicProperties]
 class Replacer {
 
+	use WordPress;
+
 	/**
 	 * Default post data.
 	 *
@@ -97,10 +99,10 @@ class Replacer {
 		// Setup arguments.
 		$this->args = (object) wp_parse_args( $args, self::$defaults );
 		if ( ! empty( $this->args->post_content ) ) {
-			$this->args->post_content = WordPress::strip_shortcodes( $this->args->post_content );
+			$this->args->post_content = Replacer::strip_shortcodes( $this->args->post_content );
 		}
 		if ( ! empty( $this->args->post_excerpt ) ) {
-			$this->args->post_excerpt = WordPress::strip_shortcodes( $this->args->post_excerpt );
+			$this->args->post_excerpt = Replacer::strip_shortcodes( $this->args->post_excerpt );
 		}
 
 		// Setup exlucusion.
