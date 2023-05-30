@@ -192,7 +192,7 @@ class Cache {
 	 */
 	public static function invalidate_storage( $type = null ) {
 		$directory     = self::get_cache_directory();
-		$wp_filesystem = WordPress::get_filesystem();
+		$wp_filesystem = self::get_filesystem();
 
 		if ( is_null( $type ) ) {
 			$wp_filesystem->delete( $directory, true );
