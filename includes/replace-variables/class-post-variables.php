@@ -13,7 +13,7 @@ namespace Classic_SEO\Replace_Variables;
 use Classic_SEO\Post;
 use Classic_SEO\Paper\Paper;
 use Classic_SEO\Helpers\Str;
-use Classic_SEO\Helpers\WordPresss;
+use Classic_SEO\Helpers\WordPress;
 
 defined( 'ABSPATH' ) || exit;
 
