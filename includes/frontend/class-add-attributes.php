@@ -21,6 +21,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Add Attributes class.
  */
+#[\AllowDynamicProperties]
 class Add_Attributes {
 
 	use Hooker;

@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class JsonLD {
 
-	use Hooker;
+	use Hooker, Conditional;
 
 	/**
 	 * Hold post object.
@@ -128,7 +128,7 @@ class JsonLD {
 	 * @return bool
 	 */
 	private function is_product_page() {
-		return ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) && ( ( is_tax() && in_array( get_query_var( 'taxonomy' ), get_object_taxonomies( 'product' ), true ) ) || is_shop() );
+		return ( JsonLD::is_woocommerce_active() || JsonLD::is_classic_commerce_active() ) && ( ( is_tax() && in_array( get_query_var( 'taxonomy' ), get_object_taxonomies( 'product' ), true ) ) || is_shop() );
 	}
 
 	/**
@@ -197,7 +197,7 @@ class JsonLD {
 			];
 		}
 	}
-	
+
 	/**
 	 * Add aggregateratings to entity.
 	 *

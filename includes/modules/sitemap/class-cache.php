@@ -18,7 +18,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Cache class.
  */
+#[\AllowDynamicProperties]
 class Cache {
+
+	use WordPress;
 
 	/**
 	 * Cache mode.
@@ -45,7 +48,7 @@ class Cache {
 	 * The Constructor
 	 */
 	public function __construct() {
-		$this->wp_filesystem = WordPress::get_filesystem();
+		$this->wp_filesystem = Cache::get_filesystem();
 		$this->mode          = $this->is_writable() ? 'file' : 'db';
 	}
 
@@ -189,7 +192,7 @@ class Cache {
 	 */
 	public static function invalidate_storage( $type = null ) {
 		$directory     = self::get_cache_directory();
-		$wp_filesystem = WordPress::get_filesystem();
+		$wp_filesystem = self::get_filesystem();
 
 		if ( is_null( $type ) ) {
 			$wp_filesystem->delete( $directory, true );

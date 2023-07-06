@@ -22,15 +22,17 @@ defined( 'ABSPATH' ) || exit;
  */
 class Status extends Base {
 
+	use Conditional;
+
 	/**
 	 * Class constructor.
 	 */
 	public function __construct() {
-		if ( Conditional::is_heartbeat() ) {
+		if ( Status::is_heartbeat() ) {
 			return;
 		}
 
-		if ( Conditional::is_rest() ) {
+		if ( Status::is_rest() ) {
 			$tools = $this->get_page_views();
 			$tools = new $tools['tools']['class'];
 			$tools->hooks();

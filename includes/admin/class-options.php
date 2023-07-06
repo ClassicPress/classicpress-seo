@@ -22,6 +22,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Options class.
  */
+#[\AllowDynamicProperties]
 class Options {
 
 	use Hooker;

@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class Capability_Manager {
 
-	use Hooker;
+	use Hooker, WordPress;
 
 	/**
 	 * Registered capabilities.
@@ -94,7 +94,7 @@ class Capability_Manager {
 	 * Add capabilities on install.
 	 */
 	public function create_capabilities() {
-		foreach ( WordPress::get_roles() as $slug => $role ) {
+		foreach ( Capability_Manager::get_roles() as $slug => $role ) {
 			$role = get_role( $slug );
 			if ( ! $role ) {
 				continue;

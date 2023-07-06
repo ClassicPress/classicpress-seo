@@ -28,7 +28,7 @@ use Classic_SEO\Helpers\Conditional;
  */
 class Admin extends Base {
 
-	use Ajax, Hooker;
+	use Ajax, Hooker, Conditional, WordPress;
 
 	/**
 	 * The Constructor.
@@ -89,7 +89,7 @@ class Admin extends Base {
 	 * Hooks for ajax.
 	 */
 	private function ajax_hooks() {
-		if ( ! Conditional::is_ajax() ) {
+		if ( ! Admin::is_ajax() ) {
 			return;
 		}
 
@@ -185,7 +185,7 @@ class Admin extends Base {
 			return;
 		}
 
-		$action = WordPress::get_request_action();
+		$action = Admin::get_request_action();
 		if ( false === $action || empty( $_REQUEST['redirection'] ) || 'edit' === $action ) {
 			return;
 		}

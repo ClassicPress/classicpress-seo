@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Metadata class.
  */
+ #[\AllowDynamicProperties]
 abstract class Metadata {
 
 	/**
@@ -132,7 +133,7 @@ abstract class Metadata {
 		if ( ! in_array( $key, $need_replacements, true ) || ! is_string( $value ) || '' === $value ) {
 			return false;
 		}
-		
+
 		$value = \str_replace( [ '%seo_title%', '%seo_description%' ], [ '%title%', '%excerpt%' ], $value );
 
 		return Helper::replace_vars( $value, $object );

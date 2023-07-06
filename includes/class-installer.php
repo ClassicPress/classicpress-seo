@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class Installer {
 
-	use Hooker;
+	use Hooker, WordPress;
 
 	/**
 	 * Bind all events.
@@ -574,7 +574,7 @@ class Installer {
 	 * @return array
 	 */
 	private function get_excluded_roles() {
-		$roles = WordPress::get_roles();
+		$roles = Installer::get_roles();
 		unset( $roles['administrator'], $roles['editor'], $roles['author'] );
 
 		return $roles;

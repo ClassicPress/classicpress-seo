@@ -23,9 +23,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Monitor class.
  */
+#[\AllowDynamicProperties]
 class Monitor {
 
-	use Hooker, Ajax;
+	use Hooker, Ajax, Conditional;
 
 	/**
 	 * The Constructor.
@@ -37,7 +38,7 @@ class Monitor {
 			$this->admin = new Admin;
 		}
 
-		if ( Conditional::is_ajax() ) {
+		if ( Monitor::is_ajax() ) {
 			$this->ajax( 'delete_log', 'delete_log' );
 		}
 

@@ -20,6 +20,8 @@ defined( 'ABSPATH' ) || exit;
  */
 class Post extends Metadata {
 
+	use Conditional;
+
 	/**
 	 * Type of object metadata is for (e.g., comment, post, or user).
 	 *
@@ -168,7 +170,7 @@ class Post extends Metadata {
 	 * @return bool Whether the current page is a WooCommerce page.
 	 */
 	public static function is_woocommerce_page() {
-		if ( Conditional::is_woocommerce_active() || Conditional::is_classic_commerce_active() ) {
+		if ( Post::is_woocommerce_active() || Post::is_classic_commerce_active() ) {
 			return \is_cart() || \is_checkout() || \is_account_page();
 		}
 

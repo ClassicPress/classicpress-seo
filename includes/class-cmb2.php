@@ -24,6 +24,8 @@ defined( 'ABSPATH' ) || exit;
  */
 class CMB2 {
 
+	use Conditional;
+
 	/**
 	 * Set field arguments based on type.
 	 *
@@ -99,7 +101,7 @@ class CMB2 {
 			$type = 'term';
 		}
 
-		if ( Conditional::is_ajax() && 'add-tag' === Param::post( 'action' ) ) {
+		if ( CMB2::is_ajax() && 'add-tag' === Param::post( 'action' ) ) {
 			$type = 'term';
 		}
 
@@ -313,7 +315,7 @@ class CMB2 {
 
 		return $value;
 	}
-	
+
 	/**
 	 * Handles sanitization of advanced robots data.
 	 *
