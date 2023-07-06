@@ -1,7 +1,7 @@
 == Classic SEO ==
 
 Description:       Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
-Version:           2.2.0.alpha.0
+Version:           2.2.0-alpha.0
 Text Domain:       cpseo
 Domain Path:       /languages
 Requires PHP:      7.0
