@@ -21,6 +21,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Admin class.
  */
+#[\AllowDynamicProperties]
 class Admin extends Base {
 
 	/**
@@ -125,7 +126,7 @@ class Admin extends Base {
 
 		return isset( $cmb->data_to_save['cpseo_snippet_recipe_instructions'] ) ? $cmb->data_to_save['cpseo_snippet_recipe_instructions'] : [];
 	}
-	
+
 	/**
 	 * Enqueue Styles and Scripts required for metabox.
 	 */
@@ -161,7 +162,7 @@ class Admin extends Base {
 		Helper::add_json( 'richSnippets', $values );
 		Helper::add_json( 'hasReviewPosts', ! empty( Helper::get_review_posts() ) );
 	}
-	
+
 	/**
 	 * Get metabox
 	 *
@@ -174,7 +175,7 @@ class Admin extends Base {
 
 		return cmb2_get_metabox( 'cpseo_metabox' );
 	}
-	
+
 	/**
 	 * Can exclude field.
 	 *

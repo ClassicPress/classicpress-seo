@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * XML.
  */
+#[\AllowDynamicProperties]
 abstract class XML {
 
 	/**

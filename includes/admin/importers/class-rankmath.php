@@ -22,6 +22,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * RankMath class.
  */
+#[\AllowDynamicProperties]
 class RankMath extends Plugin_Importer {
 
 	/**
@@ -30,21 +31,21 @@ class RankMath extends Plugin_Importer {
 	 * @var string
 	 */
 	protected $plugin_name = 'Rank Math SEO';
-	
+
 	/**
 	 * Plugin options meta key.
 	 *
 	 * @var string
 	 */
 	protected $meta_key = 'rank_math_';
-	
+
 	/**
 	 * Option keys to import and clean.
 	 *
 	 * @var array
 	 */
 	protected $option_keys = [ 'rank-math', 'rank-math-%' ];
-	
+
 	/**
 	 * Choices keys to import.
 	 *
@@ -58,8 +59,8 @@ class RankMath extends Plugin_Importer {
 	 * @var array
 	 */
 	protected $table_names = [ 'rank_math_404_logs', 'rank_math_internal_links', 'rank_math_internal_meta', 'rank_math_redirections', 'rank_math_redirections_cache' ];
-	
-	
+
+
 	/**
 	 * Import main settings of plugin.
 	 *
@@ -70,12 +71,12 @@ class RankMath extends Plugin_Importer {
 
 		$cpseo_backup = new Import_Export();
 		$cpseo_backup->run_backup('add');
-		
+
 		// Delete any existing Classic SEO settings in the options table
 		$where = $wpdb->prepare( 'WHERE (option_name LIKE %s OR option_name LIKE %s) AND option_name <> %s', '%' . 'cpseo' . '%', '%' . 'cpseo' . '%', 'cpseo_backups' );
 		$wpdb->query( "DELETE FROM {$wpdb->prefix}options {$where}" ); // phpcs:ignore
 
-		
+
 		$options_general	= $this->fetch_serialized_options_value( 'rank-math-options-general' );
 		$options_titles		= $this->fetch_serialized_options_value( 'rank-math-options-titles' );
 		$options_sitemap	= $this->fetch_serialized_options_value( 'rank-math-options-sitemap' );
@@ -83,22 +84,22 @@ class RankMath extends Plugin_Importer {
 		$this->cpseo_update_options( $options_general, 'cpseo-options-general', 'cpseo_' );
 		$this->cpseo_update_options( $options_titles,  'cpseo-options-titles',  'cpseo_' );
 		$this->cpseo_update_options( $options_sitemap, 'cpseo-options-sitemap', 'cpseo_' );
-		
+
 		if ( $this->cpseo_copy_rank_math_tables() ) {
 			return true;
 		}
 
 		return false;
 	}
-	
-	
+
+
 	private function fetch_serialized_options_value( $option_name ) {
 		global $wpdb;
 		return $wpdb->get_row( "SELECT option_value FROM {$wpdb->prefix}options WHERE option_name = '{$option_name}' LIMIT 1" );
 	}
 
-	
-	private function cpseo_update_options($options, $option_name, $prefix) {	
+
+	private function cpseo_update_options($options, $option_name, $prefix) {
 		$exclude_options = [
 			'alexa_verify',
 			'baidu_verify',
@@ -125,8 +126,8 @@ class RankMath extends Plugin_Importer {
 			'social_url_yelp',
 			'tax_post_tag_robots',
 		];
-		
-		if ( $options ) {	
+
+		if ( $options ) {
 			foreach( $options as $key => $item) {
 				if ( ! in_array($key, $exclude_options ) ) {
 					$cpseo_opts[$prefix.$key] = $item;
@@ -139,7 +140,7 @@ class RankMath extends Plugin_Importer {
 		}
 		return false;
 	}
-	
+
 
 	/**
 	 * Import post meta of plugin.
@@ -148,9 +149,9 @@ class RankMath extends Plugin_Importer {
 	 */
 	protected function postmeta() {
 		global $wpdb;
-		
+
 		$this->set_pagination( $this->get_post_ids( true ) );
-		
+
 		$rm_metakeys = $wpdb->get_results( "SELECT post_id, meta_key FROM {$wpdb->prefix}postmeta WHERE meta_key LIKE 'rank_math_%'" );
 
 		$hash = [];
@@ -168,12 +169,12 @@ class RankMath extends Plugin_Importer {
 				update_post_meta( $post_id, 'cpseo_cornerstone_content', 'on' );
 			}
 		}
-		
+
 		$this->rename_postmeta_shortcode_values();
 
 		return $this->get_pagination_arg();
 	}
-	
+
 	protected function rename_postmeta_shortcode_values() {
 		global $wpdb;
 		$reviewsnip	= "UPDATE {$wpdb->prefix}postmeta SET meta_value = '[cpseo_review_snippet]' WHERE meta_key = 'cpseo_snippet_review_shortcode'";
@@ -181,8 +182,8 @@ class RankMath extends Plugin_Importer {
 		$wpdb->query($reviewsnip);
 		$wpdb->query($richsnip);
 	}
-	
-	
+
+
 	/**
 	 * Import user meta of plugin.
 	 *
@@ -217,7 +218,7 @@ class RankMath extends Plugin_Importer {
 
 		return $this->get_pagination_arg();
 	}
-	
+
 
 	/**
 	 * Imports redirections data.
@@ -227,7 +228,7 @@ class RankMath extends Plugin_Importer {
 	protected function redirections() {
 		global $wpdb;
 		$ins = 0;
-		
+
 		$rm_redirections	= $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}rank_math_redirections" );
 
 		// Early bail
@@ -241,7 +242,7 @@ class RankMath extends Plugin_Importer {
 		$wpdb->insert( $this->table, $rm_redirections );
 		return $wpdb->insert_id;
 	}
-	
+
 	/**
 	 * Copies data from RM tables to Classic SEO tables
 	 *
@@ -250,7 +251,7 @@ class RankMath extends Plugin_Importer {
 	protected function cpseo_copy_rank_math_tables() {
 		global $wpdb;
 		$ins = 0;
-		
+
 		foreach( $this->table_names as $rmtable) {
 			$rmdata = [];
 

@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Cache_Watcher class.
  */
+#[\AllowDynamicProperties]
 class Cache_Watcher {
 
 	use Hooker;
@@ -127,7 +128,7 @@ class Cache_Watcher {
 			wp_schedule_single_event( ( time() + 300 ), 'cpseo/sitemap/ping_search_engines' );
 		}
 	}
-	
+
 	/**
 	 * Can exclude post type.
 	 *

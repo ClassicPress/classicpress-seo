@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Term_Variables class.
  */
+#[\AllowDynamicProperties]
 class Term_Variables extends Basic_Variables {
 
 	/**

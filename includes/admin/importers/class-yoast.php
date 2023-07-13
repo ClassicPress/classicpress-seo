@@ -22,6 +22,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Yoast class.
  */
+#[\AllowDynamicProperties]
 class Yoast extends Plugin_Importer {
 
 	/**
@@ -39,7 +40,7 @@ class Yoast extends Plugin_Importer {
 	protected $meta_key = '_yoast_wpseo_';
 
 	/**
-	 * Option keys to import and clean. 
+	 * Option keys to import and clean.
 	 * option_name in options table.
 	 *
 	 * @var array
@@ -84,7 +85,7 @@ class Yoast extends Plugin_Importer {
 	protected function settings() {
 		$cpseo_backup = new Import_Export();
 		$cpseo_backup->run_backup('add');
-		
+
 		$this->get_settings();
 
 		$yoast_main          = get_option( 'wpseo' );

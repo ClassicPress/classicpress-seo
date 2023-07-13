@@ -15,6 +15,7 @@ use Classic_SEO\Helpers\HTML;
 /**
  * Notification class.
  */
+#[\AllowDynamicProperties]
 class Notification {
 
 	/**

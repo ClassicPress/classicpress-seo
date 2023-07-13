@@ -25,6 +25,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Plugin_Importer class.
  */
+#[\AllowDynamicProperties]
 abstract class Plugin_Importer {
 
 	use Hooker, Ajax, Meta;

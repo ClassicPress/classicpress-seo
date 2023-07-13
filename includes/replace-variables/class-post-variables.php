@@ -20,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Post_Variables class.
  */
+#[\AllowDynamicProperties]
 class Post_Variables extends Advanced_Variables {
 
 	/**

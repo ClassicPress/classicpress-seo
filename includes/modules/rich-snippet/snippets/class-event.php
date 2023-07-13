@@ -17,6 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Event class.
  */
+#[\AllowDynamicProperties]
 class Event implements Snippet {
 
 	/**
@@ -53,7 +54,7 @@ class Event implements Snippet {
 		}
 
 		$jsonld->add_ratings( 'event', $entity );
-		
+
 		$jsonld->set_data([
 			'snippet_event_price'               => 'price',
 			'snippet_event_currency'            => 'priceCurrency',
@@ -94,7 +95,7 @@ class Event implements Snippet {
 		}
 		return $entity;
 	}
-	
+
 	/**
 	 * Get Event Attendance Mode.
 	 *

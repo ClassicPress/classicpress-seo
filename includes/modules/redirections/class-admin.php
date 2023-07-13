@@ -26,6 +26,7 @@ use Classic_SEO\Helpers\Conditional;
 /**
  * Admin class.
  */
+#[\AllowDynamicProperties]
 class Admin extends Base {
 
 	use Ajax, Hooker, Conditional, WordPress;
