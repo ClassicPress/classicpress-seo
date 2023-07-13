@@ -23,6 +23,8 @@ defined( 'ABSPATH' ) || exit;
  */
 class Serp_Preview {
 
+	use WordPress;
+
 	/**
 	 * Display SERP preview.
 	 */
@@ -98,7 +100,7 @@ class Serp_Preview {
 		global $post;
 		setup_postdata( $post );
 
-		$post_type    = WordPress::get_post_type();
+		$post_type    = Serp_Preview::get_post_type();
 		$title_format = Helper::get_settings( "titles.cpseo_pt_{$post_type}_title" );
 		$desc_format  = Helper::get_settings( "titles.cpseo_pt_{$post_type}_description" );
 		$title_format = $title_format ? $title_format : '%title%';
