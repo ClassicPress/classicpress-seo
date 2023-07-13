@@ -12,6 +12,7 @@ namespace Classic_SEO\Status;
 /**
  * System_Status class.
  */
+#[\AllowDynamicProperties]
 class System_Status {
 
 	/**

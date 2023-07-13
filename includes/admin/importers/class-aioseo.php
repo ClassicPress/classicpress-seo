@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * AIOSEO class.
  */
+#[\AllowDynamicProperties]
 class AIOSEO extends Plugin_Importer {
 
 	/**
@@ -73,7 +74,7 @@ class AIOSEO extends Plugin_Importer {
 			'aiosp_search_title_format'    => 'cpseo_search_title',
 		];
 		$this->replace( $hash, $aioseo, $this->titles, 'convert_variables' );
-		
+
 		$this->titles['cpseo_title_separator'] = '|';	// Set default separator
 
 		$this->post_types_settings();
@@ -171,7 +172,7 @@ class AIOSEO extends Plugin_Importer {
 
 		if ( isset( $opengraph_settings['aiosp_schema_site_represents'] ) && ! empty( $opengraph_settings['aiosp_schema_site_represents'] ) ) {
 			Helper::update_modules( [ 'local-seo' => 'on' ] );
-			
+
 			if ( $opengraph_settings['aiosp_schema_site_represents'] == 'organization' ) {
 				$this->titles['cpseo_knowledgegraph_name'] = $opengraph_settings['aiosp_schema_organization_name'];
 				$this->titles['cpseo_knowledgegraph_type'] = 'company';

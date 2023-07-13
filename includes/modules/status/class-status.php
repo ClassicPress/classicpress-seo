@@ -20,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Status class.
  */
+#[\AllowDynamicProperties]
 class Status extends Base {
 
 	use Conditional;

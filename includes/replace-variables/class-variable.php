@@ -17,6 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Variable class.
  */
+#[\AllowDynamicProperties]
 class Variable {
 
 	/**

@@ -20,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Role_Manager class.
  */
+#[\AllowDynamicProperties]
 class Role_Manager extends Base {
 
 	use Wordpress;

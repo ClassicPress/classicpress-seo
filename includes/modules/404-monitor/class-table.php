@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Table class.
  */
+#[\AllowDynamicProperties]
 class Table extends List_Table {
 
 	/**

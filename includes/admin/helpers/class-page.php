@@ -14,6 +14,7 @@ use Classic_SEO\Helpers\Param;
 /**
  * Page class.
  */
+#[\AllowDynamicProperties]
 class Page {
 
 	/**
@@ -322,11 +323,11 @@ class Page {
 
 		return ob_get_clean();
 	}
-	
+
 	public function cpseo_admin_header( $hdrclass = '' ) { ?>
-	
+
 		<?php $hdrclass = $hdrclass != '' ? ' class="'.$hdrclass.'"' : ''; ?>
-		
+
 		<div id="cpseo-header" <?php echo $hdrclass; ?>>
 			<div id="cpseo-admin">
 				<h1>

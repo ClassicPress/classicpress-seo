@@ -18,6 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Stylesheet class.
  */
+#[\AllowDynamicProperties]
 class Stylesheet extends XML {
 
 	use Hooker;

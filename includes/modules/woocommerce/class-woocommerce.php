@@ -20,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * WooCommerce class.
  */
+#[\AllowDynamicProperties]
 class WooCommerce extends WC_Vars {
 
 	use Hooker;

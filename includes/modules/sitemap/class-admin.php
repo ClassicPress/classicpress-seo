@@ -21,6 +21,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Admin class.
  */
+#[\AllowDynamicProperties]
 class Admin extends Base {
 
 	/**
