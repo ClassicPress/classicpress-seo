@@ -1,3 +1,6 @@
+####v 2.2.0 / 2023-07-25
+* NEW: Support for PHP 8.1 and 8.2
+
 ####v 2.1.3 / 2023-05-25
 * FIXED: SSL issues, deprecations
 
