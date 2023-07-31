@@ -102,6 +102,7 @@ return array(
     'Classic_SEO\\Admin\\Serp_Preview' => $baseDir . '/includes/admin/class-serp-preview.php',
     'Classic_SEO\\Admin\\Watcher' => $baseDir . '/includes/admin/watcher/class-watcher.php',
     'Classic_SEO\\Admin_Bar_Menu' => $baseDir . '/includes/admin/class-admin-bar-menu.php',
+    'Classic_SEO\\BeaverBuilder\\BeaverBuilder' => $baseDir . '/includes/modules/beaverbuilder/class-beaverbuilder.php',
     'Classic_SEO\\CLI\\Commands' => $baseDir . '/includes/cli/class-commands.php',
     'Classic_SEO\\CMB2' => $baseDir . '/includes/class-cmb2.php',
     'Classic_SEO\\Common' => $baseDir . '/includes/class-common.php',
