@@ -3,7 +3,7 @@
         'name' => 'classicpress-plugins/classicpress-seo',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '859e1026b85050812661b122c3ccafa162177e55',
+        'reference' => '508d0002056d5a2d24d61b98db8291727d660e4c',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'a5hleyrich/wp-background-processing' => array(
-            'pretty_version' => '1.1.0',
-            'version' => '1.1.0.0',
-            'reference' => 'd5ef95cecba7f792ddca3e3bd70ebfb90dc4996d',
+            'pretty_version' => '1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => 'ebbed762c42e70e76573ffbd36e591378ba5f2ee',
             'type' => 'library',
             'install_path' => __DIR__ . '/../a5hleyrich/wp-background-processing',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'classicpress-plugins/classicpress-seo' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '859e1026b85050812661b122c3ccafa162177e55',
+            'reference' => '508d0002056d5a2d24d61b98db8291727d660e4c',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
