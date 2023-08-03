@@ -11,7 +11,7 @@
  * Domain Path:          /languages/
  * Text Domain:          cpseo
  * Requires CP:          1.1
- * Requires PHP:         7.0
+ * Requires PHP:         7.4
  * Update URI:           https://directory.classicpress.net/wp-json/wp/v2/plugins?byslug=classicpress-seo
  *
  * Fork of Rank Math v1.0.33
@@ -55,7 +55,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	private $php_version = '7.0';
+	private $php_version = '7.4';
 
 	/**
 	 * Holds various class instances.

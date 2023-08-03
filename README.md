@@ -15,7 +15,7 @@ Latest release:  See [Change log](CHANGES.md)
 ## Minimum Requirements
 
 - ClassicPress 1.1.0
-- PHP 7.0
+- PHP 7.4
 
 ## Credits
 This is a fork of Rank Math.
