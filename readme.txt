@@ -4,7 +4,7 @@ Description:       Classic SEO is the first SEO plugin built specifically to wor
 Version:           2.2.0
 Text Domain:       cpseo
 Domain Path:       /languages
-Requires PHP:      7.0
+Requires PHP:      7.4
 Requires CP:       1.1
 Update URI:        https://directory.classicpress.net/wp-json/wp/v2/plugins?byslug=classicpress-seo
 Tested:            4.9.99
@@ -59,6 +59,7 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 == Changelog ==
 **v 2.2.0 / 2023-07-25**
 * NEW: Support for PHP 8.1 and 8.2
+* REMOVED: Support for PHP below 7.4
 
 **v 2.1.3 / 2023-05-25**
 * FIXED: SSL issues, deprecations

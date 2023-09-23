@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a0971c6902fb1338cc07337d9e2c0cc",
+    "content-hash": "32e22cafc5caa8b5bf465049f4e430ce",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deliciousbrains/wp-background-processing.git",
-                "reference": "d5ef95cecba7f792ddca3e3bd70ebfb90dc4996d"
+                "reference": "ebbed762c42e70e76573ffbd36e591378ba5f2ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deliciousbrains/wp-background-processing/zipball/d5ef95cecba7f792ddca3e3bd70ebfb90dc4996d",
-                "reference": "d5ef95cecba7f792ddca3e3bd70ebfb90dc4996d",
+                "url": "https://api.github.com/repos/deliciousbrains/wp-background-processing/zipball/ebbed762c42e70e76573ffbd36e591378ba5f2ee",
+                "reference": "ebbed762c42e70e76573ffbd36e591378ba5f2ee",
                 "shasum": ""
             },
             "require": {
@@ -52,9 +52,9 @@
             "description": "WP Background Processing can be used to fire off non-blocking asynchronous requests or as a background processing tool, allowing you to queue tasks.",
             "support": {
                 "issues": "https://github.com/deliciousbrains/wp-background-processing/issues",
-                "source": "https://github.com/deliciousbrains/wp-background-processing/tree/1.1.0"
+                "source": "https://github.com/deliciousbrains/wp-background-processing/tree/1.1.1"
             },
-            "time": "2023-04-18T12:32:25+00:00"
+            "time": "2023-07-18T10:22:06+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -324,7 +324,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
