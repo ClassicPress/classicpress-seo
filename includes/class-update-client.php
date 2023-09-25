@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {
 
 // Should directory take over?
 $running_on = function_exists('classicpress_version') ? classicpress_version() : '0';
-if (USE_DIRECTORY && version_compare($running_on, '2', '>=')) {
+if (USE_DIRECTORY && version_compare($running_on, '2.0.0', '>=')) {
 	return;
 }
 

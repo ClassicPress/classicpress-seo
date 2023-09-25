@@ -57,7 +57,7 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 
 
 == Changelog ==
-**v 2.2.0 / 2023-07-25**
+**v 2.2.0 / 2023-09-25**
 * NEW: Support for PHP 8.1 and 8.2
 * REMOVED: Support for PHP below 7.4
 
