@@ -358,7 +358,7 @@ class Metabox implements Runner {
 	 * @return string
 	 */
 	private function get_priority() {
-		return $this->do_filter( 'core', $priority );
+		return $this->do_filter( 'metabox/priority', 'core' );
 	}
 
 	/**
