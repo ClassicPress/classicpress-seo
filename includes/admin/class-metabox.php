@@ -96,7 +96,7 @@ class Metabox implements Runner {
 			Helper::add_json( 'featuredImageNotice', esc_html__( 'The featured image should be at least 200 by 200 pixels to be picked up by Facebook and other social media sites.', 'cpseo' ) );
 
 			wp_enqueue_script( 'cpseo-post-metabox', $js . 'post-metabox.js', [ 'lodash', 'clipboard', 'cpseo-common', 'cpseo-assessor', 'jquery-tag-editor', 'cpseo-validate', 'wp-hooks' ], CPSEO_VERSION, true );
-			
+
 			$this->analyze_custom_fields();
 		}
 
@@ -349,7 +349,7 @@ class Metabox implements Runner {
 	 *
 	 * Filter to change position of seo metabox on post edit page
 	 *
-	 * Example usage: 
+	 * Example usage:
 	 * function cpseo_change_metabox_priority() {
      *     return 'low';
 	 * }
@@ -358,21 +358,7 @@ class Metabox implements Runner {
 	 * @return string
 	 */
 	private function get_priority() {
-		// When a metabox is dragged and repositioned manually, this is stored per user 
-		// in the meta-box-order_[*] field in the usermeta table. This takes precedence
-		// so here we remove that setting to allow Classic SEO to control the setting.
-		$current_user = wp_get_current_user();
-		delete_user_meta( $current_user->ID, 'meta-box-order_page' );
-		delete_user_meta( $current_user->ID, 'meta-box-order_post' );
-		delete_user_meta( $current_user->ID, 'meta-box-order_product' );
-		
-		// Set the new priority
-		$priority = Helper::get_settings( 'titles.cpseo_metabox_priority' );
-
-		/**
-		 * Filter: Change metabox priority.
-		 */
-		return $this->do_filter( 'metabox/priority', $priority );
+		return $this->do_filter( 'metabox/priority', 'core' );
 	}
 
 	/**
@@ -516,7 +502,7 @@ class Metabox implements Runner {
 
 		return empty( $plugins_found ) ? false : $plugins_found;
 	}
-	
+
 	/**
 	 * Enqueue script to analyze custom fields data.
 	 */

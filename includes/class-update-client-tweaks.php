@@ -4,7 +4,7 @@ namespace Classic_SEO;
 
 use Classic_SEO\Helper;
 
-class updateClientTweaks {		
+class updateClientTweaks {
 
 	public function __construct() {
 		// Fix images folder for Update Manager.
@@ -17,7 +17,6 @@ class updateClientTweaks {
 	 * Fix images folder for Update Manager.
 	 */
 	public function fix_update_manager_images( $folder ) {
-	trigger_error(preg_replace( '/' . basename( CPSEO_PATH ) . '\/images$/', basename( CPSEO_PATH ) . '/assets/images', $folder ));
 		return preg_replace( '/' . basename( CPSEO_PATH ) . '\/images$/', basename( CPSEO_PATH ) . '/assets/images', $folder );
 	}
 

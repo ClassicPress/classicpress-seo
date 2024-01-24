@@ -341,7 +341,6 @@ class Installer {
 			'cpseo_exclude_roles'          => $this->get_excluded_roles(),
 		];
 		$titles  = [
-			'cpseo_metabox_priority'           => 'default',
 			'cpseo_noindex_empty_taxonomies'   => 'on',
 			'cpseo_title_separator'            => '|',
 			'cpseo_capitalize_titles'          => 'off',
