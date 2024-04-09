@@ -6,7 +6,7 @@
  * Author: Simone Fioravanti
  * Author URI: https://software.gieffeedizioni.it
  * API Version: 2.0.0
- * Last modified on Update Manager release: 2.5.0
+ * Last modified on Update Manager release: 2.5.1
  * -----------------------------------------------------------------------------
  * This is free software released under the terms of the General Public License,
  * version 2, or later. It is distributed WITHOUT ANY WARRANTY; without even the
@@ -14,7 +14,7 @@
  * text of the license is available at https://www.gnu.org/licenses/gpl-2.0.txt.
  * -----------------------------------------------------------------------------
  * Copyright 2021,		John Alarcon (Code Potent)
- *           2021-2023,	Simone Fioravanti
+ *           2021-2024,	Simone Fioravanti
  * -----------------------------------------------------------------------------
  */
 
@@ -43,8 +43,11 @@ if (!defined('ABSPATH')) {
 }
 
 // Should directory take over?
-$running_on = function_exists('classicpress_version') ? classicpress_version() : '0';
-if (USE_DIRECTORY && version_compare($running_on, '2.0.0', '>=')) {
+if (
+		USE_DIRECTORY &&
+		version_compare(function_exists('classicpress_version') ? classicpress_version() : '0', '2', '>=') &&
+		is_plugin_active('classicpress-directory-integration/classicpress-directory-integration.php')
+	) {
 	return;
 }
 
