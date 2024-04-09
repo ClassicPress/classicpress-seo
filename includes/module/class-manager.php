@@ -205,6 +205,15 @@ class Manager {
 			];
 		}
 
+		if ( class_exists( 'FLBuilder' ) ) {
+			$modules['beaverbuilder'] = array(
+				'title' => esc_html__( 'Beaver Builder', 'cpseo' ),
+				'desc'  => esc_html__( 'Read and analyze content in Beaver Builder layouts.', 'cpseo' ),
+				'class' => 'Classic_SEO\BeaverBuilder\BeaverBuilder',
+				'icon'  => 'dashicons-editor-table',
+			);
+		}
+
 		return $modules;
 	}
 
