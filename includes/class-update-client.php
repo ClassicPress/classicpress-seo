@@ -6,7 +6,7 @@
  * Author: Simone Fioravanti
  * Author URI: https://software.gieffeedizioni.it
  * API Version: 2.0.0
- * Last modified on Update Manager release: 2.5.1
+ * Last modified on Update Manager release: 2.5.2
  * -----------------------------------------------------------------------------
  * This is free software released under the terms of the General Public License,
  * version 2, or later. It is distributed WITHOUT ANY WARRANTY; without even the
@@ -40,15 +40,6 @@ const UPDATE_TYPE = 'plugin';
 // Prevent direct access.
 if (!defined('ABSPATH')) {
 	die();
-}
-
-// Should directory take over?
-if (
-		USE_DIRECTORY &&
-		version_compare(function_exists('classicpress_version') ? classicpress_version() : '0', '2', '>=') &&
-		is_plugin_active('classicpress-directory-integration/classicpress-directory-integration.php')
-	) {
-	return;
 }
 
 /**
@@ -110,6 +101,16 @@ class UpdateClient {
 			// Leave as-is – tutorial can be created with enough interest.
 			'post' => [],
 		];
+
+		// Should directory take over?
+		if (
+				USE_DIRECTORY &&
+				version_compare(function_exists('classicpress_version') ? classicpress_version() : '0', '2', '>=') &&
+				function_exists('is_plugin_active') &&
+				is_plugin_active('classicpress-directory-integration/classicpress-directory-integration.php')
+			) {
+			return;
+		}
 
 		// Find and store the latest CP version during update process.
 		$this->cp_latest_version = $this->get_latest_version_number();
