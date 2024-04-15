@@ -22,7 +22,7 @@
 namespace Classic_SEO\UpdateClient;
 
 // EDIT: URL where Update Manager is installed; with trailing slash!
-const UPDATE_SERVER = 'https://software.gieffeedizioni.it/';
+const UPDATE_SERVER = 'https://www.cpseo.net/';
 
 // EDIT: Choose what to do in ClassicPress v.2 and above.
 //       Set to true to disable UpdateClient if updates are provided
