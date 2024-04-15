@@ -6,7 +6,7 @@
  * Author: Simone Fioravanti
  * Author URI: https://software.gieffeedizioni.it
  * API Version: 2.0.0
- * Last modified on Update Manager release: 2.5.2
+ * Last modified on Update Manager release: 2.5.3
  * -----------------------------------------------------------------------------
  * This is free software released under the terms of the General Public License,
  * version 2, or later. It is distributed WITHOUT ANY WARRANTY; without even the
@@ -22,7 +22,7 @@
 namespace Classic_SEO\UpdateClient;
 
 // EDIT: URL where Update Manager is installed; with trailing slash!
-const UPDATE_SERVER = 'https://www.cpseo.net/';
+const UPDATE_SERVER = 'https://software.gieffeedizioni.it/';
 
 // EDIT: Choose what to do in ClassicPress v.2 and above.
 //       Set to true to disable UpdateClient if updates are provided
@@ -103,10 +103,10 @@ class UpdateClient {
 		];
 
 		// Should directory take over?
+		include_once ABSPATH.'wp-admin/includes/plugin.php';
 		if (
 				USE_DIRECTORY &&
 				version_compare(function_exists('classicpress_version') ? classicpress_version() : '0', '2', '>=') &&
-				function_exists('is_plugin_active') &&
 				is_plugin_active('classicpress-directory-integration/classicpress-directory-integration.php')
 			) {
 			return;
