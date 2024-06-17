@@ -6,9 +6,8 @@
  * @subpackage Classic_SEO\Sitemap
  */
 
-use Classic_SEO\Helpers\WordPress;
+$roles = (new class { use Classic_SEO\Helpers\WordPress; })::get_roles();
 
-$roles   = WordPress::get_roles();
 $default = $roles;
 unset( $default['administrator'], $default['editor'], $default['author'] );
 
