@@ -1,3 +1,6 @@
+####v 2.2.2 / 2024-06-20
+* FIXED: Fix traits in authors sitemap (#173)
+
 ####v 2.2.1 / 2024-01-05
 * FIXED: Classic SEO prevents saving of metaboxes position (#167)
 
