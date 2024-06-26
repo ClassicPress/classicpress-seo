@@ -3,7 +3,7 @@
  * Plugin Name:          Classic SEO
  * Plugin URI:           https://github.com/ClassicPress/classicpress-seo
  * Description:          Classic SEO is the first SEO plugin built specifically to work with ClassicPress. The plugin contains many essential SEO tools to help optimize your website.
- * Version:              2.2.2
+ * Version:              2.3.0
  * Author:               ClassicPress
  * Author URI:           https://github.com/ClassicPress
  * License:              GPL v2 or later
@@ -34,7 +34,7 @@ class Classic_SEO {
 	 *
 	 * @var string
 	 */
-	public $version = '2.2.2';
+	public $version = '2.3.0';
 
 	/**
 	 * Classic SEO database version.
