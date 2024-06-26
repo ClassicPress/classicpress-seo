@@ -57,7 +57,13 @@ If you need support for Classic SEO or find a bug, you have threee choices:
 
 
 == Changelog ==
-**v 2.2.1 / 2024-01-05**
+**v 2.3.0 / 2024-07-02**
+* IMPROVED: Add option to remove data on uninstall (in General Settings > Misc)
+* REMOVED: Remove automatic deactivation of conflicting plugins (that wasn't working)
+* REMOVED: Remove unused Update class
+* FIXED: Fix some more PHP deprecations
+
+**v 2.2.2 / 2024-06-20**
 * FIXED: Fix traits in authors sitemap (#173)
 
 **v 2.2.1 / 2024-01-05**
