@@ -267,7 +267,7 @@ class Table extends List_Table {
 				$url . '&status=' . $key,
 				$key === $current ? ' class="current"' : '',
 				$label,
-				number_format_i18n( $counts[ $key ] )
+				number_format_i18n( $counts[ $key ] ?? 0 )
 			);
 		}
 

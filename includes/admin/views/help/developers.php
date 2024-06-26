@@ -60,16 +60,6 @@ $code4 = 'add_filter( \'cpseo/post_type_icons\', function( $icons ) {
 
 <hr>
 
-<h4><?php esc_html_e( 'Remove all Classic SEO data from the database on uninstall', 'cpseo' ); ?></h4>
-<p><?php esc_html_e( 'Filter to remove Classic SEO data from the database', 'cpseo' ); ?></p>
-
-<?php
-$code5 = 'add_filter( \'cpseo_clear_data_on_uninstall\', \'__return_true\' )';
-?>
-<pre><code><?php esc_html_e($code5); ?></code></pre>
-
-<hr>
-
 <h4><?php esc_html_e( 'Add Custom Power Words', 'cpseo' ); ?></h4>
 <p><?php esc_html_e( 'Filter to add custom Power Words', 'cpseo' ); ?></p>
 

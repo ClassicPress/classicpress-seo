@@ -24,9 +24,8 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-
-// Set cpseo_clear_data_on_uninstall to TRUE to delete all data on uninstall.
-if ( true === apply_filters( 'cpseo_clear_data_on_uninstall', false ) ) {
+$delete = get_option('cpseo-options-general', ['cpseo_remove_data_on_uninstall' => 'off']);
+if ( $delete['cpseo_remove_data_on_uninstall'] === 'on' ) {
 
 	if ( ! is_multisite() ) {
 		cpseo_remove_data();

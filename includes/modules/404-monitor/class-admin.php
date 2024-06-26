@@ -26,6 +26,8 @@ defined( 'ABSPATH' ) || exit;
 #[\AllowDynamicProperties]
 class Admin extends Base {
 
+	use WordPress;
+
 	/**
 	 * The Constructor.
 	 *
@@ -66,7 +68,7 @@ class Admin extends Base {
 	 * @codeCoverageIgnore
 	 */
 	public function init() {
-		$action = WordPress::get_request_action();
+		$action = self::get_request_action();
 		if ( false === $action || ! in_array( $action, [ 'delete', 'clear_log' ], true ) ) {
 			return;
 		}

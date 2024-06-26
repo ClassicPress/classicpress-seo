@@ -20,6 +20,8 @@ defined( 'ABSPATH' ) || exit;
 #[\AllowDynamicProperties]
 class Event implements Snippet {
 
+	use Helper;
+
 	/**
 	 * Event rich snippet.
 	 *
@@ -47,10 +49,10 @@ class Event implements Snippet {
 		];
 
 		if ( $start_date = Helper::get_post_meta( 'snippet_event_startdate' ) ) { // phpcs:ignore
-			$entity['startDate'] = str_replace( ' ', 'T', Helper::convert_date( $start_date ) );
+			$entity['startDate'] = str_replace( ' ', 'T', self::convert_date( $start_date ) );
 		}
 		if ( $end_date = Helper::get_post_meta( 'snippet_event_enddate' ) ) { // phpcs:ignore
-			$entity['endDate'] = str_replace( ' ', 'T', Helper::convert_date( $end_date ) );
+			$entity['endDate'] = str_replace( ' ', 'T', self::convert_date( $end_date ) );
 		}
 
 		$jsonld->add_ratings( 'event', $entity );
@@ -65,7 +67,7 @@ class Event implements Snippet {
 		], $entity['offers'] );
 
 		if ( ! empty( $entity['offers']['validFrom'] ) ) {
-			$entity['offers']['validFrom'] = str_replace( ' ', 'T', Helper::convert_date( $entity['offers']['validFrom'] ) );
+			$entity['offers']['validFrom'] = str_replace( ' ', 'T', self::convert_date( $entity['offers']['validFrom'] ) );
 		}
 
 		if ( empty( $entity['offers']['price'] ) ) {

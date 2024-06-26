@@ -326,6 +326,7 @@ class Installer {
 			'cpseo_wc_remove_generator'                 => 'on',
 			'cpseo_remove_shop_snippet_data'            => 'on',
 			'cpseo_usage_tracking'                      => 'on',
+			'cpseo_remove_data_on_uninstall'            => 'off',
 		]));
 	}
 

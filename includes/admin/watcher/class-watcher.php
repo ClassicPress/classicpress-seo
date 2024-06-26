@@ -26,24 +26,8 @@ class Watcher implements Runner {
 	 * Register hooks.
 	 */
 	public function hooks() {
-		$this->action( 'init', 'init' );
 		$this->action( 'activated_plugin', 'check_activated_plugin' );
 		$this->action( 'deactivated_plugin', 'check_deactivated_plugin' );
-	}
-
-	/**
-	 * Set/Deactivate conflicting SEO or Sitemap plugins.
-	 */
-	public function init() {
-		if ( isset( $_GET['cpseo_deactivate_seo_plugins'] ) ) {
-			$this->deactivate_conflicting_plugins( 'seo' );
-			return;
-		}
-
-		if ( isset( $_GET['cpseo_deactivate_sitemap_plugins'] ) ) {
-			$this->deactivate_conflicting_plugins( 'sitemap' );
-			return;
-		}
 	}
 
 	/**
@@ -91,21 +75,6 @@ class Watcher implements Runner {
 		}
 
 		self::check_activated_plugin();
-	}
-
-	/**
-	 * Deactivate conflicting plugins.
-	 *
-	 * @param string $type Plugin type.
-	 */
-	private function deactivate_conflicting_plugins( $type ) {
-		foreach ( self::get_conflicting_plugins() as $plugin => $plugin_type ) {
-			if ( $type === $plugin_type && is_plugin_active( $plugin ) ) {
-				deactivate_plugins( $plugin );
-			}
-		}
-
-		wp_redirect( remove_query_arg( "cpseo_deactivate_{$type}_plugins" ) );
 	}
 
 	/**
