@@ -17,6 +17,14 @@ $cmb->add_field([
 ]);
 
 $cmb->add_field([
+	'id'      => 'cpseo_remove_data_on_uninstall',
+	'type'    => 'switch',
+	'name'    => esc_html__( 'Remove all data on uninstall', 'cpseo' ),
+	'desc'    => esc_html__( 'Clean all options and delete database tables on uninstall.', 'cpseo' ),
+	'default' => 'off',
+]);
+
+$cmb->add_field([
 	'id'              => 'cpseo_rss_before_content',
 	'type'            => 'textarea_small',
 	'name'            => esc_html__( 'RSS Before Content', 'cpseo' ),
