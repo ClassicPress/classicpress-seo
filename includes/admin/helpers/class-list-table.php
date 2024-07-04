@@ -9,7 +9,7 @@
 
 namespace Classic_SEO\Admin;
 
-			
+
 use WP_List_Table;
 use Classic_SEO\Helpers\Param;
 
@@ -52,7 +52,7 @@ class List_Table extends WP_List_Table {
 	 * @return string
 	 */
 	protected function get_orderby( $default = 'create_date' ) {
-		return Param::get( 'orderby', $default, FILTER_SANITIZE_STRING );
+		return Param::get( 'orderby', $default, FILTER_UNSAFE_RAW );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class List_Table extends WP_List_Table {
 	 * @return bool|string
 	 */
 	protected function get_search() {
-		return Param::request( 's', false, FILTER_SANITIZE_STRING );
+		return Param::request( 's', false, FILTER_UNSAFE_RAW );
 	}
 
 	/**

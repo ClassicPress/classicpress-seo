@@ -37,7 +37,7 @@ class Engine {
 
 		$runners = [
 			cpseo()->admin,
-			cpseo()->admin_assets,		
+			cpseo()->admin_assets,
 			new Admin_Menu,
 			new Option_Center,
 			new Notices,
@@ -46,7 +46,6 @@ class Engine {
 			new Post_Columns,
 			new Post_Filters,
 			new Import_Export,
-			new Updates,
 			new Watcher,
 		];
 

@@ -354,7 +354,7 @@ trait WordPress {
 	 */
 	public static function set_capabilities( $roles ) {
 		$caps = array_keys( self::get_capabilities() );
-		foreach ( WP_Helper::get_roles() as $slug => $role ) {
+		foreach ( self::get_roles() as $slug => $role ) {
 			self::set_role_capabilities( $slug, $caps, $roles );
 		}
 	}
