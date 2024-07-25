@@ -480,18 +480,19 @@ class Metabox implements Runner {
 		 * @param array TOC plugins.
 		 */
 		$toc_plugins = $this->do_filter( 'researches/toc_plugins', [
-			'cm-table-of-content/cm-table-of-content.php' => 'CM Table Of Contents',
+			'cm-table-of-content/cm-table-of-content.php'       => 'CM Table Of Contents',
 			'easy-table-of-contents/easy-table-of-contents.php' => 'Easy Table of Contents',
-			'fx-toc/fx-toc.php'                           => 'f(x) TOC',
-			'hm-content-toc/hm-content-toc.php'           => 'HM Content TOC',
-			'shortcodes-ultimate/shortcodes-ultimate.php' => 'Shortcodes Ultimate',
-			'bainternet-simple-toc/simple-toc.php'        => 'Simple TOC',
-			'content-table/content-table.php'             => 'Table of content',
-			'table-of-contents-plus/toc.php'              => 'Table of Contents Plus',
-			'wp-shortcode/wp-shortcode.php'               => 'WP Shortcode by ',
-			'wp-shortcode-pro/wp-shortcode-pro.php'       => 'WP Shortcode Pro by ',
-			'thrive-visual-editor/thrive-visual-editor.php' => 'Thrive Architect',
-			'fixed-toc/fixed-toc.php'                     => 'Fixed TOC',
+			'fx-toc/fx-toc.php'                                 => 'f(x) TOC',
+			'hm-content-toc/hm-content-toc.php'                 => 'HM Content TOC',
+			'shortcodes-ultimate/shortcodes-ultimate.php'       => 'Shortcodes Ultimate',
+			'bainternet-simple-toc/simple-toc.php'              => 'Simple TOC',
+			'content-table/content-table.php'                   => 'Table of content',
+			'table-of-contents-plus/toc.php'                    => 'Table of Contents Plus',
+			'wp-shortcode/wp-shortcode.php'                     => 'WP Shortcode by ',
+			'wp-shortcode-pro/wp-shortcode-pro.php'             => 'WP Shortcode Pro by ',
+			'thrive-visual-editor/thrive-visual-editor.php'     => 'Thrive Architect',
+			'fixed-toc/fixed-toc.php'                           => 'Fixed TOC',
+			'joli-table-of-contents/joli-table-of-contents.php' => 'Joli Table Of Contents',
 		] );
 
 		foreach ( $toc_plugins as $plugin_slug => $plugin_name ) {
